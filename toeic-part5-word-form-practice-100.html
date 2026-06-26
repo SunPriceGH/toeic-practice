@@ -3922,7 +3922,7 @@ function finalResultSlide(){
     + '<div class="slide-label">Hoàn thành</div>'
     + '<h2>Kết quả 100 câu từ loại TOEIC</h2>'
     + '<div class="content-area">'
-    + '<div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><p class="submit-status" id="submitStatus">Khi bạn vào trang này, hệ thống sẽ tự lưu kết quả.</p><button class="nav-btn" type="button" onclick="retrySubmitResult()" style="display:inline-block;margin-top:12px">Lưu lại kết quả</button></div>'
+    + '<div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><p class="submit-status" id="submitStatus">Bấm <b>Nộp kết quả</b> để lưu bài làm.</p><button class="nav-btn" id="submitResultBtn" type="button" onclick="submitFinalResult()" style="display:inline-block;margin-top:12px">Nộp kết quả</button></div>'
     + '<div class="method-box"><h3>Ghi chú</h3><ul class="steps"><li>Câu chưa chọn đáp án = sai.</li><li>Kết quả gồm email, thời gian nộp, điểm số và chi tiết 100 câu.</li><li>Giáo viên có thể xem kết quả ở trang results.html.</li></ul></div>'
     + '</div></section>';
 }
@@ -3976,7 +3976,7 @@ function showSlide(index){
   slides[currentSlide].classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
   updateProgress();
-  if(slides[currentSlide].classList.contains('result-slide')) submitFinalResult();
+  if(slides[currentSlide].classList.contains('result-slide')) showFinalResultPreview();
 }
 function goReveal(){
   const activeSlide=slides[currentSlide];
@@ -4143,40 +4143,70 @@ function collectResultPayload(){
     answers
   };
 }
-async function submitFinalResult(){
-  if(resultSubmitted) return;
+function showFinalResultPreview(){
   const student=requireStudentSession();
   if(!student) return;
-  resultSubmitted=true;
   const payload=collectResultPayload();
   const scoreEl=document.getElementById('finalScoreText');
   const metaEl=document.getElementById('finalMetaText');
   const statusEl=document.getElementById('submitStatus');
+  const submitBtn=document.getElementById('submitResultBtn');
+  if(scoreEl) scoreEl.innerHTML='<b>Điểm của bạn:</b> '+payload.score+' / '+payload.total+' ('+payload.percent+'%)';
+  if(metaEl) metaEl.textContent='Email: '+payload.student.email+' · Các câu chưa chọn đáp án được tính là sai.';
+  if(statusEl && !resultSubmitted){
+    statusEl.className='submit-status';
+    statusEl.innerHTML='Bấm <b>Nộp kết quả</b> để lưu bài làm.';
+  }
+  if(submitBtn && !resultSubmitted){
+    submitBtn.style.display='inline-block';
+    submitBtn.disabled=false;
+    submitBtn.textContent='Nộp kết quả';
+  }
+}
+async function submitFinalResult(){
+  if(resultSubmitted) return;
+  const student=requireStudentSession();
+  if(!student) return;
+  const payload=collectResultPayload();
+  const scoreEl=document.getElementById('finalScoreText');
+  const metaEl=document.getElementById('finalMetaText');
+  const statusEl=document.getElementById('submitStatus');
+  const submitBtn=document.getElementById('submitResultBtn');
   if(scoreEl) scoreEl.innerHTML='<b>Điểm của bạn:</b> '+payload.score+' / '+payload.total+' ('+payload.percent+'%)';
   if(metaEl) metaEl.textContent='Email: '+payload.student.email+' · Nộp lúc: '+new Date(payload.submittedAt).toLocaleString('vi-VN');
+  if(submitBtn){
+    submitBtn.disabled=true;
+    submitBtn.textContent='Đang nộp...';
+  }
   if(statusEl){statusEl.className='submit-status';statusEl.textContent='Đang lưu kết quả...';}
   try{
     const res=await fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok) throw new Error(data.error||'Không lưu được kết quả');
+    resultSubmitted=true;
     if(statusEl){statusEl.className='submit-status ok';statusEl.textContent='Đã lưu kết quả thành công. Mã bài nộp: '+data.id;}
+    if(submitBtn){submitBtn.style.display='none';}
   }catch(err){
-    if(statusEl){statusEl.className='submit-status err';statusEl.textContent='Không thể lưu lên Cloudflare Functions. Bạn vẫn có thể tải JSON kết quả bên dưới.';}
+    if(statusEl){statusEl.className='submit-status err';statusEl.textContent='Không thể lưu lên Cloudflare Functions. Kiểm tra KV binding / mạng rồi bấm Nộp kết quả lại.';}
+    if(submitBtn){
+      submitBtn.disabled=false;
+      submitBtn.textContent='Nộp kết quả';
+      submitBtn.style.display='inline-block';
+    }
+    const oldLink=document.getElementById('downloadResultJson');
+    if(oldLink) oldLink.remove();
     const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
     const url=URL.createObjectURL(blob);
     const a=document.createElement('a');
     a.href=url;
     a.download='student_result_'+(payload.student.email||'student').replace(/[^a-z0-9._-]/gi,'_')+'_'+Date.now()+'.json';
-    a.textContent='Tải JSON kết quả';
+    a.textContent='Tải JSON kết quả dự phòng';
     a.className='nav-btn';
+    a.id='downloadResultJson';
     a.style.display='inline-block';
     a.style.marginTop='14px';
     statusEl?.insertAdjacentElement('afterend',a);
   }
-}
-function retrySubmitResult(){
-  resultSubmitted=false;
-  submitFinalResult();
 }
 
 document.addEventListener('keydown',function(e){
