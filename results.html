@@ -1,76 +1,30 @@
-# TOEIC Practice Cloudflare Pages
-
-## Cấu trúc
-- `index.html`: trang chủ + đăng nhập học viên.
-- `toeic-part5-word-form-practice-100.html`: bài 100 câu từ loại.
-- `results.html`: giáo viên xem/tải JSON kết quả.
-- `functions/api/login.js`: kiểm tra email whitelist + mật khẩu học viên.
-- `functions/api/results.js`: lưu/xem kết quả qua Cloudflare KV.
-- `student_result/`: placeholder. Cloudflare Pages tĩnh không thể ghi file trực tiếp vào thư mục này sau khi deploy.
-
-## Cơ chế đăng nhập học viên
-Không cần tạo tài khoản riêng cho từng học viên.
-
-Học viên đăng nhập bằng:
-- Email riêng của học viên.
-- Một mật khẩu chung của lớp.
-
-API sẽ kiểm tra:
-1. Email có nằm trong biến `ALLOWED_STUDENT_EMAILS` không.
-2. Mật khẩu có đúng `STUDENT_PASSWORD` không.
-
-Nếu `ALLOWED_STUDENT_EMAILS` để trống, mọi email hợp lệ đều có thể vào bằng mật khẩu học viên.
-Nếu `ALLOWED_STUDENT_EMAILS` có danh sách email, chỉ các email trong danh sách mới vào được.
-
-## Mật khẩu mặc định
-- Học viên: `toeic123`
-- Giáo viên: `admin123`
-
-Nên đổi bằng Environment Variables trong Cloudflare Pages:
-- `STUDENT_PASSWORD`
-- `ADMIN_PASSWORD`
-- `ALLOWED_STUDENT_EMAILS`
-
-Ví dụ:
-
-```txt
-STUDENT_PASSWORD = toeic123
-ADMIN_PASSWORD = admin123
-ALLOWED_STUDENT_EMAILS = hocsinh01@gmail.com,hocsinh02@gmail.com,hocsinh03@gmail.com
-```
-
-Lưu ý: danh sách email phân tách bằng dấu phẩy, không cần xuống dòng.
-
-## KV binding bắt buộc
-Tạo KV namespace, ví dụ `STUDENT_RESULTS`, rồi vào Cloudflare Pages > Settings > Functions > KV namespace bindings:
-- Variable name: `STUDENT_RESULTS`
-- KV namespace: namespace bạn vừa tạo
-
-## Kết quả học viên
-Khi học viên làm xong 100 câu, bài sẽ tự gửi kết quả lên `/api/results`.
-
-Câu nào học viên không chọn đáp án sẽ được lưu là:
-
-```json
-{
-  "selected": null,
-  "isCorrect": false
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Kết quả học viên</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html,body{font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}.page{min-height:100vh;padding:48px 64px;background:radial-gradient(circle at top left,rgba(59,130,246,.14),transparent 36%),#fff}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:100%}.wrap{max-width:1180px;margin:0 auto}.label{display:inline-block;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:15px;margin-bottom:16px}h1{font-size:42px;color:#0f172a;margin-bottom:12px}p{font-size:19px;line-height:1.5;color:#475569;margin-bottom:14px}.panel{background:#f8fafc;border:2px solid #e2e8f0;border-radius:24px;padding:22px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}.row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.row input{border:2px solid #dbeafe;border-radius:999px;padding:12px 14px;font-size:16px;min-width:280px}.btn{border:none;cursor:pointer;border-radius:999px;background:#2563eb;color:#fff;font-weight:950;font-size:15px;padding:12px 18px;box-shadow:0 8px 18px rgba(15,23,42,.16);text-decoration:none;display:inline-flex}.btn:hover{background:#1d4ed8}.btn.gray{background:#e2e8f0;color:#0f172a}.btn.gray:hover{background:#cbd5e1}.table-wrap{overflow:auto;margin-top:16px}table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid #d8e2f0;border-radius:18px;overflow:hidden}th{background:linear-gradient(135deg,#1d4ed8,#0ea5e9);color:#fff;text-align:left;padding:13px;font-size:15px}td{border-top:1px solid #e5edf7;padding:12px;font-size:15px;vertical-align:top}tr:nth-child(even) td{background:#f8fbff}.status{font-weight:900;margin-top:10px}.ok{color:#15803d}.err{color:#be123c}pre{white-space:pre-wrap;background:#0f172a;color:#e2e8f0;border-radius:18px;padding:18px;margin-top:16px;max-height:440px;overflow:auto}@media(max-width:768px){.page{padding:36px 22px}h1{font-size:32px}.row input{width:100%;min-width:0}}
+</style>
+</head>
+<body><div class="top-line"></div><main class="page"><div class="wrap"><div class="label">Student Results</div><h1>Kết quả học viên</h1><p>Nhập mật khẩu giáo viên để xem danh sách bài nộp. Có thể tải từng bài dưới dạng JSON.</p><div class="panel"><div class="row"><input id="adminPassword" type="password" placeholder="Mật khẩu giáo viên"><button class="btn" onclick="loadResults()">Tải kết quả</button><a class="btn gray" href="index.html">Về trang chủ</a></div><div class="status" id="status"></div><div class="table-wrap"><table><thead><tr><th>Thời gian</th><th>Email</th><th>Điểm</th><th>File JSON</th></tr></thead><tbody id="tbody"></tbody></table></div><pre id="jsonPreview" style="display:none"></pre></div></div></main>
+<script>
+let results=[];
+function setStatus(msg,ok){const el=document.getElementById('status');el.textContent=msg;el.className='status '+(ok?'ok':'err')}
+async function loadResults(){
+  const pass=document.getElementById('adminPassword').value;
+  setStatus('Đang tải...',true);
+  try{
+    const res=await fetch('/api/results',{headers:{'x-admin-password':pass}});
+    const data=await res.json();
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không tải được kết quả');
+    results=data.results||[];renderTable();setStatus('Đã tải '+results.length+' bài nộp.',true);
+  }catch(e){setStatus(e.message||'Lỗi tải kết quả',false)}
 }
-```
-
-Giáo viên mở:
-
-```txt
-/results.html
-```
-
-nhập mật khẩu giáo viên để xem danh sách và tải JSON từng học viên.
-
-## Vì sao không ghi JSON trực tiếp vào thư mục student_result?
-Cloudflare Pages sau khi deploy là môi trường read-only cho static assets. Function có thể xử lý POST nhưng không được ghi file vào thư mục project. Vì vậy kết quả được lưu vào KV và `results.html` cho phép tải ra JSON với tên dạng `student_result/<id>.json`.
-
-## Bản vá lưu kết quả
-Nếu trang hoàn thành chỉ hiện “Điểm của bạn: đang tính...”, hãy dùng bản zip mới này. File bài đã được thêm:
-- `STUDENT_KEY` và `getStudentSession()` trực tiếp trong trang bài làm.
-- Tự chặn nếu học viên chưa đăng nhập từ `index.html`.
-- Nút `Lưu lại kết quả` ở trang hoàn thành để bấm lại khi mạng/API lỗi.
+function renderTable(){
+  const tbody=document.getElementById('tbody');
+  tbody.innerHTML=results.map((r,i)=>'<tr><td>'+escapeHtml(new Date(r.submittedAt).toLocaleString('vi-VN'))+'</td><td>'+escapeHtml(r.email||'')+'</td><td><b>'+r.score+' / '+r.total+'</b> ('+r.percent+'%)</td><td><button class="btn" onclick="viewResult('+i+')">Xem JSON</button> <button class="btn gray" onclick="downloadResult('+i+')">Tải</button></td></tr>').join('');
+}
+function viewResult(i){const pre=document.getElementById('jsonPreview');pre.style.display='block';pre.textContent=JSON.stringify(results[i].payload||results[i],null,2);pre.scrollIntoView({behavior:'smooth',block:'start'});}
+function downloadResult(i){const item=results[i];const blob=new Blob([JSON.stringify(item.payload||item,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=(item.filename||('student_result_'+i+'.json'));a.click();URL.revokeObjectURL(url)}
+function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+</script></body></html>
