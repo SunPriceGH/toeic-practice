@@ -3922,7 +3922,7 @@ function finalResultSlide(){
     + '<div class="slide-label">Hoàn thành</div>'
     + '<h2>Kết quả 100 câu từ loại TOEIC</h2>'
     + '<div class="content-area">'
-    + '<div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><p class="submit-status" id="submitStatus">Khi bạn vào trang này, hệ thống sẽ tự lưu kết quả.</p></div>'
+    + '<div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><p class="submit-status" id="submitStatus">Khi bạn vào trang này, hệ thống sẽ tự lưu kết quả.</p><button class="nav-btn" type="button" onclick="retrySubmitResult()" style="display:inline-block;margin-top:12px">Lưu lại kết quả</button></div>'
     + '<div class="method-box"><h3>Ghi chú</h3><ul class="steps"><li>Câu chưa chọn đáp án = sai.</li><li>Kết quả gồm email, thời gian nộp, điểm số và chi tiết 100 câu.</li><li>Giáo viên có thể xem kết quả ở trang results.html.</li></ul></div>'
     + '</div></section>';
 }
@@ -4084,6 +4084,26 @@ function closePagePicker(event){
 }
 
 
+
+const STUDENT_KEY='toeic_student_session';
+function getStudentSession(){
+  try{
+    const raw=localStorage.getItem(STUDENT_KEY);
+    return raw?JSON.parse(raw):null;
+  }catch(e){
+    return null;
+  }
+}
+function requireStudentSession(){
+  const student=getStudentSession();
+  if(!student||!student.email){
+    alert('Bạn cần đăng nhập bằng email đã được cấp quyền trước khi làm bài.');
+    location.href='index.html';
+    return null;
+  }
+  return student;
+}
+
 let resultSubmitted=false;
 function logoutStudent(){
   localStorage.removeItem(STUDENT_KEY);
@@ -4125,6 +4145,8 @@ function collectResultPayload(){
 }
 async function submitFinalResult(){
   if(resultSubmitted) return;
+  const student=requireStudentSession();
+  if(!student) return;
   resultSubmitted=true;
   const payload=collectResultPayload();
   const scoreEl=document.getElementById('finalScoreText');
@@ -4151,6 +4173,10 @@ async function submitFinalResult(){
     a.style.marginTop='14px';
     statusEl?.insertAdjacentElement('afterend',a);
   }
+}
+function retrySubmitResult(){
+  resultSubmitted=false;
+  submitFinalResult();
 }
 
 document.addEventListener('keydown',function(e){
