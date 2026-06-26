@@ -31,7 +31,7 @@
     <p class="small-note"><b>Lưu ý:</b> Cloudflare Pages tĩnh không thể ghi file trực tiếp vào thư mục. Bản này lưu kết quả qua Cloudflare Pages Functions + KV và cho phép xuất JSON từ trang kết quả.</p>
   </section>
 </main>
-<div class="modal" id="loginModal" onclick="closeLogin(event)">
+<div class="modal" id="loginModal">
   <form class="login-box" onsubmit="loginStudent(event)" onclick="event.stopPropagation()">
     <h3>Đăng nhập học viên</h3>
     <p>Nhập email đã được cấp quyền và mật khẩu lớp học để vào bài 100 câu từ loại.</p>
@@ -46,7 +46,6 @@ const STUDENT_KEY='toeic_student_session';
 let targetPage='toeic-part5-word-form-practice-100.html';
 function openLogin(page){targetPage=page;document.getElementById('loginModal').classList.add('show');setTimeout(()=>document.getElementById('email').focus(),50)}
 function hideLogin(){document.getElementById('loginModal').classList.remove('show')}
-function closeLogin(e){if(e.target.id==='loginModal')hideLogin()}
 function showError(msg){const el=document.getElementById('loginError');el.textContent=msg;el.classList.add('show')}
 async function loginStudent(e){
   e.preventDefault();
