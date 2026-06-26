@@ -4204,7 +4204,7 @@ async function submitFinalResult(){
     if(statusEl){statusEl.className='submit-status ok';statusEl.textContent='Đã lưu kết quả thành công. Mã bài nộp: '+data.id;}
     if(submitBtn){submitBtn.style.display='none';}
   }catch(err){
-    if(statusEl){statusEl.className='submit-status err';statusEl.textContent='Không thể lưu lên Cloudflare Functions. Kiểm tra KV binding / mạng rồi bấm Nộp kết quả lại.';}
+    if(statusEl){statusEl.className='submit-status err';statusEl.textContent='Không thể lưu lên. Kiểm tra KV binding / mạng rồi bấm Nộp kết quả lại.';}
     if(submitBtn){
       submitBtn.disabled=false;
       submitBtn.textContent='Nộp kết quả';
