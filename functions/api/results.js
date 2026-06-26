@@ -51,6 +51,28 @@ export async function onRequestGet(context) {
   }
 }
 
+
+export async function onRequestDelete(context) {
+  try {
+    if (!context.env.STUDENT_RESULTS) return json({ ok:false, error:'Thiếu KV binding STUDENT_RESULTS.' }, 500);
+    const adminPassword = context.request.headers.get('x-admin-password') || '';
+    const expected = context.env.ADMIN_PASSWORD || 'admin123';
+    if (adminPassword !== expected) return json({ ok:false, error:'Sai mật khẩu giáo viên.' }, 401);
+
+    const url = new URL(context.request.url);
+    const id = url.searchParams.get('id');
+    if (!id) return json({ ok:false, error:'Thiếu ID record cần xóa.' }, 400);
+
+    const existing = await context.env.STUDENT_RESULTS.get(id);
+    if (!existing) return json({ ok:false, error:'Không tìm thấy record cần xóa.' }, 404);
+
+    await context.env.STUDENT_RESULTS.delete(id);
+    return json({ ok:true, deletedId:id });
+  } catch (err) {
+    return json({ ok:false, error: err.message || 'Không xóa được kết quả.' }, 500);
+  }
+}
+
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), { status, headers: { 'content-type':'application/json; charset=utf-8' } });
 }
