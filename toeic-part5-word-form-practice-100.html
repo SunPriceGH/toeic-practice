@@ -247,6 +247,27 @@ tr:hover td{background:#eff6ff}
 }
 .page-jump-btn:hover{border-color:#93c5fd;background:#eff6ff;transform:translateY(-1px)}
 .page-jump-btn.active{border-color:#2563eb;background:#dbeafe;color:#1d4ed8}
+
+.page-jump-btn.correct-answer{
+  border-color:#22c55e!important;
+  background:#f0fdf4!important;
+  color:#166534!important;
+}
+.page-jump-btn.correct-answer .page-no{color:#15803d!important}
+.page-jump-btn.correct-answer .page-title{color:#166534!important}
+.page-jump-btn.wrong-answer{
+  border-color:#ef4444!important;
+  background:#fff1f2!important;
+  color:#be123c!important;
+}
+.page-jump-btn.wrong-answer .page-no{color:#be123c!important}
+.page-jump-btn.wrong-answer .page-title{color:#be123c!important}
+.page-jump-btn.correct-answer.active{
+  box-shadow:0 0 0 3px rgba(34,197,94,.22);
+}
+.page-jump-btn.wrong-answer.active{
+  box-shadow:0 0 0 3px rgba(239,68,68,.20);
+}
 .page-jump-btn .page-no{display:block;font-size:18px;font-weight:1000}
 .page-jump-btn .page-title{display:block;color:#64748b;font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(max-width:768px){.question-vn{font-size:18px}.lang-pill{height:32px;min-width:66px;font-size:12px}.page-picker-panel{padding:18px;border-radius:20px}.page-picker-grid{grid-template-columns:repeat(auto-fill,minmax(74px,1fr))}.page-jump-btn{min-height:54px;font-size:12px}.page-picker-head h3{font-size:24px}}
@@ -2034,6 +2055,7 @@ function checkAnswer(){
   resultBox.classList.remove('no-answer');
   const isCorrect=selected.value===answer;
   checkedAnswers[qName]=isCorrect;
+  syncPagePickerActive();
   lockCurrentQuestion(slide);
   resultBox.classList.toggle('wrong-box',!isCorrect);
   resultBox.classList.add('show');
@@ -2078,6 +2100,10 @@ function buildPagePicker(){
     const btn=document.createElement('button');
     btn.type='button';
     btn.className='page-jump-btn';
+    btn.dataset.slideIndex=String(index);
+    if(slide.classList.contains('quiz-slide') && slide.dataset.question){
+      btn.dataset.questionId=slide.dataset.question;
+    }
     const title=(slide.querySelector('h1,h2')?.textContent||'Slide').trim();
     const label=(slide.querySelector('.slide-label')?.textContent||'').trim();
     btn.innerHTML='<span class="page-no">'+(index+1)+'</span><span class="page-title">'+(label||title)+'</span>';
@@ -2088,7 +2114,14 @@ function buildPagePicker(){
 }
 function syncPagePickerActive(){
   const buttons=document.querySelectorAll('.page-jump-btn');
-  buttons.forEach((btn,i)=>btn.classList.toggle('active',i===currentSlide));
+  buttons.forEach((btn,i)=>{
+    btn.classList.toggle('active',i===currentSlide);
+    btn.classList.remove('correct-answer','wrong-answer');
+    const qid=btn.dataset.questionId;
+    if(qid && Object.prototype.hasOwnProperty.call(checkedAnswers,qid)){
+      btn.classList.add(checkedAnswers[qid] ? 'correct-answer' : 'wrong-answer');
+    }
+  });
 }
 function openPagePicker(){
   buildPagePicker();
