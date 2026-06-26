@@ -1,56 +1,69 @@
-export async function onRequestPost(context) {
-  try {
-    if (!context.env.STUDENT_RESULTS) return json({ ok:false, error:'Thiếu KV binding STUDENT_RESULTS.' }, 500);
-    const payload = await context.request.json();
-    const email = String(payload?.student?.email || '').trim().toLowerCase();
-    if (!email || !email.includes('@')) return json({ ok:false, error:'Thiếu email học viên.' }, 400);
-    const safeEmail = email.replace(/[^a-z0-9._-]/gi, '_');
-    const id = `${Date.now()}_${safeEmail}`;
-    const filename = `student_result/${id}.json`;
-    const record = {
-      id,
-      filename,
-      email,
-      submittedAt: payload.submittedAt || new Date().toISOString(),
-      score: Number(payload.score || 0),
-      total: Number(payload.total || 0),
-      percent: Number(payload.percent || 0),
-      payload
-    };
-    await context.env.STUDENT_RESULTS.put(id, JSON.stringify(record), {
-      metadata: { email, submittedAt: record.submittedAt, score: String(record.score), total: String(record.total), percent: String(record.percent), filename }
-    });
-    return json({ ok:true, id, filename });
-  } catch (err) {
-    return json({ ok:false, error: err.message || 'Không lưu được kết quả.' }, 500);
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEIC Practice Hub</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}body{overflow-x:hidden}.page{min-height:100vh;padding:56px 72px;background:radial-gradient(circle at top left,rgba(59,130,246,.14),transparent 36%),radial-gradient(circle at bottom right,rgba(14,165,233,.14),transparent 36%),#fff}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:100%;z-index:10}.hero{max-width:1120px;margin:0 auto}.label{display:inline-block;width:fit-content;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:800;font-size:15px;margin-bottom:18px}h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:18px}.lead{font-size:23px;line-height:1.55;color:#334155;max-width:900px;margin-bottom:26px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:22px}.card{background:#f8fafc;border:2px solid #e2e8f0;border-radius:24px;padding:26px;box-shadow:0 14px 30px rgba(15,23,42,.08)}.card h2{font-size:28px;color:#0f172a;margin-bottom:12px}.card p{font-size:19px;line-height:1.5;color:#475569;margin-bottom:16px}.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:15px 0}.pill{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;padding:9px 13px;border-radius:999px;font-size:15px;font-weight:900}.btn{border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#2563eb;color:#fff;font-weight:950;font-size:16px;padding:13px 20px;box-shadow:0 8px 18px rgba(15,23,42,.18);text-decoration:none}.btn:hover{background:#1d4ed8;transform:translateY(-1px)}.btn.secondary{background:#e2e8f0;color:#0f172a}.btn.secondary:hover{background:#cbd5e1}.modal{position:fixed;inset:0;background:rgba(15,23,42,.46);display:none;align-items:center;justify-content:center;padding:22px;z-index:50;backdrop-filter:blur(4px)}.modal.show{display:flex}.login-box{width:min(460px,96vw);background:#fff;border:2px solid #dbeafe;border-radius:26px;padding:26px;box-shadow:0 24px 70px rgba(15,23,42,.28)}.login-box h3{font-size:28px;color:#0f172a;margin-bottom:8px}.login-box p{font-size:17px;line-height:1.45;color:#64748b;margin-bottom:18px}.field{margin-bottom:13px}.field label{display:block;font-size:14px;font-weight:900;color:#334155;margin-bottom:6px}.field input{width:100%;border:2px solid #dbeafe;border-radius:16px;padding:13px 14px;font-size:17px;outline:none}.field input:focus{border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.12)}.error{display:none;color:#be123c;font-size:15px;font-weight:800;margin:8px 0 0}.error.show{display:block}.modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}.small-note{font-size:15px;color:#64748b;margin-top:18px;line-height:1.45}@media(max-width:768px){.page{padding:36px 24px 110px}h1{font-size:34px}.lead{font-size:19px}.card h2{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="top-line"></div>
+<main class="page">
+  <section class="hero">
+    <div class="label">TOEIC Practice Hub</div>
+    <h1>Kho bài luyện TOEIC</h1>
+    <p class="lead">Chọn bài luyện bên dưới. Riêng bài <b>100 câu từ loại</b> yêu cầu học viên đăng nhập bằng email đã được cấp quyền và mật khẩu lớp học trước khi làm bài.</p>
+    <div class="grid">
+      <article class="card">
+        <h2>100 câu từ loại TOEIC</h2>
+        <p>Practice Part 5 dạng word form: noun, verb, adjective, adverb và các bẫy từ loại thường gặp.</p>
+        <div class="pill-row"><span class="pill">100 câu</span><span class="pill">Có lưu kết quả</span><span class="pill">Email whitelist</span></div>
+        <button class="btn" type="button" onclick="openLogin('toeic-part5-word-form-practice-100.html')">Vào bài luyện</button>
+      </article>
+      <article class="card">
+        <h2>Kết quả học viên</h2>
+        <p>Dành cho giáo viên xem danh sách bài nộp và tải JSON kết quả.</p>
+        <a class="btn secondary" href="results.html">Mở trang kết quả</a>
+      </article>
+    </div>
+    <p class="small-note"><b>Lưu ý:</b> Cloudflare Pages tĩnh không thể ghi file trực tiếp vào thư mục. Bản này lưu kết quả qua Cloudflare Pages Functions + KV và cho phép xuất JSON từ trang kết quả.</p>
+  </section>
+</main>
+<div class="modal" id="loginModal" onclick="closeLogin(event)">
+  <form class="login-box" onsubmit="loginStudent(event)" onclick="event.stopPropagation()">
+    <h3>Đăng nhập học viên</h3>
+    <p>Nhập email đã được cấp quyền và mật khẩu lớp học để vào bài 100 câu từ loại.</p>
+    <div class="field"><label>Email</label><input id="email" type="email" autocomplete="email" required placeholder="student@email.com"></div>
+    <div class="field"><label>Mật khẩu</label><input id="password" type="password" autocomplete="current-password" required placeholder="Nhập mật khẩu"></div>
+    <div class="error" id="loginError"></div>
+    <div class="modal-actions"><button class="btn secondary" type="button" onclick="hideLogin()">Hủy</button><button class="btn" type="submit">Đăng nhập</button></div>
+  </form>
+</div>
+<script>
+const STUDENT_KEY='toeic_student_session';
+let targetPage='toeic-part5-word-form-practice-100.html';
+function openLogin(page){targetPage=page;document.getElementById('loginModal').classList.add('show');setTimeout(()=>document.getElementById('email').focus(),50)}
+function hideLogin(){document.getElementById('loginModal').classList.remove('show')}
+function closeLogin(e){if(e.target.id==='loginModal')hideLogin()}
+function showError(msg){const el=document.getElementById('loginError');el.textContent=msg;el.classList.add('show')}
+async function loginStudent(e){
+  e.preventDefault();
+  const email=document.getElementById('email').value.trim().toLowerCase();
+  const password=document.getElementById('password').value;
+  if(!email||!password) return showError('Vui lòng nhập đủ email và mật khẩu.');
+  try{
+    const res=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password})});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Sai email hoặc mật khẩu.');
+    localStorage.setItem(STUDENT_KEY,JSON.stringify({email,loginAt:new Date().toISOString(),token:data.token||''}));
+    location.href=targetPage;
+  }catch(err){
+    showError(err.message||'Không đăng nhập được. Kiểm tra lại mật khẩu hoặc Functions.');
   }
 }
-
-export async function onRequestGet(context) {
-  try {
-    if (!context.env.STUDENT_RESULTS) return json({ ok:false, error:'Thiếu KV binding STUDENT_RESULTS.' }, 500);
-    const adminPassword = context.request.headers.get('x-admin-password') || '';
-    const expected = context.env.ADMIN_PASSWORD || 'admin123';
-    if (adminPassword !== expected) return json({ ok:false, error:'Sai mật khẩu giáo viên.' }, 401);
-    const url = new URL(context.request.url);
-    const id = url.searchParams.get('id');
-    if (id) {
-      const text = await context.env.STUDENT_RESULTS.get(id);
-      if (!text) return json({ ok:false, error:'Không tìm thấy kết quả.' }, 404);
-      return json({ ok:true, result: JSON.parse(text) });
-    }
-    const list = await context.env.STUDENT_RESULTS.list({ limit: 1000 });
-    const results = [];
-    for (const key of list.keys.sort((a,b)=>String(b.name).localeCompare(String(a.name)))) {
-      const text = await context.env.STUDENT_RESULTS.get(key.name);
-      if (text) results.push(JSON.parse(text));
-    }
-    return json({ ok:true, results });
-  } catch (err) {
-    return json({ ok:false, error: err.message || 'Không tải được kết quả.' }, 500);
-  }
-}
-
-function json(data, status = 200) {
-  return new Response(JSON.stringify(data), { status, headers: { 'content-type':'application/json; charset=utf-8' } });
-}
+const params=new URLSearchParams(location.search);if(params.get('next')) openLogin(params.get('next'));
+</script>
+</body>
+</html>
