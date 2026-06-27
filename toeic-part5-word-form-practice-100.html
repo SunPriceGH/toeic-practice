@@ -300,6 +300,25 @@ tr:hover td{background:#eff6ff}
 .logout-link:hover{background:#eff6ff;color:#1d4ed8}
 @media(max-width:768px){.logout-link{top:14px;left:14px;font-size:12px;padding:7px 10px}.submit-status{font-size:18px}}
 
+
+
+/* ===== Anti right-click / anti casual download lock ===== */
+html.anti-download-lock, html.anti-download-lock body{
+  -webkit-user-select:none!important;
+  -moz-user-select:none!important;
+  -ms-user-select:none!important;
+  user-select:none!important;
+  -webkit-touch-callout:none!important;
+}
+html.anti-download-lock img,
+html.anti-download-lock video,
+html.anti-download-lock audio,
+html.anti-download-lock canvas,
+html.anti-download-lock svg{
+  -webkit-user-drag:none!important;
+  user-drag:none!important;
+}
+
 </style>
 </head>
 <body>
@@ -2269,5 +2288,43 @@ setupQuestionTranslationButtons();
 updateProgress();
 
 </script>
+
+<script>
+(function(){
+  'use strict';
+  document.documentElement.classList.add('anti-download-lock');
+
+  const block = function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  };
+
+  // Khóa chuột phải, kéo-thả, chọn/copy/cut/paste/in/trình đơn lưu phổ biến
+  ['contextmenu','dragstart','drop','copy','cut','paste','selectstart'].forEach(function(evt){
+    document.addEventListener(evt, block, true);
+  });
+
+  document.addEventListener('keydown', function(e){
+    const key = String(e.key || '').toLowerCase();
+    const ctrlOrCmd = e.ctrlKey || e.metaKey;
+
+    // F12
+    if(e.key === 'F12') return block(e);
+
+    // Ctrl/Cmd + S/U/P/O/A/C/X/V
+    if(ctrlOrCmd && ['s','u','p','o','a','c','x','v'].includes(key)) return block(e);
+
+    // Ctrl/Cmd + Shift + I/J/C/S
+    if(ctrlOrCmd && e.shiftKey && ['i','j','c','s'].includes(key)) return block(e);
+  }, true);
+
+  // Hạn chế kéo media/link ra ngoài để tải
+  document.addEventListener('mousedown', function(e){
+    if(e.button === 2) return block(e);
+  }, true);
+})();
+</script>
+
 </body>
 </html>
