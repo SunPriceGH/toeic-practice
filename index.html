@@ -160,7 +160,7 @@ function requestAdminMode(mode){
   document.getElementById('adminError').classList.remove('show');
   document.getElementById('adminPassword').value='';
   document.getElementById('adminModalTitle').textContent=mode==='unlock'?'Xác nhận mở khóa':'Xác nhận khóa';
-  document.getElementById('adminModalText').textContent=mode==='unlock'?'Nhập mật khẩu admin. Sau khi đúng, con trỏ sẽ chuyển sang chế độ mở khóa và bạn có thể click nhiều bài liên tiếp.':'Nhập mật khẩu admin. Sau khi đúng, con trỏ sẽ chuyển sang chế độ khóa và bạn có thể click nhiều bài liên tiếp.';
+  document.getElementById('adminModalText').textContent=mode==='unlock'?'Nhập mật khẩu admin để chuyển sang chế độ mở khóa.':'Nhập mật khẩu admin để chuyển sang chế độ khóa.';
   document.getElementById('adminModal').classList.add('show');
   setTimeout(()=>document.getElementById('adminPassword').focus(),50);
 }
