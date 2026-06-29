@@ -320,6 +320,17 @@ html.anti-download-lock svg{
 }
 
 </style>
+<style>
+.home-confirm-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);display:none;align-items:center;justify-content:center;padding:22px;z-index:300;backdrop-filter:blur(5px)}
+.home-confirm-overlay.show{display:flex}
+.home-confirm-panel{width:min(520px,94vw);background:#fff;border:2px solid #fecdd3;border-radius:24px;padding:26px;box-shadow:0 24px 70px rgba(15,23,42,.28)}
+.home-confirm-panel h3{font-size:28px;color:#be123c;margin-bottom:10px}
+.home-confirm-panel p{font-size:20px;line-height:1.45;color:#334155;margin-bottom:12px}
+.home-confirm-actions{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap;margin-top:18px}
+.home-confirm-danger{background:#be123c!important;color:#fff!important}
+.home-confirm-danger:hover{background:#9f1239!important}
+@media(max-width:768px){.home-confirm-panel{padding:22px}.home-confirm-panel h3{font-size:24px}.home-confirm-panel p{font-size:18px}.home-confirm-actions{justify-content:stretch}.home-confirm-actions .nav-btn{flex:1}}
+</style>
 </head>
 <body>
 <div class="lesson-wrapper">
@@ -337,6 +348,18 @@ html.anti-download-lock svg{
       <button class="page-picker-close" onclick="closePagePicker()" type="button">×</button>
     </div>
     <div class="page-picker-grid" id="pagePickerGrid"></div>
+  </div>
+</div>
+
+<div class="home-confirm-overlay" id="homeConfirm" onclick="closeHomeConfirm(event)">
+  <div class="home-confirm-panel" role="dialog" aria-modal="true" aria-labelledby="homeConfirmTitle" onclick="event.stopPropagation()">
+    <h3 id="homeConfirmTitle">Bạn chưa nộp kết quả</h3>
+    <p>Nếu về trang chủ bây giờ, bài làm hiện tại có thể chưa được lưu.</p>
+    <p>Hãy bấm <b>Ở lại nộp bài</b> nếu bạn muốn lưu điểm trước.</p>
+    <div class="home-confirm-actions">
+      <button class="nav-btn" type="button" onclick="closeHomeConfirm()">Ở lại nộp bài</button>
+      <button class="nav-btn home-confirm-danger" type="button" onclick="confirmGoHome()">Vẫn về trang chủ</button>
+    </div>
   </div>
 </div>
 
@@ -1965,7 +1988,7 @@ function finalResultSlide(){
     + '<div class="slide-label">Hoàn thành</div>'
     + '<h2>Kết quả 100 câu từ loại TOEIC</h2>'
     + '<div class="content-area">'
-    + '<div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><p class="submit-status" id="submitStatus">Bấm <b>Nộp kết quả</b> để lưu bài làm.</p><button class="nav-btn" id="submitResultBtn" type="button" onclick="submitFinalResult()" style="display:inline-block;margin-top:12px">Nộp kết quả</button><a class="nav-btn home-btn" href="index.html" style="display:inline-block;margin-top:12px;margin-left:10px;text-decoration:none">Về trang chủ</a></div>'
+    + '<div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><p class="submit-status" id="submitStatus">Bấm <b>Nộp kết quả</b> để lưu bài làm.</p><button class="nav-btn" id="submitResultBtn" type="button" onclick="submitFinalResult()" style="display:inline-block;margin-top:12px">Nộp kết quả</button><button class="nav-btn home-btn" type="button" onclick="requestGoHome()" style="display:inline-block;margin-top:12px;margin-left:10px;text-decoration:none">Về trang chủ</button></div>'
     + '<div class="method-box"><h3>Ghi chú</h3><ul class="steps"><li>Câu chưa chọn đáp án = sai.</li></ul></div>'
     + '</div></section>';
 }
@@ -2174,6 +2197,20 @@ function requireStudentSession(){
 }
 
 let resultSubmitted=false;
+function requestGoHome(){
+  if(resultSubmitted){
+    location.href='index.html';
+    return;
+  }
+  document.getElementById('homeConfirm')?.classList.add('show');
+}
+function closeHomeConfirm(event){
+  if(event&&event.target&&event.target.id!=='homeConfirm') return;
+  document.getElementById('homeConfirm')?.classList.remove('show');
+}
+function confirmGoHome(){
+  location.href='index.html';
+}
 function logoutStudent(){
   localStorage.removeItem(STUDENT_KEY);
   location.href='index.html';

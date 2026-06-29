@@ -320,6 +320,17 @@ html.anti-download-lock svg{
 }
 
 </style>
+<style>
+.home-confirm-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);display:none;align-items:center;justify-content:center;padding:22px;z-index:300;backdrop-filter:blur(5px)}
+.home-confirm-overlay.show{display:flex}
+.home-confirm-panel{width:min(520px,94vw);background:#fff;border:2px solid #fecdd3;border-radius:24px;padding:26px;box-shadow:0 24px 70px rgba(15,23,42,.28)}
+.home-confirm-panel h3{font-size:28px;color:#be123c;margin-bottom:10px}
+.home-confirm-panel p{font-size:20px;line-height:1.45;color:#334155;margin-bottom:12px}
+.home-confirm-actions{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap;margin-top:18px}
+.home-confirm-danger{background:#be123c!important;color:#fff!important}
+.home-confirm-danger:hover{background:#9f1239!important}
+@media(max-width:768px){.home-confirm-panel{padding:22px}.home-confirm-panel h3{font-size:24px}.home-confirm-panel p{font-size:18px}.home-confirm-actions{justify-content:stretch}.home-confirm-actions .nav-btn{flex:1}}
+</style>
 </head>
 <body>
 <div class="lesson-wrapper">
@@ -337,6 +348,18 @@ html.anti-download-lock svg{
       <button class="page-picker-close" onclick="closePagePicker()" type="button">×</button>
     </div>
     <div class="page-picker-grid" id="pagePickerGrid"></div>
+  </div>
+</div>
+
+<div class="home-confirm-overlay" id="homeConfirm" onclick="closeHomeConfirm(event)">
+  <div class="home-confirm-panel" role="dialog" aria-modal="true" aria-labelledby="homeConfirmTitle" onclick="event.stopPropagation()">
+    <h3 id="homeConfirmTitle">Bạn chưa nộp kết quả</h3>
+    <p>Nếu về trang chủ bây giờ, bài làm hiện tại có thể chưa được lưu.</p>
+    <p>Hãy bấm <b>Ở lại nộp bài</b> nếu bạn muốn lưu điểm trước.</p>
+    <div class="home-confirm-actions">
+      <button class="nav-btn" type="button" onclick="closeHomeConfirm()">Ở lại nộp bài</button>
+      <button class="nav-btn home-confirm-danger" type="button" onclick="confirmGoHome()">Vẫn về trang chủ</button>
+    </div>
   </div>
 </div>
 
@@ -366,33 +389,13 @@ const quizData = [
     "title": "Câu 1",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The application must be accompanied ___ a copy of your resume.",
-    "questionVn": "Đơn đăng ký phải đi kèm với một bản sao sơ yếu lý lịch.",
+    "questionVn": "Đơn đăng ký phải đi kèm ___ một bản sao sơ yếu lý lịch.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "C",
-        "text": "by",
-        "pos": "preposition",
-        "vn": "bởi / do"
-      },
-      {
-        "key": "D",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "C", "text": "by", "pos": "preposition", "vn": "bởi / do" },
+      { "key": "D", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" }
     ],
     "explanation": "Cấu trúc đúng là be accompanied by = được đi kèm bởi/với. Sau chỗ trống cần giới từ 'by'."
   },
@@ -402,33 +405,13 @@ const quizData = [
     "title": "Câu 2",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "Some customers were confused ___ the new billing procedure.",
-    "questionVn": "Một số khách hàng bối rối về quy trình thanh toán mới.",
+    "questionVn": "Một số khách hàng bối rối ___ quy trình thanh toán mới.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "about",
-        "pos": "preposition",
-        "vn": "về / lo về"
-      },
-      {
-        "key": "B",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "C",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "D",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      }
+      { "key": "A", "text": "about", "pos": "preposition", "vn": "về / lo về" },
+      { "key": "B", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "C", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "D", "text": "of", "pos": "preposition", "vn": "về / của" }
     ],
     "explanation": "Cấu trúc đúng là be confused about = bối rối/không rõ về. Sau chỗ trống cần giới từ 'about'."
   },
@@ -438,33 +421,13 @@ const quizData = [
     "title": "Câu 3",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "Each contractor is accountable ___ meeting the safety standards.",
-    "questionVn": "Mỗi nhà thầu chịu trách nhiệm đáp ứng các tiêu chuẩn an toàn.",
+    "questionVn": "Mỗi nhà thầu chịu trách nhiệm ___ việc đáp ứng các tiêu chuẩn an toàn.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      }
+      { "key": "A", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" }
     ],
     "explanation": "Cấu trúc đúng là be accountable for = chịu trách nhiệm/giải trình về. Sau chỗ trống cần giới từ 'for'."
   },
@@ -474,33 +437,13 @@ const quizData = [
     "title": "Câu 4",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "This training course is suitable ___ new sales representatives.",
-    "questionVn": "Khóa đào tạo này phù hợp với các đại diện bán hàng mới.",
+    "questionVn": "Khóa đào tạo này phù hợp ___ các đại diện bán hàng mới.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "to", "pos": "preposition", "vn": "đối với / tới" }
     ],
     "explanation": "Cấu trúc đúng là be suitable for = phù hợp với/cho. Sau chỗ trống cần giới từ 'for'."
   },
@@ -510,33 +453,13 @@ const quizData = [
     "title": "Câu 5",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The workshop was followed ___ a networking reception.",
-    "questionVn": "Hội thảo được theo sau bởi buổi giao lưu kết nối.",
+    "questionVn": "Hội thảo được theo sau ___ buổi giao lưu kết nối.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "D",
-        "text": "by",
-        "pos": "preposition",
-        "vn": "bởi / do"
-      }
+      { "key": "A", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "D", "text": "by", "pos": "preposition", "vn": "bởi / do" }
     ],
     "explanation": "Cấu trúc đúng là be followed by = được theo sau bởi. Sau chỗ trống cần giới từ 'by'."
   },
@@ -546,33 +469,13 @@ const quizData = [
     "title": "Câu 6",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "Several risks are associated ___ international shipping.",
-    "questionVn": "Một số rủi ro gắn liền với vận chuyển quốc tế.",
+    "questionVn": "Một số rủi ro gắn liền ___ vận chuyển quốc tế.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "about",
-        "pos": "preposition",
-        "vn": "về / lo về"
-      },
-      {
-        "key": "B",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "about", "pos": "preposition", "vn": "về / lo về" },
+      { "key": "B", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be associated with = được liên kết/gắn liền với. Sau chỗ trống cần giới từ 'with'."
   },
@@ -581,34 +484,14 @@ const quizData = [
     "label": "Practice · Question 7",
     "title": "Câu 7",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
-    "questionEn": "The organizers were grateful ___ the volunteers’ assistance.",
-    "questionVn": "Ban tổ chức biết ơn vì sự hỗ trợ của các tình nguyện viên.",
+    "questionEn": "The organizers were grateful ___ the volunteers' assistance.",
+    "questionVn": "Ban tổ chức biết ơn ___ sự hỗ trợ của các tình nguyện viên.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "B",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "C",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "B", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "C", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be grateful for = biết ơn vì. Sau chỗ trống cần giới từ 'for'."
   },
@@ -618,33 +501,13 @@ const quizData = [
     "title": "Câu 8",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The results are independent ___ outside influence.",
-    "questionVn": "Kết quả độc lập với ảnh hưởng bên ngoài.",
+    "questionVn": "Kết quả độc lập ___ ảnh hưởng bên ngoài.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "B",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "C",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "B", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "C", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be independent of = độc lập với. Sau chỗ trống cần giới từ 'of'."
   },
@@ -654,33 +517,13 @@ const quizData = [
     "title": "Câu 9",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "Frequent travelers are accustomed ___ checking in online.",
-    "questionVn": "Người đi công tác thường xuyên đã quen với việc làm thủ tục trực tuyến.",
+    "questionVn": "Người đi công tác thường xuyên đã quen ___ việc làm thủ tục trực tuyến.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "B",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "B", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be accustomed to = quen với. Sau chỗ trống cần giới từ 'to'."
   },
@@ -690,33 +533,13 @@ const quizData = [
     "title": "Câu 10",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The auditorium is equipped ___ a modern sound system.",
-    "questionVn": "Khán phòng được trang bị hệ thống âm thanh hiện đại.",
+    "questionVn": "Khán phòng được trang bị ___ hệ thống âm thanh hiện đại.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "about",
-        "pos": "preposition",
-        "vn": "về / lo về"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "D",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      }
+      { "key": "A", "text": "about", "pos": "preposition", "vn": "về / lo về" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "D", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" }
     ],
     "explanation": "Cấu trúc đúng là be equipped with = được trang bị với. Sau chỗ trống cần giới từ 'with'."
   },
@@ -725,34 +548,14 @@ const quizData = [
     "label": "Practice · Question 11",
     "title": "Câu 11",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
-    "questionEn": "The supervisor was disappointed ___ the team’s final report.",
-    "questionVn": "Giám sát viên thất vọng về báo cáo cuối cùng của nhóm.",
+    "questionEn": "The supervisor was disappointed ___ the team's final report.",
+    "questionVn": "Giám sát viên thất vọng ___ báo cáo cuối cùng của nhóm.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "B",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "C",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "B", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "C", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be disappointed in = thất vọng về. Sau chỗ trống cần giới từ 'in'."
   },
@@ -762,33 +565,13 @@ const quizData = [
     "title": "Câu 12",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "Department heads are accountable ___ their annual budgets.",
-    "questionVn": "Trưởng phòng chịu trách nhiệm về ngân sách hằng năm của họ.",
+    "questionVn": "Trưởng phòng chịu trách nhiệm ___ ngân sách hàng năm của họ.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "B",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "C",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "B", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "C", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be accountable for = chịu trách nhiệm/giải trình về. Sau chỗ trống cần giới từ 'for'."
   },
@@ -798,33 +581,13 @@ const quizData = [
     "title": "Câu 13",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "This model is similar ___ the one released last year.",
-    "questionVn": "Mẫu này tương tự mẫu được phát hành năm ngoái.",
+    "questionVn": "Mẫu này tương tự ___ mẫu được phát hành năm ngoái.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "D",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      }
+      { "key": "A", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "D", "text": "to", "pos": "preposition", "vn": "đối với / tới" }
     ],
     "explanation": "Cấu trúc đúng là be similar to = tương tự với. Sau chỗ trống cần giới từ 'to'."
   },
@@ -834,33 +597,13 @@ const quizData = [
     "title": "Câu 14",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The supplier was accused ___ violating the agreement.",
-    "questionVn": "Nhà cung cấp bị cáo buộc vi phạm thỏa thuận.",
+    "questionVn": "Nhà cung cấp bị cáo buộc ___ vi phạm thỏa thuận.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "C",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "D",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "C", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "D", "text": "of", "pos": "preposition", "vn": "về / của" }
     ],
     "explanation": "Cấu trúc đúng là be accused of = bị buộc tội/bị cáo buộc. Sau chỗ trống cần giới từ 'of'."
   },
@@ -870,33 +613,13 @@ const quizData = [
     "title": "Câu 15",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The consultant is available ___ a brief phone call this afternoon.",
-    "questionVn": "Cố vấn có thể tham gia một cuộc gọi ngắn vào chiều nay.",
+    "questionVn": "Cố vấn có thể tham gia ___ một cuộc gọi ngắn vào chiều nay.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "B",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "C",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "B", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "C", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be available for = có sẵn cho/sẵn sàng cho. Sau chỗ trống cần giới từ 'for'."
   },
@@ -906,33 +629,13 @@ const quizData = [
     "title": "Câu 16",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The presentation will be followed ___ a question-and-answer session.",
-    "questionVn": "Bài thuyết trình sẽ được theo sau bởi phần hỏi đáp.",
+    "questionVn": "Bài thuyết trình sẽ được theo sau ___ phần hỏi đáp.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "B",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "C",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "D",
-        "text": "by",
-        "pos": "preposition",
-        "vn": "bởi / do"
-      }
+      { "key": "A", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "B", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "C", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "D", "text": "by", "pos": "preposition", "vn": "bởi / do" }
     ],
     "explanation": "Cấu trúc đúng là be followed by = được theo sau bởi. Sau chỗ trống cần giới từ 'by'."
   },
@@ -941,34 +644,14 @@ const quizData = [
     "label": "Practice · Question 17",
     "title": "Câu 17",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
-    "questionEn": "The client was impressed ___ the team’s quick response.",
-    "questionVn": "Khách hàng ấn tượng với phản hồi nhanh của nhóm.",
+    "questionEn": "The client was impressed ___ the team's quick response.",
+    "questionVn": "Khách hàng ấn tượng ___ phản hồi nhanh của nhóm.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "B",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "C",
-        "text": "about",
-        "pos": "preposition",
-        "vn": "về / lo về"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "B", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "C", "text": "about", "pos": "preposition", "vn": "về / lo về" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be impressed with = ấn tượng với. Sau chỗ trống cần giới từ 'with'."
   },
@@ -978,33 +661,13 @@ const quizData = [
     "title": "Câu 18",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The designer is skilled ___ creating user-friendly layouts.",
-    "questionVn": "Nhà thiết kế có kỹ năng tạo bố cục thân thiện với người dùng.",
+    "questionVn": "Nhà thiết kế có kỹ năng ___ việc tạo bố cục thân thiện với người dùng.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "B",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "B", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be skilled in = có kỹ năng về/trong. Sau chỗ trống cần giới từ 'in'."
   },
@@ -1014,33 +677,13 @@ const quizData = [
     "title": "Câu 19",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The staff are accustomed ___ working under tight deadlines.",
-    "questionVn": "Nhân viên đã quen với việc làm việc dưới hạn chót gấp.",
+    "questionVn": "Nhân viên đã quen ___ việc làm việc dưới hạn chót gấp.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "B",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "C",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "D",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      }
+      { "key": "A", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "B", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "C", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "D", "text": "to", "pos": "preposition", "vn": "đối với / tới" }
     ],
     "explanation": "Cấu trúc đúng là be accustomed to = quen với. Sau chỗ trống cần giới từ 'to'."
   },
@@ -1050,33 +693,13 @@ const quizData = [
     "title": "Câu 20",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The discount is intended ___ customers who order online.",
-    "questionVn": "Khoản giảm giá này được dành cho khách hàng đặt hàng trực tuyến.",
+    "questionVn": "Khoản giảm giá này được dành ___ khách hàng đặt hàng trực tuyến.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "B",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "B", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be intended for = được dành cho. Sau chỗ trống cần giới từ 'for'."
   },
@@ -1086,33 +709,13 @@ const quizData = [
     "title": "Câu 21",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The new policy is similar ___ the previous reimbursement rule.",
-    "questionVn": "Chính sách mới tương tự quy định hoàn tiền trước đây.",
+    "questionVn": "Chính sách mới tương tự ___ quy định hoàn tiền trước đây.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "B",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "C",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "B", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "C", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be similar to = tương tự với. Sau chỗ trống cần giới từ 'to'."
   },
@@ -1121,34 +724,14 @@ const quizData = [
     "label": "Practice · Question 22",
     "title": "Câu 22",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
-    "questionEn": "Customers were disappointed ___ the product’s limited features.",
-    "questionVn": "Khách hàng thất vọng về các tính năng hạn chế của sản phẩm.",
+    "questionEn": "Customers were disappointed ___ the product's limited features.",
+    "questionVn": "Khách hàng thất vọng ___ các tính năng hạn chế của sản phẩm.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      }
+      { "key": "A", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "of", "pos": "preposition", "vn": "về / của" }
     ],
     "explanation": "Cấu trúc đúng là be disappointed in = thất vọng về. Sau chỗ trống cần giới từ 'in'."
   },
@@ -1158,33 +741,13 @@ const quizData = [
     "title": "Câu 23",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The company is serious ___ improving workplace safety.",
-    "questionVn": "Công ty nghiêm túc về việc cải thiện an toàn nơi làm việc.",
+    "questionVn": "Công ty nghiêm túc ___ việc cải thiện an toàn nơi làm việc.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "C",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "D",
-        "text": "about",
-        "pos": "preposition",
-        "vn": "về / lo về"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "C", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "D", "text": "about", "pos": "preposition", "vn": "về / lo về" }
     ],
     "explanation": "Cấu trúc đúng là be serious about = nghiêm túc về. Sau chỗ trống cần giới từ 'about'."
   },
@@ -1194,33 +757,13 @@ const quizData = [
     "title": "Câu 24",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The package is composed ___ three separate documents.",
-    "questionVn": "Bộ hồ sơ bao gồm ba tài liệu riêng biệt.",
+    "questionVn": "Bộ hồ sơ bao gồm ___ ba tài liệu riêng biệt.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "of", "pos": "preposition", "vn": "về / của" }
     ],
     "explanation": "Cấu trúc đúng là be composed of = bao gồm/được cấu thành từ. Sau chỗ trống cần giới từ 'of'."
   },
@@ -1230,33 +773,13 @@ const quizData = [
     "title": "Câu 25",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "Visitors were impressed ___ the cleanliness of the facility.",
-    "questionVn": "Khách tham quan ấn tượng với sự sạch sẽ của cơ sở.",
+    "questionVn": "Khách tham quan ấn tượng ___ sự sạch sẽ của cơ sở.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "about",
-        "pos": "preposition",
-        "vn": "về / lo về"
-      },
-      {
-        "key": "B",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "C",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "D",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      }
+      { "key": "A", "text": "about", "pos": "preposition", "vn": "về / lo về" },
+      { "key": "B", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "C", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "D", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" }
     ],
     "explanation": "Cấu trúc đúng là be impressed with = ấn tượng với. Sau chỗ trống cần giới từ 'with'."
   },
@@ -1266,33 +789,13 @@ const quizData = [
     "title": "Câu 26",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The audit must be independent ___ the finance department.",
-    "questionVn": "Cuộc kiểm toán phải độc lập với phòng tài chính.",
+    "questionVn": "Cuộc kiểm toán phải độc lập ___ phòng tài chính.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "B",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "B", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be independent of = độc lập với. Sau chỗ trống cần giới từ 'of'."
   },
@@ -1301,34 +804,14 @@ const quizData = [
     "label": "Practice · Question 27",
     "title": "Câu 27",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
-    "questionEn": "The founder is married ___ the company’s chief designer.",
-    "questionVn": "Người sáng lập kết hôn với nhà thiết kế chính của công ty.",
+    "questionEn": "The founder is married ___ the company's chief designer.",
+    "questionVn": "Người sáng lập kết hôn ___ nhà thiết kế chính của công ty.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "to", "pos": "preposition", "vn": "đối với / tới" }
     ],
     "explanation": "Cấu trúc đúng là be married to = kết hôn với. Sau chỗ trống cần giới từ 'to'."
   },
@@ -1338,33 +821,13 @@ const quizData = [
     "title": "Câu 28",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The brand is associated ___ high-quality customer service.",
-    "questionVn": "Thương hiệu này gắn liền với dịch vụ khách hàng chất lượng cao.",
+    "questionVn": "Thương hiệu này gắn liền ___ dịch vụ khách hàng chất lượng cao.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "about",
-        "pos": "preposition",
-        "vn": "về / lo về"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "about", "pos": "preposition", "vn": "về / lo về" }
     ],
     "explanation": "Cấu trúc đúng là be associated with = được liên kết/gắn liền với. Sau chỗ trống cần giới từ 'with'."
   },
@@ -1374,33 +837,13 @@ const quizData = [
     "title": "Câu 29",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The board is opposed ___ increasing membership fees.",
-    "questionVn": "Hội đồng phản đối việc tăng phí thành viên.",
+    "questionVn": "Hội đồng phản đối ___ việc tăng phí thành viên.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "B",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "B", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be opposed to = phản đối. Sau chỗ trống cần giới từ 'to'."
   },
@@ -1410,33 +853,13 @@ const quizData = [
     "title": "Câu 30",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The entrance was covered ___ promotional posters.",
-    "questionVn": "Lối vào được phủ đầy áp phích quảng cáo.",
+    "questionVn": "Lối vào được phủ đầy ___ áp phích quảng cáo.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "about",
-        "pos": "preposition",
-        "vn": "về / lo về"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "D",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      }
+      { "key": "A", "text": "about", "pos": "preposition", "vn": "về / lo về" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "D", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" }
     ],
     "explanation": "Cấu trúc đúng là be covered with = được phủ bởi/đầy. Sau chỗ trống cần giới từ 'with'."
   },
@@ -1446,33 +869,13 @@ const quizData = [
     "title": "Câu 31",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The company is open ___ partnering with local suppliers.",
-    "questionVn": "Công ty sẵn sàng hợp tác với các nhà cung cấp địa phương.",
+    "questionVn": "Công ty sẵn sàng ___ việc hợp tác với các nhà cung cấp địa phương.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      }
+      { "key": "A", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "to", "pos": "preposition", "vn": "đối với / tới" }
     ],
     "explanation": "Cấu trúc đúng là be open to = sẵn sàng tiếp nhận/cởi mở với. Sau chỗ trống cần giới từ 'to'."
   },
@@ -1482,33 +885,13 @@ const quizData = [
     "title": "Câu 32",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The company is engaged ___ developing renewable energy solutions.",
-    "questionVn": "Công ty đang tham gia phát triển các giải pháp năng lượng tái tạo.",
+    "questionVn": "Công ty đang tham gia ___ việc phát triển các giải pháp năng lượng tái tạo.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "D",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      }
+      { "key": "A", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "D", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" }
     ],
     "explanation": "Cấu trúc đúng là be engaged in = tham gia vào. Sau chỗ trống cần giới từ 'in'."
   },
@@ -1518,33 +901,13 @@ const quizData = [
     "title": "Câu 33",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The employee was accused ___ sharing confidential information.",
-    "questionVn": "Nhân viên bị cáo buộc chia sẻ thông tin bảo mật.",
+    "questionVn": "Nhân viên bị cáo buộc ___ chia sẻ thông tin bảo mật.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "C",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "D",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "C", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "D", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" }
     ],
     "explanation": "Cấu trúc đúng là be accused of = bị buộc tội/bị cáo buộc. Sau chỗ trống cần giới từ 'of'."
   },
@@ -1554,33 +917,13 @@ const quizData = [
     "title": "Câu 34",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "We are grateful ___ your continued support.",
-    "questionVn": "Chúng tôi biết ơn vì sự hỗ trợ liên tục của bạn.",
+    "questionVn": "Chúng tôi biết ơn ___ sự hỗ trợ liên tục của bạn.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "B",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "C",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "D",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      }
+      { "key": "A", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "B", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "C", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "D", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" }
     ],
     "explanation": "Cấu trúc đúng là be grateful for = biết ơn vì. Sau chỗ trống cần giới từ 'for'."
   },
@@ -1590,33 +933,13 @@ const quizData = [
     "title": "Câu 35",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The meeting room is suitable ___ small group discussions.",
-    "questionVn": "Phòng họp này phù hợp cho các buổi thảo luận nhóm nhỏ.",
+    "questionVn": "Phòng họp này phù hợp ___ các buổi thảo luận nhóm nhỏ.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "B",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "C",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "B", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "C", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be suitable for = phù hợp với/cho. Sau chỗ trống cần giới từ 'for'."
   },
@@ -1626,33 +949,13 @@ const quizData = [
     "title": "Câu 36",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The director is serious ___ reducing unnecessary expenses.",
-    "questionVn": "Giám đốc nghiêm túc về việc giảm các chi phí không cần thiết.",
+    "questionVn": "Giám đốc nghiêm túc ___ việc giảm các chi phí không cần thiết.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "B",
-        "text": "about",
-        "pos": "preposition",
-        "vn": "về / lo về"
-      },
-      {
-        "key": "C",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "B", "text": "about", "pos": "preposition", "vn": "về / lo về" },
+      { "key": "C", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be serious about = nghiêm túc về. Sau chỗ trống cần giới từ 'about'."
   },
@@ -1662,33 +965,13 @@ const quizData = [
     "title": "Câu 37",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The shipment was accompanied ___ a detailed invoice.",
-    "questionVn": "Lô hàng đi kèm với hóa đơn chi tiết.",
+    "questionVn": "Lô hàng đi kèm ___ hóa đơn chi tiết.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "C",
-        "text": "by",
-        "pos": "preposition",
-        "vn": "bởi / do"
-      },
-      {
-        "key": "D",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "C", "text": "by", "pos": "preposition", "vn": "bởi / do" },
+      { "key": "D", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" }
     ],
     "explanation": "Cấu trúc đúng là be accompanied by = được đi kèm bởi/với. Sau chỗ trống cần giới từ 'by'."
   },
@@ -1698,33 +981,13 @@ const quizData = [
     "title": "Câu 38",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "We are appreciative ___ your detailed feedback.",
-    "questionVn": "Chúng tôi trân trọng phản hồi chi tiết của bạn.",
+    "questionVn": "Chúng tôi trân trọng ___ phản hồi chi tiết của bạn.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "C",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "D",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "C", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "D", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" }
     ],
     "explanation": "Cấu trúc đúng là be appreciative of = trân trọng/biết ơn về. Sau chỗ trống cần giới từ 'of'."
   },
@@ -1734,33 +997,13 @@ const quizData = [
     "title": "Câu 39",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The committee is composed ___ five senior managers.",
-    "questionVn": "Ủy ban bao gồm năm quản lý cấp cao.",
+    "questionVn": "Ủy ban bao gồm ___ năm quản lý cấp cao.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "D",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      }
+      { "key": "A", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "D", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" }
     ],
     "explanation": "Cấu trúc đúng là be composed of = bao gồm/được cấu thành từ. Sau chỗ trống cần giới từ 'of'."
   },
@@ -1770,33 +1013,13 @@ const quizData = [
     "title": "Câu 40",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "All delivery vehicles are equipped ___ GPS tracking devices.",
-    "questionVn": "Tất cả xe giao hàng được trang bị thiết bị định vị GPS.",
+    "questionVn": "Tất cả xe giao hàng được trang bị ___ thiết bị định vị GPS.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "about",
-        "pos": "preposition",
-        "vn": "về / lo về"
-      },
-      {
-        "key": "B",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "C",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "D",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      }
+      { "key": "A", "text": "about", "pos": "preposition", "vn": "về / lo về" },
+      { "key": "B", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "C", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "D", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" }
     ],
     "explanation": "Cấu trúc đúng là be equipped with = được trang bị với. Sau chỗ trống cần giới từ 'with'."
   },
@@ -1806,33 +1029,13 @@ const quizData = [
     "title": "Câu 41",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "Extra copies of the report are available ___ all participants.",
-    "questionVn": "Các bản sao bổ sung của báo cáo có sẵn cho tất cả người tham gia.",
+    "questionVn": "Các bản sao bổ sung của báo cáo có sẵn ___ tất cả người tham gia.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "D",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      }
+      { "key": "A", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "D", "text": "to", "pos": "preposition", "vn": "đối với / tới" }
     ],
     "explanation": "Cấu trúc đúng là be available for = có sẵn cho/sẵn sàng cho. Sau chỗ trống cần giới từ 'for'."
   },
@@ -1842,33 +1045,13 @@ const quizData = [
     "title": "Câu 42",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "This handbook is intended ___ newly hired employees.",
-    "questionVn": "Sổ tay này được dành cho nhân viên mới được tuyển.",
+    "questionVn": "Sổ tay này được dành ___ nhân viên mới được tuyển.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "B",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "C",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "D",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      }
+      { "key": "A", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "B", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "C", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "D", "text": "to", "pos": "preposition", "vn": "đối với / tới" }
     ],
     "explanation": "Cấu trúc đúng là be intended for = được dành cho. Sau chỗ trống cần giới từ 'for'."
   },
@@ -1878,33 +1061,13 @@ const quizData = [
     "title": "Câu 43",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The delay was caused ___ a problem with the supplier.",
-    "questionVn": "Sự chậm trễ được gây ra bởi vấn đề với nhà cung cấp.",
+    "questionVn": "Sự chậm trễ được gây ra ___ vấn đề với nhà cung cấp.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "C",
-        "text": "by",
-        "pos": "preposition",
-        "vn": "bởi / do"
-      },
-      {
-        "key": "D",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "C", "text": "by", "pos": "preposition", "vn": "bởi / do" },
+      { "key": "D", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" }
     ],
     "explanation": "Cấu trúc đúng là be caused by = được gây ra bởi. Sau chỗ trống cần giới từ 'by'."
   },
@@ -1914,33 +1077,13 @@ const quizData = [
     "title": "Câu 44",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "Applicants should be skilled ___ using spreadsheet software.",
-    "questionVn": "Ứng viên nên có kỹ năng sử dụng phần mềm bảng tính.",
+    "questionVn": "Ứng viên nên có kỹ năng ___ việc sử dụng phần mềm bảng tính.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "B",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "C",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "D",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      }
+      { "key": "A", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "B", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "C", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "D", "text": "of", "pos": "preposition", "vn": "về / của" }
     ],
     "explanation": "Cấu trúc đúng là be skilled in = có kỹ năng về/trong. Sau chỗ trống cần giới từ 'in'."
   },
@@ -1950,33 +1093,13 @@ const quizData = [
     "title": "Câu 45",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "Several researchers are engaged ___ testing the new material.",
-    "questionVn": "Một vài nhà nghiên cứu đang tham gia thử nghiệm vật liệu mới.",
+    "questionVn": "Một vài nhà nghiên cứu đang tham gia ___ việc thử nghiệm vật liệu mới.",
     "answer": "D",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" }
     ],
     "explanation": "Cấu trúc đúng là be engaged in = tham gia vào. Sau chỗ trống cần giới từ 'in'."
   },
@@ -1986,33 +1109,13 @@ const quizData = [
     "title": "Câu 46",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The table was covered ___ product samples.",
-    "questionVn": "Cái bàn được phủ đầy các mẫu sản phẩm.",
+    "questionVn": "Cái bàn được phủ đầy ___ các mẫu sản phẩm.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "about",
-        "pos": "preposition",
-        "vn": "về / lo về"
-      }
+      { "key": "A", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "about", "pos": "preposition", "vn": "về / lo về" }
     ],
     "explanation": "Cấu trúc đúng là be covered with = được phủ bởi/đầy. Sau chỗ trống cần giới từ 'with'."
   },
@@ -2022,33 +1125,13 @@ const quizData = [
     "title": "Câu 47",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "Some residents are opposed ___ the construction plan.",
-    "questionVn": "Một số cư dân phản đối kế hoạch xây dựng.",
+    "questionVn": "Một số cư dân phản đối ___ kế hoạch xây dựng.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "D",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      }
+      { "key": "A", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "D", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" }
     ],
     "explanation": "Cấu trúc đúng là be opposed to = phản đối. Sau chỗ trống cần giới từ 'to'."
   },
@@ -2057,34 +1140,14 @@ const quizData = [
     "label": "Practice · Question 48",
     "title": "Câu 48",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
-    "questionEn": "The director was appreciative ___ the staff’s extra effort.",
-    "questionVn": "Giám đốc trân trọng nỗ lực thêm của nhân viên.",
+    "questionEn": "The director was appreciative ___ the staff's extra effort.",
+    "questionVn": "Giám đốc trân trọng ___ nỗ lực thêm của nhân viên.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "B",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "C",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "B", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "C", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be appreciative of = trân trọng/biết ơn về. Sau chỗ trống cần giới từ 'of'."
   },
@@ -2094,33 +1157,13 @@ const quizData = [
     "title": "Câu 49",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "Employees were confused ___ the changes to the schedule.",
-    "questionVn": "Nhân viên bối rối về các thay đổi trong lịch trình.",
+    "questionVn": "Nhân viên bối rối ___ các thay đổi trong lịch trình.",
     "answer": "B",
     "options": [
-      {
-        "key": "A",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      },
-      {
-        "key": "B",
-        "text": "about",
-        "pos": "preposition",
-        "vn": "về / lo về"
-      },
-      {
-        "key": "C",
-        "text": "in",
-        "pos": "preposition",
-        "vn": "trong / về lĩnh vực"
-      },
-      {
-        "key": "D",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      }
+      { "key": "A", "text": "of", "pos": "preposition", "vn": "về / của" },
+      { "key": "B", "text": "about", "pos": "preposition", "vn": "về / lo về" },
+      { "key": "C", "text": "in", "pos": "preposition", "vn": "trong / về lĩnh vực" },
+      { "key": "D", "text": "with", "pos": "preposition", "vn": "với / bằng" }
     ],
     "explanation": "Cấu trúc đúng là be confused about = bối rối/không rõ về. Sau chỗ trống cần giới từ 'about'."
   },
@@ -2130,33 +1173,13 @@ const quizData = [
     "title": "Câu 50",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The keynote speaker is married ___ a well-known architect.",
-    "questionVn": "Diễn giả chính kết hôn với một kiến trúc sư nổi tiếng.",
+    "questionVn": "Diễn giả chính kết hôn ___ một kiến trúc sư nổi tiếng.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "B",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "C",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "D",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      }
+      { "key": "A", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "B", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "C", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "D", "text": "of", "pos": "preposition", "vn": "về / của" }
     ],
     "explanation": "Cấu trúc đúng là be married to = kết hôn với. Sau chỗ trống cần giới từ 'to'."
   },
@@ -2166,33 +1189,13 @@ const quizData = [
     "title": "Câu 51",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "The power outage was caused ___ severe weather.",
-    "questionVn": "Việc mất điện được gây ra bởi thời tiết khắc nghiệt.",
+    "questionVn": "Việc mất điện được gây ra ___ thời tiết khắc nghiệt.",
     "answer": "A",
     "options": [
-      {
-        "key": "A",
-        "text": "by",
-        "pos": "preposition",
-        "vn": "bởi / do"
-      },
-      {
-        "key": "B",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "C",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "D",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      }
+      { "key": "A", "text": "by", "pos": "preposition", "vn": "bởi / do" },
+      { "key": "B", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "C", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "D", "text": "of", "pos": "preposition", "vn": "về / của" }
     ],
     "explanation": "Cấu trúc đúng là be caused by = được gây ra bởi. Sau chỗ trống cần giới từ 'by'."
   },
@@ -2202,33 +1205,13 @@ const quizData = [
     "title": "Câu 52",
     "category": "Chọn giới từ đúng để hoàn thành cấu trúc be + adj/V3/-ed + preposition.",
     "questionEn": "Management is open ___ suggestions from employees.",
-    "questionVn": "Ban quản lý sẵn sàng tiếp nhận đề xuất từ nhân viên.",
+    "questionVn": "Ban quản lý sẵn sàng tiếp nhận ___ đề xuất từ nhân viên.",
     "answer": "C",
     "options": [
-      {
-        "key": "A",
-        "text": "with",
-        "pos": "preposition",
-        "vn": "với / bằng"
-      },
-      {
-        "key": "B",
-        "text": "for",
-        "pos": "preposition",
-        "vn": "cho / vì / đối với"
-      },
-      {
-        "key": "C",
-        "text": "to",
-        "pos": "preposition",
-        "vn": "đối với / tới"
-      },
-      {
-        "key": "D",
-        "text": "of",
-        "pos": "preposition",
-        "vn": "về / của"
-      }
+      { "key": "A", "text": "with", "pos": "preposition", "vn": "với / bằng" },
+      { "key": "B", "text": "for", "pos": "preposition", "vn": "cho / vì / đối với" },
+      { "key": "C", "text": "to", "pos": "preposition", "vn": "đối với / tới" },
+      { "key": "D", "text": "of", "pos": "preposition", "vn": "về / của" }
     ],
     "explanation": "Cấu trúc đúng là be open to = sẵn sàng tiếp nhận/cởi mở với. Sau chỗ trống cần giới từ 'to'."
   }
@@ -2240,7 +1223,7 @@ function finalResultSlide(){
     + '<div class="slide-label">Hoàn thành</div>'
     + '<h2>Kết quả 52 câu cấu trúc be + adj/V3/-ed + prep - nhóm 2</h2>'
     + '<div class="content-area">'
-    + '<div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><p class="submit-status" id="submitStatus">Bấm <b>Nộp kết quả</b> để lưu bài làm.</p><button class="nav-btn" id="submitResultBtn" type="button" onclick="submitFinalResult()" style="display:inline-block;margin-top:12px">Nộp kết quả</button><a class="nav-btn home-btn" href="index.html" style="display:inline-block;margin-top:12px;margin-left:10px;text-decoration:none">Về trang chủ</a></div>'
+    + '<div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><p class="submit-status" id="submitStatus">Bấm <b>Nộp kết quả</b> để lưu bài làm.</p><button class="nav-btn" id="submitResultBtn" type="button" onclick="submitFinalResult()" style="display:inline-block;margin-top:12px">Nộp kết quả</button><button class="nav-btn home-btn" type="button" onclick="requestGoHome()" style="display:inline-block;margin-top:12px;margin-left:10px;text-decoration:none">Về trang chủ</button></div>'
     + '<div class="method-box"><h3>Ghi chú</h3><ul class="steps"><li>Câu chưa chọn đáp án = sai.</li></ul></div>'
     + '</div></section>';
 }
@@ -2449,6 +1432,20 @@ function requireStudentSession(){
 }
 
 let resultSubmitted=false;
+function requestGoHome(){
+  if(resultSubmitted){
+    location.href='index.html';
+    return;
+  }
+  document.getElementById('homeConfirm')?.classList.add('show');
+}
+function closeHomeConfirm(event){
+  if(event&&event.target&&event.target.id!=='homeConfirm') return;
+  document.getElementById('homeConfirm')?.classList.remove('show');
+}
+function confirmGoHome(){
+  location.href='index.html';
+}
 function logoutStudent(){
   localStorage.removeItem(STUDENT_KEY);
   location.href='index.html';
