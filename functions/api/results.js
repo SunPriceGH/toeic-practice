@@ -1,3 +1,5 @@
+import { isAdminPassword } from '../_shared/admin-auth.js';
+
 export async function onRequestPost(context) {
   try {
     if (!context.env.STUDENT_RESULTS) return json({ ok:false, error:'Thiếu KV binding STUDENT_RESULTS.' }, 500);
@@ -30,8 +32,7 @@ export async function onRequestGet(context) {
   try {
     if (!context.env.STUDENT_RESULTS) return json({ ok:false, error:'Thiếu KV binding STUDENT_RESULTS.' }, 500);
     const adminPassword = context.request.headers.get('x-admin-password') || '';
-    const expected = context.env.ADMIN_PASSWORD || 'admin123';
-    if (adminPassword !== expected) return json({ ok:false, error:'Sai mật khẩu giáo viên.' }, 401);
+    if (!isAdminPassword(context.env, adminPassword)) return json({ ok:false, error:'Sai mật khẩu giáo viên.' }, 401);
     const url = new URL(context.request.url);
     const id = url.searchParams.get('id');
     if (id) {
@@ -56,8 +57,7 @@ export async function onRequestDelete(context) {
   try {
     if (!context.env.STUDENT_RESULTS) return json({ ok:false, error:'Thiếu KV binding STUDENT_RESULTS.' }, 500);
     const adminPassword = context.request.headers.get('x-admin-password') || '';
-    const expected = context.env.ADMIN_PASSWORD || 'admin123';
-    if (adminPassword !== expected) return json({ ok:false, error:'Sai mật khẩu giáo viên.' }, 401);
+    if (!isAdminPassword(context.env, adminPassword)) return json({ ok:false, error:'Sai mật khẩu giáo viên.' }, 401);
 
     const url = new URL(context.request.url);
     const id = url.searchParams.get('id');

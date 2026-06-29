@@ -4,8 +4,9 @@
 - `index.html`: trang chủ + đăng nhập học viên.
 - `toeic-part5-word-form-practice-100.html`: bài 100 câu từ loại.
 - `results.html`: giáo viên xem/tải JSON kết quả.
-- `functions/api/login.js`: kiểm tra email whitelist + mật khẩu học viên.
+- `functions/api/login.js`: kiểm tra email whitelist + mật khẩu học viên/admin.
 - `functions/api/results.js`: lưu/xem kết quả qua Cloudflare KV.
+- `functions/_shared/admin-auth.js`: helper dùng chung mật khẩu admin.
 - `student_result/`: placeholder. Cloudflare Pages tĩnh không thể ghi file trực tiếp vào thư mục này sau khi deploy.
 
 ## Cơ chế đăng nhập học viên
@@ -25,6 +26,8 @@ Nếu `ALLOWED_STUDENT_EMAILS` có danh sách email, chỉ các email trong danh
 ## Mật khẩu mặc định
 - Học viên: `toeic123`
 - Giáo viên: `admin123`
+
+Trang chủ `index.html` dùng cùng mật khẩu giáo viên/admin này cho chức năng lock/unlock bài học. Không cần đặt thêm mật khẩu admin riêng trong frontend.
 
 Nên đổi bằng Environment Variables trong Cloudflare Pages:
 - `STUDENT_PASSWORD`

@@ -1,3 +1,5 @@
+import { isAdminPassword } from '../_shared/admin-auth.js';
+
 function normalizeEmail(email) {
   return String(email || '').trim().toLowerCase();
 }
@@ -18,7 +20,6 @@ export async function onRequestPost(context) {
     const password = String(body.password || '');
 
     const studentPassword = env.STUDENT_PASSWORD || 'toeic123';
-    const adminPassword = env.ADMIN_PASSWORD || 'admin123';
     const allowedEmails = parseAllowedEmails(env.ALLOWED_STUDENT_EMAILS || '');
 
     if (!email || !email.includes('@')) {
@@ -26,7 +27,7 @@ export async function onRequestPost(context) {
     }
 
     // Admin login is allowed for teacher/admin tools if needed.
-    if (password === adminPassword) {
+    if (isAdminPassword(env, password)) {
       return json({
         ok: true,
         role: 'admin',

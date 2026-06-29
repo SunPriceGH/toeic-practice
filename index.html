@@ -91,7 +91,6 @@ html.anti-download-lock svg{
 <script>
 const STUDENT_KEY='toeic_student_session';
 const LESSON_LOCK_KEY='toeic_locked_lessons';
-const ADMIN_PASSWORD='123456';
 let targetPage='toeic-part5-word-form-practice-100.html';
 let adminMode=null;
 let pendingLessonId='';
@@ -131,17 +130,27 @@ function openAdminModal(lessonId){
 }
 function hideAdminModal(){document.getElementById('adminModal').classList.remove('show')}
 function closeAdminModal(e){if(e.target.id==='adminModal')hideAdminModal()}
-function confirmAdminAction(e){
+async function verifyAdminPassword(password){
+  const res=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:'admin@toeic.local',password})});
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok||!data.ok||data.role!=='admin') throw new Error(data.error||'Sai mật khẩu admin.');
+  return data;
+}
+async function confirmAdminAction(e){
   e.preventDefault();
   const password=document.getElementById('adminPassword').value;
-  if(password!==ADMIN_PASSWORD) return showAdminError('Sai mật khẩu admin.');
-  let locked=getLockedLessons();
-  if(adminMode==='unlock') locked=locked.filter(id=>id!==pendingLessonId);
-  if(adminMode==='lock'&&!locked.includes(pendingLessonId)) locked.push(pendingLessonId);
-  saveLockedLessons(locked);
-  applyLessonLocks();
-  hideAdminModal();
-  setAdminMode(null);
+  try{
+    await verifyAdminPassword(password);
+    let locked=getLockedLessons();
+    if(adminMode==='unlock') locked=locked.filter(id=>id!==pendingLessonId);
+    if(adminMode==='lock'&&!locked.includes(pendingLessonId)) locked.push(pendingLessonId);
+    saveLockedLessons(locked);
+    applyLessonLocks();
+    hideAdminModal();
+    setAdminMode(null);
+  }catch(err){
+    showAdminError(err.message||'Sai mật khẩu admin.');
+  }
 }
 document.addEventListener('click',function(e){
   const card=e.target.closest('.lesson-card');
