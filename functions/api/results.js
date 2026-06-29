@@ -43,6 +43,7 @@ export async function onRequestGet(context) {
     const list = await context.env.STUDENT_RESULTS.list({ limit: 1000 });
     const results = [];
     for (const key of list.keys.sort((a,b)=>String(b.name).localeCompare(String(a.name)))) {
+      if (String(key.name).startsWith('__')) continue;
       const text = await context.env.STUDENT_RESULTS.get(key.name);
       if (text) results.push(JSON.parse(text));
     }
