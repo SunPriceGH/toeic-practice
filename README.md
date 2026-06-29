@@ -6,6 +6,7 @@
 - `results.html`: giáo viên xem/tải JSON kết quả.
 - `functions/api/login.js`: kiểm tra email whitelist + mật khẩu học viên/admin.
 - `functions/api/results.js`: lưu/xem kết quả qua Cloudflare KV.
+- `functions/api/lesson-locks.js`: lưu/xem trạng thái khóa/mở khóa bài học toàn hệ thống qua Cloudflare KV.
 - `functions/_shared/admin-auth.js`: helper dùng chung mật khẩu admin.
 - `student_result/`: placeholder. Cloudflare Pages tĩnh không thể ghi file trực tiếp vào thư mục này sau khi deploy.
 
@@ -48,6 +49,12 @@ Lưu ý: danh sách email phân tách bằng dấu phẩy, không cần xuống 
 Tạo KV namespace, ví dụ `STUDENT_RESULTS`, rồi vào Cloudflare Pages > Settings > Functions > KV namespace bindings:
 - Variable name: `STUDENT_RESULTS`
 - KV namespace: namespace bạn vừa tạo
+
+KV này được dùng cho cả:
+- Kết quả học viên.
+- Trạng thái khóa/mở khóa bài học toàn hệ thống.
+
+Nếu chưa có trạng thái khóa trong KV, trang chủ sẽ mặc định khóa toàn bộ bài. Khi giáo viên mở khóa bằng mật khẩu admin, trạng thái được lưu lên KV và mọi học viên trên máy/trình duyệt khác sẽ thấy bài đã mở khóa.
 
 ## Kết quả học viên
 Khi học viên làm xong 100 câu, bài sẽ tự gửi kết quả lên `/api/results`.

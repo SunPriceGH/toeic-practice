@@ -25,17 +25,36 @@ html.anti-download-lock svg{
   user-drag:none!important;
 }
 
+.admin-toolbar{flex-direction:column;align-items:flex-end}
+.admin-toolbar-row{display:flex;gap:10px}
+.admin-cancel-btn{display:none;width:44px;height:44px;border:none;border-radius:999px;background:#fee2e2;color:#b91c1c;place-items:center;cursor:pointer;box-shadow:0 8px 18px rgba(185,28,28,.16);border:2px solid #fecaca}
+.admin-cancel-btn.show{display:grid}
+.admin-cancel-btn:hover{background:#fecaca;transform:translateY(-1px)}
+.admin-status{display:none;max-width:260px;background:#fff;border:2px solid #dbeafe;border-radius:16px;padding:10px 12px;font-size:14px;font-weight:900;color:#334155;box-shadow:0 8px 18px rgba(15,23,42,.12);line-height:1.35;text-align:right}
+.admin-status.show{display:block}
+.admin-status.ok{border-color:#bbf7d0;background:#f0fdf4;color:#166534}
+.admin-status.err{border-color:#fecdd3;background:#fff1f2;color:#be123c}
+.lesson-card.updating{opacity:.68;filter:saturate(.7)}
+body.admin-lock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='11' width='14' height='10' rx='2' fill='%23dbeafe'/%3E%3Cpath d='M8 11V7a4 4 0 0 1 8 0v4'/%3E%3C/svg%3E") 10 10,pointer}
+body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='11' width='14' height='10' rx='2' fill='%23dcfce7'/%3E%3Cpath d='M8 11V7a4 4 0 0 1 7.5-2'/%3E%3Cpath d='M16 3l3 3'/%3E%3C/svg%3E") 10 10,pointer}
+
 </style>
 </head>
 <body>
 <div class="top-line"></div>
 <div class="admin-toolbar" aria-label="Admin lesson controls">
-  <button class="icon-btn" id="lockModeBtn" type="button" onclick="setAdminMode('lock')" title="Lock bài học" aria-label="Lock bài học">
-    <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+  <div class="admin-toolbar-row">
+    <button class="icon-btn" id="lockModeBtn" type="button" onclick="requestAdminMode('lock')" title="Lock bài học" aria-label="Lock bài học">
+      <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+    </button>
+    <button class="icon-btn" id="unlockModeBtn" type="button" onclick="requestAdminMode('unlock')" title="Unlock bài học" aria-label="Unlock bài học">
+      <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 7.5-2"></path><path d="M16 3l3 3"></path></svg>
+    </button>
+  </div>
+  <button class="admin-cancel-btn" id="adminCancelBtn" type="button" onclick="clearAdminMode()" title="Hủy chế độ lock/unlock" aria-label="Hủy chế độ lock/unlock">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg>
   </button>
-  <button class="icon-btn" id="unlockModeBtn" type="button" onclick="setAdminMode('unlock')" title="Unlock bài học" aria-label="Unlock bài học">
-    <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 7.5-2"></path><path d="M16 3l3 3"></path></svg>
-  </button>
+  <div class="admin-status" id="adminStatus"></div>
 </div>
 <main class="page">
   <section class="hero">
@@ -92,7 +111,7 @@ html.anti-download-lock svg{
   </form>
 </div>
 <div class="modal" id="adminModal" onclick="closeAdminModal(event)">
-  <form class="login-box" onsubmit="confirmAdminAction(event)" onclick="event.stopPropagation()">
+  <form class="login-box" onsubmit="confirmAdminMode(event)" onclick="event.stopPropagation()">
     <h3 id="adminModalTitle">Mật khẩu admin</h3>
     <p id="adminModalText">Nhập mật khẩu admin để thay đổi trạng thái bài học.</p>
     <div class="field"><label>Mật khẩu admin</label><input id="adminPassword" type="password" autocomplete="current-password" required placeholder="Nhập mật khẩu admin"></div>
@@ -102,44 +121,70 @@ html.anti-download-lock svg{
 </div>
 <script>
 const STUDENT_KEY='toeic_student_session';
-const LESSON_LOCK_KEY='toeic_locked_lessons';
+const DEFAULT_LOCKED_LESSON_IDS=Array.from(document.querySelectorAll('.lesson-card')).map(card=>card.dataset.lessonId);
+let lockedLessonIds=[...DEFAULT_LOCKED_LESSON_IDS];
 let targetPage='toeic-part5-word-form-practice-100.html';
 let adminMode=null;
-let pendingLessonId='';
+let pendingAdminMode=null;
+let adminPasswordCache='';
 function openLogin(page){targetPage=page;document.getElementById('loginModal').classList.add('show');setTimeout(()=>document.getElementById('email').focus(),50)}
 function hideLogin(){document.getElementById('loginModal').classList.remove('show')}
 function closeLogin(e){if(e.target.id==='loginModal')hideLogin()}
 function showError(msg){const el=document.getElementById('loginError');el.textContent=msg;el.classList.add('show')}
-function getLockedLessons(){
-  try{
-    const raw=localStorage.getItem(LESSON_LOCK_KEY);
-    if(raw) return JSON.parse(raw);
-  }catch(e){}
-  return Array.from(document.querySelectorAll('.lesson-card')).map(card=>card.dataset.lessonId);
-}
-function saveLockedLessons(ids){localStorage.setItem(LESSON_LOCK_KEY,JSON.stringify(ids))}
-function isLessonLocked(id){return getLockedLessons().includes(id)}
+function isLessonLocked(id){return lockedLessonIds.includes(id)}
 function applyLessonLocks(){
-  const locked=getLockedLessons();
   document.querySelectorAll('.lesson-card').forEach(card=>{
-    card.classList.toggle('locked',locked.includes(card.dataset.lessonId));
+    card.classList.toggle('locked',isLessonLocked(card.dataset.lessonId));
   });
 }
-function setAdminMode(mode){
-  adminMode=adminMode===mode?null:mode;
-  document.getElementById('lockModeBtn').classList.toggle('active',adminMode==='lock');
-  document.getElementById('unlockModeBtn').classList.toggle('active',adminMode==='unlock');
+function setAdminStatus(msg,type=''){
+  const el=document.getElementById('adminStatus');
+  if(!msg){el.textContent='';el.className='admin-status';return;}
+  el.textContent=msg;
+  el.className='admin-status show '+type;
 }
-function showAdminError(msg){const el=document.getElementById('adminError');el.textContent=msg;el.classList.add('show')}
-function openAdminModal(lessonId){
-  pendingLessonId=lessonId;
+async function loadLessonLocks(){
+  try{
+    const res=await fetch('/api/lesson-locks',{cache:'no-store'});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không tải được trạng thái khóa bài.');
+    lockedLessonIds=Array.isArray(data.lockedLessonIds)?data.lockedLessonIds:[...DEFAULT_LOCKED_LESSON_IDS];
+  }catch(err){
+    lockedLessonIds=[...DEFAULT_LOCKED_LESSON_IDS];
+    setAdminStatus('Không tải được khóa hệ thống. Tạm khóa toàn bộ.', 'err');
+  }
+  applyLessonLocks();
+}
+function requestAdminMode(mode){
+  pendingAdminMode=mode;
   document.getElementById('adminError').classList.remove('show');
   document.getElementById('adminPassword').value='';
-  document.getElementById('adminModalTitle').textContent=adminMode==='unlock'?'Unlock bài học':'Lock bài học';
-  document.getElementById('adminModalText').textContent=adminMode==='unlock'?'Nhập mật khẩu admin để mở khóa bài học này.':'Nhập mật khẩu admin để khóa bài học này.';
+  document.getElementById('adminModalTitle').textContent=mode==='unlock'?'Xác nhận mở khóa':'Xác nhận khóa';
+  document.getElementById('adminModalText').textContent=mode==='unlock'?'Nhập mật khẩu admin. Sau khi đúng, con trỏ sẽ chuyển sang chế độ mở khóa và bạn có thể click nhiều bài liên tiếp.':'Nhập mật khẩu admin. Sau khi đúng, con trỏ sẽ chuyển sang chế độ khóa và bạn có thể click nhiều bài liên tiếp.';
   document.getElementById('adminModal').classList.add('show');
   setTimeout(()=>document.getElementById('adminPassword').focus(),50);
 }
+function activateAdminMode(mode,password){
+  adminMode=mode;
+  adminPasswordCache=password;
+  document.body.classList.toggle('admin-lock-mode',mode==='lock');
+  document.body.classList.toggle('admin-unlock-mode',mode==='unlock');
+  document.getElementById('lockModeBtn').classList.toggle('active',mode==='lock');
+  document.getElementById('unlockModeBtn').classList.toggle('active',mode==='unlock');
+  document.getElementById('adminCancelBtn').classList.add('show');
+  setAdminStatus(mode==='unlock'?'Đang ở chế độ mở khóa. Click các bài cần mở.':'Đang ở chế độ khóa. Click các bài cần khóa.','ok');
+}
+function clearAdminMode(){
+  adminMode=null;
+  pendingAdminMode=null;
+  adminPasswordCache='';
+  document.body.classList.remove('admin-lock-mode','admin-unlock-mode');
+  document.getElementById('lockModeBtn').classList.remove('active');
+  document.getElementById('unlockModeBtn').classList.remove('active');
+  document.getElementById('adminCancelBtn').classList.remove('show');
+  setAdminStatus('');
+}
+function showAdminError(msg){const el=document.getElementById('adminError');el.textContent=msg;el.classList.add('show')}
 function hideAdminModal(){document.getElementById('adminModal').classList.remove('show')}
 function closeAdminModal(e){if(e.target.id==='adminModal')hideAdminModal()}
 async function verifyAdminPassword(password){
@@ -148,20 +193,33 @@ async function verifyAdminPassword(password){
   if(!res.ok||!data.ok||data.role!=='admin') throw new Error(data.error||'Sai mật khẩu admin.');
   return data;
 }
-async function confirmAdminAction(e){
+async function confirmAdminMode(e){
   e.preventDefault();
   const password=document.getElementById('adminPassword').value;
   try{
     await verifyAdminPassword(password);
-    let locked=getLockedLessons();
-    if(adminMode==='unlock') locked=locked.filter(id=>id!==pendingLessonId);
-    if(adminMode==='lock'&&!locked.includes(pendingLessonId)) locked.push(pendingLessonId);
-    saveLockedLessons(locked);
-    applyLessonLocks();
     hideAdminModal();
-    setAdminMode(null);
+    activateAdminMode(pendingAdminMode,password);
   }catch(err){
     showAdminError(err.message||'Sai mật khẩu admin.');
+  }
+}
+async function updateLessonLock(lessonId,card){
+  if(!adminMode||!adminPasswordCache) return;
+  card.classList.add('updating');
+  setAdminStatus('Đang cập nhật...', 'ok');
+  try{
+    const res=await fetch('/api/lesson-locks',{method:'POST',headers:{'Content-Type':'application/json','x-admin-password':adminPasswordCache},body:JSON.stringify({lessonId,action:adminMode})});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không cập nhật được trạng thái bài.');
+    lockedLessonIds=Array.isArray(data.lockedLessonIds)?data.lockedLessonIds:lockedLessonIds;
+    applyLessonLocks();
+    const title=card.querySelector('h2')?.textContent?.trim()||'Bài học';
+    setAdminStatus((adminMode==='unlock'?'Đã mở khóa: ':'Đã khóa: ')+title,'ok');
+  }catch(err){
+    setAdminStatus(err.message||'Không cập nhật được trạng thái bài.','err');
+  }finally{
+    card.classList.remove('updating');
   }
 }
 document.addEventListener('click',function(e){
@@ -171,7 +229,7 @@ document.addEventListener('click',function(e){
   if(adminMode){
     e.preventDefault();
     e.stopPropagation();
-    openAdminModal(lessonId);
+    updateLessonLock(lessonId,card);
     return;
   }
   if(isLessonLocked(lessonId)){
@@ -195,7 +253,7 @@ async function loginStudent(e){
   }
 }
 const params=new URLSearchParams(location.search);if(params.get('next')) openLogin(params.get('next'));
-applyLessonLocks();
+loadLessonLocks();
 </script>
 
 <script>
