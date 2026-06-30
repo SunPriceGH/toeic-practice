@@ -921,7 +921,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 63,
@@ -951,7 +953,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 64,
@@ -981,7 +985,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 65,
@@ -1001,7 +1007,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 66,
@@ -1031,7 +1039,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 67,
@@ -1061,7 +1071,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 68,
@@ -1091,7 +1103,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 69,
@@ -1121,7 +1135,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 70,
@@ -1130,7 +1146,9 @@ window.LISTENING_DATA = {
         "options": [],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       }
     ],
     "part4": [
@@ -1882,7 +1900,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 96,
@@ -1912,7 +1932,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 97,
@@ -1942,7 +1964,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 98,
@@ -1972,7 +1996,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 99,
@@ -1997,7 +2023,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 100,
@@ -2027,7 +2055,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       }
     ]
   },
@@ -2953,7 +2983,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 63,
@@ -2983,7 +3015,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 64,
@@ -3013,7 +3047,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 65,
@@ -3043,7 +3079,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 66,
@@ -3073,7 +3111,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 67,
@@ -3103,7 +3143,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 68,
@@ -3133,7 +3175,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 69,
@@ -3163,7 +3207,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 70,
@@ -3193,7 +3239,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       }
     ],
     "part4": [
@@ -3945,7 +3993,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 96,
@@ -3975,7 +4025,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 97,
@@ -4000,7 +4052,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 98,
@@ -4030,7 +4084,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 99,
@@ -4050,7 +4106,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 100,
@@ -4075,7 +4133,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-2-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       }
     ]
   },
@@ -5006,7 +5066,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 63,
@@ -5031,7 +5093,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 64,
@@ -5061,7 +5125,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 65,
@@ -5091,7 +5157,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 66,
@@ -5121,7 +5189,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 67,
@@ -5151,7 +5221,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 68,
@@ -5181,7 +5253,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 69,
@@ -5211,7 +5285,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 70,
@@ -5241,7 +5317,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       }
     ],
     "part4": [
@@ -5948,7 +6026,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 96,
@@ -5978,7 +6058,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 97,
@@ -6008,7 +6090,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 98,
@@ -6028,7 +6112,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 99,
@@ -6058,7 +6144,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 100,
@@ -6088,7 +6176,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-3-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       }
     ]
   },
@@ -6993,7 +7083,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 63,
@@ -7023,7 +7115,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 64,
@@ -7053,7 +7147,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 65,
@@ -7083,7 +7179,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 66,
@@ -7113,7 +7211,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 67,
@@ -7143,7 +7243,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 68,
@@ -7173,7 +7275,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 69,
@@ -7203,7 +7307,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 70,
@@ -7233,7 +7339,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       }
     ],
     "part4": [
@@ -7975,7 +8083,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 96,
@@ -7990,7 +8100,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 97,
@@ -8010,7 +8122,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 98,
@@ -8040,7 +8154,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 99,
@@ -8070,7 +8186,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 100,
@@ -8100,7 +8218,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-4-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       }
     ]
   },
@@ -9011,7 +9131,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 63,
@@ -9041,7 +9163,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 64,
@@ -9071,7 +9195,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 65,
@@ -9101,7 +9227,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 66,
@@ -9131,7 +9259,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 67,
@@ -9161,7 +9291,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 68,
@@ -9191,7 +9323,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 69,
@@ -9221,7 +9355,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 70,
@@ -9251,7 +9387,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       }
     ],
     "part4": [
@@ -10003,7 +10141,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 96,
@@ -10033,7 +10173,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 97,
@@ -10063,7 +10205,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 98,
@@ -10093,7 +10237,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 99,
@@ -10123,7 +10269,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 100,
@@ -10153,7 +10301,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-5-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       }
     ]
   },
@@ -11079,7 +11229,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 63,
@@ -11099,7 +11251,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 64,
@@ -11108,7 +11262,9 @@ window.LISTENING_DATA = {
         "options": [],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 65,
@@ -11138,7 +11294,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 66,
@@ -11163,7 +11321,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 67,
@@ -11193,7 +11353,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 68,
@@ -11223,7 +11385,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 69,
@@ -11253,7 +11417,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 70,
@@ -11283,7 +11449,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       }
     ],
     "part4": [
@@ -12025,7 +12193,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 96,
@@ -12055,7 +12225,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 97,
@@ -12085,7 +12257,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 98,
@@ -12115,7 +12289,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 99,
@@ -12145,7 +12321,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 100,
@@ -12175,7 +12353,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-6-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       }
     ]
   },
@@ -13111,7 +13291,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 63,
@@ -13141,7 +13323,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 64,
@@ -13171,7 +13355,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 65,
@@ -13201,7 +13387,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 66,
@@ -13231,7 +13419,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 67,
@@ -13261,7 +13451,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 68,
@@ -13291,7 +13483,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 69,
@@ -13321,7 +13515,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 70,
@@ -13351,7 +13547,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       }
     ],
     "part4": [
@@ -14098,7 +14296,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 96,
@@ -14128,7 +14328,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 97,
@@ -14158,7 +14360,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 98,
@@ -14188,7 +14392,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 99,
@@ -14218,7 +14424,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 100,
@@ -14248,7 +14456,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-7-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       }
     ]
   },
@@ -15184,7 +15394,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 63,
@@ -15214,7 +15426,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 64,
@@ -15244,7 +15458,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 65,
@@ -15274,7 +15490,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 66,
@@ -15304,7 +15522,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 67,
@@ -15329,7 +15549,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 68,
@@ -15359,7 +15581,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 69,
@@ -15379,7 +15603,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 70,
@@ -15409,7 +15635,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       }
     ],
     "part4": [
@@ -16141,7 +16369,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 96,
@@ -16171,7 +16401,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 97,
@@ -16201,7 +16433,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 98,
@@ -16231,7 +16465,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 99,
@@ -16261,7 +16497,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 100,
@@ -16291,7 +16529,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-8-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       }
     ]
   },
@@ -17201,7 +17441,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 63,
@@ -17231,7 +17473,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 64,
@@ -17261,7 +17505,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 65,
@@ -17291,7 +17537,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 66,
@@ -17321,7 +17569,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 67,
@@ -17351,7 +17601,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 68,
@@ -17381,7 +17633,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 69,
@@ -17411,7 +17665,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 70,
@@ -17441,7 +17697,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       }
     ],
     "part4": [
@@ -18123,7 +18381,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 96,
@@ -18143,7 +18403,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 97,
@@ -18173,7 +18435,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 98,
@@ -18193,7 +18457,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 99,
@@ -18202,7 +18468,9 @@ window.LISTENING_DATA = {
         "options": [],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 100,
@@ -18232,7 +18500,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-9-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       }
     ]
   },
@@ -19163,7 +19433,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 63,
@@ -19188,7 +19460,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 64,
@@ -19197,7 +19471,9 @@ window.LISTENING_DATA = {
         "options": [],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 11
+        "setNo": 11,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p3-set11-q62-64.jpg",
+        "graphicLabel": "p3-set11-q62-64"
       },
       {
         "no": 65,
@@ -19217,7 +19493,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 66,
@@ -19247,7 +19525,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 67,
@@ -19267,7 +19547,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 12
+        "setNo": 12,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p3-set12-q65-67.jpg",
+        "graphicLabel": "p3-set12-q65-67"
       },
       {
         "no": 68,
@@ -19297,7 +19579,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 69,
@@ -19317,7 +19601,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       },
       {
         "no": 70,
@@ -19347,7 +19633,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 13
+        "setNo": 13,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p3-set13-q68-70.jpg",
+        "graphicLabel": "p3-set13-q68-70"
       }
     ],
     "part4": [
@@ -20099,7 +20387,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 96,
@@ -20129,7 +20419,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 97,
@@ -20159,7 +20451,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 9
+        "setNo": 9,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p4-set9-q95-97.jpg",
+        "graphicLabel": "p4-set9-q95-97"
       },
       {
         "no": 98,
@@ -20189,7 +20483,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 99,
@@ -20219,7 +20515,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       },
       {
         "no": 100,
@@ -20249,7 +20547,9 @@ window.LISTENING_DATA = {
         ],
         "transcript_en": "",
         "transcript_vi": "",
-        "setNo": 10
+        "setNo": 10,
+        "graphic": "images/graphics/ets-toeic-2024-test-10-p4-set10-q98-100.jpg",
+        "graphicLabel": "p4-set10-q98-100"
       }
     ]
   }
