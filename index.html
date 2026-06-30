@@ -37,6 +37,7 @@ html.anti-download-lock svg{
 .lesson-card.updating{opacity:.68;filter:saturate(.7)}
 body.admin-lock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='11' width='14' height='10' rx='2' fill='%23dbeafe'/%3E%3Cpath d='M8 11V7a4 4 0 0 1 8 0v4'/%3E%3C/svg%3E") 10 10,pointer}
 body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='11' width='14' height='10' rx='2' fill='%23dcfce7'/%3E%3Cpath d='M8 11V7a4 4 0 0 1 7.5-2'/%3E%3Cpath d='M16 3l3 3'/%3E%3C/svg%3E") 10 10,pointer}
+.remember-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 4px;flex-wrap:wrap}.remember-check{display:flex;align-items:center;gap:8px;color:#334155;font-size:15px;font-weight:850}.remember-check input{width:18px;height:18px;accent-color:#2563eb}.link-btn{border:none;background:transparent;color:#1d4ed8;font-weight:900;cursor:pointer;font-size:14px;padding:4px 0}.link-btn:hover{text-decoration:underline}.student-memory{display:none;align-items:center;gap:10px;flex-wrap:wrap;margin:2px 0 18px;background:#f8fafc;border:2px solid #dbeafe;border-radius:18px;padding:12px 14px;color:#334155;font-size:16px;font-weight:800}.student-memory.show{display:flex}.student-memory b{color:#1d4ed8}.student-memory button{border:none;border-radius:999px;background:#e2e8f0;color:#0f172a;font-weight:900;padding:8px 12px;cursor:pointer}.student-memory button:hover{background:#cbd5e1}
 
 </style>
 </head>
@@ -61,6 +62,7 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
     <div class="label">TOEIC Practice Hub</div>
     <h1>Kho bài luyện TOEIC</h1>
     <p class="lead">Chọn bài luyện và đăng nhập bằng email đã được cấp quyền và mật khẩu lớp học trước khi làm bài.</p>
+    <div class="student-memory" id="studentMemory">Thiết bị đang ghi nhớ: <b id="rememberedStudentEmail"></b><button type="button" onclick="forgetSavedLogin()">Đổi tài khoản</button></div>
     <div class="grid">
       <article class="card lesson-card" data-lesson-id="word-form-100">
         <h2>100 câu từ loại TOEIC</h2>
@@ -112,6 +114,10 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
     <p>Nhập email đã được cấp quyền và mật khẩu lớp học để vào bài luyện.</p>
     <div class="field"><label>Email</label><input id="email" type="email" autocomplete="email" required placeholder="student@email.com"></div>
     <div class="field"><label>Mật khẩu</label><input id="password" type="password" autocomplete="current-password" required placeholder="Nhập mật khẩu"></div>
+    <div class="remember-row">
+      <label class="remember-check"><input id="rememberLogin" type="checkbox" checked>Ghi nhớ tài khoản trên thiết bị này</label>
+      <button class="link-btn" type="button" onclick="forgetSavedLogin()">Xóa tài khoản đã lưu</button>
+    </div>
     <div class="error" id="loginError"></div>
     <div class="modal-actions"><button class="btn secondary" type="button" onclick="hideLogin()">Hủy</button><button class="btn" type="submit">Đăng nhập</button></div>
   </form>
@@ -127,13 +133,63 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
 </div>
 <script>
 const STUDENT_KEY='toeic_student_session';
+const SAVED_LOGIN_KEY='toeic_saved_student_login';
 const DEFAULT_LOCKED_LESSON_IDS=Array.from(document.querySelectorAll('.lesson-card')).map(card=>card.dataset.lessonId);
 let lockedLessonIds=[...DEFAULT_LOCKED_LESSON_IDS];
 let targetPage='toeic-part5-word-form-practice-100.html';
 let adminMode=null;
 let pendingAdminMode=null;
 let adminPasswordCache='';
-function openLogin(page){targetPage=page;document.getElementById('loginModal').classList.add('show');setTimeout(()=>document.getElementById('email').focus(),50)}
+function getStudentSession(){
+  try{return JSON.parse(localStorage.getItem(STUDENT_KEY)||'null');}catch(e){return null;}
+}
+function getSavedLogin(){
+  try{return JSON.parse(localStorage.getItem(SAVED_LOGIN_KEY)||'null');}catch(e){return null;}
+}
+function saveLogin(email,password){
+  localStorage.setItem(SAVED_LOGIN_KEY,JSON.stringify({email,password,savedAt:new Date().toISOString()}));
+}
+function forgetSavedLogin(){
+  localStorage.removeItem(SAVED_LOGIN_KEY);
+  localStorage.removeItem(STUDENT_KEY);
+  document.getElementById('email').value='';
+  document.getElementById('password').value='';
+  document.getElementById('rememberLogin').checked=true;
+  updateRememberedStudent();
+}
+function updateRememberedStudent(){
+  const saved=getSavedLogin();
+  const session=getStudentSession();
+  const email=(session&&session.email)||(saved&&saved.email)||'';
+  const box=document.getElementById('studentMemory');
+  const label=document.getElementById('rememberedStudentEmail');
+  if(email){
+    label.textContent=email;
+    box.classList.add('show');
+  }else{
+    label.textContent='';
+    box.classList.remove('show');
+  }
+}
+function openLogin(page){
+  targetPage=page;
+  document.getElementById('loginError').classList.remove('show');
+  const session=getStudentSession();
+  if(session&&session.email){
+    location.href=targetPage;
+    return;
+  }
+  const saved=getSavedLogin();
+  if(saved&&saved.email){
+    document.getElementById('email').value=saved.email||'';
+    document.getElementById('password').value=saved.password||'';
+    document.getElementById('rememberLogin').checked=true;
+  }else{
+    document.getElementById('rememberLogin').checked=true;
+  }
+  document.getElementById('loginModal').classList.add('show');
+  setTimeout(()=>document.getElementById(saved&&saved.password?'password':'email').focus(),50);
+}
 function hideLogin(){document.getElementById('loginModal').classList.remove('show')}
 function closeLogin(e){if(e.target.id==='loginModal')hideLogin()}
 function showError(msg){const el=document.getElementById('loginError');el.textContent=msg;el.classList.add('show')}
@@ -253,12 +309,19 @@ async function loginStudent(e){
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok) throw new Error(data.error||'Sai email hoặc mật khẩu.');
     localStorage.setItem(STUDENT_KEY,JSON.stringify({email,loginAt:new Date().toISOString(),token:data.token||''}));
+    if(document.getElementById('rememberLogin').checked){
+      saveLogin(email,password);
+    }else{
+      localStorage.removeItem(SAVED_LOGIN_KEY);
+    }
+    updateRememberedStudent();
     location.href=targetPage;
   }catch(err){
     showError(err.message||'Không đăng nhập được. Kiểm tra lại mật khẩu hoặc Functions.');
   }
 }
 const params=new URLSearchParams(location.search);if(params.get('next')) openLogin(params.get('next'));
+updateRememberedStudent();
 loadLessonLocks();
 </script>
 
