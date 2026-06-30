@@ -92,11 +92,11 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
         <div class="pill-row"><span class="pill">60 câu</span><span class="pill">Nhóm 2</span><span class="pill">Noun + Prep</span></div>
         <button class="btn" type="button" onclick="openLogin('noun-prep-collocation-2.html')">Vào bài luyện</button>
       </article>
-      <article class="card lesson-card" data-lesson-id="toeic-listening-test-1">
-        <h2>TOEIC Listening Test 1</h2>
-        <p>Mô phỏng giao diện thi Listening trên máy: audio nguyên đề, 100 câu, đồng hồ 45 phút và nộp kết quả.</p>
-        <div class="pill-row"><span class="pill">100 câu</span><span class="pill">Audio nguyên đề</span><span class="pill">Test mode</span></div>
-        <button class="btn" type="button" onclick="openLogin('toeic-listening-test-1.html')">Vào bài luyện</button>
+      <article class="card lesson-card" data-lesson-id="toeic-listening">
+        <h2>TOEIC Listening ETS 2024</h2>
+        <p>Vào phòng nghe rồi chọn đề ETS 2024 Test 6, 7, 8, 9 hoặc 10. Audio nguyên đề, 100 câu, đồng hồ 45 phút.</p>
+        <div class="pill-row"><span class="pill">100 câu</span><span class="pill">Chọn đề trong bài</span><span class="pill">Test mode</span></div>
+        <button class="btn" type="button" onclick="openLogin('toeic-listening.html')">Vào bài nghe</button>
       </article>
       <article class="card lesson-card" data-lesson-id="results">
         <h2>Kết quả học viên</h2>
@@ -109,7 +109,7 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
 <div class="modal" id="loginModal" onclick="closeLogin(event)">
   <form class="login-box" onsubmit="loginStudent(event)" onclick="event.stopPropagation()">
     <h3>Đăng nhập học viên</h3>
-    <p>Nhập email đã được cấp quyền và mật khẩu lớp học để vào bài 100 câu từ loại.</p>
+    <p>Nhập email đã được cấp quyền và mật khẩu lớp học để vào bài luyện.</p>
     <div class="field"><label>Email</label><input id="email" type="email" autocomplete="email" required placeholder="student@email.com"></div>
     <div class="field"><label>Mật khẩu</label><input id="password" type="password" autocomplete="current-password" required placeholder="Nhập mật khẩu"></div>
     <div class="error" id="loginError"></div>
