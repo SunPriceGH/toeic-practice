@@ -7,6 +7,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;height:100%;font-family:Arial,Helvetica,sans-serif;background:#d9dde5;color:#172033;overflow:hidden}button,input{font:inherit}.app{height:100vh;display:grid;grid-template-rows:52px 1fr 56px;background:#eef1f6}.topbar{display:flex;align-items:center;justify-content:space-between;background:#26384f;color:#fff;padding:0 18px;border-bottom:1px solid #172337}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}.brand-badge{width:32px;height:32px;border-radius:5px;background:#f6b332;color:#1d2939;display:grid;place-items:center;font-weight:900}.candidate{font-size:14px;color:#dce6f2}.timer{display:flex;align-items:center;gap:12px;font-weight:800}.timer span{min-width:86px;text-align:center;background:#152238;border:1px solid #4d6380;border-radius:4px;padding:7px 10px}.main{display:grid;grid-template-columns:260px 1fr 290px;min-height:0}.left{background:#f5f7fb;border-right:1px solid #c7cfdb;padding:14px;display:flex;flex-direction:column;gap:12px;min-height:0}.section-title{font-size:13px;color:#526173;text-transform:uppercase;font-weight:900;letter-spacing:.5px}.part-tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px}.part-tab{border:1px solid #b9c4d4;background:#fff;color:#1f2a3b;border-radius:4px;padding:9px 6px;font-size:13px;font-weight:800;cursor:pointer}.part-tab.active{background:#1d4ed8;color:#fff;border-color:#1d4ed8}.question-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;overflow:auto;padding-right:2px}.qbtn{height:34px;border:1px solid #b7c1d0;background:#fff;border-radius:4px;color:#1f2a3b;font-size:13px;font-weight:800;cursor:pointer}.qbtn.current{outline:3px solid #f6b332;border-color:#152238}.qbtn.answered{background:#dbeafe;border-color:#2563eb;color:#1d4ed8}.qbtn.flagged{box-shadow:inset 0 -4px 0 #f59e0b}.legend{display:grid;gap:6px;font-size:12px;color:#526173;margin-top:auto}.legend-row{display:flex;align-items:center;gap:8px}.swatch{width:18px;height:18px;border-radius:3px;border:1px solid #aab5c4;background:#fff}.swatch.answered{background:#dbeafe;border-color:#2563eb}.swatch.current{outline:3px solid #f6b332}.work{min-width:0;display:grid;grid-template-rows:auto 1fr;background:#fff}.instruction{border-bottom:1px solid #c7cfdb;background:#fff;padding:16px 22px;display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.instruction h1{font-size:22px;color:#172033;margin-bottom:7px}.instruction p{font-size:14px;line-height:1.4;color:#465568}.audio-state{min-width:190px;text-align:right}.audio-pill{display:inline-flex;align-items:center;gap:8px;background:#e8eef7;border:1px solid #c7d2e1;border-radius:999px;padding:7px 11px;color:#1f3658;font-size:13px;font-weight:900}.pulse{width:9px;height:9px;border-radius:50%;background:#94a3b8}.pulse.playing{background:#22c55e;box-shadow:0 0 0 5px rgba(34,197,94,.14)}.content{min-height:0;overflow:auto;padding:24px 30px}.question-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d6dde8;padding-bottom:14px;margin-bottom:20px}.qno{font-size:28px;font-weight:900;color:#172033}.part-label{font-size:14px;color:#526173;font-weight:900}.prompt{font-size:18px;line-height:1.5;color:#1f2a3b;margin-bottom:18px}.photo-box{height:310px;border:2px solid #cbd5e1;background:linear-gradient(135deg,#f8fafc,#e2e8f0);display:grid;place-items:center;color:#64748b;font-size:18px;font-weight:800;margin-bottom:20px}.set-box{border:1px solid #cbd5e1;border-radius:5px;margin-bottom:16px;background:#f8fafc}.set-box h3{font-size:15px;background:#e8eef7;border-bottom:1px solid #cbd5e1;padding:10px 12px;color:#1f3658}.set-box p{font-size:15px;line-height:1.45;color:#334155;padding:12px}.answers{display:grid;gap:10px;max-width:840px}.choice{display:grid;grid-template-columns:42px 1fr;align-items:center;border:1px solid #b9c4d4;background:#fff;border-radius:4px;min-height:46px;cursor:pointer;transition:background .12s,border-color .12s}.choice:hover{background:#f2f7ff}.choice input{position:absolute;opacity:0;pointer-events:none}.choice-letter{height:100%;display:grid;place-items:center;background:#eef2f7;border-right:1px solid #b9c4d4;font-weight:900;color:#1f3658}.choice-text{padding:10px 13px;font-size:16px;line-height:1.35;color:#172033}.choice.selected{border-color:#1d4ed8;background:#eff6ff}.choice.selected .choice-letter{background:#1d4ed8;color:#fff;border-color:#1d4ed8}.right{background:#f5f7fb;border-left:1px solid #c7cfdb;padding:14px;display:flex;flex-direction:column;gap:12px;min-height:0}.panel{background:#fff;border:1px solid #c7cfdb;border-radius:5px}.panel-head{padding:11px 12px;background:#e8eef7;border-bottom:1px solid #c7cfdb;font-size:13px;text-transform:uppercase;font-weight:900;color:#526173}.panel-body{padding:12px}.mini-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #edf1f6;font-size:14px}.mini-row:last-child{border-bottom:0}.mini-row b{color:#172033}.nav-stack{display:grid;grid-template-columns:1fr 1fr;gap:8px}.nav-btn{border:1px solid #aeb9c8;background:#fff;color:#172033;border-radius:4px;padding:11px 10px;font-weight:900;cursor:pointer}.nav-btn:hover{background:#eef4ff}.nav-btn.primary{background:#1d4ed8;color:#fff;border-color:#1d4ed8}.nav-btn.warn{background:#fff7ed;color:#9a3412;border-color:#fdba74}.nav-btn.danger{background:#fee2e2;color:#991b1b;border-color:#fecaca}.footer{display:flex;align-items:center;justify-content:space-between;background:#26384f;color:#dce6f2;padding:0 18px;border-top:1px solid #172337}.footer-actions{display:flex;gap:9px}.footer button{border:1px solid #6f839e;background:#344964;color:#fff;border-radius:4px;padding:9px 16px;font-weight:900;cursor:pointer}.footer button:hover{background:#405a7b}.footer .submit{background:#b91c1c;border-color:#b91c1c}.start-overlay,.modal{position:fixed;inset:0;background:rgba(15,23,42,.62);display:flex;align-items:center;justify-content:center;padding:22px;z-index:500}.modal{display:none}.modal.show{display:flex}.start-card,.modal-card{width:min(620px,94vw);background:#fff;border-radius:6px;border:1px solid #c7cfdb;box-shadow:0 24px 80px rgba(15,23,42,.38)}.start-head,.modal-head{background:#26384f;color:#fff;padding:16px 18px;font-size:18px;font-weight:900}.start-body,.modal-body{padding:20px}.start-body p,.modal-body p{font-size:16px;line-height:1.55;color:#334155;margin-bottom:12px}.start-actions,.modal-actions{display:flex;justify-content:flex-end;gap:10px;padding:0 20px 20px}.big-btn{border:0;background:#1d4ed8;color:#fff;border-radius:4px;padding:12px 18px;font-weight:900;cursor:pointer}.big-btn.gray{background:#e2e8f0;color:#172033}.big-btn.red{background:#b91c1c}.submit-status{font-size:15px;font-weight:800;margin-top:10px;color:#526173}.submit-status.ok{color:#15803d}.submit-status.err{color:#be123c}@media(max-width:980px){body{overflow:auto}.app{height:auto;min-height:100vh;grid-template-rows:auto auto auto}.main{grid-template-columns:1fr}.left,.right{border:0}.question-grid{grid-template-columns:repeat(10,1fr);max-height:220px}.instruction{display:block}.audio-state{text-align:left;margin-top:10px}.content{padding:18px}.photo-box{height:220px}.footer{position:sticky;bottom:0;z-index:50;gap:12px;flex-wrap:wrap;padding:10px 14px}}
 .test-select-box{margin:16px 0;padding:14px;border:1px solid #cbd5e1;background:#f8fafc;border-radius:6px}.test-select-box label{display:block;font-size:14px;font-weight:900;color:#334155;margin-bottom:8px}.test-select-box select{width:100%;border:1px solid #94a3b8;border-radius:4px;background:#fff;color:#172033;font-size:17px;font-weight:800;padding:11px 12px;outline:none}.test-select-box select:focus{border-color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,.14)}
+html,body{height:auto;min-height:100%;overflow:auto}.app{min-height:100vh;height:auto}.main{min-height:calc(100vh - 108px)}.work{min-height:0}.content{max-height:none}.side-select{margin:0;padding:0;border:0;background:transparent}.side-select select{font-size:14px;padding:9px 10px}.home-footer-btn{background:#e2e8f0!important;color:#172033!important;border-color:#cbd5e1!important}.home-footer-btn:hover{background:#cbd5e1!important}.switch-warning{color:#991b1b;font-weight:900}
 </style>
 </head>
 <body>
@@ -59,7 +60,22 @@
           <button class="nav-btn" type="button" onclick="previousQuestion()">Previous</button>
           <button class="nav-btn primary" type="button" onclick="nextQuestion()">Next</button>
           <button class="nav-btn warn" type="button" onclick="toggleFlag()">Flag</button>
-          <button class="nav-btn danger" type="button" onclick="requestGoHome()">Exit</button>
+          <button class="nav-btn danger" type="button" onclick="requestGoHome()">Trang chủ</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head">Đổi đề nghe</div>
+        <div class="panel-body">
+          <div class="test-select-box side-select">
+            <label for="sideTestSelect">Chọn đề khác</label>
+            <select id="sideTestSelect" onchange="requestSwitchTest(this.value)">
+              <option value="6">ETS TOEIC 2024 Test 6</option>
+              <option value="7">ETS TOEIC 2024 Test 7</option>
+              <option value="8">ETS TOEIC 2024 Test 8</option>
+              <option value="9">ETS TOEIC 2024 Test 9</option>
+              <option value="10">ETS TOEIC 2024 Test 10</option>
+            </select>
+          </div>
         </div>
       </div>
       <div class="panel">
@@ -76,6 +92,7 @@
     <div class="footer-actions">
       <button type="button" onclick="previousQuestion()">Back</button>
       <button type="button" onclick="nextQuestion()">Next</button>
+      <button class="home-footer-btn" type="button" onclick="requestGoHome()">Về trang chủ</button>
       <button class="submit" type="button" onclick="openSubmitModal()">Submit Test</button>
     </div>
   </footer>
@@ -138,6 +155,20 @@
   </div>
 </div>
 
+<div class="modal" id="switchModal">
+  <div class="modal-card">
+    <div class="modal-head">Đổi đề nghe?</div>
+    <div class="modal-body">
+      <p class="switch-warning">Nếu đổi đề bây giờ, audio và các đáp án đang chọn của đề hiện tại sẽ được reset.</p>
+      <p id="switchSummary">Bạn có chắc muốn đổi đề?</p>
+    </div>
+    <div class="modal-actions">
+      <button class="big-btn gray" type="button" onclick="cancelSwitchTest()">Ở lại đề hiện tại</button>
+      <button class="big-btn red" type="button" onclick="confirmSwitchTest()">Đổi đề</button>
+    </div>
+  </div>
+</div>
+
 <script>
 var TESTS = {
   6: {id:'ets-toeic-2024-test-6', title:'ETS TOEIC 2024 Test 6', audioSrc:'audio/ets-toeic-2024-test-6.mp3'},
@@ -184,18 +215,71 @@ function applyListeningTest(testNo){
   if(testName) testName.textContent=LISTENING_CONFIG.title;
 }
 function changeListeningTest(testNo){
-  if(state&&state.started) return;
+  requestSwitchTest(testNo);
+}
+function requestSwitchTest(testNo){
+  if(!TESTS[testNo]) testNo='6';
+  var currentValue=getCurrentTestNo();
+  if(testNo===currentValue) return;
+  if(state.started&&!state.submitted){
+    state.pendingTest=testNo;
+    document.getElementById('switchSummary').textContent='Đổi sang '+TESTS[testNo].title+'?';
+    document.getElementById('switchModal').classList.add('show');
+    syncTestSelects(currentValue);
+    return;
+  }
+  switchToTest(testNo);
+}
+function cancelSwitchTest(){
+  state.pendingTest=null;
+  document.getElementById('switchModal').classList.remove('show');
+  syncTestSelects(getCurrentTestNo());
+}
+function confirmSwitchTest(){
+  var testNo=state.pendingTest||'6';
+  document.getElementById('switchModal').classList.remove('show');
+  switchToTest(testNo);
+}
+function getCurrentTestNo(){
+  for(var key in TESTS){
+    if(TESTS[key].id===LISTENING_CONFIG.id) return String(key);
+  }
+  return '6';
+}
+function syncTestSelects(testNo){
+  var topSelect=document.getElementById('testSelect');
+  var sideSelect=document.getElementById('sideTestSelect');
+  if(topSelect) topSelect.value=String(testNo);
+  if(sideSelect) sideSelect.value=String(testNo);
+}
+function switchToTest(testNo){
+  if(state.timerId) clearInterval(state.timerId);
+  var audio=document.getElementById('testAudio');
+  if(audio){
+    audio.pause();
+    try{audio.currentTime=0;}catch(e){}
+  }
   applyListeningTest(testNo);
+  syncTestSelects(testNo);
   state.current=1;
+  state.started=false;
+  state.submitted=false;
+  state.pendingTest=null;
   state.remaining=LISTENING_CONFIG.durationSeconds;
   state.answers={};
   state.flags={};
+  state.timerId=null;
+  document.getElementById('audioStatus').textContent='Audio not started';
+  document.getElementById('audioPulse').classList.remove('playing');
+  document.getElementById('startStatus').textContent='';
+  document.getElementById('startStatus').className='submit-status';
+  document.getElementById('startOverlay').style.display='flex';
   renderQuestion();
   updateTimer();
 }
 
 var STUDENT_KEY='toeic_student_session';
-var state={current:1,started:false,submitted:false,remaining:LISTENING_CONFIG.durationSeconds,answers:{},flags:{},timerId:null};
+var state={current:1,started:false,submitted:false,remaining:LISTENING_CONFIG.durationSeconds,answers:{},flags:{},timerId:null,pendingTest:null};
 var parts=[
   {no:1,start:1,end:6,title:'Part 1: Photographs',instruction:'You will hear four statements about a picture. Select the statement that best describes what you see.'},
   {no:2,start:7,end:31,title:'Part 2: Question-Response',instruction:'You will hear a question or statement and three responses. Select the best response.'},
@@ -240,6 +324,7 @@ function buildShell(){
   if(!student) return;
   var select=document.getElementById('testSelect');
   if(select) select.value=String(TESTS[testParam]?testParam:'6');
+  syncTestSelects(select?select.value:testParam);
   applyListeningTest(select?select.value:testParam);
   document.getElementById('candidateEmail').textContent='Candidate: '+student.email;
   var tabsHtml='';
@@ -299,7 +384,19 @@ function syncNavigator(){
   document.getElementById('answeredCount').textContent=answered+' / 100';
   document.getElementById('footerHint').textContent='Question '+state.current+' of 100 · Answered '+answered+' / 100';
 }
-function selectAnswer(q,key){state.answers[q]=key;renderQuestion();}
+function selectAnswer(q,key){
+  state.answers[q]=key;
+  var labels=document.querySelectorAll('.choice');
+  for(var i=0;i<labels.length;i++){
+    labels[i].classList.remove('selected');
+    var input=labels[i].querySelector('input[type="radio"]');
+    if(input&&input.dataset.answer===key){
+      input.checked=true;
+      labels[i].classList.add('selected');
+    }
+  }
+  syncNavigator();
+}
 function goQuestion(q){state.current=Math.max(1,Math.min(100,q));renderQuestion();}
 function nextQuestion(){goQuestion(state.current+1);}
 function previousQuestion(){goQuestion(state.current-1);}
