@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEIC Listening Test 1</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;height:100%;font-family:Arial,Helvetica,sans-serif;background:#d9dde5;color:#172033;overflow:hidden}button,input{font:inherit}.app{height:100vh;display:grid;grid-template-rows:52px 1fr 56px;background:#eef1f6}.topbar{display:flex;align-items:center;justify-content:space-between;background:#26384f;color:#fff;padding:0 18px;border-bottom:1px solid #172337}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}.brand-badge{width:32px;height:32px;border-radius:5px;background:#f6b332;color:#1d2939;display:grid;place-items:center;font-weight:900}.candidate{font-size:14px;color:#dce6f2}.timer{display:flex;align-items:center;gap:12px;font-weight:800}.timer span{min-width:86px;text-align:center;background:#152238;border:1px solid #4d6380;border-radius:4px;padding:7px 10px}.main{display:grid;grid-template-columns:260px 1fr 290px;min-height:0}.left{background:#f5f7fb;border-right:1px solid #c7cfdb;padding:14px;display:flex;flex-direction:column;gap:12px;min-height:0}.section-title{font-size:13px;color:#526173;text-transform:uppercase;font-weight:900;letter-spacing:.5px}.part-tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px}.part-tab{border:1px solid #b9c4d4;background:#fff;color:#1f2a3b;border-radius:4px;padding:9px 6px;font-size:13px;font-weight:800;cursor:pointer}.part-tab.active{background:#1d4ed8;color:#fff;border-color:#1d4ed8}.question-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;overflow:auto;padding-right:2px}.qbtn{height:34px;border:1px solid #b7c1d0;background:#fff;border-radius:4px;color:#1f2a3b;font-size:13px;font-weight:800;cursor:pointer}.qbtn.current{outline:3px solid #f6b332;border-color:#152238}.qbtn.answered{background:#dbeafe;border-color:#2563eb;color:#1d4ed8}.qbtn.flagged{box-shadow:inset 0 -4px 0 #f59e0b}.legend{display:grid;gap:6px;font-size:12px;color:#526173;margin-top:auto}.legend-row{display:flex;align-items:center;gap:8px}.swatch{width:18px;height:18px;border-radius:3px;border:1px solid #aab5c4;background:#fff}.swatch.answered{background:#dbeafe;border-color:#2563eb}.swatch.current{outline:3px solid #f6b332}.work{min-width:0;display:grid;grid-template-rows:auto 1fr;background:#fff}.instruction{border-bottom:1px solid #c7cfdb;background:#fff;padding:16px 22px;display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.instruction h1{font-size:22px;color:#172033;margin-bottom:7px}.instruction p{font-size:14px;line-height:1.4;color:#465568}.audio-state{min-width:190px;text-align:right}.audio-pill{display:inline-flex;align-items:center;gap:8px;background:#e8eef7;border:1px solid #c7d2e1;border-radius:999px;padding:7px 11px;color:#1f3658;font-size:13px;font-weight:900}.pulse{width:9px;height:9px;border-radius:50%;background:#94a3b8}.pulse.playing{background:#22c55e;box-shadow:0 0 0 5px rgba(34,197,94,.14)}.content{min-height:0;overflow:auto;padding:24px 30px}.question-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d6dde8;padding-bottom:14px;margin-bottom:20px}.qno{font-size:28px;font-weight:900;color:#172033}.part-label{font-size:14px;color:#526173;font-weight:900}.prompt{font-size:18px;line-height:1.5;color:#1f2a3b;margin-bottom:18px}.photo-box{height:310px;border:2px solid #cbd5e1;background:linear-gradient(135deg,#f8fafc,#e2e8f0);display:grid;place-items:center;color:#64748b;font-size:18px;font-weight:800;margin-bottom:20px}.set-box{border:1px solid #cbd5e1;border-radius:5px;margin-bottom:16px;background:#f8fafc}.set-box h3{font-size:15px;background:#e8eef7;border-bottom:1px solid #cbd5e1;padding:10px 12px;color:#1f3658}.set-box p{font-size:15px;line-height:1.45;color:#334155;padding:12px}.answers{display:grid;gap:10px;max-width:840px}.choice{display:grid;grid-template-columns:42px 1fr;align-items:center;border:1px solid #b9c4d4;background:#fff;border-radius:4px;min-height:46px;cursor:pointer;transition:background .12s,border-color .12s}.choice:hover{background:#f2f7ff}.choice input{position:absolute;opacity:0;pointer-events:none}.choice-letter{height:100%;display:grid;place-items:center;background:#eef2f7;border-right:1px solid #b9c4d4;font-weight:900;color:#1f3658}.choice-text{padding:10px 13px;font-size:16px;line-height:1.35;color:#172033}.choice.selected{border-color:#1d4ed8;background:#eff6ff}.choice.selected .choice-letter{background:#1d4ed8;color:#fff;border-color:#1d4ed8}.right{background:#f5f7fb;border-left:1px solid #c7cfdb;padding:14px;display:flex;flex-direction:column;gap:12px;min-height:0}.panel{background:#fff;border:1px solid #c7cfdb;border-radius:5px}.panel-head{padding:11px 12px;background:#e8eef7;border-bottom:1px solid #c7cfdb;font-size:13px;text-transform:uppercase;font-weight:900;color:#526173}.panel-body{padding:12px}.mini-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #edf1f6;font-size:14px}.mini-row:last-child{border-bottom:0}.mini-row b{color:#172033}.nav-stack{display:grid;grid-template-columns:1fr 1fr;gap:8px}.nav-btn{border:1px solid #aeb9c8;background:#fff;color:#172033;border-radius:4px;padding:11px 10px;font-weight:900;cursor:pointer}.nav-btn:hover{background:#eef4ff}.nav-btn.primary{background:#1d4ed8;color:#fff;border-color:#1d4ed8}.nav-btn.warn{background:#fff7ed;color:#9a3412;border-color:#fdba74}.nav-btn.danger{background:#fee2e2;color:#991b1b;border-color:#fecaca}.footer{display:flex;align-items:center;justify-content:space-between;background:#26384f;color:#dce6f2;padding:0 18px;border-top:1px solid #172337}.footer-actions{display:flex;gap:9px}.footer button{border:1px solid #6f839e;background:#344964;color:#fff;border-radius:4px;padding:9px 16px;font-weight:900;cursor:pointer}.footer button:hover{background:#405a7b}.footer .submit{background:#b91c1c;border-color:#b91c1c}.start-overlay,.modal{position:fixed;inset:0;background:rgba(15,23,42,.62);display:flex;align-items:center;justify-content:center;padding:22px;z-index:500}.modal{display:none}.modal.show{display:flex}.start-card,.modal-card{width:min(620px,94vw);background:#fff;border-radius:6px;border:1px solid #c7cfdb;box-shadow:0 24px 80px rgba(15,23,42,.38)}.start-head,.modal-head{background:#26384f;color:#fff;padding:16px 18px;font-size:18px;font-weight:900}.start-body,.modal-body{padding:20px}.start-body p,.modal-body p{font-size:16px;line-height:1.55;color:#334155;margin-bottom:12px}.start-actions,.modal-actions{display:flex;justify-content:flex-end;gap:10px;padding:0 20px 20px}.big-btn{border:0;background:#1d4ed8;color:#fff;border-radius:4px;padding:12px 18px;font-weight:900;cursor:pointer}.big-btn.gray{background:#e2e8f0;color:#172033}.big-btn.red{background:#b91c1c}.submit-status{font-size:15px;font-weight:800;margin-top:10px;color:#526173}.submit-status.ok{color:#15803d}.submit-status.err{color:#be123c}@media(max-width:980px){body{overflow:auto}.app{height:auto;min-height:100vh;grid-template-rows:auto auto auto}.main{grid-template-columns:1fr}.left,.right{border:0}.question-grid{grid-template-columns:repeat(10,1fr);max-height:220px}.instruction{display:block}.audio-state{text-align:left;margin-top:10px}.content{padding:18px}.photo-box{height:220px}.footer{position:sticky;bottom:0;z-index:50;gap:12px;flex-wrap:wrap;padding:10px 14px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><div class="brand-badge">ETS</div><div>TOEIC Listening and Reading Test</div></div>
+    <div class="candidate" id="candidateEmail">Candidate: checking...</div>
+    <div class="timer">Time Remaining <span id="timerText">45:00</span></div>
+  </header>
+
+  <main class="main">
+    <aside class="left">
+      <div class="section-title">Listening Section</div>
+      <div class="part-tabs" id="partTabs"></div>
+      <div class="section-title">Question Navigator</div>
+      <div class="question-grid" id="questionGrid"></div>
+      <div class="legend">
+        <div class="legend-row"><span class="swatch current"></span>Current question</div>
+        <div class="legend-row"><span class="swatch answered"></span>Answered question</div>
+        <div class="legend-row"><span class="swatch"></span>Not answered</div>
+      </div>
+    </aside>
+
+    <section class="work">
+      <div class="instruction">
+        <div>
+          <h1 id="partTitle">Part 1: Photographs</h1>
+          <p id="partInstruction">You will hear four statements about a picture. Select the statement that best describes what you see.</p>
+        </div>
+        <div class="audio-state">
+          <div class="audio-pill"><span class="pulse" id="audioPulse"></span><span id="audioStatus">Audio not started</span></div>
+        </div>
+      </div>
+      <div class="content" id="content"></div>
+    </section>
+
+    <aside class="right">
+      <div class="panel">
+        <div class="panel-head">Test Status</div>
+        <div class="panel-body">
+          <div class="mini-row"><span>Answered</span><b id="answeredCount">0 / 100</b></div>
+          <div class="mini-row"><span>Current Part</span><b id="currentPart">Part 1</b></div>
+          <div class="mini-row"><span>Audio File</span><b id="audioFileName">test-1.mp3</b></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head">Navigation</div>
+        <div class="panel-body nav-stack">
+          <button class="nav-btn" type="button" onclick="previousQuestion()">Previous</button>
+          <button class="nav-btn primary" type="button" onclick="nextQuestion()">Next</button>
+          <button class="nav-btn warn" type="button" onclick="toggleFlag()">Flag</button>
+          <button class="nav-btn danger" type="button" onclick="requestGoHome()">Exit</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head">Listening Rule</div>
+        <div class="panel-body">
+          <p style="font-size:14px;line-height:1.45;color:#465568">The audio is played once. There is no replay button in test mode. Answer directly on screen.</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div id="footerHint">Click Start Test to begin the Listening audio.</div>
+    <div class="footer-actions">
+      <button type="button" onclick="previousQuestion()">Back</button>
+      <button type="button" onclick="nextQuestion()">Next</button>
+      <button class="submit" type="button" onclick="openSubmitModal()">Submit Test</button>
+    </div>
+  </footer>
+</div>
+
+<audio id="testAudio" preload="auto"></audio>
+
+<div class="start-overlay" id="startOverlay">
+  <div class="start-card">
+    <div class="start-head">TOEIC Listening Test 1</div>
+    <div class="start-body">
+      <p><b>Listening Section:</b> 100 questions, approximately 45 minutes.</p>
+      <p>The audio will start after you press <b>Start Test</b>. In test mode, the audio is played once and cannot be replayed.</p>
+      <p>Make sure your headset volume is ready before starting.</p>
+      <div class="submit-status" id="startStatus"></div>
+    </div>
+    <div class="start-actions">
+      <button class="big-btn gray" type="button" onclick="location.href='index.html'">Back to Home</button>
+      <button class="big-btn" type="button" onclick="startTest()">Start Test</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="submitModal">
+  <div class="modal-card">
+    <div class="modal-head">Submit Listening Test</div>
+    <div class="modal-body">
+      <p id="submitSummary">You have answered 0 / 100 questions.</p>
+      <p>After submitting, your result will be saved and the test will end.</p>
+      <div class="submit-status" id="submitStatus"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="big-btn gray" type="button" onclick="closeSubmitModal()">Continue Test</button>
+      <button class="big-btn red" type="button" onclick="submitFinalResult()">Submit</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="homeModal">
+  <div class="modal-card">
+    <div class="modal-head">Leave Listening Test?</div>
+    <div class="modal-body">
+      <p>If you leave now before submitting, your current answers may not be saved.</p>
+      <p>Choose <b>Continue Test</b> to return and submit your result first.</p>
+    </div>
+    <div class="modal-actions">
+      <button class="big-btn gray" type="button" onclick="closeHomeModal()">Continue Test</button>
+      <button class="big-btn red" type="button" onclick="location.href='index.html'">Leave Test</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const LISTENING_CONFIG = {
+  id: 'ets-toeic-2024-test-6',
+  title: 'ETS Test 6 - 100 câu',
+  audioSrc: 'audio/ets-toeic-2024-test-6.mp3',
+  durationSeconds: 45 * 60,
+  // Replace this with the real answer key for your test.
+  answerKey: [
+    'A','B','C','D','A','B','C','D','A','B',
+    'C','D','A','B','C','D','A','B','C','D',
+    'A','B','C','A','B','C','A','B','C','A',
+    'A','B','C','D','A','B','C','D','A','B',
+    'C','D','A','B','C','D','A','B','C','D',
+    'A','B','C','D','A','B','C','D','A','B',
+    'C','D','A','B','C','D','A','B','C','D',
+    'A','B','C','D','A','B','C','D','A','B',
+    'C','D','A','B','C','D','A','B','C','D',
+    'A','B','C','D','A','B','C','D','A','B'
+  ]
+};
+
+const STUDENT_KEY='toeic_student_session';
+const state={current:1,started:false,submitted:false,remaining:LISTENING_CONFIG.durationSeconds,answers:{},flags:{},timerId:null};
+const parts=[
+  {no:1,start:1,end:6,title:'Part 1: Photographs',instruction:'You will hear four statements about a picture. Select the statement that best describes what you see.'},
+  {no:2,start:7,end:31,title:'Part 2: Question-Response',instruction:'You will hear a question or statement and three responses. Select the best response.'},
+  {no:3,start:32,end:70,title:'Part 3: Conversations',instruction:'You will hear conversations. Each conversation has three questions. Select the best answer.'},
+  {no:4,start:71,end:100,title:'Part 4: Talks',instruction:'You will hear talks. Each talk has three questions. Select the best answer.'}
+];
+
+function getStudentSession(){
+  try{return JSON.parse(localStorage.getItem(STUDENT_KEY)||'null');}catch(e){return null;}
+}
+function requireStudentSession(){
+  const student=getStudentSession();
+  if(!student||!student.email){
+    alert('Bạn cần đăng nhập bằng email đã được cấp quyền trước khi làm bài.');
+    location.href='index.html?next=toeic-listening-test-1.html';
+    return null;
+  }
+  return student;
+}
+function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+function getPart(q){return parts.find(p=>q>=p.start&&q<=p.end)||parts[0];}
+function getChoices(q){
+  if(q>=7&&q<=31) return ['A','B','C'];
+  return ['A','B','C','D'];
+}
+function questionText(q){
+  if(q<=6) return 'Look at the picture marked No. '+q+' in your test screen.';
+  if(q<=31) return 'Mark your answer after listening to the question and responses.';
+  return 'Question '+q+'. Select the best answer based on what you hear.';
+}
+function choiceText(q,key){
+  if(q<=31) return key;
+  return key+'. Answer choice '+key+' for question '+q;
+}
+function buildShell(){
+  const student=requireStudentSession();
+  if(!student) return;
+  document.getElementById('candidateEmail').textContent='Candidate: '+student.email;
+  document.getElementById('testAudio').src=LISTENING_CONFIG.audioSrc;
+  document.getElementById('audioFileName').textContent=LISTENING_CONFIG.audioSrc.split('/').pop();
+  document.getElementById('partTabs').innerHTML=parts.map(p=>'<button class="part-tab" type="button" onclick="goQuestion('+p.start+')" id="partTab'+p.no+'">Part '+p.no+'</button>').join('');
+  document.getElementById('questionGrid').innerHTML=Array.from({length:100},(_,i)=>'<button class="qbtn" type="button" id="qbtn'+(i+1)+'" onclick="goQuestion('+(i+1)+')">'+(i+1)+'</button>').join('');
+  renderQuestion();
+  updateTimer();
+}
+function renderQuestion(){
+  const q=state.current;
+  const part=getPart(q);
+  document.getElementById('partTitle').textContent=part.title;
+  document.getElementById('partInstruction').textContent=part.instruction;
+  document.getElementById('currentPart').textContent='Part '+part.no;
+  parts.forEach(p=>document.getElementById('partTab'+p.no).classList.toggle('active',p.no===part.no));
+  const choices=getChoices(q);
+  let media='';
+  if(q<=6){
+    media='<div class="photo-box">Photo '+q+'<br><span style="font-size:14px;font-weight:700">Replace this placeholder with real image if needed</span></div>';
+  }else if(q>=32){
+    const setStart=q<=70?32+Math.floor((q-32)/3)*3:71+Math.floor((q-71)/3)*3;
+    const setEnd=Math.min(setStart+2,q<=70?70:100);
+    media='<div class="set-box"><h3>Questions '+setStart+'-'+setEnd+'</h3><p>The questions and answer choices for this set are shown on screen while the audio plays. Edit this template text when you add real test content.</p></div>';
+  }
+  document.getElementById('content').innerHTML=
+    '<div class="question-head"><div><div class="part-label">Question</div><div class="qno">'+q+'</div></div><div class="part-label">'+part.title+'</div></div>'+
+    media+
+    '<div class="prompt">'+escapeHtml(questionText(q))+'</div>'+
+    '<div class="answers">'+choices.map(key=>{
+      const selected=state.answers[q]===key?' selected':'';
+      return '<label class="choice'+selected+'"><input type="radio" name="q'+q+'" value="'+key+'" onchange="selectAnswer('+q+',\\''+key+'\\')" '+(state.answers[q]===key?'checked':'')+'><span class="choice-letter">'+key+'</span><span class="choice-text">'+escapeHtml(choiceText(q,key))+'</span></label>';
+    }).join('')+'</div>';
+  syncNavigator();
+}
+function syncNavigator(){
+  let answered=0;
+  for(let i=1;i<=100;i++){
+    const btn=document.getElementById('qbtn'+i);
+    const has=!!state.answers[i];
+    if(has) answered++;
+    btn.classList.toggle('answered',has);
+    btn.classList.toggle('current',i===state.current);
+    btn.classList.toggle('flagged',!!state.flags[i]);
+  }
+  document.getElementById('answeredCount').textContent=answered+' / 100';
+  document.getElementById('footerHint').textContent='Question '+state.current+' of 100 · Answered '+answered+' / 100';
+}
+function selectAnswer(q,key){state.answers[q]=key;renderQuestion();}
+function goQuestion(q){state.current=Math.max(1,Math.min(100,q));renderQuestion();}
+function nextQuestion(){goQuestion(state.current+1);}
+function previousQuestion(){goQuestion(state.current-1);}
+function toggleFlag(){state.flags[state.current]=!state.flags[state.current];syncNavigator();}
+function startTest(){
+  const audio=document.getElementById('testAudio');
+  const status=document.getElementById('startStatus');
+  status.textContent='Starting audio...';
+  audio.play().then(()=>{
+    state.started=true;
+    document.getElementById('startOverlay').style.display='none';
+    document.getElementById('audioStatus').textContent='Audio playing';
+    document.getElementById('audioPulse').classList.add('playing');
+    state.timerId=setInterval(tick,1000);
+  }).catch(()=>{
+    status.textContent='Không phát được audio. Kiểm tra file '+LISTENING_CONFIG.audioSrc+' hoặc quyền autoplay của trình duyệt.';
+    status.className='submit-status err';
+  });
+}
+function tick(){
+  if(state.remaining>0) state.remaining--;
+  updateTimer();
+  if(state.remaining<=0){
+    clearInterval(state.timerId);
+    openSubmitModal();
+  }
+}
+function updateTimer(){
+  const m=Math.floor(state.remaining/60);
+  const s=state.remaining%60;
+  document.getElementById('timerText').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+}
+function openSubmitModal(){
+  const answered=Object.keys(state.answers).length;
+  document.getElementById('submitSummary').textContent='You have answered '+answered+' / 100 questions.';
+  document.getElementById('submitModal').classList.add('show');
+}
+function closeSubmitModal(){document.getElementById('submitModal').classList.remove('show');}
+function requestGoHome(){
+  if(state.submitted){location.href='index.html';return;}
+  document.getElementById('homeModal').classList.add('show');
+}
+function closeHomeModal(){document.getElementById('homeModal').classList.remove('show');}
+function collectResultPayload(){
+  const student=getStudentSession()||{};
+  let score=0;
+  const answers=Array.from({length:100},(_,i)=>{
+    const no=i+1;
+    const selected=state.answers[no]||null;
+    const correctAnswer=LISTENING_CONFIG.answerKey[i]||null;
+    const isCorrect=!!selected&&!!correctAnswer&&selected===correctAnswer;
+    if(isCorrect) score++;
+    return {no,id:'q'+no,part:getPart(no).no,selected,correctAnswer,isCorrect,flagged:!!state.flags[no]};
+  });
+  return {
+    student:{email:student.email||'',loginAt:student.loginAt||''},
+    quiz:{id:LISTENING_CONFIG.id,title:LISTENING_CONFIG.title,total:100,audioSrc:LISTENING_CONFIG.audioSrc},
+    submittedAt:new Date().toISOString(),
+    score,total:100,percent:Math.round(score),answers
+  };
+}
+async function submitFinalResult(){
+  if(state.submitted) return;
+  const student=requireStudentSession();
+  if(!student) return;
+  const statusEl=document.getElementById('submitStatus');
+  const payload=collectResultPayload();
+  statusEl.className='submit-status';
+  statusEl.textContent='Đang lưu kết quả...';
+  try{
+    const res=await fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không lưu được kết quả');
+    state.submitted=true;
+    clearInterval(state.timerId);
+    document.getElementById('testAudio').pause();
+    statusEl.className='submit-status ok';
+    statusEl.textContent='Đã lưu kết quả thành công. Mã bài nộp: '+data.id;
+    setTimeout(()=>location.href='index.html',1200);
+  }catch(err){
+    statusEl.className='submit-status err';
+    statusEl.textContent='Không thể lưu lên. Kiểm tra KV binding / mạng rồi thử lại.';
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;
+    a.download='student_result_'+(payload.student.email||'student').replace(/[^a-z0-9._-]/gi,'_')+'_'+Date.now()+'.json';
+    a.textContent='Tải JSON kết quả dự phòng';
+    a.className='big-btn gray';
+    a.style.display='inline-block';
+    a.style.marginTop='10px';
+    statusEl.insertAdjacentElement('afterend',a);
+  }
+}
+document.getElementById('testAudio').addEventListener('ended',function(){
+  document.getElementById('audioStatus').textContent='Audio ended';
+  document.getElementById('audioPulse').classList.remove('playing');
+});
+window.addEventListener('beforeunload',function(e){
+  if(state.started&&!state.submitted){e.preventDefault();e.returnValue='';}
+});
+buildShell();
+</script>
+</body>
+</html>

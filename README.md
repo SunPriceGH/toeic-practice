@@ -3,6 +3,8 @@
 ## Cấu trúc
 - `index.html`: trang chủ + đăng nhập học viên.
 - `toeic-part5-word-form-practice-100.html`: bài 100 câu từ loại.
+- `toeic-listening-test-1.html`: bài mô phỏng TOEIC Listening trên máy, dùng 1 file audio nguyên đề.
+- `audio/`: đặt file nghe nguyên đề, mặc định `audio/toeic-listening-test-1.mp3`.
 - `results.html`: giáo viên xem/tải JSON kết quả.
 - `functions/api/login.js`: kiểm tra email whitelist + mật khẩu học viên/admin.
 - `functions/api/results.js`: lưu/xem kết quả qua Cloudflare KV.
@@ -75,6 +77,20 @@ Giáo viên mở:
 ```
 
 nhập mật khẩu giáo viên để xem danh sách và tải JSON từng học viên.
+
+## Thêm file nghe Listening
+Trang `toeic-listening-test-1.html` mặc định tìm file:
+
+```txt
+audio/toeic-listening-test-1.mp3
+```
+
+Mỗi file nghe là một đề đầy đủ. Nếu muốn đổi tên file audio hoặc đáp án, mở `toeic-listening-test-1.html` và sửa biến `LISTENING_CONFIG` ở đầu phần `<script>`:
+
+```js
+audioSrc: 'audio/toeic-listening-test-1.mp3',
+answerKey: ['A','B','C', ... đủ 100 đáp án]
+```
 
 ## Vì sao không ghi JSON trực tiếp vào thư mục student_result?
 Cloudflare Pages sau khi deploy là môi trường read-only cho static assets. Function có thể xử lý POST nhưng không được ghi file vào thư mục project. Vì vậy kết quả được lưu vào KV và `results.html` cho phép tải ra JSON với tên dạng `student_result/<id>.json`.
