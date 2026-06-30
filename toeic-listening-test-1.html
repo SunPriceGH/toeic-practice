@@ -45,10 +45,11 @@
     <aside class="right">
       <div class="panel">
         <div class="panel-head">Test Status</div>
-        <div class="panel-body">
+      <div class="panel-body">
           <div class="mini-row"><span>Answered</span><b id="answeredCount">0 / 100</b></div>
           <div class="mini-row"><span>Current Part</span><b id="currentPart">Part 1</b></div>
           <div class="mini-row"><span>Audio File</span><b id="audioFileName">test-1.mp3</b></div>
+          <div class="mini-row"><span>Test</span><b id="testName">Test 6</b></div>
         </div>
       </div>
       <div class="panel">
@@ -127,12 +128,18 @@
 </div>
 
 <script>
-const LISTENING_CONFIG = {
-  id: 'ets-toeic-2024-test-6',
-  title: 'ETS Test 6 - 100 câu',
-  audioSrc: 'audio/ets-toeic-2024-test-6.mp3',
+const TESTS = {
+  6: {id:'ets-toeic-2024-test-6', title:'ETS TOEIC 2024 Test 6', audioSrc:'audio/ets-toeic-2024-test-6.mp3'},
+  7: {id:'ets-toeic-2024-test-7', title:'ETS TOEIC 2024 Test 7', audioSrc:'audio/ets-toeic-2024-test-7.mp3'},
+  8: {id:'ets-toeic-2024-test-8', title:'ETS TOEIC 2024 Test 8', audioSrc:'audio/ets-toeic-2024-test-8.mp3'},
+  9: {id:'ets-toeic-2024-test-9', title:'ETS TOEIC 2024 Test 9', audioSrc:'audio/ets-toeic-2024-test-9.mp3'},
+  10:{id:'ets-toeic-2024-test-10',title:'ETS TOEIC 2024 Test 10',audioSrc:'audio/ets-toeic-2024-test-10.mp3'}
+};
+const testParam = new URLSearchParams(location.search).get('test') || '6';
+const selectedTest = TESTS[testParam] || TESTS[6];
+const LISTENING_CONFIG = Object.assign({}, selectedTest, {
   durationSeconds: 45 * 60,
-  // Replace this with the real answer key for your test.
+  // Thay bằng đáp án thật của từng đề nếu bạn muốn chấm điểm chính xác.
   answerKey: [
     'A','B','C','D','A','B','C','D','A','B',
     'C','D','A','B','C','D','A','B','C','D',
@@ -145,7 +152,7 @@ const LISTENING_CONFIG = {
     'C','D','A','B','C','D','A','B','C','D',
     'A','B','C','D','A','B','C','D','A','B'
   ]
-};
+});
 
 const STUDENT_KEY='toeic_student_session';
 const state={current:1,started:false,submitted:false,remaining:LISTENING_CONFIG.durationSeconds,answers:{},flags:{},timerId:null};
@@ -163,7 +170,7 @@ function requireStudentSession(){
   const student=getStudentSession();
   if(!student||!student.email){
     alert('Bạn cần đăng nhập bằng email đã được cấp quyền trước khi làm bài.');
-    location.href='index.html?next=toeic-listening-test-1.html';
+    location.href='index.html?next='+encodeURIComponent(location.pathname.split('/').pop()+location.search);
     return null;
   }
   return student;
@@ -186,9 +193,12 @@ function choiceText(q,key){
 function buildShell(){
   const student=requireStudentSession();
   if(!student) return;
+  document.title=LISTENING_CONFIG.title;
+  document.querySelector('.start-head').textContent=LISTENING_CONFIG.title;
   document.getElementById('candidateEmail').textContent='Candidate: '+student.email;
   document.getElementById('testAudio').src=LISTENING_CONFIG.audioSrc;
   document.getElementById('audioFileName').textContent=LISTENING_CONFIG.audioSrc.split('/').pop();
+  document.getElementById('testName').textContent=LISTENING_CONFIG.title;
   document.getElementById('partTabs').innerHTML=parts.map(p=>'<button class="part-tab" type="button" onclick="goQuestion('+p.start+')" id="partTab'+p.no+'">Part '+p.no+'</button>').join('');
   document.getElementById('questionGrid').innerHTML=Array.from({length:100},(_,i)=>'<button class="qbtn" type="button" id="qbtn'+(i+1)+'" onclick="goQuestion('+(i+1)+')">'+(i+1)+'</button>').join('');
   renderQuestion();
@@ -216,7 +226,7 @@ function renderQuestion(){
     '<div class="prompt">'+escapeHtml(questionText(q))+'</div>'+
     '<div class="answers">'+choices.map(key=>{
       const selected=state.answers[q]===key?' selected':'';
-      return '<label class="choice'+selected+'"><input type="radio" name="q'+q+'" value="'+key+'" onchange="selectAnswer('+q+',\\''+key+'\\')" '+(state.answers[q]===key?'checked':'')+'><span class="choice-letter">'+key+'</span><span class="choice-text">'+escapeHtml(choiceText(q,key))+'</span></label>';
+      return '<label class="choice'+selected+'"><input type="radio" name="q'+q+'" value="'+key+'" data-question="'+q+'" data-answer="'+key+'" '+(state.answers[q]===key?'checked':'')+'><span class="choice-letter">'+key+'</span><span class="choice-text">'+escapeHtml(choiceText(q,key))+'</span></label>';
     }).join('')+'</div>';
   syncNavigator();
 }
@@ -331,6 +341,11 @@ async function submitFinalResult(){
 document.getElementById('testAudio').addEventListener('ended',function(){
   document.getElementById('audioStatus').textContent='Audio ended';
   document.getElementById('audioPulse').classList.remove('playing');
+});
+document.addEventListener('change',function(e){
+  if(e.target&&e.target.matches('input[type="radio"][data-question][data-answer]')){
+    selectAnswer(Number(e.target.dataset.question),e.target.dataset.answer);
+  }
 });
 window.addEventListener('beforeunload',function(e){
   if(state.started&&!state.submitted){e.preventDefault();e.returnValue='';}
