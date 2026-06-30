@@ -9,7 +9,7 @@
 .test-select-box{margin:16px 0;padding:14px;border:1px solid #cbd5e1;background:#f8fafc;border-radius:6px}.test-select-box label{display:block;font-size:14px;font-weight:900;color:#334155;margin-bottom:8px}.test-select-box select{width:100%;border:1px solid #94a3b8;border-radius:4px;background:#fff;color:#172033;font-size:17px;font-weight:800;padding:11px 12px;outline:none}.test-select-box select:focus{border-color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,.14)}
 html,body{height:auto;min-height:100%;overflow:auto}.app{min-height:100vh;height:auto}.main{min-height:calc(100vh - 108px)}.work{min-height:0}.content{max-height:none}.side-select{margin:0;padding:0;border:0;background:transparent}.side-select select{font-size:14px;padding:9px 10px}.home-footer-btn{background:#e2e8f0!important;color:#172033!important;border-color:#cbd5e1!important}.home-footer-btn:hover{background:#cbd5e1!important}.switch-warning{color:#991b1b;font-weight:900}
 
-.photo-box{height:auto;min-height:310px;padding:12px;background:#f8fafc}.photo-box img{max-width:100%;max-height:520px;object-fit:contain;display:block;margin:auto;border:1px solid #cbd5e1;background:#fff}.set-questions{display:grid;gap:10px;padding:12px}.set-question{background:#fff;border:1px solid #d6dde8;border-radius:4px;padding:10px 12px}.set-question b{color:#1d4ed8}.set-question .vi{display:block;margin-top:4px;color:#64748b;font-size:13px}.transcript-box{margin-top:10px;border:1px dashed #cbd5e1;border-radius:4px;background:#fff;padding:10px 12px;color:#64748b;font-size:13px;line-height:1.45}.choice-text .vi{display:block;margin-top:3px;color:#64748b;font-size:13px}.prompt .vi{display:block;margin-top:5px;color:#64748b;font-size:14px}
+.photo-box{height:auto;min-height:310px;padding:12px;background:#f8fafc}.photo-box img{max-width:100%;max-height:520px;object-fit:contain;display:block;margin:auto;border:1px solid #cbd5e1;background:#fff}.set-questions{display:grid;gap:10px;padding:12px}.set-question{background:#fff;border:1px solid #d6dde8;border-radius:4px;padding:10px 12px}.set-question b{color:#1d4ed8}.set-question .vi{display:block;margin-top:4px;color:#64748b;font-size:13px}.transcript-box{margin-top:10px;border:1px dashed #cbd5e1;border-radius:4px;background:#fff;padding:10px 12px;color:#64748b;font-size:13px;line-height:1.45}.choice-text .vi{display:block;margin-top:3px;color:#64748b;font-size:13px}.prompt .vi{display:block;margin-top:5px;color:#64748b;font-size:14px}.graphic-box{padding:12px;border-bottom:1px solid #d6dde8;background:#fff}.graphic-box img{max-width:100%;max-height:360px;object-fit:contain;display:block;margin:0 auto;border:1px solid #cbd5e1;background:#fff}.graphic-caption{font-size:13px;font-weight:900;color:#526173;margin-bottom:7px;text-transform:uppercase;letter-spacing:.3px}
 </style>
 </head>
 <body>
@@ -353,6 +353,12 @@ function getSetQuestions(q){
   }
   return out;
 }
+function getSetGraphic(setItems){
+  for(var i=0;i<setItems.length;i++){
+    if(setItems[i].graphic) return setItems[i].graphic;
+  }
+  return '';
+}
 function questionText(q){
   if(q<=6) return 'Look at the picture marked No. '+q+' in your test screen.';
   if(q<=31) return 'Mark your answer after listening to the question and responses.';
@@ -433,7 +439,9 @@ function renderQuestion(){
     if(tr && (tr.transcript_en || tr.transcript_vi)){
       transcript='<div class="transcript-box"><b>Transcript</b><br>'+escapeHtml(tr.transcript_en||'')+(tr.transcript_vi?'<br><span class="vi">'+escapeHtml(tr.transcript_vi)+'</span>':'')+'</div>';
     }
-    media='<div class="set-box"><h3>Questions '+setStart+'-'+setEnd+'</h3><div class="set-questions">'+setHtml+'</div>'+transcript+'</div>';
+    var graphicPath=getSetGraphic(setItems);
+    var graphicHtml=graphicPath ? '<div class="graphic-box"><div class="graphic-caption">Graphic</div><img src="'+graphicPath+'" alt="Graphic for questions '+setStart+'-'+setEnd+'" onerror="this.parentNode.innerHTML=\'Graphic not found: '+graphicPath+'\';"></div>' : '';
+    media='<div class="set-box"><h3>Questions '+setStart+'-'+setEnd+'</h3>'+graphicHtml+'<div class="set-questions">'+setHtml+'</div>'+transcript+'</div>';
   }
   var answersHtml='';
   for(var c=0;c<choices.length;c++){
