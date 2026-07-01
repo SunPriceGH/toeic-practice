@@ -46,7 +46,7 @@ html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!im
         </div>
       </div>
       <div class="practice-audio-wrap" id="practiceAudioWrap">
-        <audio id="testAudio" preload="auto" controlsList="nodownload" disablePictureInPicture disableRemotePlayback oncontextmenu="return false"></audio>
+        <audio id="testAudio" preload="auto" controlsList="nodownload" disablePictureInPicture></audio>
       </div>
       <div class="content" id="content"></div>
     </section>
@@ -138,7 +138,7 @@ html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!im
           <option value="test">Thi thật - audio phát 1 lần, không tua lại</option>
           <option value="practice">Luyện tập - hiện thanh audio, được pause/tua</option>
         </select>
-        <div class="mode-note">Chế độ luyện tập dùng thanh audio HTML nhưng đã chặn nút download và playback speed.</div>
+        <div class="mode-note">Chế độ luyện tập dùng thanh audio HTML mặc định, chỉ chặn nút download để ưu tiên tua ổn định.</div>
       </div>
       <p>Make sure your headset volume is ready before starting.</p>
       <div class="submit-status" id="startStatus"></div>
@@ -262,7 +262,6 @@ function updateAudioMode(){
     audio.setAttribute('controls','controls');
     audio.setAttribute('controlsList','nodownload');
     audio.disablePictureInPicture=true;
-    audio.disableRemotePlayback=true;
     wrap.classList.add('show');
     if(modeName) modeName.innerHTML='<span class="mode-pill practice">Luyện tập</span>';
   }else{
@@ -534,26 +533,30 @@ function startTest(){
   var audio=document.getElementById('testAudio');
   var status=document.getElementById('startStatus');
   setListeningMode(document.getElementById('modeSelect')?document.getElementById('modeSelect').value:listeningMode);
+  if(listeningMode==='practice'){
+    state.started=true;
+    document.getElementById('startOverlay').style.display='none';
+    document.getElementById('audioStatus').textContent='Practice audio ready';
+    document.getElementById('audioPulse').classList.remove('playing');
+    status.textContent='';
+    status.className='submit-status';
+    if(audio){
+      audio.setAttribute('controls','controls');
+      audio.setAttribute('controlsList','nodownload');
+      audio.pause();
+      if(audio.readyState===0) audio.load();
+    }
+    return;
+  }
   status.textContent='Starting audio...';
   audio.play().then(function(){
     state.started=true;
     document.getElementById('startOverlay').style.display='none';
-    document.getElementById('audioStatus').textContent=listeningMode==='practice'?'Practice audio controls enabled':'Audio playing';
+    document.getElementById('audioStatus').textContent='Audio playing';
     document.getElementById('audioPulse').classList.add('playing');
-    if(listeningMode==='test'){
-      state.timerId=setInterval(tick,1000);
-    }else{
-      status.textContent='';
-    }
+    state.timerId=setInterval(tick,1000);
   }).catch(function(){
-    if(listeningMode==='practice'){
-      state.started=true;
-      document.getElementById('startOverlay').style.display='none';
-      document.getElementById('audioStatus').textContent='Practice audio controls enabled';
-      status.textContent='';
-    }else{
-      status.textContent='Không phát được audio. Kiểm tra file '+LISTENING_CONFIG.audioSrc+' hoặc quyền autoplay của trình duyệt.';
-    }
+    status.textContent='Không phát được audio. Kiểm tra file '+LISTENING_CONFIG.audioSrc+' hoặc quyền autoplay của trình duyệt.';
     status.className='submit-status err';
   });
 }
