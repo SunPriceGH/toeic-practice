@@ -46,7 +46,7 @@ html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!im
         </div>
       </div>
       <div class="practice-audio-wrap" id="practiceAudioWrap">
-        <audio id="testAudio" preload="auto" controlsList="nodownload noplaybackrate noremoteplayback" disablePictureInPicture disableRemotePlayback oncontextmenu="return false"></audio>
+        <audio id="testAudio" preload="auto" controlsList="nodownload" disablePictureInPicture disableRemotePlayback oncontextmenu="return false"></audio>
       </div>
       <div class="content" id="content"></div>
     </section>
@@ -260,7 +260,7 @@ function updateAudioMode(){
   if(!audio||!wrap) return;
   if(listeningMode==='practice'){
     audio.setAttribute('controls','controls');
-    audio.setAttribute('controlsList','nodownload noplaybackrate noremoteplayback');
+    audio.setAttribute('controlsList','nodownload');
     audio.disablePictureInPicture=true;
     audio.disableRemotePlayback=true;
     wrap.classList.add('show');
