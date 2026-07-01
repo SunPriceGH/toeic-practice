@@ -10,6 +10,8 @@
 html,body{height:auto;min-height:100%;overflow:auto}.app{min-height:100vh;height:auto}.main{min-height:calc(100vh - 108px)}.work{min-height:0}.content{max-height:none}.side-select{margin:0;padding:0;border:0;background:transparent}.side-select select{font-size:14px;padding:9px 10px}.home-footer-btn{background:#e2e8f0!important;color:#172033!important;border-color:#cbd5e1!important}.home-footer-btn:hover{background:#cbd5e1!important}.switch-warning{color:#991b1b;font-weight:900}
 
 .photo-box{height:auto;min-height:310px;padding:12px;background:#f8fafc}.photo-box img{max-width:100%;max-height:520px;object-fit:contain;display:block;margin:auto;border:1px solid #cbd5e1;background:#fff}.set-questions{display:grid;gap:10px;padding:12px}.set-question{background:#fff;border:1px solid #d6dde8;border-radius:4px;padding:10px 12px}.set-question b{color:#1d4ed8}.set-question .vi{display:block;margin-top:4px;color:#64748b;font-size:13px}.transcript-box{margin-top:10px;border:1px dashed #cbd5e1;border-radius:4px;background:#fff;padding:10px 12px;color:#64748b;font-size:13px;line-height:1.45}.choice-text .vi{display:block;margin-top:3px;color:#64748b;font-size:13px}.prompt .vi{display:block;margin-top:5px;color:#64748b;font-size:14px}.graphic-box{padding:12px;border-bottom:1px solid #d6dde8;background:#fff}.graphic-box img{max-width:100%;max-height:360px;object-fit:contain;display:block;margin:0 auto;border:1px solid #cbd5e1;background:#fff}.graphic-caption{font-size:13px;font-weight:900;color:#526173;margin-bottom:7px;text-transform:uppercase;letter-spacing:.3px}
+.practice-audio-wrap{display:none;border-bottom:1px solid #c7cfdb;background:#f8fafc;padding:12px 22px}.practice-audio-wrap.show{display:block}.practice-audio-wrap audio{width:100%;display:block;accent-color:#1d4ed8}.mode-note{font-size:13px;line-height:1.45;color:#64748b;margin-top:8px;font-weight:800}.mode-pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#eef2ff;color:#3730a3;padding:7px 10px;font-size:13px;font-weight:900}.mode-pill.practice{background:#ecfdf5;color:#166534}.mode-select-box{margin:12px 0;padding:14px;border:1px solid #cbd5e1;background:#f8fafc;border-radius:6px}.mode-select-box label{display:block;font-size:14px;font-weight:900;color:#334155;margin-bottom:8px}.mode-select-box select{width:100%;border:1px solid #94a3b8;border-radius:4px;background:#fff;color:#172033;font-size:17px;font-weight:800;padding:11px 12px;outline:none}
+html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}html.anti-download-lock img,html.anti-download-lock video,html.anti-download-lock audio,html.anti-download-lock canvas,html.anti-download-lock svg{-webkit-user-drag:none!important;user-drag:none!important}
 </style>
 </head>
 <body>
@@ -43,6 +45,9 @@ html,body{height:auto;min-height:100%;overflow:auto}.app{min-height:100vh;height
           <div class="audio-pill"><span class="pulse" id="audioPulse"></span><span id="audioStatus">Audio not started</span></div>
         </div>
       </div>
+      <div class="practice-audio-wrap" id="practiceAudioWrap">
+        <audio id="testAudio" preload="auto" controlsList="nodownload noplaybackrate noremoteplayback" disablePictureInPicture disableRemotePlayback oncontextmenu="return false"></audio>
+      </div>
       <div class="content" id="content"></div>
     </section>
 
@@ -54,6 +59,7 @@ html,body{height:auto;min-height:100%;overflow:auto}.app{min-height:100vh;height
           <div class="mini-row"><span>Current Part</span><b id="currentPart">Part 1</b></div>
           <div class="mini-row"><span>Audio File</span><b id="audioFileName">test-1.mp3</b></div>
           <div class="mini-row"><span>Test</span><b id="testName">Test 6</b></div>
+          <div class="mini-row"><span>Mode</span><b id="modeName">Thi thật</b></div>
         </div>
       </div>
       <div class="panel">
@@ -105,8 +111,6 @@ html,body{height:auto;min-height:100%;overflow:auto}.app{min-height:100vh;height
   </footer>
 </div>
 
-<audio id="testAudio" preload="auto"></audio>
-
 <div class="start-overlay" id="startOverlay">
   <div class="start-card">
     <div class="start-head">ETS TOEIC 2024 Listening</div>
@@ -127,6 +131,14 @@ html,body{height:auto;min-height:100%;overflow:auto}.app{min-height:100vh;height
           <option value="9">ETS TOEIC 2024 Test 9</option>
           <option value="10">ETS TOEIC 2024 Test 10</option>
         </select>
+      </div>
+      <div class="mode-select-box">
+        <label for="modeSelect">Chọn chế độ</label>
+        <select id="modeSelect" onchange="setListeningMode(this.value)">
+          <option value="test">Thi thật - audio phát 1 lần, không tua lại</option>
+          <option value="practice">Luyện tập - hiện thanh audio, được pause/tua</option>
+        </select>
+        <div class="mode-note">Chế độ luyện tập dùng thanh audio HTML nhưng đã chặn nút download và playback speed.</div>
       </div>
       <p>Make sure your headset volume is ready before starting.</p>
       <div class="submit-status" id="startStatus"></div>
@@ -197,6 +209,7 @@ var TESTS = {
 };
 var testParam = new URLSearchParams(location.search).get('test') || '6';
 var selectedTest = TESTS[testParam] || TESTS[6];
+var listeningMode='test';
 var LISTENING_CONFIG = {
   id:selectedTest.id,
   title:selectedTest.title,
@@ -231,6 +244,29 @@ function applyListeningTest(testNo){
   if(fileName) fileName.textContent=LISTENING_CONFIG.audioSrc.split('/').pop();
   var testName=document.getElementById('testName');
   if(testName) testName.textContent=LISTENING_CONFIG.title;
+  updateAudioMode();
+}
+function setListeningMode(mode){
+  listeningMode=mode==='practice'?'practice':'test';
+  updateAudioMode();
+}
+function updateAudioMode(){
+  var audio=document.getElementById('testAudio');
+  var wrap=document.getElementById('practiceAudioWrap');
+  var modeName=document.getElementById('modeName');
+  if(!audio||!wrap) return;
+  if(listeningMode==='practice'){
+    audio.setAttribute('controls','controls');
+    audio.setAttribute('controlsList','nodownload noplaybackrate noremoteplayback');
+    audio.disablePictureInPicture=true;
+    audio.disableRemotePlayback=true;
+    wrap.classList.add('show');
+    if(modeName) modeName.innerHTML='<span class="mode-pill practice">Luyện tập</span>';
+  }else{
+    audio.removeAttribute('controls');
+    wrap.classList.remove('show');
+    if(modeName) modeName.innerHTML='<span class="mode-pill">Thi thật</span>';
+  }
 }
 function changeListeningTest(testNo){
   requestSwitchTest(testNo);
@@ -291,6 +327,7 @@ function switchToTest(testNo){
   document.getElementById('audioPulse').classList.remove('playing');
   document.getElementById('startStatus').textContent='';
   document.getElementById('startStatus').className='submit-status';
+  setListeningMode(document.getElementById('modeSelect')?document.getElementById('modeSelect').value:listeningMode);
   document.getElementById('startOverlay').style.display='flex';
   renderQuestion();
   updateTimer();
@@ -493,15 +530,27 @@ function toggleFlag(){state.flags[state.current]=!state.flags[state.current];syn
 function startTest(){
   var audio=document.getElementById('testAudio');
   var status=document.getElementById('startStatus');
+  setListeningMode(document.getElementById('modeSelect')?document.getElementById('modeSelect').value:listeningMode);
   status.textContent='Starting audio...';
   audio.play().then(function(){
     state.started=true;
     document.getElementById('startOverlay').style.display='none';
-    document.getElementById('audioStatus').textContent='Audio playing';
+    document.getElementById('audioStatus').textContent=listeningMode==='practice'?'Practice audio controls enabled':'Audio playing';
     document.getElementById('audioPulse').classList.add('playing');
-    state.timerId=setInterval(tick,1000);
+    if(listeningMode==='test'){
+      state.timerId=setInterval(tick,1000);
+    }else{
+      status.textContent='';
+    }
   }).catch(function(){
-    status.textContent='Không phát được audio. Kiểm tra file '+LISTENING_CONFIG.audioSrc+' hoặc quyền autoplay của trình duyệt.';
+    if(listeningMode==='practice'){
+      state.started=true;
+      document.getElementById('startOverlay').style.display='none';
+      document.getElementById('audioStatus').textContent='Practice audio controls enabled';
+      status.textContent='';
+    }else{
+      status.textContent='Không phát được audio. Kiểm tra file '+LISTENING_CONFIG.audioSrc+' hoặc quyền autoplay của trình duyệt.';
+    }
     status.className='submit-status err';
   });
 }
@@ -590,14 +639,48 @@ document.getElementById('testAudio').addEventListener('ended',function(){
   document.getElementById('audioStatus').textContent='Audio ended';
   document.getElementById('audioPulse').classList.remove('playing');
 });
+document.getElementById('testAudio').addEventListener('play',function(){
+  if(state.started){
+    document.getElementById('audioStatus').textContent=listeningMode==='practice'?'Practice audio playing':'Audio playing';
+    document.getElementById('audioPulse').classList.add('playing');
+  }
+});
+document.getElementById('testAudio').addEventListener('pause',function(){
+  if(state.started&&!document.getElementById('testAudio').ended){
+    document.getElementById('audioStatus').textContent=listeningMode==='practice'?'Practice audio paused':'Audio paused';
+    document.getElementById('audioPulse').classList.remove('playing');
+  }
+});
 document.addEventListener('change',function(e){
   if(e.target&&e.target.matches('input[type="radio"][data-question][data-answer]')){
     selectAnswer(Number(e.target.dataset.question),e.target.dataset.answer);
   }
 });
+function installAntiSourceLock(){
+  document.documentElement.classList.add('anti-download-lock');
+  var block=function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  };
+  ['contextmenu','dragstart','drop','copy','cut','paste','selectstart'].forEach(function(evt){
+    document.addEventListener(evt,block,true);
+  });
+  document.addEventListener('keydown',function(e){
+    var key=String(e.key||'').toLowerCase();
+    var ctrlOrCmd=e.ctrlKey||e.metaKey;
+    if(e.key==='F12') return block(e);
+    if(ctrlOrCmd&&['s','u','p','o','a','c','x','v'].indexOf(key)!==-1) return block(e);
+    if(ctrlOrCmd&&e.shiftKey&&['i','j','c','s'].indexOf(key)!==-1) return block(e);
+  },true);
+  document.addEventListener('mousedown',function(e){
+    if(e.button===2) return block(e);
+  },true);
+}
 window.addEventListener('beforeunload',function(e){
   if(state.started&&!state.submitted){e.preventDefault();e.returnValue='';}
 });
+installAntiSourceLock();
 buildShell();
 </script>
 </body>
