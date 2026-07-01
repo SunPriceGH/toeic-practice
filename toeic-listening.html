@@ -238,16 +238,53 @@ function applyListeningTest(testNo){
   document.title=LISTENING_CONFIG.title;
   var startHead=document.querySelector('.start-head');
   if(startHead) startHead.textContent=LISTENING_CONFIG.title;
-  var audio=document.getElementById('testAudio');
-  if(audio && audio.getAttribute('src')!==LISTENING_CONFIG.audioSrc){
-    audio.src=LISTENING_CONFIG.audioSrc;
-    audio.load();
-  }
+
   var fileName=document.getElementById('audioFileName');
   if(fileName) fileName.textContent=LISTENING_CONFIG.audioSrc.split('/').pop();
   var testName=document.getElementById('testName');
   if(testName) testName.textContent=LISTENING_CONFIG.title;
+  
   updateAudioMode();
+
+  var audio=document.getElementById('testAudio');
+  // Cập nhật mới: Xử lý dứt điểm lỗi tua (HTTP 206) bằng cách fetch Blob
+  if(audio && audio.dataset.rawSrc !== LISTENING_CONFIG.audioSrc){
+    audio.dataset.rawSrc = LISTENING_CONFIG.audioSrc;
+    
+    var statusEl = document.getElementById('startStatus');
+    var startBtn = document.querySelector('.start-actions .big-btn:not(.gray)');
+    
+    if(statusEl) statusEl.textContent = 'Đang tải dữ liệu Audio...';
+    if(startBtn) startBtn.disabled = true;
+
+    fetch(LISTENING_CONFIG.audioSrc)
+      .then(function(res) { return res.blob(); })
+      .then(function(blob) {
+        // Kiểm tra xem thí sinh có đổi đề khác trong lúc đang tải không
+        if (audio.dataset.rawSrc !== LISTENING_CONFIG.audioSrc) return; 
+        
+        var url = URL.createObjectURL(blob);
+        audio.src = url;
+        audio.load();
+        
+        if(statusEl) {
+          statusEl.textContent = 'Audio đã sẵn sàng!';
+          statusEl.className = 'submit-status ok';
+        }
+        if(startBtn) startBtn.disabled = false;
+      })
+      .catch(function(err) {
+        // Fallback: Nếu fetch lỗi (chạy local file:// hoặc rớt mạng), quay về dùng link src gốc
+        audio.src = LISTENING_CONFIG.audioSrc;
+        audio.load();
+        
+        if(statusEl) {
+          statusEl.textContent = 'Dùng link audio gốc (tua có thể bị lỗi do server).';
+          statusEl.className = 'submit-status err';
+        }
+        if(startBtn) startBtn.disabled = false;
+      });
+  }
 }
 function setListeningMode(mode){
   listeningMode=mode==='practice'?'practice':'test';
