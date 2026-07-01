@@ -239,7 +239,10 @@ function applyListeningTest(testNo){
   var startHead=document.querySelector('.start-head');
   if(startHead) startHead.textContent=LISTENING_CONFIG.title;
   var audio=document.getElementById('testAudio');
-  if(audio) audio.src=LISTENING_CONFIG.audioSrc;
+  if(audio && audio.getAttribute('src')!==LISTENING_CONFIG.audioSrc){
+    audio.src=LISTENING_CONFIG.audioSrc;
+    audio.load();
+  }
   var fileName=document.getElementById('audioFileName');
   if(fileName) fileName.textContent=LISTENING_CONFIG.audioSrc.split('/').pop();
   var testName=document.getElementById('testName');
@@ -659,6 +662,9 @@ document.addEventListener('change',function(e){
 function installAntiSourceLock(){
   document.documentElement.classList.add('anti-download-lock');
   var block=function(e){
+    if(e.target&&e.target.closest&&e.target.closest('.practice-audio-wrap')){
+      return true;
+    }
     e.preventDefault();
     e.stopPropagation();
     return false;
