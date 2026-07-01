@@ -9,6 +9,7 @@
 .test-select-box{margin:16px 0;padding:14px;border:1px solid #cbd5e1;background:#f8fafc;border-radius:6px}.test-select-box label{display:block;font-size:14px;font-weight:900;color:#334155;margin-bottom:8px}.test-select-box select{width:100%;border:1px solid #94a3b8;border-radius:4px;background:#fff;color:#172033;font-size:17px;font-weight:800;padding:11px 12px;outline:none}.test-select-box select:focus{border-color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,.14)}
 html,body{height:auto;min-height:100%;overflow:auto}.app{min-height:100vh;height:auto}.main{min-height:calc(100vh - 108px)}.work{min-height:0}.content{max-height:none}.side-select{margin:0;padding:0;border:0;background:transparent}.side-select select{font-size:14px;padding:9px 10px}.home-footer-btn{background:#e2e8f0!important;color:#172033!important;border-color:#cbd5e1!important}.home-footer-btn:hover{background:#cbd5e1!important}.switch-warning{color:#991b1b;font-weight:900}
 .work{min-width:0;display:flex;flex-direction:column;background:#fff}.content{flex:1;min-height:0;overflow:auto;padding:24px 30px}
+.result-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}.result-stat{border:1px solid #cbd5e1;background:#f8fafc;border-radius:5px;padding:10px;text-align:center}.result-stat b{display:block;font-size:20px;color:#172033}.result-stat span{font-size:12px;font-weight:900;color:#526173;text-transform:uppercase}.result-list{max-height:46vh;overflow:auto;border:1px solid #cbd5e1;border-radius:5px;background:#fff;margin-top:12px}.result-row{display:grid;grid-template-columns:58px 1fr 1fr 86px;gap:10px;align-items:center;padding:9px 11px;border-bottom:1px solid #edf1f6;font-size:14px}.result-row:last-child{border-bottom:0}.result-row .q{font-weight:900;color:#172033}.result-row .ans,.result-row .correct{color:#475569}.result-badge{justify-self:end;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:900}.result-badge.ok{background:#dcfce7;color:#166534}.result-badge.wrong{background:#fee2e2;color:#991b1b}.result-badge.missing{background:#fef3c7;color:#92400e}@media(max-width:760px){.result-stats{grid-template-columns:1fr 1fr}.result-row{grid-template-columns:48px 1fr;gap:6px}.result-row .correct,.result-row .result-badge{justify-self:start}}
 
 .photo-box{height:auto;min-height:310px;padding:12px;background:#f8fafc}.photo-box img{max-width:100%;max-height:520px;object-fit:contain;display:block;margin:auto;border:1px solid #cbd5e1;background:#fff}.set-questions{display:grid;gap:10px;padding:12px}.set-question{background:#fff;border:1px solid #d6dde8;border-radius:4px;padding:10px 12px}.set-question b{color:#1d4ed8}.set-question .vi{display:block;margin-top:4px;color:#64748b;font-size:13px}.transcript-box{margin-top:10px;border:1px dashed #cbd5e1;border-radius:4px;background:#fff;padding:10px 12px;color:#64748b;font-size:13px;line-height:1.45}.choice-text .vi{display:block;margin-top:3px;color:#64748b;font-size:13px}.prompt .vi{display:block;margin-top:5px;color:#64748b;font-size:14px}.graphic-box{padding:12px;border-bottom:1px solid #d6dde8;background:#fff}.graphic-box img{max-width:100%;max-height:360px;object-fit:contain;display:block;margin:0 auto;border:1px solid #cbd5e1;background:#fff}.graphic-caption{font-size:13px;font-weight:900;color:#526173;margin-bottom:7px;text-transform:uppercase;letter-spacing:.3px}
 .practice-audio-wrap{display:none;border-bottom:1px solid #c7cfdb;background:#f8fafc;padding:12px 22px}.practice-audio-wrap.show{display:block}.practice-audio-wrap audio{width:100%;display:block;accent-color:#1d4ed8}.mode-note{font-size:13px;line-height:1.45;color:#64748b;margin-top:8px;font-weight:800}.mode-pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#eef2ff;color:#3730a3;padding:7px 10px;font-size:13px;font-weight:900}.mode-pill.practice{background:#ecfdf5;color:#166534}.mode-select-box{margin:12px 0;padding:14px;border:1px solid #cbd5e1;background:#f8fafc;border-radius:6px}.mode-select-box label{display:block;font-size:14px;font-weight:900;color:#334155;margin-bottom:8px}.mode-select-box select{width:100%;border:1px solid #94a3b8;border-radius:4px;background:#fff;color:#172033;font-size:17px;font-weight:800;padding:11px 12px;outline:none}
@@ -157,12 +158,14 @@ html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!im
     <div class="modal-head">Submit Listening Test</div>
     <div class="modal-body">
       <p id="submitSummary">You have answered 0 / 100 questions.</p>
-      <p>After submitting, your result will be saved and the test will end.</p>
+      <p id="submitModeNote">After submitting, your result will be saved and the test will end.</p>
+      <div id="resultStats" class="result-stats"></div>
+      <div id="resultList" class="result-list"></div>
       <div class="submit-status" id="submitStatus"></div>
     </div>
     <div class="modal-actions">
       <button class="big-btn gray" type="button" onclick="closeSubmitModal()">Continue Test</button>
-      <button class="big-btn red" type="button" onclick="submitFinalResult()">Submit</button>
+      <button class="big-btn red" id="finalSubmitBtn" type="button" onclick="submitFinalResult()">Submit</button>
     </div>
   </div>
 </div>
@@ -613,9 +616,69 @@ function updateTimer(){
   var s=state.remaining%60;
   document.getElementById('timerText').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
 }
+function buildResultSummary(){
+  var rows=[];
+  var correct=0;
+  var wrong=0;
+  var missing=0;
+  for(var i=1;i<=100;i++){
+    var selected=state.answers[i]||null;
+    var correctAnswer=LISTENING_CONFIG.answerKey[i-1]||null;
+    var status='missing';
+    if(!selected){
+      missing++;
+    }else if(correctAnswer&&selected===correctAnswer){
+      status='ok';
+      correct++;
+    }else{
+      status='wrong';
+      wrong++;
+    }
+    rows.push({no:i,selected:selected,correctAnswer:correctAnswer,status:status});
+  }
+  return {correct:correct,wrong:wrong,missing:missing,total:100,rows:rows};
+}
+function renderResultSummary(result){
+  var stats=document.getElementById('resultStats');
+  var list=document.getElementById('resultList');
+  if(!stats||!list) return;
+  stats.innerHTML=
+    '<div class="result-stat"><b>'+result.correct+'</b><span>Đúng</span></div>'+
+    '<div class="result-stat"><b>'+result.wrong+'</b><span>Sai</span></div>'+
+    '<div class="result-stat"><b>'+result.missing+'</b><span>Chưa chọn</span></div>'+
+    '<div class="result-stat"><b>'+result.correct+' / '+result.total+'</b><span>Điểm</span></div>';
+  var html='';
+  for(var i=0;i<result.rows.length;i++){
+    var row=result.rows[i];
+    var label=row.status==='ok'?'Đúng':(row.status==='wrong'?'Sai':'Chưa chọn');
+    var selected=row.selected||'-';
+    var correctAnswer=row.correctAnswer||'-';
+    html+='<div class="result-row">'+
+      '<div class="q">Câu '+row.no+'</div>'+
+      '<div class="ans">Chọn: <b>'+selected+'</b></div>'+
+      '<div class="correct">Đáp án: <b>'+correctAnswer+'</b></div>'+
+      '<div class="result-badge '+row.status+'">'+label+'</div>'+
+    '</div>';
+  }
+  list.innerHTML=html;
+}
 function openSubmitModal(){
   var answered=Object.keys(state.answers).length;
-  document.getElementById('submitSummary').textContent='You have answered '+answered+' / 100 questions.';
+  var result=buildResultSummary();
+  document.getElementById('submitSummary').textContent='Bạn đã chọn '+answered+' / 100 câu. Kết quả: '+result.correct+' đúng, '+result.wrong+' sai, '+result.missing+' chưa chọn.';
+  renderResultSummary(result);
+  var note=document.getElementById('submitModeNote');
+  var btn=document.getElementById('finalSubmitBtn');
+  var status=document.getElementById('submitStatus');
+  status.className='submit-status';
+  status.textContent='';
+  if(listeningMode==='practice'){
+    if(note) note.textContent='Chế độ luyện tập chỉ xem kết quả, không nộp/lưu bài.';
+    if(btn) btn.style.display='none';
+  }else{
+    if(note) note.textContent='Chế độ thi thử: bấm Submit để nộp và lưu kết quả.';
+    if(btn){btn.style.display='inline-block';btn.disabled=false;btn.textContent='Submit';}
+  }
   document.getElementById('submitModal').classList.add('show');
 }
 function closeSubmitModal(){document.getElementById('submitModal').classList.remove('show');}
@@ -626,31 +689,39 @@ function requestGoHome(){
 function closeHomeModal(){document.getElementById('homeModal').classList.remove('show');}
 function collectResultPayload(){
   var student=getStudentSession()||{};
-  var score=0;
+  var result=buildResultSummary();
+  var score=result.correct;
   var answers=[];
-  for(var i=0;i<100;i++){
-    var no=i+1;
-    var selected=state.answers[no]||null;
-    var correctAnswer=LISTENING_CONFIG.answerKey[i]||null;
-    var isCorrect=!!selected&&!!correctAnswer&&selected===correctAnswer;
-    if(isCorrect) score++;
+  for(var i=0;i<result.rows.length;i++){
+    var row=result.rows[i];
+    var no=row.no;
+    var selected=row.selected;
+    var correctAnswer=row.correctAnswer;
+    var isCorrect=row.status==='ok';
     answers.push({no:no,id:'q'+no,part:getPart(no).no,selected:selected,correctAnswer:correctAnswer,isCorrect:isCorrect,flagged:!!state.flags[no]});
   }
   return {
     student:{email:student.email||'',loginAt:student.loginAt||''},
-    quiz:{id:LISTENING_CONFIG.id,title:LISTENING_CONFIG.title,total:100,audioSrc:LISTENING_CONFIG.audioSrc},
+    quiz:{id:LISTENING_CONFIG.id,title:LISTENING_CONFIG.title,total:100,audioSrc:LISTENING_CONFIG.audioSrc,mode:listeningMode},
     submittedAt:new Date().toISOString(),
     score,total:100,percent:Math.round(score),answers
   };
 }
 function submitFinalResult(){
+  if(listeningMode==='practice'){
+    document.getElementById('submitStatus').className='submit-status ok';
+    document.getElementById('submitStatus').textContent='Chế độ luyện tập không nộp bài. Kết quả chỉ hiển thị tại chỗ.';
+    return;
+  }
   if(state.submitted) return;
   var student=requireStudentSession();
   if(!student) return;
   var statusEl=document.getElementById('submitStatus');
+  var btn=document.getElementById('finalSubmitBtn');
   var payload=collectResultPayload();
   statusEl.className='submit-status';
   statusEl.textContent='Đang lưu kết quả...';
+  if(btn) btn.disabled=true;
   fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
   .then(function(res){
     return res.json().catch(function(){return {};}).then(function(data){
@@ -667,6 +738,7 @@ function submitFinalResult(){
     setTimeout(function(){location.href='index.html';},1200);
   })
   .catch(function(err){
+    if(btn) btn.disabled=false;
     statusEl.className='submit-status err';
     statusEl.textContent='Không thể lưu lên. Kiểm tra KV binding / mạng rồi thử lại.';
     var blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
