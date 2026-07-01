@@ -445,19 +445,41 @@ function getCurrentTranscriptTestKey(){
   var test=TESTS[testNo]||null;
   return test && test.id ? test.id : 'ets-toeic-2024-test-'+testNo;
 }
+function mergeTranscriptStore(target, source){
+  if(!source || typeof source!=='object') return target;
+  var normalized=source.transcripts||source.LISTENING_TRANSCRIPTS||source.LISTENING_TRANSCRIPTS_P12||source.LISTENING_TRANSCRIPTS_P34||source;
+  for(var testKey in normalized){
+    if(!Object.prototype.hasOwnProperty.call(normalized,testKey)) continue;
+    if(!target[testKey]) target[testKey]={};
+    var questions=normalized[testKey]||{};
+    for(var q in questions){
+      if(Object.prototype.hasOwnProperty.call(questions,q)) target[testKey][q]=questions[q];
+    }
+  }
+  return target;
+}
 function loadTranscriptJsonData(){
   if(window.__transcriptJsonRequested) return;
   window.__transcriptJsonRequested=true;
-  fetch('data/listening-transcripts-ets2024-p12.json')
-    .then(function(res){if(!res.ok) throw new Error('transcript json not found'); return res.json();})
-    .then(function(data){
-      window.LISTENING_TRANSCRIPTS_P12=data.transcripts||data.LISTENING_TRANSCRIPTS_P12||data;
+  var files=[
+    'data/listening-transcripts-ets2024-p12.json',
+    'data/listening-transcripts-ets2024-p34.json'
+  ];
+  Promise.all(files.map(function(file){
+    return fetch(file)
+      .then(function(res){if(!res.ok) throw new Error(file+' not found'); return res.json();})
+      .catch(function(){return null;});
+  }))
+    .then(function(results){
+      var merged={};
+      for(var i=0;i<results.length;i++) mergeTranscriptStore(merged,results[i]);
+      window.LISTENING_TRANSCRIPTS=merged;
       renderQuestion();
     })
     .catch(function(){});
 }
 function getTranscriptData(q){
-  var store=window.LISTENING_TRANSCRIPTS_P12||window.LISTENING_TRANSCRIPTS||null;
+  var store=window.LISTENING_TRANSCRIPTS||window.LISTENING_TRANSCRIPTS_P12||window.LISTENING_TRANSCRIPTS_P34||null;
   if(!store) return null;
   var testKey=getCurrentTranscriptTestKey();
   var testNo=getCurrentTestNo ? getCurrentTestNo() : String(testParam||'6');
