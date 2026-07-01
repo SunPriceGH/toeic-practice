@@ -532,6 +532,9 @@ function getQuestionTranscript(q){
     vi:item.transcript_vi||item.script_vi||item.statement_vi||item.text_vi||''
   };
 }
+function transcriptHtmlText(text){
+  return escapeHtml(text||'').replace(/\n/g,'<br>');
+}
 function toggleQuestionTranscript(q){
   var box=document.getElementById('questionTranscript'+q);
   if(box) box.classList.toggle('show');
@@ -631,7 +634,7 @@ function renderQuestion(){
   if(listeningMode==='practice'){
     var transcriptData=getQuestionTranscript(q);
     var transcriptBody=transcriptData.en || transcriptData.vi
-      ? '<b>Transcript</b><br>'+escapeHtml(transcriptData.en||'')+(transcriptData.vi?'<span class="vi">'+escapeHtml(transcriptData.vi)+'</span>':'')
+      ? '<b>Transcript</b><br>'+transcriptHtmlText(transcriptData.en||'')+(transcriptData.vi?'<span class="vi">'+transcriptHtmlText(transcriptData.vi)+'</span>':'')
       : '<b>Transcript</b><br>Chưa có transcript cho câu này.';
     transcriptHtml='<button class="transcript-toggle" type="button" onclick="toggleQuestionTranscript('+q+')">Transcript</button><div class="question-transcript" id="questionTranscript'+q+'">'+transcriptBody+'</div>';
   }
