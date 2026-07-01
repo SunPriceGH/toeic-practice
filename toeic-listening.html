@@ -661,12 +661,6 @@ document.addEventListener('change',function(e){
 });
 function installAntiSourceLock(){
   document.documentElement.classList.add('anti-download-lock');
-  var audioWrap=document.getElementById('practiceAudioWrap');
-  if(audioWrap){
-    ['pointerdown','pointermove','pointerup','mousedown','mousemove','mouseup','touchstart','touchmove','touchend','click','input','change'].forEach(function(evt){
-      audioWrap.addEventListener(evt,function(e){e.stopPropagation();},true);
-    });
-  }
   var block=function(e){
     if(e.target&&e.target.closest&&e.target.closest('.practice-audio-wrap')){
       return true;
