@@ -189,6 +189,8 @@ var TESTS = {
   9: {id:'ets-toeic-2024-test-9', title:'ETS TOEIC 2024 Test 9', audioSrc:'audio/ets-toeic-2024-test-9.mp3'},
   10:{id:'ets-toeic-2024-test-10',title:'ETS TOEIC 2024 Test 10',audioSrc:'audio/ets-toeic-2024-test-10.mp3'}
 };
+var ANSWER_KEYS = {};
+var answerKeysLoaded = false;
 var testParam = new URLSearchParams(location.search).get('test') || '6';
 var selectedTest = TESTS[testParam] || TESTS[6];
 var listeningMode='test';
@@ -197,26 +199,44 @@ var LISTENING_CONFIG = {
   title:selectedTest.title,
   audioSrc:selectedTest.audioSrc,
   durationSeconds: 45 * 60,
-  // Thay bằng đáp án thật của từng đề nếu bạn muốn chấm điểm chính xác.
-  answerKey: [
-    'A','B','C','D','A','B','C','D','A','B',
-    'C','D','A','B','C','D','A','B','C','D',
-    'A','B','C','A','B','C','A','B','C','A',
-    'A','B','C','D','A','B','C','D','A','B',
-    'C','D','A','B','C','D','A','B','C','D',
-    'A','B','C','D','A','B','C','D','A','B',
-    'C','D','A','B','C','D','A','B','C','D',
-    'A','B','C','D','A','B','C','D','A','B',
-    'C','D','A','B','C','D','A','B','C','D',
-    'A','B','C','D','A','B','C','D','A','B'
-  ]
+  answerKey: []
 };
+
+function setCurrentAnswerKey(testNo){
+  LISTENING_CONFIG.answerKey = ANSWER_KEYS[String(testNo)] || [];
+}
+function loadAnswerKeys(){
+  if(window.__answerKeysPromise) return window.__answerKeysPromise;
+  window.__answerKeysPromise = fetch('data/listening-answer-keys.json')
+    .then(function(res){
+      if(!res.ok) throw new Error('answer key json not found');
+      return res.json();
+    })
+    .then(function(data){
+      ANSWER_KEYS = data || {};
+      answerKeysLoaded = true;
+      setCurrentAnswerKey(getCurrentTestNo ? getCurrentTestNo() : testParam);
+      return ANSWER_KEYS;
+    })
+    .catch(function(err){
+      answerKeysLoaded = false;
+      console.error('Cannot load answer keys:', err);
+      var status = document.getElementById('submitStatus') || document.getElementById('startStatus');
+      if(status){
+        status.className = 'submit-status err';
+        status.textContent = 'Không tải được file đáp án data/listening-answer-keys.json.';
+      }
+      throw err;
+    });
+  return window.__answerKeysPromise;
+}
 
 function applyListeningTest(testNo){
   selectedTest=TESTS[testNo]||TESTS[6];
   LISTENING_CONFIG.id=selectedTest.id;
   LISTENING_CONFIG.title=selectedTest.title;
   LISTENING_CONFIG.audioSrc=selectedTest.audioSrc;
+  setCurrentAnswerKey(testNo);
   document.title=LISTENING_CONFIG.title;
   var startHead=document.querySelector('.start-head');
   if(startHead) startHead.textContent=LISTENING_CONFIG.title;
@@ -500,6 +520,7 @@ function buildShell(){
   if(select) select.value=String(TESTS[testParam]?testParam:'6');
   syncTestSelects(select?select.value:testParam);
   applyListeningTest(select?select.value:testParam);
+  loadAnswerKeys();
   document.getElementById('candidateEmail').textContent='Candidate: '+student.email;
   var tabsHtml='';
   for(var t=0;t<parts.length;t++){
@@ -704,6 +725,15 @@ function renderResultSummary(result){
   list.innerHTML=html;
 }
 function openSubmitModal(){
+  if(!answerKeysLoaded || !LISTENING_CONFIG.answerKey || LISTENING_CONFIG.answerKey.length<100){
+    var status=document.getElementById('submitStatus')||document.getElementById('startStatus');
+    if(status){
+      status.className='submit-status err';
+      status.textContent='Đáp án chưa tải xong. Vui lòng thử lại sau vài giây.';
+    }
+    loadAnswerKeys();
+    return;
+  }
   var answered=Object.keys(state.answers).length;
   var result=buildResultSummary();
   document.getElementById('submitSummary').textContent='Bạn đã chọn '+answered+' / 100 câu. Kết quả: '+result.correct+' đúng, '+result.wrong+' sai, '+result.missing+' chưa chọn.';
