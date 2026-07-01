@@ -66,23 +66,9 @@ html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!im
         </div>
       </div>
       <div class="panel">
-        <div class="panel-head">Đổi đề nghe</div>
+        <div class="panel-head">Đổi chế độ / đề</div>
         <div class="panel-body">
-          <div class="test-select-box side-select">
-            <label for="sideTestSelect">Chọn đề khác</label>
-            <select id="sideTestSelect" onchange="requestSwitchTest(this.value)">
-              <option value="1">ETS TOEIC 2024 Test 1</option>
-              <option value="2">ETS TOEIC 2024 Test 2</option>
-              <option value="3">ETS TOEIC 2024 Test 3</option>
-              <option value="4">ETS TOEIC 2024 Test 4</option>
-              <option value="5">ETS TOEIC 2024 Test 5</option>
-              <option value="6">ETS TOEIC 2024 Test 6</option>
-              <option value="7">ETS TOEIC 2024 Test 7</option>
-              <option value="8">ETS TOEIC 2024 Test 8</option>
-              <option value="9">ETS TOEIC 2024 Test 9</option>
-              <option value="10">ETS TOEIC 2024 Test 10</option>
-            </select>
-          </div>
+          <button class="nav-btn primary" type="button" style="width:100%" onclick="openModeTestPanel()">Chọn chế độ / đề</button>
         </div>
       </div>
       <div class="panel">
@@ -308,6 +294,17 @@ function updateAudioMode(){
 }
 function changeListeningTest(testNo){
   requestSwitchTest(testNo);
+}
+function openModeTestPanel(){
+  syncTestSelects(getCurrentTestNo());
+  var modeSelect=document.getElementById('modeSelect');
+  if(modeSelect) modeSelect.value=listeningMode;
+  var status=document.getElementById('startStatus');
+  if(status){
+    status.textContent='';
+    status.className='submit-status';
+  }
+  document.getElementById('startOverlay').style.display='flex';
 }
 function requestSwitchTest(testNo){
   if(!TESTS[testNo]) testNo='6';
