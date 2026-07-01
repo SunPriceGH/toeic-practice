@@ -305,6 +305,7 @@ function updateAudioMode(){
     audio.setAttribute('controlsList','nodownload');
     audio.disablePictureInPicture=true;
     wrap.classList.add('show');
+    loadTranscriptJsonData();
     if(modeName) modeName.innerHTML='<span class="mode-pill practice">Luyện tập</span>';
   }else{
     audio.removeAttribute('controls');
@@ -439,6 +440,31 @@ function loadListeningJsonData(){
     })
     .catch(function(){});
 }
+function getCurrentTranscriptTestKey(){
+  var testNo=getCurrentTestNo ? getCurrentTestNo() : String(testParam||'6');
+  var test=TESTS[testNo]||null;
+  return test && test.id ? test.id : 'ets-toeic-2024-test-'+testNo;
+}
+function loadTranscriptJsonData(){
+  if(window.__transcriptJsonRequested) return;
+  window.__transcriptJsonRequested=true;
+  fetch('data/listening-transcripts-ets2024-p12.json')
+    .then(function(res){if(!res.ok) throw new Error('transcript json not found'); return res.json();})
+    .then(function(data){
+      window.LISTENING_TRANSCRIPTS_P12=data.transcripts||data.LISTENING_TRANSCRIPTS_P12||data;
+      renderQuestion();
+    })
+    .catch(function(){});
+}
+function getTranscriptData(q){
+  var store=window.LISTENING_TRANSCRIPTS_P12||window.LISTENING_TRANSCRIPTS||null;
+  if(!store) return null;
+  var testKey=getCurrentTranscriptTestKey();
+  var testNo=getCurrentTestNo ? getCurrentTestNo() : String(testParam||'6');
+  var testData=store[testKey]||store[testNo]||null;
+  if(!testData) return null;
+  return testData[String(q)]||testData[q]||null;
+}
 function getQuestionData(q){
   var data=getCurrentTestData();
   if(!data) return null;
@@ -470,6 +496,13 @@ function getSetGraphic(setItems){
   return '';
 }
 function getQuestionTranscript(q){
+  var transcript=getTranscriptData(q);
+  if(transcript){
+    return {
+      en:transcript.transcript_en||transcript.transcript||transcript.script||transcript.prompt_en||'',
+      vi:transcript.transcript_vi||transcript.script_vi||transcript.prompt_vi||''
+    };
+  }
   var item=getQuestionData(q);
   if(!item) return {en:'',vi:''};
   return {
