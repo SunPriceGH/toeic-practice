@@ -16,6 +16,7 @@ html,body{height:auto;min-height:100%;overflow:auto}.app{min-height:100vh;height
 .practice-audio-wrap{display:none;border-bottom:1px solid #c7cfdb;background:#f8fafc;padding:12px 22px}.practice-audio-wrap.show{display:block}.practice-audio-wrap audio{width:100%;display:block;accent-color:#1d4ed8}.mode-note{font-size:13px;line-height:1.45;color:#64748b;margin-top:8px;font-weight:800}.mode-pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#eef2ff;color:#3730a3;padding:7px 10px;font-size:13px;font-weight:900}.mode-pill.practice{background:#ecfdf5;color:#166534}.mode-select-box{margin:12px 0;padding:14px;border:1px solid #cbd5e1;background:#f8fafc;border-radius:6px}.mode-select-box label{display:block;font-size:14px;font-weight:900;color:#334155;margin-bottom:8px}.mode-select-box select{width:100%;border:1px solid #94a3b8;border-radius:4px;background:#fff;color:#172033;font-size:17px;font-weight:800;padding:11px 12px;outline:none}
 .practice-audio-wrap.show{padding:6px 22px 5px}.practice-audio-wrap.show + .content{padding-top:8px}.practice-audio-wrap.show + .content .question-head{padding-bottom:8px;margin-bottom:10px}.practice-audio-wrap.show + .content .set-box{margin-bottom:10px}.practice-audio-wrap.show + .content .prompt{margin-bottom:10px}.practice-audio-wrap.show + .content.part-2,.practice-audio-wrap.show + .content.part-3,.practice-audio-wrap.show + .content.part-4{padding-top:4px}.practice-audio-wrap.show + .content.part-2 .question-head,.practice-audio-wrap.show + .content.part-3 .question-head,.practice-audio-wrap.show + .content.part-4 .question-head{min-height:0;padding:4px 0 5px;margin-bottom:7px}.practice-audio-wrap.show + .content.part-2 .qno,.practice-audio-wrap.show + .content.part-3 .qno,.practice-audio-wrap.show + .content.part-4 .qno{font-size:20px;line-height:1}.practice-audio-wrap.show + .content.part-2 .part-label,.practice-audio-wrap.show + .content.part-3 .part-label,.practice-audio-wrap.show + .content.part-4 .part-label{font-size:12px}.practice-audio-wrap.show + .content.part-2 .prompt{margin-bottom:8px}.practice-audio-wrap.show + .content.part-3 .set-box,.practice-audio-wrap.show + .content.part-4 .set-box{margin-bottom:8px}
 html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}html.anti-download-lock img,html.anti-download-lock video,html.anti-download-lock canvas,html.anti-download-lock svg{-webkit-user-drag:none!important;user-drag:none!important}.practice-audio-wrap,.practice-audio-wrap *{-webkit-user-select:auto!important;-moz-user-select:auto!important;-ms-user-select:auto!important;user-select:auto!important;-webkit-touch-callout:default!important;-webkit-user-drag:auto!important;user-drag:auto!important;pointer-events:auto!important}
+.transcript-options{line-height:1.7}.transcript-options .answer-label{font-weight:900;color:#1f3658}.transcript-dialogue{display:grid;gap:7px;margin-top:8px}.transcript-line{display:grid;grid-template-columns:74px minmax(0,1fr);gap:10px;align-items:start}.transcript-speaker{font-weight:900;color:#1f3658;background:#e8eef7;border:1px solid #cbd5e1;border-radius:4px;padding:5px 7px;text-align:center}.transcript-speech{min-width:0;color:#334155;padding:5px 0;line-height:1.55}.transcript-speech .answer-label{font-weight:900;color:#1f3658}@media(max-width:560px){.transcript-line{grid-template-columns:58px minmax(0,1fr);gap:8px}.transcript-speaker{font-size:12px;padding:5px 4px}.transcript-speech{font-size:13px}}
 </style>
 </head>
 <body>
@@ -66,9 +67,9 @@ html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!im
         </div>
       </div>
       <div class="panel">
-        <div class="panel-head">Đổi chế độ / đề</div>
+        <div class="panel-head">Change Mode / Test</div>
         <div class="panel-body">
-          <button class="nav-btn primary" type="button" style="width:100%" onclick="openModeTestPanel()">Chọn chế độ / đề</button>
+          <button class="nav-btn primary" type="button" style="width:100%" onclick="openModeTestPanel()">Choose Mode / Test</button>
         </div>
       </div>
       <div class="panel">
@@ -532,8 +533,29 @@ function getQuestionTranscript(q){
     vi:item.transcript_vi||item.script_vi||item.statement_vi||item.text_vi||''
   };
 }
-function transcriptHtmlText(text){
-  return escapeHtml(text||'').replace(/\n/g,'<br>');
+function emphasizeAnswerLabels(html){
+  return html.replace(/\(([A-D])\)/g,'<strong class="answer-label">($1)</strong>');
+}
+function transcriptHtmlText(text,q){
+  var raw=String(text||'').replace(/\r\n/g,'\n').replace(/\r/g,'\n').trim();
+  if(!raw) return '';
+  if(q>=32){
+    var lines=raw.split(/\n+/);
+    var html='<div class="transcript-dialogue">';
+    for(var i=0;i<lines.length;i++){
+      var line=lines[i].trim();
+      if(!line) continue;
+      var match=line.match(/^([MW]-[A-Za-z]{2}):\s*(.*)$/);
+      if(match){
+        html+='<div class="transcript-line"><div class="transcript-speaker">'+escapeHtml(match[1])+'</div><div class="transcript-speech">'+emphasizeAnswerLabels(escapeHtml(match[2]))+'</div></div>';
+      }else{
+        html+='<div class="transcript-line"><div></div><div class="transcript-speech">'+emphasizeAnswerLabels(escapeHtml(line))+'</div></div>';
+      }
+    }
+    html+='</div>';
+    return html;
+  }
+  return '<div class="transcript-options">'+emphasizeAnswerLabels(escapeHtml(raw)).replace(/\n/g,'<br>')+'</div>';
 }
 function toggleQuestionTranscript(q){
   var box=document.getElementById('questionTranscript'+q);
@@ -634,7 +656,7 @@ function renderQuestion(){
   if(listeningMode==='practice'){
     var transcriptData=getQuestionTranscript(q);
     var transcriptBody=transcriptData.en || transcriptData.vi
-      ? '<b>Transcript</b><br>'+transcriptHtmlText(transcriptData.en||'')+(transcriptData.vi?'<span class="vi">'+transcriptHtmlText(transcriptData.vi)+'</span>':'')
+      ? '<b>Transcript</b><br>'+transcriptHtmlText(transcriptData.en||'',q)+(transcriptData.vi?'<span class="vi">'+transcriptHtmlText(transcriptData.vi,q)+'</span>':'')
       : '<b>Transcript</b><br>Chưa có transcript cho câu này.';
     transcriptHtml='<button class="transcript-toggle" type="button" onclick="toggleQuestionTranscript('+q+')">Transcript</button><div class="question-transcript" id="questionTranscript'+q+'">'+transcriptBody+'</div>';
   }
