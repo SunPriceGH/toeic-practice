@@ -48,19 +48,36 @@
 </div>
 <script>
 const STUDENT_KEY='toeic_student_session';
+const SAVED_LOGIN_KEY='toeic_saved_student_login';
 let results=[];
 let grouped=[];
 function getStudentSession(){try{return JSON.parse(localStorage.getItem(STUDENT_KEY)||'null');}catch(e){return null;}}
+function getSavedLogin(){try{return JSON.parse(localStorage.getItem(SAVED_LOGIN_KEY)||'null');}catch(e){return null;}}
+async function refreshStudentSession(){
+  const saved=getSavedLogin();
+  if(!saved||!saved.email||!saved.password) return null;
+  const res=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:saved.email,password:saved.password})});
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok||!data.ok||data.role!=='student') return null;
+  const session={email:String(saved.email).trim().toLowerCase(),loginAt:new Date().toISOString(),token:data.token||''};
+  localStorage.setItem(STUDENT_KEY,JSON.stringify(session));
+  return session;
+}
+async function getUsableStudentSession(){
+  const session=getStudentSession();
+  if(session&&session.email&&session.token) return session;
+  return await refreshStudentSession();
+}
 function escapeHtml(s){return String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
 function setStatus(msg,ok){const el=document.getElementById('status');el.textContent=msg;el.className='status '+(ok?'ok':'err');}
 function tone(percent){percent=Number(percent||0);if(percent>=80)return'good';if(percent>=60)return'warn';return'bad';}
 function lessonKey(result){const p=result.payload||result||{};const q=p.quiz||{};const id=String(q.id||'');if(id.includes('toeic-2024-test')||id.includes('listening'))return'toeic-listening';return id||q.title||'unknown';}
 function lessonTitle(result){const p=result.payload||result||{};const q=p.quiz||{};if(lessonKey(result)==='toeic-listening')return'TOEIC Listening ETS 2024';return q.title||q.id||'Bài chưa rõ tên';}
 async function loadStudentResults(){
-  const session=getStudentSession();
+  const session=await getUsableStudentSession();
   if(!session||!session.email||!session.token){
     document.getElementById('studentLine').textContent='Bạn chưa đăng nhập. Hãy quay về trang chủ và đăng nhập trước.';
-    setStatus('Chưa có phiên đăng nhập học viên.',false);
+    setStatus('Chưa có dữ liệu thống kê.',true);
     return;
   }
   document.getElementById('studentLine').textContent='Học viên: '+session.email;
@@ -68,13 +85,30 @@ async function loadStudentResults(){
   try{
     const res=await fetch('/api/results?email='+encodeURIComponent(session.email),{headers:{'x-student-email':session.email,'x-student-token':session.token},cache:'no-store'});
     const data=await res.json().catch(()=>({}));
-    if(!res.ok||!data.ok) throw new Error(data.error||'Không tải được kết quả.');
-    results=(data.results||[]).sort((a,b)=>new Date(b.submittedAt||b.payload?.submittedAt||0)-new Date(a.submittedAt||a.payload?.submittedAt||0));
+    if(!res.ok||!data.ok){
+      const fresh=await refreshStudentSession();
+      if(fresh){
+        const retry=await fetch('/api/results?email='+encodeURIComponent(fresh.email),{headers:{'x-student-email':fresh.email,'x-student-token':fresh.token},cache:'no-store'});
+        const retryData=await retry.json().catch(()=>({}));
+        if(!retry.ok||!retryData.ok) throw new Error(retryData.error||'Không tải được kết quả.');
+        results=(retryData.results||[]).sort((a,b)=>new Date(b.submittedAt||b.payload?.submittedAt||0)-new Date(a.submittedAt||a.payload?.submittedAt||0));
+      }else{
+        throw new Error(data.error||'Không tải được kết quả.');
+      }
+    }else{
+      results=(data.results||[]).sort((a,b)=>new Date(b.submittedAt||b.payload?.submittedAt||0)-new Date(a.submittedAt||a.payload?.submittedAt||0));
+    }
     buildGrouped();
     renderSummary();
     renderTable();
-    setStatus('Đã tải '+results.length+' lượt làm.',true);
-  }catch(err){setStatus(err.message||'Lỗi tải thống kê.',false);}
+    setStatus(results.length?'Đã tải '+results.length+' lượt làm.':'Chưa có dữ liệu thống kê.',true);
+  }catch(err){
+    results=[];
+    grouped=[];
+    renderSummary();
+    renderTable();
+    setStatus('Chưa có dữ liệu thống kê.',true);
+  }
 }
 function buildGrouped(){
   const map={};
