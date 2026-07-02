@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thống kê học viên</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html,body{font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:100%;z-index:10}.page{min-height:100vh;padding:48px 64px;background:radial-gradient(circle at top left,rgba(59,130,246,.14),transparent 36%),radial-gradient(circle at bottom right,rgba(14,165,233,.14),transparent 36%),#fff}.wrap{max-width:1180px;margin:0 auto}.label{display:inline-block;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:15px;margin-bottom:16px}h1{font-size:42px;color:#0f172a;margin-bottom:10px}.lead{font-size:19px;line-height:1.5;color:#475569;margin-bottom:18px}.top-actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.btn{border:none;cursor:pointer;border-radius:999px;background:#2563eb;color:#fff;font-weight:900;font-size:15px;padding:11px 16px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn:hover{background:#1d4ed8}.btn.gray{background:#e2e8f0;color:#0f172a}.btn.gray:hover{background:#cbd5e1}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0}.stat{background:#f8fafc;border:2px solid #dbeafe;border-radius:20px;padding:16px;box-shadow:0 10px 24px rgba(15,23,42,.06)}.stat b{display:block;font-size:30px;color:#1d4ed8;margin-bottom:4px}.stat span{font-size:13px;text-transform:uppercase;font-weight:900;color:#64748b}.panel{background:#f8fafc;border:2px solid #e2e8f0;border-radius:24px;padding:20px;margin-top:16px;box-shadow:0 14px 30px rgba(15,23,42,.08)}.status{font-weight:900;margin:12px 0}.ok{color:#15803d}.err{color:#be123c}.table-wrap{overflow:auto;margin-top:14px}table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid #d8e2f0;border-radius:18px;overflow:hidden}th{background:linear-gradient(135deg,#1d4ed8,#0ea5e9);color:#fff;text-align:left;padding:13px;font-size:14px}td{border-top:1px solid #e5edf7;padding:12px;font-size:15px;vertical-align:middle;line-height:1.35}tr:nth-child(even) td{background:#f8fbff}.score{font-weight:900;color:#1d4ed8}.badge{display:inline-flex;border-radius:999px;padding:6px 9px;font-size:12px;font-weight:900;background:#eff6ff;color:#1d4ed8}.badge.good{background:#dcfce7;color:#166534}.badge.warn{background:#fff7ed;color:#9a3412}.badge.bad{background:#fee2e2;color:#991b1b}.modal{position:fixed;inset:0;background:rgba(15,23,42,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:50;backdrop-filter:blur(4px)}.modal.show{display:flex}.modal-card{width:min(980px,96vw);max-height:88vh;overflow:auto;background:#fff;border:2px solid #dbeafe;border-radius:24px;box-shadow:0 24px 70px rgba(15,23,42,.28)}.modal-head{position:sticky;top:0;background:#26384f;color:#fff;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:2}.modal-head h2{font-size:22px}.close{border:none;border-radius:999px;width:38px;height:38px;background:#e2e8f0;color:#0f172a;font-size:24px;font-weight:900;cursor:pointer}.modal-body{padding:18px}.recommend{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:18px;padding:14px 16px;margin-bottom:16px}.recommend h3{color:#166534;margin-bottom:8px}.recommend ul{padding-left:20px;line-height:1.5}.wrong-list{display:grid;gap:10px}.wrong-item{border:1px solid #fecaca;background:#fff1f2;border-radius:16px;padding:13px}.wrong-item h4{color:#991b1b;margin-bottom:7px}.wrong-item p{font-size:14px;line-height:1.45;color:#334155;margin-top:4px}.answer-line b{color:#0f172a}@media(max-width:760px){.page{padding:36px 20px}h1{font-size:32px}th,td{font-size:13px;padding:10px}.modal-head h2{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="top-line"></div>
+<main class="page">
+  <div class="wrap">
+    <div class="label">Student Statistics</div>
+    <h1>Thống kê bài làm của tôi</h1>
+    <p class="lead" id="studentLine">Đang kiểm tra phiên đăng nhập...</p>
+    <div class="top-actions">
+      <a class="btn gray" href="index.html">Về trang chủ</a>
+      <button class="btn" type="button" onclick="loadStudentResults()">Tải lại thống kê</button>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><b id="totalSubmissions">0</b><span>Lượt làm đã lưu</span></div>
+      <div class="stat"><b id="completedLessons">0</b><span>Bài đã làm</span></div>
+      <div class="stat"><b id="averagePercent">0%</b><span>Điểm trung bình</span></div>
+      <div class="stat"><b id="bestPercent">0%</b><span>Cao nhất</span></div>
+    </div>
+    <div class="panel">
+      <h2>Danh sách bài đã làm</h2>
+      <div class="status" id="status"></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Bài học</th><th>Số lần làm</th><th>Lần gần nhất</th><th>Điểm gần nhất</th><th>Tốt nhất</th><th>Chi tiết</th></tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="modal" id="detailModal" onclick="closeDetail(event)">
+  <div class="modal-card" onclick="event.stopPropagation()">
+    <div class="modal-head"><h2 id="detailTitle">Chi tiết bài làm</h2><button class="close" type="button" onclick="hideDetail()">×</button></div>
+    <div class="modal-body">
+      <div class="recommend" id="recommendBox"></div>
+      <div class="wrong-list" id="wrongList"></div>
+    </div>
+  </div>
+</div>
+<script>
+const STUDENT_KEY='toeic_student_session';
+let results=[];
+let grouped=[];
+function getStudentSession(){try{return JSON.parse(localStorage.getItem(STUDENT_KEY)||'null');}catch(e){return null;}}
+function escapeHtml(s){return String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+function setStatus(msg,ok){const el=document.getElementById('status');el.textContent=msg;el.className='status '+(ok?'ok':'err');}
+function tone(percent){percent=Number(percent||0);if(percent>=80)return'good';if(percent>=60)return'warn';return'bad';}
+function lessonKey(result){const p=result.payload||result||{};const q=p.quiz||{};const id=String(q.id||'');if(id.includes('toeic-2024-test')||id.includes('listening'))return'toeic-listening';return id||q.title||'unknown';}
+function lessonTitle(result){const p=result.payload||result||{};const q=p.quiz||{};if(lessonKey(result)==='toeic-listening')return'TOEIC Listening ETS 2024';return q.title||q.id||'Bài chưa rõ tên';}
+async function loadStudentResults(){
+  const session=getStudentSession();
+  if(!session||!session.email||!session.token){
+    document.getElementById('studentLine').textContent='Bạn chưa đăng nhập. Hãy quay về trang chủ và đăng nhập trước.';
+    setStatus('Chưa có phiên đăng nhập học viên.',false);
+    return;
+  }
+  document.getElementById('studentLine').textContent='Học viên: '+session.email;
+  setStatus('Đang tải kết quả...',true);
+  try{
+    const res=await fetch('/api/results?email='+encodeURIComponent(session.email),{headers:{'x-student-email':session.email,'x-student-token':session.token},cache:'no-store'});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không tải được kết quả.');
+    results=(data.results||[]).sort((a,b)=>new Date(b.submittedAt||b.payload?.submittedAt||0)-new Date(a.submittedAt||a.payload?.submittedAt||0));
+    buildGrouped();
+    renderSummary();
+    renderTable();
+    setStatus('Đã tải '+results.length+' lượt làm.',true);
+  }catch(err){setStatus(err.message||'Lỗi tải thống kê.',false);}
+}
+function buildGrouped(){
+  const map={};
+  results.forEach(r=>{
+    const key=lessonKey(r);
+    if(!map[key])map[key]={key,title:lessonTitle(r),items:[]};
+    map[key].items.push(r);
+  });
+  grouped=Object.values(map).map(g=>{
+    g.items.sort((a,b)=>new Date(b.submittedAt||b.payload?.submittedAt||0)-new Date(a.submittedAt||a.payload?.submittedAt||0));
+    return g;
+  });
+}
+function renderSummary(){
+  const percents=results.map(r=>Number(r.percent??r.payload?.percent??0));
+  document.getElementById('totalSubmissions').textContent=results.length;
+  document.getElementById('completedLessons').textContent=grouped.length;
+  document.getElementById('averagePercent').textContent=percents.length?Math.round(percents.reduce((a,b)=>a+b,0)/percents.length)+'%':'0%';
+  document.getElementById('bestPercent').textContent=percents.length?Math.max(...percents)+'%':'0%';
+}
+function renderTable(){
+  const tbody=document.getElementById('tbody');
+  if(!grouped.length){tbody.innerHTML='<tr><td colspan="6">Chưa có bài làm nào được lưu.</td></tr>';return;}
+  tbody.innerHTML=grouped.map((g,i)=>{
+    const latest=g.items[0];
+    const best=g.items.reduce((max,r)=>Math.max(max,Number(r.percent??r.payload?.percent??0)),0);
+    const latestPercent=Number(latest.percent??latest.payload?.percent??0);
+    const latestScore=Number(latest.score??latest.payload?.score??0);
+    const latestTotal=Number(latest.total??latest.payload?.total??0);
+    const latestTime=new Date(latest.submittedAt||latest.payload?.submittedAt||0).toLocaleString('vi-VN');
+    return '<tr><td><b>'+escapeHtml(g.title)+'</b></td><td>'+g.items.length+'</td><td>'+escapeHtml(latestTime)+'</td><td><span class="score">'+latestPercent+'%</span><br>'+latestScore+' / '+latestTotal+'</td><td><span class="badge '+tone(best)+'">'+best+'%</span></td><td><button class="btn" type="button" onclick="showDetail('+i+')">Xem chi tiết</button></td></tr>';
+  }).join('');
+}
+function wrongAnswers(payload){
+  return (payload.answers||[]).filter(a=>!a.isCorrect);
+}
+function recommend(payload, wrongs){
+  const quiz=payload.quiz||{};
+  const title=String(quiz.title||quiz.id||'');
+  const tips=[];
+  const byPart={};
+  wrongs.forEach(a=>{if(a.part)byPart[a.part]=(byPart[a.part]||0)+1;});
+  const topPart=Object.entries(byPart).sort((a,b)=>b[1]-a[1])[0];
+  if(topPart) tips.push('Sai nhiều nhất ở Part '+topPart[0]+': nên luyện lại nhóm câu này trước.');
+  if(title.toLowerCase().includes('word form')) tips.push('Tập trung nhận diện vị trí từ loại: trước/sau danh từ, sau be, sau trạng từ, sau mạo từ.');
+  if(title.toLowerCase().includes('prep')||title.toLowerCase().includes('preposition')) tips.push('Ôn lại cụm cố định và giới từ đi kèm, ghi theo cụm thay vì học từng từ rời.');
+  if(title.toLowerCase().includes('listening')||String(quiz.id||'').includes('toeic-2024-test')) tips.push('Với Listening, nghe lại transcript của các câu sai và ghi lý do sai: nghe nhầm từ khóa, mất mốc thời gian, hay chọn theo từ giống.');
+  const missing=wrongs.filter(a=>!a.selected).length;
+  if(missing) tips.push('Có '+missing+' câu chưa chọn: cần luyện tốc độ và thói quen chọn đáp án trước khi chuyển câu.');
+  if(!tips.length) tips.push('Tập trung xem lại từng câu sai, so selected answer với correct answer và ghi lại bẫy bị mắc.');
+  return tips;
+}
+function showDetail(i){
+  const g=grouped[i];
+  const latest=g.items[0];
+  const payload=latest.payload||latest;
+  const wrongs=wrongAnswers(payload);
+  document.getElementById('detailTitle').textContent=g.title+' - lần gần nhất';
+  document.getElementById('recommendBox').innerHTML='<h3>Khuyến nghị luyện tập</h3><ul>'+recommend(payload,wrongs).map(t=>'<li>'+escapeHtml(t)+'</li>').join('')+'</ul>';
+  document.getElementById('wrongList').innerHTML=wrongs.length?wrongs.map(a=>{
+    const selected=a.selected||'Chưa chọn';
+    const correct=a.correctAnswer||a.answer||'-';
+    const qText=a.questionEn||a.questionVn||('Câu '+(a.no||''));
+    return '<div class="wrong-item"><h4>Câu '+escapeHtml(a.no||'')+(a.part?' · Part '+escapeHtml(a.part):'')+'</h4><p>'+escapeHtml(qText)+'</p><p class="answer-line"><b>Bạn chọn:</b> '+escapeHtml(selected)+(a.selectedText?' - '+escapeHtml(a.selectedText):'')+'</p><p class="answer-line"><b>Đáp án đúng:</b> '+escapeHtml(correct)+(a.correctText?' - '+escapeHtml(a.correctText):'')+'</p>'+(a.explanation?'<p><b>Giải thích:</b> '+escapeHtml(a.explanation)+'</p>':'')+'</div>';
+  }).join(''):'<div class="wrong-item"><h4>Không có câu sai trong lần gần nhất.</h4><p>Làm tốt. Có thể chuyển sang đề khó hơn hoặc luyện giữ tốc độ.</p></div>';
+  document.getElementById('detailModal').classList.add('show');
+}
+function hideDetail(){document.getElementById('detailModal').classList.remove('show');}
+function closeDetail(e){if(e.target.id==='detailModal')hideDetail();}
+loadStudentResults();
+</script>
+</body>
+</html>
