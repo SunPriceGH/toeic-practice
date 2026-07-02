@@ -1,2066 +1,870 @@
 {
   "1": {
-    "id": "ets-toeic-2024-test-1",
-    "title": "ETS TOEIC 2024 Test 1",
-    "part3": [
-      {
-        "no": 32,
-        "question_en": "What event does the woman mention?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A job fair",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A cooking class",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "A fund-raiser",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "A company picnic",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 1
-      },
-      {
-        "no": 33,
-        "question_en": "What does the woman ask for?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A guest list",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A dessert recipe",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "A business card",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "A promotional code",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 1
-      },
-      {
-        "no": 34,
-        "question_en": "What does the man recommend doing?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Returning some merchandise",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Watching a video",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Creating an account",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Reading a review",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 1
-      },
-      {
-        "no": 35,
-        "question_en": "What department do the speakers most likely work in?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Accounting",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Research and development",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Maintenance",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Marketing",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 2
-      },
-      {
-        "no": 36,
-        "question_en": "What problem does the woman mention?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Areport has not been submitted.",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "An invoice is not accurate.",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "A policy has not been followed.",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "An order has not been delivered.",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 2
-      },
-      {
-        "no": 37,
-        "question_en": "What does the man say he will do?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Delete an electronic file",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Authorize a reimbursement",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Set up a sales meeting",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Review a spreadsheet two or more people. You will be asked to",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 2
-      },
-      {
-        "no": 38,
-        "question_en": "What industry do the speakers most likely workin?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Shipping",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Manufacturing",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Hospitality",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Meteorology",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 3
-      },
-      {
-        "no": 39,
-        "question_en": "What is the reason for a delay?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A schedule was written incorrectly.",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Some equipment is not properly set up.",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Weather conditions are poor.",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Several staff members are absent.",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 3
-      },
-      {
-        "no": 40,
-        "question_en": "What does the man say he will do?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Update a shift schedule",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Clear a work space",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Complete a checklist",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Place a call",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 3
-      },
-      {
-        "no": 41,
-        "question_en": "Why is the woman at the restaurant?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "To celebrate a retirement",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "To perform an inspection",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "To meet with some clients",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "To write an article",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 4
-      },
-      {
-        "no": 42,
-        "question_en": "What does the woman mean when she says, \"it's very hot today\"?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "She is unable to accept an invitation.",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A cooling system is not working.",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "will end soon.",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "She wants to change a seating request.",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 4
-      },
-      {
-        "no": 43,
-        "question_en": "What does the man say about a parking garage?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "It is free for customers.",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "It is under construction.",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "It closes soon.",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "It offers monthly contracts.",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 4
-      },
-      {
-        "no": 44,
-        "question_en": "Where does the woman most likely work?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "At a university",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "At a publishing company",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "At an electronics store",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "At a grocery store",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 5
-      },
-      {
-        "no": 45,
-        "question_en": "What does Murat ask about?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "How much an item costs",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "When an event will begin",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "How many people will participate",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Where to set up some equipment",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 5
-      },
-      {
-        "no": 46,
-        "question_en": "What does the woman suggest doing?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Offering a discount",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Displaying informational materials",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Holding a contest",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Visiting a registration table",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 5
-      },
-      {
-        "no": 47,
-        "question_en": "What type of industry do the speakers most likely work in?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Textile manufacturing",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Food production",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Health care",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Hospitality",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 6
-      },
-      {
-        "no": 48,
-        "question_en": "What business challenge are the speakers discussing?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Lack of qualified personnel",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Rising production costs",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Changes in consumer preferences",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Increased competition",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 6
-      },
-      {
-        "no": 49,
-        "question_en": "What does the man say he will do?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Research more information",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Negotiate a discount",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Upgrade some machinery",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Train a new employee",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 6
-      },
-      {
-        "no": 50,
-        "question_en": "Why is the man calling?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "To explain a business merger",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "To describe a new company policy",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "To offer the woman a work assignment",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "To invite the woman to speak at a conference",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 7
-      },
-      {
-        "no": 51,
-        "question_en": "What does the man say a client is interested in doing?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Purchasing another business",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Finding a new office space",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Revising a budget proposal",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Creating a marketing campaign",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 7
-      },
-      {
-        "no": 52,
-        "question_en": "What does the woman ask the man to send?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A project description",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "An event invitation",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Some social media links",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Some contact information",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 7
-      },
-      {
-        "no": 53,
-        "question_en": "What problem does the woman mention?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A vehicle is out of service.",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "An employee is late.",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "A shipment was damaged.",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Traffic is heavy.",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 8
-      },
-      {
-        "no": 54,
-        "question_en": "Where do the speakers most likely work?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "At a recording studio",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "At a catering company",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "At a radio station",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "At a car dealership",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 8
-      },
-      {
-        "no": 55,
-        "question_en": "What does the man say he will do next?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Arrange for a car repair",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Order some kitchen supplies",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Carry some items",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Offer a refund",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 8
-      },
-      {
-        "no": 56,
-        "question_en": "Why is the man calling the woman?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "To plan a company event",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "To confirm a work deadline",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "To discuss a career path",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "To accept a job offer",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 9
-      },
-      {
-        "no": 57,
-        "question_en": "Who most likely is the woman?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A newspaper editor",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Auniversity professor",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "A delivery person",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "A professional actor",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 9
-      },
-      {
-        "no": 58,
-        "question_en": "What will the woman most likely do next?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Negotiate a contract",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Explain an office policy",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Review a résumé",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Describe a work schedule",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 9
-      },
-      {
-        "no": 59,
-        "question_en": "What are the speakers mainly discussing?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "(A) A A new transportation rtati route",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A company merger",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "A public relations initiative",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "A medical facility design",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 10
-      },
-      {
-        "no": 60,
-        "question_en": "Why does the woman say, \"they also talked about it last year\"? ©) A) To To explain express a doubt process",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "C",
-            "text_en": "To make a recommendation",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "To update some information",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 10
-      },
-      {
-        "no": 61,
-        "question_en": "What does the woman want to avoid?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Paying a certification fee",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Training additional staff",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Upgrading some technology",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Relocating to another city [LR Plastic Bottle with Water Ceramic Travel ravel M Mug Straw Lid $18 $21 Wide-Mouthed Mug with F Steel Water (| | Handle Bottle $15 $24",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 10
-      },
-      {
-        "no": 62,
-        "question_en": "Who is a gift for?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Donors",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Volunteers",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Employees",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Clients",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 11,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set11-q62-64.jpg",
-        "graphicLabel": "p3-set11-q62-64"
-      },
-      {
-        "no": 63,
-        "question_en": "Look at the graphic. What is the price of the item the man recommends?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "$21",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "$18",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "$24",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "$15",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 11,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set11-q62-64.jpg",
-        "graphicLabel": "p3-set11-q62-64"
-      },
-      {
-        "no": 64,
-        "question_en": "What is the woman going to send to the man?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A graphic file",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A list of names",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "A delivery address",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "An account number ---",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 11,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set11-q62-64.jpg",
-        "graphicLabel": "p3-set11-q62-64"
-      },
-      {
-        "no": 65,
-        "question_en": "What type of art will be displayed in an in (8) A) Cl Oil lg paintings Ipti",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "C",
-            "text_en": "Black-and-white photographs",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Pencil drawings",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 12,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set12-q65-67.jpg",
-        "graphicLabel": "p3-set12-q65-67"
-      },
-      {
-        "no": 66,
-        "question_en": "Look at the graphic. Which piece of artwork will no longer be included?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A Careful Glance",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Promises",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Stormy Sea",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "The Moment",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 12,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set12-q65-67.jpg",
-        "graphicLabel": "p3-set12-q65-67"
-      },
-      {
-        "no": 67,
-        "question_en": "What does the woman say she will do right away?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Speak with an artist",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Edit a recording",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Clean a gallery space",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Greet some visitors Site A 55 Clarksvill pais B Site Wind Turbines 2 Site Wind \\ Wind | oe, Turbines",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 12,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set12-q65-67.jpg",
-        "graphicLabel": "p3-set12-q65-67"
-      },
-      {
-        "no": 68,
-        "question_en": "Who most likely are the speakers?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Urban planners",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Journalists",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Engineers",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Environmental scientists",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 13,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set13-q68-70.jpg",
-        "graphicLabel": "p3-set13-q68-70"
-      },
-      {
-        "no": 69,
-        "question_en": "Look at the graphic. Which site has already been completed?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "(B) Site Site B A",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Site C",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Site D What does the man suggest focusing on?",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Wind turbine costs",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 13,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set13-q68-70.jpg",
-        "graphicLabel": "p3-set13-q68-70"
-      },
-      {
-        "no": 70,
-        "question_en": "",
-        "question_vi": "",
-        "options": [],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 13,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set13-q68-70.jpg",
-        "graphicLabel": "p3-set13-q68-70"
-      }
-    ],
-    "part4": [
-      {
-        "no": 71,
-        "question_en": "Who has recorded the message? 77.",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Acity mayor's office",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A maintenance department",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "An automobile dealership",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "A building management office",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 1
-      },
-      {
-        "no": 72,
-        "question_en": "What are the listeners asked to do?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Move their vehicies",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Pay their parking fines",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Use an alternate entrance",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Participate in a meeting",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 1
-      },
-      {
-        "no": 73,
-        "question_en": "What does the speaker say was mailed last week?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "An election ballot",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A maintenance plan",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Amap",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "A coupon",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 1
-      },
-      {
-        "no": 74,
-        "question_en": "What is the topic of the episode?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Garden landscaping",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Window installation",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Roof maintenance",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Kitchen renovations",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 2
-      },
-      {
-        "no": 75,
-        "question_en": "What speaker emphasize about Som tools?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "They should be cleaned regularly.",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "They should be of high quality.",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "They were recently invented.",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "They can be easily stored.",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 2
-      },
-      {
-        "no": 76,
-        "question_en": "What does the speaker recommend doing yearie",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Treating some wood",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Consulting an electrician",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Taking some photos",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Draining some water The talks will not be printed in your test",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 2
-      },
-      {
-        "no": 77,
-        "question_en": "Who most likely is the speaker?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "show host",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A tour guide",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "A sales associate",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "A professor",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 3
-      },
-      {
-        "no": 78,
-        "question_en": "What will happen at two o'clock?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A lecture will begin.",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A demonstration will be given.",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "An interview will be conducted.",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "A park will close.",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 3
-      },
-      {
-        "no": 79,
-        "question_en": "What is Orchid Caretakers?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A book",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "An album",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "A film",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Amagazine _",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 3
-      },
-      {
-        "no": 80,
-        "question_en": "What event is taking place?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A fund-raising concert",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A sports competition",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "A play rehearsal",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "An awards ceremony",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 4
-      },
-      {
-        "no": 81,
-        "question_en": "What does the organization plan to do?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Change a policy",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Repair a building",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Select a winner",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Sponsor a team",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 4
-      },
-      {
-        "no": 82,
-        "question_en": "What does the speaker encourage the listeners to do?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Order tickets early",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Visit a community center",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Purchase refreshments",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Donate clothing SE",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 4
-      },
-      {
-        "no": 83,
-        "question_en": "What is the topic of the workshop?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Time management",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Public speaking",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Leadership skills",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Professional networking",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 5
-      },
-      {
-        "no": 84,
-        "question_en": "What does the speaker imply when he says, \"Erina's at the back of the room\"?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A guest speaker has just arrived.",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Assistance is available.",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Attendees should speak clearly and loudly.",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "An extra chair should be provided.",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 5
-      },
-      {
-        "no": 85,
-        "question_en": "What will the listeners do next?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Sign their names on a list",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Take a break",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Participate in an introductory activity",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Fill out a questionnaire",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 5
-      },
-      {
-        "no": 86,
-        "question_en": "a historical site famous for?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Its defensive walls",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Its royal inhabitants",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "An event that happened there",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Some artwork",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 6
-      },
-      {
-        "no": 87,
-        "question_en": "Why does the speaker apologize?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "The listeners cannot take pictures.",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "An area is closed to the listeners.",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "There is no gift shop.",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "A tour started late.",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 6
-      },
-      {
-        "no": 88,
-        "question_en": "What does the speaker ask the listeners to do?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Show their tickets",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Put on protective clothing",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Use some handrails",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Speak quietly",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 6
-      },
-      {
-        "no": 89,
-        "question_en": "What is the speaker mainly discussing?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "An advertising campaign",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A market expansion",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Some contract negotiations",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Some audit procedures",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 7
-      },
-      {
-        "no": 90,
-        "question_en": "What does the speaker imply when he says, \"this is a priority\"?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Overtime pay has been approved.",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A deadline must be met.",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "A client expressed concern.",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "A supervisor will be observing closely.",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 7
-      },
-      {
-        "no": 91,
-        "question_en": "What will the listeners do next?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "View a presentation",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Review a budget",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Revise some work",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Do some research",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 7
-      },
-      {
-        "no": 92,
-        "question_en": "Where do the listeners most likely work?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "At a hospital",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "At a restaurant",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "At a grocery store",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "At an electronics store",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 8
-      },
-      {
-        "no": 93,
-        "question_en": "What is the main purpose of the talk?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "To make a request",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "To address staff complaints",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "To present a new schedule",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "To explain a technical process",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 8
-      },
-      {
-        "no": 94,
-        "question_en": "What does the speaker imply when she says, \"That will require management approval\"?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A process has not been followed.",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "The listeners may be asked to work extra shifts.",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "The listeners should contact a manager.",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "A change will not be immediate.",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 8
-      },
-      {
-        "no": 95,
-        "question_en": "According to the speaker, what was recently completed?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "A company reorganization",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "A park renovation",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "A volunteer training",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "A conservation project",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 9,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set9-q95-97.jpg",
-        "graphicLabel": "p4-set9-q95-97"
-      },
-      {
-        "no": 96,
-        "question_en": "Look at the graphic. Where does the speaker say refreshments will be served?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Location 1",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Location 2",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Location 3",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Location 4",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 9,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set9-q95-97.jpg",
-        "graphicLabel": "p4-set9-q95-97"
-      },
-      {
-        "no": 97,
-        "question_en": "What are the listeners reminded to do?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Complete a survey",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Donate some money",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Join an organization",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Post some photographs Soil Sampling Timeline Time ‘September-October of Year [Type [All plants of Crop [Depth | November-August Trees and shrubs",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 9,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set9-q95-97.jpg",
-        "graphicLabel": "p4-set9-q95-97"
-      },
-      {
-        "no": 98,
-        "question_en": "What is the topic of today's lecture?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "When to harvest crops",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Where to plant trees",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "How to grow vegetables",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Which flowers need more sun",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 10,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set10-q98-100.jpg",
-        "graphicLabel": "p4-set10-q98-100"
-      },
-      {
-        "no": 99,
-        "question_en": "Look at the graphic. At what depth should samples be collected this month?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "12 inches",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "4 inches (c) 6 inches",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "8 inches",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 10,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set10-q98-100.jpg",
-        "graphicLabel": "p4-set10-q98-100"
-      },
-      {
-        "no": 100,
-        "question_en": "What does the speaker encourage the listeners to do?",
-        "question_vi": "",
-        "options": [
-          {
-            "letter": "A",
-            "text_en": "Turn off mobile phones",
-            "text_vi": ""
-          },
-          {
-            "letter": "B",
-            "text_en": "Have some refreshments",
-            "text_vi": ""
-          },
-          {
-            "letter": "C",
-            "text_en": "Purchase some seeds",
-            "text_vi": ""
-          },
-          {
-            "letter": "D",
-            "text_en": "Sign up for a mailing list Listening test.",
-            "text_vi": ""
-          }
-        ],
-        "transcript_en": "",
-        "transcript_vi": "",
-        "setNo": 10,
-        "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set10-q98-100.jpg",
-        "graphicLabel": "p4-set10-q98-100"
-      }
-    ]
-  },
+  "id": "ets-toeic-2024-test-1",
+  "title": "ETS TOEIC 2024 Test 1",
+  "part3": [
+    {
+      "no": 32,
+      "question_en": "What event does the woman mention?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A job fair", "text_vi": "" },
+        { "letter": "B", "text_en": "A cooking class", "text_vi": "" },
+        { "letter": "C", "text_en": "A fund-raiser", "text_vi": "" },
+        { "letter": "D", "text_en": "A company picnic", "text_vi": "" }
+      ],
+      "setNo": 1
+    },
+    {
+      "no": 33,
+      "question_en": "What does the woman ask for?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A guest list", "text_vi": "" },
+        { "letter": "B", "text_en": "A dessert recipe", "text_vi": "" },
+        { "letter": "C", "text_en": "A business card", "text_vi": "" },
+        { "letter": "D", "text_en": "A promotional code", "text_vi": "" }
+      ],
+      "setNo": 1
+    },
+    {
+      "no": 34,
+      "question_en": "What does the man recommend doing?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Returning some merchandise", "text_vi": "" },
+        { "letter": "B", "text_en": "Watching a video", "text_vi": "" },
+        { "letter": "C", "text_en": "Creating an account", "text_vi": "" },
+        { "letter": "D", "text_en": "Reading a review", "text_vi": "" }
+      ],
+      "setNo": 1
+    },
+    {
+      "no": 35,
+      "question_en": "What department do the speakers most likely work in?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Accounting", "text_vi": "" },
+        { "letter": "B", "text_en": "Research and development", "text_vi": "" },
+        { "letter": "C", "text_en": "Maintenance", "text_vi": "" },
+        { "letter": "D", "text_en": "Marketing", "text_vi": "" }
+      ],
+      "setNo": 2
+    },
+    {
+      "no": 36,
+      "question_en": "What problem does the woman mention?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A report has not been submitted.", "text_vi": "" },
+        { "letter": "B", "text_en": "An invoice is not accurate.", "text_vi": "" },
+        { "letter": "C", "text_en": "A policy has not been followed.", "text_vi": "" },
+        { "letter": "D", "text_en": "An order has not been delivered.", "text_vi": "" }
+      ],
+      "setNo": 2
+    },
+    {
+      "no": 37,
+      "question_en": "What does the man say he will do?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Delete an electronic file", "text_vi": "" },
+        { "letter": "B", "text_en": "Authorize a reimbursement", "text_vi": "" },
+        { "letter": "C", "text_en": "Set up a sales meeting", "text_vi": "" },
+        { "letter": "D", "text_en": "Review a spreadsheet", "text_vi": "" }
+      ],
+      "setNo": 2
+    },
+    {
+      "no": 38,
+      "question_en": "What industry do the speakers most likely work in?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Shipping", "text_vi": "" },
+        { "letter": "B", "text_en": "Manufacturing", "text_vi": "" },
+        { "letter": "C", "text_en": "Hospitality", "text_vi": "" },
+        { "letter": "D", "text_en": "Meteorology", "text_vi": "" }
+      ],
+      "setNo": 3
+    },
+    {
+      "no": 39,
+      "question_en": "What is the reason for a delay?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A schedule was written incorrectly.", "text_vi": "" },
+        { "letter": "B", "text_en": "Some equipment is not properly set up.", "text_vi": "" },
+        { "letter": "C", "text_en": "Weather conditions are poor.", "text_vi": "" },
+        { "letter": "D", "text_en": "Several staff members are absent.", "text_vi": "" }
+      ],
+      "setNo": 3
+    },
+    {
+      "no": 40,
+      "question_en": "What does the man say he will do?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Update a shift schedule", "text_vi": "" },
+        { "letter": "B", "text_en": "Clear a work space", "text_vi": "" },
+        { "letter": "C", "text_en": "Complete a checklist", "text_vi": "" },
+        { "letter": "D", "text_en": "Place a call", "text_vi": "" }
+      ],
+      "setNo": 3
+    },
+    {
+      "no": 41,
+      "question_en": "Why is the woman at the restaurant?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "To celebrate a retirement", "text_vi": "" },
+        { "letter": "B", "text_en": "To perform an inspection", "text_vi": "" },
+        { "letter": "C", "text_en": "To meet with some clients", "text_vi": "" },
+        { "letter": "D", "text_en": "To write an article", "text_vi": "" }
+      ],
+      "setNo": 4
+    },
+    {
+      "no": 42,
+      "question_en": "What does the woman mean when she says, \"it's very hot today\"?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "She is unable to accept an invitation.", "text_vi": "" },
+        { "letter": "B", "text_en": "A cooling system is not working.", "text_vi": "" },
+        { "letter": "C", "text_en": "It will end soon.", "text_vi": "" },
+        { "letter": "D", "text_en": "She wants to change a seating request.", "text_vi": "" }
+      ],
+      "setNo": 4
+    },
+    {
+      "no": 43,
+      "question_en": "What does the man say about a parking garage?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "It is free for customers.", "text_vi": "" },
+        { "letter": "B", "text_en": "It is under construction.", "text_vi": "" },
+        { "letter": "C", "text_en": "It closes soon.", "text_vi": "" },
+        { "letter": "D", "text_en": "It offers monthly contracts.", "text_vi": "" }
+      ],
+      "setNo": 4
+    },
+    {
+      "no": 44,
+      "question_en": "Where does the woman most likely work?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "At a university", "text_vi": "" },
+        { "letter": "B", "text_en": "At a publishing company", "text_vi": "" },
+        { "letter": "C", "text_en": "At an electronics store", "text_vi": "" },
+        { "letter": "D", "text_en": "At a grocery store", "text_vi": "" }
+      ],
+      "setNo": 5
+    },
+    {
+      "no": 45,
+      "question_en": "What does Murat ask about?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "How much an item costs", "text_vi": "" },
+        { "letter": "B", "text_en": "When an event will begin", "text_vi": "" },
+        { "letter": "C", "text_en": "How many people will participate", "text_vi": "" },
+        { "letter": "D", "text_en": "Where to set up some equipment", "text_vi": "" }
+      ],
+      "setNo": 5
+    },
+    {
+      "no": 46,
+      "question_en": "What does the woman suggest doing?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Offering a discount", "text_vi": "" },
+        { "letter": "B", "text_en": "Displaying informational materials", "text_vi": "" },
+        { "letter": "C", "text_en": "Holding a contest", "text_vi": "" },
+        { "letter": "D", "text_en": "Visiting a registration table", "text_vi": "" }
+      ],
+      "setNo": 5
+    },
+    {
+      "no": 47,
+      "question_en": "What type of industry do the speakers most likely work in?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Textile manufacturing", "text_vi": "" },
+        { "letter": "B", "text_en": "Food production", "text_vi": "" },
+        { "letter": "C", "text_en": "Health care", "text_vi": "" },
+        { "letter": "D", "text_en": "Hospitality", "text_vi": "" }
+      ],
+      "setNo": 6
+    },
+    {
+      "no": 48,
+      "question_en": "What business challenge are the speakers discussing?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Lack of qualified personnel", "text_vi": "" },
+        { "letter": "B", "text_en": "Rising production costs", "text_vi": "" },
+        { "letter": "C", "text_en": "Changes in consumer preferences", "text_vi": "" },
+        { "letter": "D", "text_en": "Increased competition", "text_vi": "" }
+      ],
+      "setNo": 6
+    },
+    {
+      "no": 49,
+      "question_en": "What does the man say he will do?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Research more information", "text_vi": "" },
+        { "letter": "B", "text_en": "Negotiate a discount", "text_vi": "" },
+        { "letter": "C", "text_en": "Upgrade some machinery", "text_vi": "" },
+        { "letter": "D", "text_en": "Train a new employee", "text_vi": "" }
+      ],
+      "setNo": 6
+    },
+    {
+      "no": 50,
+      "question_en": "Why is the man calling?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "To explain a business merger", "text_vi": "" },
+        { "letter": "B", "text_en": "To describe a new company policy", "text_vi": "" },
+        { "letter": "C", "text_en": "To offer the woman a work assignment", "text_vi": "" },
+        { "letter": "D", "text_en": "To invite the woman to speak at a conference", "text_vi": "" }
+      ],
+      "setNo": 7
+    },
+    {
+      "no": 51,
+      "question_en": "What does the man say a client is interested in doing?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Purchasing another business", "text_vi": "" },
+        { "letter": "B", "text_en": "Finding a new office space", "text_vi": "" },
+        { "letter": "C", "text_en": "Revising a budget proposal", "text_vi": "" },
+        { "letter": "D", "text_en": "Creating a marketing campaign", "text_vi": "" }
+      ],
+      "setNo": 7
+    },
+    {
+      "no": 52,
+      "question_en": "What does the woman ask the man to send?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A project description", "text_vi": "" },
+        { "letter": "B", "text_en": "An event invitation", "text_vi": "" },
+        { "letter": "C", "text_en": "Some social media links", "text_vi": "" },
+        { "letter": "D", "text_en": "Some contact information", "text_vi": "" }
+      ],
+      "setNo": 7
+    },
+    {
+      "no": 53,
+      "question_en": "What problem does the woman mention?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A vehicle is out of service.", "text_vi": "" },
+        { "letter": "B", "text_en": "An employee is late.", "text_vi": "" },
+        { "letter": "C", "text_en": "A shipment was damaged.", "text_vi": "" },
+        { "letter": "D", "text_en": "Traffic is heavy.", "text_vi": "" }
+      ],
+      "setNo": 8
+    },
+    {
+      "no": 54,
+      "question_en": "Where do the speakers most likely work?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "At a recording studio", "text_vi": "" },
+        { "letter": "B", "text_en": "At a catering company", "text_vi": "" },
+        { "letter": "C", "text_en": "At a radio station", "text_vi": "" },
+        { "letter": "D", "text_en": "At a car dealership", "text_vi": "" }
+      ],
+      "setNo": 8
+    },
+    {
+      "no": 55,
+      "question_en": "What does the man say he will do next?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Arrange for a car repair", "text_vi": "" },
+        { "letter": "B", "text_en": "Order some kitchen supplies", "text_vi": "" },
+        { "letter": "C", "text_en": "Carry some items", "text_vi": "" },
+        { "letter": "D", "text_en": "Offer a refund", "text_vi": "" }
+      ],
+      "setNo": 8
+    },
+    {
+      "no": 56,
+      "question_en": "Why is the man calling the woman?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "To plan a company event", "text_vi": "" },
+        { "letter": "B", "text_en": "To confirm a work deadline", "text_vi": "" },
+        { "letter": "C", "text_en": "To discuss a career path", "text_vi": "" },
+        { "letter": "D", "text_en": "To accept a job offer", "text_vi": "" }
+      ],
+      "setNo": 9
+    },
+    {
+      "no": 57,
+      "question_en": "Who most likely is the woman?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A newspaper editor", "text_vi": "" },
+        { "letter": "B", "text_en": "A university professor", "text_vi": "" },
+        { "letter": "C", "text_en": "A delivery person", "text_vi": "" },
+        { "letter": "D", "text_en": "A professional actor", "text_vi": "" }
+      ],
+      "setNo": 9
+    },
+    {
+      "no": 58,
+      "question_en": "What will the woman most likely do next?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Negotiate a contract", "text_vi": "" },
+        { "letter": "B", "text_en": "Explain an office policy", "text_vi": "" },
+        { "letter": "C", "text_en": "Review a résumé", "text_vi": "" },
+        { "letter": "D", "text_en": "Describe a work schedule", "text_vi": "" }
+      ],
+      "setNo": 9
+    },
+    {
+      "no": 59,
+      "question_en": "What are the speakers mainly discussing?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A new transportation route", "text_vi": "" },
+        { "letter": "B", "text_en": "A company merger", "text_vi": "" },
+        { "letter": "C", "text_en": "A public relations initiative", "text_vi": "" },
+        { "letter": "D", "text_en": "A medical facility design", "text_vi": "" }
+      ],
+      "setNo": 10
+    },
+    {
+      "no": 60,
+      "question_en": "Why does the woman say, \"they also talked about it last year\"?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "To express a doubt", "text_vi": "" },
+        { "letter": "B", "text_en": "To explain a process", "text_vi": "" },
+        { "letter": "C", "text_en": "To make a recommendation", "text_vi": "" },
+        { "letter": "D", "text_en": "To update some information", "text_vi": "" }
+      ],
+      "setNo": 10
+    },
+    {
+      "no": 61,
+      "question_en": "What does the woman want to avoid?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Paying a certification fee", "text_vi": "" },
+        { "letter": "B", "text_en": "Training additional staff", "text_vi": "" },
+        { "letter": "C", "text_en": "Upgrading some technology", "text_vi": "" },
+        { "letter": "D", "text_en": "Relocating to another city", "text_vi": "" }
+      ],
+      "setNo": 10
+    },
+    {
+      "no": 62,
+      "question_en": "Who is a gift for?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Donors", "text_vi": "" },
+        { "letter": "B", "text_en": "Volunteers", "text_vi": "" },
+        { "letter": "C", "text_en": "Employees", "text_vi": "" },
+        { "letter": "D", "text_en": "Clients", "text_vi": "" }
+      ],
+      "setNo": 11,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set11-q62-64.jpg",
+      "graphicLabel": "p3-set11-q62-64"
+    },
+    {
+      "no": 63,
+      "question_en": "Look at the graphic. What is the price of the item the man recommends?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "$21", "text_vi": "" },
+        { "letter": "B", "text_en": "$18", "text_vi": "" },
+        { "letter": "C", "text_en": "$24", "text_vi": "" },
+        { "letter": "D", "text_en": "$15", "text_vi": "" }
+      ],
+      "setNo": 11,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set11-q62-64.jpg",
+      "graphicLabel": "p3-set11-q62-64"
+    },
+    {
+      "no": 64,
+      "question_en": "What is the woman going to send to the man?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A graphic file", "text_vi": "" },
+        { "letter": "B", "text_en": "A list of names", "text_vi": "" },
+        { "letter": "C", "text_en": "A delivery address", "text_vi": "" },
+        { "letter": "D", "text_en": "An account number", "text_vi": "" }
+      ],
+      "setNo": 11,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set11-q62-64.jpg",
+      "graphicLabel": "p3-set11-q62-64"
+    },
+    {
+      "no": 65,
+      "question_en": "What type of art will be displayed in an exhibition?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Oil paintings", "text_vi": "" },
+        { "letter": "B", "text_en": "Watercolor paintings", "text_vi": "" },
+        { "letter": "C", "text_en": "Black-and-white photographs", "text_vi": "" },
+        { "letter": "D", "text_en": "Pencil drawings", "text_vi": "" }
+      ],
+      "setNo": 12,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set12-q65-67.jpg",
+      "graphicLabel": "p3-set12-q65-67"
+    },
+    {
+      "no": 66,
+      "question_en": "Look at the graphic. Which piece of artwork will no longer be included?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A Careful Glance", "text_vi": "" },
+        { "letter": "B", "text_en": "Promises", "text_vi": "" },
+        { "letter": "C", "text_en": "Stormy Sea", "text_vi": "" },
+        { "letter": "D", "text_en": "The Moment", "text_vi": "" }
+      ],
+      "setNo": 12,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set12-q65-67.jpg",
+      "graphicLabel": "p3-set12-q65-67"
+    },
+    {
+      "no": 67,
+      "question_en": "What does the woman say she will do right away?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Speak with an artist", "text_vi": "" },
+        { "letter": "B", "text_en": "Edit a recording", "text_vi": "" },
+        { "letter": "C", "text_en": "Clean a gallery space", "text_vi": "" },
+        { "letter": "D", "text_en": "Greet some visitors", "text_vi": "" }
+      ],
+      "setNo": 12,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set12-q65-67.jpg",
+      "graphicLabel": "p3-set12-q65-67"
+    },
+    {
+      "no": 68,
+      "question_en": "Who most likely are the speakers?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Urban planners", "text_vi": "" },
+        { "letter": "B", "text_en": "Journalists", "text_vi": "" },
+        { "letter": "C", "text_en": "Engineers", "text_vi": "" },
+        { "letter": "D", "text_en": "Environmental scientists", "text_vi": "" }
+      ],
+      "setNo": 13,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set13-q68-70.jpg",
+      "graphicLabel": "p3-set13-q68-70"
+    },
+    {
+      "no": 69,
+      "question_en": "Look at the graphic. Which site has already been completed?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Site A", "text_vi": "" },
+        { "letter": "B", "text_en": "Site B", "text_vi": "" },
+        { "letter": "C", "text_en": "Site C", "text_vi": "" },
+        { "letter": "D", "text_en": "Site D", "text_vi": "" }
+      ],
+      "setNo": 13,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set13-q68-70.jpg",
+      "graphicLabel": "p3-set13-q68-70"
+    },
+    {
+      "no": 70,
+      "question_en": "What does the man suggest focusing on?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Site selection criteria", "text_vi": "" },
+        { "letter": "B", "text_en": "Wind turbine costs", "text_vi": "" },
+        { "letter": "C", "text_en": "Construction timelines", "text_vi": "" },
+        { "letter": "D", "text_en": "Environmental impact", "text_vi": "" }
+      ],
+      "setNo": 13,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p3-set13-q68-70.jpg",
+      "graphicLabel": "p3-set13-q68-70"
+    }
+  ],
+  "part4": [
+    {
+      "no": 71,
+      "question_en": "Who has recorded the message?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A city mayor's office", "text_vi": "" },
+        { "letter": "B", "text_en": "A maintenance department", "text_vi": "" },
+        { "letter": "C", "text_en": "An automobile dealership", "text_vi": "" },
+        { "letter": "D", "text_en": "A building management office", "text_vi": "" }
+      ],
+      "setNo": 1
+    },
+    {
+      "no": 72,
+      "question_en": "What are the listeners asked to do?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Move their vehicles", "text_vi": "" },
+        { "letter": "B", "text_en": "Pay their parking fines", "text_vi": "" },
+        { "letter": "C", "text_en": "Use an alternate entrance", "text_vi": "" },
+        { "letter": "D", "text_en": "Participate in a meeting", "text_vi": "" }
+      ],
+      "setNo": 1
+    },
+    {
+      "no": 73,
+      "question_en": "What does the speaker say was mailed last week?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "An election ballot", "text_vi": "" },
+        { "letter": "B", "text_en": "A maintenance plan", "text_vi": "" },
+        { "letter": "C", "text_en": "A map", "text_vi": "" },
+        { "letter": "D", "text_en": "A coupon", "text_vi": "" }
+      ],
+      "setNo": 1
+    },
+    {
+      "no": 74,
+      "question_en": "What is the topic of the episode?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Garden landscaping", "text_vi": "" },
+        { "letter": "B", "text_en": "Window installation", "text_vi": "" },
+        { "letter": "C", "text_en": "Roof maintenance", "text_vi": "" },
+        { "letter": "D", "text_en": "Kitchen renovations", "text_vi": "" }
+      ],
+      "setNo": 2
+    },
+    {
+      "no": 75,
+      "question_en": "What does the speaker emphasize about some tools?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "They should be cleaned regularly.", "text_vi": "" },
+        { "letter": "B", "text_en": "They should be of high quality.", "text_vi": "" },
+        { "letter": "C", "text_en": "They were recently invented.", "text_vi": "" },
+        { "letter": "D", "text_en": "They can be easily stored.", "text_vi": "" }
+      ],
+      "setNo": 2
+    },
+    {
+      "no": 76,
+      "question_en": "What does the speaker recommend doing yearly?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Treating some wood", "text_vi": "" },
+        { "letter": "B", "text_en": "Consulting an electrician", "text_vi": "" },
+        { "letter": "C", "text_en": "Taking some photos", "text_vi": "" },
+        { "letter": "D", "text_en": "Draining some water", "text_vi": "" }
+      ],
+      "setNo": 2
+    },
+    {
+      "no": 77,
+      "question_en": "Who most likely is the speaker?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A show host", "text_vi": "" },
+        { "letter": "B", "text_en": "A tour guide", "text_vi": "" },
+        { "letter": "C", "text_en": "A sales associate", "text_vi": "" },
+        { "letter": "D", "text_en": "A professor", "text_vi": "" }
+      ],
+      "setNo": 3
+    },
+    {
+      "no": 78,
+      "question_en": "What will happen at two o'clock?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A lecture will begin.", "text_vi": "" },
+        { "letter": "B", "text_en": "A demonstration will be given.", "text_vi": "" },
+        { "letter": "C", "text_en": "An interview will be conducted.", "text_vi": "" },
+        { "letter": "D", "text_en": "A park will close.", "text_vi": "" }
+      ],
+      "setNo": 3
+    },
+    {
+      "no": 79,
+      "question_en": "What is Orchid Caretakers?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A book", "text_vi": "" },
+        { "letter": "B", "text_en": "An album", "text_vi": "" },
+        { "letter": "C", "text_en": "A film", "text_vi": "" },
+        { "letter": "D", "text_en": "A magazine", "text_vi": "" }
+      ],
+      "setNo": 3
+    },
+    {
+      "no": 80,
+      "question_en": "What event is taking place?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A fund-raising concert", "text_vi": "" },
+        { "letter": "B", "text_en": "A sports competition", "text_vi": "" },
+        { "letter": "C", "text_en": "A play rehearsal", "text_vi": "" },
+        { "letter": "D", "text_en": "An awards ceremony", "text_vi": "" }
+      ],
+      "setNo": 4
+    },
+    {
+      "no": 81,
+      "question_en": "What does the organization plan to do?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Change a policy", "text_vi": "" },
+        { "letter": "B", "text_en": "Repair a building", "text_vi": "" },
+        { "letter": "C", "text_en": "Select a winner", "text_vi": "" },
+        { "letter": "D", "text_en": "Sponsor a team", "text_vi": "" }
+      ],
+      "setNo": 4
+    },
+    {
+      "no": 82,
+      "question_en": "What does the speaker encourage the listeners to do?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Order tickets early", "text_vi": "" },
+        { "letter": "B", "text_en": "Visit a community center", "text_vi": "" },
+        { "letter": "C", "text_en": "Purchase refreshments", "text_vi": "" },
+        { "letter": "D", "text_en": "Donate clothing", "text_vi": "" }
+      ],
+      "setNo": 4
+    },
+    {
+      "no": 83,
+      "question_en": "What is the topic of the workshop?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Time management", "text_vi": "" },
+        { "letter": "B", "text_en": "Public speaking", "text_vi": "" },
+        { "letter": "C", "text_en": "Leadership skills", "text_vi": "" },
+        { "letter": "D", "text_en": "Professional networking", "text_vi": "" }
+      ],
+      "setNo": 5
+    },
+    {
+      "no": 84,
+      "question_en": "What does the speaker imply when he says, \"Erina's at the back of the room\"?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A guest speaker has just arrived.", "text_vi": "" },
+        { "letter": "B", "text_en": "Assistance is available.", "text_vi": "" },
+        { "letter": "C", "text_en": "Attendees should speak clearly and loudly.", "text_vi": "" },
+        { "letter": "D", "text_en": "An extra chair should be provided.", "text_vi": "" }
+      ],
+      "setNo": 5
+    },
+    {
+      "no": 85,
+      "question_en": "What will the listeners do next?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Sign their names on a list", "text_vi": "" },
+        { "letter": "B", "text_en": "Take a break", "text_vi": "" },
+        { "letter": "C", "text_en": "Participate in an introductory activity", "text_vi": "" },
+        { "letter": "D", "text_en": "Fill out a questionnaire", "text_vi": "" }
+      ],
+      "setNo": 5
+    },
+    {
+      "no": 86,
+      "question_en": "What is the historical site famous for?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Its defensive walls", "text_vi": "" },
+        { "letter": "B", "text_en": "Its royal inhabitants", "text_vi": "" },
+        { "letter": "C", "text_en": "An event that happened there", "text_vi": "" },
+        { "letter": "D", "text_en": "Some artwork", "text_vi": "" }
+      ],
+      "setNo": 6
+    },
+    {
+      "no": 87,
+      "question_en": "Why does the speaker apologize?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "The listeners cannot take pictures.", "text_vi": "" },
+        { "letter": "B", "text_en": "An area is closed to the listeners.", "text_vi": "" },
+        { "letter": "C", "text_en": "There is no gift shop.", "text_vi": "" },
+        { "letter": "D", "text_en": "A tour started late.", "text_vi": "" }
+      ],
+      "setNo": 6
+    },
+    {
+      "no": 88,
+      "question_en": "What does the speaker ask the listeners to do?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Show their tickets", "text_vi": "" },
+        { "letter": "B", "text_en": "Put on protective clothing", "text_vi": "" },
+        { "letter": "C", "text_en": "Use some handrails", "text_vi": "" },
+        { "letter": "D", "text_en": "Speak quietly", "text_vi": "" }
+      ],
+      "setNo": 6
+    },
+    {
+      "no": 89,
+      "question_en": "What is the speaker mainly discussing?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "An advertising campaign", "text_vi": "" },
+        { "letter": "B", "text_en": "A market expansion", "text_vi": "" },
+        { "letter": "C", "text_en": "Some contract negotiations", "text_vi": "" },
+        { "letter": "D", "text_en": "Some audit procedures", "text_vi": "" }
+      ],
+      "setNo": 7
+    },
+    {
+      "no": 90,
+      "question_en": "What does the speaker imply when he says, \"this is a priority\"?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Overtime pay has been approved.", "text_vi": "" },
+        { "letter": "B", "text_en": "A deadline must be met.", "text_vi": "" },
+        { "letter": "C", "text_en": "A client expressed concern.", "text_vi": "" },
+        { "letter": "D", "text_en": "A supervisor will be observing closely.", "text_vi": "" }
+      ],
+      "setNo": 7
+    },
+    {
+      "no": 91,
+      "question_en": "What will the listeners do next?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "View a presentation", "text_vi": "" },
+        { "letter": "B", "text_en": "Review a budget", "text_vi": "" },
+        { "letter": "C", "text_en": "Revise some work", "text_vi": "" },
+        { "letter": "D", "text_en": "Do some research", "text_vi": "" }
+      ],
+      "setNo": 7
+    },
+    {
+      "no": 92,
+      "question_en": "Where do the listeners most likely work?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "At a hospital", "text_vi": "" },
+        { "letter": "B", "text_en": "At a restaurant", "text_vi": "" },
+        { "letter": "C", "text_en": "At a grocery store", "text_vi": "" },
+        { "letter": "D", "text_en": "At an electronics store", "text_vi": "" }
+      ],
+      "setNo": 8
+    },
+    {
+      "no": 93,
+      "question_en": "What is the main purpose of the talk?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "To make a request", "text_vi": "" },
+        { "letter": "B", "text_en": "To address staff complaints", "text_vi": "" },
+        { "letter": "C", "text_en": "To present a new schedule", "text_vi": "" },
+        { "letter": "D", "text_en": "To explain a technical process", "text_vi": "" }
+      ],
+      "setNo": 8
+    },
+    {
+      "no": 94,
+      "question_en": "What does the speaker imply when she says, \"That will require management approval\"?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A process has not been followed.", "text_vi": "" },
+        { "letter": "B", "text_en": "The listeners may be asked to work extra shifts.", "text_vi": "" },
+        { "letter": "C", "text_en": "The listeners should contact a manager.", "text_vi": "" },
+        { "letter": "D", "text_en": "A change will not be immediate.", "text_vi": "" }
+      ],
+      "setNo": 8
+    },
+    {
+      "no": 95,
+      "question_en": "According to the speaker, what was recently completed?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "A company reorganization", "text_vi": "" },
+        { "letter": "B", "text_en": "A park renovation", "text_vi": "" },
+        { "letter": "C", "text_en": "A volunteer training", "text_vi": "" },
+        { "letter": "D", "text_en": "A conservation project", "text_vi": "" }
+      ],
+      "setNo": 9,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set9-q95-97.jpg",
+      "graphicLabel": "p4-set9-q95-97"
+    },
+    {
+      "no": 96,
+      "question_en": "Look at the graphic. Where does the speaker say refreshments will be served?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Location 1", "text_vi": "" },
+        { "letter": "B", "text_en": "Location 2", "text_vi": "" },
+        { "letter": "C", "text_en": "Location 3", "text_vi": "" },
+        { "letter": "D", "text_en": "Location 4", "text_vi": "" }
+      ],
+      "setNo": 9,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set9-q95-97.jpg",
+      "graphicLabel": "p4-set9-q95-97"
+    },
+    {
+      "no": 97,
+      "question_en": "What are the listeners reminded to do?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Complete a survey", "text_vi": "" },
+        { "letter": "B", "text_en": "Donate some money", "text_vi": "" },
+        { "letter": "C", "text_en": "Join an organization", "text_vi": "" },
+        { "letter": "D", "text_en": "Post some photographs", "text_vi": "" }
+      ],
+      "setNo": 9,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set9-q95-97.jpg",
+      "graphicLabel": "p4-set9-q95-97"
+    },
+    {
+      "no": 98,
+      "question_en": "What is the topic of today's lecture?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "When to harvest crops", "text_vi": "" },
+        { "letter": "B", "text_en": "Where to plant trees", "text_vi": "" },
+        { "letter": "C", "text_en": "How to grow vegetables", "text_vi": "" },
+        { "letter": "D", "text_en": "Which flowers need more sun", "text_vi": "" }
+      ],
+      "setNo": 10,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set10-q98-100.jpg",
+      "graphicLabel": "p4-set10-q98-100"
+    },
+    {
+      "no": 99,
+      "question_en": "Look at the graphic. At what depth should samples be collected this month?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "12 inches", "text_vi": "" },
+        { "letter": "B", "text_en": "4 inches", "text_vi": "" },
+        { "letter": "C", "text_en": "6 inches", "text_vi": "" },
+        { "letter": "D", "text_en": "8 inches", "text_vi": "" }
+      ],
+      "setNo": 10,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set10-q98-100.jpg",
+      "graphicLabel": "p4-set10-q98-100"
+    },
+    {
+      "no": 100,
+      "question_en": "What does the speaker encourage the listeners to do?",
+      "question_vi": "",
+      "options": [
+        { "letter": "A", "text_en": "Turn off mobile phones", "text_vi": "" },
+        { "letter": "B", "text_en": "Have some refreshments", "text_vi": "" },
+        { "letter": "C", "text_en": "Purchase some seeds", "text_vi": "" },
+        { "letter": "D", "text_en": "Sign up for a mailing list", "text_vi": "" }
+      ],
+      "setNo": 10,
+      "graphic": "images/graphics/ets-toeic-2024-test-1-p4-set10-q98-100.jpg",
+      "graphicLabel": "p4-set10-q98-100"
+    }
+  ]
+},
   "2": {
     "id": "ets-toeic-2024-test-2",
     "title": "ETS TOEIC 2024 Test 2",
