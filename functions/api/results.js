@@ -31,9 +31,28 @@ export async function onRequestPost(context) {
 export async function onRequestGet(context) {
   try {
     if (!context.env.STUDENT_RESULTS) return json({ ok:false, error:'Thiếu KV binding STUDENT_RESULTS.' }, 500);
+    const url = new URL(context.request.url);
+    const studentEmail = String(url.searchParams.get('email') || context.request.headers.get('x-student-email') || '').trim().toLowerCase();
+    if (studentEmail) {
+      const token = context.request.headers.get('x-student-token') || '';
+      if (!isStudentTokenForEmail(token, studentEmail)) return json({ ok:false, error:'Phiên đăng nhập học viên không hợp lệ.' }, 401);
+      const list = await context.env.STUDENT_RESULTS.list({ limit: 1000 });
+      const results = [];
+      for (const key of list.keys.sort((a,b)=>String(b.name).localeCompare(String(a.name)))) {
+        if (String(key.name).startsWith('__')) continue;
+        const metaEmail = String(key.metadata?.email || '').trim().toLowerCase();
+        if (metaEmail && metaEmail !== studentEmail) continue;
+        const text = await context.env.STUDENT_RESULTS.get(key.name);
+        if (!text) continue;
+        const record = JSON.parse(text);
+        if (String(record.email || record.payload?.student?.email || '').trim().toLowerCase() === studentEmail) {
+          results.push(record);
+        }
+      }
+      return json({ ok:true, results });
+    }
     const adminPassword = context.request.headers.get('x-admin-password') || '';
     if (!isAdminPassword(context.env, adminPassword)) return json({ ok:false, error:'Sai mật khẩu giáo viên.' }, 401);
-    const url = new URL(context.request.url);
     const id = url.searchParams.get('id');
     if (id) {
       const text = await context.env.STUDENT_RESULTS.get(id);
@@ -76,4 +95,14 @@ export async function onRequestDelete(context) {
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), { status, headers: { 'content-type':'application/json; charset=utf-8' } });
+}
+
+function isStudentTokenForEmail(token, email) {
+  try {
+    const decoded = atob(String(token || ''));
+    const parts = decoded.split('|');
+    return parts[0] === 'student' && String(parts[1] || '').trim().toLowerCase() === email;
+  } catch (err) {
+    return false;
+  }
 }
