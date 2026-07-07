@@ -55,7 +55,7 @@
             <div class="field"><label>Loại từ</label><div class="parts" id="commonPartsInput"></div></div>
             <div class="field"><label>Nghĩa tiếng Việt</label><textarea id="commonMeaningInput" placeholder="phát động chiến dịch"></textarea></div>
             <div class="field"><label>Ghi chú</label><input id="commonNoteInput" placeholder="Từ vựng chung do giáo viên thêm"></div>
-            <div class="actions"><button class="btn warn" type="submit">Thêm vào kho chung</button></div>
+            <div class="actions"><button class="btn warn" type="submit">Thêm vào kho chung</button><button class="btn good" type="button" onclick="seedToeicCommon()">Tạo kho mẫu TOEIC 100 từ</button></div>
           </form>
           <div class="status" id="commonStatus"></div>
         </div>
@@ -103,6 +103,110 @@
 const STUDENT_KEY='toeic_student_session';
 const PARTS=['noun','verb','adjective','adverb','preposition','conjunction','pronoun'];
 const PART_LABEL={noun:'noun',verb:'verb',adjective:'adjective',adverb:'adverb',preposition:'preposition',conjunction:'conjunction',pronoun:'pronoun'};
+
+const TOEIC_COMMON_SEED=[
+  {word:'appointment',parts:['noun'],meanings:['cuộc hẹn','lịch hẹn'],note:'TOEIC noun phổ biến'},
+  {word:'application',parts:['noun'],meanings:['đơn đăng ký','ứng dụng'],note:'TOEIC noun phổ biến'},
+  {word:'applicant',parts:['noun'],meanings:['ứng viên','người nộp đơn'],note:'TOEIC noun phổ biến'},
+  {word:'approval',parts:['noun'],meanings:['sự chấp thuận','sự phê duyệt'],note:'TOEIC noun phổ biến'},
+  {word:'assignment',parts:['noun'],meanings:['nhiệm vụ','bài được giao'],note:'TOEIC noun phổ biến'},
+  {word:'attendance',parts:['noun'],meanings:['sự tham dự','số người tham dự'],note:'TOEIC noun phổ biến'},
+  {word:'budget',parts:['noun'],meanings:['ngân sách'],note:'TOEIC noun phổ biến'},
+  {word:'candidate',parts:['noun'],meanings:['ứng viên'],note:'TOEIC noun phổ biến'},
+  {word:'client',parts:['noun'],meanings:['khách hàng'],note:'TOEIC noun phổ biến'},
+  {word:'conference',parts:['noun'],meanings:['hội nghị'],note:'TOEIC noun phổ biến'},
+  {word:'confirmation',parts:['noun'],meanings:['sự xác nhận','thư xác nhận'],note:'TOEIC noun phổ biến'},
+  {word:'contract',parts:['noun'],meanings:['hợp đồng'],note:'TOEIC noun phổ biến'},
+  {word:'customer',parts:['noun'],meanings:['khách hàng'],note:'TOEIC noun phổ biến'},
+  {word:'deadline',parts:['noun'],meanings:['hạn chót'],note:'TOEIC noun phổ biến'},
+  {word:'department',parts:['noun'],meanings:['phòng ban','bộ phận'],note:'TOEIC noun phổ biến'},
+  {word:'discount',parts:['noun'],meanings:['sự giảm giá','mức giảm giá'],note:'TOEIC noun phổ biến'},
+  {word:'employee',parts:['noun'],meanings:['nhân viên'],note:'TOEIC noun phổ biến'},
+  {word:'equipment',parts:['noun'],meanings:['thiết bị'],note:'TOEIC noun phổ biến'},
+  {word:'estimate',parts:['noun'],meanings:['bản ước tính','sự ước lượng'],note:'TOEIC noun phổ biến'},
+  {word:'facility',parts:['noun'],meanings:['cơ sở vật chất','tiện nghi'],note:'TOEIC noun phổ biến'},
+  {word:'feedback',parts:['noun'],meanings:['phản hồi','ý kiến nhận xét'],note:'TOEIC noun phổ biến'},
+  {word:'invoice',parts:['noun'],meanings:['hóa đơn'],note:'TOEIC noun phổ biến'},
+  {word:'itinerary',parts:['noun'],meanings:['lịch trình chuyến đi'],note:'TOEIC noun phổ biến'},
+  {word:'maintenance',parts:['noun'],meanings:['sự bảo trì','việc bảo dưỡng'],note:'TOEIC noun phổ biến'},
+  {word:'manufacturer',parts:['noun'],meanings:['nhà sản xuất'],note:'TOEIC noun phổ biến'},
+  {word:'meeting',parts:['noun'],meanings:['cuộc họp'],note:'TOEIC noun phổ biến'},
+  {word:'merchandise',parts:['noun'],meanings:['hàng hóa'],note:'TOEIC noun phổ biến'},
+  {word:'notice',parts:['noun'],meanings:['thông báo','lưu ý'],note:'TOEIC noun phổ biến'},
+  {word:'order',parts:['noun'],meanings:['đơn đặt hàng','thứ tự'],note:'TOEIC noun phổ biến'},
+  {word:'payment',parts:['noun'],meanings:['khoản thanh toán','sự thanh toán'],note:'TOEIC noun phổ biến'},
+  {word:'policy',parts:['noun'],meanings:['chính sách','quy định'],note:'TOEIC noun phổ biến'},
+  {word:'position',parts:['noun'],meanings:['vị trí công việc','vị trí'],note:'TOEIC noun phổ biến'},
+  {word:'presentation',parts:['noun'],meanings:['bài thuyết trình','buổi trình bày'],note:'TOEIC noun phổ biến'},
+  {word:'procedure',parts:['noun'],meanings:['quy trình','thủ tục'],note:'TOEIC noun phổ biến'},
+  {word:'productivity',parts:['noun'],meanings:['năng suất'],note:'TOEIC noun phổ biến'},
+  {word:'proposal',parts:['noun'],meanings:['đề xuất','bản đề xuất'],note:'TOEIC noun phổ biến'},
+  {word:'purchase',parts:['noun'],meanings:['việc mua hàng','món hàng đã mua'],note:'TOEIC noun phổ biến'},
+  {word:'receipt',parts:['noun'],meanings:['biên lai','hóa đơn nhận tiền'],note:'TOEIC noun phổ biến'},
+  {word:'reception',parts:['noun'],meanings:['quầy lễ tân','buổi tiếp đón'],note:'TOEIC noun phổ biến'},
+  {word:'recommendation',parts:['noun'],meanings:['sự đề xuất','lời giới thiệu'],note:'TOEIC noun phổ biến'},
+  {word:'refund',parts:['noun'],meanings:['khoản hoàn tiền'],note:'TOEIC noun phổ biến'},
+  {word:'renovation',parts:['noun'],meanings:['sự cải tạo','việc sửa sang'],note:'TOEIC noun phổ biến'},
+  {word:'reservation',parts:['noun'],meanings:['sự đặt chỗ','chỗ đã đặt'],note:'TOEIC noun phổ biến'},
+  {word:'shipment',parts:['noun'],meanings:['lô hàng','việc giao hàng'],note:'TOEIC noun phổ biến'},
+  {word:'supervisor',parts:['noun'],meanings:['người giám sát','cấp trên'],note:'TOEIC noun phổ biến'},
+  {word:'supplier',parts:['noun'],meanings:['nhà cung cấp'],note:'TOEIC noun phổ biến'},
+  {word:'survey',parts:['noun'],meanings:['khảo sát','bảng khảo sát'],note:'TOEIC noun phổ biến'},
+  {word:'training',parts:['noun'],meanings:['đào tạo','khóa huấn luyện'],note:'TOEIC noun phổ biến'},
+  {word:'vacancy',parts:['noun'],meanings:['vị trí còn trống','phòng trống'],note:'TOEIC noun phổ biến'},
+  {word:'warranty',parts:['noun'],meanings:['bảo hành','phiếu bảo hành'],note:'TOEIC noun phổ biến'},
+  {word:'accept',parts:['verb'],meanings:['chấp nhận','nhận'],note:'TOEIC verb phổ biến'},
+  {word:'accommodate',parts:['verb'],meanings:['đáp ứng','cung cấp chỗ ở'],note:'TOEIC verb phổ biến'},
+  {word:'announce',parts:['verb'],meanings:['thông báo','công bố'],note:'TOEIC verb phổ biến'},
+  {word:'approve',parts:['verb'],meanings:['chấp thuận','phê duyệt'],note:'TOEIC verb phổ biến'},
+  {word:'arrange',parts:['verb'],meanings:['sắp xếp','bố trí'],note:'TOEIC verb phổ biến'},
+  {word:'attend',parts:['verb'],meanings:['tham dự','có mặt'],note:'TOEIC verb phổ biến'},
+  {word:'cancel',parts:['verb'],meanings:['hủy bỏ'],note:'TOEIC verb phổ biến'},
+  {word:'confirm',parts:['verb'],meanings:['xác nhận'],note:'TOEIC verb phổ biến'},
+  {word:'contact',parts:['verb'],meanings:['liên hệ'],note:'TOEIC verb phổ biến'},
+  {word:'deliver',parts:['verb'],meanings:['giao hàng','phân phát'],note:'TOEIC verb phổ biến'},
+  {word:'discuss',parts:['verb'],meanings:['thảo luận'],note:'TOEIC verb phổ biến'},
+  {word:'display',parts:['verb'],meanings:['trưng bày','hiển thị'],note:'TOEIC verb phổ biến'},
+  {word:'enclose',parts:['verb'],meanings:['đính kèm','gửi kèm'],note:'TOEIC verb phổ biến'},
+  {word:'ensure',parts:['verb'],meanings:['đảm bảo'],note:'TOEIC verb phổ biến'},
+  {word:'estimate',parts:['verb'],meanings:['ước tính','ước lượng'],note:'TOEIC verb phổ biến'},
+  {word:'expand',parts:['verb'],meanings:['mở rộng'],note:'TOEIC verb phổ biến'},
+  {word:'expect',parts:['verb'],meanings:['mong đợi','dự kiến'],note:'TOEIC verb phổ biến'},
+  {word:'extend',parts:['verb'],meanings:['gia hạn','mở rộng'],note:'TOEIC verb phổ biến'},
+  {word:'hire',parts:['verb'],meanings:['thuê','tuyển dụng'],note:'TOEIC verb phổ biến'},
+  {word:'improve',parts:['verb'],meanings:['cải thiện'],note:'TOEIC verb phổ biến'},
+  {word:'include',parts:['verb'],meanings:['bao gồm'],note:'TOEIC verb phổ biến'},
+  {word:'inform',parts:['verb'],meanings:['thông báo cho'],note:'TOEIC verb phổ biến'},
+  {word:'inspect',parts:['verb'],meanings:['kiểm tra','thanh tra'],note:'TOEIC verb phổ biến'},
+  {word:'install',parts:['verb'],meanings:['lắp đặt','cài đặt'],note:'TOEIC verb phổ biến'},
+  {word:'invite',parts:['verb'],meanings:['mời'],note:'TOEIC verb phổ biến'},
+  {word:'maintain',parts:['verb'],meanings:['duy trì','bảo trì'],note:'TOEIC verb phổ biến'},
+  {word:'notify',parts:['verb'],meanings:['thông báo cho'],note:'TOEIC verb phổ biến'},
+  {word:'offer',parts:['verb'],meanings:['cung cấp','đề nghị'],note:'TOEIC verb phổ biến'},
+  {word:'order',parts:['verb'],meanings:['đặt hàng','ra lệnh'],note:'TOEIC verb phổ biến'},
+  {word:'participate',parts:['verb'],meanings:['tham gia'],note:'TOEIC verb phổ biến'},
+  {word:'prepare',parts:['verb'],meanings:['chuẩn bị'],note:'TOEIC verb phổ biến'},
+  {word:'process',parts:['verb'],meanings:['xử lý'],note:'TOEIC verb phổ biến'},
+  {word:'provide',parts:['verb'],meanings:['cung cấp'],note:'TOEIC verb phổ biến'},
+  {word:'purchase',parts:['verb'],meanings:['mua','mua hàng'],note:'TOEIC verb phổ biến'},
+  {word:'receive',parts:['verb'],meanings:['nhận'],note:'TOEIC verb phổ biến'},
+  {word:'recommend',parts:['verb'],meanings:['đề xuất','giới thiệu'],note:'TOEIC verb phổ biến'},
+  {word:'reduce',parts:['verb'],meanings:['giảm'],note:'TOEIC verb phổ biến'},
+  {word:'refund',parts:['verb'],meanings:['hoàn tiền'],note:'TOEIC verb phổ biến'},
+  {word:'register',parts:['verb'],meanings:['đăng ký'],note:'TOEIC verb phổ biến'},
+  {word:'remind',parts:['verb'],meanings:['nhắc nhở'],note:'TOEIC verb phổ biến'},
+  {word:'renew',parts:['verb'],meanings:['gia hạn','làm mới'],note:'TOEIC verb phổ biến'},
+  {word:'repair',parts:['verb'],meanings:['sửa chữa'],note:'TOEIC verb phổ biến'},
+  {word:'replace',parts:['verb'],meanings:['thay thế'],note:'TOEIC verb phổ biến'},
+  {word:'request',parts:['verb'],meanings:['yêu cầu','đề nghị'],note:'TOEIC verb phổ biến'},
+  {word:'reserve',parts:['verb'],meanings:['đặt trước','giữ chỗ'],note:'TOEIC verb phổ biến'},
+  {word:'review',parts:['verb'],meanings:['xem xét','đánh giá'],note:'TOEIC verb phổ biến'},
+  {word:'schedule',parts:['verb'],meanings:['lên lịch','xếp lịch'],note:'TOEIC verb phổ biến'},
+  {word:'submit',parts:['verb'],meanings:['nộp','gửi'],note:'TOEIC verb phổ biến'},
+  {word:'update',parts:['verb'],meanings:['cập nhật'],note:'TOEIC verb phổ biến'},
+  {word:'verify',parts:['verb'],meanings:['xác minh','kiểm chứng'],note:'TOEIC verb phổ biến'}
+];
+
 let student=null;
 let userWords=[];
 let commonWords=[];
@@ -220,6 +324,34 @@ async function addCommonWord(e){
     renderAll();
   }catch(err){setStatus('commonStatus',err.message||'Không thêm được vào kho chung.','err');}
 }
+
+async function seedToeicCommon(){
+  const pass=document.getElementById('adminPassword').value;
+  if(!pass) return setStatus('commonStatus','Nhập mật khẩu admin trước khi tạo kho mẫu.','err');
+  if(!confirm('Tạo kho chung mẫu gồm 50 danh từ + 50 động từ TOEIC?')) return;
+  const btns=Array.from(document.querySelectorAll('button'));
+  btns.forEach(b=>b.disabled=true);
+  let ok=0,fail=0,lastCommon=commonWords;
+  try{
+    for(let i=0;i<TOEIC_COMMON_SEED.length;i++){
+      const item=TOEIC_COMMON_SEED[i];
+      setStatus('commonStatus','Đang tạo kho mẫu: '+(i+1)+'/'+TOEIC_COMMON_SEED.length+' · '+item.word,'warn');
+      try{
+        const res=await fetch('/api/vocabulary',{method:'POST',headers:{'Content-Type':'application/json','x-admin-password':pass},body:JSON.stringify({action:'add-common',item})});
+        const data=await res.json().catch(()=>({}));
+        if(!res.ok||!data.ok) throw new Error(data.error||'Không thêm được từ.');
+        ok++;
+        if(Array.isArray(data.commonWords)) lastCommon=data.commonWords;
+      }catch(e){fail++;}
+    }
+    commonWords=lastCommon;
+    setStatus('commonStatus','Đã tạo kho mẫu TOEIC: '+ok+' từ thành công'+(fail?'; '+fail+' từ lỗi.':'.'),'ok');
+    renderAll();
+  }finally{
+    btns.forEach(b=>b.disabled=false);
+  }
+}
+
 async function copyCommonToUser(id){
   try{
     setStatus('commonStatus','Đang thêm từ này vào hòm của bạn...','warn');
