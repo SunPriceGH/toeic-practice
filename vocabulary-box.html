@@ -49,7 +49,6 @@
 
         <div class="admin-box">
           <h2>Admin thêm kho chung</h2>
-          <p class="muted">Kho chung cho mọi học viên xem và bấm thêm vào hòm riêng. Nhập mật khẩu admin khi lưu/xóa từ kho chung.</p>
           <form id="commonForm" onsubmit="addCommonWord(event)">
             <div class="field"><label>Mật khẩu admin</label><input id="adminPassword" type="password" placeholder="Nhập mật khẩu admin"></div>
             <div class="field"><label>Từ / cụm từ cho kho chung</label><input id="commonWordInput" placeholder="Ví dụ: launch a campaign"></div>
@@ -280,7 +279,7 @@ function renderAll(){
   document.getElementById('practiceBtn').disabled=!enough;
   document.getElementById('unlockBox').innerHTML=enough
     ? 'Đã đủ <b>'+userWords.length+' từ</b>. Nút luyện tập đã mở khóa.'
-    : 'Bạn đang có <b>'+userWords.length+'/20 từ</b>. Cần thêm '+(20-userWords.length)+' từ nữa để luyện tập.';
+    : 'Bạn đang có <b>'+userWords.length+' từ</b>. Cần thêm '+(20-userWords.length)+' từ nữa để luyện tập.';
   document.getElementById('userList').innerHTML=filteredUser.length?filteredUser.map(item=>renderWordCard(item,'user')).join(''):'<div class="empty">Chưa có từ nào trong hòm cá nhân.</div>';
   document.getElementById('commonList').innerHTML=filteredCommon.length?filteredCommon.map(item=>renderWordCard(item,'common')).join(''):'<div class="empty">Kho chung đang trống hoặc không có kết quả tìm kiếm.</div>';
 }
