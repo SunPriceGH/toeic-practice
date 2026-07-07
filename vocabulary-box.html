@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hòm từ vựng cá nhân</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#0f172a}body{overflow-x:hidden}.page{min-height:100vh;padding:34px 46px 70px;background:radial-gradient(circle at top left,rgba(37,99,235,.16),transparent 34%),radial-gradient(circle at bottom right,rgba(20,184,166,.16),transparent 38%),#fff}.top-line{position:fixed;top:0;left:0;width:100%;height:7px;background:linear-gradient(90deg,#2563eb,#14b8a6);z-index:10}.wrap{max-width:1180px;margin:0 auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#2563eb,#14b8a6);display:grid;place-items:center;color:#fff;font-size:26px;font-weight:1000;box-shadow:0 14px 28px rgba(37,99,235,.22)}.brand h1{font-size:34px;line-height:1.15}.brand p{margin-top:4px;color:#64748b;font-size:16px;font-weight:750}.nav{display:flex;gap:10px;flex-wrap:wrap}.btn{border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;background:#2563eb;color:#fff;font-weight:950;font-size:15px;padding:12px 18px;box-shadow:0 9px 20px rgba(15,23,42,.15);text-decoration:none;transition:.18s ease}.btn:hover{transform:translateY(-1px);background:#1d4ed8}.btn.secondary{background:#e2e8f0;color:#0f172a}.btn.secondary:hover{background:#cbd5e1}.btn.good{background:#16a34a}.btn.good:hover{background:#15803d}.btn.warn{background:#f97316}.btn.warn:hover{background:#ea580c}.btn.danger{background:#e11d48}.btn.danger:hover{background:#be123c}.btn:disabled{opacity:.48;cursor:not-allowed;transform:none}.grid{display:grid;grid-template-columns:minmax(310px,420px) 1fr;gap:18px;align-items:start}.panel{background:#f8fafc;border:2px solid #e2e8f0;border-radius:26px;padding:22px;box-shadow:0 14px 32px rgba(15,23,42,.08)}.panel h2{font-size:24px;margin-bottom:8px}.muted{color:#64748b;font-size:15px;line-height:1.45;font-weight:700}.field{margin-top:14px}.field label{display:block;font-size:14px;font-weight:950;color:#334155;margin-bottom:7px}.field input,.field textarea{width:100%;border:2px solid #dbeafe;border-radius:16px;padding:13px 14px;background:#fff;font-size:16px;outline:none}.field textarea{min-height:92px;resize:vertical;line-height:1.45}.field input:focus,.field textarea:focus{border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.12)}.parts{display:flex;flex-wrap:wrap;gap:8px}.part-check{user-select:none;display:inline-flex;align-items:center;gap:7px;border:2px solid #dbeafe;background:#fff;color:#334155;border-radius:999px;padding:9px 11px;font-size:14px;font-weight:900}.part-check input{accent-color:#2563eb}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.status{display:none;margin-top:12px;padding:11px 13px;border-radius:16px;border:2px solid #dbeafe;background:#fff;color:#334155;font-size:14px;font-weight:850;line-height:1.4}.status.show{display:block}.status.ok{border-color:#bbf7d0;background:#f0fdf4;color:#166534}.status.err{border-color:#fecdd3;background:#fff1f2;color:#be123c}.status.warn{border-color:#fed7aa;background:#fff7ed;color:#9a3412}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}.stat{background:#fff;border:2px solid #dbeafe;border-radius:18px;padding:13px}.stat b{display:block;font-size:28px;color:#1d4ed8}.stat span{display:block;margin-top:3px;color:#64748b;font-size:13px;font-weight:900}.unlock-box{margin:14px 0 4px;padding:16px;border:2px dashed #93c5fd;background:#eff6ff;border-radius:20px}.unlock-box b{color:#1d4ed8}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.tab-btn{border:2px solid #dbeafe;background:#fff;color:#334155;border-radius:999px;padding:10px 14px;font-weight:950;cursor:pointer}.tab-btn.active{background:#dbeafe;color:#1d4ed8;border-color:#93c5fd}.list{display:grid;gap:10px;margin-top:12px}.word-card{background:#fff;border:2px solid #e2e8f0;border-radius:20px;padding:15px;box-shadow:0 8px 18px rgba(15,23,42,.05)}.word-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.word-title{font-size:20px;font-weight:1000;color:#0f172a;word-break:break-word}.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}.tag{background:#eff6ff;border:1.5px solid #bfdbfe;color:#1d4ed8;border-radius:999px;padding:5px 8px;font-size:12px;font-weight:950}.meaning{color:#334155;font-size:15px;line-height:1.45;font-weight:760}.note{margin-top:7px;color:#64748b;font-size:13px;line-height:1.4}.mini-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.mini-btn{border:none;border-radius:999px;background:#e2e8f0;color:#0f172a;font-weight:950;font-size:13px;padding:8px 10px;cursor:pointer}.mini-btn:hover{background:#cbd5e1}.mini-btn.add{background:#dcfce7;color:#166534}.mini-btn.del{background:#ffe4e6;color:#be123c}.search-row{display:flex;gap:10px;align-items:center;margin:12px 0;flex-wrap:wrap}.search-row input{flex:1;min-width:220px;border:2px solid #dbeafe;border-radius:999px;padding:12px 14px;font-size:15px;outline:none}.practice{display:none;margin-top:18px}.practice.show{display:block}.game-card{background:#fff;border:2px solid #dbeafe;border-radius:28px;padding:24px;box-shadow:0 18px 48px rgba(15,23,42,.12)}.game-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}.progress-pill{background:#eff6ff;border:2px solid #bfdbfe;color:#1d4ed8;border-radius:999px;padding:9px 13px;font-weight:1000}.question-meaning{font-size:26px;line-height:1.35;font-weight:1000;color:#0f172a;margin:14px 0}.question-hint{font-size:15px;color:#64748b;font-weight:800}.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:17px}.choice{border:2px solid #dbeafe;border-radius:18px;background:#f8fafc;padding:18px 12px;font-size:19px;font-weight:1000;color:#0f172a;cursor:pointer}.choice:hover{border-color:#2563eb;background:#eff6ff}.choice.correct{border-color:#86efac;background:#dcfce7;color:#166534}.choice.wrong{border-color:#fecdd3;background:#ffe4e6;color:#be123c}.type-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:16px}.type-row input{flex:1;min-width:260px;border:2px solid #bfdbfe;border-radius:18px;padding:15px 16px;font-size:22px;font-weight:900;outline:none}.mask{display:flex;align-items:center;flex-wrap:wrap;gap:5px;margin:16px 0 6px;min-height:48px}.mask-char{min-width:22px;height:34px;display:inline-grid;place-items:center;border-bottom:4px solid #2563eb;color:#2563eb;font-size:25px;font-weight:1000}.mask-space{display:inline-block;width:24px;height:34px}.feedback{display:none;margin-top:15px;border-radius:18px;padding:13px 14px;font-size:16px;font-weight:950;line-height:1.4}.feedback.show{display:block}.feedback.ok{background:#dcfce7;color:#166534;border:2px solid #86efac}.feedback.err{background:#ffe4e6;color:#be123c;border:2px solid #fecdd3}.wrong-list{display:grid;gap:10px;margin-top:14px}.wrong-item{background:#fff;border:2px solid #fecdd3;border-radius:18px;padding:13px}.wrong-item b{color:#be123c}.empty{padding:18px;border:2px dashed #cbd5e1;background:#fff;border-radius:18px;color:#64748b;font-weight:850;text-align:center}.admin-box{margin-top:16px;border-top:2px solid #e2e8f0;padding-top:16px}.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.hidden{display:none!important}@media(max-width:940px){.page{padding:28px 18px 60px}.grid,.split{grid-template-columns:1fr}.brand h1{font-size:28px}.stats{grid-template-columns:1fr 1fr 1fr}.choices{grid-template-columns:1fr}.question-meaning{font-size:23px}}@media(max-width:560px){.stats{grid-template-columns:1fr}.btn{width:100%}.nav{width:100%}.topbar{align-items:stretch}.parts{gap:7px}.part-check{font-size:13px}.type-row input{min-width:100%;font-size:19px}}
+</style>
+</head>
+<body>
+<div class="top-line"></div>
+<main class="page">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">V</div>
+        <div>
+          <h1>Hòm từ vựng cá nhân</h1>
+          <p id="studentLine">Đang kiểm tra phiên đăng nhập...</p>
+        </div>
+      </div>
+      <div class="nav">
+        <a class="btn secondary" href="index.html">← Trang chủ</a>
+        <button class="btn" id="reloadBtn" type="button" onclick="loadVocabulary()">Tải lại</button>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b id="userCount">0</b><span>Từ trong hòm của tôi</span></div>
+      <div class="stat"><b id="commonCount">0</b><span>Từ trong kho chung</span></div>
+      <div class="stat"><b id="unlockCount">20</b><span>Từ cần có để luyện tập</span></div>
+    </div>
+
+    <div class="unlock-box" id="unlockBox">Bạn cần có ít nhất <b>20 từ</b> trong hòm cá nhân để mở nút luyện tập.</div>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>Thêm từ vào hòm của tôi</h2>
+        <p class="muted">Nhập từ/cụm từ, chọn một hoặc nhiều loại từ, nhập mỗi nghĩa trên một dòng.</p>
+        <form id="userForm" onsubmit="addUserWord(event)">
+          <div class="field"><label>Từ / cụm từ</label><input id="wordInput" required placeholder="Ví dụ: make a reservation"></div>
+          <div class="field"><label>Loại từ</label><div class="parts" id="partsInput"></div></div>
+          <div class="field"><label>Nghĩa tiếng Việt</label><textarea id="meaningInput" required placeholder="đặt chỗ&#10;đặt trước"></textarea></div>
+          <div class="field"><label>Ghi chú nhỏ nếu cần</label><input id="noteInput" placeholder="Ví dụ: TOEIC Part 3, nhà hàng, khách sạn..."></div>
+          <div class="actions"><button class="btn good" type="submit">Lưu vào hòm</button><button class="btn secondary" type="button" onclick="clearUserForm()">Xóa form</button></div>
+        </form>
+        <div class="status" id="userStatus"></div>
+
+        <div class="admin-box">
+          <h2>Admin thêm kho chung</h2>
+          <p class="muted">Kho chung cho mọi học viên xem và bấm thêm vào hòm riêng. Nhập mật khẩu admin khi lưu/xóa từ kho chung.</p>
+          <form id="commonForm" onsubmit="addCommonWord(event)">
+            <div class="field"><label>Mật khẩu admin</label><input id="adminPassword" type="password" placeholder="Nhập mật khẩu admin"></div>
+            <div class="field"><label>Từ / cụm từ cho kho chung</label><input id="commonWordInput" placeholder="Ví dụ: launch a campaign"></div>
+            <div class="field"><label>Loại từ</label><div class="parts" id="commonPartsInput"></div></div>
+            <div class="field"><label>Nghĩa tiếng Việt</label><textarea id="commonMeaningInput" placeholder="phát động chiến dịch"></textarea></div>
+            <div class="field"><label>Ghi chú</label><input id="commonNoteInput" placeholder="Từ vựng chung do giáo viên thêm"></div>
+            <div class="actions"><button class="btn warn" type="submit">Thêm vào kho chung</button></div>
+          </form>
+          <div class="status" id="commonStatus"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel">
+          <div class="topbar" style="margin-bottom:0">
+            <div>
+              <h2>Luyện tập</h2>
+              <p class="muted">Khi hòm có đủ 20 từ, chọn một trong hai trò bên dưới. Mỗi lượt lấy ngẫu nhiên 20 từ.</p>
+            </div>
+            <button class="btn" id="practiceBtn" type="button" onclick="startPractice('choice')" disabled>Bắt đầu luyện tập</button>
+          </div>
+          <div class="tabs">
+            <button class="tab-btn active" id="modeChoiceBtn" type="button" onclick="selectMode('choice')">Trò 1 · Chọn đáp án</button>
+            <button class="tab-btn" id="modeTypingBtn" type="button" onclick="selectMode('typing')">Trò 2 · Gõ từ</button>
+          </div>
+          <div class="practice" id="practiceArea"></div>
+        </div>
+
+        <div class="split">
+          <section class="panel">
+            <div class="topbar" style="margin-bottom:0">
+              <div><h2>Hòm của tôi</h2><p class="muted">Các từ này mới được đưa vào trò luyện.</p></div>
+            </div>
+            <div class="search-row"><input id="userSearch" oninput="renderAll()" placeholder="Tìm trong hòm của tôi..."></div>
+            <div class="list" id="userList"></div>
+          </section>
+
+          <section class="panel">
+            <div class="topbar" style="margin-bottom:0">
+              <div><h2>Kho từ vựng chung</h2><p class="muted">Học viên có thể thêm từ từ kho chung vào hòm riêng.</p></div>
+            </div>
+            <div class="search-row"><input id="commonSearch" oninput="renderAll()" placeholder="Tìm kho chung..."></div>
+            <div class="list" id="commonList"></div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<script>
+const STUDENT_KEY='toeic_student_session';
+const PARTS=['noun','verb','adjective','adverb','preposition','conjunction','pronoun'];
+const PART_LABEL={noun:'noun',verb:'verb',adjective:'adjective',adverb:'adverb',preposition:'preposition',conjunction:'conjunction',pronoun:'pronoun'};
+let student=null;
+let userWords=[];
+let commonWords=[];
+let selectedMode='choice';
+let game=null;
+let resultSubmitted=false;
+
+function escapeHtml(s){return String(s||'').replace(/[&<>'"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c];});}
+function normalizeText(s){return String(s||'').trim().toLowerCase().replace(/\s+/g,' ');}
+function getStudentSession(){try{return JSON.parse(localStorage.getItem(STUDENT_KEY)||'null');}catch(e){return null;}}
+function requireStudentSession(){
+  const s=getStudentSession();
+  if(!s||!s.email||!s.token){
+    location.href='index.html?next='+encodeURIComponent('vocabulary-box.html');
+    return null;
+  }
+  return s;
+}
+function authHeaders(extra){
+  return Object.assign({'Content-Type':'application/json','x-student-email':student.email,'x-student-token':student.token||''}, extra||{});
+}
+function setStatus(id,msg,type){
+  const el=document.getElementById(id);
+  if(!msg){el.textContent='';el.className='status';return;}
+  el.textContent=msg;
+  el.className='status show '+(type||'');
+}
+function buildPartChecks(containerId,prefix){
+  document.getElementById(containerId).innerHTML=PARTS.map(function(part){
+    return '<label class="part-check"><input type="checkbox" name="'+prefix+'Part" value="'+part+'">'+PART_LABEL[part]+'</label>';
+  }).join('');
+}
+function selectedParts(prefix){
+  return Array.from(document.querySelectorAll('input[name="'+prefix+'Part"]:checked')).map(x=>x.value);
+}
+function clearPartChecks(prefix){
+  document.querySelectorAll('input[name="'+prefix+'Part"]').forEach(x=>x.checked=false);
+}
+function parseMeanings(value){return String(value||'').split(/\n|;|\|/g).map(s=>s.trim()).filter(Boolean);}
+function clearUserForm(){
+  document.getElementById('wordInput').value='';
+  document.getElementById('meaningInput').value='';
+  document.getElementById('noteInput').value='';
+  clearPartChecks('user');
+  setStatus('userStatus','');
+}
+function clearCommonForm(){
+  document.getElementById('commonWordInput').value='';
+  document.getElementById('commonMeaningInput').value='';
+  document.getElementById('commonNoteInput').value='';
+  clearPartChecks('common');
+}
+async function loadVocabulary(){
+  student=requireStudentSession();
+  if(!student) return;
+  document.getElementById('studentLine').textContent='Tài khoản: '+student.email;
+  setStatus('userStatus','Đang tải hòm từ vựng...','warn');
+  try{
+    const res=await fetch('/api/vocabulary?email='+encodeURIComponent(student.email),{headers:{'x-student-email':student.email,'x-student-token':student.token||''},cache:'no-store'});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không tải được từ vựng.');
+    userWords=Array.isArray(data.userWords)?data.userWords:[];
+    commonWords=Array.isArray(data.commonWords)?data.commonWords:[];
+    setStatus('userStatus','Đã tải xong.','ok');
+    setTimeout(()=>setStatus('userStatus',''),1200);
+    renderAll();
+  }catch(err){
+    setStatus('userStatus',err.message||'Không tải được từ vựng. Kiểm tra KV binding STUDENT_RESULTS.','err');
+  }
+}
+function validateItem(word,parts,meanings){
+  if(!word.trim()) throw new Error('Vui lòng nhập từ/cụm từ.');
+  if(parts.length===0) throw new Error('Vui lòng chọn ít nhất 1 loại từ.');
+  if(meanings.length===0) throw new Error('Vui lòng nhập ít nhất 1 nghĩa.');
+}
+async function addUserWord(e){
+  e.preventDefault();
+  const item={
+    word:document.getElementById('wordInput').value.trim(),
+    parts:selectedParts('user'),
+    meanings:parseMeanings(document.getElementById('meaningInput').value),
+    note:document.getElementById('noteInput').value.trim()
+  };
+  try{
+    validateItem(item.word,item.parts,item.meanings);
+    setStatus('userStatus','Đang lưu vào hòm của bạn...','warn');
+    const res=await fetch('/api/vocabulary',{method:'POST',headers:authHeaders(),body:JSON.stringify({action:'add-user',email:student.email,item})});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không lưu được từ.');
+    userWords=Array.isArray(data.userWords)?data.userWords:userWords;
+    clearUserForm();
+    setStatus('userStatus','Đã lưu vào hòm từ vựng cá nhân.','ok');
+    renderAll();
+  }catch(err){setStatus('userStatus',err.message||'Không lưu được từ.','err');}
+}
+async function addCommonWord(e){
+  e.preventDefault();
+  const item={
+    word:document.getElementById('commonWordInput').value.trim(),
+    parts:selectedParts('common'),
+    meanings:parseMeanings(document.getElementById('commonMeaningInput').value),
+    note:document.getElementById('commonNoteInput').value.trim()
+  };
+  const pass=document.getElementById('adminPassword').value;
+  try{
+    validateItem(item.word,item.parts,item.meanings);
+    if(!pass) throw new Error('Vui lòng nhập mật khẩu admin.');
+    setStatus('commonStatus','Đang thêm vào kho chung...','warn');
+    const res=await fetch('/api/vocabulary',{method:'POST',headers:{'Content-Type':'application/json','x-admin-password':pass},body:JSON.stringify({action:'add-common',item})});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không thêm được vào kho chung.');
+    commonWords=Array.isArray(data.commonWords)?data.commonWords:commonWords;
+    clearCommonForm();
+    setStatus('commonStatus','Đã thêm vào kho chung.','ok');
+    renderAll();
+  }catch(err){setStatus('commonStatus',err.message||'Không thêm được vào kho chung.','err');}
+}
+async function copyCommonToUser(id){
+  try{
+    setStatus('commonStatus','Đang thêm từ này vào hòm của bạn...','warn');
+    const res=await fetch('/api/vocabulary',{method:'POST',headers:authHeaders(),body:JSON.stringify({action:'copy-common-to-user',email:student.email,commonId:id})});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không thêm được từ vào hòm.');
+    userWords=Array.isArray(data.userWords)?data.userWords:userWords;
+    setStatus('commonStatus','Đã thêm vào hòm của bạn.','ok');
+    renderAll();
+  }catch(err){setStatus('commonStatus',err.message||'Không thêm được từ vào hòm.','err');}
+}
+async function deleteUserWord(id){
+  if(!confirm('Xóa từ này khỏi hòm cá nhân?')) return;
+  try{
+    const res=await fetch('/api/vocabulary?scope=user&id='+encodeURIComponent(id)+'&email='+encodeURIComponent(student.email),{method:'DELETE',headers:{'x-student-email':student.email,'x-student-token':student.token||''}});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không xóa được từ.');
+    userWords=Array.isArray(data.userWords)?data.userWords:userWords.filter(x=>x.id!==id);
+    renderAll();
+  }catch(err){setStatus('userStatus',err.message||'Không xóa được từ.','err');}
+}
+async function deleteCommonWord(id){
+  const pass=document.getElementById('adminPassword').value;
+  if(!pass) return setStatus('commonStatus','Nhập mật khẩu admin trước khi xóa từ trong kho chung.','err');
+  if(!confirm('Xóa từ này khỏi kho chung?')) return;
+  try{
+    const res=await fetch('/api/vocabulary?scope=common&id='+encodeURIComponent(id),{method:'DELETE',headers:{'x-admin-password':pass}});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không xóa được từ trong kho chung.');
+    commonWords=Array.isArray(data.commonWords)?data.commonWords:commonWords.filter(x=>x.id!==id);
+    setStatus('commonStatus','Đã xóa từ khỏi kho chung.','ok');
+    renderAll();
+  }catch(err){setStatus('commonStatus',err.message||'Không xóa được từ trong kho chung.','err');}
+}
+function wordMatches(item,q){
+  if(!q) return true;
+  q=normalizeText(q);
+  return normalizeText(item.word).includes(q) || normalizeText((item.meanings||[]).join(' ')).includes(q) || normalizeText((item.parts||[]).join(' ')).includes(q);
+}
+function renderWordCard(item,scope){
+  const meanings=(item.meanings||[]).map(escapeHtml).join('<br>');
+  const parts=(item.parts||[]).map(p=>'<span class="tag">'+escapeHtml(p)+'</span>').join('');
+  const note=item.note?'<div class="note">Ghi chú: '+escapeHtml(item.note)+'</div>':'';
+  const actions=scope==='user'
+    ? '<button class="mini-btn del" type="button" onclick="deleteUserWord(\''+escapeHtml(item.id)+'\')">Xóa khỏi hòm</button>'
+    : '<button class="mini-btn add" type="button" onclick="copyCommonToUser(\''+escapeHtml(item.id)+'\')">Thêm vào hòm của tôi</button><button class="mini-btn del" type="button" onclick="deleteCommonWord(\''+escapeHtml(item.id)+'\')">Admin xóa</button>';
+  return '<article class="word-card"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div><div class="tag-row">'+parts+'</div></div></div><div class="meaning">'+meanings+'</div>'+note+'<div class="mini-actions">'+actions+'</div></article>';
+}
+function renderAll(){
+  const userQ=document.getElementById('userSearch').value||'';
+  const commonQ=document.getElementById('commonSearch').value||'';
+  const filteredUser=userWords.filter(item=>wordMatches(item,userQ));
+  const filteredCommon=commonWords.filter(item=>wordMatches(item,commonQ));
+  document.getElementById('userCount').textContent=userWords.length;
+  document.getElementById('commonCount').textContent=commonWords.length;
+  const enough=userWords.length>=20;
+  document.getElementById('practiceBtn').disabled=!enough;
+  document.getElementById('unlockBox').innerHTML=enough
+    ? 'Đã đủ <b>'+userWords.length+' từ</b>. Nút luyện tập đã mở khóa.'
+    : 'Bạn đang có <b>'+userWords.length+'/20 từ</b>. Cần thêm '+(20-userWords.length)+' từ nữa để luyện tập.';
+  document.getElementById('userList').innerHTML=filteredUser.length?filteredUser.map(item=>renderWordCard(item,'user')).join(''):'<div class="empty">Chưa có từ nào trong hòm cá nhân.</div>';
+  document.getElementById('commonList').innerHTML=filteredCommon.length?filteredCommon.map(item=>renderWordCard(item,'common')).join(''):'<div class="empty">Kho chung đang trống hoặc không có kết quả tìm kiếm.</div>';
+}
+function selectMode(mode){
+  selectedMode=mode;
+  document.getElementById('modeChoiceBtn').classList.toggle('active',mode==='choice');
+  document.getElementById('modeTypingBtn').classList.toggle('active',mode==='typing');
+  document.getElementById('practiceBtn').onclick=function(){startPractice(mode)};
+}
+function shuffle(arr){
+  const a=arr.slice();
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}
+function randomMeaning(item){
+  const meanings=item.meanings||[];
+  return meanings[Math.floor(Math.random()*meanings.length)]||'';
+}
+function startPractice(mode){
+  if(userWords.length<20) return;
+  resultSubmitted=false;
+  game={mode,items:shuffle(userWords).slice(0,20),index:0,score:0,wrongs:[],answered:false};
+  document.getElementById('practiceArea').classList.add('show');
+  renderQuestion();
+  document.getElementById('practiceArea').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function currentItem(){return game.items[game.index];}
+function modeTitle(){return game.mode==='choice'?'Trò 1 · Chọn đáp án':'Trò 2 · Gõ đúng từ';}
+function renderQuestion(){
+  if(!game) return;
+  if(game.index>=game.items.length) return renderGameEnd();
+  const item=currentItem();
+  const meaning=randomMeaning(item);
+  item._currentMeaning=meaning;
+  const area=document.getElementById('practiceArea');
+  if(game.mode==='choice'){
+    const wrongChoices=shuffle(userWords.filter(w=>normalizeText(w.word)!==normalizeText(item.word))).slice(0,2).map(w=>w.word);
+    const choices=shuffle([item.word].concat(wrongChoices));
+    area.innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">'+modeTitle()+'</div><div class="progress-pill">Câu '+(game.index+1)+' / '+game.items.length+' · Điểm '+game.score+'</div></div><div class="question-hint">Chọn từ/cụm từ đúng với nghĩa sau:</div><div class="question-meaning">'+escapeHtml(meaning)+'</div><div class="choices">'+choices.map(c=>'<button class="choice" type="button" data-choice="'+escapeHtml(c)+'" onclick="answerChoice(this,this.dataset.choice)">'+escapeHtml(c)+'</button>').join('')+'</div><div class="feedback" id="feedback"></div></div>';
+  }else{
+    area.innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">'+modeTitle()+'</div><div class="progress-pill">Câu '+(game.index+1)+' / '+game.items.length+' · Điểm '+game.score+'</div></div><div class="question-hint">Nhìn nghĩa và gõ đúng từ/cụm từ. Khoảng trắng được giữ nguyên, không đổi thành dấu gạch.</div><div class="question-meaning">'+escapeHtml(meaning)+'</div><div class="mask">'+maskWord(item.word)+'</div><form class="type-row" onsubmit="answerTyping(event)"><input id="typingAnswer" autocomplete="off" placeholder="Gõ đáp án ở đây..."><button class="btn" type="submit">Kiểm tra</button></form><div class="feedback" id="feedback"></div></div>';
+    setTimeout(()=>document.getElementById('typingAnswer')?.focus(),60);
+  }
+}
+function maskWord(word){
+  return String(word||'').split('').map(function(ch){
+    if(ch===' ') return '<span class="mask-space"></span>';
+    return '<span class="mask-char">_</span>';
+  }).join('');
+}
+function showFeedback(ok,msg){
+  const fb=document.getElementById('feedback');
+  fb.innerHTML=msg;
+  fb.className='feedback show '+(ok?'ok':'err');
+}
+function answerChoice(btn,choice){
+  if(!game||game.answered) return;
+  game.answered=true;
+  const item=currentItem();
+  const ok=normalizeText(choice)===normalizeText(item.word);
+  document.querySelectorAll('.choice').forEach(function(el){
+    const text=normalizeText(el.textContent);
+    if(text===normalizeText(item.word)) el.classList.add('correct');
+    else if(el===btn) el.classList.add('wrong');
+    el.disabled=true;
+  });
+  if(ok){game.score++;showFeedback(true,'Đúng rồi! +1 điểm');}
+  else{
+    game.wrongs.push({game:'Trò 1',meaning:item._currentMeaning,correct:item.word,answer:choice});
+    showFeedback(false,'Sai. Đáp án đúng là: <b>'+escapeHtml(item.word)+'</b>');
+  }
+  addNextButton();
+}
+function answerTyping(e){
+  e.preventDefault();
+  if(!game||game.answered) return;
+  game.answered=true;
+  const item=currentItem();
+  const answer=document.getElementById('typingAnswer').value;
+  const ok=normalizeText(answer)===normalizeText(item.word);
+  if(ok){game.score++;showFeedback(true,'Đúng rồi! +1 điểm');}
+  else{
+    game.wrongs.push({game:'Trò 2',meaning:item._currentMeaning,correct:item.word,answer:answer||'(bỏ trống)'});
+    showFeedback(false,'Sai. Đáp án đúng là: <b>'+escapeHtml(item.word)+'</b>');
+  }
+  document.getElementById('typingAnswer').disabled=true;
+  addNextButton();
+}
+function addNextButton(){
+  const box=document.querySelector('.game-card');
+  const btn=document.createElement('button');
+  btn.className='btn';
+  btn.type='button';
+  btn.textContent=game.index===game.items.length-1?'Xem kết quả':'Câu tiếp theo';
+  btn.style.marginTop='14px';
+  btn.onclick=function(){game.index++;game.answered=false;renderQuestion();};
+  box.appendChild(btn);
+}
+function renderGameEnd(){
+  const percent=Math.round(game.score/game.items.length*100);
+  const wrongHtml=game.wrongs.length?'<div class="wrong-list">'+game.wrongs.map(function(w,i){return '<div class="wrong-item"><b>Câu sai '+(i+1)+' · '+escapeHtml(w.game)+'</b><br>Nghĩa: '+escapeHtml(w.meaning)+'<br>Bạn trả lời: '+escapeHtml(w.answer)+'<br>Đáp án đúng: <b>'+escapeHtml(w.correct)+'</b></div>';}).join('')+'</div>':'<div class="status show ok">Không có câu sai. Rất tốt!</div>';
+  document.getElementById('practiceArea').innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">Hoàn thành</div><div class="progress-pill">'+game.score+' / '+game.items.length+' · '+percent+'%</div></div><div class="question-meaning">Kết quả luyện tập</div><p class="muted">Các câu sai được lưu lại ngay bên dưới để bạn xem lại.</p><div class="actions"><button class="btn good" id="submitResultBtn" type="button" onclick="submitResult()">Nộp kết quả</button><button class="btn secondary" type="button" onclick="startPractice(selectedMode)">Luyện lại 20 từ khác</button></div><div class="status" id="resultStatus"></div>'+wrongHtml+'</div>';
+}
+function collectResultPayload(){
+  const now=new Date().toISOString();
+  return {
+    student:{email:student.email,loginAt:student.loginAt||''},
+    quiz:{id:'vocabulary-box-'+game.mode,title:'Hòm từ vựng cá nhân - '+modeTitle(),total:game.items.length},
+    submittedAt:now,
+    score:game.score,
+    total:game.items.length,
+    percent:Math.round(game.score/game.items.length*100),
+    answers:game.items.map(function(item,idx){return {no:idx+1,word:item.word,parts:item.parts,meanings:item.meanings};}),
+    wrongs:game.wrongs
+  };
+}
+async function submitResult(){
+  if(resultSubmitted||!game) return;
+  const btn=document.getElementById('submitResultBtn');
+  const status=document.getElementById('resultStatus');
+  btn.disabled=true;btn.textContent='Đang nộp...';
+  status.textContent='Đang lưu kết quả...';status.className='status show warn';
+  try{
+    const payload=collectResultPayload();
+    const res=await fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không lưu được kết quả.');
+    resultSubmitted=true;
+    status.textContent='Đã lưu kết quả thành công.';
+    status.className='status show ok';
+    btn.classList.add('hidden');
+  }catch(err){
+    status.textContent=err.message||'Không lưu được kết quả.';
+    status.className='status show err';
+    btn.disabled=false;btn.textContent='Nộp kết quả';
+  }
+}
+
+buildPartChecks('partsInput','user');
+buildPartChecks('commonPartsInput','common');
+selectMode('choice');
+loadVocabulary();
+</script>
+</body>
+</html>
