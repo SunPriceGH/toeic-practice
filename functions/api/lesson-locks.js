@@ -7,6 +7,8 @@ const DEFAULT_LESSON_IDS = [
   'be-adj-v3-v-ed-prep-2',
   'noun-prep-collocation-1',
   'noun-prep-collocation-2',
+  'toeic-listening',
+  'vocabulary-box',
   'results'
 ];
 
