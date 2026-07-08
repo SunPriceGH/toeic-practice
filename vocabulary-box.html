@@ -452,27 +452,73 @@ const PARTS=['noun','verb','adjective','adverb','preposition','conjunction','pro
 const PART_LABEL={noun:'noun',verb:'verb',adjective:'adjective',adverb:'adverb',preposition:'preposition',conjunction:'conjunction',pronoun:'pronoun',phrase:'phrase'};
 
 let TOEIC_COMMON_SEED_CACHE=null;
+function seedIdFromWord(word,index){
+  return 'json:'+String(index)+'-'+normalizeText(word).replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,70);
+}
+function normalizeSeedItem(item,index){
+  const word=String(item&&item.word||'').trim();
+  const parts=Array.isArray(item&&item.parts)?item.parts.map(function(p){return normalizeText(p);}).filter(Boolean):[];
+  const rawByPart=item&&item.meaningsByPart&&typeof item.meaningsByPart==='object'?item.meaningsByPart:{};
+  const meaningsByPart={};
+  parts.forEach(function(part){
+    const values=Array.isArray(rawByPart[part])?rawByPart[part]:[];
+    meaningsByPart[part]=values.map(function(x){return cleanMeaningText(x);}).filter(Boolean);
+  });
+  let meanings=Array.isArray(item&&item.meanings)?item.meanings.map(function(x){return cleanMeaningText(x);}).filter(Boolean):[];
+  if(!meanings.length){
+    Object.keys(meaningsByPart).forEach(function(part){meanings=meanings.concat(meaningsByPart[part]);});
+  }
+  return {
+    id:seedIdFromWord(word,index),
+    word:word,
+    parts:parts,
+    meanings:meanings,
+    meaningsByPart:meaningsByPart,
+    note:String(item&&item.note||'').trim(),
+    fromJsonSeed:true
+  };
+}
 async function getToeicCommonSeed(){
   if(Array.isArray(TOEIC_COMMON_SEED_CACHE)) return TOEIC_COMMON_SEED_CACHE;
   const res=await fetch('./data/vocabulary-common-seed.json?ts='+Date.now(),{cache:'no-store'});
   if(!res.ok) throw new Error('Không tải được dữ liệu kho mẫu.');
   const data=await res.json();
   if(!Array.isArray(data)) throw new Error('Dữ liệu kho mẫu chưa đúng định dạng JSON.');
-  TOEIC_COMMON_SEED_CACHE=data.map(function(item){
-    return {
-      word:String(item.word||'').trim(),
-      parts:Array.isArray(item.parts)?item.parts:[],
-      meanings:Array.isArray(item.meanings)?item.meanings:[],
-      meaningsByPart:item.meaningsByPart&&typeof item.meaningsByPart==='object'?item.meaningsByPart:{},
-      note:String(item.note||'').trim()
-    };
-  }).filter(function(item){return item.word&&item.parts.length&&item.meanings.length;});
+  TOEIC_COMMON_SEED_CACHE=data.map(normalizeSeedItem).filter(function(item){return item.word&&item.parts.length&&item.meanings.length;});
   return TOEIC_COMMON_SEED_CACHE;
+}
+function itemForSave(item){
+  return {
+    word:String(item&&item.word||'').trim(),
+    parts:Array.isArray(item&&item.parts)?item.parts.slice():[],
+    meanings:Array.isArray(item&&item.meanings)?item.meanings.slice():[],
+    meaningsByPart:item&&item.meaningsByPart&&typeof item.meaningsByPart==='object'?item.meaningsByPart:{},
+    note:String(item&&item.note||'').trim(),
+    audioUrl:String(item&&item.audioUrl||'').trim()
+  };
+}
+function mergeCommonSources(kvList,seedList){
+  const out=[];
+  const seen=new Set();
+  (Array.isArray(seedList)?seedList:[]).forEach(function(item){
+    const key=normalizeText(item.word);
+    if(key&&!seen.has(key)){seen.add(key);out.push(item);}
+  });
+  (Array.isArray(kvList)?kvList:[]).forEach(function(item){
+    const key=normalizeText(item.word);
+    if(key&&!seen.has(key)){seen.add(key);out.push(item);}
+  });
+  return out;
+}
+function rebuildCommonWords(){
+  commonWords=mergeCommonSources(commonKvWords,commonSeedWords);
 }
 
 let student=null;
 let userWords=[];
 let commonWords=[];
+let commonKvWords=[];
+let commonSeedWords=[];
 let selectedMode='choice';
 let game=null;
 let resultSubmitted=false;
@@ -747,7 +793,14 @@ async function loadVocabulary(){
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok) throw new Error(data.error||'Không tải được từ vựng.');
     userWords=Array.isArray(data.userWords)?data.userWords:[];
-    commonWords=Array.isArray(data.commonWords)?data.commonWords:[];
+    commonKvWords=Array.isArray(data.commonWords)?data.commonWords:[];
+    try{
+      commonSeedWords=await getToeicCommonSeed();
+    }catch(seedErr){
+      commonSeedWords=[];
+      setStatus('commonStatus',seedErr.message||'Không tải được kho mẫu JSON.','err');
+    }
+    rebuildCommonWords();
     setStatus('userStatus','Đã tải xong.','ok');
     setTimeout(()=>setStatus('userStatus',''),1200);
     renderAll();
@@ -811,10 +864,11 @@ async function addCommonWord(e){
     validateItem(item.word,item.parts,item.meanings);
     if(!pass) throw new Error('Vui lòng nhập mật khẩu admin.');
     setStatus('commonStatus','Đang thêm vào kho chung...','warn');
-    const res=await fetch('/api/vocabulary',{method:'POST',headers:{'Content-Type':'application/json','x-admin-password':pass},body:JSON.stringify({action:'add-common',item})});
+    const res=await fetch('/api/vocabulary',{method:'POST',headers:{'Content-Type':'application/json','x-admin-password':pass},body:JSON.stringify({action:'add-common',item:itemForSave(item)})});
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok) throw new Error(data.error||'Không thêm được vào kho chung.');
-    commonWords=Array.isArray(data.commonWords)?data.commonWords:commonWords;
+    commonKvWords=Array.isArray(data.commonWords)?data.commonWords:commonKvWords;
+    rebuildCommonWords();
     const savedWord=item.word;
     clearCommonForm();
     setStatus('commonStatus','Đã thêm vào kho chung.','ok');
@@ -830,7 +884,7 @@ async function seedToeicCommon(){
   if(!await cuteConfirm({title:'Cập nhật lại kho mẫu?',text:'App sẽ đồng bộ kho chung theo danh sách mẫu mới nhất. Những từ không còn trong danh sách mẫu sẽ được xóa khỏi kho chung.',confirmButtonText:'Cập nhật kho mẫu',icon:'question'})) return;
   const btns=Array.from(document.querySelectorAll('button'));
   btns.forEach(b=>b.disabled=true);
-  let ok=0,fail=0,replaced=0,removed=0,lastCommon=commonWords;
+  let ok=0,fail=0,replaced=0,removed=0,lastCommon=commonKvWords;
   try{
     const seedWords=await getToeicCommonSeed();
     if(!seedWords.length) throw new Error('File kho mẫu chưa có từ vựng.');
@@ -868,14 +922,15 @@ async function seedToeicCommon(){
             }
           }catch(e){}
         }
-        const res=await fetch('/api/vocabulary',{method:'POST',headers:{'Content-Type':'application/json','x-admin-password':pass},body:JSON.stringify({action:'add-common',item})});
+        const res=await fetch('/api/vocabulary',{method:'POST',headers:{'Content-Type':'application/json','x-admin-password':pass},body:JSON.stringify({action:'add-common',item:itemForSave(item)})});
         const data=await res.json().catch(()=>({}));
         if(!res.ok||!data.ok) throw new Error(data.error||'Không thêm được từ.');
         ok++;
         if(Array.isArray(data.commonWords)) lastCommon=data.commonWords;
       }catch(e){fail++;}
     }
-    commonWords=lastCommon;
+    commonKvWords=lastCommon;
+    rebuildCommonWords();
     setStatus('commonStatus','Đã cập nhật kho mẫu: '+ok+' từ'+(removed?'; đã xóa '+removed+' từ không còn trong mẫu.':'')+(replaced?'; đã thay '+replaced+' bản cũ.':'')+(fail?'; '+fail+' từ lỗi.':'.'),'ok');
     cuteToast('Đã cập nhật kho mẫu: '+ok+' từ','success');
     renderAll();
@@ -892,7 +947,12 @@ async function copyCommonToUser(id){
   }
   try{
     setStatus('commonStatus','Đang thêm từ này vào hòm của bạn...','warn');
-    const res=await fetch('/api/vocabulary',{method:'POST',headers:authHeaders(),body:JSON.stringify({action:'copy-common-to-user',email:student.email,commonId:id})});
+    let res;
+    if(target&&target.fromJsonSeed){
+      res=await fetch('/api/vocabulary',{method:'POST',headers:authHeaders(),body:JSON.stringify({action:'add-user',email:student.email,item:itemForSave(target)})});
+    }else{
+      res=await fetch('/api/vocabulary',{method:'POST',headers:authHeaders(),body:JSON.stringify({action:'copy-common-to-user',email:student.email,commonId:id})});
+    }
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok) throw new Error(data.error||'Không thêm được từ vào hòm.');
     userWords=Array.isArray(data.userWords)?data.userWords:userWords;
@@ -920,12 +980,17 @@ async function deleteCommonWord(id){
   if(!pass) {setStatus('commonStatus','Nhập mật khẩu admin trước khi xóa từ trong kho chung.','err');cuteToast('Nhập mật khẩu admin trước khi xóa','error');return;}
   const target=commonWords.find(function(x){return String(x.id)===String(id);});
   const word=target?target.word:'từ này';
+  if(target&&target.fromJsonSeed){
+    cuteToast('Từ này nằm trong kho mẫu JSON. Muốn xóa thì sửa file JSON rồi cập nhật lại kho mẫu.','info');
+    return;
+  }
   if(!await cuteConfirm({title:'Xóa khỏi kho chung?',text:'Bạn muốn xóa "'+word+'" khỏi kho chung?',confirmButtonText:'Xóa',icon:'warning'})) return;
   try{
     const res=await fetch('/api/vocabulary?scope=common&id='+encodeURIComponent(id),{method:'DELETE',headers:{'x-admin-password':pass}});
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok) throw new Error(data.error||'Không xóa được từ trong kho chung.');
-    commonWords=Array.isArray(data.commonWords)?data.commonWords:commonWords.filter(x=>x.id!==id);
+    commonKvWords=Array.isArray(data.commonWords)?data.commonWords:commonKvWords.filter(x=>x.id!==id);
+    rebuildCommonWords();
     setStatus('commonStatus','Đã xóa từ khỏi kho chung.','ok');
     cuteToast('Đã xóa "'+word+'" khỏi kho chung','success');
     renderAll();
@@ -1026,9 +1091,15 @@ function renderWordCard(item,scope){
   const meanings=renderMeaningRows(item);
   const owned=scope==='common'&&userHasWord(item);
   const progress=scope==='user'?renderWordProgress(item):'';
-  const actions=scope==='user'
-    ? '<button class="mini-btn del" type="button" onclick="deleteUserWord(\''+escapeHtml(item.id)+'\')">Xóa khỏi hòm</button>'
-    : (owned?'<button class="mini-btn add" type="button" disabled>Đã có trong hòm</button>':'<button class="mini-btn add" type="button" onclick="copyCommonToUser(\''+escapeHtml(item.id)+'\')">Thêm vào hòm của tôi</button>')+'<button class="mini-btn del" type="button" onclick="deleteCommonWord(\''+escapeHtml(item.id)+'\')">Admin xóa</button>';
+  let actions='';
+  if(scope==='user'){
+    actions='<button class="mini-btn del" type="button" onclick="deleteUserWord(\''+escapeHtml(item.id)+'\')">Xóa khỏi hòm</button>';
+  }else{
+    actions=owned?'<button class="mini-btn add" type="button" disabled>Đã có trong hòm</button>':'<button class="mini-btn add" type="button" onclick="copyCommonToUser(\''+escapeHtml(item.id)+'\')">Thêm vào hòm của tôi</button>';
+    if(!item.fromJsonSeed){
+      actions+='<button class="mini-btn del" type="button" onclick="deleteCommonWord(\''+escapeHtml(item.id)+'\')">Admin xóa</button>';
+    }
+  }
   const commonClass=scope==='common'?(owned?' common-owned':' common-new'):'';
   return '<article class="word-card '+(owned?'in-box':'not-in-box')+commonClass+'"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div></div>'+audioButtonHtml(scope,item.id)+'</div>'+meanings+progress+'<div class="mini-actions">'+actions+'</div></article>';
 }
