@@ -181,6 +181,61 @@ h1,h2,h3,h4,h5,h6,b,strong,.word-title,.stat b,.tool-card b,.mode-copy b,.histor
 .audio-btn.is-loading{animation:audioPulse .75s ease-in-out infinite alternate}
 @keyframes audioPulse{from{transform:scale(1)}to{transform:scale(1.07)}}
 
+
+/* ===== Patch: phrase + sort buttons + question POS pill ===== */
+.sort-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:0 0 12px;
+}
+.sort-btn{
+  border:2px solid #ddecff;
+  background:#fff;
+  color:#31415d;
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.18s ease;
+}
+.sort-btn:hover,.sort-btn.active{
+  background:#eef7ff;
+  border-color:#9fd5ff;
+  color:#3264d8;
+  transform:translateY(-1px);
+}
+.question-meaning{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.question-part-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:82px;
+  border-radius:999px;
+  background:#eef7ff;
+  color:#3264d8;
+  border:2px solid #cfe7ff;
+  padding:6px 11px;
+  font-size:14px;
+  font-weight:700;
+  line-height:1;
+}
+.question-meaning-text{
+  flex:1;
+  min-width:180px;
+}
+@media(max-width:560px){
+  .sort-strip{gap:7px}
+  .sort-btn{font-size:12px;padding:8px 10px}
+  .question-part-pill{min-width:auto}
+}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -234,6 +289,11 @@ h1,h2,h3,h4,h5,h6,b,strong,.word-title,.stat b,.tool-card b,.mode-copy b,.histor
         <div><h2>🧰 Hòm từ vựng của tôi</h2><p class="muted">Các từ ở đây sẽ được dùng để tạo trò luyện tập.</p></div>
       </div>
       <div class="search-row"><input id="userSearch" oninput="renderAll()" placeholder="Tìm trong hòm của tôi..."></div>
+      <div class="sort-strip" aria-label="Sắp xếp hòm từ vựng">
+        <button class="sort-btn active" type="button" data-scope="user" data-sort="az" onclick="setSort('user','az')">A → Z</button>
+        <button class="sort-btn" type="button" data-scope="user" data-sort="length" onclick="setSort('user','length')">Ngắn → dài</button>
+        <button class="sort-btn" type="button" data-scope="user" data-sort="progress" onclick="setSort('user','progress')">Progress</button>
+      </div>
       <div class="list" id="userList"></div>
     </section>
 
@@ -256,6 +316,11 @@ h1,h2,h3,h4,h5,h6,b,strong,.word-title,.stat b,.tool-card b,.mode-copy b,.histor
         <div><h2>🏪 Kho từ vựng</h2><p class="muted">Bấm “Thêm vào hòm của tôi” để đưa từ chung vào hòm riêng.</p></div>
       </div>
       <div class="search-row"><input id="commonSearch" oninput="renderAll()" placeholder="Tìm kho từ vựng..."></div>
+      <div class="sort-strip" aria-label="Sắp xếp kho từ vựng">
+        <button class="sort-btn active" type="button" data-scope="common" data-sort="az" onclick="setSort('common','az')">A → Z</button>
+        <button class="sort-btn" type="button" data-scope="common" data-sort="length" onclick="setSort('common','length')">Ngắn → dài</button>
+        <button class="sort-btn" type="button" data-scope="common" data-sort="progress" onclick="setSort('common','progress')">Progress</button>
+      </div>
       <div class="list" id="commonList"></div>
 
       <details class="admin-drawer">
@@ -302,8 +367,8 @@ h1,h2,h3,h4,h5,h6,b,strong,.word-title,.stat b,.tool-card b,.mode-copy b,.histor
 
 <script>
 const STUDENT_KEY='toeic_student_session';
-const PARTS=['noun','verb','adjective','adverb','preposition','conjunction','pronoun'];
-const PART_LABEL={noun:'noun',verb:'verb',adjective:'adjective',adverb:'adverb',preposition:'preposition',conjunction:'conjunction',pronoun:'pronoun'};
+const PARTS=['noun','verb','adjective','adverb','preposition','conjunction','pronoun','phrase'];
+const PART_LABEL={noun:'noun',verb:'verb',adjective:'adjective',adverb:'adverb',preposition:'preposition',conjunction:'conjunction',pronoun:'pronoun',phrase:'phrase'};
 
 const TOEIC_COMMON_SEED=[
   {
@@ -2159,6 +2224,8 @@ let selectedMode='choice';
 let game=null;
 let resultSubmitted=false;
 let activeAudio=null;
+let userSortMode='az';
+let commonSortMode='az';
 
 function escapeHtml(s){return String(s||'').replace(/[&<>'"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c];});}
 function cuteToast(message,icon){
@@ -2237,6 +2304,7 @@ function saveCachedAudioUrl(text,url){
 async function fetchDictionaryAudioUrl(text){
   const q=normalizeText(text);
   if(!q||q.length>80) return '';
+  if(/\s/.test(q)) return ''; // cụm từ dùng giọng đọc trình duyệt để tránh lỗi audio trên mobile
   try{
     const controller=window.AbortController?new AbortController():null;
     const timer=controller?setTimeout(function(){controller.abort();},3500):null;
@@ -2267,17 +2335,29 @@ function pickEnglishVoice(){
 }
 function speakText(text){
   if(!('speechSynthesis' in window)){
-    cuteToast('Trình duyệt này không hỗ trợ đọc giọng nói','error');
-    return;
+    cuteToast('Chưa phát được âm thanh trên trình duyệt này','error');
+    return false;
   }
   try{window.speechSynthesis.cancel();}catch(e){}
-  const utter=new SpeechSynthesisUtterance(String(text||''));
-  utter.lang='en-US';
-  utter.rate=.86;
-  utter.pitch=1;
-  const voice=pickEnglishVoice();
-  if(voice) utter.voice=voice;
-  window.speechSynthesis.speak(utter);
+  try{
+    const utter=new SpeechSynthesisUtterance(String(text||''));
+    utter.lang='en-US';
+    utter.rate=.86;
+    utter.pitch=1;
+    const voice=pickEnglishVoice();
+    if(voice) utter.voice=voice;
+    window.speechSynthesis.speak(utter);
+    return true;
+  }catch(e){
+    cuteToast('Chưa phát được âm thanh, thử bấm lại nhé','warning');
+    return false;
+  }
+}
+function canTryMediaUrl(url){
+  const u=String(url||'').split('?')[0].toLowerCase();
+  if(!u) return false;
+  if(/\.(mp3|mpeg|wav|ogg|oga|webm|m4a)$/.test(u)) return true;
+  return /dictionaryapi|ssl\.gstatic|wikimedia|upload\.wikimedia/.test(u);
 }
 function setAudioButtonLoading(btn,loading){
   if(!btn) return;
@@ -2289,11 +2369,16 @@ async function playTextAudio(text,btn,knownUrl){
   const clean=String(text||'').trim();
   if(!clean) return;
   setAudioButtonLoading(btn,true);
+  if(/\s/.test(normalizeText(clean))){
+    speakText(clean);
+    setTimeout(function(){setAudioButtonLoading(btn,false);},450);
+    return;
+  }
   try{
     if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0;}catch(e){}}
     let url=knownUrl||cachedAudioUrl(clean)||'';
     if(!url) url=await resolveAudioUrl(clean);
-    if(url){
+    if(url&&canTryMediaUrl(url)){
       activeAudio=new Audio(url);
       activeAudio.onended=function(){setAudioButtonLoading(btn,false);};
       activeAudio.onerror=function(){setAudioButtonLoading(btn,false);speakText(clean);};
@@ -2654,11 +2739,47 @@ function renderWordCard(item,scope){
   const commonClass=scope==='common'?(owned?' common-owned':' common-new'):'';
   return '<article class="word-card '+(owned?'in-box':'not-in-box')+commonClass+'"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div></div>'+audioButtonHtml(scope,item.id)+'</div>'+meanings+progress+'<div class="mini-actions">'+actions+'</div></article>';
 }
+function wordProgressLevel(item){
+  const stat=getWordHistoryStats(item);
+  const raw=(stat.correct||0)-(stat.wrong||0);
+  return Math.max(0,Math.min(10,raw));
+}
+function compareAZ(a,b){
+  return normalizeText(a.word).localeCompare(normalizeText(b.word),'en',{sensitivity:'base'});
+}
+function sortWords(list,mode){
+  const arr=list.slice();
+  if(mode==='length'){
+    return arr.sort(function(a,b){
+      return String(a.word||'').length-String(b.word||'').length || compareAZ(a,b);
+    });
+  }
+  if(mode==='progress'){
+    return arr.sort(function(a,b){
+      return wordProgressLevel(b)-wordProgressLevel(a) || compareAZ(a,b);
+    });
+  }
+  return arr.sort(compareAZ);
+}
+function updateSortButtons(){
+  document.querySelectorAll('.sort-btn').forEach(function(btn){
+    const scope=btn.dataset.scope;
+    const mode=btn.dataset.sort;
+    const active=(scope==='user'?userSortMode:commonSortMode)===mode;
+    btn.classList.toggle('active',active);
+  });
+}
+function setSort(scope,mode){
+  if(scope==='user') userSortMode=mode||'az';
+  if(scope==='common') commonSortMode=mode||'az';
+  renderAll();
+}
+
 function renderAll(){
   const userQ=document.getElementById('userSearch').value||'';
   const commonQ=document.getElementById('commonSearch').value||'';
-  const filteredUser=userWords.filter(item=>wordMatches(item,userQ));
-  const filteredCommon=commonWords.filter(item=>wordMatches(item,commonQ));
+  const filteredUser=sortWords(userWords.filter(item=>wordMatches(item,userQ)),userSortMode);
+  const filteredCommon=sortWords(commonWords.filter(item=>wordMatches(item,commonQ)),commonSortMode);
   document.getElementById('userCount').textContent=userWords.length;
   document.getElementById('commonCount').textContent=commonWords.length;
   const enough=userWords.length>=20;
@@ -2668,6 +2789,7 @@ function renderAll(){
     : 'Bạn đang có <b>'+userWords.length+' từ</b>. Cần thêm '+(20-userWords.length)+' từ nữa để luyện tập.';
   document.getElementById('userList').innerHTML=filteredUser.length?filteredUser.map(item=>renderWordCard(item,'user')).join(''):'<div class="empty">Chưa có từ nào trong hòm cá nhân.</div>';
   document.getElementById('commonList').innerHTML=filteredCommon.length?filteredCommon.map(item=>renderWordCard(item,'common')).join(''):'<div class="empty">Kho chung đang trống hoặc không có kết quả tìm kiếm.</div>';
+  updateSortButtons();
   renderHistory();
 }
 function selectMode(mode){
@@ -2683,9 +2805,17 @@ function shuffle(arr){
   for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
   return a;
 }
+function randomMeaningRow(item){
+  const rows=getMeaningDisplayRows(item).filter(function(row){return row&&row.text;});
+  if(!rows.length) return {part:(item.parts&&item.parts[0])||'',text:''};
+  return rows[Math.floor(Math.random()*rows.length)];
+}
 function randomMeaning(item){
-  const meanings=getCleanMeanings(item);
-  return meanings[Math.floor(Math.random()*meanings.length)]||'';
+  return randomMeaningRow(item).text||'';
+}
+function renderQuestionMeaning(text,part){
+  const label=part?(PART_LABEL[part]||part):'nghĩa';
+  return '<div class="question-meaning"><span class="question-part-pill">'+escapeHtml(label)+'</span><span class="question-meaning-text">'+escapeHtml(text)+'</span></div>';
 }
 function scrollPracticeCenter(extraDelay){
   const target=document.querySelector('#practiceArea .game-card')||document.getElementById('practiceArea')||document.getElementById('panel-practice');
@@ -2711,15 +2841,18 @@ function renderQuestion(){
   if(!game) return;
   if(game.index>=game.items.length) return renderGameEnd();
   const item=currentItem();
-  const meaning=randomMeaning(item);
+  const meaningRow=randomMeaningRow(item);
+  const meaning=meaningRow.text;
+  const meaningPart=meaningRow.part||((item.parts&&item.parts[0])||'');
   item._currentMeaning=meaning;
+  item._currentMeaningPart=meaningPart;
   const area=document.getElementById('practiceArea');
   if(game.mode==='choice'){
     const wrongChoices=shuffle(userWords.filter(w=>normalizeText(w.word)!==normalizeText(item.word))).slice(0,2).map(w=>w.word);
     const choices=shuffle([item.word].concat(wrongChoices));
-    area.innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">'+modeTitle()+'</div><div class="progress-pill">Câu '+(game.index+1)+' / '+game.items.length+' · Điểm '+game.score+'</div></div><div class="question-hint">Chọn từ/cụm từ đúng với nghĩa sau:</div><div class="question-meaning">'+escapeHtml(meaning)+'</div><div class="choices">'+choices.map(c=>'<button class="choice" type="button" data-choice="'+escapeHtml(c)+'" onclick="answerChoice(this,this.dataset.choice)">'+escapeHtml(c)+'</button>').join('')+'</div><div class="feedback" id="feedback"></div></div>';
+    area.innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">'+modeTitle()+'</div><div class="progress-pill">Câu '+(game.index+1)+' / '+game.items.length+' · Điểm '+game.score+'</div></div><div class="question-hint">Chọn từ/cụm từ đúng với nghĩa sau:</div>'+renderQuestionMeaning(meaning,meaningPart)+'<div class="choices">'+choices.map(c=>'<button class="choice" type="button" data-choice="'+escapeHtml(c)+'" onclick="answerChoice(this,this.dataset.choice)">'+escapeHtml(c)+'</button>').join('')+'</div><div class="feedback" id="feedback"></div></div>';
   }else{
-    area.innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">'+modeTitle()+'</div><div class="progress-pill">Câu '+(game.index+1)+' / '+game.items.length+' · Điểm '+game.score+'</div></div><div class="question-hint">Nhìn nghĩa và gõ đúng từ/cụm từ. Khoảng trắng được giữ nguyên, không đổi thành dấu gạch.</div><div class="question-meaning">'+escapeHtml(meaning)+'</div><div class="mask">'+maskWord(item.word)+'</div><form class="type-row" onsubmit="answerTyping(event)"><input id="typingAnswer" autocomplete="off" placeholder="Gõ đáp án ở đây..."><button class="btn" type="submit">Kiểm tra</button></form><div class="feedback" id="feedback"></div></div>';
+    area.innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">'+modeTitle()+'</div><div class="progress-pill">Câu '+(game.index+1)+' / '+game.items.length+' · Điểm '+game.score+'</div></div><div class="question-hint">Nhìn nghĩa và gõ đúng từ/cụm từ. Khoảng trắng được giữ nguyên, không đổi thành dấu gạch.</div>'+renderQuestionMeaning(meaning,meaningPart)+'<div class="mask">'+maskWord(item.word)+'</div><form class="type-row" onsubmit="answerTyping(event)"><input id="typingAnswer" autocomplete="off" placeholder="Gõ đáp án ở đây..."><button class="btn" type="submit">Kiểm tra</button></form><div class="feedback" id="feedback"></div></div>';
     setTimeout(function(){
       const input=document.getElementById('typingAnswer');
       if(input){
