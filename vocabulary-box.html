@@ -501,6 +501,22 @@ function normalizeStoredItem(item,index,prefix){
   clean.fromJsonSeed=!!(item&&item.fromJsonSeed);
   return clean;
 }
+function parseCommonSeedText(text){
+  let src=String(text||'').trim().replace(/^\uFEFF/,'');
+  const attempts=[];
+  attempts.push(src);
+  attempts.push(src.replace(/,\s*([\]\}])/g,'$1'));
+  if(src && src[0]!== '[') attempts.push('['+src.replace(/,\s*$/,'')+']');
+  for(let i=0;i<attempts.length;i++){
+    try{
+      const data=JSON.parse(attempts[i]);
+      if(Array.isArray(data)) return data;
+      if(data && Array.isArray(data.words)) return data.words;
+      if(data && Array.isArray(data.data)) return data.data;
+    }catch(err){}
+  }
+  throw new Error('File kho mẫu JSON chưa đúng định dạng.');
+}
 async function getToeicCommonSeed(){
   if(Array.isArray(TOEIC_COMMON_SEED_CACHE)) return TOEIC_COMMON_SEED_CACHE;
   const paths=[
@@ -508,18 +524,21 @@ async function getToeicCommonSeed(){
     '/data/vocabulary-common-seed.json',
     'data/vocabulary-common-seed.json'
   ];
+  let lastErr=null;
   for(const path of paths){
     try{
       const res=await fetch(path+'?ts='+Date.now(),{cache:'no-store'});
       if(!res.ok) throw new Error('HTTP '+res.status);
-      const data=await res.json();
-      if(!Array.isArray(data)) throw new Error('JSON không phải mảng.');
-      TOEIC_COMMON_SEED_CACHE=data.map(normalizeSeedItem).filter(function(item){return item.word&&item.parts.length&&item.meanings.length;});
+      const text=await res.text();
+      const data=parseCommonSeedText(text);
+      const normalized=data.map(function(item,index){return normalizeSeedItem(item,index);})
+        .filter(function(item){return item.word && item.parts.length && (item.meanings.length || Object.keys(item.meaningsByPart||{}).length);});
+      TOEIC_COMMON_SEED_CACHE=normalized;
       console.info('[Vocab] Loaded JSON seed:',path,TOEIC_COMMON_SEED_CACHE.length);
       return TOEIC_COMMON_SEED_CACHE;
-    }catch(err){}
+    }catch(err){lastErr=err;}
   }
-  throw new Error('Không tải được dữ liệu kho mẫu JSON. Kiểm tra file data/vocabulary-common-seed.json đã upload đúng thư mục chưa.');
+  throw new Error((lastErr&&lastErr.message)||'Không tải được dữ liệu kho mẫu JSON.');
 }
 function itemForSave(item){
   return {
@@ -590,7 +609,7 @@ function normalizePart(part){
     conj:'conjunction','conjunction':'conjunction','conjunctions':'conjunction',
     pron:'pronoun','pronoun':'pronoun','pronouns':'pronoun',
     phr:'phrase','phrase':'phrase','phrases':'phrase',
-    pv:'phrasal verb','phrasal verb':'phrasal verb','phrasal verbs':'phrasal verb','phrasal-verb':'phrasal verb','phrasal_verbs':'phrasal verb'
+    pv:'phrasal verb',phrasalverb:'phrasal verb','phrasal verb':'phrasal verb','phrasal verbs':'phrasal verb','phrasal-verb':'phrasal verb','phrasal_verbs':'phrasal verb','phrasalverbs':'phrasal verb'
   };
   return aliases[key]||key;
 }
