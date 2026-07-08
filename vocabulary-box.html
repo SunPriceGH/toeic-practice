@@ -585,6 +585,8 @@ let userSortDir='asc';
 let commonSortDir='asc';
 let userPartSort='';
 let commonPartSort='';
+let vocabCloudDisabled=false;
+let userDeletedKeys=[];
 
 function escapeHtml(s){return String(s||'').replace(/[&<>'"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c];});}
 function cuteToast(message,icon){
@@ -637,6 +639,109 @@ function requireStudentSession(){
 }
 function authHeaders(extra){
   return Object.assign({'Content-Type':'application/json','x-student-email':student.email,'x-student-token':student.token||''}, extra||{});
+}
+
+function sleepShort(ms){return new Promise(function(resolve){setTimeout(resolve,ms);});}
+function isKvDailyLimitText(text){
+  const msg=String(text||'').toLowerCase();
+  return msg.includes('kv')&&(msg.includes('daily')||msg.includes('day')||msg.includes('quota')||msg.includes('exceed'))&&(msg.includes('limit')||msg.includes('exceed'));
+}
+function isKvPutLimitText(text){
+  const msg=String(text||'').toLowerCase();
+  return msg.includes('kv')&&(msg.includes('put')||msg.includes('write'))&&(msg.includes('limit')||msg.includes('rate')||msg.includes('once')||msg.includes('second')||msg.includes('exceed'));
+}
+function friendlyKvLimitResponse(rawText){
+  const daily=isKvDailyLimitText(rawText);
+  const msg=daily
+    ? 'Cloudflare KV đã hết giới hạn hôm nay. App sẽ lưu tạm hòm từ trên thiết bị này và tự dùng lại khi mở trang.'
+    : 'Bạn thao tác hơi nhanh. Vui lòng thử lại sau 1-2 giây.';
+  if(daily) vocabCloudDisabled=true;
+  return new Response(JSON.stringify({ok:false,error:msg,kvDailyLimit:daily}),{status:429,headers:{'content-type':'application/json; charset=utf-8'}});
+}
+(function patchVocabularyFetchRetry(){
+  if(window.__vocabFetchRetryPatched) return;
+  window.__vocabFetchRetryPatched=true;
+  const nativeFetch=window.fetch.bind(window);
+  window.fetch=async function(input,init){
+    const url=typeof input==='string'?input:(input&&input.url)||'';
+    const method=String((init&&init.method)||'GET').toUpperCase();
+    const isVocabApi=String(url).includes('/api/vocabulary');
+    if(!isVocabApi||method==='GET') return nativeFetch(input,init);
+    if(vocabCloudDisabled){
+      return friendlyKvLimitResponse('KV daily limit already reached');
+    }
+    let lastText='';
+    for(let attempt=0;attempt<3;attempt++){
+      const res=await nativeFetch(input,init);
+      if(res.ok) return res;
+      try{lastText=await res.clone().text();}catch(e){lastText='';}
+      if(isKvDailyLimitText(lastText)) return friendlyKvLimitResponse(lastText);
+      if(isKvPutLimitText(lastText)&&attempt<2){
+        await sleepShort(1250+attempt*550);
+        continue;
+      }
+      if(isKvPutLimitText(lastText)) return friendlyKvLimitResponse(lastText);
+      return res;
+    }
+    return friendlyKvLimitResponse(lastText);
+  };
+})();
+
+function userCacheKey(){return 'vocab_user_cache_'+normalizeText(student&&student.email||'guest').replace(/[^a-z0-9._-]+/g,'_');}
+function loadUserCache(){
+  try{
+    const data=JSON.parse(localStorage.getItem(userCacheKey())||'null')||{};
+    return {items:Array.isArray(data.items)?data.items:[],deletedKeys:Array.isArray(data.deletedKeys)?data.deletedKeys:[]};
+  }catch(e){return {items:[],deletedKeys:[]};}
+}
+function saveUserCache(){
+  try{localStorage.setItem(userCacheKey(),JSON.stringify({items:userWords,deletedKeys:userDeletedKeys,updatedAt:new Date().toISOString()}));}catch(e){}
+}
+function makeLocalUserItem(item){
+  const now=new Date().toISOString();
+  return Object.assign({},itemForSave(item),{
+    id:item.id||('local_'+Date.now()+'_'+Math.random().toString(36).slice(2,8)),
+    source:item.source||'user',
+    commonId:item.commonId||'',
+    createdAt:item.createdAt||now,
+    updatedAt:now
+  });
+}
+function mergeUserSources(localItems,serverItems,deletedKeys){
+  const deleted=new Set((deletedKeys||[]).map(normalizeText));
+  const seen=new Set();
+  const out=[];
+  function add(item){
+    const key=normalizeText(item&&item.word);
+    if(!key||deleted.has(key)||seen.has(key)) return;
+    seen.add(key);
+    out.push(normalizeStoredItem(item,out.length,'user'));
+  }
+  (Array.isArray(localItems)?localItems:[]).forEach(add);
+  (Array.isArray(serverItems)?serverItems:[]).forEach(add);
+  return out;
+}
+async function syncUserItemToCloud(item,action,id){
+  if(vocabCloudDisabled) return false;
+  try{
+    let res;
+    if(action==='delete'){
+      res=await fetch('/api/vocabulary?scope=user&id='+encodeURIComponent(id)+'&email='+encodeURIComponent(student.email),{method:'DELETE',headers:{'x-student-email':student.email,'x-student-token':student.token||''}});
+    }else{
+      res=await fetch('/api/vocabulary',{method:'POST',headers:authHeaders(),body:JSON.stringify({action:'add-user',email:student.email,item:itemForSave(item)})});
+    }
+    const data=await res.json().catch(()=>({}));
+    if(data&&data.kvDailyLimit) vocabCloudDisabled=true;
+    if(res.ok&&data.ok&&Array.isArray(data.userWords)){
+      const cache=loadUserCache();
+      userDeletedKeys=cache.deletedKeys||userDeletedKeys;
+      userWords=mergeUserSources(userWords,data.userWords,userDeletedKeys);
+      saveUserCache();
+      renderAll();
+      return true;
+    }
+    return false;
+  }catch(e){return false;}
 }
 function setStatus(id,msg,type){
   const el=document.getElementById(id);
@@ -872,6 +977,14 @@ async function loadVocabulary(){
   setStatus('userStatus','Đang tải hòm từ vựng...','warn');
   setStatus('commonStatus','Đang tải kho từ vựng...','warn');
 
+  const cache=loadUserCache();
+  userDeletedKeys=cache.deletedKeys||[];
+  userWords=Array.isArray(cache.items)?cache.items.map(function(item,index){return normalizeStoredItem(item,index,'user');}):[];
+  if(userWords.length){
+    setStatus('userStatus','Đã tải hòm từ lưu trên thiết bị. Đang kiểm tra dữ liệu online...','warn');
+    renderAll();
+  }
+
   try{
     commonSeedWords=await getToeicCommonSeed();
     commonKvWords=[];
@@ -887,17 +1000,24 @@ async function loadVocabulary(){
   }
 
   try{
-    const res=await fetch('/api/vocabulary?email='+encodeURIComponent(student.email),{headers:{'x-student-email':student.email,'x-student-token':student.token||''},cache:'no-store'});
+    const res=await fetch('/api/vocabulary?userOnly=1&email='+encodeURIComponent(student.email),{headers:{'x-student-email':student.email,'x-student-token':student.token||''},cache:'no-store'});
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok) throw new Error(data.error||'Không tải được từ vựng cá nhân.');
-    userWords=Array.isArray(data.userWords)?data.userWords.map(function(item,index){return normalizeStoredItem(item,index,'user');}):[];
-    commonKvWords=Array.isArray(data.commonWords)?data.commonWords.map(function(item,index){return normalizeStoredItem(item,index,'kv');}):[];
+    const serverWords=Array.isArray(data.userWords)?data.userWords.map(function(item,index){return normalizeStoredItem(item,index,'user');}):[];
+    const cacheNow=loadUserCache();
+    userDeletedKeys=cacheNow.deletedKeys||userDeletedKeys;
+    userWords=mergeUserSources(userWords,serverWords,userDeletedKeys);
+    saveUserCache();
+    commonKvWords=[];
     rebuildCommonWords();
     setStatus('userStatus','Đã tải xong.','ok');
     setTimeout(()=>setStatus('userStatus',''),1200);
     renderAll();
   }catch(err){
-    setStatus('userStatus',err.message||'Không tải được hòm cá nhân. Kho mẫu JSON vẫn hiển thị bình thường.','err');
+    const msg=String(err&&err.message||'');
+    if(msg){
+      setStatus('userStatus', userWords.length ? 'Đang dùng hòm từ lưu trên thiết bị. Dữ liệu online tạm chưa tải được.' : msg, userWords.length?'warn':'err');
+    }
     renderAll();
   }
 }
@@ -930,17 +1050,20 @@ async function addUserWord(e){
       cuteToast(msg,'warning');
       return;
     }
-    setStatus('userStatus','Đang lưu vào hòm của bạn...','warn');
-    const res=await fetch('/api/vocabulary',{method:'POST',headers:authHeaders(),body:JSON.stringify({action:'add-user',email:student.email,item})});
-    const data=await res.json().catch(()=>({}));
-    if(!res.ok||!data.ok) throw new Error(data.error||'Không lưu được từ.');
-    userWords=Array.isArray(data.userWords)?data.userWords:userWords;
-    const savedWord=item.word;
+    const localItem=makeLocalUserItem(item);
+    const key=normalizeText(localItem.word);
+    userDeletedKeys=(userDeletedKeys||[]).filter(function(x){return normalizeText(x)!==key;});
+    userWords.unshift(localItem);
+    saveUserCache();
     clearUserForm();
     setStatus('userStatus','Đã lưu vào hòm từ vựng cá nhân.','ok');
-    cuteToast('Đã thêm "'+savedWord+'" vào hòm','success');
-    prefetchAudio(savedWord);
+    cuteToast('Đã thêm "'+localItem.word+'" vào hòm','success');
+    prefetchAudio(localItem.word);
     renderAll();
+    const synced=await syncUserItemToCloud(localItem,'add');
+    if(!synced&&vocabCloudDisabled){
+      setStatus('userStatus','Đã lưu trên thiết bị này. Cloudflare KV đang hết giới hạn hôm nay nên dữ liệu online sẽ đồng bộ lại sau.','warn');
+    }
   }catch(err){setStatus('userStatus',err.message||'Không lưu được từ.','err');cuteToast(err.message||'Không lưu được từ.','error');}
 }
 async function addCommonWord(e){
@@ -973,63 +1096,18 @@ async function addCommonWord(e){
 }
 
 async function seedToeicCommon(){
-  const pass=document.getElementById('adminPassword').value;
-  if(!pass) return setStatus('commonStatus','Nhập mật khẩu admin trước khi cập nhật kho mẫu.','err');
-  if(!await cuteConfirm({title:'Cập nhật lại kho mẫu?',text:'App sẽ đồng bộ kho chung theo danh sách mẫu mới nhất. Những từ không còn trong danh sách mẫu sẽ được xóa khỏi kho chung.',confirmButtonText:'Cập nhật kho mẫu',icon:'question'})) return;
-  const btns=Array.from(document.querySelectorAll('button'));
-  btns.forEach(b=>b.disabled=true);
-  let ok=0,fail=0,replaced=0,removed=0,lastCommon=commonKvWords;
+  if(!await cuteConfirm({title:'Cập nhật lại kho mẫu?',text:'App sẽ tải lại danh sách từ trong file JSON và hiển thị ngay trong kho chung.',confirmButtonText:'Cập nhật kho mẫu',icon:'question'})) return;
   try{
-    const seedWords=await getToeicCommonSeed();
-    if(!seedWords.length) throw new Error('File kho mẫu chưa có từ vựng.');
-
-    const seedKeys=new Set(seedWords.map(function(item){return normalizeText(item.word);}));
-    const outsideSeed=(lastCommon||[]).filter(function(x){return !seedKeys.has(normalizeText(x.word));});
-
-    for(let i=0;i<outsideSeed.length;i++){
-      const old=outsideSeed[i];
-      setStatus('commonStatus','Đang xóa từ không còn trong kho mẫu: '+(i+1)+'/'+outsideSeed.length+' · '+old.word,'warn');
-      try{
-        const delRes=await fetch('/api/vocabulary?scope=common&id='+encodeURIComponent(old.id),{method:'DELETE',headers:{'x-admin-password':pass}});
-        const delData=await delRes.json().catch(()=>({}));
-        if(delRes.ok&&delData.ok){
-          removed++;
-          if(Array.isArray(delData.commonWords)) lastCommon=delData.commonWords;
-          else lastCommon=(lastCommon||[]).filter(function(x){return String(x.id)!==String(old.id);});
-        }
-      }catch(e){}
-    }
-
-    for(let i=0;i<seedWords.length;i++){
-      const item=seedWords[i];
-      setStatus('commonStatus','Đang cập nhật kho mẫu: '+(i+1)+'/'+seedWords.length+' · '+item.word,'warn');
-      try{
-        const duplicates=(lastCommon||[]).filter(function(x){return normalizeText(x.word)===normalizeText(item.word);});
-        for(const old of duplicates){
-          try{
-            const delRes=await fetch('/api/vocabulary?scope=common&id='+encodeURIComponent(old.id),{method:'DELETE',headers:{'x-admin-password':pass}});
-            const delData=await delRes.json().catch(()=>({}));
-            if(delRes.ok&&delData.ok){
-              replaced++;
-              if(Array.isArray(delData.commonWords)) lastCommon=delData.commonWords;
-              else lastCommon=(lastCommon||[]).filter(function(x){return String(x.id)!==String(old.id);});
-            }
-          }catch(e){}
-        }
-        const res=await fetch('/api/vocabulary',{method:'POST',headers:{'Content-Type':'application/json','x-admin-password':pass},body:JSON.stringify({action:'add-common',item:itemForSave(item)})});
-        const data=await res.json().catch(()=>({}));
-        if(!res.ok||!data.ok) throw new Error(data.error||'Không thêm được từ.');
-        ok++;
-        if(Array.isArray(data.commonWords)) lastCommon=data.commonWords;
-      }catch(e){fail++;}
-    }
-    commonKvWords=lastCommon;
+    setStatus('commonStatus','Đang tải lại kho mẫu JSON...','warn');
+    commonSeedWords=await getToeicCommonSeed();
+    commonKvWords=[];
     rebuildCommonWords();
-    setStatus('commonStatus','Đã cập nhật kho mẫu: '+ok+' từ'+(removed?'; đã xóa '+removed+' từ không còn trong mẫu.':'')+(replaced?'; đã thay '+replaced+' bản cũ.':'')+(fail?'; '+fail+' từ lỗi.':'.'),'ok');
-    cuteToast('Đã cập nhật kho mẫu: '+ok+' từ','success');
     renderAll();
-  }finally{
-    btns.forEach(b=>b.disabled=false);
+    setStatus('commonStatus','Đã cập nhật kho mẫu: '+commonSeedWords.length+' từ.','ok');
+    cuteToast('Đã cập nhật kho mẫu','success');
+  }catch(e){
+    setStatus('commonStatus',e.message||'Không tải lại được kho mẫu JSON.','err');
+    cuteToast(e.message||'Không tải lại được kho mẫu','error');
   }
 }
 
@@ -1039,21 +1117,24 @@ async function copyCommonToUser(id){
     cuteToast('"'+target.word+'" đã có trong hòm của bạn','info');
     return;
   }
+  if(!target){
+    cuteToast('Không tìm thấy từ này trong kho chung','error');
+    return;
+  }
   try{
     setStatus('commonStatus','Đang thêm từ này vào hòm của bạn...','warn');
-    let res;
-    if(target&&target.fromJsonSeed){
-      res=await fetch('/api/vocabulary',{method:'POST',headers:authHeaders(),body:JSON.stringify({action:'add-user',email:student.email,item:itemForSave(target)})});
-    }else{
-      res=await fetch('/api/vocabulary',{method:'POST',headers:authHeaders(),body:JSON.stringify({action:'copy-common-to-user',email:student.email,commonId:id})});
-    }
-    const data=await res.json().catch(()=>({}));
-    if(!res.ok||!data.ok) throw new Error(data.error||'Không thêm được từ vào hòm.');
-    userWords=Array.isArray(data.userWords)?data.userWords:userWords;
-    const word=target?target.word:'từ này';
+    const localItem=makeLocalUserItem(Object.assign({},target,{source:'common',commonId:target.id}));
+    const key=normalizeText(localItem.word);
+    userDeletedKeys=(userDeletedKeys||[]).filter(function(x){return normalizeText(x)!==key;});
+    userWords.unshift(localItem);
+    saveUserCache();
     setStatus('commonStatus','Đã thêm vào hòm của bạn.','ok');
-    cuteToast('Đã thêm "'+word+'" vào hòm','success');
+    cuteToast('Đã thêm "'+localItem.word+'" vào hòm','success');
     renderAll();
+    const synced=await syncUserItemToCloud(localItem,'add');
+    if(!synced&&vocabCloudDisabled){
+      setStatus('commonStatus','Đã lưu trên thiết bị này. Cloudflare KV đang hết giới hạn hôm nay nên dữ liệu online sẽ đồng bộ lại sau.','warn');
+    }
   }catch(err){setStatus('commonStatus',err.message||'Không thêm được từ vào hòm.','err');cuteToast(err.message||'Không thêm được từ vào hòm.','error');}
 }
 async function deleteUserWord(id){
@@ -1061,12 +1142,16 @@ async function deleteUserWord(id){
   const word=target?target.word:'từ này';
   if(!await cuteConfirm({title:'Xóa khỏi hòm?',text:'Bạn muốn xóa "'+word+'" khỏi hòm cá nhân?',confirmButtonText:'Xóa',icon:'warning'})) return;
   try{
-    const res=await fetch('/api/vocabulary?scope=user&id='+encodeURIComponent(id)+'&email='+encodeURIComponent(student.email),{method:'DELETE',headers:{'x-student-email':student.email,'x-student-token':student.token||''}});
-    const data=await res.json().catch(()=>({}));
-    if(!res.ok||!data.ok) throw new Error(data.error||'Không xóa được từ.');
-    userWords=Array.isArray(data.userWords)?data.userWords:userWords.filter(x=>x.id!==id);
+    const key=normalizeText(word);
+    if(key&&!userDeletedKeys.map(normalizeText).includes(key)) userDeletedKeys.push(key);
+    userWords=userWords.filter(function(x){return String(x.id)!==String(id);});
+    saveUserCache();
     cuteToast('Đã xóa "'+word+'" khỏi hòm','success');
     renderAll();
+    const synced=await syncUserItemToCloud(null,'delete',id);
+    if(!synced&&vocabCloudDisabled){
+      setStatus('userStatus','Đã xóa trên thiết bị này. Cloudflare KV đang hết giới hạn hôm nay nên dữ liệu online sẽ đồng bộ lại sau.','warn');
+    }
   }catch(err){setStatus('userStatus',err.message||'Không xóa được từ.','err');cuteToast(err.message||'Không xóa được từ.','error');}
 }
 async function deleteCommonWord(id){
