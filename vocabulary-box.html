@@ -101,6 +101,42 @@ h1,h2,h3,h4,h5,h6,b,strong,.word-title,.stat b,.tool-card b,.mode-copy b,.histor
 @media(max-width:900px){.tool-dock{grid-template-columns:repeat(2,minmax(0,1fr))}.history-layout,.history-summary{grid-template-columns:1fr}}
 
 </style>
+
+<style>
+/* ===== Patch: common cards + per-word practice progress ===== */
+.word-card.common-owned{
+  border-color:#94e6bd!important;
+  background:linear-gradient(180deg,#ecfff5,#ffffff)!important;
+  box-shadow:0 15px 30px rgba(16,115,66,.10)!important;
+}
+.word-card.common-new{
+  border-color:#ffd88f!important;
+  background:linear-gradient(180deg,#fff9e9,#ffffff)!important;
+  box-shadow:0 15px 30px rgba(226,132,18,.10)!important;
+}
+.word-card.common-owned .word-title:after{
+  content:" ✓";
+  color:#10a765;
+}
+.word-progress{
+  display:grid;
+  grid-template-columns:repeat(10,1fr);
+  gap:4px;
+  margin-top:13px;
+  padding:5px;
+  border-radius:999px;
+  background:#f1f5fb;
+  border:1.5px solid #e3edf9;
+}
+.word-progress-step{
+  height:8px;
+  border-radius:999px;
+  background:#d9e5f4;
+}
+.word-progress-step.on{
+  background:linear-gradient(90deg,#7bc7ff,#48c78e);
+}
+</style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
@@ -2400,15 +2436,33 @@ function wordMatches(item,q){
 function userHasWord(item){
   return userWords.some(function(w){return normalizeText(w.word)===normalizeText(item.word);});
 }
+
+function getWordHistoryStats(item){
+  const data=loadPracticeHistory();
+  const key=normalizeText(item&&item.word?item.word:'');
+  return data.words&&data.words[key]?data.words[key]:{correct:0,wrong:0,total:0};
+}
+function renderWordProgress(item){
+  const stat=getWordHistoryStats(item);
+  const raw=(stat.correct||0)-(stat.wrong||0);
+  const level=Math.max(0,Math.min(10,raw));
+  let pieces='';
+  for(let i=1;i<=10;i++){
+    pieces+='<span class="word-progress-step '+(i<=level?'on':'')+'"></span>';
+  }
+  return '<div class="word-progress" aria-label="Tiến độ luyện tập của từ này">'+pieces+'</div>';
+}
+
 function renderWordCard(item,scope){
   const meanings=renderMeaningRows(item);
   const note=item.note?'<div class="note">Ghi chú: '+escapeHtml(item.note)+'</div>':'';
   const owned=scope==='common'&&userHasWord(item);
-  const commonBadge=scope==='common'?(owned?'<div><span class="owned-badge">✓ Đã có trong hòm</span></div>':'<div><span class="owned-badge not-owned">＋ Chưa thêm vào hòm</span></div>'):'';
+  const progress=scope==='user'?renderWordProgress(item):'';
   const actions=scope==='user'
     ? '<button class="mini-btn del" type="button" onclick="deleteUserWord(\''+escapeHtml(item.id)+'\')">Xóa khỏi hòm</button>'
     : (owned?'<button class="mini-btn add" type="button" disabled>Đã có trong hòm</button>':'<button class="mini-btn add" type="button" onclick="copyCommonToUser(\''+escapeHtml(item.id)+'\')">Thêm vào hòm của tôi</button>')+'<button class="mini-btn del" type="button" onclick="deleteCommonWord(\''+escapeHtml(item.id)+'\')">Admin xóa</button>';
-  return '<article class="word-card '+(owned?'in-box':'not-in-box')+'"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div>'+commonBadge+'</div></div>'+meanings+note+'<div class="mini-actions">'+actions+'</div></article>';
+  const commonClass=scope==='common'?(owned?' common-owned':' common-new'):'';
+  return '<article class="word-card '+(owned?'in-box':'not-in-box')+commonClass+'"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div></div></div>'+meanings+progress+note+'<div class="mini-actions">'+actions+'</div></article>';
 }
 function renderAll(){
   const userQ=document.getElementById('userSearch').value||'';
@@ -2600,6 +2654,7 @@ function savePracticeHistory(){
   savePracticeHistoryData(data);
   game.historySaved=true;
   renderHistory();
+  renderAll();
 }
 function formatDateTime(iso){
   try{return new Date(iso).toLocaleString('vi-VN',{hour12:false});}catch(e){return iso||'';}
