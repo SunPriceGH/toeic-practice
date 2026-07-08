@@ -41,6 +41,18 @@ button,input,textarea{font-family:inherit}
 .swal2-title,.swal2-html-container,.swal2-confirm,.swal2-cancel{font-weight:700!important}
 .swal2-confirm{border-radius:999px!important}
 .swal2-cancel{border-radius:999px!important}
+
+.meaning-builder{display:grid;gap:13px;margin-top:2px}
+.meaning-empty{border:2px dashed #ddecff;border-radius:18px;background:#fbfdff;color:#64748b;padding:14px 16px;font-size:14px;font-weight:700;line-height:1.45}
+.meaning-row{display:grid;grid-template-columns:126px 1fr;gap:12px;align-items:start;border:2px solid #e6eef8;background:#fbfdff;border-radius:22px;padding:12px}
+.meaning-pill{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:999px;background:#eef7ff;border:1.5px solid #cfe7ff;color:#3264d8;font-size:14px;font-weight:700;text-align:center;padding:8px 11px;user-select:none}
+.meaning-row textarea{width:100%;min-height:78px;border:2px solid #ddecff;border-radius:17px;background:#fff;padding:13px 14px;font-size:16px;line-height:1.55;resize:vertical;outline:none}
+.meaning-row textarea:focus{border-color:#7bc7ff;box-shadow:0 0 0 5px rgba(123,199,255,.16)}
+.meaning-view-list{display:grid;gap:8px;margin-top:8px;color:#31415d;font-size:15px;line-height:1.45;font-weight:700}
+.meaning-view-row{display:grid;grid-template-columns:max-content 1fr;gap:8px;align-items:start}
+.meaning-view-pill{display:inline-flex;align-items:center;justify-content:center;min-width:82px;border-radius:999px;background:#eef7ff;border:1.5px solid #cfe7ff;color:#3264d8;padding:5px 9px;font-size:12px;font-weight:700;line-height:1.2;text-align:center}
+.meaning-view-text{padding-top:3px;word-break:break-word}
+@media(max-width:560px){.meaning-row{grid-template-columns:1fr}.meaning-pill{justify-content:flex-start}.meaning-view-row{grid-template-columns:1fr;gap:5px}.meaning-view-pill{width:max-content}}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -103,7 +115,7 @@ button,input,textarea{font-family:inherit}
       <form id="userForm" onsubmit="addUserWord(event)">
         <div class="field"><label>Từ / cụm từ</label><input id="wordInput" required placeholder="Ví dụ: make a reservation"></div>
         <div class="field"><label>Loại từ</label><div class="parts" id="partsInput"></div></div>
-        <div class="field"><label>Nghĩa tiếng Việt</label><textarea id="meaningInput" required placeholder="đặt chỗ&#10;đặt trước"></textarea></div>
+        <div class="field"><label>Nghĩa tiếng Việt</label><div class="meaning-builder" id="userMeaningRows"><div class="meaning-empty">Chọn loại từ ở trên, app sẽ tạo từng dòng nghĩa riêng cho mỗi loại từ.</div></div></div>
         <div class="field"><label>Ghi chú nhỏ nếu cần</label><input id="noteInput" placeholder="Ví dụ: TOEIC Part 3, nhà hàng, khách sạn..."></div>
         <div class="actions"><button class="btn good" type="submit">Lưu vào hòm</button><button class="btn secondary" type="button" onclick="clearUserForm()">Xóa form</button></div>
       </form>
@@ -123,7 +135,7 @@ button,input,textarea{font-family:inherit}
           <div class="field"><label>Mật khẩu admin</label><input id="adminPassword" type="password" placeholder="Nhập mật khẩu admin"></div>
           <div class="field"><label>Từ / cụm từ cho kho chung</label><input id="commonWordInput" placeholder="Ví dụ: launch a campaign"></div>
           <div class="field"><label>Loại từ</label><div class="parts" id="commonPartsInput"></div></div>
-          <div class="field"><label>Nghĩa tiếng Việt</label><textarea id="commonMeaningInput" placeholder="phát động chiến dịch"></textarea></div>
+          <div class="field"><label>Nghĩa tiếng Việt</label><div class="meaning-builder" id="commonMeaningRows"><div class="meaning-empty">Chọn loại từ ở trên, app sẽ tạo từng dòng nghĩa riêng cho mỗi loại từ.</div></div></div>
           <div class="field"><label>Ghi chú</label><input id="commonNoteInput" placeholder="Từ vựng chung do giáo viên thêm"></div>
           <div class="actions"><button class="btn warn" type="submit">Thêm vào kho chung</button><button class="btn good" type="button" onclick="seedToeicCommon()">Tạo kho mẫu TOEIC 100 từ</button></div>
         </form>
@@ -304,59 +316,76 @@ function selectedParts(prefix){
 function clearPartChecks(prefix){
   document.querySelectorAll('input[name="'+prefix+'Part"]').forEach(x=>x.checked=false);
 }
-function markerForPart(part){return '['+(PART_LABEL[part]||part)+']';}
-function lineToPartMarker(line){
-  const clean=normalizeText(line).replace(/[\[\]［］]/g,'').replace(/^[-–—\s]+|[-–—\s:]+$/g,'');
-  return PARTS.includes(clean)?clean:'';
+function getMeaningRowsContainer(prefix){
+  return document.getElementById(prefix==='common'?'commonMeaningRows':'userMeaningRows');
 }
-function getMeaningTextarea(prefix){
-  return document.getElementById(prefix==='common'?'commonMeaningInput':'meaningInput');
+function splitMeaningText(value){
+  return String(value||'').split(/\n|;|\|/g).map(s=>cleanMeaningText(s)).filter(Boolean);
 }
-function handlePartChange(prefix){syncMeaningGuides(prefix);}
-function syncMeaningGuides(prefix){
-  const ta=getMeaningTextarea(prefix);
-  if(!ta) return;
+function cleanMeaningText(text){
+  let s=String(text||'').trim();
+  const re=new RegExp('^\\s*[\\[［]?\\s*('+PARTS.join('|')+')\\s*[\\]］]?\\s*[:：\\-–—]?\\s*','i');
+  s=s.replace(re,'').trim();
+  return s;
+}
+function handlePartChange(prefix){syncMeaningRows(prefix);}
+function collectCurrentMeaningValues(prefix){
+  const box=getMeaningRowsContainer(prefix);
+  const values={};
+  if(!box) return values;
+  box.querySelectorAll('.meaning-row').forEach(function(row){
+    const part=row.dataset.part;
+    const ta=row.querySelector('textarea');
+    values[part]=ta?ta.value:'';
+  });
+  return values;
+}
+function syncMeaningRows(prefix){
+  const box=getMeaningRowsContainer(prefix);
+  if(!box) return;
   const chosen=selectedParts(prefix);
-  const lines=String(ta.value||'').split(/\r?\n/);
-  const sections={};
-  const loose=[];
-  let current='';
-  lines.forEach(function(raw){
-    const marker=lineToPartMarker(raw);
-    if(marker){current=marker;if(!sections[current]) sections[current]=[];return;}
-    if(current){if(!sections[current]) sections[current]=[];sections[current].push(raw);}
-    else loose.push(raw);
-  });
-  Object.keys(sections).forEach(function(part){
-    if(!chosen.includes(part)) loose.push.apply(loose,sections[part].filter(function(line){return line.trim();}));
-  });
-  const output=[];
-  chosen.forEach(function(part){
-    output.push(markerForPart(part));
-    (sections[part]||[]).forEach(function(line){output.push(line);});
-  });
-  const looseClean=loose.filter(function(line){return line.trim()&&!lineToPartMarker(line);});
-  if(looseClean.length){
-    if(output.length) output.push('');
-    looseClean.forEach(function(line){output.push(line);});
+  const old=collectCurrentMeaningValues(prefix);
+  if(!chosen.length){
+    box.innerHTML='<div class="meaning-empty">Chọn loại từ ở trên, app sẽ tạo từng dòng nghĩa riêng cho mỗi loại từ.</div>';
+    return;
   }
-  ta.value=output.join('\n').trimStart();
+  box.innerHTML=chosen.map(function(part){
+    const label=PART_LABEL[part]||part;
+    const placeholder='Nhập nghĩa cho '+label+'...\nMỗi nghĩa một dòng';
+    return '<div class="meaning-row" data-part="'+escapeHtml(part)+'"><span class="meaning-pill">'+escapeHtml(label)+'</span><textarea data-meaning-part="'+escapeHtml(part)+'" placeholder="'+escapeHtml(placeholder)+'">'+escapeHtml(old[part]||'')+'</textarea></div>';
+  }).join('');
+}
+function parseMeaningRows(prefix){
+  const box=getMeaningRowsContainer(prefix);
+  const meaningsByPart={};
+  const flat=[];
+  if(!box) return {meanings:flat,meaningsByPart};
+  box.querySelectorAll('.meaning-row').forEach(function(row){
+    const part=row.dataset.part;
+    const ta=row.querySelector('textarea');
+    const lines=splitMeaningText(ta?ta.value:'');
+    if(lines.length){
+      meaningsByPart[part]=lines;
+      lines.forEach(function(line){flat.push(line);});
+    }
+  });
+  return {meanings:flat,meaningsByPart};
 }
 function parseMeanings(value){
-  return String(value||'').split(/\n|;|\|/g).map(s=>s.trim()).filter(function(line){return line&&!lineToPartMarker(line);});
+  return splitMeaningText(value);
 }
 function clearUserForm(){
   document.getElementById('wordInput').value='';
-  document.getElementById('meaningInput').value='';
   document.getElementById('noteInput').value='';
   clearPartChecks('user');
+  syncMeaningRows('user');
   setStatus('userStatus','');
 }
 function clearCommonForm(){
   document.getElementById('commonWordInput').value='';
-  document.getElementById('commonMeaningInput').value='';
   document.getElementById('commonNoteInput').value='';
   clearPartChecks('common');
+  syncMeaningRows('common');
 }
 async function loadVocabulary(){
   student=requireStudentSession();
@@ -383,10 +412,12 @@ function validateItem(word,parts,meanings){
 }
 async function addUserWord(e){
   e.preventDefault();
+  const meaningData=parseMeaningRows('user');
   const item={
     word:document.getElementById('wordInput').value.trim(),
     parts:selectedParts('user'),
-    meanings:parseMeanings(document.getElementById('meaningInput').value),
+    meanings:meaningData.meanings,
+    meaningsByPart:meaningData.meaningsByPart,
     note:document.getElementById('noteInput').value.trim()
   };
   try{
@@ -405,10 +436,12 @@ async function addUserWord(e){
 }
 async function addCommonWord(e){
   e.preventDefault();
+  const meaningData=parseMeaningRows('common');
   const item={
     word:document.getElementById('commonWordInput').value.trim(),
     parts:selectedParts('common'),
-    meanings:parseMeanings(document.getElementById('commonMeaningInput').value),
+    meanings:meaningData.meanings,
+    meaningsByPart:meaningData.meaningsByPart,
     note:document.getElementById('commonNoteInput').value.trim()
   };
   const pass=document.getElementById('adminPassword').value;
@@ -503,16 +536,55 @@ async function deleteCommonWord(id){
     renderAll();
   }catch(err){setStatus('commonStatus',err.message||'Không xóa được từ trong kho chung.','err');cuteToast(err.message||'Không xóa được từ trong kho chung.','error');}
 }
+function getMeaningDisplayRows(item){
+  const rows=[];
+  const parts=Array.isArray(item.parts)?item.parts:[];
+  const byPart=item.meaningsByPart&&typeof item.meaningsByPart==='object'?item.meaningsByPart:null;
+  if(byPart){
+    PARTS.concat(parts.filter(p=>!PARTS.includes(p))).forEach(function(part){
+      const list=Array.isArray(byPart[part])?byPart[part]:[];
+      list.forEach(function(text){
+        const clean=cleanMeaningText(text);
+        if(clean) rows.push({part:part,text:clean});
+      });
+    });
+  }
+  if(rows.length) return rows;
+  (item.meanings||[]).forEach(function(raw,idx){
+    const line=String(raw||'').trim();
+    if(!line) return;
+    const re=new RegExp('^\\s*[\\[［]?\\s*('+PARTS.join('|')+')\\s*[\\]］]?\\s*[:：\\-–—]?\\s*(.*)$','i');
+    const m=line.match(re);
+    if(m&&m[2]&&m[2].trim()){
+      rows.push({part:m[1].toLowerCase(),text:cleanMeaningText(m[2])});
+      return;
+    }
+    const part=parts.length===1?parts[0]:(parts[idx]||parts[0]||'');
+    rows.push({part:part,text:cleanMeaningText(line)});
+  });
+  return rows.filter(r=>r.text);
+}
+function getCleanMeanings(item){
+  return getMeaningDisplayRows(item).map(function(row){return row.text;});
+}
+function renderMeaningRows(item){
+  const rows=getMeaningDisplayRows(item);
+  if(!rows.length) return '<div class="meaning-view-list"><div class="meaning-view-row"><span class="meaning-view-text">Chưa có nghĩa.</span></div></div>';
+  return '<div class="meaning-view-list">'+rows.map(function(row){
+    const pill=row.part?'<span class="meaning-view-pill">'+escapeHtml(PART_LABEL[row.part]||row.part)+'</span>':'<span class="meaning-view-pill">nghĩa</span>';
+    return '<div class="meaning-view-row">'+pill+'<span class="meaning-view-text">'+escapeHtml(row.text)+'</span></div>';
+  }).join('')+'</div>';
+}
 function wordMatches(item,q){
   if(!q) return true;
   q=normalizeText(q);
-  return normalizeText(item.word).includes(q) || normalizeText((item.meanings||[]).join(' ')).includes(q) || normalizeText((item.parts||[]).join(' ')).includes(q);
+  return normalizeText(item.word).includes(q) || normalizeText(getCleanMeanings(item).join(' ')).includes(q) || normalizeText((item.parts||[]).join(' ')).includes(q);
 }
 function userHasWord(item){
   return userWords.some(function(w){return normalizeText(w.word)===normalizeText(item.word);});
 }
 function renderWordCard(item,scope){
-  const meanings=(item.meanings||[]).map(escapeHtml).join('<br>');
+  const meanings=renderMeaningRows(item);
   const parts=(item.parts||[]).map(p=>'<span class="tag">'+escapeHtml(p)+'</span>').join('');
   const note=item.note?'<div class="note">Ghi chú: '+escapeHtml(item.note)+'</div>':'';
   const owned=scope==='common'&&userHasWord(item);
@@ -520,7 +592,7 @@ function renderWordCard(item,scope){
   const actions=scope==='user'
     ? '<button class="mini-btn del" type="button" onclick="deleteUserWord(\''+escapeHtml(item.id)+'\')">Xóa khỏi hòm</button>'
     : (owned?'<button class="mini-btn add" type="button" disabled>Đã có trong hòm</button>':'<button class="mini-btn add" type="button" onclick="copyCommonToUser(\''+escapeHtml(item.id)+'\')">Thêm vào hòm của tôi</button>')+'<button class="mini-btn del" type="button" onclick="deleteCommonWord(\''+escapeHtml(item.id)+'\')">Admin xóa</button>';
-  return '<article class="word-card '+(owned?'in-box':'not-in-box')+'"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div><div class="tag-row">'+parts+'</div>'+commonBadge+'</div></div><div class="meaning">'+meanings+'</div>'+note+'<div class="mini-actions">'+actions+'</div></article>';
+  return '<article class="word-card '+(owned?'in-box':'not-in-box')+'"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div><div class="tag-row">'+parts+'</div>'+commonBadge+'</div></div>'+meanings+note+'<div class="mini-actions">'+actions+'</div></article>';
 }
 function renderAll(){
   const userQ=document.getElementById('userSearch').value||'';
@@ -549,7 +621,7 @@ function shuffle(arr){
   return a;
 }
 function randomMeaning(item){
-  const meanings=item.meanings||[];
+  const meanings=getCleanMeanings(item);
   return meanings[Math.floor(Math.random()*meanings.length)]||'';
 }
 function startPractice(mode){
@@ -647,7 +719,7 @@ function collectResultPayload(){
     score:game.score,
     total:game.items.length,
     percent:Math.round(game.score/game.items.length*100),
-    answers:game.items.map(function(item,idx){return {no:idx+1,word:item.word,parts:item.parts,meanings:item.meanings};}),
+    answers:game.items.map(function(item,idx){return {no:idx+1,word:item.word,parts:item.parts,meanings:getCleanMeanings(item),meaningsByPart:item.meaningsByPart||null};}),
     wrongs:game.wrongs
   };
 }
@@ -690,6 +762,8 @@ function togglePracticePanel(){
 
 buildPartChecks('partsInput','user');
 buildPartChecks('commonPartsInput','common');
+syncMeaningRows('user');
+syncMeaningRows('common');
 selectMode('choice');
 loadVocabulary();
 </script>
