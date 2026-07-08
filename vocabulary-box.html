@@ -206,6 +206,29 @@ h1,h2,h3,h4,h5,h6,b,strong,.word-title,.stat b,.tool-card b,.mode-copy b,.histor
   color:#3264d8;
   transform:translateY(-1px);
 }
+
+.part-sort-select{
+  appearance:none;
+  border:2px solid #ddecff;
+  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%233264d8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;
+  color:#31415d;
+  border-radius:999px;
+  padding:8px 38px 8px 12px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  outline:none;
+  transition:.18s ease;
+}
+.part-sort-select:hover,.part-sort-select:focus{
+  background-color:#eef7ff;
+  border-color:#9fd5ff;
+  color:#3264d8;
+  box-shadow:0 0 0 4px rgba(123,199,255,.13);
+}
+.part-sort-select:active{
+  transform:scale(.98);
+}
 .question-meaning{
   display:flex;
   align-items:center;
@@ -329,6 +352,17 @@ input,textarea{
         <button class="sort-btn active" type="button" data-scope="user" data-sort="az" onclick="setSort('user','az')">A → Z</button>
         <button class="sort-btn" type="button" data-scope="user" data-sort="length" onclick="setSort('user','length')">Ngắn → dài</button>
         <button class="sort-btn" type="button" data-scope="user" data-sort="progress" onclick="setSort('user','progress')">Progress</button>
+        <select class="part-sort-select" id="userPartSort" onchange="setPartSort('user',this.value)" aria-label="Chọn loại từ trong hòm">
+          <option value="">Tất cả loại từ</option>
+          <option value="noun">noun</option>
+          <option value="verb">verb</option>
+          <option value="adjective">adjective</option>
+          <option value="adverb">adverb</option>
+          <option value="preposition">preposition</option>
+          <option value="conjunction">conjunction</option>
+          <option value="pronoun">pronoun</option>
+          <option value="phrase">phrase</option>
+        </select>
       </div>
       <div class="list" id="userList"></div>
     </section>
@@ -356,6 +390,17 @@ input,textarea{
         <button class="sort-btn active" type="button" data-scope="common" data-sort="az" onclick="setSort('common','az')">A → Z</button>
         <button class="sort-btn" type="button" data-scope="common" data-sort="length" onclick="setSort('common','length')">Ngắn → dài</button>
         <button class="sort-btn" type="button" data-scope="common" data-sort="progress" onclick="setSort('common','progress')">Progress</button>
+        <select class="part-sort-select" id="commonPartSort" onchange="setPartSort('common',this.value)" aria-label="Chọn loại từ trong kho">
+          <option value="">Tất cả loại từ</option>
+          <option value="noun">noun</option>
+          <option value="verb">verb</option>
+          <option value="adjective">adjective</option>
+          <option value="adverb">adverb</option>
+          <option value="preposition">preposition</option>
+          <option value="conjunction">conjunction</option>
+          <option value="pronoun">pronoun</option>
+          <option value="phrase">phrase</option>
+        </select>
       </div>
       <div class="list" id="commonList"></div>
 
@@ -436,6 +481,8 @@ let userSortMode='az';
 let commonSortMode='az';
 let userSortDir='asc';
 let commonSortDir='asc';
+let userPartSort='';
+let commonPartSort='';
 
 function escapeHtml(s){return String(s||'').replace(/[&<>'"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c];});}
 function cuteToast(message,icon){
@@ -951,6 +998,10 @@ function wordMatches(item,q){
   q=normalizeText(q);
   return normalizeText(item.word).includes(q) || normalizeText(getCleanMeanings(item).join(' ')).includes(q) || normalizeText((item.parts||[]).join(' ')).includes(q);
 }
+function wordMatchesPart(item,part){
+  if(!part) return true;
+  return Array.isArray(item.parts) && item.parts.indexOf(part)!==-1;
+}
 function userHasWord(item){
   return userWords.some(function(w){return normalizeText(w.word)===normalizeText(item.word);});
 }
@@ -1037,12 +1088,18 @@ function setSort(scope,mode){
   }
   renderAll();
 }
+function setPartSort(scope,part){
+  part=part||'';
+  if(scope==='user') userPartSort=part;
+  if(scope==='common') commonPartSort=part;
+  renderAll();
+}
 
 function renderAll(){
   const userQ=document.getElementById('userSearch').value||'';
   const commonQ=document.getElementById('commonSearch').value||'';
-  const filteredUser=sortWords(userWords.filter(item=>wordMatches(item,userQ)),userSortMode,userSortDir);
-  const filteredCommon=sortWords(commonWords.filter(item=>wordMatches(item,commonQ)),commonSortMode,commonSortDir);
+  const filteredUser=sortWords(userWords.filter(item=>wordMatches(item,userQ)&&wordMatchesPart(item,userPartSort)),userSortMode,userSortDir);
+  const filteredCommon=sortWords(commonWords.filter(item=>wordMatches(item,commonQ)&&wordMatchesPart(item,commonPartSort)),commonSortMode,commonSortDir);
   document.getElementById('userCount').textContent=userWords.length;
   document.getElementById('commonCount').textContent=commonWords.length;
   const enough=userWords.length>=20;
@@ -1050,8 +1107,8 @@ function renderAll(){
   document.getElementById('unlockBox').innerHTML=enough
     ? 'Đã đủ <b>'+userWords.length+' từ</b>. Nút luyện tập đã mở khóa.'
     : 'Bạn đang có <b>'+userWords.length+' từ</b>. Cần thêm '+(20-userWords.length)+' từ nữa để luyện tập.';
-  document.getElementById('userList').innerHTML=filteredUser.length?filteredUser.map(item=>renderWordCard(item,'user')).join(''):'<div class="empty">Chưa có từ nào trong hòm cá nhân.</div>';
-  document.getElementById('commonList').innerHTML=filteredCommon.length?filteredCommon.map(item=>renderWordCard(item,'common')).join(''):'<div class="empty">Kho chung đang trống hoặc không có kết quả tìm kiếm.</div>';
+  document.getElementById('userList').innerHTML=filteredUser.length?filteredUser.map(item=>renderWordCard(item,'user')).join(''):'<div class="empty">Chưa có từ nào khớp tìm kiếm hoặc loại từ đang chọn.</div>';
+  document.getElementById('commonList').innerHTML=filteredCommon.length?filteredCommon.map(item=>renderWordCard(item,'common')).join(''):'<div class="empty">Kho chung đang trống hoặc không có kết quả theo loại từ đang chọn.</div>';
   updateSortButtons();
   renderHistory();
 }
