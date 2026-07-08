@@ -136,6 +136,51 @@ h1,h2,h3,h4,h5,h6,b,strong,.word-title,.stat b,.tool-card b,.mode-copy b,.histor
 .word-progress-step.on{
   background:linear-gradient(90deg,#7bc7ff,#48c78e);
 }
+
+/* ===== Patch: audio buttons ===== */
+.word-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+.audio-btn,.audio-inline-btn{
+  border:none;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  border-radius:999px;
+  background:#eef7ff;
+  color:#3264d8;
+  border:1.5px solid #cfe7ff;
+  font-weight:700;
+  transition:.18s ease;
+}
+.audio-btn{
+  width:38px;
+  height:38px;
+  flex:0 0 38px;
+  font-size:18px;
+  box-shadow:0 8px 18px rgba(42,69,116,.07);
+}
+.audio-inline-btn{
+  margin-left:8px;
+  padding:7px 10px;
+  font-size:13px;
+}
+.audio-btn:hover,.audio-inline-btn:hover{
+  transform:translateY(-1px);
+  background:#e4f3ff;
+}
+.audio-btn.is-loading,.audio-inline-btn.is-loading{
+  opacity:.72;
+  pointer-events:none;
+}
+.audio-btn.is-loading{animation:audioPulse .75s ease-in-out infinite alternate}
+@keyframes audioPulse{from{transform:scale(1)}to{transform:scale(1.07)}}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -2113,6 +2158,7 @@ let commonWords=[];
 let selectedMode='choice';
 let game=null;
 let resultSubmitted=false;
+let activeAudio=null;
 
 function escapeHtml(s){return String(s||'').replace(/[&<>'"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c];});}
 function cuteToast(message,icon){
@@ -2171,6 +2217,125 @@ function cleanMeaningText(text){
   s=s.replace(re,'').trim();
   return s;
 }
+
+function audioCacheKey(text){
+  return 'vocab_audio_url_'+normalizeText(text).replace(/[^a-z0-9]+/g,'_').slice(0,80);
+}
+function normalizeAudioUrl(url){
+  url=String(url||'').trim();
+  if(!url) return '';
+  if(url.startsWith('//')) return 'https:'+url;
+  if(url.startsWith('http://')) return url.replace(/^http:\/\//,'https://');
+  return url;
+}
+function cachedAudioUrl(text){
+  try{return localStorage.getItem(audioCacheKey(text))||'';}catch(e){return '';}
+}
+function saveCachedAudioUrl(text,url){
+  try{localStorage.setItem(audioCacheKey(text),url||'');}catch(e){}
+}
+async function fetchDictionaryAudioUrl(text){
+  const q=normalizeText(text);
+  if(!q||q.length>80) return '';
+  try{
+    const controller=window.AbortController?new AbortController():null;
+    const timer=controller?setTimeout(function(){controller.abort();},3500):null;
+    const res=await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+encodeURIComponent(q),{cache:'force-cache',signal:controller?controller.signal:undefined});
+    if(timer) clearTimeout(timer);
+    if(!res.ok) return '';
+    const data=await res.json();
+    const entries=Array.isArray(data)?data:[];
+    for(const entry of entries){
+      const phonetics=Array.isArray(entry.phonetics)?entry.phonetics:[];
+      const preferred=phonetics.find(function(p){return p&&p.audio&&String(p.audio).trim()&&/us|america|en-us/i.test(String(p.sourceUrl||p.audio));})||phonetics.find(function(p){return p&&p.audio&&String(p.audio).trim();});
+      if(preferred&&preferred.audio) return normalizeAudioUrl(preferred.audio);
+    }
+  }catch(e){}
+  return '';
+}
+async function resolveAudioUrl(text){
+  const cached=cachedAudioUrl(text);
+  if(cached) return cached;
+  const url=await fetchDictionaryAudioUrl(text);
+  saveCachedAudioUrl(text,url||'');
+  return url||'';
+}
+function pickEnglishVoice(){
+  if(!('speechSynthesis' in window)) return null;
+  const voices=window.speechSynthesis.getVoices?window.speechSynthesis.getVoices():[];
+  return voices.find(v=>String(v.lang||'').toLowerCase()==='en-us') || voices.find(v=>String(v.lang||'').toLowerCase().startsWith('en-')) || null;
+}
+function speakText(text){
+  if(!('speechSynthesis' in window)){
+    cuteToast('Trình duyệt này không hỗ trợ đọc giọng nói','error');
+    return;
+  }
+  try{window.speechSynthesis.cancel();}catch(e){}
+  const utter=new SpeechSynthesisUtterance(String(text||''));
+  utter.lang='en-US';
+  utter.rate=.86;
+  utter.pitch=1;
+  const voice=pickEnglishVoice();
+  if(voice) utter.voice=voice;
+  window.speechSynthesis.speak(utter);
+}
+function setAudioButtonLoading(btn,loading){
+  if(!btn) return;
+  btn.classList.toggle('is-loading',!!loading);
+  if(loading){btn.dataset.oldText=btn.textContent;btn.textContent='⏳';}
+  else if(btn.dataset.oldText){btn.textContent=btn.dataset.oldText;delete btn.dataset.oldText;}
+}
+async function playTextAudio(text,btn,knownUrl){
+  const clean=String(text||'').trim();
+  if(!clean) return;
+  setAudioButtonLoading(btn,true);
+  try{
+    if(activeAudio){try{activeAudio.pause();activeAudio.currentTime=0;}catch(e){}}
+    let url=knownUrl||cachedAudioUrl(clean)||'';
+    if(!url) url=await resolveAudioUrl(clean);
+    if(url){
+      activeAudio=new Audio(url);
+      activeAudio.onended=function(){setAudioButtonLoading(btn,false);};
+      activeAudio.onerror=function(){setAudioButtonLoading(btn,false);speakText(clean);};
+      await activeAudio.play();
+      setTimeout(function(){setAudioButtonLoading(btn,false);},900);
+    }else{
+      speakText(clean);
+      setAudioButtonLoading(btn,false);
+    }
+  }catch(e){
+    speakText(clean);
+    setAudioButtonLoading(btn,false);
+  }
+}
+function findWordByScope(scope,id){
+  const list=scope==='common'?commonWords:userWords;
+  return list.find(function(x){return String(x.id)===String(id);});
+}
+function playWordAudio(scope,id,btn){
+  const item=findWordByScope(scope,id);
+  if(!item) return;
+  playTextAudio(item.word,btn,item.audioUrl||'');
+}
+function playCurrentGameAudio(btn){
+  const item=game?currentItem():null;
+  if(!item) return;
+  playTextAudio(item.word,btn,item.audioUrl||'');
+}
+function audioButtonHtml(scope,id,label){
+  const safeScope=escapeHtml(scope);
+  const safeId=escapeHtml(id);
+  return '<button class="audio-btn" type="button" title="Nghe phát âm" aria-label="Nghe phát âm" onclick="playWordAudio(\''+safeScope+'\',\''+safeId+'\',this)">🔊</button>';
+}
+function feedbackAudioButtonHtml(){
+  return '<button class="audio-inline-btn" type="button" onclick="playCurrentGameAudio(this)">🔊 Nghe đáp án</button>';
+}
+function prefetchAudio(text){
+  const q=String(text||'').trim();
+  if(!q||cachedAudioUrl(q)) return;
+  resolveAudioUrl(q);
+}
+
 function handlePartChange(prefix){syncMeaningRows(prefix);}
 function collectCurrentMeaningValues(prefix){
   const box=getMeaningRowsContainer(prefix);
@@ -2274,6 +2439,7 @@ async function addUserWord(e){
     clearUserForm();
     setStatus('userStatus','Đã lưu vào hòm từ vựng cá nhân.','ok');
     cuteToast('Đã thêm "'+savedWord+'" vào hòm','success');
+    prefetchAudio(savedWord);
     renderAll();
   }catch(err){setStatus('userStatus',err.message||'Không lưu được từ.','err');cuteToast(err.message||'Không lưu được từ.','error');}
 }
@@ -2300,6 +2466,7 @@ async function addCommonWord(e){
     clearCommonForm();
     setStatus('commonStatus','Đã thêm vào kho chung.','ok');
     cuteToast('Đã thêm "'+savedWord+'" vào kho chung','success');
+    prefetchAudio(savedWord);
     renderAll();
   }catch(err){setStatus('commonStatus',err.message||'Không thêm được vào kho chung.','err');cuteToast(err.message||'Không thêm được vào kho chung.','error');}
 }
@@ -2485,7 +2652,7 @@ function renderWordCard(item,scope){
     ? '<button class="mini-btn del" type="button" onclick="deleteUserWord(\''+escapeHtml(item.id)+'\')">Xóa khỏi hòm</button>'
     : (owned?'<button class="mini-btn add" type="button" disabled>Đã có trong hòm</button>':'<button class="mini-btn add" type="button" onclick="copyCommonToUser(\''+escapeHtml(item.id)+'\')">Thêm vào hòm của tôi</button>')+'<button class="mini-btn del" type="button" onclick="deleteCommonWord(\''+escapeHtml(item.id)+'\')">Admin xóa</button>';
   const commonClass=scope==='common'?(owned?' common-owned':' common-new'):'';
-  return '<article class="word-card '+(owned?'in-box':'not-in-box')+commonClass+'"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div></div></div>'+meanings+progress+'<div class="mini-actions">'+actions+'</div></article>';
+  return '<article class="word-card '+(owned?'in-box':'not-in-box')+commonClass+'"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div></div>'+audioButtonHtml(scope,item.id)+'</div>'+meanings+progress+'<div class="mini-actions">'+actions+'</div></article>';
 }
 function renderAll(){
   const userQ=document.getElementById('userSearch').value||'';
@@ -2599,11 +2766,11 @@ function answerChoice(btn,choice){
     else if(el===btn) el.classList.add('wrong');
     el.disabled=true;
   });
-  if(ok){game.score++;recordAnswer(item,true,choice,'Trò 1');showFeedback(true,'Đúng rồi! +1 điểm');}
+  if(ok){game.score++;recordAnswer(item,true,choice,'Trò 1');showFeedback(true,'Đúng rồi! +1 điểm '+feedbackAudioButtonHtml());}
   else{
     recordAnswer(item,false,choice,'Trò 1');
     game.wrongs.push({game:'Trò 1',meaning:item._currentMeaning,correct:item.word,answer:choice});
-    showFeedback(false,'Sai. Đáp án đúng là: <b>'+escapeHtml(item.word)+'</b>');
+    showFeedback(false,'Sai. Đáp án đúng là: <b>'+escapeHtml(item.word)+'</b> '+feedbackAudioButtonHtml());
   }
   addNextButton();
   scrollPracticeCenter(100);
@@ -2615,11 +2782,11 @@ function answerTyping(e){
   const item=currentItem();
   const answer=document.getElementById('typingAnswer').value;
   const ok=normalizeText(answer)===normalizeText(item.word);
-  if(ok){game.score++;recordAnswer(item,true,answer,'Trò 2');showFeedback(true,'Đúng rồi! +1 điểm');}
+  if(ok){game.score++;recordAnswer(item,true,answer,'Trò 2');showFeedback(true,'Đúng rồi! +1 điểm '+feedbackAudioButtonHtml());}
   else{
     recordAnswer(item,false,answer||'(bỏ trống)','Trò 2');
     game.wrongs.push({game:'Trò 2',meaning:item._currentMeaning,correct:item.word,answer:answer||'(bỏ trống)'});
-    showFeedback(false,'Sai. Đáp án đúng là: <b>'+escapeHtml(item.word)+'</b>');
+    showFeedback(false,'Sai. Đáp án đúng là: <b>'+escapeHtml(item.word)+'</b> '+feedbackAudioButtonHtml());
   }
   document.getElementById('typingAnswer').disabled=true;
   addNextButton();
