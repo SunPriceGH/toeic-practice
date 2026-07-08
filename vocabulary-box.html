@@ -2162,7 +2162,8 @@ function getMeaningRowsContainer(prefix){
   return document.getElementById(prefix==='common'?'commonMeaningRows':'userMeaningRows');
 }
 function splitMeaningText(value){
-  return String(value||'').split(/\n|;|\|/g).map(s=>cleanMeaningText(s)).filter(Boolean);
+  // Mỗi dòng là một nghĩa. Dấu ; được giữ lại để phân cách các nghĩa khác xa nhau trong cùng một loại từ.
+  return String(value||'').split(/\n|\|/g).map(s=>cleanMeaningText(s)).filter(Boolean);
 }
 function cleanMeaningText(text){
   let s=String(text||'').trim();
@@ -2420,8 +2421,31 @@ function getMeaningDisplayRows(item){
 function getCleanMeanings(item){
   return getMeaningDisplayRows(item).map(function(row){return row.text;});
 }
-function renderMeaningRows(item){
+function joinMeaningTexts(texts){
+  const clean=texts.map(t=>cleanMeaningText(t)).filter(Boolean);
+  if(!clean.length) return '';
+  // Nếu người nhập đã dùng dấu ; để tách nghĩa khác xa nhau, giữ nguyên cách tách đó.
+  if(clean.some(t=>t.includes(';'))) return clean.join('; ');
+  return clean.join(', ');
+}
+function groupMeaningRowsByPart(item){
   const rows=getMeaningDisplayRows(item);
+  const groups=[];
+  const map={};
+  rows.forEach(function(row){
+    const key=row.part||'meaning';
+    if(!map[key]){
+      map[key]={part:row.part,texts:[]};
+      groups.push(map[key]);
+    }
+    if(row.text) map[key].texts.push(row.text);
+  });
+  return groups.map(function(group){
+    return {part:group.part,text:joinMeaningTexts(group.texts)};
+  }).filter(function(group){return group.text;});
+}
+function renderMeaningRows(item){
+  const rows=groupMeaningRowsByPart(item);
   if(!rows.length) return '<div class="meaning-view-list"><div class="meaning-view-row"><span class="meaning-view-text">Chưa có nghĩa.</span></div></div>';
   return '<div class="meaning-view-list">'+rows.map(function(row){
     const pill=row.part?'<span class="meaning-view-pill">'+escapeHtml(PART_LABEL[row.part]||row.part)+'</span>':'<span class="meaning-view-pill">nghĩa</span>';
@@ -2455,14 +2479,13 @@ function renderWordProgress(item){
 
 function renderWordCard(item,scope){
   const meanings=renderMeaningRows(item);
-  const note=item.note?'<div class="note">Ghi chú: '+escapeHtml(item.note)+'</div>':'';
   const owned=scope==='common'&&userHasWord(item);
   const progress=scope==='user'?renderWordProgress(item):'';
   const actions=scope==='user'
     ? '<button class="mini-btn del" type="button" onclick="deleteUserWord(\''+escapeHtml(item.id)+'\')">Xóa khỏi hòm</button>'
     : (owned?'<button class="mini-btn add" type="button" disabled>Đã có trong hòm</button>':'<button class="mini-btn add" type="button" onclick="copyCommonToUser(\''+escapeHtml(item.id)+'\')">Thêm vào hòm của tôi</button>')+'<button class="mini-btn del" type="button" onclick="deleteCommonWord(\''+escapeHtml(item.id)+'\')">Admin xóa</button>';
   const commonClass=scope==='common'?(owned?' common-owned':' common-new'):'';
-  return '<article class="word-card '+(owned?'in-box':'not-in-box')+commonClass+'"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div></div></div>'+meanings+progress+note+'<div class="mini-actions">'+actions+'</div></article>';
+  return '<article class="word-card '+(owned?'in-box':'not-in-box')+commonClass+'"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div></div></div>'+meanings+progress+'<div class="mini-actions">'+actions+'</div></article>';
 }
 function renderAll(){
   const userQ=document.getElementById('userSearch').value||'';
