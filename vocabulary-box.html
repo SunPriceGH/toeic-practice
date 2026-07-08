@@ -309,6 +309,76 @@ input,textarea{
 </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+<style>
+/* ===== Patch: chọn từ dùng trong trò chơi ===== */
+.word-card{position:relative}
+.word-card .word-head{padding-right:42px}
+.word-use-toggle{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:34px;
+  height:34px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  user-select:none;
+  z-index:3;
+}
+.word-use-toggle input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+.word-use-toggle span{
+  width:34px;
+  height:34px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  border:2px solid #cfe7ff;
+  background:#eef7ff;
+  color:#3264d8;
+  font-size:18px;
+  font-weight:700;
+  box-shadow:0 8px 18px rgba(42,69,116,.08);
+  transition:.18s ease;
+}
+.word-use-toggle input:not(:checked)+span{
+  background:#fff;
+  color:#94a3b8;
+  border-color:#e2e8f0;
+  box-shadow:none;
+}
+.word-use-toggle input:not(:checked)+span::before{content:""}
+.word-use-toggle input:checked+span::before{content:"✓"}
+.word-use-toggle:hover span{transform:translateY(-1px)}
+.word-use-toggle:active span{transform:scale(.94)}
+.word-card.not-used-in-game{
+  opacity:.72;
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
+}
+.word-card.not-used-in-game .word-title{color:#64748b}
+.game-use-note{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:10px;
+  border-radius:999px;
+  border:1.5px solid #e2e8f0;
+  background:#fff;
+  color:#64748b;
+  padding:6px 9px;
+  font-size:12px;
+  font-weight:700;
+}
+@media(max-width:560px){
+  .word-use-toggle{top:10px;right:10px}
+  .word-card .word-head{padding-right:38px}
+}
+</style>
 </head>
 <body>
 <div class="top-line"></div>
@@ -514,6 +584,11 @@ function normalizeStoredItem(item,index,prefix){
   const clean=normalizeSeedItem(item,index);
   clean.id=String(item&&item.id||((prefix||'item')+':'+index+'-'+String(clean.word||'').trim().toLowerCase().replace(/\s+/g,'-')));
   clean.fromJsonSeed=!!(item&&item.fromJsonSeed);
+  clean.useInGame=item&&item.useInGame===false?false:true;
+  clean.source=item&&item.source?String(item.source):clean.source;
+  clean.commonId=item&&item.commonId?String(item.commonId):clean.commonId;
+  clean.createdAt=item&&item.createdAt?String(item.createdAt):clean.createdAt;
+  clean.updatedAt=item&&item.updatedAt?String(item.updatedAt):clean.updatedAt;
   return clean;
 }
 function parseCommonSeedText(text){
@@ -550,7 +625,8 @@ function itemForSave(item){
     meanings:Array.isArray(item&&item.meanings)?item.meanings.slice():[],
     meaningsByPart:item&&item.meaningsByPart&&typeof item.meaningsByPart==='object'?item.meaningsByPart:{},
     note:String(item&&item.note||'').trim(),
-    audioUrl:String(item&&item.audioUrl||'').trim()
+    audioUrl:String(item&&item.audioUrl||'').trim(),
+    useInGame:item&&item.useInGame===false?false:true
   };
 }
 function mergeCommonSources(kvList,seedList){
@@ -1255,6 +1331,21 @@ function wordMatchesPart(item,part){
 function userHasWord(item){
   return userWords.some(function(w){return normalizeText(w.word)===normalizeText(item.word);});
 }
+function isWordGameEnabled(item){
+  return !(item&&item.useInGame===false);
+}
+function activeUserWords(){
+  return userWords.filter(isWordGameEnabled);
+}
+function toggleWordGameUse(id,checked){
+  const target=userWords.find(function(x){return String(x.id)===String(id);});
+  if(!target) return;
+  target.useInGame=!!checked;
+  target.updatedAt=new Date().toISOString();
+  saveUserCache();
+  renderAll();
+  cuteToast((checked?'Đã bật ':'Đã tắt ')+"'"+target.word+"'"+(checked?' trong trò chơi':' khỏi trò chơi'),'success');
+}
 
 function getWordHistoryStats(item){
   const data=loadPracticeHistory();
@@ -1275,7 +1366,12 @@ function renderWordProgress(item){
 function renderWordCard(item,scope){
   const meanings=renderMeaningRows(item);
   const owned=scope==='common'&&userHasWord(item);
+  const usedInGame=isWordGameEnabled(item);
   const progress=scope==='user'?renderWordProgress(item):'';
+  const gameToggle=scope==='user'
+    ? '<label class="word-use-toggle" title="Tick để dùng từ này trong trò chơi"><input type="checkbox" '+(usedInGame?'checked':'')+' onchange="toggleWordGameUse(\''+escapeHtml(item.id)+'\',this.checked)"><span></span></label>'
+    : '';
+  const gameNote=scope==='user'&&!usedInGame?'<div class="game-use-note">Tạm không dùng trong trò chơi</div>':'';
   let actions='';
   if(scope==='user'){
     actions='<button class="mini-btn del" type="button" onclick="deleteUserWord(\''+escapeHtml(item.id)+'\')">Xóa khỏi hòm</button>';
@@ -1286,7 +1382,8 @@ function renderWordCard(item,scope){
     }
   }
   const commonClass=scope==='common'?(owned?' common-owned':' common-new'):'';
-  return '<article class="word-card '+(owned?'in-box':'not-in-box')+commonClass+'"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div></div>'+audioButtonHtml(scope,item.id)+'</div>'+meanings+progress+'<div class="mini-actions">'+actions+'</div></article>';
+  const usedClass=scope==='user'&&!usedInGame?' not-used-in-game':'';
+  return '<article class="word-card '+(owned?'in-box':'not-in-box')+commonClass+usedClass+'">'+gameToggle+'<div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div></div>'+audioButtonHtml(scope,item.id)+'</div>'+meanings+progress+gameNote+'<div class="mini-actions">'+actions+'</div></article>';
 }
 function wordProgressLevel(item){
   const stat=getWordHistoryStats(item);
@@ -1358,11 +1455,12 @@ function renderAll(){
   const filteredCommon=sortWords(commonWords.filter(item=>wordMatches(item,commonQ)&&wordMatchesPart(item,commonPartSort)),commonSortMode,commonSortDir);
   document.getElementById('userCount').textContent=userWords.length;
   document.getElementById('commonCount').textContent=commonWords.length;
-  const enough=userWords.length>=20;
+  const activeCount=activeUserWords().length;
+  const enough=activeCount>=20;
   document.getElementById('practiceBtn').disabled=!enough;
   document.getElementById('unlockBox').innerHTML=enough
-    ? 'Đã đủ <b>'+userWords.length+' từ</b>. Nút luyện tập đã mở khóa.'
-    : 'Bạn đang có <b>'+userWords.length+' từ</b>. Cần thêm '+(20-userWords.length)+' từ nữa để luyện tập.';
+    ? 'Đã bật <b>'+activeCount+' từ</b> để luyện tập. Nút luyện tập đã mở khóa.'
+    : 'Bạn đang bật <b>'+activeCount+' từ</b> để luyện tập. Cần tick thêm '+(20-activeCount)+' từ nữa để chơi.';
   document.getElementById('userList').innerHTML=filteredUser.length?filteredUser.map(item=>renderWordCard(item,'user')).join(''):'<div class="empty">Chưa có từ nào khớp tìm kiếm hoặc loại từ đang chọn.</div>';
   document.getElementById('commonList').innerHTML=filteredCommon.length?filteredCommon.map(item=>renderWordCard(item,'common')).join(''):'<div class="empty">Kho chung đang trống hoặc không có kết quả theo loại từ đang chọn.</div>';
   updateSortButtons();
@@ -1404,9 +1502,13 @@ function scrollPracticeCenter(extraDelay){
 }
 function startPractice(mode){
   showPanel('practice');
-  if(userWords.length<20) return;
+  const pool=activeUserWords();
+  if(pool.length<20){
+    cuteToast('Cần tick ít nhất 20 từ để luyện tập','warning');
+    return;
+  }
   resultSubmitted=false;
-  game={mode,items:shuffle(userWords).slice(0,10),index:0,score:0,wrongs:[],answerLog:[],answered:false,historySaved:false};
+  game={mode,items:shuffle(pool).slice(0,10),pool:pool,index:0,score:0,wrongs:[],answerLog:[],answered:false,historySaved:false};
   document.getElementById('practiceArea').classList.add('show');
   renderQuestion();
   scrollPracticeCenter(180);
@@ -1424,7 +1526,8 @@ function renderQuestion(){
   item._currentMeaningPart=meaningPart;
   const area=document.getElementById('practiceArea');
   if(game.mode==='choice'){
-    const wrongChoices=shuffle(userWords.filter(w=>normalizeText(w.word)!==normalizeText(item.word))).slice(0,2).map(w=>w.word);
+    const choicePool=Array.isArray(game.pool)?game.pool:activeUserWords();
+    const wrongChoices=shuffle(choicePool.filter(w=>normalizeText(w.word)!==normalizeText(item.word))).slice(0,2).map(w=>w.word);
     const choices=shuffle([item.word].concat(wrongChoices));
     area.innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">'+modeTitle()+'</div><div class="progress-pill">Câu '+(game.index+1)+' / '+game.items.length+' · Điểm '+game.score+'</div></div><div class="question-hint">Chọn từ/cụm từ đúng với nghĩa sau:</div>'+renderQuestionMeaning(meaning,meaningPart)+'<div class="choices">'+choices.map(c=>'<button class="choice" type="button" data-choice="'+escapeHtml(c)+'" onclick="answerChoice(this,this.dataset.choice)">'+escapeHtml(c)+'</button>').join('')+'</div><div class="feedback" id="feedback"></div></div>';
   }else{
