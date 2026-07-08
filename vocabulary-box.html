@@ -367,7 +367,7 @@ input,textarea{
           <div class="field"><label>Loại từ</label><div class="parts" id="commonPartsInput"></div></div>
           <div class="field"><label>Nghĩa tiếng Việt</label><div class="meaning-builder" id="commonMeaningRows"><div class="meaning-empty">Chọn loại từ ở trên, app sẽ tạo từng dòng nghĩa riêng cho mỗi loại từ.</div></div></div>
           <div class="field"><label>Ghi chú</label><input id="commonNoteInput" placeholder="Từ vựng chung do giáo viên thêm"></div>
-          <div class="actions"><button class="btn warn" type="submit">Thêm vào kho chung</button><button class="btn good" type="button" onclick="seedToeicCommon()">Tạo lại kho mẫu TOEIC 100 từ</button></div>
+          <div class="actions"><button class="btn warn" type="submit">Thêm vào kho chung</button><button class="btn good" type="button" onclick="seedToeicCommon()">Cập nhật lại kho mẫu</button></div>
         </form>
         <div class="status" id="commonStatus"></div>
       </details>
@@ -410,9 +410,9 @@ let TOEIC_COMMON_SEED_CACHE=null;
 async function getToeicCommonSeed(){
   if(Array.isArray(TOEIC_COMMON_SEED_CACHE)) return TOEIC_COMMON_SEED_CACHE;
   const res=await fetch('./data/vocabulary-common-seed.json?ts='+Date.now(),{cache:'no-store'});
-  if(!res.ok) throw new Error('Không tải được file data/vocabulary-common-seed.json.');
+  if(!res.ok) throw new Error('Không tải được dữ liệu kho mẫu.');
   const data=await res.json();
-  if(!Array.isArray(data)) throw new Error('File vocabulary-common-seed.json phải là một mảng JSON.');
+  if(!Array.isArray(data)) throw new Error('Dữ liệu kho mẫu chưa đúng định dạng JSON.');
   TOEIC_COMMON_SEED_CACHE=data.map(function(item){
     return {
       word:String(item.word||'').trim(),
@@ -779,17 +779,35 @@ async function addCommonWord(e){
 
 async function seedToeicCommon(){
   const pass=document.getElementById('adminPassword').value;
-  if(!pass) return setStatus('commonStatus','Nhập mật khẩu admin trước khi tạo kho mẫu.','err');
-  if(!await cuteConfirm({title:'Tạo lại kho mẫu TOEIC 100 từ?',text:'App sẽ đọc dữ liệu từ file data/vocabulary-common-seed.json, xóa các bản trùng từ trong kho chung rồi nạp bản mẫu mới.',confirmButtonText:'Tạo lại kho mẫu',icon:'question'})) return;
+  if(!pass) return setStatus('commonStatus','Nhập mật khẩu admin trước khi cập nhật kho mẫu.','err');
+  if(!await cuteConfirm({title:'Cập nhật lại kho mẫu?',text:'App sẽ đồng bộ kho chung theo danh sách mẫu mới nhất. Những từ không còn trong danh sách mẫu sẽ được xóa khỏi kho chung.',confirmButtonText:'Cập nhật kho mẫu',icon:'question'})) return;
   const btns=Array.from(document.querySelectorAll('button'));
   btns.forEach(b=>b.disabled=true);
-  let ok=0,fail=0,deleted=0,lastCommon=commonWords;
+  let ok=0,fail=0,replaced=0,removed=0,lastCommon=commonWords;
   try{
     const seedWords=await getToeicCommonSeed();
     if(!seedWords.length) throw new Error('File kho mẫu chưa có từ vựng.');
+
+    const seedKeys=new Set(seedWords.map(function(item){return normalizeText(item.word);}));
+    const outsideSeed=(lastCommon||[]).filter(function(x){return !seedKeys.has(normalizeText(x.word));});
+
+    for(let i=0;i<outsideSeed.length;i++){
+      const old=outsideSeed[i];
+      setStatus('commonStatus','Đang xóa từ không còn trong kho mẫu: '+(i+1)+'/'+outsideSeed.length+' · '+old.word,'warn');
+      try{
+        const delRes=await fetch('/api/vocabulary?scope=common&id='+encodeURIComponent(old.id),{method:'DELETE',headers:{'x-admin-password':pass}});
+        const delData=await delRes.json().catch(()=>({}));
+        if(delRes.ok&&delData.ok){
+          removed++;
+          if(Array.isArray(delData.commonWords)) lastCommon=delData.commonWords;
+          else lastCommon=(lastCommon||[]).filter(function(x){return String(x.id)!==String(old.id);});
+        }
+      }catch(e){}
+    }
+
     for(let i=0;i<seedWords.length;i++){
       const item=seedWords[i];
-      setStatus('commonStatus','Đang làm mới kho mẫu: '+(i+1)+'/'+seedWords.length+' · '+item.word,'warn');
+      setStatus('commonStatus','Đang cập nhật kho mẫu: '+(i+1)+'/'+seedWords.length+' · '+item.word,'warn');
       try{
         const duplicates=(lastCommon||[]).filter(function(x){return normalizeText(x.word)===normalizeText(item.word);});
         for(const old of duplicates){
@@ -797,8 +815,9 @@ async function seedToeicCommon(){
             const delRes=await fetch('/api/vocabulary?scope=common&id='+encodeURIComponent(old.id),{method:'DELETE',headers:{'x-admin-password':pass}});
             const delData=await delRes.json().catch(()=>({}));
             if(delRes.ok&&delData.ok){
-              deleted++;
+              replaced++;
               if(Array.isArray(delData.commonWords)) lastCommon=delData.commonWords;
+              else lastCommon=(lastCommon||[]).filter(function(x){return String(x.id)!==String(old.id);});
             }
           }catch(e){}
         }
@@ -810,8 +829,8 @@ async function seedToeicCommon(){
       }catch(e){fail++;}
     }
     commonWords=lastCommon;
-    setStatus('commonStatus','Đã tạo lại kho mẫu TOEIC: '+ok+' từ thành công'+(deleted?'; đã thay '+deleted+' bản trùng.':'')+(fail?'; '+fail+' từ lỗi.':'.'),'ok');
-    cuteToast('Đã tạo lại kho mẫu TOEIC: '+ok+' từ','success');
+    setStatus('commonStatus','Đã cập nhật kho mẫu: '+ok+' từ'+(removed?'; đã xóa '+removed+' từ không còn trong mẫu.':'')+(replaced?'; đã thay '+replaced+' bản cũ.':'')+(fail?'; '+fail+' từ lỗi.':'.'),'ok');
+    cuteToast('Đã cập nhật kho mẫu: '+ok+' từ','success');
     renderAll();
   }finally{
     btns.forEach(b=>b.disabled=false);
