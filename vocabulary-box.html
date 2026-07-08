@@ -59,11 +59,11 @@ button,input,textarea{font-family:inherit}
 .meaning-pill{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:999px;background:#eef7ff;border:1.5px solid #cfe7ff;color:#3264d8;font-size:14px;font-weight:700;text-align:center;padding:8px 11px;user-select:none}
 .meaning-row textarea{width:100%;min-height:78px;border:2px solid #ddecff;border-radius:17px;background:#fff;padding:13px 14px;font-size:16px;line-height:1.55;resize:vertical;outline:none}
 .meaning-row textarea:focus{border-color:#7bc7ff;box-shadow:0 0 0 5px rgba(123,199,255,.16)}
-.meaning-view-list{display:grid;gap:8px;margin-top:8px;color:#31415d;font-size:15px;line-height:1.45;font-weight:700}
-.meaning-view-row{display:grid;grid-template-columns:max-content 1fr;gap:8px;align-items:start}
-.meaning-view-pill{display:inline-flex;align-items:center;justify-content:center;min-width:82px;border-radius:999px;background:#eef7ff;border:1.5px solid #cfe7ff;color:#3264d8;padding:5px 9px;font-size:12px;font-weight:700;line-height:1.2;text-align:center}
-.meaning-view-text{padding-top:3px;word-break:break-word}
-@media(max-width:560px){.meaning-row{grid-template-columns:1fr}.meaning-pill{justify-content:flex-start}.meaning-view-row{grid-template-columns:1fr;gap:5px}.meaning-view-pill{width:max-content}}
+.meaning-view-list{display:grid;gap:9px;margin-top:10px;color:#31415d;font-size:15px;line-height:1.45;font-weight:700}
+.meaning-view-row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;align-items:center}
+.meaning-view-pill{display:inline-flex;align-items:center;justify-content:center;width:96px;min-height:30px;border-radius:999px;background:#eef7ff;border:1.5px solid #cfe7ff;color:#3264d8;padding:5px 10px;font-size:12px;font-weight:700;line-height:1;text-align:center;white-space:nowrap}
+.meaning-view-text{padding-top:0;word-break:break-word;line-height:1.45}
+@media(max-width:560px){.meaning-row{grid-template-columns:1fr}.meaning-pill{justify-content:flex-start}.meaning-view-row{grid-template-columns:82px minmax(0,1fr);gap:8px}.meaning-view-pill{width:82px}}
 
 .mode-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0 6px}
 .mode-card{position:relative;overflow:hidden;border:2px solid #e0ecff;background:linear-gradient(180deg,#ffffff,#f8fbff);border-radius:26px;padding:16px;min-height:128px;cursor:pointer;text-align:left;display:grid;grid-template-columns:68px 1fr;gap:14px;align-items:center;box-shadow:0 14px 32px rgba(42,69,116,.08);transition:.18s ease;color:var(--ink)}
