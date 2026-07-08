@@ -464,81 +464,84 @@ const PARTS=['noun','verb','adjective','adverb','preposition','conjunction','pro
 const PART_LABEL={noun:'noun',verb:'verb',adjective:'adjective',adverb:'adverb',preposition:'preposition',conjunction:'conjunction',pronoun:'pronoun',phrase:'phrase','phrasal verb':'phrasal verb'};
 
 let TOEIC_COMMON_SEED_CACHE=null;
+function simplePart(part){
+  return String(part||'').trim().toLowerCase().replace(/\s+/g,' ');
+}
 function seedIdFromWord(word,index){
-  return 'json:'+String(index)+'-'+normalizeText(word).replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,70);
+  return 'json:'+String(index)+'-'+String(word||'').trim().toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]+/g,'').replace(/^-+|-+$/g,'').slice(0,70);
 }
 function normalizeSeedItem(item,index){
-  const word=String(item&&item.word||'').trim();
-  const parts=uniqueParts(item&&item.parts);
-  const rawByPart=item&&item.meaningsByPart&&typeof item.meaningsByPart==='object'?item.meaningsByPart:{};
-  const normalizedByPart=normalizeMeaningsByPart(rawByPart);
+  item=item||{};
+  const word=String(item.word||'').trim();
+  const rawParts=Array.isArray(item.parts)?item.parts:[];
+  const parts=[];
+  rawParts.forEach(function(part){
+    const p=simplePart(part);
+    if(p&&!parts.includes(p)) parts.push(p);
+  });
+
+  const meanings=Array.isArray(item.meanings)
+    ? item.meanings.map(function(x){return cleanMeaningText(x);}).filter(Boolean)
+    : [];
+
   const meaningsByPart={};
-  parts.forEach(function(part){
-    meaningsByPart[part]=Array.isArray(normalizedByPart[part])?normalizedByPart[part]:[];
-  });
-  Object.keys(normalizedByPart).forEach(function(part){
-    if(!parts.includes(part)) parts.push(part);
-    meaningsByPart[part]=normalizedByPart[part];
-  });
-  let meanings=Array.isArray(item&&item.meanings)?item.meanings.map(function(x){return cleanMeaningText(x);}).filter(Boolean):[];
-  if(!meanings.length){
-    Object.keys(meaningsByPart).forEach(function(part){meanings=meanings.concat(meaningsByPart[part]);});
+  if(item.meaningsByPart&&typeof item.meaningsByPart==='object'){
+    Object.keys(item.meaningsByPart).forEach(function(key){
+      const part=simplePart(key);
+      if(!part) return;
+      const values=Array.isArray(item.meaningsByPart[key])?item.meaningsByPart[key]:[item.meaningsByPart[key]];
+      meaningsByPart[part]=values.map(function(x){return cleanMeaningText(x);}).filter(Boolean);
+      if(!parts.includes(part)) parts.push(part);
+    });
   }
+
+  if(parts.length===1 && meanings.length && !meaningsByPart[parts[0]]){
+    meaningsByPart[parts[0]]=meanings.slice();
+  }
+
   return {
-    id:String(item&&item.id||seedIdFromWord(word,index)),
+    id:String(item.id||seedIdFromWord(word,index)),
     word:word,
     parts:parts,
-    meanings:meanings,
+    meanings:meanings.length?meanings:Object.keys(meaningsByPart).reduce(function(arr,key){return arr.concat(meaningsByPart[key]||[]);},[]),
     meaningsByPart:meaningsByPart,
-    note:String(item&&item.note||'').trim(),
-    audioUrl:String(item&&item.audioUrl||'').trim(),
+    note:String(item.note||'').trim(),
+    audioUrl:String(item.audioUrl||'').trim(),
     fromJsonSeed:true
   };
 }
 function normalizeStoredItem(item,index,prefix){
   const clean=normalizeSeedItem(item,index);
-  clean.id=String(item&&item.id||((prefix||'item')+':'+index+'-'+normalizeText(clean.word)));
+  clean.id=String(item&&item.id||((prefix||'item')+':'+index+'-'+String(clean.word||'').trim().toLowerCase().replace(/\s+/g,'-')));
   clean.fromJsonSeed=!!(item&&item.fromJsonSeed);
   return clean;
 }
 function parseCommonSeedText(text){
-  let src=String(text||'').trim().replace(/^\uFEFF/,'');
-  const attempts=[];
-  attempts.push(src);
-  attempts.push(src.replace(/,\s*([\]\}])/g,'$1'));
-  if(src && src[0]!== '[') attempts.push('['+src.replace(/,\s*$/,'')+']');
-  for(let i=0;i<attempts.length;i++){
-    try{
-      const data=JSON.parse(attempts[i]);
-      if(Array.isArray(data)) return data;
-      if(data && Array.isArray(data.words)) return data.words;
-      if(data && Array.isArray(data.data)) return data.data;
-    }catch(err){}
-  }
-  throw new Error('File kho mẫu JSON chưa đúng định dạng.');
+  const src=String(text||'').trim().replace(/^\uFEFF/,'');
+  if(!src) return [];
+  const data=JSON.parse(src);
+  if(Array.isArray(data)) return data;
+  if(data&&Array.isArray(data.words)) return data.words;
+  if(data&&Array.isArray(data.data)) return data.data;
+  return [];
 }
 async function getToeicCommonSeed(){
   if(Array.isArray(TOEIC_COMMON_SEED_CACHE)) return TOEIC_COMMON_SEED_CACHE;
-  const paths=[
-    './data/vocabulary-common-seed.json',
-    '/data/vocabulary-common-seed.json',
-    'data/vocabulary-common-seed.json'
-  ];
+  const paths=['data/vocabulary-common-seed.json','./data/vocabulary-common-seed.json','/data/vocabulary-common-seed.json'];
   let lastErr=null;
   for(const path of paths){
     try{
-      const res=await fetch(path+'?ts='+Date.now(),{cache:'no-store'});
+      const res=await fetch(path+'?v='+Date.now(),{cache:'no-store'});
       if(!res.ok) throw new Error('HTTP '+res.status);
-      const text=await res.text();
-      const data=parseCommonSeedText(text);
-      const normalized=data.map(function(item,index){return normalizeSeedItem(item,index);})
-        .filter(function(item){return item.word && item.parts.length && (item.meanings.length || Object.keys(item.meaningsByPart||{}).length);});
-      TOEIC_COMMON_SEED_CACHE=normalized;
-      console.info('[Vocab] Loaded JSON seed:',path,TOEIC_COMMON_SEED_CACHE.length);
+      const data=parseCommonSeedText(await res.text());
+      TOEIC_COMMON_SEED_CACHE=data.map(function(item,index){return normalizeSeedItem(item,index);}).filter(function(item){return item.word;});
+      console.info('[Vocab] JSON loaded:',path,TOEIC_COMMON_SEED_CACHE.length);
       return TOEIC_COMMON_SEED_CACHE;
     }catch(err){lastErr=err;}
   }
-  throw new Error((lastErr&&lastErr.message)||'Không tải được dữ liệu kho mẫu JSON.');
+  console.error('[Vocab] JSON load failed:',lastErr);
+  TOEIC_COMMON_SEED_CACHE=[];
+  return TOEIC_COMMON_SEED_CACHE;
 }
 function itemForSave(item){
   return {
@@ -554,11 +557,11 @@ function mergeCommonSources(kvList,seedList){
   const out=[];
   const seen=new Set();
   (Array.isArray(seedList)?seedList:[]).forEach(function(item){
-    const key=normalizeText(item.word);
+    const key=String(item.word||'').trim().toLowerCase();
     if(key&&!seen.has(key)){seen.add(key);out.push(item);}
   });
   (Array.isArray(kvList)?kvList:[]).forEach(function(item){
-    const key=normalizeText(item.word);
+    const key=String(item.word||'').trim().toLowerCase();
     if(key&&!seen.has(key)){seen.add(key);out.push(item);}
   });
   return out;
@@ -599,19 +602,7 @@ async function cuteConfirm(opts){
 }
 function normalizeText(s){return String(s||'').trim().toLowerCase().replace(/\s+/g,' ');}
 function normalizePart(part){
-  const key=normalizeText(part).replace(/[.]/g,'').replace(/[-_]+/g,' ');
-  const aliases={
-    n:'noun','noun':'noun','nouns':'noun',
-    v:'verb','verb':'verb','verbs':'verb',
-    adj:'adjective','adjective':'adjective','adjectives':'adjective',
-    adv:'adverb','adverb':'adverb','adverbs':'adverb',
-    prep:'preposition','preposition':'preposition','prepositions':'preposition',
-    conj:'conjunction','conjunction':'conjunction','conjunctions':'conjunction',
-    pron:'pronoun','pronoun':'pronoun','pronouns':'pronoun',
-    phr:'phrase','phrase':'phrase','phrases':'phrase',
-    pv:'phrasal verb',phrasalverb:'phrasal verb','phrasal verb':'phrasal verb','phrasal verbs':'phrasal verb','phrasal-verb':'phrasal verb','phrasal_verbs':'phrasal verb','phrasalverbs':'phrasal verb'
-  };
-  return aliases[key]||key;
+  return String(part||'').trim().toLowerCase().replace(/\s+/g,' ');
 }
 function uniqueParts(parts){
   const out=[];
@@ -634,6 +625,7 @@ function normalizeMeaningsByPart(rawByPart){
   }
   return out;
 }
+
 function getStudentSession(){try{return JSON.parse(localStorage.getItem(STUDENT_KEY)||'null');}catch(e){return null;}}
 function requireStudentSession(){
   const s=getStudentSession();
@@ -878,26 +870,38 @@ async function loadVocabulary(){
   if(!student) return;
   document.getElementById('studentLine').textContent='Tài khoản: '+student.email;
   setStatus('userStatus','Đang tải hòm từ vựng...','warn');
+  setStatus('commonStatus','Đang tải kho từ vựng...','warn');
+
+  try{
+    commonSeedWords=await getToeicCommonSeed();
+    commonKvWords=[];
+    rebuildCommonWords();
+    setStatus('commonStatus','Đã tải kho mẫu JSON: '+commonSeedWords.length+' từ.','ok');
+    renderAll();
+    setTimeout(()=>setStatus('commonStatus',''),1200);
+  }catch(seedErr){
+    commonSeedWords=[];
+    rebuildCommonWords();
+    setStatus('commonStatus','Không tải được file JSON kho mẫu.','err');
+    renderAll();
+  }
+
   try{
     const res=await fetch('/api/vocabulary?email='+encodeURIComponent(student.email),{headers:{'x-student-email':student.email,'x-student-token':student.token||''},cache:'no-store'});
     const data=await res.json().catch(()=>({}));
-    if(!res.ok||!data.ok) throw new Error(data.error||'Không tải được từ vựng.');
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không tải được từ vựng cá nhân.');
     userWords=Array.isArray(data.userWords)?data.userWords.map(function(item,index){return normalizeStoredItem(item,index,'user');}):[];
     commonKvWords=Array.isArray(data.commonWords)?data.commonWords.map(function(item,index){return normalizeStoredItem(item,index,'kv');}):[];
-    try{
-      commonSeedWords=await getToeicCommonSeed();
-    }catch(seedErr){
-      commonSeedWords=[];
-      setStatus('commonStatus',seedErr.message||'Không tải được kho mẫu JSON.','err');
-    }
     rebuildCommonWords();
     setStatus('userStatus','Đã tải xong.','ok');
     setTimeout(()=>setStatus('userStatus',''),1200);
     renderAll();
   }catch(err){
-    setStatus('userStatus',err.message||'Không tải được từ vựng. Kiểm tra KV binding STUDENT_RESULTS.','err');
+    setStatus('userStatus',err.message||'Không tải được hòm cá nhân. Kho mẫu JSON vẫn hiển thị bình thường.','err');
+    renderAll();
   }
 }
+
 function validateItem(word,parts,meanings){
   if(!word.trim()) throw new Error('Vui lòng nhập từ/cụm từ.');
   if(parts.length===0) throw new Error('Vui lòng chọn ít nhất 1 loại từ.');
