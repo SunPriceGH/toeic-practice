@@ -2,13 +2,24 @@ import { isAdminPassword } from '../_shared/admin-auth.js';
 
 const COMMON_KEY = '__vocabulary_common__';
 const USER_PREFIX = '__vocabulary_user__';
-const ALLOWED_PARTS = ['noun', 'verb', 'adjective', 'adverb', 'preposition', 'conjunction', 'pronoun'];
+const ALLOWED_PARTS = [
+  'noun',
+  'verb',
+  'adjective',
+  'adverb',
+  'preposition',
+  'conjunction',
+  'pronoun',
+  'phrase',
+  'phrasal verb'
+];
 
 export async function onRequestGet(context) {
   try {
     const store = getStore(context);
-    const commonWords = await readList(store, COMMON_KEY);
     const url = new URL(context.request.url);
+    const userOnly = url.searchParams.get('userOnly') === '1';
+    const commonWords = userOnly ? [] : await readList(store, COMMON_KEY);
     const email = normalizeEmail(url.searchParams.get('email') || context.request.headers.get('x-student-email') || '');
 
     if (!email) {
@@ -23,7 +34,7 @@ export async function onRequestGet(context) {
     const userWords = await readList(store, userKey(email));
     return json({ ok: true, commonWords, userWords });
   } catch (err) {
-    return json({ ok: false, error: err.message || 'Không tải được từ vựng.' }, 500);
+    return json({ ok: false, error: publicErrorMessage(err, 'Không tải được từ vựng.') }, 500);
   }
 }
 
@@ -53,7 +64,9 @@ export async function onRequestPost(context) {
         word: source.word,
         parts: source.parts,
         meanings: source.meanings,
+        meaningsByPart: source.meaningsByPart || {},
         note: source.note || '',
+        audioUrl: source.audioUrl || '',
         source: 'common',
         commonId: source.id
       };
@@ -75,7 +88,7 @@ export async function onRequestPost(context) {
     const userWords = await upsertItem(store, userKey(email), item, 'user');
     return json({ ok: true, userWords });
   } catch (err) {
-    return json({ ok: false, error: err.message || 'Không lưu được từ vựng.' }, 500);
+    return json({ ok: false, error: publicErrorMessage(err, 'Không lưu được từ vựng.') }, isKvWriteLimitError(err) ? 429 : 500);
   }
 }
 
@@ -104,7 +117,7 @@ export async function onRequestDelete(context) {
     const userWords = await removeItem(store, userKey(email), id);
     return json({ ok: true, userWords });
   } catch (err) {
-    return json({ ok: false, error: err.message || 'Không xóa được từ vựng.' }, 500);
+    return json({ ok: false, error: publicErrorMessage(err, 'Không xóa được từ vựng.') }, isKvWriteLimitError(err) ? 429 : 500);
   }
 }
 
@@ -134,25 +147,52 @@ function requireStudent(context, body = {}) {
   return { email, token };
 }
 
+function normalizePart(part) {
+  return String(part || '').trim().toLowerCase().replace(/\s+/g, ' ');
+}
+
+function normalizeMeanings(raw) {
+  if (Array.isArray(raw)) {
+    return raw.map(m => String(m || '').trim()).filter(Boolean);
+  }
+  return String(raw || '')
+    .split(/\n|\|/g)
+    .map(s => s.trim())
+    .filter(Boolean);
+}
+
+function normalizeMeaningsByPart(rawByPart = {}) {
+  const out = {};
+  if (!rawByPart || typeof rawByPart !== 'object') return out;
+  Object.keys(rawByPart).forEach(key => {
+    const part = normalizePart(key);
+    if (!ALLOWED_PARTS.includes(part)) return;
+    const values = normalizeMeanings(rawByPart[key]);
+    if (values.length) out[part] = [...new Set(values)];
+  });
+  return out;
+}
+
 function normalizeVocabItem(raw) {
   const word = String(raw.word || '').trim().replace(/\s+/g, ' ');
-  const parts = Array.isArray(raw.parts) ? raw.parts.map(p => String(p).trim().toLowerCase()).filter(Boolean) : [];
-  let meanings = raw.meanings;
-  if (!Array.isArray(meanings)) {
-    meanings = String(meanings || '')
-      .split(/\n|;|\|/g)
-      .map(s => s.trim())
-      .filter(Boolean);
-  }
-  const note = String(raw.note || '').trim();
+  const parts = Array.isArray(raw.parts) ? raw.parts.map(normalizePart).filter(Boolean) : [];
   const cleanParts = [...new Set(parts)].filter(p => ALLOWED_PARTS.includes(p));
+  const meaningsByPart = normalizeMeaningsByPart(raw.meaningsByPart || {});
+
+  let meanings = normalizeMeanings(raw.meanings);
+  if (!meanings.length && Object.keys(meaningsByPart).length) {
+    meanings = Object.keys(meaningsByPart).reduce((arr, key) => arr.concat(meaningsByPart[key] || []), []);
+  }
   const cleanMeanings = [...new Set(meanings.map(m => String(m).trim()).filter(Boolean))];
 
   if (!word) throw new Error('Vui lòng nhập từ/cụm từ.');
   if (cleanParts.length === 0) throw new Error('Vui lòng chọn ít nhất 1 loại từ.');
   if (cleanMeanings.length === 0) throw new Error('Vui lòng nhập ít nhất 1 nghĩa.');
 
-  return { word, parts: cleanParts, meanings: cleanMeanings, note };
+  const note = String(raw.note || '').trim();
+  const audioUrl = String(raw.audioUrl || '').trim();
+
+  return { word, parts: cleanParts, meanings: cleanMeanings, meaningsByPart, note, audioUrl };
 }
 
 async function readList(store, key) {
@@ -169,12 +209,56 @@ async function readList(store, key) {
 }
 
 async function writeList(store, key, items) {
-  await store.put(key, JSON.stringify({ items, updatedAt: new Date().toISOString() }));
+  const payload = JSON.stringify({ items, updatedAt: new Date().toISOString() });
+  await kvPutWithRetry(store, key, payload);
+}
+
+async function kvPutWithRetry(store, key, value, options = undefined) {
+  let lastErr;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    try {
+      await store.put(key, value, options);
+      return;
+    } catch (err) {
+      lastErr = err;
+      if (isKvDailyLimitError(err) || !isKvWriteLimitError(err) || attempt >= 3) break;
+      await sleep(1250 + attempt * 550);
+    }
+  }
+  throw lastErr;
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function isKvDailyLimitError(err) {
+  const msg = String(err && (err.message || err.stack) || err || '').toLowerCase();
+  return msg.includes('kv') && (msg.includes('daily') || msg.includes('day') || msg.includes('quota') || msg.includes('exceed')) && (msg.includes('limit') || msg.includes('exceed'));
+}
+
+function isKvWriteLimitError(err) {
+  const msg = String(err && (err.message || err.stack) || err || '').toLowerCase();
+  return msg.includes('kv') && (msg.includes('put') || msg.includes('write')) && (msg.includes('limit') || msg.includes('rate') || msg.includes('once') || msg.includes('second') || msg.includes('exceed'));
+}
+
+function publicErrorMessage(err, fallback) {
+  if (isKvDailyLimitError(err)) {
+    return 'Cloudflare KV đã hết giới hạn hôm nay. Dữ liệu sẽ tạm lưu trên thiết bị và có thể đồng bộ lại sau.';
+  }
+  if (isKvWriteLimitError(err)) {
+    return 'Bạn thao tác hơi nhanh. Vui lòng thử lại sau 1-2 giây.';
+  }
+  return err?.message || fallback;
+}
+
+function wordKey(item) {
+  return String(item.word || '').trim().toLowerCase().replace(/\s+/g, ' ');
 }
 
 function vocabSignature(item) {
   return [
-    String(item.word || '').trim().toLowerCase().replace(/\s+/g, ' '),
+    wordKey(item),
     (item.parts || []).slice().sort().join(','),
     (item.meanings || []).map(m => String(m).trim().toLowerCase()).sort().join('|')
   ].join('::');
@@ -183,7 +267,8 @@ function vocabSignature(item) {
 async function upsertItem(store, key, cleanItem, owner) {
   const items = await readList(store, key);
   const sig = vocabSignature(cleanItem);
-  const existingIndex = items.findIndex(item => vocabSignature(item) === sig);
+  const word = wordKey(cleanItem);
+  const existingIndex = items.findIndex(item => vocabSignature(item) === sig || wordKey(item) === word);
   const now = new Date().toISOString();
   if (existingIndex >= 0) {
     items[existingIndex] = {
@@ -191,7 +276,9 @@ async function upsertItem(store, key, cleanItem, owner) {
       word: cleanItem.word,
       parts: cleanItem.parts,
       meanings: cleanItem.meanings,
+      meaningsByPart: cleanItem.meaningsByPart || {},
       note: cleanItem.note,
+      audioUrl: cleanItem.audioUrl || items[existingIndex].audioUrl || '',
       updatedAt: now
     };
   } else {
@@ -200,7 +287,9 @@ async function upsertItem(store, key, cleanItem, owner) {
       word: cleanItem.word,
       parts: cleanItem.parts,
       meanings: cleanItem.meanings,
+      meaningsByPart: cleanItem.meaningsByPart || {},
       note: cleanItem.note,
+      audioUrl: cleanItem.audioUrl || '',
       source: cleanItem.source || owner,
       commonId: cleanItem.commonId || '',
       createdAt: now,
@@ -220,7 +309,9 @@ async function replaceItem(store, key, id, cleanItem, owner) {
     word: cleanItem.word,
     parts: cleanItem.parts,
     meanings: cleanItem.meanings,
+    meaningsByPart: cleanItem.meaningsByPart || {},
     note: cleanItem.note,
+    audioUrl: cleanItem.audioUrl || items[index].audioUrl || '',
     source: items[index].source || owner,
     updatedAt: new Date().toISOString()
   };
