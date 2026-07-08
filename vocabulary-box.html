@@ -2520,6 +2520,15 @@ function randomMeaning(item){
   const meanings=getCleanMeanings(item);
   return meanings[Math.floor(Math.random()*meanings.length)]||'';
 }
+function scrollPracticeCenter(extraDelay){
+  const target=document.querySelector('#practiceArea .game-card')||document.getElementById('practiceArea')||document.getElementById('panel-practice');
+  if(!target) return;
+  const run=function(){
+    target.scrollIntoView({behavior:'smooth',block:'center',inline:'nearest'});
+  };
+  requestAnimationFrame(run);
+  setTimeout(run, typeof extraDelay==='number'?extraDelay:90);
+}
 function startPractice(mode){
   showPanel('practice');
   if(userWords.length<20) return;
@@ -2527,7 +2536,7 @@ function startPractice(mode){
   game={mode,items:shuffle(userWords).slice(0,10),index:0,score:0,wrongs:[],answerLog:[],answered:false,historySaved:false};
   document.getElementById('practiceArea').classList.add('show');
   renderQuestion();
-  document.getElementById('practiceArea').scrollIntoView({behavior:'smooth',block:'start'});
+  scrollPracticeCenter(180);
 }
 function currentItem(){return game.items[game.index];}
 function modeTitle(){return game.mode==='choice'?'Trò 1 · Chọn đáp án':'Trò 2 · Gõ đúng từ';}
@@ -2544,8 +2553,15 @@ function renderQuestion(){
     area.innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">'+modeTitle()+'</div><div class="progress-pill">Câu '+(game.index+1)+' / '+game.items.length+' · Điểm '+game.score+'</div></div><div class="question-hint">Chọn từ/cụm từ đúng với nghĩa sau:</div><div class="question-meaning">'+escapeHtml(meaning)+'</div><div class="choices">'+choices.map(c=>'<button class="choice" type="button" data-choice="'+escapeHtml(c)+'" onclick="answerChoice(this,this.dataset.choice)">'+escapeHtml(c)+'</button>').join('')+'</div><div class="feedback" id="feedback"></div></div>';
   }else{
     area.innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">'+modeTitle()+'</div><div class="progress-pill">Câu '+(game.index+1)+' / '+game.items.length+' · Điểm '+game.score+'</div></div><div class="question-hint">Nhìn nghĩa và gõ đúng từ/cụm từ. Khoảng trắng được giữ nguyên, không đổi thành dấu gạch.</div><div class="question-meaning">'+escapeHtml(meaning)+'</div><div class="mask">'+maskWord(item.word)+'</div><form class="type-row" onsubmit="answerTyping(event)"><input id="typingAnswer" autocomplete="off" placeholder="Gõ đáp án ở đây..."><button class="btn" type="submit">Kiểm tra</button></form><div class="feedback" id="feedback"></div></div>';
-    setTimeout(()=>document.getElementById('typingAnswer')?.focus(),60);
+    setTimeout(function(){
+      const input=document.getElementById('typingAnswer');
+      if(input){
+        try{input.focus({preventScroll:true});}catch(e){input.focus();}
+      }
+      scrollPracticeCenter(120);
+    },60);
   }
+  scrollPracticeCenter(120);
 }
 function maskWord(word){
   return String(word||'').split('').map(function(ch){
@@ -2590,6 +2606,7 @@ function answerChoice(btn,choice){
     showFeedback(false,'Sai. Đáp án đúng là: <b>'+escapeHtml(item.word)+'</b>');
   }
   addNextButton();
+  scrollPracticeCenter(100);
 }
 function answerTyping(e){
   e.preventDefault();
@@ -2606,6 +2623,7 @@ function answerTyping(e){
   }
   document.getElementById('typingAnswer').disabled=true;
   addNextButton();
+  scrollPracticeCenter(100);
 }
 function addNextButton(){
   const box=document.querySelector('.game-card');
@@ -2614,7 +2632,7 @@ function addNextButton(){
   btn.type='button';
   btn.textContent=game.index===game.items.length-1?'Xem kết quả':'Câu tiếp theo';
   btn.style.marginTop='14px';
-  btn.onclick=function(){game.index++;game.answered=false;renderQuestion();};
+  btn.onclick=function(){game.index++;game.answered=false;renderQuestion();scrollPracticeCenter(150);};
   box.appendChild(btn);
 }
 function renderGameEnd(){
@@ -2623,6 +2641,7 @@ function renderGameEnd(){
   const percent=Math.round(game.score/game.items.length*100);
   const wrongHtml=game.wrongs.length?'<div class="wrong-list">'+game.wrongs.map(function(w,i){return '<div class="wrong-item"><b>Câu sai '+(i+1)+' · '+escapeHtml(w.game)+'</b><br>Nghĩa: '+escapeHtml(w.meaning)+'<br>Bạn trả lời: '+escapeHtml(w.answer)+'<br>Đáp án đúng: <b>'+escapeHtml(w.correct)+'</b></div>';}).join('')+'</div>':'<div class="status show ok">Không có câu sai. Rất tốt!</div>';
   document.getElementById('practiceArea').innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">Hoàn thành</div><div class="progress-pill">'+game.score+' / '+game.items.length+' · '+percent+'%</div></div><div class="question-meaning">Kết quả luyện tập</div><p class="muted">Các câu sai được lưu lại ngay bên dưới để bạn xem lại.</p><div class="actions"><button class="btn good" id="submitResultBtn" type="button" onclick="submitResult()">Nộp kết quả</button><button class="btn secondary" type="button" onclick="startPractice(selectedMode)">Luyện lại 10 từ khác</button></div><div class="status" id="resultStatus"></div>'+wrongHtml+'</div>';
+  scrollPracticeCenter(180);
 }
 function collectResultPayload(){
   const now=new Date().toISOString();
@@ -2764,7 +2783,7 @@ function showPanel(name){
     btn.classList.toggle('active', btn.dataset.panel===name);
   });
   const target=document.getElementById('panel-'+name);
-  if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+  if(target) target.scrollIntoView({behavior:'smooth',block:name==='practice'?'center':'start'});
 }
 function togglePracticePanel(){
   showPanel('practice');
