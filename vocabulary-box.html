@@ -313,19 +313,25 @@ input,textarea{
 <style>
 /* ===== Patch: chọn từ dùng trong trò chơi ===== */
 .word-card{position:relative}
-.word-card .word-head{padding-right:42px}
+.word-head{align-items:flex-start}
+.word-main-title{min-width:0;flex:1}
+.word-card-tools{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:8px;
+  flex:0 0 auto;
+  margin-left:auto;
+}
 .word-use-toggle{
-  position:absolute;
-  top:12px;
-  right:12px;
-  width:34px;
-  height:34px;
-  border-radius:14px;
+  width:38px;
+  height:38px;
+  border-radius:15px;
   display:grid;
   place-items:center;
   cursor:pointer;
   user-select:none;
-  z-index:3;
+  flex:0 0 38px;
 }
 .word-use-toggle input{
   position:absolute;
@@ -333,14 +339,14 @@ input,textarea{
   pointer-events:none;
 }
 .word-use-toggle span{
-  width:34px;
-  height:34px;
-  border-radius:14px;
+  width:38px;
+  height:38px;
+  border-radius:15px;
   display:grid;
   place-items:center;
-  border:2px solid #cfe7ff;
-  background:#eef7ff;
-  color:#3264d8;
+  border:2px solid #b7f3d3;
+  background:#e6fff2;
+  color:#107342;
   font-size:18px;
   font-weight:700;
   box-shadow:0 8px 18px rgba(42,69,116,.08);
@@ -375,8 +381,8 @@ input,textarea{
   font-weight:700;
 }
 @media(max-width:560px){
-  .word-use-toggle{top:10px;right:10px}
-  .word-card .word-head{padding-right:38px}
+  .word-card-tools{gap:6px}
+  .audio-btn,.word-use-toggle,.word-use-toggle span{width:36px;height:36px;flex-basis:36px}
 }
 </style>
 </head>
@@ -1383,7 +1389,8 @@ function renderWordCard(item,scope){
   }
   const commonClass=scope==='common'?(owned?' common-owned':' common-new'):'';
   const usedClass=scope==='user'&&!usedInGame?' not-used-in-game':'';
-  return '<article class="word-card '+(owned?'in-box':'not-in-box')+commonClass+usedClass+'">'+gameToggle+'<div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div></div>'+audioButtonHtml(scope,item.id)+'</div>'+meanings+progress+gameNote+'<div class="mini-actions">'+actions+'</div></article>';
+  const cardTools='<div class="word-card-tools">'+audioButtonHtml(scope,item.id)+gameToggle+'</div>';
+  return '<article class="word-card '+(owned?'in-box':'not-in-box')+commonClass+usedClass+'"><div class="word-head"><div class="word-main-title"><div class="word-title">'+escapeHtml(item.word)+'</div></div>'+cardTools+'</div>'+meanings+progress+gameNote+'<div class="mini-actions">'+actions+'</div></article>';
 }
 function wordProgressLevel(item){
   const stat=getWordHistoryStats(item);
