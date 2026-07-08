@@ -26,6 +26,24 @@ button,input,textarea{font-family:inherit}
 @media(max-width:900px){.hero{grid-template-columns:1fr}.mascot{min-height:150px}.tool-dock{grid-template-columns:repeat(2,minmax(0,1fr))}.hero h2{font-size:31px}.choices{grid-template-columns:1fr}}
 @media(max-width:560px){.page{padding:24px 13px 52px}.topbar{align-items:stretch}.nav{width:100%}.btn{width:100%}.hero{padding:16px;border-radius:28px}.stats,.tool-dock{grid-template-columns:1fr}.view-panel{padding:16px;border-radius:26px}.list{grid-template-columns:1fr}.brand h1{font-size:25px}.question-meaning{font-size:23px}.type-row input{min-width:100%;font-size:19px}}
 </style>
+<style>
+.parts{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.part-check{user-select:none;display:inline-flex!important;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-width:88px;min-height:64px;text-align:center;border:2px solid #ddecff;background:#fff;color:#31415d;border-radius:24px;padding:10px 12px;font-size:14px;font-weight:700;line-height:1.15}
+.part-check input{width:18px!important;height:18px!important;min-width:18px!important;padding:0!important;margin:0!important;accent-color:var(--blue);flex:0 0 auto}
+.part-check span{display:block;width:100%;text-align:center}
+.part-check:has(input:checked){border-color:#8bd3ff;background:#eef9ff;color:#3264d8;box-shadow:0 10px 22px rgba(79,124,255,.12)}
+.word-card.in-box{border-color:#b7f3d3;background:linear-gradient(180deg,#f5fff9,#ffffff)}
+.word-card.not-in-box{border-color:#e6eef8}
+.owned-badge{display:inline-flex;align-items:center;gap:5px;margin-top:8px;border-radius:999px;padding:6px 9px;font-size:12px;font-weight:700;background:#e6fff2;color:#107342;border:1.5px solid #b7f3d3}
+.owned-badge.not-owned{background:#fff8e8;color:#8b5400;border-color:#ffe0a3}
+.mini-btn:disabled{opacity:.62;cursor:not-allowed;filter:none}
+.swal2-popup{border-radius:24px!important;font-family:Arial,Helvetica,sans-serif!important}
+.swal2-title,.swal2-html-container,.swal2-confirm,.swal2-cancel{font-weight:700!important}
+.swal2-confirm{border-radius:999px!important}
+.swal2-cancel{border-radius:999px!important}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
 <div class="top-line"></div>
@@ -243,6 +261,19 @@ let game=null;
 let resultSubmitted=false;
 
 function escapeHtml(s){return String(s||'').replace(/[&<>'"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c];});}
+function cuteToast(message,icon){
+  if(window.Swal){
+    Swal.fire({toast:true,position:'top',icon:icon||'success',title:message,showConfirmButton:false,timer:3000,timerProgressBar:true});
+  }else{setTimeout(function(){alert(message);},0);}
+}
+async function cuteConfirm(opts){
+  opts=opts||{};
+  if(window.Swal){
+    const result=await Swal.fire({icon:opts.icon||'question',title:opts.title||'Xác nhận',text:opts.text||'',showCancelButton:true,confirmButtonText:opts.confirmButtonText||'Đồng ý',cancelButtonText:opts.cancelButtonText||'Hủy',reverseButtons:true,focusCancel:true});
+    return result.isConfirmed;
+  }
+  return confirm((opts.title||'Xác nhận')+(opts.text?'\n'+opts.text:''));
+}
 function normalizeText(s){return String(s||'').trim().toLowerCase().replace(/\s+/g,' ');}
 function getStudentSession(){try{return JSON.parse(localStorage.getItem(STUDENT_KEY)||'null');}catch(e){return null;}}
 function requireStudentSession(){
@@ -264,7 +295,7 @@ function setStatus(id,msg,type){
 }
 function buildPartChecks(containerId,prefix){
   document.getElementById(containerId).innerHTML=PARTS.map(function(part){
-    return '<label class="part-check"><input type="checkbox" name="'+prefix+'Part" value="'+part+'">'+PART_LABEL[part]+'</label>';
+    return '<label class="part-check"><input type="checkbox" name="'+prefix+'Part" value="'+part+'" onchange="handlePartChange(\''+prefix+'\')"><span>'+PART_LABEL[part]+'</span></label>';
   }).join('');
 }
 function selectedParts(prefix){
@@ -273,7 +304,47 @@ function selectedParts(prefix){
 function clearPartChecks(prefix){
   document.querySelectorAll('input[name="'+prefix+'Part"]').forEach(x=>x.checked=false);
 }
-function parseMeanings(value){return String(value||'').split(/\n|;|\|/g).map(s=>s.trim()).filter(Boolean);}
+function markerForPart(part){return '['+(PART_LABEL[part]||part)+']';}
+function lineToPartMarker(line){
+  const clean=normalizeText(line).replace(/[\[\]［］]/g,'').replace(/^[-–—\s]+|[-–—\s:]+$/g,'');
+  return PARTS.includes(clean)?clean:'';
+}
+function getMeaningTextarea(prefix){
+  return document.getElementById(prefix==='common'?'commonMeaningInput':'meaningInput');
+}
+function handlePartChange(prefix){syncMeaningGuides(prefix);}
+function syncMeaningGuides(prefix){
+  const ta=getMeaningTextarea(prefix);
+  if(!ta) return;
+  const chosen=selectedParts(prefix);
+  const lines=String(ta.value||'').split(/\r?\n/);
+  const sections={};
+  const loose=[];
+  let current='';
+  lines.forEach(function(raw){
+    const marker=lineToPartMarker(raw);
+    if(marker){current=marker;if(!sections[current]) sections[current]=[];return;}
+    if(current){if(!sections[current]) sections[current]=[];sections[current].push(raw);}
+    else loose.push(raw);
+  });
+  Object.keys(sections).forEach(function(part){
+    if(!chosen.includes(part)) loose.push.apply(loose,sections[part].filter(function(line){return line.trim();}));
+  });
+  const output=[];
+  chosen.forEach(function(part){
+    output.push(markerForPart(part));
+    (sections[part]||[]).forEach(function(line){output.push(line);});
+  });
+  const looseClean=loose.filter(function(line){return line.trim()&&!lineToPartMarker(line);});
+  if(looseClean.length){
+    if(output.length) output.push('');
+    looseClean.forEach(function(line){output.push(line);});
+  }
+  ta.value=output.join('\n').trimStart();
+}
+function parseMeanings(value){
+  return String(value||'').split(/\n|;|\|/g).map(s=>s.trim()).filter(function(line){return line&&!lineToPartMarker(line);});
+}
 function clearUserForm(){
   document.getElementById('wordInput').value='';
   document.getElementById('meaningInput').value='';
@@ -325,10 +396,12 @@ async function addUserWord(e){
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok) throw new Error(data.error||'Không lưu được từ.');
     userWords=Array.isArray(data.userWords)?data.userWords:userWords;
+    const savedWord=item.word;
     clearUserForm();
     setStatus('userStatus','Đã lưu vào hòm từ vựng cá nhân.','ok');
+    cuteToast('Đã thêm "'+savedWord+'" vào hòm','success');
     renderAll();
-  }catch(err){setStatus('userStatus',err.message||'Không lưu được từ.','err');}
+  }catch(err){setStatus('userStatus',err.message||'Không lưu được từ.','err');cuteToast(err.message||'Không lưu được từ.','error');}
 }
 async function addCommonWord(e){
   e.preventDefault();
@@ -347,16 +420,18 @@ async function addCommonWord(e){
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok) throw new Error(data.error||'Không thêm được vào kho chung.');
     commonWords=Array.isArray(data.commonWords)?data.commonWords:commonWords;
+    const savedWord=item.word;
     clearCommonForm();
     setStatus('commonStatus','Đã thêm vào kho chung.','ok');
+    cuteToast('Đã thêm "'+savedWord+'" vào kho chung','success');
     renderAll();
-  }catch(err){setStatus('commonStatus',err.message||'Không thêm được vào kho chung.','err');}
+  }catch(err){setStatus('commonStatus',err.message||'Không thêm được vào kho chung.','err');cuteToast(err.message||'Không thêm được vào kho chung.','error');}
 }
 
 async function seedToeicCommon(){
   const pass=document.getElementById('adminPassword').value;
   if(!pass) return setStatus('commonStatus','Nhập mật khẩu admin trước khi tạo kho mẫu.','err');
-  if(!confirm('Tạo kho chung mẫu gồm 50 danh từ + 50 động từ TOEIC?')) return;
+  if(!await cuteConfirm({title:'Tạo kho mẫu TOEIC 100 từ?',text:'Gồm 50 danh từ + 50 động từ TOEIC phổ biến.',confirmButtonText:'Tạo kho mẫu',icon:'question'})) return;
   const btns=Array.from(document.querySelectorAll('button'));
   btns.forEach(b=>b.disabled=true);
   let ok=0,fail=0,lastCommon=commonWords;
@@ -374,6 +449,7 @@ async function seedToeicCommon(){
     }
     commonWords=lastCommon;
     setStatus('commonStatus','Đã tạo kho mẫu TOEIC: '+ok+' từ thành công'+(fail?'; '+fail+' từ lỗi.':'.'),'ok');
+    cuteToast('Đã tạo kho mẫu TOEIC: '+ok+' từ','success');
     renderAll();
   }finally{
     btns.forEach(b=>b.disabled=false);
@@ -381,52 +457,70 @@ async function seedToeicCommon(){
 }
 
 async function copyCommonToUser(id){
+  const target=commonWords.find(function(x){return String(x.id)===String(id);});
+  if(target&&userHasWord(target)){
+    cuteToast('"'+target.word+'" đã có trong hòm của bạn','info');
+    return;
+  }
   try{
     setStatus('commonStatus','Đang thêm từ này vào hòm của bạn...','warn');
     const res=await fetch('/api/vocabulary',{method:'POST',headers:authHeaders(),body:JSON.stringify({action:'copy-common-to-user',email:student.email,commonId:id})});
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok) throw new Error(data.error||'Không thêm được từ vào hòm.');
     userWords=Array.isArray(data.userWords)?data.userWords:userWords;
+    const word=target?target.word:'từ này';
     setStatus('commonStatus','Đã thêm vào hòm của bạn.','ok');
+    cuteToast('Đã thêm "'+word+'" vào hòm','success');
     renderAll();
-  }catch(err){setStatus('commonStatus',err.message||'Không thêm được từ vào hòm.','err');}
+  }catch(err){setStatus('commonStatus',err.message||'Không thêm được từ vào hòm.','err');cuteToast(err.message||'Không thêm được từ vào hòm.','error');}
 }
 async function deleteUserWord(id){
-  if(!confirm('Xóa từ này khỏi hòm cá nhân?')) return;
+  const target=userWords.find(function(x){return String(x.id)===String(id);});
+  const word=target?target.word:'từ này';
+  if(!await cuteConfirm({title:'Xóa khỏi hòm?',text:'Bạn muốn xóa "'+word+'" khỏi hòm cá nhân?',confirmButtonText:'Xóa',icon:'warning'})) return;
   try{
     const res=await fetch('/api/vocabulary?scope=user&id='+encodeURIComponent(id)+'&email='+encodeURIComponent(student.email),{method:'DELETE',headers:{'x-student-email':student.email,'x-student-token':student.token||''}});
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok) throw new Error(data.error||'Không xóa được từ.');
     userWords=Array.isArray(data.userWords)?data.userWords:userWords.filter(x=>x.id!==id);
+    cuteToast('Đã xóa "'+word+'" khỏi hòm','success');
     renderAll();
-  }catch(err){setStatus('userStatus',err.message||'Không xóa được từ.','err');}
+  }catch(err){setStatus('userStatus',err.message||'Không xóa được từ.','err');cuteToast(err.message||'Không xóa được từ.','error');}
 }
 async function deleteCommonWord(id){
   const pass=document.getElementById('adminPassword').value;
-  if(!pass) return setStatus('commonStatus','Nhập mật khẩu admin trước khi xóa từ trong kho chung.','err');
-  if(!confirm('Xóa từ này khỏi kho chung?')) return;
+  if(!pass) {setStatus('commonStatus','Nhập mật khẩu admin trước khi xóa từ trong kho chung.','err');cuteToast('Nhập mật khẩu admin trước khi xóa','error');return;}
+  const target=commonWords.find(function(x){return String(x.id)===String(id);});
+  const word=target?target.word:'từ này';
+  if(!await cuteConfirm({title:'Xóa khỏi kho chung?',text:'Bạn muốn xóa "'+word+'" khỏi kho chung?',confirmButtonText:'Xóa',icon:'warning'})) return;
   try{
     const res=await fetch('/api/vocabulary?scope=common&id='+encodeURIComponent(id),{method:'DELETE',headers:{'x-admin-password':pass}});
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok) throw new Error(data.error||'Không xóa được từ trong kho chung.');
     commonWords=Array.isArray(data.commonWords)?data.commonWords:commonWords.filter(x=>x.id!==id);
     setStatus('commonStatus','Đã xóa từ khỏi kho chung.','ok');
+    cuteToast('Đã xóa "'+word+'" khỏi kho chung','success');
     renderAll();
-  }catch(err){setStatus('commonStatus',err.message||'Không xóa được từ trong kho chung.','err');}
+  }catch(err){setStatus('commonStatus',err.message||'Không xóa được từ trong kho chung.','err');cuteToast(err.message||'Không xóa được từ trong kho chung.','error');}
 }
 function wordMatches(item,q){
   if(!q) return true;
   q=normalizeText(q);
   return normalizeText(item.word).includes(q) || normalizeText((item.meanings||[]).join(' ')).includes(q) || normalizeText((item.parts||[]).join(' ')).includes(q);
 }
+function userHasWord(item){
+  return userWords.some(function(w){return normalizeText(w.word)===normalizeText(item.word);});
+}
 function renderWordCard(item,scope){
   const meanings=(item.meanings||[]).map(escapeHtml).join('<br>');
   const parts=(item.parts||[]).map(p=>'<span class="tag">'+escapeHtml(p)+'</span>').join('');
   const note=item.note?'<div class="note">Ghi chú: '+escapeHtml(item.note)+'</div>':'';
+  const owned=scope==='common'&&userHasWord(item);
+  const commonBadge=scope==='common'?(owned?'<div><span class="owned-badge">✓ Đã có trong hòm</span></div>':'<div><span class="owned-badge not-owned">＋ Chưa thêm vào hòm</span></div>'):'';
   const actions=scope==='user'
     ? '<button class="mini-btn del" type="button" onclick="deleteUserWord(\''+escapeHtml(item.id)+'\')">Xóa khỏi hòm</button>'
-    : '<button class="mini-btn add" type="button" onclick="copyCommonToUser(\''+escapeHtml(item.id)+'\')">Thêm vào hòm của tôi</button><button class="mini-btn del" type="button" onclick="deleteCommonWord(\''+escapeHtml(item.id)+'\')">Admin xóa</button>';
-  return '<article class="word-card"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div><div class="tag-row">'+parts+'</div></div></div><div class="meaning">'+meanings+'</div>'+note+'<div class="mini-actions">'+actions+'</div></article>';
+    : (owned?'<button class="mini-btn add" type="button" disabled>Đã có trong hòm</button>':'<button class="mini-btn add" type="button" onclick="copyCommonToUser(\''+escapeHtml(item.id)+'\')">Thêm vào hòm của tôi</button>')+'<button class="mini-btn del" type="button" onclick="deleteCommonWord(\''+escapeHtml(item.id)+'\')">Admin xóa</button>';
+  return '<article class="word-card '+(owned?'in-box':'not-in-box')+'"><div class="word-head"><div><div class="word-title">'+escapeHtml(item.word)+'</div><div class="tag-row">'+parts+'</div>'+commonBadge+'</div></div><div class="meaning">'+meanings+'</div>'+note+'<div class="mini-actions">'+actions+'</div></article>';
 }
 function renderAll(){
   const userQ=document.getElementById('userSearch').value||'';
