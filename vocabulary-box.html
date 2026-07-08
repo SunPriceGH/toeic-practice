@@ -665,7 +665,7 @@ function splitMeaningText(value){
 function cleanMeaningText(text){
   let s=String(text||'').trim();
   const labels=PARTS.concat(['n','v','adj','adv','prep','conj','pron','phr','pv','phrasal verbs']).join('|');
-  const re=new RegExp('^\s*[\[［]?\s*('+labels+')\s*[\]］]?\s*[:：\-–—]?\s*','i');
+  const re=new RegExp('^\\s*[\\[［]?\\s*('+labels+')\\s*[\\]］]?\\s*[:：\\-–—]?\\s*','i');
   s=s.replace(re,'').trim();
   return s;
 }
