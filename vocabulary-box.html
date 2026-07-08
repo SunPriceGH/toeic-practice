@@ -236,6 +236,42 @@ h1,h2,h3,h4,h5,h6,b,strong,.word-title,.stat b,.tool-card b,.mode-copy b,.histor
   .question-part-pill{min-width:auto}
 }
 
+
+
+/* ===== Patch: anti-copy + touch/hover button feedback ===== */
+html,body,.page,.view-panel,.word-card,.game-card,.mode-card,.tool-card,.history-box{
+  -webkit-user-select:none;
+  user-select:none;
+}
+input,textarea{
+  -webkit-user-select:text;
+  user-select:text;
+}
+.btn,.tool-card,.mini-btn,.sort-btn,.choice,.mode-card,.tab-btn,.audio-btn,.audio-inline-btn,.part-check,.admin-drawer summary{
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.btn:not(:disabled),.tool-card,.mini-btn:not(:disabled),.sort-btn:not(:disabled),.choice:not(:disabled),.mode-card,.tab-btn:not(:disabled),.audio-btn:not(:disabled),.audio-inline-btn:not(:disabled){
+  transition:transform .16s ease, box-shadow .16s ease, background-color .16s ease, border-color .16s ease, filter .16s ease, opacity .16s ease;
+}
+.btn:active:not(:disabled),.mini-btn:active:not(:disabled),.sort-btn:active:not(:disabled),.tab-btn:active:not(:disabled),.audio-btn:active:not(:disabled),.audio-inline-btn:active:not(:disabled){
+  transform:translateY(1px) scale(.97);
+  filter:saturate(1.08);
+}
+.tool-card:active,.mode-card:active,.choice:active:not(:disabled){
+  transform:translateY(1px) scale(.985);
+  filter:saturate(1.08);
+}
+.mini-btn:hover,.mini-btn:focus-visible{
+  transform:translateY(-1px);
+  box-shadow:0 8px 18px rgba(42,69,116,.10);
+}
+.mini-btn.add:hover,.mini-btn.add:focus-visible{background:#d9ffeb;border-color:#a9edcb;color:#0d693e}
+.mini-btn.del:hover,.mini-btn.del:focus-visible{background:#ffe1e9;border-color:#ffb4c8;color:#9d1738}
+.mini-btn:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.choice:hover,.choice:focus-visible{box-shadow:0 12px 26px rgba(42,69,116,.10)}
+.part-check:hover{border-color:#9fd5ff;background:#f5fbff}
+.admin-drawer summary:hover{color:#6d4200}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -2226,6 +2262,8 @@ let resultSubmitted=false;
 let activeAudio=null;
 let userSortMode='az';
 let commonSortMode='az';
+let userSortDir='asc';
+let commonSortDir='asc';
 
 function escapeHtml(s){return String(s||'').replace(/[&<>'"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c];});}
 function cuteToast(message,icon){
@@ -2503,6 +2541,11 @@ function validateItem(word,parts,meanings){
   if(parts.length===0) throw new Error('Vui lòng chọn ít nhất 1 loại từ.');
   if(meanings.length===0) throw new Error('Vui lòng nhập ít nhất 1 nghĩa.');
 }
+function userWordAlreadyExists(word){
+  const key=normalizeText(word);
+  if(!key) return false;
+  return userWords.some(function(item){return normalizeText(item.word)===key;});
+}
 async function addUserWord(e){
   e.preventDefault();
   const meaningData=parseMeaningRows('user');
@@ -2515,6 +2558,12 @@ async function addUserWord(e){
   };
   try{
     validateItem(item.word,item.parts,item.meanings);
+    if(userWordAlreadyExists(item.word)){
+      const msg='Từ "'+item.word+'" đã tồn tại trong hòm của bạn.';
+      setStatus('userStatus',msg,'err');
+      cuteToast(msg,'warning');
+      return;
+    }
     setStatus('userStatus','Đang lưu vào hòm của bạn...','warn');
     const res=await fetch('/api/vocabulary',{method:'POST',headers:authHeaders(),body:JSON.stringify({action:'add-user',email:student.email,item})});
     const data=await res.json().catch(()=>({}));
@@ -2747,39 +2796,60 @@ function wordProgressLevel(item){
 function compareAZ(a,b){
   return normalizeText(a.word).localeCompare(normalizeText(b.word),'en',{sensitivity:'base'});
 }
-function sortWords(list,mode){
+function sortWords(list,mode,dir){
   const arr=list.slice();
+  const direction=dir==='desc'?-1:1;
+  function byAZ(a,b){ return compareAZ(a,b)*direction; }
   if(mode==='length'){
     return arr.sort(function(a,b){
-      return String(a.word||'').length-String(b.word||'').length || compareAZ(a,b);
+      const diff=String(a.word||'').length-String(b.word||'').length;
+      return diff?diff*direction:compareAZ(a,b);
     });
   }
   if(mode==='progress'){
     return arr.sort(function(a,b){
-      return wordProgressLevel(b)-wordProgressLevel(a) || compareAZ(a,b);
+      const diff=wordProgressLevel(a)-wordProgressLevel(b);
+      return diff?diff*direction:compareAZ(a,b);
     });
   }
-  return arr.sort(compareAZ);
+  return arr.sort(byAZ);
+}
+function sortLabel(mode,dir){
+  if(mode==='length') return dir==='desc'?'Dài → ngắn':'Ngắn → dài';
+  if(mode==='progress') return dir==='desc'?'Progress cao → thấp':'Progress thấp → cao';
+  return dir==='desc'?'Z → A':'A → Z';
 }
 function updateSortButtons(){
   document.querySelectorAll('.sort-btn').forEach(function(btn){
     const scope=btn.dataset.scope;
     const mode=btn.dataset.sort;
-    const active=(scope==='user'?userSortMode:commonSortMode)===mode;
+    const currentMode=scope==='user'?userSortMode:commonSortMode;
+    const currentDir=scope==='user'?userSortDir:commonSortDir;
+    const active=currentMode===mode;
     btn.classList.toggle('active',active);
+    btn.textContent=sortLabel(mode,active?currentDir:'asc');
+    btn.setAttribute('aria-pressed',active?'true':'false');
+    btn.title=active?'Bấm lần nữa để đảo chiều':'Bấm để sắp xếp theo '+sortLabel(mode,'asc');
   });
 }
 function setSort(scope,mode){
-  if(scope==='user') userSortMode=mode||'az';
-  if(scope==='common') commonSortMode=mode||'az';
+  mode=mode||'az';
+  if(scope==='user'){
+    if(userSortMode===mode){ userSortDir=userSortDir==='asc'?'desc':'asc'; }
+    else{ userSortMode=mode; userSortDir='asc'; }
+  }
+  if(scope==='common'){
+    if(commonSortMode===mode){ commonSortDir=commonSortDir==='asc'?'desc':'asc'; }
+    else{ commonSortMode=mode; commonSortDir='asc'; }
+  }
   renderAll();
 }
 
 function renderAll(){
   const userQ=document.getElementById('userSearch').value||'';
   const commonQ=document.getElementById('commonSearch').value||'';
-  const filteredUser=sortWords(userWords.filter(item=>wordMatches(item,userQ)),userSortMode);
-  const filteredCommon=sortWords(commonWords.filter(item=>wordMatches(item,commonQ)),commonSortMode);
+  const filteredUser=sortWords(userWords.filter(item=>wordMatches(item,userQ)),userSortMode,userSortDir);
+  const filteredCommon=sortWords(commonWords.filter(item=>wordMatches(item,commonQ)),commonSortMode,commonSortDir);
   document.getElementById('userCount').textContent=userWords.length;
   document.getElementById('commonCount').textContent=commonWords.length;
   const enough=userWords.length>=20;
@@ -3089,6 +3159,39 @@ function togglePracticePanel(){
   showPanel('practice');
 }
 
+
+function isEditableTarget(target){
+  if(!target) return false;
+  const tag=(target.tagName||'').toLowerCase();
+  return tag==='input'||tag==='textarea'||target.isContentEditable;
+}
+function installAntiContentGuard(){
+  document.addEventListener('contextmenu',function(e){e.preventDefault();},true);
+  document.addEventListener('dragstart',function(e){e.preventDefault();},true);
+  document.addEventListener('selectstart',function(e){
+    if(!isEditableTarget(e.target)) e.preventDefault();
+  },true);
+  ['copy','cut'].forEach(function(type){
+    document.addEventListener(type,function(e){
+      if(!isEditableTarget(e.target)) e.preventDefault();
+    },true);
+  });
+  document.addEventListener('keydown',function(e){
+    const key=String(e.key||'').toLowerCase();
+    const editable=isEditableTarget(e.target);
+    const blockedDev=e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['i','j','c'].includes(key));
+    const blockedPage=e.ctrlKey&&['u','s','p'].includes(key);
+    const blockedCopy=!editable&&e.ctrlKey&&['a','c','x'].includes(key);
+    if(blockedDev||blockedPage||blockedCopy){
+      e.preventDefault();
+      e.stopPropagation();
+      if(blockedDev) cuteToast('Nội dung luyện tập đang được bảo vệ.','info');
+      return false;
+    }
+  },true);
+}
+
+installAntiContentGuard();
 buildPartChecks('partsInput','user');
 buildPartChecks('commonPartsInput','common');
 syncMeaningRows('user');
