@@ -659,7 +659,6 @@ let commonKvWords=[];
 let commonSeedWords=[];
 let selectedMode='choice';
 let game=null;
-let resultSubmitted=false;
 let activeAudio=null;
 let userSortMode='az';
 let commonSortMode='az';
@@ -1514,7 +1513,6 @@ function startPractice(mode){
     cuteToast('Cần tick ít nhất 20 từ để luyện tập','warning');
     return;
   }
-  resultSubmitted=false;
   game={mode,items:shuffle(pool).slice(0,10),pool:pool,index:0,score:0,wrongs:[],answerLog:[],answered:false,historySaved:false};
   document.getElementById('practiceArea').classList.add('show');
   renderQuestion();
@@ -1626,141 +1624,9 @@ function renderGameEnd(){
   celebrateGreatScore();
   const percent=Math.round(game.score/game.items.length*100);
   const wrongHtml=game.wrongs.length?'<div class="wrong-list">'+game.wrongs.map(function(w,i){return '<div class="wrong-item"><b>Câu sai '+(i+1)+' · '+escapeHtml(w.game)+'</b><br>Nghĩa: '+escapeHtml(w.meaning)+'<br>Bạn trả lời: '+escapeHtml(w.answer)+'<br>Đáp án đúng: <b>'+escapeHtml(w.correct)+'</b></div>';}).join('')+'</div>':'<div class="status show ok">Không có câu sai. Rất tốt!</div>';
-  document.getElementById('practiceArea').innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">Hoàn thành</div><div class="progress-pill">'+game.score+' / '+game.items.length+' · '+percent+'%</div></div><div class="question-meaning">Kết quả luyện tập</div><p class="muted">Các câu sai được lưu lại ngay bên dưới để bạn xem lại.</p><div class="actions"><button class="btn good" id="submitResultBtn" type="button" onclick="submitResult()">Nộp kết quả</button><button class="btn secondary" type="button" onclick="startPractice(selectedMode)">Luyện lại 10 từ khác</button></div><div class="status" id="resultStatus"></div>'+wrongHtml+'</div>';
+  document.getElementById('practiceArea').innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">Hoàn thành</div><div class="progress-pill">'+game.score+' / '+game.items.length+' · '+percent+'%</div></div><div class="question-meaning">Kết quả luyện tập</div><p class="muted">Lịch sử luyện tập đã được lưu để bạn xem lại trong mục Lịch sử.</p><div class="actions"><button class="btn secondary" type="button" onclick="startPractice(selectedMode)">Luyện lại 10 từ khác</button><button class="btn" type="button" onclick="showPanel(\'history\')">Xem lịch sử</button></div>'+wrongHtml+'</div>';
   scrollPracticeCenter(180);
 }
-function collectResultPayload(){
-  const now=new Date().toISOString();
-  return {
-    student:{email:student.email,loginAt:student.loginAt||''},
-    quiz:{id:'vocabulary-box-'+game.mode,title:'Hòm từ vựng cá nhân - '+modeTitle(),total:game.items.length},
-    submittedAt:now,
-    score:game.score,
-    total:game.items.length,
-    percent:Math.round(game.score/game.items.length*100),
-    answers:game.items.map(function(item,idx){return {no:idx+1,word:item.word,parts:item.parts,meanings:getCleanMeanings(item),meaningsByPart:item.meaningsByPart||null};}),
-    wrongs:game.wrongs,
-    answerLog:game.answerLog||[]
-  };
-}
-
-function historyKey(){
-  return 'vocab_box_history_'+normalizeText(student&&student.email?student.email:'guest').replace(/[^a-z0-9@._-]/g,'_');
-}
-function loadPracticeHistory(){
-  try{
-    const data=JSON.parse(localStorage.getItem(historyKey())||'null');
-    if(!data||!Array.isArray(data.sessions)||!data.words) return {sessions:[],words:{}};
-    return data;
-  }catch(e){return {sessions:[],words:{}};}
-}
-function savePracticeHistoryData(data){
-  localStorage.setItem(historyKey(),JSON.stringify(data));
-}
-function savePracticeHistory(){
-  if(!game||game.historySaved) return;
-  const data=loadPracticeHistory();
-  const session={
-    id:'vh_'+Date.now(),
-    at:new Date().toISOString(),
-    mode:game.mode,
-    modeTitle:modeTitle(),
-    score:game.score,
-    total:game.items.length,
-    percent:Math.round(game.score/game.items.length*100),
-    wrongs:game.wrongs.slice(),
-    answers:(game.answerLog||[]).slice()
-  };
-  data.sessions.unshift(session);
-  (game.answerLog||[]).forEach(function(a){
-    const key=normalizeText(a.word);
-    if(!data.words[key]) data.words[key]={word:a.word,correct:0,wrong:0,total:0,latest:''};
-    data.words[key].total++;
-    if(a.correct) data.words[key].correct++; else data.words[key].wrong++;
-    data.words[key].latest=session.at;
-  });
-  savePracticeHistoryData(data);
-  game.historySaved=true;
-  renderHistory();
-  renderAll();
-}
-function formatDateTime(iso){
-  try{return new Date(iso).toLocaleString('vi-VN',{hour12:false});}catch(e){return iso||'';}
-}
-function renderHistory(){
-  const root=document.getElementById('historyContent');
-  if(!root||!student) return;
-  const data=loadPracticeHistory();
-  const sessions=data.sessions||[];
-  const wordStats=Object.values(data.words||{}).sort(function(a,b){return (b.wrong-a.wrong)||(b.total-a.total)||a.word.localeCompare(b.word);});
-  const totalSessions=sessions.length;
-  const totalCorrect=wordStats.reduce((s,x)=>s+(x.correct||0),0);
-  const totalWrong=wordStats.reduce((s,x)=>s+(x.wrong||0),0);
-  if(!totalSessions){
-    root.innerHTML='<div class="empty">Chưa có lịch sử chơi. Làm một lượt luyện tập xong, lịch sử sẽ hiện ở đây.</div>';
-    return;
-  }
-  const sessionHtml=sessions.map(function(s,i){
-    const wrongText=s.wrongs&&s.wrongs.length?('Sai: '+s.wrongs.map(w=>w.correct).join(', ')):'Không sai từ nào';
-    return '<div class="history-session"><b>Lượt '+(sessions.length-i)+' · '+escapeHtml(s.modeTitle||s.mode)+'</b><span class="history-score"><b>'+s.score+'/'+s.total+'</b> · '+s.percent+'%</span><small>'+escapeHtml(formatDateTime(s.at))+'</small><small>'+escapeHtml(wrongText)+'</small></div>';
-  }).join('');
-  const wordHtml=wordStats.map(function(w){
-    return '<div class="history-word"><div class="history-word-row"><b>'+escapeHtml(w.word)+'</b><span class="history-score">Tổng '+(w.total||0)+'</span></div><div class="history-counts"><span class="history-pill ok">Đúng '+(w.correct||0)+'</span><span class="history-pill bad">Sai '+(w.wrong||0)+'</span></div><small>Lần gần nhất: '+escapeHtml(formatDateTime(w.latest))+'</small></div>';
-  }).join('');
-  root.innerHTML='<div class="history-summary"><div class="history-card"><b>'+totalSessions+'</b><span>Lượt đã chơi</span></div><div class="history-card"><b>'+totalCorrect+'</b><span>Tổng câu đúng</span></div><div class="history-card"><b>'+totalWrong+'</b><span>Tổng câu sai</span></div></div><div class="history-layout"><div class="history-box"><h3>Toàn bộ lượt chơi</h3><div class="history-sessions">'+sessionHtml+'</div></div><div class="history-box"><h3>Thống kê theo từ</h3><div class="history-words">'+wordHtml+'</div></div></div>';
-}
-async function clearPracticeHistory(){
-  if(!student) return;
-  if(!await cuteConfirm({title:'Xóa lịch sử chơi?',text:'Chỉ xóa lịch sử lưu trên trình duyệt này, không xóa từ trong hòm.',confirmButtonText:'Xóa lịch sử',icon:'warning'})) return;
-  localStorage.removeItem(historyKey());
-  renderHistory();
-  cuteToast('Đã xóa lịch sử chơi','success');
-}
-function fireConfetti(){
-  const icons=['🎉','✨','⭐','🌟','🎊','💫'];
-  for(let i=0;i<42;i++){
-    const el=document.createElement('span');
-    el.className='confetti-piece';
-    el.textContent=icons[Math.floor(Math.random()*icons.length)];
-    el.style.left=Math.floor(Math.random()*100)+'vw';
-    el.style.animationDelay=(Math.random()*0.55)+'s';
-    el.style.fontSize=(18+Math.random()*12)+'px';
-    document.body.appendChild(el);
-    setTimeout(()=>el.remove(),2600);
-  }
-}
-function celebrateGreatScore(){
-  if(!game||game._celebrated||game.score<9) return;
-  game._celebrated=true;
-  fireConfetti();
-  if(window.Swal){
-    Swal.fire({icon:'success',title:'Xuất sắc! 🎉',html:'Bạn đạt <b>'+game.score+'/'+game.items.length+'</b>. Hòm từ đang lên cấp rồi!',showConfirmButton:false,timer:3000,timerProgressBar:true});
-  }else cuteToast('Xuất sắc! Bạn đạt '+game.score+'/'+game.items.length,'success');
-}
-
-async function submitResult(){
-  if(resultSubmitted||!game) return;
-  const btn=document.getElementById('submitResultBtn');
-  const status=document.getElementById('resultStatus');
-  btn.disabled=true;btn.textContent='Đang nộp...';
-  status.textContent='Đang lưu kết quả...';status.className='status show warn';
-  try{
-    const payload=collectResultPayload();
-    const res=await fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-    const data=await res.json().catch(()=>({}));
-    if(!res.ok||!data.ok) throw new Error(data.error||'Không lưu được kết quả.');
-    resultSubmitted=true;
-    status.textContent='Đã lưu kết quả thành công.';
-    status.className='status show ok';
-    btn.classList.add('hidden');
-  }catch(err){
-    status.textContent=err.message||'Không lưu được kết quả.';
-    status.className='status show err';
-    btn.disabled=false;btn.textContent='Nộp kết quả';
-  }
-}
-
-
 function showPanel(name){
   document.querySelectorAll('.view-panel').forEach(function(panel){
     panel.classList.toggle('active', panel.id==='panel-'+name);
