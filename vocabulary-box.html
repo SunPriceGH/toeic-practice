@@ -848,12 +848,38 @@ function splitMeaningText(value){
   // Mỗi dòng là một nghĩa. Dấu ; được giữ lại để phân cách các nghĩa khác xa nhau trong cùng một loại từ.
   return String(value||'').split(/\n|\|/g).map(s=>cleanMeaningText(s)).filter(Boolean);
 }
+function escapeRegExpText(value){
+  return String(value||'').replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+}
+function labelToPart(label){
+  const p=normalizePart(label);
+  const map={n:'noun',v:'verb',adj:'adjective',adv:'adverb',prep:'preposition',conj:'conjunction',pron:'pronoun',phr:'phrase',pv:'phrasal verb','phrasal verbs':'phrasal verb'};
+  return map[p]||p;
+}
+function partLabelPattern(labels){
+  return labels.slice().sort(function(a,b){return String(b).length-String(a).length;}).map(escapeRegExpText).join('|');
+}
+function parseLeadingPartLabel(text){
+  const s=String(text||'').trim();
+  if(!s) return null;
+  const fullLabels=PARTS.concat(['phrasal verbs']);
+  const abbrLabels=['n','v','adj','adv','prep','conj','pron','phr','pv'];
+  const allPattern=partLabelPattern(fullLabels.concat(abbrLabels));
+  const fullPattern=partLabelPattern(fullLabels);
+  const abbrPattern=partLabelPattern(abbrLabels);
+  let m=s.match(new RegExp('^\\s*[\\[［]\\s*('+allPattern+')\\s*[\\]］]\\s*[:：\\-–—]?\\s*(.*)$','i'));
+  if(m) return {part:labelToPart(m[1]),text:String(m[2]||'').trim()};
+  m=s.match(new RegExp('^\\s*('+fullPattern+')\\b\\s*(?:[:：\\-–—]\\s*|\\s+)(.*)$','i'));
+  if(m) return {part:labelToPart(m[1]),text:String(m[2]||'').trim()};
+  m=s.match(new RegExp('^\\s*('+abbrPattern+')\\s*[:：\\-–—]\\s*(.*)$','i'));
+  if(m) return {part:labelToPart(m[1]),text:String(m[2]||'').trim()};
+  return null;
+}
 function cleanMeaningText(text){
   let s=String(text||'').trim();
-  const labels=PARTS.concat(['n','v','adj','adv','prep','conj','pron','phr','pv','phrasal verbs']).join('|');
-  const re=new RegExp('^\\s*[\\[［]?\\s*('+labels+')\\s*[\\]］]?\\s*[:：\\-–—]?\\s*','i');
-  s=s.replace(re,'').trim();
-  return s;
+  const parsed=parseLeadingPartLabel(s);
+  if(parsed) s=parsed.text;
+  return s.trim();
 }
 
 function audioCacheKey(text){
@@ -1274,11 +1300,9 @@ function getMeaningDisplayRows(item){
   (item.meanings||[]).forEach(function(raw,idx){
     const line=String(raw||'').trim();
     if(!line) return;
-    const labels=PARTS.concat(['n','v','adj','adv','prep','conj','pron','phr','pv','phrasal verbs']).join('|');
-    const re=new RegExp('^\\s*[\\[［]?\\s*('+labels+')\\s*[\\]］]?\\s*[:：\\-–—]?\\s*(.*)$','i');
-    const m=line.match(re);
-    if(m&&m[2]&&m[2].trim()){
-      rows.push({part:normalizePart(m[1]),text:cleanMeaningText(m[2])});
+    const labeled=parseLeadingPartLabel(line);
+    if(labeled&&labeled.text){
+      rows.push({part:labeled.part,text:cleanMeaningText(labeled.text)});
       return;
     }
     const part=parts.length===1?parts[0]:(parts[idx]||parts[0]||'');
@@ -1627,100 +1651,6 @@ function renderGameEnd(){
   document.getElementById('practiceArea').innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">Hoàn thành</div><div class="progress-pill">'+game.score+' / '+game.items.length+' · '+percent+'%</div></div><div class="question-meaning">Kết quả luyện tập</div><p class="muted">Lịch sử luyện tập đã được lưu để bạn xem lại trong mục Lịch sử.</p><div class="actions"><button class="btn secondary" type="button" onclick="startPractice(selectedMode)">Luyện lại 10 từ khác</button><button class="btn" type="button" onclick="showPanel(\'history\')">Xem lịch sử</button></div>'+wrongHtml+'</div>';
   scrollPracticeCenter(180);
 }
-function historyKey(){
-  return 'vocab_box_history_'+normalizeText(student&&student.email?student.email:'guest').replace(/[^a-z0-9@._-]/g,'_');
-}
-function loadPracticeHistory(){
-  try{
-    const data=JSON.parse(localStorage.getItem(historyKey())||'null');
-    if(!data||!Array.isArray(data.sessions)||!data.words) return {sessions:[],words:{}};
-    return data;
-  }catch(e){return {sessions:[],words:{}};}
-}
-function savePracticeHistoryData(data){
-  localStorage.setItem(historyKey(),JSON.stringify(data));
-}
-function savePracticeHistory(){
-  if(!game||game.historySaved) return;
-  const data=loadPracticeHistory();
-  const session={
-    id:'vh_'+Date.now(),
-    at:new Date().toISOString(),
-    mode:game.mode,
-    modeTitle:modeTitle(),
-    score:game.score,
-    total:game.items.length,
-    percent:Math.round(game.score/game.items.length*100),
-    wrongs:game.wrongs.slice(),
-    answers:(game.answerLog||[]).slice()
-  };
-  data.sessions.unshift(session);
-  (game.answerLog||[]).forEach(function(a){
-    const key=normalizeText(a.word);
-    if(!data.words[key]) data.words[key]={word:a.word,correct:0,wrong:0,total:0,latest:''};
-    data.words[key].total++;
-    if(a.correct) data.words[key].correct++; else data.words[key].wrong++;
-    data.words[key].latest=session.at;
-  });
-  savePracticeHistoryData(data);
-  game.historySaved=true;
-  renderHistory();
-  renderAll();
-}
-function formatDateTime(iso){
-  try{return new Date(iso).toLocaleString('vi-VN',{hour12:false});}catch(e){return iso||'';}
-}
-function renderHistory(){
-  const root=document.getElementById('historyContent');
-  if(!root||!student) return;
-  const data=loadPracticeHistory();
-  const sessions=data.sessions||[];
-  const wordStats=Object.values(data.words||{}).sort(function(a,b){return (b.wrong-a.wrong)||(b.total-a.total)||a.word.localeCompare(b.word);});
-  const totalSessions=sessions.length;
-  const totalCorrect=wordStats.reduce((s,x)=>s+(x.correct||0),0);
-  const totalWrong=wordStats.reduce((s,x)=>s+(x.wrong||0),0);
-  if(!totalSessions){
-    root.innerHTML='<div class="empty">Chưa có lịch sử chơi. Làm một lượt luyện tập xong, lịch sử sẽ hiện ở đây.</div>';
-    return;
-  }
-  const sessionHtml=sessions.map(function(s,i){
-    const wrongText=s.wrongs&&s.wrongs.length?('Sai: '+s.wrongs.map(w=>w.correct).join(', ')):'Không sai từ nào';
-    return '<div class="history-session"><b>Lượt '+(sessions.length-i)+' · '+escapeHtml(s.modeTitle||s.mode)+'</b><span class="history-score"><b>'+s.score+'/'+s.total+'</b> · '+s.percent+'%</span><small>'+escapeHtml(formatDateTime(s.at))+'</small><small>'+escapeHtml(wrongText)+'</small></div>';
-  }).join('');
-  const wordHtml=wordStats.map(function(w){
-    return '<div class="history-word"><div class="history-word-row"><b>'+escapeHtml(w.word)+'</b><span class="history-score">Tổng '+(w.total||0)+'</span></div><div class="history-counts"><span class="history-pill ok">Đúng '+(w.correct||0)+'</span><span class="history-pill bad">Sai '+(w.wrong||0)+'</span></div><small>Lần gần nhất: '+escapeHtml(formatDateTime(w.latest))+'</small></div>';
-  }).join('');
-  root.innerHTML='<div class="history-summary"><div class="history-card"><b>'+totalSessions+'</b><span>Lượt đã chơi</span></div><div class="history-card"><b>'+totalCorrect+'</b><span>Tổng câu đúng</span></div><div class="history-card"><b>'+totalWrong+'</b><span>Tổng câu sai</span></div></div><div class="history-layout"><div class="history-box"><h3>Toàn bộ lượt chơi</h3><div class="history-sessions">'+sessionHtml+'</div></div><div class="history-box"><h3>Thống kê theo từ</h3><div class="history-words">'+wordHtml+'</div></div></div>';
-}
-async function clearPracticeHistory(){
-  if(!student) return;
-  if(!await cuteConfirm({title:'Xóa lịch sử chơi?',text:'Chỉ xóa lịch sử lưu trên trình duyệt này, không xóa từ trong hòm.',confirmButtonText:'Xóa lịch sử',icon:'warning'})) return;
-  localStorage.removeItem(historyKey());
-  renderHistory();
-  cuteToast('Đã xóa lịch sử chơi','success');
-}
-function fireConfetti(){
-  const icons=['🎉','✨','⭐','🌟','🎊','💫'];
-  for(let i=0;i<42;i++){
-    const el=document.createElement('span');
-    el.className='confetti-piece';
-    el.textContent=icons[Math.floor(Math.random()*icons.length)];
-    el.style.left=Math.floor(Math.random()*100)+'vw';
-    el.style.animationDelay=(Math.random()*0.55)+'s';
-    el.style.fontSize=(18+Math.random()*12)+'px';
-    document.body.appendChild(el);
-    setTimeout(()=>el.remove(),2600);
-  }
-}
-function celebrateGreatScore(){
-  if(!game||game._celebrated||game.score<9) return;
-  game._celebrated=true;
-  fireConfetti();
-  if(window.Swal){
-    Swal.fire({icon:'success',title:'Xuất sắc! 🎉',html:'Bạn đạt <b>'+game.score+'/'+game.items.length+'</b>. Hòm từ đang lên cấp rồi!',showConfirmButton:false,timer:3000,timerProgressBar:true});
-  }else cuteToast('Xuất sắc! Bạn đạt '+game.score+'/'+game.items.length,'success');
-}
-
 function showPanel(name){
   document.querySelectorAll('.view-panel').forEach(function(panel){
     panel.classList.toggle('active', panel.id==='panel-'+name);
