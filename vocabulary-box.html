@@ -592,6 +592,39 @@ input,textarea{
 </style>
 
 <style>
+/* ===== Rank popup icon: cùng style với icon current trên thanh rank ===== */
+.rank-popup-icon-frame{
+  width:154px;
+  height:154px;
+  margin:4px auto 10px;
+  display:grid;
+  place-items:center;
+  border-radius:42px;
+  background:radial-gradient(circle,#fff7d6 0,#ffffff 70%);
+  border:2px solid #ffcf70;
+  box-shadow:
+    0 0 0 9px rgba(255,207,112,.22),
+    0 18px 38px rgba(226,132,18,.18);
+  animation:rankPulse 1.8s ease-in-out infinite;
+}
+.rank-popup-icon-frame img{
+  width:136px;
+  height:136px;
+  object-fit:contain;
+  display:block;
+}
+.rank-popup-title{
+  font-weight:700;
+  font-size:21px;
+  color:#42210b;
+  margin-top:8px;
+}
+.rank-popup-meta{
+  font-weight:700;
+  color:#64748b;
+  margin-top:8px;
+}
+
 /* ===== Rank tester chỉ dành cho sunprice@sp.ik ===== */
 .rank-test-float{
   position:fixed;
@@ -1869,31 +1902,42 @@ function getCurrentRankInfo(){
   const actualMastered=masteredWordsCount();
   const testState=loadRankTestState();
 
+  function withFill(rank,index,mastered,countValue,isTest){
+    const next=RANKS[index+1]||null;
+    let between=0;
+    if(next){
+      const currentMin=Number(rank.minWords||0);
+      const nextMin=Number(next.minWords||currentMin+1);
+      between=Math.max(0,Math.min(1,(Number(mastered||0)-currentMin)/(nextMin-currentMin)));
+    }else{
+      between=1;
+    }
+    return {
+      rank:rank,
+      next:next,
+      index:index,
+      count:countValue,
+      mastered:mastered,
+      actualCount:count,
+      actualMastered:actualMastered,
+      progress:progress,
+      fillBetween:between,
+      testMode:!!isTest
+    };
+  }
+
   if(testState){
     const fakeMastered=Math.max(0,Number(testState.mastered||0));
     let index=testState.mode==='manual' ? Number(testState.rankIndex||0) : rankIndexFromMastered(fakeMastered);
     if(!Number.isFinite(index)||index<0||index>=RANKS.length) index=rankIndexFromMastered(fakeMastered);
     const rank=RANKS[index]||RANKS[0];
-    const next=RANKS[index+1]||null;
-    const percent=RANKS.length>1 ? (index/(RANKS.length-1))*100 : 0;
-    return {
-      rank:rank,next:next,index:index,
-      count:Math.max(count,fakeMastered),
-      mastered:fakeMastered,
-      actualCount:count,
-      actualMastered:actualMastered,
-      progress:progress,
-      percent:percent,
-      testMode:true
-    };
+    return withFill(rank,index,fakeMastered,Math.max(count,fakeMastered),true);
   }
 
   const mastered=actualMastered;
   const index=rankIndexFromMastered(mastered);
   const rank=RANKS[index]||RANKS[0];
-  const next=RANKS[index+1]||null;
-  const percent=RANKS.length>1 ? (index/(RANKS.length-1))*100 : 0;
-  return {rank:rank,next:next,index:index,count:count,mastered:mastered,progress:progress,percent:percent,testMode:false};
+  return withFill(rank,index,mastered,count,false);
 }
 function rankNodeHtml(rank,index,currentIndex){
   const state=index===currentIndex?'current':(index<currentIndex?'unlocked':'locked');
@@ -1914,26 +1958,43 @@ function rankCenterY(el,parent){
   const b=parent.getBoundingClientRect();
   return a.top-b.top+a.height/2;
 }
-function layoutRankRail(currentIndex){
+function layoutRankRail(infoOrIndex){
+  const info=typeof infoOrIndex==='number'
+    ? {index:infoOrIndex,fillBetween:0,next:RANKS[infoOrIndex+1]||null}
+    : (infoOrIndex||{});
+  const currentIndex=Math.max(0,Math.min(RANKS.length-1,Number(info.index||0)));
+
   const road=document.getElementById('rankRoad');
   const rail=document.getElementById('rankRail');
   const fill=document.getElementById('rankRailFill');
   const nodes=Array.from(document.querySelectorAll('#rankNodes .rank-node'));
   if(!road||!rail||!fill||!nodes.length||!nodes[currentIndex]) return;
+
   const firstDot=nodes[0].querySelector('.rank-dot');
   const lastDot=nodes[nodes.length-1].querySelector('.rank-dot');
   const currentDot=nodes[currentIndex].querySelector('.rank-dot');
   if(!firstDot||!lastDot||!currentDot) return;
+
   const firstX=rankCenterX(firstDot,road);
   const lastX=rankCenterX(lastDot,road);
   const currentX=rankCenterX(currentDot,road);
   const dotY=rankCenterY(firstDot,road);
   const railHeight=14;
+
+  let fillX=currentX;
+  const nextIndex=Math.min(nodes.length-1,currentIndex+1);
+  const nextDot=nodes[nextIndex]?nodes[nextIndex].querySelector('.rank-dot'):null;
+  if(nextDot&&nextIndex!==currentIndex){
+    const nextX=rankCenterX(nextDot,road);
+    const t=Math.max(0,Math.min(1,Number(info.fillBetween||0)));
+    fillX=currentX+(nextX-currentX)*t;
+  }
+
   rail.style.left=firstX+'px';
   rail.style.width=Math.max(0,lastX-firstX)+'px';
   rail.style.top=(dotY-railHeight/2)+'px';
   rail.style.height=railHeight+'px';
-  fill.style.width=Math.max(0,currentX-firstX)+'px';
+  fill.style.width=Math.max(0,Math.min(lastX,fillX)-firstX)+'px';
 }
 function rankSeenKey(){
   return 'vocab_rank_seen_'+normalizeText(student&&student.email?student.email:'guest').replace(/[^a-z0-9@._-]/g,'_');
@@ -1977,14 +2038,14 @@ function showRankUnlockedPopup(info){
   if(window.Swal){
     Swal.fire({
       title:'Lên rank mới! 🎉',
-      html:'<div style="font-weight:700;font-size:20px;color:#42210b;margin-top:4px">'+escapeHtml(info.rank.name)+'</div><div style="font-weight:700;color:#64748b;margin-top:8px">Từ full 10/10: '+info.mastered+' · Tổng từ: '+info.count+'</div>',
-      imageUrl:info.rank.icon,
-      imageWidth:132,
-      imageHeight:132,
+      html:'<div class="rank-popup-icon-frame"><img src="'+info.rank.icon+'" alt="'+escapeHtml(info.rank.name)+'"></div>'
+        +'<div class="rank-popup-title">'+escapeHtml(info.rank.name)+'</div>'
+        +'<div class="rank-popup-meta">Từ full 10/10: '+info.mastered+' · Tổng từ: '+info.count+'</div>',
       showConfirmButton:false,
       timer:3600,
       timerProgressBar:true,
       background:'#fffaf3',
+      customClass:{popup:'rank-popup-swal'},
       didClose:function(){rankCelebrating=false;}
     });
   }else{
@@ -2110,7 +2171,7 @@ function renderRankEvolution(){
   const rankEvolution=document.getElementById('rankEvolution');
   if(rankEvolution) rankEvolution.classList.toggle('rank-test-active',!!info.testMode);
   if(nodes) nodes.innerHTML=RANKS.map(function(rank,index){return rankNodeHtml(rank,index,info.index);}).join('');
-  requestAnimationFrame(function(){layoutRankRail(info.index);});
+  requestAnimationFrame(function(){layoutRankRail(info);});
   renderRankTestTools(info);
   checkRankAchievement(info);
 }
@@ -2118,7 +2179,7 @@ function renderRankEvolution(){
 window.addEventListener('resize',function(){
   try{
     const info=getCurrentRankInfo();
-    requestAnimationFrame(function(){layoutRankRail(info.index);});
+    requestAnimationFrame(function(){layoutRankRail(info);});
   }catch(e){}
 });
 
