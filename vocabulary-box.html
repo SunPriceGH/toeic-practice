@@ -1596,16 +1596,7 @@ function getCurrentRankInfo(){
   }
   const rank=RANKS[index]||RANKS[0];
   const next=RANKS[index+1]||null;
-  let percent=0;
-  if(RANKS.length>1){
-    const basePercent=(index/(RANKS.length-1))*100;
-    if(next){
-      const currentMin=rank.minWords||0;
-      const nextMin=next.minWords||currentMin+1;
-      const between=Math.max(0,Math.min(1,(count-currentMin)/(nextMin-currentMin)));
-      percent=((index+between)/(RANKS.length-1))*100;
-    }else percent=100;
-  }
+  const percent=RANKS.length>1 ? (index/(RANKS.length-1))*100 : 0;
   return {rank:rank,next:next,index:index,count:count,progress:progress,percent:percent};
 }
 function rankNodeHtml(rank,index,currentIndex){
