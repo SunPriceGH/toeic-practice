@@ -1732,28 +1732,33 @@ function setPartSort(scope,part){
 function totalProgressScore(){
   return userWords.reduce(function(sum,item){return sum+wordProgressLevel(item);},0);
 }
+function masteredWordsCount(){
+  return userWords.filter(function(item){
+    return wordProgressLevel(item)>=10;
+  }).length;
+}
 function getCurrentRankInfo(){
   const count=userWords.length;
   const progress=totalProgressScore();
+  const mastered=masteredWordsCount();
   let index=0;
-  if(count>=10&&progress>=10){
+
+  // Rank chỉ tính theo SỐ TỪ ĐÃ ĐẠT FULL 10/10 PROGRESS.
+  // Ví dụ:
+  // 0-9 từ full 10/10  => Egg
+  // 10 từ full 10/10   => Chick
+  // 50 từ full 10/10   => Double Chick
+  // 100 từ full 10/10  => Wood Hammer...
+  if(mastered>=10){
     for(let i=RANKS.length-1;i>=1;i--){
-      if(count>=RANKS[i].minWords){index=i;break;}
+      if(mastered>=RANKS[i].minWords){index=i;break;}
     }
   }
+
   const rank=RANKS[index]||RANKS[0];
   const next=RANKS[index+1]||null;
-  let percent=0;
-  if(RANKS.length>1){
-    const basePercent=(index/(RANKS.length-1))*100;
-    if(next){
-      const currentMin=rank.minWords||0;
-      const nextMin=next.minWords||currentMin+1;
-      const between=Math.max(0,Math.min(1,(count-currentMin)/(nextMin-currentMin)));
-      percent=((index+between)/(RANKS.length-1))*100;
-    }else percent=100;
-  }
-  return {rank:rank,next:next,index:index,count:count,progress:progress,percent:percent};
+  const percent=RANKS.length>1 ? (index/(RANKS.length-1))*100 : 0;
+  return {rank:rank,next:next,index:index,count:count,mastered:mastered,progress:progress,percent:percent};
 }
 function rankNodeHtml(rank,index,currentIndex){
   const state=index===currentIndex?'current':(index<currentIndex?'unlocked':'locked');
@@ -1837,7 +1842,7 @@ function showRankUnlockedPopup(info){
   if(window.Swal){
     Swal.fire({
       title:'Lên rank mới! 🎉',
-      html:'<div style="font-weight:700;font-size:20px;color:#42210b;margin-top:4px">'+escapeHtml(info.rank.name)+'</div><div style="font-weight:700;color:#64748b;margin-top:8px">Từ: '+info.count+' · Progress: '+info.progress+'</div>',
+      html:'<div style="font-weight:700;font-size:20px;color:#42210b;margin-top:4px">'+escapeHtml(info.rank.name)+'</div><div style="font-weight:700;color:#64748b;margin-top:8px">Từ full 10/10: '+info.mastered+' · Tổng từ: '+info.count+'</div>',
       imageUrl:info.rank.icon,
       imageWidth:132,
       imageHeight:132,
@@ -1882,7 +1887,7 @@ function renderRankEvolution(){
   if(chipName) chipName.textContent=info.rank.name;
   if(currentIcon) currentIcon.src=info.rank.icon;
   if(currentName) currentName.textContent=info.rank.name;
-  if(currentMeta) currentMeta.textContent='Từ: '+info.count+' · Progress: '+info.progress;
+  if(currentMeta) currentMeta.textContent='Từ full 10/10: '+info.mastered+' · Tổng từ: '+info.count;
   if(nodes) nodes.innerHTML=RANKS.map(function(rank,index){return rankNodeHtml(rank,index,info.index);}).join('');
   requestAnimationFrame(function(){layoutRankRail(info.index);});
   checkRankAchievement(info);
