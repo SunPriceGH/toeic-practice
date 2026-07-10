@@ -364,6 +364,154 @@ input,textarea{
 @media(max-width:900px){.rank-evo-title{text-align:left}.rank-current-card{width:100%}.rank-road{min-width:1270px}.rank-nodes{grid-template-columns:repeat(13,82px);gap:14px}.rank-node-icon{width:76px;height:76px}.rank-node-icon img{width:68px;height:68px}.rank-node.current .rank-node-icon{width:90px;height:90px}.rank-node.current .rank-node-icon img{width:84px;height:84px}.rank-rail{left:59px;right:59px;top:86px}.rank-rail-mark{left:59px;right:59px;top:81px}}
 @media(max-width:560px){.account-split{display:none}.rank-chip{padding-right:10px}.rank-chip img{width:34px;height:34px}.rank-evolution{border-radius:26px;padding:14px}.rank-current-glow{width:66px;height:66px}.rank-current-glow img{width:60px;height:60px}.rank-current-copy b{font-size:22px}.rank-evo-title b{font-size:20px}.rank-road-wrap{padding-left:2px;padding-right:2px}}
 
+
+
+/* ===== Rank progress center-accurate layout ===== */
+.rank-road-wrap{
+  position:relative;
+  z-index:1;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:26px 6px 18px!important;
+  scrollbar-width:thin;
+  scrollbar-color:#ffcf70 #f4edf8;
+}
+.rank-road{
+  position:relative!important;
+  min-width:max-content!important;
+  padding:0 8px 10px!important;
+}
+.rank-nodes{
+  position:relative!important;
+  z-index:3!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:24px!important;
+  grid-template-columns:none!important;
+}
+.rank-node{
+  width:116px!important;
+  flex:0 0 116px!important;
+  display:grid!important;
+  justify-items:center!important;
+  text-align:center!important;
+  color:#31415d!important;
+  gap:0!important;
+}
+.rank-icon-frame{
+  width:108px;
+  height:108px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  background:rgba(255,255,255,.92);
+  border:2px solid #e6eef8;
+  box-shadow:0 10px 22px rgba(42,69,116,.09);
+  position:relative;
+  z-index:4;
+  transition:.2s ease;
+}
+.rank-icon-frame img{
+  width:78px;
+  height:78px;
+  object-fit:contain;
+  display:block;
+  opacity:.50;
+  filter:grayscale(.45);
+  transition:.2s ease;
+}
+.rank-node.unlocked .rank-icon-frame img,
+.rank-node.current .rank-icon-frame img{
+  opacity:1;
+  filter:none;
+}
+.rank-node.current .rank-icon-frame{
+  border-color:#ffcf70;
+  background:radial-gradient(circle,#fff7d6 0,#fff 70%);
+  box-shadow:0 0 0 8px rgba(255,207,112,.22),0 16px 32px rgba(226,132,18,.16);
+  transform:translateY(-4px);
+  animation:rankPulse 1.8s ease-in-out infinite;
+}
+.rank-node.current .rank-icon-frame img{
+  width:96px;
+  height:96px;
+}
+.rank-dot{
+  width:26px;
+  height:26px;
+  margin-top:8px;
+  border-radius:999px;
+  background:#fff;
+  border:4px solid #c8c1e9;
+  position:relative;
+  z-index:5;
+  box-shadow:0 4px 12px rgba(42,69,116,.12);
+}
+.rank-node.unlocked .rank-dot,
+.rank-node.current .rank-dot{
+  border-color:#ffcf70;
+  background:#fff7d6;
+}
+.rank-node.current .rank-dot{
+  background:#ffcf70;
+  border-color:#fff;
+  box-shadow:0 0 0 5px rgba(255,207,112,.30),0 8px 18px rgba(226,132,18,.25);
+}
+.rank-name{
+  margin-top:10px;
+  min-height:34px;
+  font-size:12px;
+  line-height:1.15;
+  color:#6b7280;
+  font-weight:700;
+  position:relative;
+  z-index:4;
+}
+.rank-node.current .rank-name{
+  color:#42210b;
+}
+.rank-rail{
+  position:absolute!important;
+  z-index:1!important;
+  left:0;
+  top:0;
+  width:0;
+  height:14px!important;
+  border-radius:999px;
+  background:linear-gradient(180deg,#f4edf8,#e6ddf4)!important;
+  border:3px solid rgba(255,255,255,.88)!important;
+  box-shadow:inset 0 3px 8px rgba(42,69,116,.10),0 8px 18px rgba(42,69,116,.07)!important;
+  pointer-events:none;
+}
+.rank-rail span{
+  display:block!important;
+  height:100%!important;
+  width:0;
+  border-radius:999px;
+  background:linear-gradient(90deg,#ffd86b,#ffad4a)!important;
+  box-shadow:0 0 16px rgba(255,173,74,.42)!important;
+  transition:width .35s ease!important;
+}
+.rank-rail span:after{content:none!important;display:none!important}
+.rank-rail-mark{display:none!important}
+.rank-node-icon{display:none!important}
+@media(max-width:900px){
+  .rank-road{min-width:max-content!important}
+  .rank-nodes{gap:20px!important}
+  .rank-node{width:106px!important;flex-basis:106px!important}
+  .rank-icon-frame{width:98px;height:98px}
+  .rank-icon-frame img{width:72px;height:72px}
+  .rank-node.current .rank-icon-frame img{width:88px;height:88px}
+}
+@media(max-width:560px){
+  .rank-road-wrap{padding-left:2px!important;padding-right:2px!important}
+  .rank-nodes{gap:18px!important}
+  .rank-node{width:96px!important;flex-basis:96px!important}
+  .rank-icon-frame{width:92px;height:92px}
+  .rank-icon-frame img{width:68px;height:68px}
+  .rank-node.current .rank-icon-frame img{width:82px;height:82px}
+}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -506,7 +654,7 @@ input,textarea{
       </div>
       <div class="rank-road-wrap">
         <div class="rank-road" id="rankRoad">
-          <div class="rank-rail"><span id="rankRailFill"></span></div><div class="rank-rail-mark" aria-hidden="true"></div>
+          <div class="rank-rail" id="rankRail"><span id="rankRailFill"></span></div><div class="rank-rail-mark" aria-hidden="true"></div>
           <div class="rank-nodes" id="rankNodes"></div>
         </div>
       </div>
@@ -1596,13 +1744,57 @@ function getCurrentRankInfo(){
   }
   const rank=RANKS[index]||RANKS[0];
   const next=RANKS[index+1]||null;
-  const percent=RANKS.length>1 ? (index/(RANKS.length-1))*100 : 0;
+  let percent=0;
+  if(RANKS.length>1){
+    const basePercent=(index/(RANKS.length-1))*100;
+    if(next){
+      const currentMin=rank.minWords||0;
+      const nextMin=next.minWords||currentMin+1;
+      const between=Math.max(0,Math.min(1,(count-currentMin)/(nextMin-currentMin)));
+      percent=((index+between)/(RANKS.length-1))*100;
+    }else percent=100;
+  }
   return {rank:rank,next:next,index:index,count:count,progress:progress,percent:percent};
 }
 function rankNodeHtml(rank,index,currentIndex){
   const state=index===currentIndex?'current':(index<currentIndex?'unlocked':'locked');
   const just=index===currentIndex?' just-unlocked':'';
-  return '<div class="rank-node '+state+just+'" title="'+escapeHtml(rank.name)+'"><div class="rank-node-icon"><img src="'+rank.icon+'" alt="'+escapeHtml(rank.name)+'"></div><div class="rank-node-name">'+escapeHtml(rank.name)+'</div></div>';
+  return '<div class="rank-node '+state+just+'" title="'+escapeHtml(rank.name)+'">'
+    +'<div class="rank-icon-frame"><img src="'+rank.icon+'" alt="'+escapeHtml(rank.name)+'"></div>'
+    +'<div class="rank-dot"></div>'
+    +'<div class="rank-name">'+escapeHtml(rank.name)+'</div>'
+    +'</div>';
+}
+function rankCenterX(el,parent){
+  const a=el.getBoundingClientRect();
+  const b=parent.getBoundingClientRect();
+  return a.left-b.left+a.width/2;
+}
+function rankCenterY(el,parent){
+  const a=el.getBoundingClientRect();
+  const b=parent.getBoundingClientRect();
+  return a.top-b.top+a.height/2;
+}
+function layoutRankRail(currentIndex){
+  const road=document.getElementById('rankRoad');
+  const rail=document.getElementById('rankRail');
+  const fill=document.getElementById('rankRailFill');
+  const nodes=Array.from(document.querySelectorAll('#rankNodes .rank-node'));
+  if(!road||!rail||!fill||!nodes.length||!nodes[currentIndex]) return;
+  const firstDot=nodes[0].querySelector('.rank-dot');
+  const lastDot=nodes[nodes.length-1].querySelector('.rank-dot');
+  const currentDot=nodes[currentIndex].querySelector('.rank-dot');
+  if(!firstDot||!lastDot||!currentDot) return;
+  const firstX=rankCenterX(firstDot,road);
+  const lastX=rankCenterX(lastDot,road);
+  const currentX=rankCenterX(currentDot,road);
+  const dotY=rankCenterY(firstDot,road);
+  const railHeight=14;
+  rail.style.left=firstX+'px';
+  rail.style.width=Math.max(0,lastX-firstX)+'px';
+  rail.style.top=(dotY-railHeight/2)+'px';
+  rail.style.height=railHeight+'px';
+  fill.style.width=Math.max(0,currentX-firstX)+'px';
 }
 function rankSeenKey(){
   return 'vocab_rank_seen_'+normalizeText(student&&student.email?student.email:'guest').replace(/[^a-z0-9@._-]/g,'_');
@@ -1686,17 +1878,23 @@ function renderRankEvolution(){
   const currentIcon=document.getElementById('rankCurrentIcon');
   const currentName=document.getElementById('rankCurrentName');
   const currentMeta=document.getElementById('rankCurrentMeta');
-  const railFill=document.getElementById('rankRailFill');
   const nodes=document.getElementById('rankNodes');
   if(chipIcon) chipIcon.src=info.rank.icon;
   if(chipName) chipName.textContent=info.rank.name;
   if(currentIcon) currentIcon.src=info.rank.icon;
   if(currentName) currentName.textContent=info.rank.name;
   if(currentMeta) currentMeta.textContent='Từ: '+info.count+' · Progress: '+info.progress;
-  if(railFill) railFill.style.width=info.percent+'%';
   if(nodes) nodes.innerHTML=RANKS.map(function(rank,index){return rankNodeHtml(rank,index,info.index);}).join('');
+  requestAnimationFrame(function(){layoutRankRail(info.index);});
   checkRankAchievement(info);
 }
+
+window.addEventListener('resize',function(){
+  try{
+    const info=getCurrentRankInfo();
+    requestAnimationFrame(function(){layoutRankRail(info.index);});
+  }catch(e){}
+});
 
 function renderAll(){
   const userQ=document.getElementById('userSearch').value||'';
