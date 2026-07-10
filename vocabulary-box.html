@@ -590,6 +590,80 @@ input,textarea{
   .audio-btn,.word-use-toggle,.word-use-toggle span{width:36px;height:36px;flex-basis:36px}
 }
 </style>
+
+<style>
+/* ===== Rank tester chỉ dành cho sunprice@sp.ik ===== */
+.rank-test-float{
+  position:fixed;
+  top:18px;
+  right:18px;
+  z-index:10050;
+  border:none;
+  cursor:pointer;
+  display:none;
+  align-items:center;
+  gap:8px;
+  border-radius:999px;
+  padding:10px 14px;
+  background:linear-gradient(135deg,#fff7d6,#ffcf70,#ffad4a);
+  color:#432500;
+  font-size:14px;
+  font-weight:700;
+  box-shadow:0 16px 34px rgba(226,132,18,.28),0 0 0 4px rgba(255,207,112,.18);
+  border:2px solid rgba(255,255,255,.85);
+}
+.rank-test-float.show{display:inline-flex}
+.rank-test-float.active{background:linear-gradient(135deg,#e6fff2,#7bc7ff,#ffcf70)}
+.rank-test-float:hover{transform:translateY(-1px);filter:saturate(1.08)}
+.rank-test-backdrop{
+  position:fixed;
+  inset:0;
+  z-index:10040;
+  display:none;
+  align-items:flex-start;
+  justify-content:flex-end;
+  padding:68px 18px 18px;
+  background:rgba(15,23,42,.18);
+}
+.rank-test-backdrop.show{display:flex}
+.rank-test-panel{
+  width:min(390px,calc(100vw - 28px));
+  background:linear-gradient(180deg,#ffffff,#fffaf3);
+  border:2px solid #ffe0a3;
+  border-radius:28px;
+  box-shadow:0 28px 70px rgba(42,69,116,.22);
+  padding:18px;
+  color:#172033;
+}
+.rank-test-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
+.rank-test-head h3{font-size:22px;line-height:1.15;font-weight:700;margin:0;color:#42210b}
+.rank-test-head p{margin-top:5px;color:#64748b;font-size:13px;font-weight:700;line-height:1.35}
+.rank-test-close{border:none;background:#fff1f1;color:#b51d43;border-radius:999px;width:34px;height:34px;font-size:18px;font-weight:700;cursor:pointer}
+.rank-test-field{margin-top:12px}
+.rank-test-field label{display:block;font-size:13px;font-weight:700;color:#31415d;margin-bottom:7px}
+.rank-test-field select,.rank-test-field input{
+  width:100%;
+  border:2px solid #ddecff;
+  border-radius:17px;
+  padding:12px 13px;
+  background:#fff;
+  color:#172033;
+  font-size:15px;
+  font-weight:700;
+  outline:none;
+}
+.rank-test-field select:focus,.rank-test-field input:focus{border-color:#7bc7ff;box-shadow:0 0 0 5px rgba(123,199,255,.16)}
+.rank-test-note{margin-top:10px;border:2px dashed #ffe0a3;background:#fff8e8;border-radius:18px;padding:11px;color:#6d4200;font-size:13px;font-weight:700;line-height:1.45}
+.rank-test-actions{display:grid;grid-template-columns:1fr;gap:9px;margin-top:14px}
+.rank-test-actions button{border:none;border-radius:999px;padding:11px 13px;font-size:14px;font-weight:700;cursor:pointer}
+.rank-test-apply{background:#4f7cff;color:#fff;box-shadow:0 12px 24px rgba(79,124,255,.18)}
+.rank-test-popup{background:#48c78e;color:#fff;box-shadow:0 12px 24px rgba(72,199,142,.18)}
+.rank-test-reset{background:#fff;color:#31415d;border:2px solid #ddecff!important}
+.rank-evolution.rank-test-active{border-color:#ffcf70;box-shadow:0 18px 48px rgba(226,132,18,.16)}
+.rank-evolution.rank-test-active .rank-evo-title span:after{content:' · TEST MODE';color:#e28412;font-weight:700}
+@media(max-width:560px){.rank-test-float{top:10px;right:10px;padding:9px 12px}.rank-test-backdrop{padding:58px 10px 10px}.rank-test-panel{border-radius:24px}}
+</style>
+
 </head>
 <body>
 <div class="top-line"></div>
@@ -769,6 +843,34 @@ input,textarea{
       <div id="historyContent"></div>
     </section>
   </div>
+
+<button class="rank-test-float" id="rankTestFloat" type="button" onclick="openRankTestPanel()">🧪 TEST</button>
+<div class="rank-test-backdrop" id="rankTestBackdrop" onclick="closeRankTestPanel(event)">
+  <div class="rank-test-panel" role="dialog" aria-modal="true" aria-label="Test rank">
+    <div class="rank-test-head">
+      <div>
+        <h3>🧪 Test rank</h3>
+        <p>Chỉ hiện với tài khoản sunprice@sp.ik. Test này không sửa lịch sử thật.</p>
+      </div>
+      <button class="rank-test-close" type="button" onclick="closeRankTestPanel()">×</button>
+    </div>
+    <div class="rank-test-field">
+      <label>Rank muốn hiển thị</label>
+      <select id="rankTestRankSelect" onchange="handleRankTestRankChange()"></select>
+    </div>
+    <div class="rank-test-field">
+      <label>Số từ đã full 10/10 progress</label>
+      <input id="rankTestMasteredInput" type="number" min="0" max="9999" step="1" value="0" oninput="handleRankTestMasteredChange()">
+    </div>
+    <div class="rank-test-note" id="rankTestNote">Chọn rank hoặc nhập số từ full 10/10 để xem thanh progress đổi ngay.</div>
+    <div class="rank-test-actions">
+      <button class="rank-test-apply" type="button" onclick="applyRankTest(false)">Áp dụng test GUI</button>
+      <button class="rank-test-popup" type="button" onclick="applyRankTest(true)">Áp dụng + hiện popup chúc mừng</button>
+      <button class="rank-test-reset" type="button" onclick="resetRankTestState()">Trả về progress thật</button>
+    </div>
+  </div>
+</div>
+
 </main>
 
 <script>
@@ -1329,6 +1431,7 @@ async function loadVocabulary(){
   student=requireStudentSession();
   if(!student) return;
   document.getElementById('studentLine').textContent='Tài khoản: '+student.email;
+  renderRankTestTools(null);
   setStatus('userStatus','Đang tải hòm từ vựng...','warn');
   setStatus('commonStatus','Đang tải kho từ vựng...','warn');
 
@@ -1737,28 +1840,60 @@ function masteredWordsCount(){
     return wordProgressLevel(item)>=10;
   }).length;
 }
-function getCurrentRankInfo(){
-  const count=userWords.length;
-  const progress=totalProgressScore();
-  const mastered=masteredWordsCount();
+function rankTesterEmail(){return 'sunprice@sp.ik';}
+function isRankTesterAccount(){
+  return !!(student&&normalizeText(student.email)===rankTesterEmail());
+}
+function rankTestStorageKey(){return 'vocab_rank_test_'+rankTesterEmail();}
+function rankIndexFromMastered(mastered){
+  mastered=Math.max(0,Number(mastered||0));
   let index=0;
-
-  // Rank chỉ tính theo SỐ TỪ ĐÃ ĐẠT FULL 10/10 PROGRESS.
-  // Ví dụ:
-  // 0-9 từ full 10/10  => Egg
-  // 10 từ full 10/10   => Chick
-  // 50 từ full 10/10   => Double Chick
-  // 100 từ full 10/10  => Wood Hammer...
   if(mastered>=10){
     for(let i=RANKS.length-1;i>=1;i--){
       if(mastered>=RANKS[i].minWords){index=i;break;}
     }
   }
+  return index;
+}
+function loadRankTestState(){
+  if(!isRankTesterAccount()) return null;
+  try{
+    const data=JSON.parse(localStorage.getItem(rankTestStorageKey())||'null');
+    if(!data||!data.enabled) return null;
+    return data;
+  }catch(e){return null;}
+}
+function getCurrentRankInfo(){
+  const count=userWords.length;
+  const progress=totalProgressScore();
+  const actualMastered=masteredWordsCount();
+  const testState=loadRankTestState();
 
+  if(testState){
+    const fakeMastered=Math.max(0,Number(testState.mastered||0));
+    let index=testState.mode==='manual' ? Number(testState.rankIndex||0) : rankIndexFromMastered(fakeMastered);
+    if(!Number.isFinite(index)||index<0||index>=RANKS.length) index=rankIndexFromMastered(fakeMastered);
+    const rank=RANKS[index]||RANKS[0];
+    const next=RANKS[index+1]||null;
+    const percent=RANKS.length>1 ? (index/(RANKS.length-1))*100 : 0;
+    return {
+      rank:rank,next:next,index:index,
+      count:Math.max(count,fakeMastered),
+      mastered:fakeMastered,
+      actualCount:count,
+      actualMastered:actualMastered,
+      progress:progress,
+      percent:percent,
+      testMode:true
+    };
+  }
+
+  const mastered=actualMastered;
+  const index=rankIndexFromMastered(mastered);
   const rank=RANKS[index]||RANKS[0];
   const next=RANKS[index+1]||null;
   const percent=RANKS.length>1 ? (index/(RANKS.length-1))*100 : 0;
-  return {rank:rank,next:next,index:index,count:count,mastered:mastered,progress:progress,percent:percent};
+  return {rank:rank,next:next,index:index,count:count,mastered:mastered,progress:progress,percent:percent,testMode:false};
 }
 function rankNodeHtml(rank,index,currentIndex){
   const state=index===currentIndex?'current':(index<currentIndex?'unlocked':'locked');
@@ -1858,7 +1993,7 @@ function showRankUnlockedPopup(info){
   }
 }
 function checkRankAchievement(info){
-  if(!student||!info||!info.rank) return;
+  if(!student||!info||!info.rank||info.testMode) return;
   const key=rankSeenKey();
   let previous='';
   try{previous=localStorage.getItem(key)||'';}catch(e){previous='';}
@@ -1875,6 +2010,90 @@ function checkRankAchievement(info){
   }
 }
 
+
+function renderRankTestTools(info){
+  const btn=document.getElementById('rankTestFloat');
+  if(!btn) return;
+  const allowed=isRankTesterAccount();
+  btn.classList.toggle('show',allowed);
+  btn.classList.toggle('active',!!(info&&info.testMode));
+}
+function populateRankTestOptions(){
+  const select=document.getElementById('rankTestRankSelect');
+  if(!select||select.dataset.ready==='1') return;
+  const options=['<option value="auto">Tự động theo số từ full 10/10</option>'].concat(RANKS.map(function(rank,index){
+    return '<option value="'+index+'">'+escapeHtml(rank.name)+' · mốc '+rank.minWords+'</option>';
+  }));
+  select.innerHTML=options.join('');
+  select.dataset.ready='1';
+}
+function openRankTestPanel(){
+  if(!isRankTesterAccount()) return;
+  populateRankTestOptions();
+  const state=loadRankTestState();
+  const select=document.getElementById('rankTestRankSelect');
+  const input=document.getElementById('rankTestMasteredInput');
+  if(select){
+    select.value=state?(state.mode==='manual'?String(state.rankIndex||0):'auto'):'auto';
+  }
+  if(input){
+    input.value=state?Math.max(0,Number(state.mastered||0)):masteredWordsCount();
+  }
+  updateRankTestNote();
+  const panel=document.getElementById('rankTestBackdrop');
+  if(panel) panel.classList.add('show');
+}
+function closeRankTestPanel(event){
+  if(event&&event.target&&event.currentTarget&&event.target!==event.currentTarget) return;
+  const panel=document.getElementById('rankTestBackdrop');
+  if(panel) panel.classList.remove('show');
+}
+function handleRankTestRankChange(){
+  const select=document.getElementById('rankTestRankSelect');
+  const input=document.getElementById('rankTestMasteredInput');
+  if(select&&input&&select.value!=='auto'){
+    const rank=RANKS[Number(select.value)]||RANKS[0];
+    input.value=rank.minWords||0;
+  }
+  updateRankTestNote();
+}
+function handleRankTestMasteredChange(){
+  const select=document.getElementById('rankTestRankSelect');
+  if(select&&select.value==='auto') updateRankTestNote();
+}
+function updateRankTestNote(){
+  const select=document.getElementById('rankTestRankSelect');
+  const input=document.getElementById('rankTestMasteredInput');
+  const note=document.getElementById('rankTestNote');
+  if(!note||!select||!input) return;
+  const mastered=Math.max(0,Number(input.value||0));
+  const index=select.value==='auto'?rankIndexFromMastered(mastered):Number(select.value||0);
+  const rank=RANKS[index]||RANKS[0];
+  note.textContent=(select.value==='auto'?'Auto rank theo số từ: ':'Ép rank hiển thị: ')+rank.name+' · full 10/10: '+mastered;
+}
+function applyRankTest(showPopup){
+  if(!isRankTesterAccount()) return;
+  populateRankTestOptions();
+  const select=document.getElementById('rankTestRankSelect');
+  const input=document.getElementById('rankTestMasteredInput');
+  const mastered=Math.max(0,Number(input&&input.value||0));
+  const mode=select&&select.value==='auto'?'auto':'manual';
+  const rankIndex=mode==='manual'?Math.max(0,Math.min(RANKS.length-1,Number(select.value||0))):rankIndexFromMastered(mastered);
+  const state={enabled:true,mode:mode,rankIndex:rankIndex,mastered:mastered,updatedAt:new Date().toISOString()};
+  try{localStorage.setItem(rankTestStorageKey(),JSON.stringify(state));}catch(e){}
+  renderRankEvolution();
+  const info=getCurrentRankInfo();
+  if(showPopup) showRankUnlockedPopup(info);
+  else cuteToast('Đã bật test rank: '+info.rank.name,'success');
+}
+function resetRankTestState(){
+  if(!isRankTesterAccount()) return;
+  try{localStorage.removeItem(rankTestStorageKey());}catch(e){}
+  closeRankTestPanel();
+  renderRankEvolution();
+  cuteToast('Đã trả về trạng thái progress thật','success');
+}
+
 function renderRankEvolution(){
   const info=getCurrentRankInfo();
   const chipIcon=document.getElementById('rankChipIcon');
@@ -1887,9 +2106,12 @@ function renderRankEvolution(){
   if(chipName) chipName.textContent=info.rank.name;
   if(currentIcon) currentIcon.src=info.rank.icon;
   if(currentName) currentName.textContent=info.rank.name;
-  if(currentMeta) currentMeta.textContent='Từ full 10/10: '+info.mastered+' · Tổng từ: '+info.count;
+  if(currentMeta) currentMeta.textContent=(info.testMode?'TEST · ':'')+'Từ full 10/10: '+info.mastered+' · Tổng từ: '+info.count;
+  const rankEvolution=document.getElementById('rankEvolution');
+  if(rankEvolution) rankEvolution.classList.toggle('rank-test-active',!!info.testMode);
   if(nodes) nodes.innerHTML=RANKS.map(function(rank,index){return rankNodeHtml(rank,index,info.index);}).join('');
   requestAnimationFrame(function(){layoutRankRail(info.index);});
+  renderRankTestTools(info);
   checkRankAchievement(info);
 }
 
