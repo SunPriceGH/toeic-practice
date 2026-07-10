@@ -331,7 +331,7 @@ input,textarea{
 .rank-evo-title{text-align:right;min-width:240px}
 .rank-evo-title b{display:block;font-size:23px;color:#172033;font-weight:700}
 .rank-evo-title span{display:block;margin-top:5px;color:#64748b;font-size:14px;font-weight:700}
-.rank-road-wrap{position:relative;z-index:1;overflow-x:auto;overflow-y:hidden;padding:26px 6px 16px;scrollbar-width:thin;scrollbar-color:#ffcf70 #f4edf8}
+.rank-road-wrap{position:relative;z-index:1;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;padding:26px 6px 16px;scrollbar-width:thin;scrollbar-color:#ffcf70 #f4edf8}
 .rank-road-wrap::-webkit-scrollbar{height:11px}
 .rank-road-wrap::-webkit-scrollbar-track{background:#f4edf8;border-radius:999px}
 .rank-road-wrap::-webkit-scrollbar-thumb{background:linear-gradient(90deg,#ffcf70,#ffad4a);border-radius:999px;border:2px solid #f4edf8}
@@ -1057,6 +1057,8 @@ let userPartSort='';
 let commonPartSort='';
 let vocabCloudDisabled=false;
 let userDeletedKeys=[];
+let rankAutoScrollDone=false;
+let lastCenteredRankIndex=null;
 let rankCelebrating=false;
 
 function escapeHtml(s){return String(s||'').replace(/[&<>'"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c];});}
@@ -1996,6 +1998,53 @@ function layoutRankRail(infoOrIndex){
   rail.style.height=railHeight+'px';
   fill.style.width=Math.max(0,Math.min(lastX,fillX)-firstX)+'px';
 }
+function centerRankNodeInView(infoOrIndex,animate){
+  const info=typeof infoOrIndex==='number'
+    ? {index:infoOrIndex,fillBetween:0}
+    : (infoOrIndex||{});
+  const currentIndex=Math.max(0,Math.min(RANKS.length-1,Number(info.index||0)));
+
+  const wrap=document.querySelector('.rank-road-wrap');
+  const road=document.getElementById('rankRoad');
+  const nodes=Array.from(document.querySelectorAll('#rankNodes .rank-node'));
+  if(!wrap||!road||!nodes.length||!nodes[currentIndex]) return;
+
+  const currentDot=nodes[currentIndex].querySelector('.rank-dot');
+  if(!currentDot) return;
+
+  let targetDot=currentDot;
+  let targetX=rankCenterX(currentDot,road);
+  const nextIndex=Math.min(nodes.length-1,currentIndex+1);
+  const nextDot=nodes[nextIndex]?nodes[nextIndex].querySelector('.rank-dot'):null;
+  if(nextDot&&nextIndex!==currentIndex){
+    const nextX=rankCenterX(nextDot,road);
+    const t=Math.max(0,Math.min(1,Number(info.fillBetween||0)));
+    targetX=targetX+(nextX-targetX)*t;
+  }
+
+  const nextScroll=targetX-wrap.clientWidth/2;
+  const maxScroll=Math.max(0,wrap.scrollWidth-wrap.clientWidth);
+  const safeScroll=Math.max(0,Math.min(maxScroll,nextScroll));
+
+  try{
+    wrap.scrollTo({left:safeScroll,behavior:animate?'smooth':'auto'});
+  }catch(e){
+    wrap.scrollLeft=safeScroll;
+  }
+}
+function autoCenterCurrentRank(info){
+  const index=info&&typeof info==='object'?Number(info.index||0):Number(info||0);
+  const fill=info&&typeof info==='object'?Number(info.fillBetween||0):0;
+  const key=index+'-'+Math.round(fill*1000);
+  const shouldCenter=!rankAutoScrollDone||lastCenteredRankIndex!==key;
+  if(!shouldCenter) return;
+  rankAutoScrollDone=true;
+  lastCenteredRankIndex=key;
+  setTimeout(function(){
+    centerRankNodeInView(info,true);
+    setTimeout(function(){layoutRankRail(info);},420);
+  },130);
+}
 function rankSeenKey(){
   return 'vocab_rank_seen_'+normalizeText(student&&student.email?student.email:'guest').replace(/[^a-z0-9@._-]/g,'_');
 }
@@ -2151,6 +2200,7 @@ function resetRankTestState(){
   if(!isRankTesterAccount()) return;
   try{localStorage.removeItem(rankTestStorageKey());}catch(e){}
   closeRankTestPanel();
+  rankAutoScrollDone=false;
   renderRankEvolution();
   cuteToast('Đã trả về trạng thái progress thật','success');
 }
@@ -2171,7 +2221,7 @@ function renderRankEvolution(){
   const rankEvolution=document.getElementById('rankEvolution');
   if(rankEvolution) rankEvolution.classList.toggle('rank-test-active',!!info.testMode);
   if(nodes) nodes.innerHTML=RANKS.map(function(rank,index){return rankNodeHtml(rank,index,info.index);}).join('');
-  requestAnimationFrame(function(){layoutRankRail(info);});
+  requestAnimationFrame(function(){layoutRankRail(info);autoCenterCurrentRank(info);});
   renderRankTestTools(info);
   checkRankAchievement(info);
 }
