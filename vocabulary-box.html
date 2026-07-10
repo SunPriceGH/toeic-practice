@@ -2797,10 +2797,12 @@ loadVocabulary();
 <script>
 (function(){
   const chestFrames=[
-    'images/ui/chest-idle.png',
-    'images/ui/chest-open-1.png',
-    'images/ui/chest-hover.png',
-    'images/ui/chest-open-2.png'
+    'image/ui/chest-idle.png',
+    'image/ui/chest-hover.png',
+    'image/ui/chest-open-1.png',
+    'image/ui/chest-open-2.png',
+    'image/ui/chest-open-3.png',
+    'image/ui/chest-open-4.png'
   ];
   let chestTimer=null;
   let chestFrameIndex=0;
@@ -2834,7 +2836,7 @@ loadVocabulary();
         return;
       }
       img.src=chestFrames[chestFrameIndex];
-    },95);
+    },72);
   }
 
   function playVocabChestCloseAnimation(stage,img){
@@ -2852,7 +2854,7 @@ loadVocabulary();
         return;
       }
       img.src=chestFrames[chestFrameIndex];
-    },80);
+    },62);
   }
 
   function initVocabChestAnimation(){
