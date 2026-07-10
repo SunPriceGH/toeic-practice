@@ -773,6 +773,95 @@ input,textarea{
 @media(max-width:560px){.rank-detail-grid{grid-template-columns:1fr}.rank-detail-title b{font-size:21px}}
 </style>
 
+
+<style>
+/* ===== Chest image 4-frame hover animation ===== */
+.chest-image-mascot{
+  overflow:hidden;
+  padding:12px;
+}
+.vocab-chest-stage{
+  position:relative;
+  width:min(230px,88%);
+  margin:0 auto;
+  cursor:pointer;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
+  transform-origin:center bottom;
+}
+.vocab-chest-glow{
+  position:absolute;
+  left:5%;
+  right:5%;
+  bottom:0;
+  height:46%;
+  border-radius:999px;
+  background:radial-gradient(circle,rgba(255,207,112,.48),transparent 64%);
+  filter:blur(12px);
+  opacity:.54;
+  transform:scale(.90);
+  transition:.28s ease;
+  pointer-events:none;
+}
+.vocab-chest-img{
+  position:relative;
+  z-index:2;
+  width:100%;
+  display:block;
+  object-fit:contain;
+  transform-origin:center bottom;
+  transition:transform .28s ease,filter .28s ease;
+  filter:drop-shadow(0 18px 22px rgba(42,69,116,.18));
+}
+.vocab-chest-stage:hover .vocab-chest-img,
+.vocab-chest-stage.open .vocab-chest-img{
+  transform:translateY(-8px) scale(1.045) rotate(-1.5deg);
+  filter:drop-shadow(0 26px 30px rgba(226,132,18,.24));
+}
+.vocab-chest-stage:hover .vocab-chest-glow,
+.vocab-chest-stage.open .vocab-chest-glow{
+  opacity:.96;
+  transform:scale(1.08);
+}
+.vocab-chest-stage:active .vocab-chest-img{
+  transform:translateY(-3px) scale(.98);
+}
+.vocab-chest-sparkle{
+  position:absolute;
+  z-index:3;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#ffd86b;
+  box-shadow:0 0 0 4px rgba(255,216,107,.18),0 0 18px rgba(255,173,74,.65);
+  opacity:0;
+  pointer-events:none;
+}
+.vocab-chest-sparkle.vc1{left:16%;top:31%}
+.vocab-chest-sparkle.vc2{right:15%;top:22%;width:9px;height:9px}
+.vocab-chest-sparkle.vc3{left:48%;top:8%;width:10px;height:10px}
+.vocab-chest-stage:hover .vocab-chest-sparkle,
+.vocab-chest-stage.open .vocab-chest-sparkle{
+  animation:vocabChestSparkleFloat .85s ease-in-out infinite alternate;
+  opacity:1;
+}
+.vocab-chest-stage:hover .vocab-chest-sparkle.vc2,
+.vocab-chest-stage.open .vocab-chest-sparkle.vc2{animation-delay:.12s}
+.vocab-chest-stage:hover .vocab-chest-sparkle.vc3,
+.vocab-chest-stage.open .vocab-chest-sparkle.vc3{animation-delay:.22s}
+@keyframes vocabChestSparkleFloat{
+  from{transform:translateY(8px) scale(.8);opacity:.35}
+  to{transform:translateY(-10px) scale(1.15);opacity:1}
+}
+@media(max-width:900px){
+  .vocab-chest-stage{width:min(210px,78%)}
+}
+@media(max-width:560px){
+  .chest-image-mascot{min-height:170px}
+  .vocab-chest-stage{width:min(205px,86%)}
+}
+</style>
+
 </head>
 <body>
 <div class="top-line"></div>
@@ -800,9 +889,14 @@ input,textarea{
     </div>
 
     <section class="hero">
-      <div class="mascot" aria-hidden="true">
-        <span class="spark s1">✨</span><span class="spark s2">🌟</span><span class="spark s3">💬</span>
-        <div class="chest"></div>
+      <div class="mascot chest-image-mascot" aria-hidden="true">
+        <div class="vocab-chest-stage" id="vocabChestStage">
+          <div class="vocab-chest-glow"></div>
+          <img id="vocabChestImg" class="vocab-chest-img" src="image/ui/chest-idle.png" alt="" draggable="false" loading="eager">
+          <span class="vocab-chest-sparkle vc1"></span>
+          <span class="vocab-chest-sparkle vc2"></span>
+          <span class="vocab-chest-sparkle vc3"></span>
+        </div>
       </div>
       <div class="hero-copy">
         <span class="badge">Voca Box</span>
@@ -2699,5 +2793,99 @@ syncMeaningRows('common');
 selectMode('choice');
 loadVocabulary();
 </script>
+
+<script>
+(function(){
+  const chestFrames=[
+    'image/ui/chest-idle.png',
+    'image/ui/chest-hover.png',
+    'image/ui/chest-open-1.png',
+    'image/ui/chest-open-2.png'
+  ];
+  let chestTimer=null;
+  let chestFrameIndex=0;
+
+  function preloadVocabChestFrames(){
+    chestFrames.forEach(function(src){
+      const img=new Image();
+      img.src=src;
+    });
+  }
+
+  function stopVocabChestAnimation(){
+    if(chestTimer){
+      clearInterval(chestTimer);
+      chestTimer=null;
+    }
+  }
+
+  function playVocabChestOpenAnimation(stage,img){
+    stopVocabChestAnimation();
+    stage.classList.add('open');
+    chestFrameIndex=0;
+    img.src=chestFrames[0];
+
+    chestTimer=setInterval(function(){
+      chestFrameIndex++;
+      if(chestFrameIndex>=chestFrames.length){
+        clearInterval(chestTimer);
+        chestTimer=null;
+        img.src=chestFrames[chestFrames.length-1];
+        return;
+      }
+      img.src=chestFrames[chestFrameIndex];
+    },95);
+  }
+
+  function playVocabChestCloseAnimation(stage,img){
+    stopVocabChestAnimation();
+    chestFrameIndex=chestFrames.length-1;
+    img.src=chestFrames[chestFrameIndex];
+
+    chestTimer=setInterval(function(){
+      chestFrameIndex--;
+      if(chestFrameIndex<=0){
+        clearInterval(chestTimer);
+        chestTimer=null;
+        img.src=chestFrames[0];
+        stage.classList.remove('open');
+        return;
+      }
+      img.src=chestFrames[chestFrameIndex];
+    },80);
+  }
+
+  function initVocabChestAnimation(){
+    const stage=document.getElementById('vocabChestStage');
+    const img=document.getElementById('vocabChestImg');
+    if(!stage||!img) return;
+
+    preloadVocabChestFrames();
+    img.src=chestFrames[0];
+
+    stage.addEventListener('mouseenter',function(){
+      playVocabChestOpenAnimation(stage,img);
+    });
+    stage.addEventListener('mouseleave',function(){
+      playVocabChestCloseAnimation(stage,img);
+    });
+    stage.addEventListener('touchstart',function(){
+      playVocabChestOpenAnimation(stage,img);
+    },{passive:true});
+    stage.addEventListener('touchend',function(){
+      setTimeout(function(){
+        playVocabChestCloseAnimation(stage,img);
+      },550);
+    },{passive:true});
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',initVocabChestAnimation);
+  }else{
+    initVocabChestAnimation();
+  }
+})();
+</script>
+
 </body>
 </html>
