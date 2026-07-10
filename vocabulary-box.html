@@ -697,6 +697,82 @@ input,textarea{
 @media(max-width:560px){.rank-test-float{top:10px;right:10px;padding:9px 12px}.rank-test-backdrop{padding:58px 10px 10px}.rank-test-panel{border-radius:24px}}
 </style>
 
+
+<style>
+/* ===== Rank summary button + detail popup ===== */
+.rank-summary-button{
+  border:2px solid #ffe4ad;
+  cursor:pointer;
+  font-family:inherit;
+  text-align:left;
+  appearance:none;
+  -webkit-appearance:none;
+}
+.rank-summary-button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 18px 36px rgba(226,132,18,.16);
+}
+.rank-summary-button:active{transform:translateY(0)}
+.rank-current-copy small.rank-summary-mini{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:7px;
+  color:#7a4a00;
+  background:#fff7d6;
+  border:1px solid #ffe0a3;
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:12px;
+  line-height:1;
+  font-weight:700;
+}
+.rank-current-copy small.rank-summary-mini:after{
+  content:"›";
+  font-size:15px;
+  line-height:1;
+}
+.rank-node{
+  border:0;
+  background:transparent;
+  font-family:inherit;
+  padding:0;
+  appearance:none;
+  -webkit-appearance:none;
+}
+.rank-node.clickable{cursor:pointer}
+.rank-node.clickable:hover .rank-icon-frame{
+  transform:translateY(-3px);
+  box-shadow:0 14px 28px rgba(226,132,18,.14);
+}
+.rank-node.current.clickable:hover .rank-icon-frame{
+  transform:translateY(-7px);
+}
+.rank-node:disabled{cursor:default}
+.rank-detail-popup{padding-top:2px;text-align:left}
+.rank-detail-top{display:flex;align-items:center;gap:12px;margin:2px 0 12px}
+.rank-detail-icon{
+  width:78px;height:78px;border-radius:24px;display:grid;place-items:center;
+  background:radial-gradient(circle,#fff7d6 0,#fff 70%);
+  border:2px solid #ffcf70;
+  box-shadow:0 0 0 7px rgba(255,207,112,.18),0 14px 28px rgba(226,132,18,.14);
+  animation:rankPulse 1.8s ease-in-out infinite;
+  flex:0 0 auto;
+}
+.rank-detail-icon img{width:70px;height:70px;object-fit:contain;display:block}
+.rank-detail-title span{display:block;color:#b57400;font-size:12px;font-weight:700;line-height:1}
+.rank-detail-title b{display:block;margin-top:5px;color:#42210b;font-size:24px;line-height:1.05;font-weight:700}
+.rank-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}
+.rank-detail-stat{background:#fff;border:1px solid #ffe0a3;border-radius:16px;padding:10px}
+.rank-detail-stat span{display:block;color:#64748b;font-size:12px;font-weight:700;line-height:1.15}
+.rank-detail-stat b{display:block;margin-top:4px;color:#172033;font-size:20px;font-weight:700;line-height:1}
+.rank-detail-bar{height:14px;border-radius:999px;background:#eee7f6;border:2px solid #fff;overflow:hidden;box-shadow:inset 0 2px 6px rgba(42,69,116,.10);margin:12px 0 8px}
+.rank-detail-bar span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#ffd86b,#ffad4a,#7bc7ff)}
+.rank-detail-note{color:#64748b;font-size:13px;line-height:1.45;font-weight:700;background:#f8fbff;border:1px solid #e5eefb;border-radius:16px;padding:10px;margin-top:10px}
+.rank-detail-next{color:#6d4200;background:#fff7d6;border-color:#ffe0a3}
+@media(max-width:560px){.rank-detail-grid{grid-template-columns:1fr}.rank-detail-title b{font-size:21px}}
+</style>
+
 </head>
 <body>
 <div class="top-line"></div>
@@ -743,16 +819,16 @@ input,textarea{
 
     <section class="rank-evolution" id="rankEvolution" aria-label="Tiến hóa rank từ vựng">
       <div class="rank-evo-head">
-        <div class="rank-current-card">
+        <button class="rank-current-card rank-summary-button" type="button" onclick="showRankDetailPanel(getCurrentRankInfo())" aria-label="Xem chi tiết rank hiện tại">
           <div class="rank-current-glow">
             <img id="rankCurrentIcon" alt="Rank hiện tại" src="" loading="eager">
           </div>
           <div class="rank-current-copy">
             <span>Rank hiện tại</span>
             <b id="rankCurrentName">Egg</b>
-            <small id="rankCurrentMeta">Từ: 0 · Progress: 0</small>
+            <small id="rankCurrentMeta" class="rank-summary-mini">Xem lộ trình</small>
           </div>
-        </div>
+        </button>
         <div class="rank-evo-title">
           <b>Thanh tiến hóa rank</b>
           <span>Luyện từ để mở dần các huy hiệu cute/cartoon.</span>
@@ -1944,11 +2020,14 @@ function getCurrentRankInfo(){
 function rankNodeHtml(rank,index,currentIndex){
   const state=index===currentIndex?'current':(index<currentIndex?'unlocked':'locked');
   const just=index===currentIndex?' just-unlocked':'';
-  return '<div class="rank-node '+state+just+'" title="'+escapeHtml(rank.name)+'">'
+  const clickable=index<=currentIndex;
+  return '<button class="rank-node '+state+just+(clickable?' clickable':'')+'" type="button" '+
+    (clickable?'onclick="showRankDetailPanel(getCurrentRankInfo(),'+index+')" aria-label="Xem chi tiết '+escapeHtml(rank.name)+'"':'disabled aria-label="Rank chưa mở khóa"')+
+    ' title="'+escapeHtml(rank.name)+'">'
     +'<div class="rank-icon-frame"><img src="'+rank.icon+'" alt="'+escapeHtml(rank.name)+'"></div>'
     +'<div class="rank-dot"></div>'
     +'<div class="rank-name">'+escapeHtml(rank.name)+'</div>'
-    +'</div>';
+    +'</button>';
 }
 function rankCenterX(el,parent){
   const a=el.getBoundingClientRect();
@@ -2044,6 +2123,66 @@ function autoCenterCurrentRank(info){
     centerRankNodeInView(info,true);
     setTimeout(function(){layoutRankRail(info);},420);
   },130);
+}
+function rankSummaryMiniText(info){
+  if(!info||!info.rank) return 'Xem lộ trình';
+  const prefix=info.testMode?'TEST · ':'';
+  if(!info.next) return prefix+'Đã chạm đỉnh';
+  const need=Math.max(0,Number(info.next.minWords||0)-Number(info.mastered||0));
+  return prefix+Number(info.mastered||0)+'/'+Number(info.next.minWords||0)+' · Còn '+need+' từ';
+}
+function rankProgressPercent(info){
+  if(!info) return 0;
+  if(!info.next) return 100;
+  return Math.max(0,Math.min(100,Number(info.fillBetween||0)*100));
+}
+function showRankDetailPanel(info,rankIndex){
+  info=info||getCurrentRankInfo();
+  const selectedIndex=Number.isFinite(Number(rankIndex))?Number(rankIndex):Number(info.index||0);
+  const selectedRank=RANKS[selectedIndex]||info.rank||RANKS[0];
+  const isCurrent=selectedIndex===Number(info.index||0);
+  const next=info.next;
+  const mastered=Number(info.mastered||0);
+  const total=Number(info.count||0);
+  const target=next?Number(next.minWords||0):Number(selectedRank.minWords||0);
+  const need=next?Math.max(0,target-mastered):0;
+  const percent=isCurrent?rankProgressPercent(info):100;
+  const label=info.testMode?'Đang test GUI':'Tiến độ thật';
+  const selectedMin=Number(selectedRank.minWords||0);
+  const selectedNeed=Math.max(0,selectedMin-mastered);
+  const nextLine=next
+    ? 'Còn <b>'+need+'</b> từ nữa để lên <b>'+escapeHtml(next.name)+'</b>.'
+    : 'Bạn đã chạm mốc rank cao nhất trong lộ trình.';
+  const selectedLine=isCurrent
+    ? nextLine
+    : 'Mốc <b>'+escapeHtml(selectedRank.name)+'</b> cần <b>'+selectedMin+'</b> từ đạt 10/10. '+(selectedNeed>0?'Còn <b>'+selectedNeed+'</b> từ nữa.':'Bạn đã mở khóa mốc này.');
+  const html='<div class="rank-detail-popup">'
+    +'<div class="rank-detail-top">'
+      +'<div class="rank-detail-icon"><img src="'+selectedRank.icon+'" alt="'+escapeHtml(selectedRank.name)+'"></div>'
+      +'<div class="rank-detail-title"><span>'+label+'</span><b>'+escapeHtml(selectedRank.name)+'</b></div>'
+    +'</div>'
+    +'<div class="rank-detail-grid">'
+      +'<div class="rank-detail-stat"><span>Đạt 10/10</span><b>'+mastered+'</b></div>'
+      +'<div class="rank-detail-stat"><span>Tổng trong hòm</span><b>'+total+'</b></div>'
+      +'<div class="rank-detail-stat"><span>Rank hiện tại</span><b>'+escapeHtml(info.rank.name)+'</b></div>'
+      +'<div class="rank-detail-stat"><span>Mốc kế tiếp</span><b>'+(next?escapeHtml(next.name):'Max')+'</b></div>'
+    +'</div>'
+    +'<div class="rank-detail-bar"><span style="width:'+percent+'%"></span></div>'
+    +'<div class="rank-detail-note rank-detail-next">'+selectedLine+'</div>'
+    +'<div class="rank-detail-note">Rank chỉ tính các từ đạt <b>10/10</b>. Làm đúng tăng điểm, làm sai trừ điểm của từ đó.</div>'
+    +'</div>';
+  if(window.Swal){
+    Swal.fire({
+      title:isCurrent?'Chi tiết rank':'Chi tiết huy hiệu',
+      html:html,
+      showConfirmButton:true,
+      confirmButtonText:'Đã hiểu',
+      background:'#fffaf3',
+      width:520
+    });
+  }else{
+    cuteToast(nextLine.replace(/<[^>]*>/g,''),'info');
+  }
 }
 function rankSeenKey(){
   return 'vocab_rank_seen_'+normalizeText(student&&student.email?student.email:'guest').replace(/[^a-z0-9@._-]/g,'_');
@@ -2191,6 +2330,7 @@ function applyRankTest(showPopup){
   const rankIndex=mode==='manual'?Math.max(0,Math.min(RANKS.length-1,Number(select.value||0))):rankIndexFromMastered(mastered);
   const state={enabled:true,mode:mode,rankIndex:rankIndex,mastered:mastered,updatedAt:new Date().toISOString()};
   try{localStorage.setItem(rankTestStorageKey(),JSON.stringify(state));}catch(e){}
+  rankAutoScrollDone=false;
   renderRankEvolution();
   const info=getCurrentRankInfo();
   if(showPopup) showRankUnlockedPopup(info);
@@ -2217,7 +2357,7 @@ function renderRankEvolution(){
   if(chipName) chipName.textContent=info.rank.name;
   if(currentIcon) currentIcon.src=info.rank.icon;
   if(currentName) currentName.textContent=info.rank.name;
-  if(currentMeta) currentMeta.textContent=(info.testMode?'TEST · ':'')+'Từ full 10/10: '+info.mastered+' · Tổng từ: '+info.count;
+  if(currentMeta) currentMeta.textContent=rankSummaryMiniText(info);
   const rankEvolution=document.getElementById('rankEvolution');
   if(rankEvolution) rankEvolution.classList.toggle('rank-test-active',!!info.testMode);
   if(nodes) nodes.innerHTML=RANKS.map(function(rank,index){return rankNodeHtml(rank,index,info.index);}).join('');
