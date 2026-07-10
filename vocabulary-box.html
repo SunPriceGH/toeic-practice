@@ -335,9 +335,8 @@ input,textarea{
 .rank-road-wrap::-webkit-scrollbar{height:11px}
 .rank-road-wrap::-webkit-scrollbar-track{background:#f4edf8;border-radius:999px}
 .rank-road-wrap::-webkit-scrollbar-thumb{background:linear-gradient(90deg,#ffcf70,#ffad4a);border-radius:999px;border:2px solid #f4edf8}
-.rank-road-wrap:before,.rank-road-wrap:after{content:"";position:absolute;top:0;bottom:10px;width:34px;z-index:4;pointer-events:none}
-.rank-road-wrap:before{left:0;background:linear-gradient(90deg,rgba(255,250,245,.96),rgba(255,250,245,0))}
-.rank-road-wrap:after{right:0;background:linear-gradient(270deg,rgba(255,250,245,.96),rgba(255,250,245,0))}
+/* Bỏ lớp mờ 2 mép khi kéo ngang để không để lại vệt trên thanh rank */
+.rank-road-wrap:before,.rank-road-wrap:after{display:none!important;content:none!important}
 .rank-road{position:relative;min-width:1424px;padding:10px 18px 12px}
 .rank-rail{position:absolute;left:65px;right:65px;top:94px;height:18px;border-radius:999px;background:linear-gradient(180deg,#f4edf8,#e6ddf4);border:3px solid rgba(255,255,255,.88);box-shadow:inset 0 3px 8px rgba(42,69,116,.10),0 8px 18px rgba(42,69,116,.07)}
 .rank-rail span{position:relative;display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#ffd86b 0%,#ffad4a 48%,#7bc7ff 100%);box-shadow:0 0 16px rgba(255,173,74,.42);transition:width .45s ease}
