@@ -38,7 +38,7 @@ html.anti-download-lock svg{
 body.admin-lock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='11' width='14' height='10' rx='2' fill='%23dbeafe'/%3E%3Cpath d='M8 11V7a4 4 0 0 1 8 0v4'/%3E%3C/svg%3E") 10 10,pointer}
 body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='11' width='14' height='10' rx='2' fill='%23dcfce7'/%3E%3Cpath d='M8 11V7a4 4 0 0 1 7.5-2'/%3E%3Cpath d='M16 3l3 3'/%3E%3C/svg%3E") 10 10,pointer}
 .remember-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 4px;flex-wrap:wrap}.remember-check{display:flex;align-items:center;gap:8px;color:#334155;font-size:15px;font-weight:700}.remember-check input{width:18px;height:18px;accent-color:#2563eb}.link-btn{border:none;background:transparent;color:#1d4ed8;font-weight:700;cursor:pointer;font-size:14px;padding:4px 0}.link-btn:hover{text-decoration:underline}.student-memory{display:none;align-items:center;gap:10px;flex-wrap:wrap;margin:2px 0 18px;background:#f8fafc;border:2px solid #dbeafe;border-radius:18px;padding:12px 14px;color:#334155;font-size:16px;font-weight:700}.student-memory.show{display:flex}.student-memory b{color:#1d4ed8}.student-memory button,.student-memory a{border:none;border-radius:999px;background:#e2e8f0;color:#0f172a;font-weight:700;padding:8px 12px;cursor:pointer;text-decoration:none;font-size:14px}.student-memory button:hover,.student-memory a:hover{background:#cbd5e1}.student-memory .stats-link{background:linear-gradient(135deg,#f97316,#e11d48);color:#fff;box-shadow:0 8px 18px rgba(225,29,72,.24)}.student-memory .stats-link:hover{background:linear-gradient(135deg,#ea580c,#be123c);transform:translateY(-1px)}.student-login-btn{background:linear-gradient(135deg,#22c55e,#0ea5e9)!important;color:#fff!important;border-color:#bbf7d0!important}.student-login-btn:hover{background:linear-gradient(135deg,#16a34a,#0284c7)!important}.student-login-btn.hide{display:none!important}.latest-result{margin:12px 0 16px;border:2px solid #dbeafe;background:#fff;border-radius:16px;padding:10px 12px;color:#334155;font-size:15px;font-weight:700;line-height:1.35}.latest-result b{color:#1d4ed8}.latest-result.good{border-color:#bbf7d0;background:#f0fdf4}.latest-result.warn{border-color:#fed7aa;background:#fff7ed}.latest-result.bad{border-color:#fecdd3;background:#fff1f2}
-.vip-badge{position:absolute;top:16px;right:16px;z-index:4;display:none;align-items:center;justify-content:center;padding:8px 13px;border-radius:999px;background:linear-gradient(135deg,#f97316,#facc15);color:#7c2d12;border:2px solid #fff7ed;box-shadow:0 10px 22px rgba(234,88,12,.24);font-size:13px;font-weight:700;letter-spacing:.08em;line-height:1;text-transform:uppercase}.card.lock-bypass .vip-badge{display:inline-flex}.card.lock-bypass{border-color:#facc15;box-shadow:0 18px 40px rgba(234,179,8,.16),0 14px 30px rgba(15,23,42,.08)}
+.vip-toolbar-badge{display:none;align-items:center;justify-content:center;padding:8px 15px;border-radius:999px;background:linear-gradient(135deg,#f97316,#facc15);color:#7c2d12;border:2px solid #fff7ed;box-shadow:0 10px 22px rgba(234,88,12,.24);font-size:13px;font-weight:700;letter-spacing:.08em;line-height:1;text-transform:uppercase}.vip-toolbar-badge.show{display:inline-flex}
 
 /* ===== Vocab card cute chest UI ===== */
 .vocab-index-card{
@@ -127,6 +127,7 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
       <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 7.5-2"></path><path d="M16 3l3 3"></path></svg>
     </button>
   </div>
+  <div class="vip-toolbar-badge" id="vipToolbarBadge">VIP</div>
   <button class="admin-cancel-btn" id="adminCancelBtn" type="button" onclick="clearAdminMode()" title="Hủy chế độ lock/unlock" aria-label="Hủy chế độ lock/unlock">
     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg>
   </button>
@@ -385,19 +386,11 @@ function applyLessonLocks(){
   const bypass=isLockBypassStudent();
   document.querySelectorAll('.lesson-card').forEach(card=>{
     card.classList.toggle('locked',!bypass && isLessonLocked(card.dataset.lessonId));
-    card.classList.toggle('lock-bypass',bypass);
-    let badge=card.querySelector('.vip-badge');
-    if(bypass){
-      if(!badge){
-        badge=document.createElement('span');
-        badge.className='vip-badge';
-        badge.textContent='VIP';
-        card.appendChild(badge);
-      }
-    }else if(badge){
-      badge.remove();
-    }
+    card.classList.remove('lock-bypass');
+    card.querySelectorAll('.vip-badge').forEach(badge=>badge.remove());
   });
+  const vipBadge=document.getElementById('vipToolbarBadge');
+  if(vipBadge) vipBadge.classList.toggle('show',bypass);
   if(bypass){
     const status=document.getElementById('adminStatus');
     if(status && status.textContent.includes('sunprice@sp.ik')) setAdminStatus('');
