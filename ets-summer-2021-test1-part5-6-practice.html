@@ -58,7 +58,7 @@ h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size
 
 <script>
 const STUDENT_KEY='toeic_student_session';
-const DATA_URL='data/listening-ets2021-p56.json';
+const DATA_URL='data/reading-ets2021-p56.json';
 const LESSON_ID='ets-summer-2021-test1-part5-6-practice';
 const LOCK_BYPASS_EMAIL='sunprice@sp.ik';
 let EXAM_DATA=null;
@@ -71,6 +71,7 @@ let resultSubmitted=false;
 const checkedAnswers={};
 
 function escapeHtml(str){return String(str ?? '').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));}
+function renderJsonHtml(value){return String(value ?? '');}
 function getStudentSession(){try{const raw=localStorage.getItem(STUDENT_KEY);return raw?JSON.parse(raw):null;}catch(e){return null;}}
 function requireStudentSession(){const student=getStudentSession();if(!student||!student.email){alert('Bạn cần đăng nhập bằng email đã được cấp quyền trước khi làm bài.');location.href='index.html';return null;}return student;}
 async function requireLessonUnlocked(student){
@@ -92,21 +93,21 @@ async function requireLessonUnlocked(student){
 }
 async function loadData(){const res=await fetch(DATA_URL,{cache:'no-store'});if(!res.ok)throw new Error('Không tải được data đề.');EXAM_DATA=await res.json();if(!EXAM_DATA||!Array.isArray(EXAM_DATA.questions))throw new Error('Data đề không đúng định dạng.');}
 function buildPassageMap(){passageByQuestionNo={};(EXAM_DATA.passages||[]).forEach(p=>{(p.questions||[]).forEach(q=>{passageByQuestionNo[Number(q.no)]=p;});});}
-function optionHtml(item,optKey,optText){return '<label class="option"><input name="'+escapeHtml(item.id)+'" type="radio" value="'+escapeHtml(optKey)+'"><span class="option-letter">'+escapeHtml(optKey)+'.</span><span>'+escapeHtml(optText)+'</span></label>';}
+function optionHtml(item,optKey,optText){return '<label class="option"><input name="'+escapeHtml(item.id)+'" type="radio" value="'+escapeHtml(optKey)+'"><span class="option-letter">'+escapeHtml(optKey)+'.</span><span>'+renderJsonHtml(optText)+'</span></label>';}
 function questionPanelHtml(item){
   const optionsHtml=Object.entries(item.options||{}).map(([key,text])=>optionHtml(item,key,text)).join('');
-  const stem=item.part===5?'<div class="question">'+escapeHtml(item.stem||'')+'</div>':'<div class="question">Question '+escapeHtml(item.no)+'</div>';
+  const stem=item.part===5?'<div class="question">'+renderJsonHtml(item.stem||'')+'</div>':'<div class="question">Question '+escapeHtml(item.no)+'</div>';
   const correctText=item.options?.[item.answer]||'';
   const skill=item.skill?'<div class="skill-line">'+escapeHtml(item.skill)+'</div>':'';
   return '<div class="sample-box"><div class="sample-title">Question</div>'+stem+'<div class="options">'+optionsHtml+'</div></div>'+
-    '<div class="method-box result-box" id="result-'+escapeHtml(item.no)+'"><h3 class="result-title"></h3><p class="explain"><span class="answer-key">Đáp án: '+escapeHtml(item.answer)+'. '+escapeHtml(correctText)+'</span></p>'+skill+'<p class="explain">'+escapeHtml(item.explanationVi||item.explanation||'Đáp án này phù hợp nhất với ngữ cảnh và cấu trúc câu.')+'</p></div>';
+    '<div class="method-box result-box" id="result-'+escapeHtml(item.no)+'"><h3 class="result-title"></h3><p class="explain"><span class="answer-key">Đáp án: '+escapeHtml(item.answer)+'. '+renderJsonHtml(correctText)+'</span></p>'+skill+'<p class="explain">'+renderJsonHtml(item.explanationVi||item.explanation||'Đáp án này phù hợp nhất với ngữ cảnh và cấu trúc câu.')+'</p></div>';
 }
 function quizSlideHtml(item,index){
   const partLabel=item.part===5?'Part 5':'Part 6';
   const title='Question '+item.no;
   if(item.part===6){
     const p=passageByQuestionNo[Number(item.no)]||{};
-    return '<section class="slide quiz-slide'+(index===0?' active':'')+'" data-question="'+escapeHtml(item.id)+'" data-no="'+escapeHtml(item.no)+'"><div class="slide-label">Practice · '+partLabel+'</div><h2>'+escapeHtml(title)+'</h2><div class="content-area wide-area"><div class="passage-layout"><div class="passage-box"><div class="passage-title">'+escapeHtml(p.title||item.stem||'Part 6 Passage')+'</div>'+(p.html||'')+'</div><div>'+questionPanelHtml(item)+'</div></div></div></section>';
+    return '<section class="slide quiz-slide'+(index===0?' active':'')+'" data-question="'+escapeHtml(item.id)+'" data-no="'+escapeHtml(item.no)+'"><div class="slide-label">Practice · '+partLabel+'</div><h2>'+escapeHtml(title)+'</h2><div class="content-area wide-area"><div class="passage-layout"><div class="passage-box"><div class="passage-title">'+renderJsonHtml(p.title||item.stem||'Part 6 Passage')+'</div>'+renderJsonHtml(p.html||'')+'</div><div>'+questionPanelHtml(item)+'</div></div></div></section>';
   }
   return '<section class="slide quiz-slide'+(index===0?' active':'')+'" data-question="'+escapeHtml(item.id)+'" data-no="'+escapeHtml(item.no)+'"><div class="slide-label">Practice · '+partLabel+'</div><h2>'+escapeHtml(title)+'</h2><div class="content-area">'+questionPanelHtml(item)+'</div></section>';
 }
