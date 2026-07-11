@@ -79,6 +79,35 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
 .nav-q.answered{background:#dbeafe;border-color:#60a5fa;color:#1d4ed8}
 .nav-q.current{outline:3px solid rgba(37,99,235,.22)}
 .nav-q.blank-after{background:#fff1f2;border-color:#fb7185;color:#be123c}
+.nav-q.correct-after{background:#f0fdf4;border-color:#22c55e;color:#166534}
+.nav-q.wrong-after{background:#fff1f2;border-color:#fb7185;color:#be123c}
+.nav-q.blank-after{background:#fff7ed;border-color:#fb923c;color:#9a3412}
+.question-card.result-correct{border-color:#22c55e;background:#f7fee7}
+.question-card.result-wrong{border-color:#fb7185;background:#fff1f2}
+.question-card.result-blank{border-color:#fb923c;background:#fff7ed}
+.question-status-pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:6px 11px;font-size:13px;font-weight:700;margin-left:8px;vertical-align:middle}
+.question-status-pill[hidden]{display:none}
+.question-status-pill.correct{background:#dcfce7;color:#166534;border:2px solid #86efac}
+.question-status-pill.wrong{background:#ffe4e6;color:#be123c;border:2px solid #fda4af}
+.question-status-pill.blank{background:#ffedd5;color:#9a3412;border:2px solid #fdba74}
+.option.student-correct{border-color:#22c55e!important;background:#f0fdf4!important;box-shadow:0 8px 16px rgba(34,197,94,.14)!important}
+.option.student-wrong{border-color:#e11d48!important;background:#fff1f2!important;box-shadow:0 8px 16px rgba(225,29,72,.12)!important}
+.option.student-correct::after,.option.student-wrong::after{margin-left:auto;border-radius:999px;padding:4px 8px;font-size:12px;font-weight:700;white-space:nowrap}
+.option.student-correct::after{content:'Đúng';background:#dcfce7;color:#166534}
+.option.student-wrong::after{content:'Sai';background:#ffe4e6;color:#be123c}
+.answer-sheet-result{margin-top:14px;border-top:2px dashed #dbeafe;padding-top:14px}
+.answer-sheet-title{font-size:16px;font-weight:700;color:#0f172a;margin-bottom:8px}
+.answer-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.answer-legend span{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 9px;font-size:12px;font-weight:700;border:2px solid #e2e8f0;background:#fff}
+.answer-legend .dot{width:10px;height:10px;border-radius:999px;display:inline-block}
+.answer-legend .dot.correct{background:#22c55e}.answer-legend .dot.wrong{background:#e11d48}.answer-legend .dot.blank{background:#f97316}
+.answer-sheet-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.sheet-q{border:2px solid #cbd5e1;border-radius:13px;background:#fff;padding:8px 4px;cursor:pointer;font-weight:700;line-height:1.15;transition:.16s ease;color:#334155}
+.sheet-q:hover{transform:translateY(-1px)}
+.sheet-q span{display:block;font-size:13px}.sheet-q b{display:block;font-size:11px;margin-top:3px}
+.sheet-q.correct{background:#f0fdf4;border-color:#22c55e;color:#166534}
+.sheet-q.wrong{background:#fff1f2;border-color:#fb7185;color:#be123c}
+.sheet-q.blank{background:#fff7ed;border-color:#fb923c;color:#9a3412}
 .action-stack{display:grid;gap:10px;margin-top:14px}
 .btn{border:none;cursor:pointer;border-radius:999px;font-weight:700;font-size:15px;padding:13px 18px;box-shadow:0 10px 20px rgba(15,23,42,.15);transition:.18s ease;text-decoration:none;text-align:center;display:inline-flex;align-items:center;justify-content:center;gap:8px}
 .btn:hover{transform:translateY(-1px)}
@@ -102,7 +131,7 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
 .lock-note{font-size:13px;color:#64748b;line-height:1.45;margin-top:10px}
 .footer-space{height:34px}
 @media(max-width:980px){.exam-main{grid-template-columns:1fr;padding:16px}.sidebar{position:static;order:-1}.question-grid{grid-template-columns:1fr;padding:16px}.passage-shell{grid-template-columns:1fr}.navigator{grid-template-columns:repeat(10,1fr)}.header-inner{padding:12px 14px}.exam-title h1{font-size:18px}.timer-value{font-size:22px}}
-@media(max-width:620px){.brand{gap:9px}.cbt-badge{width:44px;height:44px;border-radius:15px;font-size:15px}.timer-box{padding:8px 10px}.timer-label{display:none}.navigator{grid-template-columns:repeat(6,1fr)}.section-head{display:block}.section-head h2{font-size:20px;margin-bottom:8px}.question-card,.passage-text{padding:15px}.stem,.passage-text{font-size:16px}.option{font-size:15px}.result-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.brand{gap:9px}.cbt-badge{width:44px;height:44px;border-radius:15px;font-size:15px}.timer-box{padding:8px 10px}.timer-label{display:none}.navigator{grid-template-columns:repeat(6,1fr)}.answer-sheet-grid{grid-template-columns:repeat(4,1fr)}.section-head{display:block}.section-head h2{font-size:20px;margin-bottom:8px}.question-card,.passage-text{padding:15px}.stem,.passage-text{font-size:16px}.option{font-size:15px}.result-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="auth-pending exam-not-started">
@@ -165,6 +194,7 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
             <div class="result-mini"><b id="blankText">0</b><span>Trống</span></div>
           </div>
           <p class="lock-note" id="resultNote">Kết quả của bạn sẽ hiện ở đây ngay sau khi nộp bài. Không hiện giải thích trong chế độ thi.</p>
+          <div class="answer-sheet-result" id="answerSheetResult"></div>
         </div>
       </div>
     </aside>
@@ -237,7 +267,7 @@ function optionHtml(q, key, text){
 function questionHtml(q, compact=false){
   const opts = Object.entries(q.options).map(([key,text]) => optionHtml(q,key,text)).join('');
   const stem = q.part === 5 ? `<div class="stem">${escapeText(q.stem)}</div>` : '';
-  return `<article class="question-card" id="question-${q.no}" data-question="${q.no}"><div class="question-no">Question ${q.no}</div>${stem}<div class="options">${opts}</div></article>`;
+  return `<article class="question-card" id="question-${q.no}" data-question="${q.no}"><div class="question-no">Question ${q.no}<span class="question-status-pill" data-status-for="${q.no}" hidden></span></div>${stem}<div class="options">${opts}</div></article>`;
 }
 function renderExam(){
   const part5 = EXAM_DATA.questions.filter(q => q.part === 5);
@@ -406,7 +436,8 @@ async function submitExam(reason='manual'){
   document.getElementById('wrongText').textContent = payload.wrong;
   document.getElementById('percentText').textContent = payload.percent + '%';
   document.getElementById('blankText').textContent = payload.blankCount;
-  document.getElementById('resultNote').textContent = 'Thời gian làm bài: ' + formatTime(payload.timeSpentSeconds) + '. Đáp án đã bị khóa và không thể sửa.';
+  document.getElementById('resultNote').textContent = 'Thời gian làm bài: ' + formatTime(payload.timeSpentSeconds) + '. Answer sheet đã tô màu đúng/sai/trống. Không hiển thị đáp án đúng.';
+  renderSubmissionReview(payload);
   document.getElementById('resultPanel').classList.add('show');
   const status = document.getElementById('submitStatus');
   status.className = 'submit-status show';
@@ -434,6 +465,61 @@ async function submitExam(reason='manual'){
     showStudentResult(payload, false);
   }
 }
+
+function renderSubmissionReview(payload){
+  const byNo = new Map(payload.answers.map(item => [item.no, item]));
+  document.querySelectorAll('.nav-q').forEach(btn => {
+    const no = Number(btn.dataset.nav);
+    const item = byNo.get(no);
+    if(!item) return;
+    const status = item.isBlank ? 'blank' : (item.isCorrect ? 'correct' : 'wrong');
+    btn.classList.remove('answered','correct-after','wrong-after','blank-after');
+    btn.classList.add(status + '-after');
+    btn.title = `Câu ${no}: ${status === 'correct' ? 'Đúng' : status === 'wrong' ? 'Sai' : 'Trống'}`;
+  });
+  document.querySelectorAll('.question-card').forEach(card => {
+    const no = Number(card.dataset.question);
+    const item = byNo.get(no);
+    if(!item) return;
+    const status = item.isBlank ? 'blank' : (item.isCorrect ? 'correct' : 'wrong');
+    card.classList.remove('result-correct','result-wrong','result-blank');
+    card.classList.add('result-' + status);
+    const pill = card.querySelector('.question-status-pill');
+    if(pill){
+      pill.hidden = false;
+      pill.className = 'question-status-pill ' + status;
+      pill.textContent = status === 'correct' ? 'Đúng' : status === 'wrong' ? 'Sai' : 'Trống';
+    }
+    card.querySelectorAll('.option').forEach(label => {
+      label.classList.remove('student-correct','student-wrong');
+      const input = label.querySelector('input[type="radio"]');
+      if(input && item.selected && input.value === item.selected){
+        label.classList.add(item.isCorrect ? 'student-correct' : 'student-wrong');
+      }
+    });
+  });
+  renderAnswerSheetResult(payload);
+}
+function renderAnswerSheetResult(payload){
+  const box = document.getElementById('answerSheetResult');
+  if(!box) return;
+  const items = payload.answers.map(item => {
+    const status = item.isBlank ? 'blank' : (item.isCorrect ? 'correct' : 'wrong');
+    const label = status === 'correct' ? 'Đúng' : status === 'wrong' ? 'Sai' : 'Trống';
+    return `<button type="button" class="sheet-q ${status}" data-jump="${item.no}" title="Câu ${item.no}: ${label}"><span>${item.no}</span><b>${label}</b></button>`;
+  }).join('');
+  box.innerHTML = `
+    <div class="answer-sheet-title">Answer sheet sau khi nộp</div>
+    <div class="answer-legend">
+      <span><i class="dot correct"></i>Đúng</span>
+      <span><i class="dot wrong"></i>Sai</span>
+      <span><i class="dot blank"></i>Trống</span>
+    </div>
+    <div class="answer-sheet-grid">${items}</div>
+    <p class="lock-note">Bấm số câu để xem vị trí đúng/sai/trống trên đề. Không hiển thị đáp án đúng và không có giải thích.</p>`;
+  box.querySelectorAll('[data-jump]').forEach(btn => btn.addEventListener('click', () => scrollToQuestion(Number(btn.dataset.jump))));
+}
+
 function showStudentResult(payload, saved){
   if(!window.Swal) return;
   const html = `
@@ -443,7 +529,7 @@ function showStudentResult(payload, saved){
       <div style="border:2px solid #fecdd3;border-radius:14px;padding:10px"><b style="font-size:24px;color:#be123c">${payload.wrong}</b><br><span>Sai</span></div>
       <div style="border:2px solid #fed7aa;border-radius:14px;padding:10px"><b style="font-size:24px;color:#9a3412">${payload.blankCount}</b><br><span>Trống</span></div>
     </div>
-    <p style="margin-top:12px;font-size:14px;color:#64748b">${saved ? 'Kết quả chi tiết đã gửi về admin.' : 'Kết quả đã hiện tại máy; file JSON dự phòng nằm bên dưới nếu API/KV lỗi.'}</p>`;
+    <p style="margin-top:12px;font-size:14px;color:#64748b">${saved ? 'Kết quả chi tiết đã gửi về admin.' : 'Kết quả đã hiện tại máy; file JSON dự phòng nằm bên dưới nếu API/KV lỗi.'}<br>Answer sheet trên trang đã đánh dấu câu đúng/sai/trống, không hiện đáp án đúng.</p>`;
   Swal.fire({icon:saved?'success':'warning',title:'Kết quả của bạn',html,confirmButtonText:'Đã hiểu',confirmButtonColor:'#2563eb'});
 }
 function toast(message, icon='info'){
