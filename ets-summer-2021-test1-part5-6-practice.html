@@ -1,103 +1,201 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Luyện đề ETS 2021 - Part 5 + 6</title>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}
-body{overflow-x:hidden}
-body.auth-pending .practice-app{display:none}
+body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:relative;background:#eef4ff}
+body.auth-pending .lesson-wrapper{display:none}
 html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}
-.practice-app{min-height:100vh;background:radial-gradient(circle at top left,rgba(59,130,246,.13),transparent 34%),radial-gradient(circle at bottom right,rgba(34,197,94,.12),transparent 34%),#fff}
-.top-line{position:fixed;top:0;left:0;height:7px;width:100%;background:linear-gradient(90deg,#2563eb,#22c55e);z-index:200}
-.header{position:sticky;top:0;z-index:150;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:2px solid #dbeafe;box-shadow:0 10px 24px rgba(15,23,42,.08)}
-.header-inner{max-width:1280px;margin:0 auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:14px;min-width:0}.logo{width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,#2563eb,#22c55e);color:#fff;display:grid;place-items:center;font-size:18px;font-weight:700;box-shadow:0 10px 22px rgba(37,99,235,.22)}
-.title{min-width:0}.title h1{font-size:22px;line-height:1.2;color:#0f172a;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.title p{font-size:14px;color:#64748b;font-weight:700}
-.header-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.student-chip{background:#f8fafc;border:2px solid #dbeafe;border-radius:999px;padding:9px 13px;font-size:14px;font-weight:700;color:#334155;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.btn{border:none;cursor:pointer;border-radius:999px;font-weight:700;font-size:15px;padding:12px 17px;box-shadow:0 10px 20px rgba(15,23,42,.14);transition:.18s ease;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{transform:translateY(-1px)}.btn.primary{background:#2563eb;color:#fff}.btn.primary:hover{background:#1d4ed8}.btn.success{background:#16a34a;color:#fff}.btn.dark{background:#0f172a;color:#fff}.btn.light{background:#e2e8f0;color:#0f172a}.btn.light:hover{background:#cbd5e1}.btn.small{padding:9px 12px;font-size:13px;box-shadow:none}
-.main{max-width:1280px;margin:0 auto;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:22px}.panel{background:#f8fafc;border:2px solid #e2e8f0;border-radius:26px;box-shadow:0 18px 40px rgba(15,23,42,.08);overflow:hidden}.section-head{background:linear-gradient(135deg,#1d4ed8,#0ea5e9);color:#fff;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}.section-head h2{font-size:23px;font-weight:700}.section-head span{font-size:14px;font-weight:700;background:rgba(255,255,255,.18);padding:7px 12px;border-radius:999px}
-.instructions{padding:18px 22px;background:#eff6ff;border-bottom:2px solid #dbeafe;color:#334155;font-size:16px;line-height:1.5}.question-grid{padding:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.question-card{background:#fff;border:2px solid #dbeafe;border-radius:22px;padding:18px;box-shadow:0 12px 26px rgba(37,99,235,.07);scroll-margin-top:108px}.question-card.active{outline:4px solid rgba(37,99,235,.16);border-color:#60a5fa}.question-card.checked-correct{border-color:#22c55e;background:#f7fee7}.question-card.checked-wrong{border-color:#fb7185;background:#fff1f2}.question-no{display:inline-flex;align-items:center;gap:8px;background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;border-radius:999px;padding:7px 12px;font-size:15px;font-weight:700;margin-bottom:12px}.question-card.checked-correct .question-no{background:#dcfce7;color:#166534;border-color:#86efac}.question-card.checked-wrong .question-no{background:#ffe4e6;color:#be123c;border-color:#fecdd3}.stem{font-size:18px;line-height:1.55;color:#0f172a;margin-bottom:14px;font-weight:600}.options{display:grid;gap:8px}.option{display:flex;align-items:flex-start;gap:11px;border:2px solid #e2e8f0;background:#fff;border-radius:16px;padding:12px;cursor:pointer;transition:.18s ease;color:#334155;font-size:16px;line-height:1.35}.option:hover{border-color:#93c5fd;background:#eff6ff;transform:translateY(-1px)}.option input{margin-top:2px;width:18px;height:18px;accent-color:#2563eb;flex:0 0 auto}.option .letter{font-weight:700;color:#1d4ed8;min-width:22px}.option:has(input:checked){border-color:#2563eb;background:#eff6ff;box-shadow:0 8px 16px rgba(37,99,235,.12)}.option.correct-option{border-color:#22c55e!important;background:#f0fdf4!important}.option.wrong-selected{border-color:#e11d48!important;background:#fff1f2!important}.question-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.explain-box{display:none;margin-top:13px;border:2px solid #bbf7d0;background:#f0fdf4;color:#14532d;border-radius:18px;padding:13px 14px;font-size:15px;line-height:1.5}.explain-box.show{display:block;animation:fadeUp .22s ease}.explain-box.wrong{border-color:#fecdd3;background:#fff1f2;color:#9f1239}.answer-line{font-weight:700;color:#166534;margin-bottom:5px}.wrong .answer-line{color:#be123c}.skill-line{font-weight:700;color:#1d4ed8;margin-bottom:4px}.passage-block{padding:22px;border-top:2px solid #dbeafe}.passage-shell{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);gap:18px;align-items:start}.passage-text{background:#fff;border:2px solid #dbeafe;border-radius:22px;padding:22px;box-shadow:0 12px 26px rgba(37,99,235,.07);font-size:18px;line-height:1.85;color:#0f172a}.passage-text h3{font-size:21px;color:#0f172a;margin-bottom:14px}.passage-text p+p{margin-top:14px}.blank{display:inline-grid;place-items:center;min-width:42px;height:26px;border-bottom:3px solid #0f172a;color:#1d4ed8;font-weight:700;line-height:1;margin:0 3px}.blank.sentence{min-width:56px}.passage-questions{display:grid;gap:14px}.sidebar{position:sticky;top:98px;display:grid;gap:16px;align-self:start}.side-card{background:#f8fafc;border:2px solid #e2e8f0;border-radius:24px;padding:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}.side-card h3{font-size:20px;color:#0f172a;margin-bottom:10px}.student-line{font-size:14px;line-height:1.5;color:#64748b;font-weight:700;word-break:break-word}.progress-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.metric{background:#fff;border:2px solid #dbeafe;border-radius:17px;padding:11px;text-align:center}.metric b{display:block;font-size:23px;color:#1d4ed8;font-weight:700}.metric span{font-size:13px;color:#64748b;font-weight:700}.navigator{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px}.nav-q{border:2px solid #cbd5e1;background:#fff;border-radius:10px;padding:6px 0;font-size:13px;font-weight:700;color:#334155;cursor:pointer;transition:.16s ease;min-height:31px}.nav-q:hover{border-color:#93c5fd;background:#eff6ff}.nav-q.answered{background:#dbeafe;border-color:#60a5fa;color:#1d4ed8}.nav-q.checked-correct{background:#f0fdf4;border-color:#22c55e;color:#166534}.nav-q.checked-wrong{background:#fff1f2;border-color:#fb7185;color:#be123c}.nav-q.current{outline:3px solid rgba(37,99,235,.22)}.legend{display:grid;gap:7px;margin-top:12px;font-size:13px;font-weight:700;color:#475569}.legend span{display:flex;align-items:center;gap:8px}.dot{width:14px;height:14px;border-radius:5px;border:2px solid #cbd5e1;background:#fff}.dot.answered{background:#dbeafe;border-color:#60a5fa}.dot.correct{background:#f0fdf4;border-color:#22c55e}.dot.wrong{background:#fff1f2;border-color:#fb7185}.result-panel{display:none;margin-top:13px;border-radius:18px;border:2px solid #bbf7d0;background:#f0fdf4;padding:13px;color:#14532d;font-size:14px;font-weight:700;line-height:1.45}.result-panel.show{display:block}.submit-status{display:none;margin-top:10px;border-radius:14px;padding:10px;font-size:14px;font-weight:700;line-height:1.4}.submit-status.ok{display:block;background:#f0fdf4;border:2px solid #bbf7d0;color:#166534}.submit-status.err{display:block;background:#fff1f2;border:2px solid #fecdd3;color:#be123c}.footer-space{height:30px}@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:980px){.main{grid-template-columns:1fr}.sidebar{position:static;order:-1}.navigator{grid-template-columns:repeat(10,1fr)}.question-grid{grid-template-columns:1fr}.passage-shell{grid-template-columns:1fr}.header-inner{align-items:flex-start;flex-direction:column}.header-actions{justify-content:flex-start}.title h1{white-space:normal}}
-@media(max-width:640px){.main{padding:14px}.header-inner{padding:13px 14px}.question-grid,.passage-block{padding:14px}.section-head{padding:15px}.section-head h2{font-size:20px}.passage-text{padding:16px;font-size:16px}.stem{font-size:16px}.option{font-size:15px}.navigator{grid-template-columns:repeat(6,1fr)}.student-chip{max-width:100%}}
+.slide{width:100%;min-height:100vh;padding:56px 72px 120px;display:none;background:radial-gradient(circle at top left,rgba(59,130,246,.12),transparent 35%),radial-gradient(circle at bottom right,rgba(14,165,233,.12),transparent 35%),#fff}
+.slide.active{display:flex;flex-direction:column;animation:slideIn .35s ease}@keyframes slideIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.slide-label{display:inline-block;width:fit-content;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:700;font-size:15px;margin-bottom:18px}
+h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size:42px;line-height:1.15;color:#0f172a;margin-bottom:24px}h3{font-size:28px;color:#1e3a8a;margin-bottom:14px}p{font-size:23px;line-height:1.55;margin-bottom:14px}.content-area{max-width:1120px;margin-top:10px;padding-bottom:40px}.wide-area{max-width:1320px}
+.intro-box{background:#f8fafc;border:2px solid #e2e8f0;border-radius:22px;padding:28px 32px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}
+.sample-box{background:#eff6ff;border-left:8px solid #2563eb;border-radius:18px;padding:26px 30px;margin-top:16px;box-shadow:0 12px 28px rgba(37,99,235,.12)}.sample-title{font-size:22px;font-weight:700;color:#1d4ed8;margin-bottom:10px}.question{font-size:31px;font-weight:700;color:#0f172a;margin-bottom:16px;line-height:1.32}.option{font-size:22px;padding:15px 16px;margin:8px 0;color:#334155;border:2px solid #dbeafe;border-radius:14px;background:#fff;transition:.25s ease;position:relative;display:flex;align-items:flex-start;gap:14px;cursor:pointer}.option:hover{border-color:#93c5fd;transform:translateY(-1px)}.option input{width:20px;height:20px;accent-color:#2563eb;margin-top:4px;flex:0 0 auto}.option-letter{font-weight:700;color:#1d4ed8;min-width:28px}.option:has(input:checked){border-color:#2563eb;background:#fff;box-shadow:0 8px 18px rgba(37,99,235,.14)}
+.quiz-slide.answer-locked .option{cursor:not-allowed;opacity:.86}.quiz-slide.answer-locked .option:hover{transform:none}.quiz-slide.answer-locked .option input{cursor:not-allowed}.option.correct-option{border-color:#22c55e!important;background:#f0fdf4!important}.option.wrong-selected{border-color:#e11d48!important;background:#fff1f2!important}
+.method-box{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:24px 28px;margin-top:20px}.method-box h3{color:#166534}.result-box{display:none}.result-box.show{display:block;animation:fadeUp .25s ease}.result-box.wrong-box{background:#fff1f2;border-color:#fecdd3}.result-box.wrong-box h3{color:#be123c}.result-box.no-answer{background:#fff7ed!important;border-color:#fed7aa!important}.result-box.no-answer .explain{display:none!important}.answer-key{font-weight:700;color:#15803d}.correct-text{color:#15803d}.wrong-text{color:#be123c}.skill-line{font-size:21px;font-weight:700;color:#1d4ed8;margin:0 0 8px}.explain{font-size:22px;line-height:1.55}
+.passage-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:22px;align-items:start}.passage-box{background:#fff;border:2px solid #dbeafe;border-radius:22px;padding:26px 30px;box-shadow:0 12px 28px rgba(37,99,235,.10);font-size:22px;line-height:1.72;color:#0f172a}.passage-box .passage-title{display:inline-block;background:#dbeafe;color:#1d4ed8;border-radius:999px;padding:8px 14px;font-size:16px;font-weight:700;margin-bottom:16px}.passage-box p+p{margin-top:16px}.blank{display:inline-grid;place-items:center;min-width:46px;height:27px;border-bottom:3px solid #0f172a;color:#1d4ed8;font-weight:700;line-height:1;margin:0 3px}.blank.sentence{min-width:60px}
+.control-bar{position:fixed;left:0;right:0;bottom:16px;z-index:100;display:flex;justify-content:center;align-items:center;gap:14px;pointer-events:none;flex-wrap:wrap;padding:0 12px}.check-btn,.nav-btn{pointer-events:auto;border:none;cursor:pointer;font-weight:700;transition:all .2s ease;box-shadow:0 8px 18px rgba(15,23,42,.18);border-radius:999px}.check-btn{background:#2563eb;color:#fff;font-size:15px;letter-spacing:.5px;padding:13px 22px}.check-btn:hover{transform:scale(1.06);background:#1d4ed8}.nav-btn{padding:10px 16px;background:#e2e8f0;color:#0f172a;font-size:14px;text-decoration:none}.nav-btn:hover{background:#cbd5e1}.home-btn{background:linear-gradient(135deg,#0f172a,#334155)!important;color:#fff!important}.submit-btn{background:#16a34a!important;color:#fff!important}.submit-btn:hover{background:#15803d!important}.progress{position:fixed;top:24px!important;right:36px!important;bottom:auto!important;left:auto!important;font-size:16px;font-weight:700;color:#64748b;z-index:120;background:rgba(255,255,255,.85);padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 14px rgba(15,23,42,.08);border:none;cursor:pointer}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:0%;transition:width .35s ease;z-index:130}.student-chip{position:fixed;top:24px;left:36px;z-index:120;background:rgba(255,255,255,.9);padding:8px 12px;border-radius:999px;color:#64748b;font-size:14px;font-weight:700;box-shadow:0 6px 14px rgba(15,23,42,.08);max-width:360px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.score-box{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}.score-pill{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;padding:12px 18px;border-radius:999px;font-size:20px;font-weight:700}.submit-status{margin-top:14px;border-radius:16px;padding:13px 16px;font-size:18px;font-weight:700;display:none}.submit-status.ok{display:block;background:#f0fdf4;border:2px solid #bbf7d0;color:#166534}.submit-status.err{display:block;background:#fff1f2;border:2px solid #fecdd3;color:#be123c}
+.page-picker-overlay{position:fixed;inset:0;background:rgba(15,23,42,.52);z-index:300;display:none;align-items:center;justify-content:center;padding:20px}.page-picker-overlay.show{display:flex}.page-picker-panel{width:min(980px,96vw);max-height:88vh;overflow:auto;background:#fff;border-radius:28px;border:2px solid #dbeafe;box-shadow:0 30px 80px rgba(15,23,42,.32);padding:24px}.page-picker-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:16px}.page-picker-head h3{font-size:28px;margin-bottom:4px}.page-picker-head p{font-size:17px;color:#64748b;margin:0}.page-picker-close{width:42px;height:42px;border:none;border-radius:50%;background:#e2e8f0;color:#0f172a;font-size:28px;cursor:pointer}.page-picker-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.page-jump-btn{border:2px solid #cbd5e1;background:#fff;border-radius:16px;padding:12px 8px;cursor:pointer;text-align:left;transition:.18s ease;min-height:58px}.page-jump-btn:hover{border-color:#93c5fd;background:#eff6ff}.page-jump-btn.active{border-color:#2563eb;background:#dbeafe}.page-jump-btn .page-no{display:block;font-size:20px;font-weight:700;color:#1d4ed8;line-height:1}.page-jump-btn .page-title{display:block;font-size:12px;font-weight:700;color:#64748b;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.page-jump-btn.answered{background:#dbeafe;border-color:#60a5fa}.page-jump-btn.correct-answer{background:#f0fdf4;border-color:#22c55e}.page-jump-btn.correct-answer .page-no{color:#15803d!important}.page-jump-btn.wrong-answer{background:#fff1f2;border-color:#fb7185}.page-jump-btn.wrong-answer .page-no{color:#be123c!important}
+.loading-screen{min-height:100vh;display:grid;place-items:center;background:#eef4ff;color:#1d4ed8;font-size:24px;font-weight:700}.auth-pending .loading-screen{display:grid}body:not(.auth-pending) .loading-screen{display:none}@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:980px){.slide{padding:44px 28px 130px}.passage-layout{grid-template-columns:1fr}.page-picker-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.student-chip{position:static;margin:14px 16px 0;width:fit-content;max-width:calc(100vw - 32px)}}
+@media(max-width:768px){.slide{padding:36px 24px 130px}h1{font-size:34px}h2{font-size:31px}p,.option,.explain,.passage-box{font-size:19px}.question{font-size:24px}.check-btn{padding:11px 16px;font-size:13px}.nav-btn{padding:9px 13px;font-size:13px}.progress{top:14px!important;right:14px!important;font-size:13px}.page-picker-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.passage-box{padding:20px}.score-pill{font-size:17px}}
 </style>
 </head>
 <body class="auth-pending">
-<div class="top-line"></div>
-<div class="practice-app">
-  <header class="header">
-    <div class="header-inner">
-      <div class="brand"><div class="logo">P56</div><div class="title"><h1>Luyện đề ETS 2021 - Part 5 + 6</h1><p>Làm từng câu, kiểm tra đáp án và xem sửa chi tiết ngay.</p></div></div>
-      <div class="header-actions"><div class="student-chip" id="studentChip">Đang kiểm tra đăng nhập...</div><button class="btn light" type="button" onclick="goHome()">Trang chủ</button></div>
+<div class="loading-screen">Đang tải bài luyện...</div>
+<div class="lesson-wrapper">
+  <div class="top-line" id="topLine"></div>
+  <div class="student-chip" id="studentChip">Đang kiểm tra đăng nhập...</div>
+  <button class="progress progress-btn" id="progressText" onclick="openPagePicker()" type="button" title="Chọn câu">1 / 1</button>
+  <div id="quizMount"></div>
+
+  <div class="page-picker-overlay" id="pagePicker" onclick="closePagePicker(event)">
+    <div class="page-picker-panel" role="dialog" aria-modal="true" aria-labelledby="pagePickerTitle" onclick="event.stopPropagation()">
+      <div class="page-picker-head">
+        <div>
+          <h3 id="pagePickerTitle">Chọn câu Practice</h3>
+          <p>Click vào số câu để nhảy nhanh đến câu cần làm.</p>
+        </div>
+        <button class="page-picker-close" onclick="closePagePicker()" type="button">×</button>
+      </div>
+      <div class="page-picker-grid" id="pagePickerGrid"></div>
     </div>
-  </header>
-  <main class="main">
-    <section class="content">
-      <div class="panel">
-        <div class="section-head"><h2>Part 5</h2><span id="part5Range">Questions 101-130</span></div>
-        <div class="instructions">Chọn đáp án rồi bấm <b>Kiểm tra</b>. Bài luyện cho phép đổi đáp án và kiểm tra lại.</div>
-        <div class="question-grid" id="part5Grid"></div>
-      </div>
-      <div class="panel" style="margin-top:22px">
-        <div class="section-head"><h2>Part 6</h2><span id="part6Range">Questions 131-146</span></div>
-        <div class="instructions">Đọc đoạn văn, chọn đáp án cho từng chỗ trống, rồi xem sửa chi tiết ngay dưới câu.</div>
-        <div id="part6Wrap"></div>
-      </div>
-      <div class="footer-space"></div>
-    </section>
-    <aside class="sidebar">
-      <div class="side-card">
-        <h3>Answer sheet</h3>
-        <div class="student-line" id="studentLine">Đang tải...</div>
-        <div class="progress-row"><div class="metric"><b id="answeredCount">0</b><span>đã chọn</span></div><div class="metric"><b id="checkedCount">0</b><span>đã sửa</span></div></div>
-        <div class="navigator" id="navigator"></div>
-        <div class="legend"><span><i class="dot answered"></i>Đã chọn</span><span><i class="dot correct"></i>Đúng</span><span><i class="dot wrong"></i>Sai</span></div>
-      </div>
-      <div class="side-card">
-        <h3>Kết quả luyện</h3>
-        <div class="progress-row"><div class="metric"><b id="scoreText">0/46</b><span>đúng</span></div><div class="metric"><b id="percentText">0%</b><span>tỷ lệ</span></div></div>
-        <button class="btn primary" type="button" style="width:100%;margin-top:13px" onclick="checkAllVisible()">Sửa tất cả câu đã chọn</button>
-        <button class="btn success" type="button" style="width:100%;margin-top:10px" onclick="submitFinalResult()">Nộp kết quả</button>
-        <div class="result-panel" id="resultPanel"></div>
-        <div class="submit-status" id="submitStatus"></div>
-      </div>
-    </aside>
-  </main>
+  </div>
+
+  <div class="control-bar">
+    <button class="nav-btn" onclick="prevSlide()" type="button">← PREV</button>
+    <button class="check-btn" id="checkBtn" onclick="checkAnswer()" type="button">CHECK</button>
+    <button class="nav-btn" onclick="nextSlide()" type="button">NEXT →</button>
+  </div>
 </div>
+
 <script>
-const DATA_URL='data/listening-ets2021-p56.json';
 const STUDENT_KEY='toeic_student_session';
+const DATA_URL='data/listening-ets2021-p56.json';
 const LESSON_ID='ets-summer-2021-test1-part5-6-practice';
 const LOCK_BYPASS_EMAIL='sunprice@sp.ik';
 let EXAM_DATA=null;
-let studentSession=null;
-let currentQuestionNo=101;
+let quizData=[];
+let quizDataMap={};
+let passageByQuestionNo={};
+let slides=[];
+let currentSlide=0;
 let resultSubmitted=false;
-const checkedState={};
-function getStudentSession(){try{return JSON.parse(localStorage.getItem(STUDENT_KEY)||'null');}catch(e){return null;}}
+const checkedAnswers={};
+
+function escapeHtml(str){return String(str ?? '').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));}
+function getStudentSession(){try{const raw=localStorage.getItem(STUDENT_KEY);return raw?JSON.parse(raw):null;}catch(e){return null;}}
 function requireStudentSession(){const student=getStudentSession();if(!student||!student.email){alert('Bạn cần đăng nhập bằng email đã được cấp quyền trước khi làm bài.');location.href='index.html';return null;}return student;}
-async function requireLessonUnlocked(){const email=String(studentSession?.email||'').trim().toLowerCase();if(email===LOCK_BYPASS_EMAIL)return true;try{const res=await fetch('/api/lesson-locks',{cache:'no-store'});const data=await res.json().catch(()=>({}));if(!res.ok||!data.ok)throw new Error(data.error||'Không kiểm tra được trạng thái khóa bài.');if(Array.isArray(data.lockedLessonIds)&&data.lockedLessonIds.includes(LESSON_ID)){if(window.Swal)await Swal.fire({icon:'warning',title:'Bài đang khóa',text:'Bài này hiện chưa mở cho học viên.',confirmButtonColor:'#2563eb'});else alert('Bài này hiện chưa mở cho học viên.');location.href='index.html';return false;}return true;}catch(err){if(window.Swal)await Swal.fire({icon:'error',title:'Không kiểm tra được khóa bài',text:err.message||'Vui lòng vào lại từ trang chủ.',confirmButtonColor:'#2563eb'});else alert(err.message||'Không kiểm tra được trạng thái khóa bài.');location.href='index.html';return false;}}
-function escapeText(text){return String(text??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
-function optionHtml(q,key,text){return '<label class="option"><input type="radio" name="'+escapeText(q.id)+'" value="'+escapeText(key)+'"><span class="letter">('+escapeText(key)+')</span><span>'+escapeText(text)+'</span></label>';}
-function questionHtml(q){const opts=Object.entries(q.options||{}).map(([key,text])=>optionHtml(q,key,text)).join('');const stem=q.part===5?'<div class="stem">'+escapeText(q.stem)+'</div>':'';return '<article class="question-card" id="question-'+q.no+'" data-question="'+q.no+'"><div class="question-no">Question '+q.no+'</div>'+stem+'<div class="options">'+opts+'</div><div class="question-actions"><button class="btn small primary" type="button" onclick="checkQuestion('+q.no+')">Kiểm tra</button><button class="btn small light" type="button" onclick="resetQuestion('+q.no+')">Chọn lại</button></div><div class="explain-box" id="explain-'+q.no+'"></div></article>';}
-async function loadData(){const res=await fetch(DATA_URL,{cache:'no-store'});if(!res.ok)throw new Error('Không tải được data đề.');EXAM_DATA=await res.json();if(!EXAM_DATA||!Array.isArray(EXAM_DATA.questions)||!Array.isArray(EXAM_DATA.passages))throw new Error('Data đề không đúng định dạng.');}
-function getQuestion(no){return EXAM_DATA.questions.find(q=>Number(q.no)===Number(no));}
-function selectedFor(q){const el=document.querySelector('input[name="'+CSS.escape(q.id)+'"]:checked');return el?el.value:null;}
-function renderPractice(){const part5=EXAM_DATA.questions.filter(q=>q.part===5);const part6=EXAM_DATA.questions.filter(q=>q.part===6);document.getElementById('part5Range').textContent='Questions '+part5[0].no+'-'+part5[part5.length-1].no;document.getElementById('part6Range').textContent='Questions '+part6[0].no+'-'+part6[part6.length-1].no;document.getElementById('part5Grid').innerHTML=part5.map(questionHtml).join('');const qMap=new Map(EXAM_DATA.questions.map(q=>[q.no,q]));document.getElementById('part6Wrap').innerHTML=EXAM_DATA.passages.map(p=>{const qs=p.questions.map(pq=>questionHtml(qMap.get(pq.no)||pq)).join('');return '<div class="passage-block"><div class="passage-shell"><div class="passage-text"><div class="question-no">'+escapeText(p.title)+'</div>'+p.html+'</div><div class="passage-questions">'+qs+'</div></div></div>';}).join('');document.getElementById('navigator').innerHTML=EXAM_DATA.questions.map(q=>'<button type="button" class="nav-q" data-nav="'+q.no+'" onclick="scrollToQuestion('+q.no+')">'+q.no+'</button>').join('');document.querySelectorAll('input[type="radio"]').forEach(input=>input.addEventListener('change',()=>{const card=input.closest('.question-card');currentQuestionNo=Number(card?.dataset.question||currentQuestionNo);updateProgress();}));document.querySelectorAll('.question-card').forEach(card=>card.addEventListener('click',()=>{currentQuestionNo=Number(card.dataset.question||currentQuestionNo);updateProgress();}));updateProgress();}
-function checkQuestion(no,quiet=false){const q=getQuestion(no);if(!q)return false;const selected=selectedFor(q);const box=document.getElementById('explain-'+no);const card=document.getElementById('question-'+no);card.querySelectorAll('.option').forEach(label=>{label.classList.remove('correct-option','wrong-selected');const input=label.querySelector('input');if(input.value===q.answer)label.classList.add('correct-option');if(selected&&input.value===selected&&selected!==q.answer)label.classList.add('wrong-selected');});if(!selected){checkedState[q.id]='blank';card.classList.remove('checked-correct');card.classList.add('checked-wrong');box.className='explain-box wrong show';box.innerHTML='<div class="answer-line">Chưa chọn đáp án.</div><div>Chọn một đáp án rồi bấm kiểm tra lại.</div>';updateProgress();if(!quiet)box.scrollIntoView({behavior:'smooth',block:'center'});return false;}const isCorrect=selected===q.answer;checkedState[q.id]=isCorrect?'correct':'wrong';card.classList.toggle('checked-correct',isCorrect);card.classList.toggle('checked-wrong',!isCorrect);box.className='explain-box '+(isCorrect?'':'wrong')+' show';const correctText=q.options[q.answer]||'';const skill=q.skill?'<div class="skill-line">'+escapeText(q.skill)+'</div>':'';box.innerHTML='<div class="answer-line">Đáp án: '+escapeText(q.answer)+'. '+escapeText(correctText)+'</div>'+skill+'<div>'+escapeText(q.explanationVi||q.explanation||'Đáp án này phù hợp nhất với ngữ cảnh và cấu trúc câu.')+'</div>';updateProgress();if(!quiet)box.scrollIntoView({behavior:'smooth',block:'center'});return isCorrect;}
-function resetQuestion(no){const q=getQuestion(no);if(!q)return;delete checkedState[q.id];const card=document.getElementById('question-'+no);card.classList.remove('checked-correct','checked-wrong');card.querySelectorAll('.option').forEach(label=>label.classList.remove('correct-option','wrong-selected'));const box=document.getElementById('explain-'+no);box.className='explain-box';box.innerHTML='';updateProgress();}
-function checkAllVisible(){let count=0;EXAM_DATA.questions.forEach(q=>{if(selectedFor(q)){checkQuestion(q.no,true);count++;}});if(window.Swal){Swal.fire({toast:true,position:'top',icon:'success',title:'Đã sửa '+count+' câu đã chọn',showConfirmButton:false,timer:1800});}}
-function updateProgress(){if(!EXAM_DATA)return;let answered=0,checked=0,score=0;EXAM_DATA.questions.forEach(q=>{if(selectedFor(q))answered++;if(checkedState[q.id])checked++;if(selectedFor(q)===q.answer)score++;});document.getElementById('answeredCount').textContent=answered;document.getElementById('checkedCount').textContent=checked;document.getElementById('scoreText').textContent=score+'/'+EXAM_DATA.questions.length;document.getElementById('percentText').textContent=Math.round(score/EXAM_DATA.questions.length*100)+'%';document.querySelectorAll('.nav-q').forEach(btn=>{const no=Number(btn.dataset.nav);const q=getQuestion(no);const status=checkedState[q.id];btn.classList.toggle('answered',!!selectedFor(q)&&!status);btn.classList.toggle('checked-correct',status==='correct');btn.classList.toggle('checked-wrong',status==='wrong'||status==='blank');btn.classList.toggle('current',no===currentQuestionNo);});}
-function scrollToQuestion(no){currentQuestionNo=no;updateProgress();document.getElementById('question-'+no)?.scrollIntoView({behavior:'smooth',block:'center'});}
-function collectPayload(){let score=0;let blankCount=0;const answers=EXAM_DATA.questions.map(q=>{const selected=selectedFor(q);if(!selected)blankCount++;if(selected===q.answer)score++;return {no:q.no,id:q.id,part:q.part,prompt:q.stem||'',selected,selectedText:selected?q.options[selected]:null,correctAnswer:q.answer,correctText:q.options[q.answer],isCorrect:selected===q.answer,isBlank:!selected,checkedStatus:checkedState[q.id]||''};});return {student:{email:studentSession?.email||'',loginAt:studentSession?.loginAt||''},quiz:{id:'ets-summer-2021-test1-part5-6-practice',title:'Luyện đề ETS 2021 - Part 5 + 6',total:EXAM_DATA.questions.length,source:EXAM_DATA.sourceLabel||'ETS Summer 2021 Test 1'},submittedAt:new Date().toISOString(),score,total:EXAM_DATA.questions.length,wrong:EXAM_DATA.questions.length-score,blankCount,percent:Math.round(score/EXAM_DATA.questions.length*100),answers};}
+async function requireLessonUnlocked(student){
+  const email=String(student?.email||'').trim().toLowerCase();
+  if(email===LOCK_BYPASS_EMAIL)return true;
+  try{
+    const res=await fetch('/api/lesson-locks',{cache:'no-store'});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok)throw new Error(data.error||'Không kiểm tra được trạng thái khóa bài.');
+    if(Array.isArray(data.lockedLessonIds)&&data.lockedLessonIds.includes(LESSON_ID)){
+      if(window.Swal)await Swal.fire({icon:'warning',title:'Bài đang khóa',text:'Bài này hiện chưa mở cho học viên.',confirmButtonColor:'#2563eb'});else alert('Bài này hiện chưa mở cho học viên.');
+      location.href='index.html';return false;
+    }
+    return true;
+  }catch(err){
+    if(window.Swal)await Swal.fire({icon:'error',title:'Không kiểm tra được khóa bài',text:err.message||'Vui lòng vào lại từ trang chủ.',confirmButtonColor:'#2563eb'});else alert(err.message||'Không kiểm tra được trạng thái khóa bài.');
+    location.href='index.html';return false;
+  }
+}
+async function loadData(){const res=await fetch(DATA_URL,{cache:'no-store'});if(!res.ok)throw new Error('Không tải được data đề.');EXAM_DATA=await res.json();if(!EXAM_DATA||!Array.isArray(EXAM_DATA.questions))throw new Error('Data đề không đúng định dạng.');}
+function buildPassageMap(){passageByQuestionNo={};(EXAM_DATA.passages||[]).forEach(p=>{(p.questions||[]).forEach(q=>{passageByQuestionNo[Number(q.no)]=p;});});}
+function optionHtml(item,optKey,optText){return '<label class="option"><input name="'+escapeHtml(item.id)+'" type="radio" value="'+escapeHtml(optKey)+'"><span class="option-letter">'+escapeHtml(optKey)+'.</span><span>'+escapeHtml(optText)+'</span></label>';}
+function questionPanelHtml(item){
+  const optionsHtml=Object.entries(item.options||{}).map(([key,text])=>optionHtml(item,key,text)).join('');
+  const stem=item.part===5?'<div class="question">'+escapeHtml(item.stem||'')+'</div>':'<div class="question">Question '+escapeHtml(item.no)+'</div>';
+  const correctText=item.options?.[item.answer]||'';
+  const skill=item.skill?'<div class="skill-line">'+escapeHtml(item.skill)+'</div>':'';
+  return '<div class="sample-box"><div class="sample-title">Question</div>'+stem+'<div class="options">'+optionsHtml+'</div></div>'+
+    '<div class="method-box result-box" id="result-'+escapeHtml(item.no)+'"><h3 class="result-title"></h3><p class="explain"><span class="answer-key">Đáp án: '+escapeHtml(item.answer)+'. '+escapeHtml(correctText)+'</span></p>'+skill+'<p class="explain">'+escapeHtml(item.explanationVi||item.explanation||'Đáp án này phù hợp nhất với ngữ cảnh và cấu trúc câu.')+'</p></div>';
+}
+function quizSlideHtml(item,index){
+  const partLabel=item.part===5?'Part 5':'Part 6';
+  const title='Question '+item.no;
+  if(item.part===6){
+    const p=passageByQuestionNo[Number(item.no)]||{};
+    return '<section class="slide quiz-slide'+(index===0?' active':'')+'" data-question="'+escapeHtml(item.id)+'" data-no="'+escapeHtml(item.no)+'"><div class="slide-label">Practice · '+partLabel+'</div><h2>'+escapeHtml(title)+'</h2><div class="content-area wide-area"><div class="passage-layout"><div class="passage-box"><div class="passage-title">'+escapeHtml(p.title||item.stem||'Part 6 Passage')+'</div>'+(p.html||'')+'</div><div>'+questionPanelHtml(item)+'</div></div></div></section>';
+  }
+  return '<section class="slide quiz-slide'+(index===0?' active':'')+'" data-question="'+escapeHtml(item.id)+'" data-no="'+escapeHtml(item.no)+'"><div class="slide-label">Practice · '+partLabel+'</div><h2>'+escapeHtml(title)+'</h2><div class="content-area">'+questionPanelHtml(item)+'</div></section>';
+}
+function finalResultSlide(){return '<section class="slide result-slide"><div class="slide-label">Hoàn thành</div><h2>Kết quả luyện đề ETS 2021</h2><div class="content-area"><div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><div class="score-box"><div class="score-pill" id="answeredPill">Đã chọn: 0</div><div class="score-pill" id="checkedPill">Đã sửa: 0</div></div><p class="submit-status" id="submitStatus"></p><button class="nav-btn submit-btn" id="submitResultBtn" type="button" onclick="submitFinalResult()" style="display:inline-block;margin-top:16px">Nộp kết quả</button><button class="nav-btn home-btn" type="button" onclick="goHome()" style="display:inline-block;margin-top:16px;margin-left:10px">Về trang chủ</button></div></div></section>';}
+function renderSlides(){
+  buildPassageMap();
+  quizData=[...EXAM_DATA.questions].sort((a,b)=>Number(a.no)-Number(b.no));
+  quizDataMap=Object.fromEntries(quizData.map(item=>[item.id,item]));
+  document.getElementById('quizMount').outerHTML=quizData.map(quizSlideHtml).join('\n')+'\n'+finalResultSlide();
+  slides=[...document.querySelectorAll('.slide')];
+  slides.forEach(slide=>{
+    slide.querySelectorAll('input[type="radio"]').forEach(input=>input.addEventListener('change',()=>{delete checkedAnswers[slide.dataset.question];slide.classList.remove('answer-locked');slide.querySelectorAll('.option').forEach(o=>o.classList.remove('correct-option','wrong-selected'));const resultBox=slide.querySelector('.result-box');if(resultBox){resultBox.className='method-box result-box';}updateProgress();syncPagePickerActive();}));
+  });
+  updateProgress();
+}
+function showSlide(index){if(index<0||index>=slides.length)return;slides[currentSlide]?.classList.remove('active');currentSlide=index;slides[currentSlide].classList.add('active');window.scrollTo({top:0,behavior:'smooth'});updateProgress();if(slides[currentSlide].classList.contains('result-slide'))showFinalResultPreview();}
+function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
+function prevSlide(){if(currentSlide>0)showSlide(currentSlide-1);}
+function updateProgress(){
+  const progressText=document.getElementById('progressText');const topLine=document.getElementById('topLine');const checkBtn=document.getElementById('checkBtn');
+  if(progressText)progressText.textContent=(currentSlide+1)+' / '+slides.length;
+  if(topLine)topLine.style.width=((currentSlide+1)/Math.max(slides.length,1)*100)+'%';
+  const isQuiz=slides[currentSlide]?.classList.contains('quiz-slide');
+  if(checkBtn)checkBtn.style.display=isQuiz?'inline-block':'none';
+  syncPagePickerActive();
+}
+function selectedFor(item){const el=document.querySelector('input[name="'+CSS.escape(item.id)+'"]:checked');return el?el.value:null;}
+function checkAnswer(){
+  const slide=slides[currentSlide];if(!slide||!slide.classList.contains('quiz-slide'))return;
+  const item=quizDataMap[slide.dataset.question];if(!item)return;
+  const selected=selectedFor(item);const resultBox=slide.querySelector('.result-box');const title=slide.querySelector('.result-title');
+  slide.querySelectorAll('.option').forEach(label=>{label.classList.remove('correct-option','wrong-selected');const input=label.querySelector('input');if(input&&input.value===item.answer)label.classList.add('correct-option');if(input&&selected&&input.value===selected&&selected!==item.answer)label.classList.add('wrong-selected');});
+  if(!selected){
+    checkedAnswers[item.id]='blank';
+    if(resultBox){resultBox.className='method-box result-box no-answer show';}
+    if(title)title.innerHTML='<span class="wrong-text">Hãy chọn một đáp án trước.</span>';
+    syncPagePickerActive();
+    setTimeout(()=>resultBox?.scrollIntoView({behavior:'smooth',block:'center'}),80);
+    return;
+  }
+  const isCorrect=selected===item.answer;checkedAnswers[item.id]=isCorrect?'correct':'wrong';
+  if(resultBox){resultBox.className='method-box result-box '+(isCorrect?'':'wrong-box')+' show';}
+  if(title)title.innerHTML=isCorrect?'<span class="correct-text">✓ Chính xác!</span>':'<span class="wrong-text">✗ Chưa đúng.</span>';
+  syncPagePickerActive();
+  setTimeout(()=>resultBox?.scrollIntoView({behavior:'smooth',block:'center'}),80);
+}
+function buildPagePicker(){
+  const grid=document.getElementById('pagePickerGrid');if(!grid||grid.dataset.ready==='1')return;
+  slides.forEach((slide,index)=>{const btn=document.createElement('button');btn.type='button';btn.className='page-jump-btn';btn.dataset.slideIndex=String(index);if(slide.classList.contains('quiz-slide')){btn.dataset.questionId=slide.dataset.question;}const no=slide.dataset.no||String(index+1);const label=(slide.querySelector('.slide-label')?.textContent||'Kết quả').trim();btn.innerHTML='<span class="page-no">'+escapeHtml(no)+'</span><span class="page-title">'+escapeHtml(label)+'</span>';btn.onclick=function(){showSlide(index);closePagePicker();};grid.appendChild(btn);});grid.dataset.ready='1';
+}
+function syncPagePickerActive(){
+  document.querySelectorAll('.page-jump-btn').forEach((btn,i)=>{btn.classList.toggle('active',i===currentSlide);btn.classList.remove('answered','correct-answer','wrong-answer');const qid=btn.dataset.questionId;if(qid){const item=quizDataMap[qid];const selected=item?selectedFor(item):null;const status=checkedAnswers[qid];if(selected&&!status)btn.classList.add('answered');if(status==='correct')btn.classList.add('correct-answer');if(status==='wrong'||status==='blank')btn.classList.add('wrong-answer');}});
+}
+function openPagePicker(){buildPagePicker();syncPagePickerActive();document.getElementById('pagePicker')?.classList.add('show');}
+function closePagePicker(event){if(event&&event.target&&event.target.id!=='pagePicker')return;document.getElementById('pagePicker')?.classList.remove('show');}
+function collectPayload(){
+  const student=getStudentSession()||{};let score=0,blankCount=0,checkedCount=0,answeredCount=0;
+  const answers=quizData.map((q,index)=>{const selected=selectedFor(q);if(selected)answeredCount++;else blankCount++;if(checkedAnswers[q.id])checkedCount++;if(selected===q.answer)score++;return {no:q.no,id:q.id,part:q.part,prompt:q.stem||'',selected,selectedText:selected?q.options[selected]:null,correctAnswer:q.answer,correctText:q.options[q.answer],isCorrect:selected===q.answer,isBlank:!selected,checkedStatus:checkedAnswers[q.id]||''};});
+  return {student:{email:student.email||'',loginAt:student.loginAt||''},quiz:{id:LESSON_ID,title:'Luyện đề ETS 2021 - Part 5 + 6',total:quizData.length,source:EXAM_DATA?.sourceLabel||'ETS Summer 2021 Test 1'},submittedAt:new Date().toISOString(),score,total:quizData.length,wrong:quizData.length-score,blankCount,answeredCount,checkedCount,percent:Math.round(score/quizData.length*100),answers};
+}
+function showFinalResultPreview(){
+  const payload=collectPayload();
+  const scoreEl=document.getElementById('finalScoreText');const metaEl=document.getElementById('finalMetaText');const answeredPill=document.getElementById('answeredPill');const checkedPill=document.getElementById('checkedPill');const btn=document.getElementById('submitResultBtn');
+  if(scoreEl)scoreEl.innerHTML='<b>Điểm của bạn:</b> '+payload.score+' / '+payload.total+' ('+payload.percent+'%)';
+  if(metaEl)metaEl.textContent='Email: '+payload.student.email+' · Câu trống tính sai.';
+  if(answeredPill)answeredPill.textContent='Đã chọn: '+payload.answeredCount;
+  if(checkedPill)checkedPill.textContent='Đã sửa: '+payload.checkedCount;
+  if(btn&&!resultSubmitted){btn.style.display='inline-block';btn.disabled=false;btn.textContent='Nộp kết quả';}
+}
 async function confirmSubmit(payload){if(window.Swal){const res=await Swal.fire({icon:'question',title:'Nộp kết quả luyện?',html:'Điểm hiện tại: <b>'+payload.score+'/'+payload.total+'</b> ('+payload.percent+'%).<br>Câu trống tính sai.',showCancelButton:true,confirmButtonText:'Nộp kết quả',cancelButtonText:'Ở lại',reverseButtons:true,confirmButtonColor:'#2563eb',cancelButtonColor:'#64748b'});return !!res.isConfirmed;}return confirm('Nộp kết quả luyện?');}
-async function submitFinalResult(){if(resultSubmitted)return;const payload=collectPayload();const ok=await confirmSubmit(payload);if(!ok)return;document.getElementById('resultPanel').classList.add('show');document.getElementById('resultPanel').textContent='Điểm: '+payload.score+'/'+payload.total+' · '+payload.percent+'% · Trống: '+payload.blankCount;const status=document.getElementById('submitStatus');status.className='submit-status';status.textContent='';try{const res=await fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const data=await res.json().catch(()=>({}));if(!res.ok||!data.ok)throw new Error(data.error||'Không lưu được kết quả.');resultSubmitted=true;status.className='submit-status ok';status.textContent='Đã lưu kết quả.';}catch(err){status.className='submit-status err';status.textContent='Không gửi được kết quả về admin. Tải JSON dự phòng bên dưới.';const old=document.getElementById('downloadResultJson');if(old)old.remove();const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='student_result_'+String(payload.student.email||'student').replace(/[^a-z0-9._-]/gi,'_')+'_'+Date.now()+'.json';a.textContent='Tải JSON kết quả dự phòng';a.className='btn light';a.id='downloadResultJson';a.style.marginTop='10px';status.insertAdjacentElement('afterend',a);}}
+async function submitFinalResult(){
+  if(resultSubmitted)return;const payload=collectPayload();const ok=await confirmSubmit(payload);if(!ok)return;
+  const status=document.getElementById('submitStatus');const btn=document.getElementById('submitResultBtn');
+  if(btn){btn.disabled=true;btn.textContent='Đang nộp...';}
+  if(status){status.className='submit-status';status.textContent='';}
+  try{const res=await fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const data=await res.json().catch(()=>({}));if(!res.ok||!data.ok)throw new Error(data.error||'Không lưu được kết quả.');resultSubmitted=true;if(status){status.className='submit-status ok';status.textContent='Đã lưu kết quả.';}if(btn){btn.style.display='none';}}
+  catch(err){if(status){status.className='submit-status err';status.textContent='Không gửi được kết quả về admin. Tải JSON dự phòng bên dưới.';}if(btn){btn.disabled=false;btn.textContent='Nộp kết quả';btn.style.display='inline-block';}const old=document.getElementById('downloadResultJson');if(old)old.remove();const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='student_result_'+String(payload.student.email||'student').replace(/[^a-z0-9._-]/gi,'_')+'_'+Date.now()+'.json';a.textContent='Tải JSON kết quả dự phòng';a.className='nav-btn';a.id='downloadResultJson';a.style.display='inline-block';a.style.marginTop='14px';status?.insertAdjacentElement('afterend',a);}
+}
 function goHome(){location.href='index.html';}
 function setupAntiCopy(){document.documentElement.classList.add('anti-download-lock');const block=e=>{e.preventDefault();e.stopPropagation();return false;};['contextmenu','dragstart','drop','copy','cut','paste','selectstart'].forEach(evt=>document.addEventListener(evt,block,true));document.addEventListener('keydown',e=>{const key=String(e.key||'').toLowerCase();const ctrl=e.ctrlKey||e.metaKey;if(e.key==='F12'||(ctrl&&['s','u','p','o','a','c','x','v'].includes(key))||(ctrl&&e.shiftKey&&['i','j','c','s'].includes(key)))return block(e);},true);}
-(async function init(){setupAntiCopy();studentSession=requireStudentSession();if(!studentSession)return;const unlocked=await requireLessonUnlocked();if(!unlocked)return;document.getElementById('studentChip').textContent=studentSession.email;document.getElementById('studentLine').innerHTML='Học viên: <b>'+escapeText(studentSession.email)+'</b><br>Chế độ: <b>practice</b>';try{await loadData();renderPractice();document.body.classList.remove('auth-pending');}catch(err){document.body.classList.remove('auth-pending');if(window.Swal)Swal.fire({icon:'error',title:'Không tải được bài',text:err.message||'Kiểm tra file JSON.',confirmButtonColor:'#2563eb'});else alert(err.message||'Không tải được bài.');}})();
+document.addEventListener('keydown',function(e){if(e.code==='ArrowRight')nextSlide();if(e.code==='ArrowLeft')prevSlide();if(e.code==='Escape')closePagePicker();});
+(async function init(){
+  setupAntiCopy();
+  const student=requireStudentSession();if(!student)return;
+  const unlocked=await requireLessonUnlocked(student);if(!unlocked)return;
+  document.getElementById('studentChip').textContent=student.email;
+  try{await loadData();renderSlides();document.body.classList.remove('auth-pending');}
+  catch(err){document.body.classList.remove('auth-pending');if(window.Swal)Swal.fire({icon:'error',title:'Không tải được bài',text:err.message||'Kiểm tra file JSON.',confirmButtonColor:'#2563eb'});else alert(err.message||'Không tải được bài.');}
+})();
 </script>
 </body>
 </html>
