@@ -9,15 +9,21 @@ const DEFAULT_LESSON_IDS = [
   'noun-prep-collocation-2',
   'toeic-listening',
   'ets-summer-2021-test1-part5-6',
+  'ets-summer-2021-test1-part5-6-practice',
   'vocabulary-box',
   'results'
+];
+
+const DEFAULT_LOCK_WHEN_MISSING_IDS = [
+  'ets-summer-2021-test1-part5-6-practice'
 ];
 
 export async function onRequestGet(context) {
   try {
     const store = getStore(context);
-    const lockedLessonIds = await readLockedLessonIds(store);
-    return json({ ok: true, lockedLessonIds });
+    const state = await readLockState(store);
+    if (state.changed) await saveLockState(store, state.lockedLessonIds, state.knownLessonIds);
+    return json({ ok: true, lockedLessonIds: state.lockedLessonIds, knownLessonIds: state.knownLessonIds });
   } catch (err) {
     return json({ ok: false, error: err.message || 'Không tải được trạng thái khóa bài.' }, 500);
   }
@@ -41,7 +47,8 @@ export async function onRequestPost(context) {
       return json({ ok: false, error: 'Thao tác không hợp lệ.' }, 400);
     }
 
-    let lockedLessonIds = await readLockedLessonIds(store);
+    const state = await readLockState(store);
+    let lockedLessonIds = state.lockedLessonIds;
     if (action === 'lock' && !lockedLessonIds.includes(lessonId)) {
       lockedLessonIds.push(lessonId);
     }
@@ -49,8 +56,9 @@ export async function onRequestPost(context) {
       lockedLessonIds = lockedLessonIds.filter(id => id !== lessonId);
     }
 
-    await store.put(LOCK_KEY, JSON.stringify({ lockedLessonIds, updatedAt: new Date().toISOString() }));
-    return json({ ok: true, lockedLessonIds });
+    const knownLessonIds = [...DEFAULT_LESSON_IDS];
+    await saveLockState(store, lockedLessonIds, knownLessonIds);
+    return json({ ok: true, lockedLessonIds, knownLessonIds });
   } catch (err) {
     return json({ ok: false, error: err.message || 'Không cập nhật được trạng thái khóa bài.' }, 500);
   }
@@ -61,16 +69,50 @@ function getStore(context) {
   return context.env.STUDENT_RESULTS;
 }
 
-async function readLockedLessonIds(store) {
+async function readLockState(store) {
   const text = await store.get(LOCK_KEY);
-  if (!text) return [...DEFAULT_LESSON_IDS];
-  try {
-    const data = JSON.parse(text);
-    const ids = Array.isArray(data.lockedLessonIds) ? data.lockedLessonIds : DEFAULT_LESSON_IDS;
-    return ids.filter(id => DEFAULT_LESSON_IDS.includes(id));
-  } catch (err) {
-    return [...DEFAULT_LESSON_IDS];
+  if (!text) {
+    return { lockedLessonIds: [...DEFAULT_LESSON_IDS], knownLessonIds: [...DEFAULT_LESSON_IDS], changed: false };
   }
+
+  let raw = {};
+  try {
+    raw = JSON.parse(text) || {};
+  } catch (err) {
+    return { lockedLessonIds: [...DEFAULT_LESSON_IDS], knownLessonIds: [...DEFAULT_LESSON_IDS], changed: true };
+  }
+
+  const lockedLessonIds = uniqueIds(Array.isArray(raw.lockedLessonIds) ? raw.lockedLessonIds : DEFAULT_LESSON_IDS);
+  const knownLessonIds = uniqueIds(Array.isArray(raw.knownLessonIds) ? raw.knownLessonIds : []);
+  let changed = false;
+
+  DEFAULT_LOCK_WHEN_MISSING_IDS.forEach(id => {
+    if (!knownLessonIds.includes(id) && !lockedLessonIds.includes(id)) {
+      lockedLessonIds.push(id);
+      changed = true;
+    }
+  });
+
+  const finalKnownLessonIds = [...DEFAULT_LESSON_IDS];
+  if (knownLessonIds.length !== finalKnownLessonIds.length || knownLessonIds.some(id => !finalKnownLessonIds.includes(id))) changed = true;
+
+  return {
+    lockedLessonIds: uniqueIds(lockedLessonIds),
+    knownLessonIds: finalKnownLessonIds,
+    changed
+  };
+}
+
+function uniqueIds(ids) {
+  return [...new Set(ids.map(id => String(id || '').trim()).filter(id => DEFAULT_LESSON_IDS.includes(id)))];
+}
+
+async function saveLockState(store, lockedLessonIds, knownLessonIds) {
+  await store.put(LOCK_KEY, JSON.stringify({
+    lockedLessonIds: uniqueIds(lockedLessonIds),
+    knownLessonIds: uniqueIds(knownLessonIds),
+    updatedAt: new Date().toISOString()
+  }));
 }
 
 function json(data, status = 200) {
