@@ -8,6 +8,7 @@ const DEFAULT_LESSON_IDS = [
   'noun-prep-collocation-1',
   'noun-prep-collocation-2',
   'toeic-listening',
+  'ets-summer-2021-test1-part5-6',
   'vocabulary-box',
   'results'
 ];
