@@ -1,0 +1,876 @@
+{
+  "id": "ets-summer-2021-test1-part5-6",
+  "title": "ETS Summer 2021 Test 1 · Part 5 + 6",
+  "sourceLabel": "ETS Summer 2021 · Reading Test 1",
+  "timerMinutes": 25,
+  "questions": [
+    {
+      "id": "q101",
+      "no": 101,
+      "part": 5,
+      "stem": "Mr. Sokolov ------- a positive review of his stay at the Olana Hotel.",
+      "options": {
+        "A": "write",
+        "B": "wrote",
+        "C": "writing",
+        "D": "was written"
+      },
+      "answer": "B"
+    },
+    {
+      "id": "q102",
+      "no": 102,
+      "part": 5,
+      "stem": "The manager often leads new employees through the safety procedures -------.",
+      "options": {
+        "A": "her",
+        "B": "herself",
+        "C": "hers",
+        "D": "she"
+      },
+      "answer": "B"
+    },
+    {
+      "id": "q103",
+      "no": 103,
+      "part": 5,
+      "stem": "The corporate fitness center is equipped ------- fourteen stationary bicycles.",
+      "options": {
+        "A": "at",
+        "B": "on",
+        "C": "with",
+        "D": "about"
+      },
+      "answer": "C"
+    },
+    {
+      "id": "q104",
+      "no": 104,
+      "part": 5,
+      "stem": "Professor Phuong will go over the use of the laboratory ------- with the interns next week.",
+      "options": {
+        "A": "instruments",
+        "B": "instrumental",
+        "C": "instrumentally",
+        "D": "instrumented"
+      },
+      "answer": "A"
+    },
+    {
+      "id": "q105",
+      "no": 105,
+      "part": 5,
+      "stem": "Arnby Cable ------- £25.00 to all Internet subscribers after the weeklong service interruption.",
+      "options": {
+        "A": "refunded",
+        "B": "accepted",
+        "C": "divided",
+        "D": "deposited"
+      },
+      "answer": "A"
+    },
+    {
+      "id": "q106",
+      "no": 106,
+      "part": 5,
+      "stem": "The board of directors will meet next Monday to examine the current hiring -------.",
+      "options": {
+        "A": "purpose",
+        "B": "intent",
+        "C": "assembly",
+        "D": "policy"
+      },
+      "answer": "D"
+    },
+    {
+      "id": "q107",
+      "no": 107,
+      "part": 5,
+      "stem": "Passengers should not leave their seats ------- a flight attendant gives them permission to do so.",
+      "options": {
+        "A": "unless",
+        "B": "rather",
+        "C": "instead",
+        "D": "otherwise"
+      },
+      "answer": "A"
+    },
+    {
+      "id": "q108",
+      "no": 108,
+      "part": 5,
+      "stem": "The goal of the committee was to evaluate the company’s bylaws and offer ------- for improvement.",
+      "options": {
+        "A": "renewals",
+        "B": "registrations",
+        "C": "recommendations",
+        "D": "reimbursements"
+      },
+      "answer": "C"
+    },
+    {
+      "id": "q109",
+      "no": 109,
+      "part": 5,
+      "stem": "The building’s new ventilation system circulates heat much ------- than before.",
+      "options": {
+        "A": "even",
+        "B": "most even",
+        "C": "evenly",
+        "D": "more evenly"
+      },
+      "answer": "D"
+    },
+    {
+      "id": "q110",
+      "no": 110,
+      "part": 5,
+      "stem": "Glowood Appliances promises customers their money back ------- they are not satisfied with their purchase.",
+      "options": {
+        "A": "while",
+        "B": "and",
+        "C": "if",
+        "D": "then"
+      },
+      "answer": "C"
+    },
+    {
+      "id": "q111",
+      "no": 111,
+      "part": 5,
+      "stem": "The theater doors will close and the show will start at precisely 8:00 p.m., so guests are reminded to be -------.",
+      "options": {
+        "A": "rapid",
+        "B": "sudden",
+        "C": "punctual",
+        "D": "instant"
+      },
+      "answer": "C"
+    },
+    {
+      "id": "q112",
+      "no": 112,
+      "part": 5,
+      "stem": "All vacation requests must be made to your supervisor ------- the requested date.",
+      "options": {
+        "A": "prior to",
+        "B": "except for",
+        "C": "previously",
+        "D": "because"
+      },
+      "answer": "A"
+    },
+    {
+      "id": "q113",
+      "no": 113,
+      "part": 5,
+      "stem": "Most banks now offer clients the option of receiving their statements electronically or ------- mail.",
+      "options": {
+        "A": "from",
+        "B": "of",
+        "C": "in",
+        "D": "by"
+      },
+      "answer": "D"
+    },
+    {
+      "id": "q114",
+      "no": 114,
+      "part": 5,
+      "stem": "Construction at Langhall Plaza is going so well that shops might open before the expected ------- date.",
+      "options": {
+        "A": "completion",
+        "B": "selection",
+        "C": "decision",
+        "D": "option"
+      },
+      "answer": "A"
+    },
+    {
+      "id": "q115",
+      "no": 115,
+      "part": 5,
+      "stem": "Kohmek, Inc., is seeking a suitable site ------- the construction of its electronics factory.",
+      "options": {
+        "A": "for",
+        "B": "so",
+        "C": "to",
+        "D": "more"
+      },
+      "answer": "A"
+    },
+    {
+      "id": "q116",
+      "no": 116,
+      "part": 5,
+      "stem": "Studies show that the average audience forms its ------- of the speaker within the first few seconds of the presentation.",
+      "options": {
+        "A": "impress",
+        "B": "impressive",
+        "C": "impressively",
+        "D": "impression"
+      },
+      "answer": "D"
+    },
+    {
+      "id": "q117",
+      "no": 117,
+      "part": 5,
+      "stem": "Mr. Cutler has been asked to ------- domestic sales of low-calorie beverages.",
+      "options": {
+        "A": "oversee",
+        "B": "possess",
+        "C": "succeed",
+        "D": "persist"
+      },
+      "answer": "A"
+    },
+    {
+      "id": "q118",
+      "no": 118,
+      "part": 5,
+      "stem": "Cranford Culinary Academy offers 35 different classes for ------- chefs.",
+      "options": {
+        "A": "aspires",
+        "B": "aspirations",
+        "C": "aspiring",
+        "D": "to aspire"
+      },
+      "answer": "C"
+    },
+    {
+      "id": "q119",
+      "no": 119,
+      "part": 5,
+      "stem": "-------, items sold at the Scottville Craft Fair are unique and of very high quality.",
+      "options": {
+        "A": "Fairly",
+        "B": "Typically",
+        "C": "Simply",
+        "D": "Entirely"
+      },
+      "answer": "B"
+    },
+    {
+      "id": "q120",
+      "no": 120,
+      "part": 5,
+      "stem": "Mamton Home Furnishings ------- customized furniture in Pennsylvania for more than a century.",
+      "options": {
+        "A": "manufactures",
+        "B": "is manufacturing",
+        "C": "has manufactured",
+        "D": "manufacture"
+      },
+      "answer": "C"
+    },
+    {
+      "id": "q121",
+      "no": 121,
+      "part": 5,
+      "stem": "Please hold any phone calls for Ms. Tanaka ------- she will be in meetings all day.",
+      "options": {
+        "A": "as",
+        "B": "but",
+        "C": "despite",
+        "D": "similarly"
+      },
+      "answer": "A"
+    },
+    {
+      "id": "q122",
+      "no": 122,
+      "part": 5,
+      "stem": "Dolores Gutierrez excels as an estate planning attorney who helps clients manage their assets -------.",
+      "options": {
+        "A": "effect",
+        "B": "effectively",
+        "C": "effects",
+        "D": "effective"
+      },
+      "answer": "B"
+    },
+    {
+      "id": "q123",
+      "no": 123,
+      "part": 5,
+      "stem": "Mr. Singh was ------- about sales of the fragrance after the first round of customer focus groups.",
+      "options": {
+        "A": "extensive",
+        "B": "distinct",
+        "C": "optimistic",
+        "D": "superior"
+      },
+      "answer": "C"
+    },
+    {
+      "id": "q124",
+      "no": 124,
+      "part": 5,
+      "stem": "Data from the finance department was used to ------- predict the company’s future expenses.",
+      "options": {
+        "A": "either",
+        "B": "ever",
+        "C": "yet",
+        "D": "better"
+      },
+      "answer": "D"
+    },
+    {
+      "id": "q125",
+      "no": 125,
+      "part": 5,
+      "stem": "Immediately after the decrease in production was announced, everyone began discussing how ------- would impact work schedules.",
+      "options": {
+        "A": "us",
+        "B": "it",
+        "C": "theirs",
+        "D": "yours"
+      },
+      "answer": "B"
+    },
+    {
+      "id": "q126",
+      "no": 126,
+      "part": 5,
+      "stem": "Every year Arrow Mill, Inc., processes a ------- amount of grain.",
+      "options": {
+        "A": "durable",
+        "B": "direct",
+        "C": "resolute",
+        "D": "substantial"
+      },
+      "answer": "D"
+    },
+    {
+      "id": "q127",
+      "no": 127,
+      "part": 5,
+      "stem": "Tomorrow morning, both escalators in the store will be turned off periodically in order to perform ------- maintenance.",
+      "options": {
+        "A": "required",
+        "B": "require",
+        "C": "requiring",
+        "D": "requires"
+      },
+      "answer": "A"
+    },
+    {
+      "id": "q128",
+      "no": 128,
+      "part": 5,
+      "stem": "Those who wish to volunteer at the annual Sebastian Park flower-planting event this Saturday ------- to arrive early.",
+      "options": {
+        "A": "asks",
+        "B": "are asked",
+        "C": "has been asking",
+        "D": "to ask"
+      },
+      "answer": "B"
+    },
+    {
+      "id": "q129",
+      "no": 129,
+      "part": 5,
+      "stem": "Although Mr. Yanamura’s theory is ------- controversial, it does help explain the latest changes in the market.",
+      "options": {
+        "A": "neatly",
+        "B": "urgently",
+        "C": "gracefully",
+        "D": "certainly"
+      },
+      "answer": "D"
+    },
+    {
+      "id": "q130",
+      "no": 130,
+      "part": 5,
+      "stem": "A recent ------- found that property values in the Agate Valley region had increased by 3 percent between January and June.",
+      "options": {
+        "A": "assessment",
+        "B": "assessed",
+        "C": "assessable",
+        "D": "to assess"
+      },
+      "answer": "A"
+    },
+    {
+      "id": "q131",
+      "no": 131,
+      "part": 6,
+      "options": {
+        "A": "attracted",
+        "B": "entered",
+        "C": "awarded",
+        "D": "promoted"
+      },
+      "answer": "A",
+      "passageIndex": 0,
+      "stem": "Questions 131-134 refer to the following information."
+    },
+    {
+      "id": "q132",
+      "no": 132,
+      "part": 6,
+      "options": {
+        "A": "they",
+        "B": "them",
+        "C": "themselves",
+        "D": "theirs"
+      },
+      "answer": "C",
+      "passageIndex": 0,
+      "stem": "Questions 131-134 refer to the following information."
+    },
+    {
+      "id": "q133",
+      "no": 133,
+      "part": 6,
+      "options": {
+        "A": "location",
+        "B": "situation",
+        "C": "machine",
+        "D": "schedule"
+      },
+      "answer": "D",
+      "passageIndex": 0,
+      "stem": "Questions 131-134 refer to the following information."
+    },
+    {
+      "id": "q134",
+      "no": 134,
+      "part": 6,
+      "options": {
+        "A": "Registration begins on 3 February and continues through 18 March.",
+        "B": "This speaker is well-known throughout the industry.",
+        "C": "The conference was held in New Zealand in previous years.",
+        "D": "We’d like to get your feedback on last year’s conference."
+      },
+      "answer": "A",
+      "passageIndex": 0,
+      "stem": "Questions 131-134 refer to the following information."
+    },
+    {
+      "id": "q135",
+      "no": 135,
+      "part": 6,
+      "options": {
+        "A": "who",
+        "B": "accordingly",
+        "C": "recently",
+        "D": "where"
+      },
+      "answer": "A",
+      "passageIndex": 1,
+      "stem": "Questions 135-138 refer to the following advertisement."
+    },
+    {
+      "id": "q136",
+      "no": 136,
+      "part": 6,
+      "options": {
+        "A": "provided",
+        "B": "will provide",
+        "C": "will have provided",
+        "D": "is providing"
+      },
+      "answer": "B",
+      "passageIndex": 1,
+      "stem": "Questions 135-138 refer to the following advertisement."
+    },
+    {
+      "id": "q137",
+      "no": 137,
+      "part": 6,
+      "options": {
+        "A": "Your travel expenses are covered by Wallace & Prence.",
+        "B": "We place clients in apartments throughout the world.",
+        "C": "Duties also include supporting clients after their arrival.",
+        "D": "Incomplete applications will not be considered."
+      },
+      "answer": "C",
+      "passageIndex": 1,
+      "stem": "Questions 135-138 refer to the following advertisement."
+    },
+    {
+      "id": "q138",
+      "no": 138,
+      "part": 6,
+      "options": {
+        "A": "questions",
+        "B": "documents",
+        "C": "references",
+        "D": "qualifications"
+      },
+      "answer": "D",
+      "passageIndex": 1,
+      "stem": "Questions 135-138 refer to the following advertisement."
+    },
+    {
+      "id": "q139",
+      "no": 139,
+      "part": 6,
+      "options": {
+        "A": "doubted",
+        "B": "estimated",
+        "C": "crowded",
+        "D": "organized"
+      },
+      "answer": "C",
+      "passageIndex": 2,
+      "stem": "Questions 139-142 refer to the following newspaper article."
+    },
+    {
+      "id": "q140",
+      "no": 140,
+      "part": 6,
+      "options": {
+        "A": "She usually serves them warm.",
+        "B": "She created them when she started the restaurant.",
+        "C": "His family members prefer eating healthy meals.",
+        "D": "His social media campaign has also boosted sales."
+      },
+      "answer": "D",
+      "passageIndex": 2,
+      "stem": "Questions 139-142 refer to the following newspaper article."
+    },
+    {
+      "id": "q141",
+      "no": 141,
+      "part": 6,
+      "options": {
+        "A": "leave",
+        "B": "left",
+        "C": "is leaving",
+        "D": "have left"
+      },
+      "answer": "B",
+      "passageIndex": 2,
+      "stem": "Questions 139-142 refer to the following newspaper article."
+    },
+    {
+      "id": "q142",
+      "no": 142,
+      "part": 6,
+      "options": {
+        "A": "expansion",
+        "B": "supervision",
+        "C": "submission",
+        "D": "division"
+      },
+      "answer": "A",
+      "passageIndex": 2,
+      "stem": "Questions 139-142 refer to the following newspaper article."
+    },
+    {
+      "id": "q143",
+      "no": 143,
+      "part": 6,
+      "options": {
+        "A": "However",
+        "B": "Therefore",
+        "C": "In addition",
+        "D": "For example"
+      },
+      "answer": "A",
+      "passageIndex": 3,
+      "stem": "Questions 143-146 refer to the following memo."
+    },
+    {
+      "id": "q144",
+      "no": 144,
+      "part": 6,
+      "options": {
+        "A": "sent",
+        "B": "will be sent",
+        "C": "will have sent",
+        "D": "had been sent"
+      },
+      "answer": "B",
+      "passageIndex": 3,
+      "stem": "Questions 143-146 refer to the following memo."
+    },
+    {
+      "id": "q145",
+      "no": 145,
+      "part": 6,
+      "options": {
+        "A": "Support",
+        "B": "Absence",
+        "C": "Failure",
+        "D": "Approval"
+      },
+      "answer": "C",
+      "passageIndex": 3,
+      "stem": "Questions 143-146 refer to the following memo."
+    },
+    {
+      "id": "q146",
+      "no": 146,
+      "part": 6,
+      "options": {
+        "A": "I will see you at the meeting.",
+        "B": "Write down your new log-in ID.",
+        "C": "Let me know when this is done.",
+        "D": "Thank you for your cooperation."
+      },
+      "answer": "D",
+      "passageIndex": 3,
+      "stem": "Questions 143-146 refer to the following memo."
+    }
+  ],
+  "passages": [
+    {
+      "title": "Questions 131-134 refer to the following information.",
+      "label": "Information",
+      "html": "<p>The Design Present Conference is an annual event held in Melbourne for graphic-design professionals. The conference is steadily growing in popularity. Last year, it <span class=\"blank\">131</span> more than 3,000 attendees from Australia and around the world. The next Design Present Conference, which will be held from 20 to 23 March, will offer more than 100 workshops, plus keynote speeches and plenary sessions. This year, several opportunities for professional networking will be added. Attendees will have the chance to market <span class=\"blank\">132</span> to firms in several different industries. Periods for networking will be included in the <span class=\"blank\">133</span> each day. Whether you are a design enthusiast, student, freelance designer, or business owner, Design Present has something for you. <span class=\"blank sentence\">134</span></p>",
+      "questions": [
+        {
+          "id": "q131",
+          "no": 131,
+          "part": 6,
+          "options": {
+            "A": "attracted",
+            "B": "entered",
+            "C": "awarded",
+            "D": "promoted"
+          },
+          "answer": "A",
+          "passageIndex": 0,
+          "stem": "Questions 131-134 refer to the following information."
+        },
+        {
+          "id": "q132",
+          "no": 132,
+          "part": 6,
+          "options": {
+            "A": "they",
+            "B": "them",
+            "C": "themselves",
+            "D": "theirs"
+          },
+          "answer": "C",
+          "passageIndex": 0,
+          "stem": "Questions 131-134 refer to the following information."
+        },
+        {
+          "id": "q133",
+          "no": 133,
+          "part": 6,
+          "options": {
+            "A": "location",
+            "B": "situation",
+            "C": "machine",
+            "D": "schedule"
+          },
+          "answer": "D",
+          "passageIndex": 0,
+          "stem": "Questions 131-134 refer to the following information."
+        },
+        {
+          "id": "q134",
+          "no": 134,
+          "part": 6,
+          "options": {
+            "A": "Registration begins on 3 February and continues through 18 March.",
+            "B": "This speaker is well-known throughout the industry.",
+            "C": "The conference was held in New Zealand in previous years.",
+            "D": "We’d like to get your feedback on last year’s conference."
+          },
+          "answer": "A",
+          "passageIndex": 0,
+          "stem": "Questions 131-134 refer to the following information."
+        }
+      ]
+    },
+    {
+      "title": "Questions 135-138 refer to the following advertisement.",
+      "label": "Advertisement",
+      "html": "<h3>Housing Specialist Needed</h3><p>Wallace &amp; Prence Realty is currently seeking a housing specialist to work with our international clients. We specialize in securing appropriate short-term housing for individuals <span class=\"blank\">135</span> will be working in the Toronto area for only a short time. As part of our client-relations department, the housing specialist <span class=\"blank\">136</span> guidance to clients preparing for temporary relocation. <span class=\"blank sentence\">137</span> The successful candidate must have knowledge of real estate and rental agencies in the Toronto area. Also required are a minimum of two years of customer-service experience. Individuals with the necessary <span class=\"blank\">138</span> are encouraged to contact us at recruitment@wallaceprence.ca.</p>",
+      "questions": [
+        {
+          "id": "q135",
+          "no": 135,
+          "part": 6,
+          "options": {
+            "A": "who",
+            "B": "accordingly",
+            "C": "recently",
+            "D": "where"
+          },
+          "answer": "A",
+          "passageIndex": 1,
+          "stem": "Questions 135-138 refer to the following advertisement."
+        },
+        {
+          "id": "q136",
+          "no": 136,
+          "part": 6,
+          "options": {
+            "A": "provided",
+            "B": "will provide",
+            "C": "will have provided",
+            "D": "is providing"
+          },
+          "answer": "B",
+          "passageIndex": 1,
+          "stem": "Questions 135-138 refer to the following advertisement."
+        },
+        {
+          "id": "q137",
+          "no": 137,
+          "part": 6,
+          "options": {
+            "A": "Your travel expenses are covered by Wallace & Prence.",
+            "B": "We place clients in apartments throughout the world.",
+            "C": "Duties also include supporting clients after their arrival.",
+            "D": "Incomplete applications will not be considered."
+          },
+          "answer": "C",
+          "passageIndex": 1,
+          "stem": "Questions 135-138 refer to the following advertisement."
+        },
+        {
+          "id": "q138",
+          "no": 138,
+          "part": 6,
+          "options": {
+            "A": "questions",
+            "B": "documents",
+            "C": "references",
+            "D": "qualifications"
+          },
+          "answer": "D",
+          "passageIndex": 1,
+          "stem": "Questions 135-138 refer to the following advertisement."
+        }
+      ]
+    },
+    {
+      "title": "Questions 139-142 refer to the following newspaper article.",
+      "label": "Newspaper article",
+      "html": "<p><b>LOWELL (March 3)</b>—Just one year after opening, Viggo’s Sweet Shop on Park Street has become the place to go for residents wishing to satisfy their sugary cravings. Says owner Viggo Magnusson, “Returning customers bring friends and relatives with them, so the shop is always <span class=\"blank\">139</span>.” Mr. Magnusson credits the success of his business to the recipes he inherited from his grandmother about a decade ago. <span class=\"blank sentence\">140</span></p><p>But the popularity of the pastry shop <span class=\"blank\">141</span> Mr. Magnusson with an unanticipated problem: lack of store space. So when the shoe store next door went out of business recently, he purchased the property to allow for the <span class=\"blank\">142</span> of his shop. Renovations will start in April.</p>",
+      "questions": [
+        {
+          "id": "q139",
+          "no": 139,
+          "part": 6,
+          "options": {
+            "A": "doubted",
+            "B": "estimated",
+            "C": "crowded",
+            "D": "organized"
+          },
+          "answer": "C",
+          "passageIndex": 2,
+          "stem": "Questions 139-142 refer to the following newspaper article."
+        },
+        {
+          "id": "q140",
+          "no": 140,
+          "part": 6,
+          "options": {
+            "A": "She usually serves them warm.",
+            "B": "She created them when she started the restaurant.",
+            "C": "His family members prefer eating healthy meals.",
+            "D": "His social media campaign has also boosted sales."
+          },
+          "answer": "D",
+          "passageIndex": 2,
+          "stem": "Questions 139-142 refer to the following newspaper article."
+        },
+        {
+          "id": "q141",
+          "no": 141,
+          "part": 6,
+          "options": {
+            "A": "leave",
+            "B": "left",
+            "C": "is leaving",
+            "D": "have left"
+          },
+          "answer": "B",
+          "passageIndex": 2,
+          "stem": "Questions 139-142 refer to the following newspaper article."
+        },
+        {
+          "id": "q142",
+          "no": 142,
+          "part": 6,
+          "options": {
+            "A": "expansion",
+            "B": "supervision",
+            "C": "submission",
+            "D": "division"
+          },
+          "answer": "A",
+          "passageIndex": 2,
+          "stem": "Questions 139-142 refer to the following newspaper article."
+        }
+      ]
+    },
+    {
+      "title": "Questions 143-146 refer to the following memo.",
+      "label": "Memo",
+      "html": "<p><b>To:</b> All Employees<br><b>From:</b> Jennifer Prasad<br><b>Subject:</b> Updated Password Policy<br><b>Date:</b> Tuesday, February 8</p><p>Dear Employees,</p><p>As an enhanced security measure, you will now be required to change the password you use to access the company network on the first workday of each month. <span class=\"blank\">143</span>, your log-in ID will remain the same.</p><p>Each password must be at least twelve characters long and include one capital letter, one lowercase letter, one number, and one special character.</p><p>An e-mail <span class=\"blank\">144</span> on the last workday of each month reminding you to set a new password on the next workday. <span class=\"blank\">145</span> to do so will result in your being locked out of your account, and you will have to contact our platform provider, Securities Services, for assistance.</p><p>We are doing our best to ensure that our employees and our clients have the highest possible level of security. <span class=\"blank sentence\">146</span></p><p>Jennifer Prasad, CEO</p>",
+      "questions": [
+        {
+          "id": "q143",
+          "no": 143,
+          "part": 6,
+          "options": {
+            "A": "However",
+            "B": "Therefore",
+            "C": "In addition",
+            "D": "For example"
+          },
+          "answer": "A",
+          "passageIndex": 3,
+          "stem": "Questions 143-146 refer to the following memo."
+        },
+        {
+          "id": "q144",
+          "no": 144,
+          "part": 6,
+          "options": {
+            "A": "sent",
+            "B": "will be sent",
+            "C": "will have sent",
+            "D": "had been sent"
+          },
+          "answer": "B",
+          "passageIndex": 3,
+          "stem": "Questions 143-146 refer to the following memo."
+        },
+        {
+          "id": "q145",
+          "no": 145,
+          "part": 6,
+          "options": {
+            "A": "Support",
+            "B": "Absence",
+            "C": "Failure",
+            "D": "Approval"
+          },
+          "answer": "C",
+          "passageIndex": 3,
+          "stem": "Questions 143-146 refer to the following memo."
+        },
+        {
+          "id": "q146",
+          "no": 146,
+          "part": 6,
+          "options": {
+            "A": "I will see you at the meeting.",
+            "B": "Write down your new log-in ID.",
+            "C": "Let me know when this is done.",
+            "D": "Thank you for your cooperation."
+          },
+          "answer": "D",
+          "passageIndex": 3,
+          "stem": "Questions 143-146 refer to the following memo."
+        }
+      ]
+    }
+  ]
+}
