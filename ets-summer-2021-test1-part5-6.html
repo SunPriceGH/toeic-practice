@@ -181,6 +181,8 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
 const EXAM_DATA_URL = 'data/listening-ets2021-p56.json';
 let EXAM_DATA = null;
 const STUDENT_KEY = 'toeic_student_session';
+const LESSON_ID = 'ets-summer-2021-test1-part5-6';
+const LOCK_BYPASS_EMAIL = 'sunprice@sp.ik';
 let studentSession = null;
 let timeLeft = 0;
 let timerId = null;
@@ -234,6 +236,33 @@ function requireStudentSession(){
     return null;
   }
   return student;
+}
+async function requireLessonUnlocked(){
+  const email = String(studentSession?.email || '').trim().toLowerCase();
+  if(email === LOCK_BYPASS_EMAIL) return true;
+  try{
+    const res = await fetch('/api/lesson-locks', {cache:'no-store'});
+    const data = await res.json().catch(() => ({}));
+    if(!res.ok || !data.ok) throw new Error(data.error || 'Không kiểm tra được trạng thái khóa bài.');
+    if(Array.isArray(data.lockedLessonIds) && data.lockedLessonIds.includes(LESSON_ID)){
+      if(window.Swal){
+        await Swal.fire({icon:'warning',title:'Bài đang khóa',text:'Bài này hiện chưa mở cho học viên.',confirmButtonColor:'#2563eb'});
+      }else{
+        alert('Bài này hiện chưa mở cho học viên.');
+      }
+      location.href = 'index.html';
+      return false;
+    }
+    return true;
+  }catch(err){
+    if(window.Swal){
+      await Swal.fire({icon:'error',title:'Không kiểm tra được khóa bài',text:err.message || 'Vui lòng vào lại từ trang chủ.',confirmButtonColor:'#2563eb'});
+    }else{
+      alert(err.message || 'Không kiểm tra được trạng thái khóa bài.');
+    }
+    location.href = 'index.html';
+    return false;
+  }
 }
 function escapeText(text){
   return String(text ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -506,6 +535,8 @@ document.getElementById('startBtn').addEventListener('click', startExam);
   setupAntiCopy();
   studentSession = requireStudentSession();
   if(!studentSession) return;
+  const unlocked = await requireLessonUnlocked();
+  if(!unlocked) return;
   try{
     await loadExamData();
   }catch(err){
