@@ -15,7 +15,10 @@
         "C": "writing",
         "D": "was written"
       },
-      "answer": "B"
+      "answer": "B",
+      "skill": "Past tense",
+      "explanationVi": "Câu kể về việc ông Sokolov đã viết đánh giá sau kỳ nghỉ. Chủ ngữ là người thực hiện hành động nên dùng quá khứ đơn chủ động: wrote.",
+      "explanation": "Câu kể về việc ông Sokolov đã viết đánh giá sau kỳ nghỉ. Chủ ngữ là người thực hiện hành động nên dùng quá khứ đơn chủ động: wrote."
     },
     {
       "id": "q102",
@@ -28,7 +31,10 @@
         "C": "hers",
         "D": "she"
       },
-      "answer": "B"
+      "answer": "B",
+      "skill": "Reflexive pronoun",
+      "explanationVi": "Cụm leads new employees through the safety procedures herself nhấn mạnh chính người quản lý tự hướng dẫn nhân viên mới, nên dùng đại từ phản thân herself.",
+      "explanation": "Cụm leads new employees through the safety procedures herself nhấn mạnh chính người quản lý tự hướng dẫn nhân viên mới, nên dùng đại từ phản thân herself."
     },
     {
       "id": "q103",
@@ -41,7 +47,10 @@
         "C": "with",
         "D": "about"
       },
-      "answer": "C"
+      "answer": "C",
+      "skill": "Adjective + preposition",
+      "explanationVi": "Cấu trúc cố định là be equipped with + noun, nghĩa là được trang bị với. Vì vậy chọn with.",
+      "explanation": "Cấu trúc cố định là be equipped with + noun, nghĩa là được trang bị với. Vì vậy chọn with."
     },
     {
       "id": "q104",
@@ -54,7 +63,10 @@
         "C": "instrumentally",
         "D": "instrumented"
       },
-      "answer": "A"
+      "answer": "A",
+      "skill": "Word form",
+      "explanationVi": "Sau cụm the use of the laboratory cần một danh từ chỉ đồ vật được sử dụng. instruments là danh từ số nhiều phù hợp.",
+      "explanation": "Sau cụm the use of the laboratory cần một danh từ chỉ đồ vật được sử dụng. instruments là danh từ số nhiều phù hợp."
     },
     {
       "id": "q105",
@@ -67,7 +79,10 @@
         "C": "divided",
         "D": "deposited"
       },
-      "answer": "A"
+      "answer": "A",
+      "skill": "Vocabulary",
+      "explanationVi": "Ngữ cảnh nói công ty hoàn tiền cho thuê bao sau gián đoạn dịch vụ. refund + money + to someone là cấu trúc đúng.",
+      "explanation": "Ngữ cảnh nói công ty hoàn tiền cho thuê bao sau gián đoạn dịch vụ. refund + money + to someone là cấu trúc đúng."
     },
     {
       "id": "q106",
@@ -80,7 +95,10 @@
         "C": "assembly",
         "D": "policy"
       },
-      "answer": "D"
+      "answer": "D",
+      "skill": "Collocation",
+      "explanationVi": "Hiring policy là cụm danh từ tự nhiên trong môi trường công ty, nghĩa là chính sách tuyển dụng hiện tại.",
+      "explanation": "Hiring policy là cụm danh từ tự nhiên trong môi trường công ty, nghĩa là chính sách tuyển dụng hiện tại."
     },
     {
       "id": "q107",
@@ -93,7 +111,10 @@
         "C": "instead",
         "D": "otherwise"
       },
-      "answer": "A"
+      "answer": "A",
+      "skill": "Conjunction",
+      "explanationVi": "Câu diễn tả điều kiện: hành khách không được rời ghế trừ khi tiếp viên cho phép. unless = trừ khi.",
+      "explanation": "Câu diễn tả điều kiện: hành khách không được rời ghế trừ khi tiếp viên cho phép. unless = trừ khi."
     },
     {
       "id": "q108",
@@ -106,7 +127,10 @@
         "C": "recommendations",
         "D": "reimbursements"
       },
-      "answer": "C"
+      "answer": "C",
+      "skill": "Noun choice",
+      "explanationVi": "Offer recommendations for improvement là cụm rất tự nhiên, nghĩa là đưa ra khuyến nghị để cải thiện.",
+      "explanation": "Offer recommendations for improvement là cụm rất tự nhiên, nghĩa là đưa ra khuyến nghị để cải thiện."
     },
     {
       "id": "q109",
@@ -119,7 +143,10 @@
         "C": "evenly",
         "D": "more evenly"
       },
-      "answer": "D"
+      "answer": "D",
+      "skill": "Comparative adverb",
+      "explanationVi": "much đứng trước dạng so sánh hơn. Động từ circulates cần trạng từ, nên dùng more evenly.",
+      "explanation": "much đứng trước dạng so sánh hơn. Động từ circulates cần trạng từ, nên dùng more evenly."
     },
     {
       "id": "q110",
@@ -132,7 +159,10 @@
         "C": "if",
         "D": "then"
       },
-      "answer": "C"
+      "answer": "C",
+      "skill": "Condition",
+      "explanationVi": "Câu nêu điều kiện hoàn tiền: nếu khách không hài lòng. if là liên từ điều kiện phù hợp.",
+      "explanation": "Câu nêu điều kiện hoàn tiền: nếu khách không hài lòng. if là liên từ điều kiện phù hợp."
     },
     {
       "id": "q111",
@@ -145,7 +175,10 @@
         "C": "punctual",
         "D": "instant"
       },
-      "answer": "C"
+      "answer": "C",
+      "skill": "Vocabulary",
+      "explanationVi": "Khách được nhắc đến đúng giờ vì cửa sẽ đóng và buổi diễn bắt đầu chính xác lúc 8 giờ. punctual = đúng giờ.",
+      "explanation": "Khách được nhắc đến đúng giờ vì cửa sẽ đóng và buổi diễn bắt đầu chính xác lúc 8 giờ. punctual = đúng giờ."
     },
     {
       "id": "q112",
@@ -158,7 +191,10 @@
         "C": "previously",
         "D": "because"
       },
-      "answer": "A"
+      "answer": "A",
+      "skill": "Prepositional phrase",
+      "explanationVi": "prior to + noun nghĩa là trước một mốc thời gian. prior to the requested date là cách dùng đúng.",
+      "explanation": "prior to + noun nghĩa là trước một mốc thời gian. prior to the requested date là cách dùng đúng."
     },
     {
       "id": "q113",
@@ -171,7 +207,10 @@
         "C": "in",
         "D": "by"
       },
-      "answer": "D"
+      "answer": "D",
+      "skill": "Preposition",
+      "explanationVi": "By mail là cụm cố định, nghĩa là gửi/nhận qua đường bưu điện.",
+      "explanation": "By mail là cụm cố định, nghĩa là gửi/nhận qua đường bưu điện."
     },
     {
       "id": "q114",
@@ -184,7 +223,10 @@
         "C": "decision",
         "D": "option"
       },
-      "answer": "A"
+      "answer": "A",
+      "skill": "Noun collocation",
+      "explanationVi": "Completion date nghĩa là ngày hoàn thành. Đây là cụm danh từ phù hợp với tiến độ xây dựng.",
+      "explanation": "Completion date nghĩa là ngày hoàn thành. Đây là cụm danh từ phù hợp với tiến độ xây dựng."
     },
     {
       "id": "q115",
@@ -197,7 +239,10 @@
         "C": "to",
         "D": "more"
       },
-      "answer": "A"
+      "answer": "A",
+      "skill": "Preposition",
+      "explanationVi": "A site for the construction of... nghĩa là địa điểm cho việc xây dựng. for chỉ mục đích sử dụng của địa điểm.",
+      "explanation": "A site for the construction of... nghĩa là địa điểm cho việc xây dựng. for chỉ mục đích sử dụng của địa điểm."
     },
     {
       "id": "q116",
@@ -210,7 +255,10 @@
         "C": "impressively",
         "D": "impression"
       },
-      "answer": "D"
+      "answer": "D",
+      "skill": "Word form",
+      "explanationVi": "Sau tính từ sở hữu its cần danh từ. impression là danh từ, nghĩa là ấn tượng.",
+      "explanation": "Sau tính từ sở hữu its cần danh từ. impression là danh từ, nghĩa là ấn tượng."
     },
     {
       "id": "q117",
@@ -223,7 +271,10 @@
         "C": "succeed",
         "D": "persist"
       },
-      "answer": "A"
+      "answer": "A",
+      "skill": "Vocabulary",
+      "explanationVi": "Oversee domestic sales nghĩa là giám sát/phụ trách doanh số nội địa. Các lựa chọn khác không hợp ngữ cảnh.",
+      "explanation": "Oversee domestic sales nghĩa là giám sát/phụ trách doanh số nội địa. Các lựa chọn khác không hợp ngữ cảnh."
     },
     {
       "id": "q118",
@@ -236,7 +287,10 @@
         "C": "aspiring",
         "D": "to aspire"
       },
-      "answer": "C"
+      "answer": "C",
+      "skill": "Word form",
+      "explanationVi": "Aspiring chefs là cụm đúng, nghĩa là những đầu bếp đang mong muốn theo nghề. aspiring là tính từ đứng trước danh từ.",
+      "explanation": "Aspiring chefs là cụm đúng, nghĩa là những đầu bếp đang mong muốn theo nghề. aspiring là tính từ đứng trước danh từ."
     },
     {
       "id": "q119",
@@ -249,7 +303,10 @@
         "C": "Simply",
         "D": "Entirely"
       },
-      "answer": "B"
+      "answer": "B",
+      "skill": "Sentence adverb",
+      "explanationVi": "Typically đứng đầu câu để nói điều thường thấy: các món ở hội chợ thủ công thường độc đáo và chất lượng cao.",
+      "explanation": "Typically đứng đầu câu để nói điều thường thấy: các món ở hội chợ thủ công thường độc đáo và chất lượng cao."
     },
     {
       "id": "q120",
@@ -262,7 +319,10 @@
         "C": "has manufactured",
         "D": "manufacture"
       },
-      "answer": "C"
+      "answer": "C",
+      "skill": "Present perfect",
+      "explanationVi": "for more than a century cho thấy hành động kéo dài từ quá khứ đến hiện tại, nên dùng has manufactured.",
+      "explanation": "for more than a century cho thấy hành động kéo dài từ quá khứ đến hiện tại, nên dùng has manufactured."
     },
     {
       "id": "q121",
@@ -275,7 +335,10 @@
         "C": "despite",
         "D": "similarly"
       },
-      "answer": "A"
+      "answer": "A",
+      "skill": "Conjunction",
+      "explanationVi": "as ở đây mang nghĩa because, giải thích lý do giữ cuộc gọi: cô Tanaka họp cả ngày.",
+      "explanation": "as ở đây mang nghĩa because, giải thích lý do giữ cuộc gọi: cô Tanaka họp cả ngày."
     },
     {
       "id": "q122",
@@ -288,7 +351,10 @@
         "C": "effects",
         "D": "effective"
       },
-      "answer": "B"
+      "answer": "B",
+      "skill": "Adverb",
+      "explanationVi": "manage là động từ, cần trạng từ bổ nghĩa. effectively nghĩa là một cách hiệu quả.",
+      "explanation": "manage là động từ, cần trạng từ bổ nghĩa. effectively nghĩa là một cách hiệu quả."
     },
     {
       "id": "q123",
@@ -301,7 +367,10 @@
         "C": "optimistic",
         "D": "superior"
       },
-      "answer": "C"
+      "answer": "C",
+      "skill": "Adjective + preposition",
+      "explanationVi": "Optimistic about + noun là cấu trúc đúng, nghĩa là lạc quan về doanh số sản phẩm.",
+      "explanation": "Optimistic about + noun là cấu trúc đúng, nghĩa là lạc quan về doanh số sản phẩm."
     },
     {
       "id": "q124",
@@ -314,7 +383,10 @@
         "C": "yet",
         "D": "better"
       },
-      "answer": "D"
+      "answer": "D",
+      "skill": "Adverb",
+      "explanationVi": "better predict nghĩa là dự đoán tốt hơn. better bổ nghĩa cho động từ predict trong ngữ cảnh so sánh khả năng dự đoán.",
+      "explanation": "better predict nghĩa là dự đoán tốt hơn. better bổ nghĩa cho động từ predict trong ngữ cảnh so sánh khả năng dự đoán."
     },
     {
       "id": "q125",
@@ -327,7 +399,10 @@
         "C": "theirs",
         "D": "yours"
       },
-      "answer": "B"
+      "answer": "B",
+      "skill": "Pronoun reference",
+      "explanationVi": "it thay cho the decrease in production đã được nhắc ngay trước đó. Các đại từ còn lại không phù hợp.",
+      "explanation": "it thay cho the decrease in production đã được nhắc ngay trước đó. Các đại từ còn lại không phù hợp."
     },
     {
       "id": "q126",
@@ -340,7 +415,10 @@
         "C": "resolute",
         "D": "substantial"
       },
-      "answer": "D"
+      "answer": "D",
+      "skill": "Vocabulary",
+      "explanationVi": "A substantial amount of grain nghĩa là một lượng ngũ cốc lớn/đáng kể, phù hợp với hoạt động xử lý hằng năm.",
+      "explanation": "A substantial amount of grain nghĩa là một lượng ngũ cốc lớn/đáng kể, phù hợp với hoạt động xử lý hằng năm."
     },
     {
       "id": "q127",
@@ -353,7 +431,10 @@
         "C": "requiring",
         "D": "requires"
       },
-      "answer": "A"
+      "answer": "A",
+      "skill": "Past participle adjective",
+      "explanationVi": "Required maintenance là bảo trì bắt buộc/cần thiết. required đóng vai trò tính từ trước danh từ maintenance.",
+      "explanation": "Required maintenance là bảo trì bắt buộc/cần thiết. required đóng vai trò tính từ trước danh từ maintenance."
     },
     {
       "id": "q128",
@@ -366,7 +447,10 @@
         "C": "has been asking",
         "D": "to ask"
       },
-      "answer": "B"
+      "answer": "B",
+      "skill": "Passive voice",
+      "explanationVi": "Chủ ngữ Those who wish to volunteer là số nhiều và họ được yêu cầu đến sớm, nên dùng are asked.",
+      "explanation": "Chủ ngữ Those who wish to volunteer là số nhiều và họ được yêu cầu đến sớm, nên dùng are asked."
     },
     {
       "id": "q129",
@@ -379,7 +463,10 @@
         "C": "gracefully",
         "D": "certainly"
       },
-      "answer": "D"
+      "answer": "D",
+      "skill": "Adverb",
+      "explanationVi": "certainly controversial nghĩa là chắc chắn gây tranh cãi. certainly là trạng từ phù hợp bổ nghĩa cho tính từ controversial.",
+      "explanation": "certainly controversial nghĩa là chắc chắn gây tranh cãi. certainly là trạng từ phù hợp bổ nghĩa cho tính từ controversial."
     },
     {
       "id": "q130",
@@ -392,7 +479,10 @@
         "C": "assessable",
         "D": "to assess"
       },
-      "answer": "A"
+      "answer": "A",
+      "skill": "Noun",
+      "explanationVi": "A recent assessment found that... cần danh từ làm chủ ngữ. assessment nghĩa là cuộc đánh giá/đánh giá gần đây.",
+      "explanation": "A recent assessment found that... cần danh từ làm chủ ngữ. assessment nghĩa là cuộc đánh giá/đánh giá gần đây."
     },
     {
       "id": "q131",
@@ -406,7 +496,10 @@
       },
       "answer": "A",
       "passageIndex": 0,
-      "stem": "Questions 131-134 refer to the following information."
+      "stem": "Questions 131-134 refer to the following information.",
+      "skill": "Vocabulary in context",
+      "explanationVi": "Conference attracted more than 3,000 attendees nghĩa là hội nghị thu hút hơn 3.000 người tham dự. attracted hợp với attendees.",
+      "explanation": "Conference attracted more than 3,000 attendees nghĩa là hội nghị thu hút hơn 3.000 người tham dự. attracted hợp với attendees."
     },
     {
       "id": "q132",
@@ -420,7 +513,10 @@
       },
       "answer": "C",
       "passageIndex": 0,
-      "stem": "Questions 131-134 refer to the following information."
+      "stem": "Questions 131-134 refer to the following information.",
+      "skill": "Reflexive pronoun",
+      "explanationVi": "Attendees will have the chance to market themselves nghĩa là người tham dự có cơ hội quảng bá chính họ với các công ty.",
+      "explanation": "Attendees will have the chance to market themselves nghĩa là người tham dự có cơ hội quảng bá chính họ với các công ty."
     },
     {
       "id": "q133",
@@ -434,7 +530,10 @@
       },
       "answer": "D",
       "passageIndex": 0,
-      "stem": "Questions 131-134 refer to the following information."
+      "stem": "Questions 131-134 refer to the following information.",
+      "skill": "Noun choice",
+      "explanationVi": "Periods for networking will be included in the schedule each day. schedule là lịch trình của hội nghị.",
+      "explanation": "Periods for networking will be included in the schedule each day. schedule là lịch trình của hội nghị."
     },
     {
       "id": "q134",
@@ -448,7 +547,10 @@
       },
       "answer": "A",
       "passageIndex": 0,
-      "stem": "Questions 131-134 refer to the following information."
+      "stem": "Questions 131-134 refer to the following information.",
+      "skill": "Sentence insertion",
+      "explanationVi": "Câu về thời gian đăng ký phù hợp làm thông tin cuối bài vì đoạn đang giới thiệu hội nghị sắp diễn ra và cách tham dự.",
+      "explanation": "Câu về thời gian đăng ký phù hợp làm thông tin cuối bài vì đoạn đang giới thiệu hội nghị sắp diễn ra và cách tham dự."
     },
     {
       "id": "q135",
@@ -462,7 +564,10 @@
       },
       "answer": "A",
       "passageIndex": 1,
-      "stem": "Questions 135-138 refer to the following advertisement."
+      "stem": "Questions 135-138 refer to the following advertisement.",
+      "skill": "Relative clause",
+      "explanationVi": "individuals who will be working... cần đại từ quan hệ làm chủ ngữ cho mệnh đề quan hệ chỉ người.",
+      "explanation": "individuals who will be working... cần đại từ quan hệ làm chủ ngữ cho mệnh đề quan hệ chỉ người."
     },
     {
       "id": "q136",
@@ -476,7 +581,10 @@
       },
       "answer": "B",
       "passageIndex": 1,
-      "stem": "Questions 135-138 refer to the following advertisement."
+      "stem": "Questions 135-138 refer to the following advertisement.",
+      "skill": "Future simple",
+      "explanationVi": "Đây là quảng cáo tuyển dụng mô tả nhiệm vụ của người được tuyển, nên dùng will provide guidance.",
+      "explanation": "Đây là quảng cáo tuyển dụng mô tả nhiệm vụ của người được tuyển, nên dùng will provide guidance."
     },
     {
       "id": "q137",
@@ -490,7 +598,10 @@
       },
       "answer": "C",
       "passageIndex": 1,
-      "stem": "Questions 135-138 refer to the following advertisement."
+      "stem": "Questions 135-138 refer to the following advertisement.",
+      "skill": "Sentence insertion",
+      "explanationVi": "Câu Duties also include... nối tiếp tự nhiên sau phần mô tả công việc của housing specialist.",
+      "explanation": "Câu Duties also include... nối tiếp tự nhiên sau phần mô tả công việc của housing specialist."
     },
     {
       "id": "q138",
@@ -504,7 +615,10 @@
       },
       "answer": "D",
       "passageIndex": 1,
-      "stem": "Questions 135-138 refer to the following advertisement."
+      "stem": "Questions 135-138 refer to the following advertisement.",
+      "skill": "Noun choice",
+      "explanationVi": "Individuals with the necessary qualifications nghĩa là những người có trình độ/năng lực cần thiết được khuyến khích liên hệ.",
+      "explanation": "Individuals with the necessary qualifications nghĩa là những người có trình độ/năng lực cần thiết được khuyến khích liên hệ."
     },
     {
       "id": "q139",
@@ -518,7 +632,10 @@
       },
       "answer": "C",
       "passageIndex": 2,
-      "stem": "Questions 139-142 refer to the following newspaper article."
+      "stem": "Questions 139-142 refer to the following newspaper article.",
+      "skill": "Vocabulary",
+      "explanationVi": "Khách cũ dẫn thêm bạn bè và người thân nên cửa hàng luôn đông đúc. crowded phù hợp nhất.",
+      "explanation": "Khách cũ dẫn thêm bạn bè và người thân nên cửa hàng luôn đông đúc. crowded phù hợp nhất."
     },
     {
       "id": "q140",
@@ -532,7 +649,10 @@
       },
       "answer": "D",
       "passageIndex": 2,
-      "stem": "Questions 139-142 refer to the following newspaper article."
+      "stem": "Questions 139-142 refer to the following newspaper article.",
+      "skill": "Sentence insertion",
+      "explanationVi": "Câu về chiến dịch mạng xã hội tiếp tục giải thích lý do doanh số tăng, phù hợp với chủ đề thành công của cửa hàng.",
+      "explanation": "Câu về chiến dịch mạng xã hội tiếp tục giải thích lý do doanh số tăng, phù hợp với chủ đề thành công của cửa hàng."
     },
     {
       "id": "q141",
@@ -546,7 +666,10 @@
       },
       "answer": "B",
       "passageIndex": 2,
-      "stem": "Questions 139-142 refer to the following newspaper article."
+      "stem": "Questions 139-142 refer to the following newspaper article.",
+      "skill": "Verb tense",
+      "explanationVi": "left Mr. Magnusson with a problem là cấu trúc đúng, nghĩa là khiến ông gặp một vấn đề. Bài báo kể sự việc đã xảy ra.",
+      "explanation": "left Mr. Magnusson with a problem là cấu trúc đúng, nghĩa là khiến ông gặp một vấn đề. Bài báo kể sự việc đã xảy ra."
     },
     {
       "id": "q142",
@@ -560,7 +683,10 @@
       },
       "answer": "A",
       "passageIndex": 2,
-      "stem": "Questions 139-142 refer to the following newspaper article."
+      "stem": "Questions 139-142 refer to the following newspaper article.",
+      "skill": "Noun choice",
+      "explanationVi": "Mua mặt bằng bên cạnh để mở rộng cửa hàng, nên dùng expansion.",
+      "explanation": "Mua mặt bằng bên cạnh để mở rộng cửa hàng, nên dùng expansion."
     },
     {
       "id": "q143",
@@ -574,7 +700,10 @@
       },
       "answer": "A",
       "passageIndex": 3,
-      "stem": "Questions 143-146 refer to the following memo."
+      "stem": "Questions 143-146 refer to the following memo.",
+      "skill": "Transition",
+      "explanationVi": "However tạo tương phản: mật khẩu phải đổi hằng tháng, nhưng log-in ID vẫn giữ nguyên.",
+      "explanation": "However tạo tương phản: mật khẩu phải đổi hằng tháng, nhưng log-in ID vẫn giữ nguyên."
     },
     {
       "id": "q144",
@@ -588,7 +717,10 @@
       },
       "answer": "B",
       "passageIndex": 3,
-      "stem": "Questions 143-146 refer to the following memo."
+      "stem": "Questions 143-146 refer to the following memo.",
+      "skill": "Future passive",
+      "explanationVi": "An e-mail will be sent nghĩa là email sẽ được gửi. Chủ ngữ email nhận hành động nên dùng bị động tương lai.",
+      "explanation": "An e-mail will be sent nghĩa là email sẽ được gửi. Chủ ngữ email nhận hành động nên dùng bị động tương lai."
     },
     {
       "id": "q145",
@@ -602,7 +734,10 @@
       },
       "answer": "C",
       "passageIndex": 3,
-      "stem": "Questions 143-146 refer to the following memo."
+      "stem": "Questions 143-146 refer to the following memo.",
+      "skill": "Noun phrase",
+      "explanationVi": "Failure to do so nghĩa là việc không làm như vậy. Cụm này làm chủ ngữ cho will result in...",
+      "explanation": "Failure to do so nghĩa là việc không làm như vậy. Cụm này làm chủ ngữ cho will result in..."
     },
     {
       "id": "q146",
@@ -616,7 +751,10 @@
       },
       "answer": "D",
       "passageIndex": 3,
-      "stem": "Questions 143-146 refer to the following memo."
+      "stem": "Questions 143-146 refer to the following memo.",
+      "skill": "Closing sentence",
+      "explanationVi": "Thank you for your cooperation là câu kết memo phù hợp sau khi nêu chính sách mới và yêu cầu nhân viên hợp tác.",
+      "explanation": "Thank you for your cooperation là câu kết memo phù hợp sau khi nêu chính sách mới và yêu cầu nhân viên hợp tác."
     }
   ],
   "passages": [
@@ -872,5 +1010,11 @@
         }
       ]
     }
-  ]
+  ],
+  "practice": {
+    "id": "ets-summer-2021-test1-part5-6-practice",
+    "title": "Luyện đề ETS 2021 - Part 5 + 6",
+    "description": "Làm từng câu, kiểm tra đáp án và xem sửa chi tiết ngay.",
+    "mode": "practice"
+  }
 }
