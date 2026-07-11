@@ -1,34 +1,117 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Kết quả học viên</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kết quả học viên</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}html,body{font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}.page{min-height:100vh;padding:48px 64px;background:radial-gradient(circle at top left,rgba(59,130,246,.14),transparent 36%),#fff}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:100%}.wrap{max-width:1180px;margin:0 auto}.label{display:inline-block;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:15px;margin-bottom:16px}h1{font-size:42px;color:#0f172a;margin-bottom:12px}p{font-size:19px;line-height:1.5;color:#475569;margin-bottom:14px}.panel{background:#f8fafc;border:2px solid #e2e8f0;border-radius:24px;padding:22px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}.row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.row input{border:2px solid #dbeafe;border-radius:999px;padding:12px 14px;font-size:16px;min-width:280px}.btn{border:none;cursor:pointer;border-radius:999px;background:#2563eb;color:#fff;font-weight:850;font-size:15px;padding:12px 18px;box-shadow:0 8px 18px rgba(15,23,42,.16);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;line-height:1}.btn:hover{background:#1d4ed8}.btn.gray{background:#e2e8f0;color:#0f172a}.btn.gray:hover{background:#cbd5e1}.btn.danger{background:#fee2e2;color:#991b1b;box-shadow:none}.btn.danger:hover{background:#fecaca}.btn.small{font-size:13px;font-weight:750;padding:8px 11px;box-shadow:0 4px 10px rgba(15,23,42,.10)}.action-cell{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap}.table-wrap{overflow:auto;margin-top:16px}table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid #d8e2f0;border-radius:18px;overflow:hidden}th{background:linear-gradient(135deg,#1d4ed8,#0ea5e9);color:#fff;text-align:center;padding:13px;font-size:15px;vertical-align:middle}td{border-top:1px solid #e5edf7;padding:12px;font-size:15px;vertical-align:middle;text-align:center;line-height:1.35}tr:nth-child(even) td{background:#f8fbff}.status{font-weight:900;margin-top:10px}.ok{color:#15803d}.err{color:#be123c}pre{white-space:pre-wrap;background:#0f172a;color:#e2e8f0;border-radius:18px;padding:18px;margin-top:16px;max-height:440px;overflow:auto}@media(max-width:768px){.page{padding:36px 22px}h1{font-size:32px}.row input{width:100%;min-width:0}}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}
+button,input{font:inherit}
+.page{min-height:100vh;padding:46px 54px;background:radial-gradient(circle at top left,rgba(37,99,235,.14),transparent 34%),linear-gradient(180deg,#ffffff,#eef4ff)}
+.top-line{position:fixed;top:0;left:0;height:7px;background:linear-gradient(90deg,#2563eb,#0ea5e9,#22c55e);width:100%;z-index:20}
+.wrap{max-width:1320px;margin:0 auto}
+.label{display:inline-block;padding:8px 15px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:700;font-size:15px;margin-bottom:14px}
+h1{font-size:40px;color:#0f172a;margin-bottom:10px;font-weight:700}
+p{font-size:18px;line-height:1.5;color:#475569;margin-bottom:14px}
+.panel{background:#f8fafc;border:2px solid #e2e8f0;border-radius:24px;padding:22px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;align-items:center}.row input[type=password]{border:2px solid #dbeafe;border-radius:999px;padding:12px 14px;font-size:16px;min-width:280px;background:#fff}.btn{border:none;cursor:pointer;border-radius:999px;background:#2563eb;color:#fff;font-weight:700;font-size:15px;padding:12px 18px;box-shadow:0 8px 18px rgba(15,23,42,.16);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;line-height:1;gap:7px}.btn:hover{background:#1d4ed8}.btn.gray{background:#e2e8f0;color:#0f172a;box-shadow:none}.btn.gray:hover{background:#cbd5e1}.btn.danger{background:#fee2e2;color:#991b1b;box-shadow:none}.btn.danger:hover{background:#fecaca}.btn.green{background:#16a34a}.btn.green:hover{background:#15803d}.btn.small{font-size:13px;padding:8px 11px;box-shadow:0 4px 10px rgba(15,23,42,.10)}
+.status{font-weight:700;margin-top:10px;min-height:22px}.ok{color:#15803d}.err{color:#be123c}.muted{color:#64748b}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:14px;padding:12px;border:1px dashed #cbd5e1;border-radius:18px;background:#fff}.toolbar-left,.toolbar-right{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.select-note{font-size:14px;color:#475569;font-weight:700}.table-wrap{overflow:auto;margin-top:16px;border-radius:18px;border:1px solid #d8e2f0;background:#fff}table{width:100%;border-collapse:separate;border-spacing:0;background:#fff}th{background:linear-gradient(135deg,#1d4ed8,#0ea5e9);color:#fff;text-align:center;padding:12px;font-size:14px;vertical-align:middle;font-weight:700}td{border-top:1px solid #e5edf7;padding:11px;font-size:14px;vertical-align:middle;text-align:center;line-height:1.35}tr:nth-child(even) td{background:#f8fbff}tr.active-row td{background:#eff6ff!important;box-shadow:inset 0 0 0 999px rgba(37,99,235,.04)}.check-cell{width:48px}.record-check,.select-all{width:18px;height:18px;accent-color:#2563eb;cursor:pointer}.quiz-title{font-weight:700;color:#0f172a}.score-pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#eef6ff;color:#1d4ed8;padding:5px 10px;font-weight:700}.action-cell{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap}
+.detail-panel{display:none;margin-top:22px;background:#fff;border:2px solid #dbeafe;border-radius:24px;overflow:hidden;box-shadow:0 16px 38px rgba(15,23,42,.09)}.detail-panel.show{display:block}.detail-head{padding:18px 20px;background:linear-gradient(135deg,#0f172a,#1d4ed8);color:#fff;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.detail-head h2{font-size:24px;font-weight:700;margin-bottom:7px}.detail-head p{margin:0;color:#dbeafe;font-size:15px}.detail-stats{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.stat-chip{border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:8px 12px;font-weight:700;font-size:14px;color:#fff}.detail-body{padding:18px}.answer-sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(42px,1fr));gap:7px;margin-bottom:18px}.sheet-q{height:34px;border-radius:9px;border:1px solid #cbd5e1;background:#fff;color:#0f172a;font-weight:700;cursor:pointer;font-size:13px}.sheet-q:hover{outline:3px solid rgba(37,99,235,.16)}.sheet-q.correct{background:#dcfce7;border-color:#86efac;color:#166534}.sheet-q.wrong{background:#fee2e2;border-color:#fca5a5;color:#991b1b}.sheet-q.blank{background:#f1f5f9;border-color:#cbd5e1;color:#475569}.legend{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;font-size:13px;color:#475569;font-weight:700}.legend span{display:inline-flex;align-items:center;gap:6px}.dot{width:14px;height:14px;border-radius:5px;display:inline-block;border:1px solid #cbd5e1}.dot.correct{background:#dcfce7;border-color:#86efac}.dot.wrong{background:#fee2e2;border-color:#fca5a5}.dot.blank{background:#f1f5f9}.answer-list{display:grid;gap:10px}.answer-card{border:1px solid #e2e8f0;border-radius:18px;padding:14px;background:#fff}.answer-card.correct{border-color:#86efac;background:#f0fdf4}.answer-card.wrong{border-color:#fca5a5;background:#fff1f2}.answer-card.blank{border-color:#cbd5e1;background:#f8fafc}.answer-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px}.answer-no{font-size:17px;font-weight:700;color:#0f172a}.status-badge{border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700}.status-badge.correct{background:#bbf7d0;color:#166534}.status-badge.wrong{background:#fecaca;color:#991b1b}.status-badge.blank{background:#e2e8f0;color:#475569}.answer-prompt{font-size:15px;line-height:1.5;color:#334155;margin:8px 0 10px;white-space:pre-wrap}.answer-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.answer-box{border-radius:14px;border:1px solid #e2e8f0;background:rgba(255,255,255,.7);padding:10px;text-align:left}.answer-box b{display:block;color:#0f172a;margin-bottom:4px}.answer-box span{color:#334155}.raw-toggle{margin-top:14px}.raw-json{display:none;white-space:pre-wrap;background:#0f172a;color:#e2e8f0;border-radius:18px;padding:16px;margin-top:12px;max-height:360px;overflow:auto;font-size:13px}.raw-json.show{display:block}
+.summary-panel{display:none;margin-top:22px;background:#fff;border:2px solid #bbf7d0;border-radius:24px;overflow:hidden;box-shadow:0 16px 38px rgba(15,23,42,.08)}.summary-panel.show{display:block}.summary-head{padding:18px 20px;background:linear-gradient(135deg,#14532d,#16a34a);color:#fff}.summary-head h2{font-size:24px;font-weight:700;margin-bottom:7px}.summary-head p{margin:0;color:#dcfce7;font-size:15px}.summary-body{padding:18px}.summary-table-wrap{overflow:auto;border:1px solid #d8e2f0;border-radius:18px}.summary-table th{background:linear-gradient(135deg,#15803d,#22c55e)}.rank{font-weight:700;color:#0f172a}.wrong-count{font-size:18px;font-weight:700;color:#991b1b}.student-list{max-width:330px;text-align:left;color:#475569;font-size:13px}.mini-text{font-size:13px;color:#64748b;margin-top:4px}.empty-box{padding:18px;border-radius:18px;background:#f8fafc;border:1px dashed #cbd5e1;color:#475569;text-align:center;font-weight:700}
+@media(max-width:768px){.page{padding:34px 18px}h1{font-size:31px}.row input[type=password]{width:100%;min-width:0}.toolbar{align-items:stretch}.toolbar-left,.toolbar-right{width:100%}.btn{width:100%}.answer-grid{grid-template-columns:1fr}.detail-head{display:block}.answer-sheet{grid-template-columns:repeat(auto-fill,minmax(38px,1fr))}.sheet-q{height:32px;font-size:12px}}
 
-
-/* ===== Anti right-click / anti casual download lock ===== */
-html.anti-download-lock, html.anti-download-lock body{
-  -webkit-user-select:none!important;
-  -moz-user-select:none!important;
-  -ms-user-select:none!important;
-  user-select:none!important;
-  -webkit-touch-callout:none!important;
-}
-html.anti-download-lock img,
-html.anti-download-lock video,
-html.anti-download-lock audio,
-html.anti-download-lock canvas,
-html.anti-download-lock svg{
-  -webkit-user-drag:none!important;
-  user-drag:none!important;
-}
-
+html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}html.anti-download-lock img,html.anti-download-lock video,html.anti-download-lock audio,html.anti-download-lock canvas,html.anti-download-lock svg{-webkit-user-drag:none!important;user-drag:none!important}
 </style>
 </head>
-<body><div class="top-line"></div><main class="page"><div class="wrap"><div class="label">Student Results</div><h1>Kết quả học viên</h1><p>Nhập mật khẩu giáo viên để xem danh sách bài nộp. Có thể xem, tải hoặc xóa từng record.</p><div class="panel"><div class="row"><input id="adminPassword" type="password" placeholder="Mật khẩu giáo viên"><button class="btn" onclick="loadResults()">Tải kết quả</button><a class="btn gray" href="index.html">Về trang chủ</a></div><div class="status" id="status"></div><div class="table-wrap"><table><thead><tr><th>Thời gian</th><th>Email</th><th>Điểm</th><th>File JSON</th></tr></thead><tbody id="tbody"></tbody></table></div><pre id="jsonPreview" style="display:none"></pre></div></div></main>
+<body>
+<div class="top-line"></div>
+<main class="page">
+  <div class="wrap">
+    <div class="label">Student Results</div>
+    <h1>Kết quả học viên</h1>
+    <p>Tick nhiều bài nộp để tổng hợp câu sai. Click chi tiết để xem từng câu đúng/sai rõ ràng.</p>
+
+    <div class="panel">
+      <div class="row">
+        <input id="adminPassword" type="password" placeholder="Mật khẩu giáo viên">
+        <button class="btn" onclick="loadResults()">Tải kết quả</button>
+        <a class="btn gray" href="index.html">Về trang chủ</a>
+      </div>
+      <div class="status" id="status"></div>
+
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <label class="select-note"><input class="select-all" id="selectAll" type="checkbox" onchange="toggleSelectAll(this.checked)"> Chọn tất cả</label>
+          <span class="select-note" id="selectedCount">Đã chọn 0 record</span>
+        </div>
+        <div class="toolbar-right">
+          <button class="btn green" type="button" onclick="aggregateWrongQuestions()">Tổng hợp câu sai</button>
+          <button class="btn gray" type="button" onclick="clearSelections()">Bỏ chọn</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="check-cell">Tick</th>
+              <th>Thời gian</th>
+              <th>Email</th>
+              <th>Bài</th>
+              <th>Điểm</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+      <section class="summary-panel" id="summaryPanel">
+        <div class="summary-head">
+          <h2>Tổng hợp câu sai</h2>
+          <p id="summarySub">Danh sách câu sai được xếp từ nhiều học viên sai nhất xuống thấp nhất.</p>
+        </div>
+        <div class="summary-body" id="summaryBody"></div>
+      </section>
+
+      <section class="detail-panel" id="detailPanel">
+        <div class="detail-head">
+          <div>
+            <h2 id="detailTitle">Chi tiết bài nộp</h2>
+            <p id="detailMeta"></p>
+          </div>
+          <div class="detail-stats" id="detailStats"></div>
+        </div>
+        <div class="detail-body">
+          <div class="legend">
+            <span><i class="dot correct"></i>Đúng</span>
+            <span><i class="dot wrong"></i>Sai</span>
+            <span><i class="dot blank"></i>Trống</span>
+          </div>
+          <div class="answer-sheet" id="detailSheet"></div>
+          <div class="answer-list" id="detailAnswers"></div>
+          <div class="raw-toggle">
+            <button class="btn gray small" type="button" onclick="toggleRawJson()">Ẩn/hiện JSON gốc</button>
+            <button class="btn gray small" type="button" onclick="downloadActiveResult()">Tải JSON</button>
+            <pre class="raw-json" id="rawJson"></pre>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
 <script>
 let results=[];
-function setStatus(msg,ok){const el=document.getElementById('status');el.textContent=msg;el.className='status '+(ok?'ok':'err')}
+let activeIndex=-1;
+
+function setStatus(msg,ok){
+  const el=document.getElementById('status');
+  el.textContent=msg;
+  el.className='status '+(ok?'ok':'err');
+}
+
 async function loadResults(){
   const pass=document.getElementById('adminPassword').value;
   setStatus('Đang tải...',true);
@@ -36,27 +119,214 @@ async function loadResults(){
     const res=await fetch('/api/results',{headers:{'x-admin-password':pass}});
     const data=await res.json();
     if(!res.ok||!data.ok) throw new Error(data.error||'Không tải được kết quả');
-    results=data.results||[];renderTable();setStatus('Đã tải '+results.length+' bài nộp.',true);
-  }catch(e){setStatus(e.message||'Lỗi tải kết quả',false)}
+    results=data.results||[];
+    activeIndex=-1;
+    renderTable();
+    hidePanels();
+    updateSelectedCount();
+    setStatus('Đã tải '+results.length+' bài nộp.',true);
+  }catch(e){
+    setStatus(e.message||'Lỗi tải kết quả',false);
+  }
 }
+
 function renderTable(){
   const tbody=document.getElementById('tbody');
+  if(!results.length){
+    tbody.innerHTML='<tr><td colspan="6"><div class="empty-box">Chưa có bài nộp.</div></td></tr>';
+    return;
+  }
   tbody.innerHTML=results.map((r,i)=>{
-    const time = r.submittedAt ? new Date(r.submittedAt).toLocaleString('vi-VN') : '';
-    return '<tr>'+
-      '<td>'+escapeHtml(time)+'</td>'+
-      '<td>'+escapeHtml(r.email||'')+'</td>'+
-      '<td><b>'+escapeHtml(r.score)+' / '+escapeHtml(r.total)+'</b><br><span>'+escapeHtml(r.percent)+'%</span></td>'+
+    const payload=getPayload(r);
+    const quiz=getQuiz(payload);
+    const time=r.submittedAt||payload.submittedAt;
+    const email=r.email||payload.student?.email||'';
+    const score=firstDefined(r.score,payload.score,0);
+    const total=firstDefined(r.total,payload.total,quiz.total,'');
+    const percent=firstDefined(r.percent,payload.percent,'');
+    return '<tr id="row-'+i+'">'+
+      '<td class="check-cell"><input class="record-check" type="checkbox" data-index="'+i+'" onchange="updateSelectedCount()"></td>'+
+      '<td>'+escapeHtml(time?new Date(time).toLocaleString('vi-VN'):'')+'</td>'+
+      '<td>'+escapeHtml(email)+'</td>'+
+      '<td><div class="quiz-title">'+escapeHtml(quiz.title||quiz.id||'Không rõ bài')+'</div><div class="mini-text">'+escapeHtml(quiz.id||'')+'</div></td>'+
+      '<td><span class="score-pill">'+escapeHtml(score)+' / '+escapeHtml(total)+'</span><div class="mini-text">'+escapeHtml(percent)+'%</div></td>'+
       '<td><div class="action-cell">'+
-        '<button class="btn small" onclick="viewResult('+i+')">Xem JSON</button>'+
-        '<button class="btn gray small" onclick="downloadResult('+i+')">Tải</button>'+
+        '<button class="btn small" onclick="viewDetail('+i+')">Chi tiết</button>'+
+        '<button class="btn gray small" onclick="downloadResult('+i+')">Tải JSON</button>'+
         '<button class="btn danger small" onclick="deleteResult('+i+')">Xóa</button>'+
       '</div></td>'+
     '</tr>';
   }).join('');
 }
-function viewResult(i){const pre=document.getElementById('jsonPreview');pre.style.display='block';pre.textContent=JSON.stringify(results[i].payload||results[i],null,2);pre.scrollIntoView({behavior:'smooth',block:'start'});}
-function downloadResult(i){const item=results[i];const blob=new Blob([JSON.stringify(item.payload||item,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=(item.filename||('student_result_'+i+'.json'));a.click();URL.revokeObjectURL(url)}
+
+function viewDetail(i){
+  activeIndex=i;
+  document.querySelectorAll('tr.active-row').forEach(row=>row.classList.remove('active-row'));
+  const row=document.getElementById('row-'+i);
+  if(row) row.classList.add('active-row');
+
+  const item=results[i];
+  const payload=getPayload(item);
+  const quiz=getQuiz(payload);
+  const answers=getAnswers(payload);
+  const email=item.email||payload.student?.email||'';
+  const time=item.submittedAt||payload.submittedAt;
+  const total=firstDefined(item.total,payload.total,quiz.total,answers.length);
+  const score=firstDefined(item.score,payload.score,countCorrect(answers));
+  const blank=countBlank(answers);
+  const wrong=Number(total||answers.length)-Number(score||0);
+  const percent=firstDefined(item.percent,payload.percent,total?Math.round(Number(score||0)/Number(total)*100):0);
+
+  document.getElementById('detailTitle').textContent=quiz.title||'Chi tiết bài nộp';
+  document.getElementById('detailMeta').textContent=[email,time?new Date(time).toLocaleString('vi-VN'):''].filter(Boolean).join(' · ');
+  document.getElementById('detailStats').innerHTML=
+    '<span class="stat-chip">Điểm: '+escapeHtml(score)+'/'+escapeHtml(total)+'</span>'+
+    '<span class="stat-chip">Đúng: '+escapeHtml(score)+'</span>'+
+    '<span class="stat-chip">Sai: '+escapeHtml(wrong)+'</span>'+
+    '<span class="stat-chip">Trống: '+escapeHtml(blank)+'</span>'+
+    '<span class="stat-chip">Tỷ lệ: '+escapeHtml(percent)+'%</span>';
+
+  document.getElementById('detailSheet').innerHTML=answers.map((answer,idx)=>{
+    const no=getQuestionNo(answer,idx);
+    const status=getAnswerStatus(answer);
+    return '<button class="sheet-q '+status+'" type="button" title="Câu '+escapeHtml(no)+'" onclick="scrollToAnswerCard(\''+cssSafeId(no)+'\')">'+escapeHtml(no)+'</button>';
+  }).join('');
+
+  document.getElementById('detailAnswers').innerHTML=answers.map((answer,idx)=>renderAnswerCard(answer,idx)).join('');
+  document.getElementById('rawJson').textContent=JSON.stringify(payload,null,2);
+  document.getElementById('rawJson').classList.remove('show');
+  document.getElementById('detailPanel').classList.add('show');
+  document.getElementById('detailPanel').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderAnswerCard(answer,idx){
+  const no=getQuestionNo(answer,idx);
+  const status=getAnswerStatus(answer);
+  const label=status==='correct'?'Đúng':(status==='blank'?'Trống':'Sai');
+  const part=answer.part?(' · Part '+answer.part):'';
+  const prompt=answer.prompt||answer.questionEn||answer.question||answer.stem||'';
+  const selected=formatAnswerChoice(answer.selected,answer.selectedText);
+  const correct=formatAnswerChoice(answer.correctAnswer,answer.correctText);
+  return '<article class="answer-card '+status+'" id="answer-'+cssSafeId(no)+'">'+
+    '<div class="answer-top"><div class="answer-no">Câu '+escapeHtml(no)+escapeHtml(part)+'</div><span class="status-badge '+status+'">'+label+'</span></div>'+
+    (prompt?'<div class="answer-prompt">'+escapeHtml(prompt)+'</div>':'')+
+    '<div class="answer-grid">'+
+      '<div class="answer-box"><b>Học viên chọn</b><span>'+escapeHtml(selected)+'</span></div>'+
+      '<div class="answer-box"><b>Đáp án đúng</b><span>'+escapeHtml(correct)+'</span></div>'+
+    '</div>'+
+  '</article>';
+}
+
+function aggregateWrongQuestions(){
+  const indexes=getSelectedIndexes();
+  if(!indexes.length){
+    setStatus('Tick ít nhất 1 record trước khi tổng hợp.',false);
+    return;
+  }
+  const stats=new Map();
+  const quizIds=new Set();
+  indexes.forEach(i=>{
+    const item=results[i];
+    const payload=getPayload(item);
+    const quiz=getQuiz(payload);
+    const quizId=quiz.id||quiz.title||'unknown';
+    quizIds.add(quizId);
+    const email=item.email||payload.student?.email||'';
+    getAnswers(payload).forEach((answer,idx)=>{
+      const no=getQuestionNo(answer,idx);
+      const key=quizId+'::'+no;
+      if(!stats.has(key)){
+        stats.set(key,{quizId,quizTitle:quiz.title||quizId,no,part:answer.part||'',prompt:answer.prompt||answer.questionEn||answer.question||answer.stem||'',correctAnswer:answer.correctAnswer||'',correctText:answer.correctText||'',attempts:0,wrongCount:0,blankCount:0,correctCount:0,students:[],selectedCounts:{}});
+      }
+      const row=stats.get(key);
+      row.attempts++;
+      const status=getAnswerStatus(answer);
+      if(status==='correct'){
+        row.correctCount++;
+      }else{
+        row.wrongCount++;
+        if(status==='blank') row.blankCount++;
+        if(email) row.students.push(email);
+        const selected=answer.selected||'(trống)';
+        row.selectedCounts[selected]=(row.selectedCounts[selected]||0)+1;
+      }
+    });
+  });
+  const rows=Array.from(stats.values())
+    .filter(item=>item.wrongCount>0)
+    .sort((a,b)=>b.wrongCount-a.wrongCount || b.blankCount-a.blankCount || Number(a.no)-Number(b.no));
+
+  const panel=document.getElementById('summaryPanel');
+  const body=document.getElementById('summaryBody');
+  document.getElementById('summarySub').textContent='Đã tổng hợp '+indexes.length+' record'+(quizIds.size>1?' từ nhiều bài khác nhau.':' của cùng bài.')+' Câu sai nhiều nhất nằm trên đầu.';
+  if(!rows.length){
+    body.innerHTML='<div class="empty-box">Các record đã chọn không có câu sai.</div>';
+  }else{
+    body.innerHTML='<div class="summary-table-wrap"><table class="summary-table"><thead><tr><th>#</th><th>Bài</th><th>Câu</th><th>Số HV sai</th><th>Trống</th><th>Đúng</th><th>HV sai</th><th>Chọn sai</th></tr></thead><tbody>'+
+      rows.map((row,idx)=>{
+        const wrongChoices=Object.entries(row.selectedCounts).sort((a,b)=>b[1]-a[1]).map(([k,v])=>escapeHtml(k)+': '+v).join('<br>');
+        const uniqueStudents=Array.from(new Set(row.students));
+        return '<tr>'+
+          '<td class="rank">'+(idx+1)+'</td>'+
+          '<td><div class="quiz-title">'+escapeHtml(row.quizTitle)+'</div><div class="mini-text">'+escapeHtml(row.quizId)+'</div></td>'+
+          '<td><b>Câu '+escapeHtml(row.no)+'</b>'+escapeHtml(row.part?' · Part '+row.part:'')+'</td>'+
+          '<td><div class="wrong-count">'+escapeHtml(row.wrongCount)+'</div><div class="mini-text">/'+escapeHtml(row.attempts)+' record</div></td>'+
+          '<td>'+escapeHtml(row.blankCount)+'</td>'+
+          '<td>'+escapeHtml(row.correctCount)+'</td>'+
+          '<td><div class="student-list">'+escapeHtml(uniqueStudents.join(', '))+'</div></td>'+
+          '<td><div class="student-list">'+(wrongChoices||'')+'</div></td>'+
+        '</tr>';
+      }).join('')+
+    '</tbody></table></div>';
+  }
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'start'});
+  setStatus('Đã tổng hợp '+indexes.length+' record.',true);
+}
+
+function toggleSelectAll(checked){
+  document.querySelectorAll('.record-check').forEach(cb=>cb.checked=checked);
+  updateSelectedCount();
+}
+function clearSelections(){
+  document.getElementById('selectAll').checked=false;
+  document.querySelectorAll('.record-check').forEach(cb=>cb.checked=false);
+  updateSelectedCount();
+}
+function updateSelectedCount(){
+  const count=getSelectedIndexes().length;
+  document.getElementById('selectedCount').textContent='Đã chọn '+count+' record';
+  const all=document.querySelectorAll('.record-check').length;
+  const selectAll=document.getElementById('selectAll');
+  selectAll.checked=all>0 && count===all;
+  selectAll.indeterminate=count>0 && count<all;
+}
+function getSelectedIndexes(){
+  return Array.from(document.querySelectorAll('.record-check:checked')).map(cb=>Number(cb.dataset.index)).filter(i=>Number.isInteger(i));
+}
+
+function toggleRawJson(){
+  document.getElementById('rawJson').classList.toggle('show');
+}
+function scrollToAnswerCard(id){
+  const el=document.getElementById('answer-'+id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function downloadActiveResult(){
+  if(activeIndex<0) return;
+  downloadResult(activeIndex);
+}
+function downloadResult(i){
+  const item=results[i];
+  const payload=getPayload(item);
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download=(item.filename||('student_result_'+i+'.json')).split('/').pop();
+  a.click();
+  URL.revokeObjectURL(url);
+}
 async function deleteResult(i){
   const item=results[i];
   if(!item||!item.id){setStatus('Không tìm thấy ID record để xóa.',false);return;}
@@ -69,49 +339,60 @@ async function deleteResult(i){
     const data=await res.json();
     if(!res.ok||!data.ok) throw new Error(data.error||'Không xóa được record');
     results.splice(i,1);
+    activeIndex=-1;
     renderTable();
-    const pre=document.getElementById('jsonPreview');
-    if(pre.style.display==='block') pre.style.display='none';
+    hidePanels();
+    updateSelectedCount();
     setStatus('Đã xóa record. Còn '+results.length+' bài nộp.',true);
-  }catch(e){setStatus(e.message||'Lỗi xóa record',false)}
+  }catch(e){setStatus(e.message||'Lỗi xóa record',false);}
 }
-function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+function hidePanels(){
+  document.getElementById('detailPanel').classList.remove('show');
+  document.getElementById('summaryPanel').classList.remove('show');
+}
+
+function getPayload(item){return item?.payload||item||{};}
+function getQuiz(payload){return payload?.quiz||{};}
+function getAnswers(payload){return Array.isArray(payload?.answers)?payload.answers:[];}
+function countCorrect(answers){return answers.filter(a=>getAnswerStatus(a)==='correct').length;}
+function countBlank(answers){return answers.filter(a=>getAnswerStatus(a)==='blank').length;}
+function getQuestionNo(answer,idx){return firstDefined(answer?.no,answer?.questionNo,idx+1);}
+function getAnswerStatus(answer){
+  const selected=answer?.selected;
+  const blank=answer?.isBlank===true || selected===null || selected===undefined || selected==='';
+  if(blank) return 'blank';
+  if(answer?.isCorrect===true) return 'correct';
+  return 'wrong';
+}
+function formatAnswerChoice(letter,text){
+  if(letter===null||letter===undefined||letter==='') return 'Trống';
+  return String(letter)+(text?' — '+String(text):'');
+}
+function firstDefined(){
+  for(let i=0;i<arguments.length;i++){
+    if(arguments[i]!==undefined && arguments[i]!==null && arguments[i]!=='' && !Number.isNaN(arguments[i])) return arguments[i];
+  }
+  return '';
+}
+function cssSafeId(value){return String(value).replace(/[^a-z0-9_-]/gi,'_');}
+function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
 </script>
+
 <script>
 (function(){
   'use strict';
   document.documentElement.classList.add('anti-download-lock');
-
-  const block = function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    return false;
-  };
-
-  // Khóa chuột phải, kéo-thả, chọn/copy/cut/paste/in/trình đơn lưu phổ biến
-  ['contextmenu','dragstart','drop','copy','cut','paste','selectstart'].forEach(function(evt){
-    document.addEventListener(evt, block, true);
-  });
-
-  document.addEventListener('keydown', function(e){
-    const key = String(e.key || '').toLowerCase();
-    const ctrlOrCmd = e.ctrlKey || e.metaKey;
-
-    // F12
-    if(e.key === 'F12') return block(e);
-
-    // Ctrl/Cmd + S/U/P/O/A/C/X/V
+  const block=function(e){e.preventDefault();e.stopPropagation();return false;};
+  ['contextmenu','dragstart','drop','copy','cut','paste','selectstart'].forEach(function(evt){document.addEventListener(evt,block,true);});
+  document.addEventListener('keydown',function(e){
+    const key=String(e.key||'').toLowerCase();
+    const ctrlOrCmd=e.ctrlKey||e.metaKey;
+    if(e.key==='F12') return block(e);
     if(ctrlOrCmd && ['s','u','p','o','a','c','x','v'].includes(key)) return block(e);
-
-    // Ctrl/Cmd + Shift + I/J/C/S
     if(ctrlOrCmd && e.shiftKey && ['i','j','c','s'].includes(key)) return block(e);
-  }, true);
-
-  // Hạn chế kéo media/link ra ngoài để tải
-  document.addEventListener('mousedown', function(e){
-    if(e.button === 2) return block(e);
-  }, true);
+  },true);
+  document.addEventListener('mousedown',function(e){if(e.button===2) return block(e);},true);
 })();
 </script>
-
-</body></html>
+</body>
+</html>
