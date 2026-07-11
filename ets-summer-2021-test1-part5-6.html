@@ -73,8 +73,8 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
 .metric{background:#fff;border:2px solid #dbeafe;border-radius:17px;padding:12px;text-align:center}
 .metric b{display:block;font-size:24px;color:#1d4ed8;font-weight:700}
 .metric span{font-size:13px;color:#64748b;font-weight:700}
-.navigator{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}
-.nav-q{border:2px solid #cbd5e1;background:#fff;border-radius:13px;padding:9px 0;font-size:14px;font-weight:700;color:#334155;cursor:pointer;transition:.16s ease}
+.navigator{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px}
+.nav-q{border:2px solid #cbd5e1;background:#fff;border-radius:10px;padding:6px 0;font-size:13px;font-weight:700;color:#334155;cursor:pointer;transition:.16s ease;min-height:31px}
 .nav-q:hover{border-color:#93c5fd;background:#eff6ff}
 .nav-q.answered{background:#dbeafe;border-color:#60a5fa;color:#1d4ed8}
 .nav-q.current{outline:3px solid rgba(37,99,235,.22)}
@@ -133,7 +133,7 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
       <div class="start-icon">CBT</div>
       <h2>Sẵn sàng vào phòng thi?</h2>
       <p>Nội dung đề đang được làm mờ. Khi bấm <b>Bắt đầu</b>, hệ thống mới mở đề và bắt đầu đếm ngược 25 phút.</p>
-      <div class="start-meta"><span>Part 5 + 6</span><span>46 câu</span><span>25 phút</span><span>Nộp 1 lần</span></div>
+      <div class="start-meta"><span>Part 5 + 6</span><span>46 câu</span><span>25 phút</span></div>
       <button class="btn primary" type="button" id="startBtn">Bắt đầu</button>
       <button class="btn light" type="button" onclick="goHome()" style="margin-left:8px">Về trang chủ</button>
     </div>
@@ -141,10 +141,10 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
   <main class="exam-main">
     <section class="exam-panel" id="examContent">
       <div class="section-head"><h2>PART 5</h2><span>Questions 101-130</span></div>
-      <div class="instructions"><b>Directions:</b> A word or phrase is missing in each sentence. Choose the best answer. Không có giải thích trong chế độ thi.</div>
+      <div class="instructions"><b>Directions:</b> A word or phrase is missing in each sentence. Choose the best answer.</div>
       <div class="question-grid" id="part5Grid"></div>
       <div class="section-head"><h2>PART 6</h2><span>Questions 131-146</span></div>
-      <div class="instructions"><b>Directions:</b> Read each text and choose the best answer for each blank. Câu bỏ trống sẽ được tính sai khi nộp bài.</div>
+      <div class="instructions"><b>Directions:</b> Read each text and choose the best answer for each blank.</div>
       <div id="part6Wrap"></div>
       <div class="footer-space"></div>
     </section>
@@ -162,17 +162,16 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
           <button class="btn light" type="button" onclick="scrollToFirstBlank()">Tới câu trống</button>
           <button class="btn dark" type="button" onclick="goHome()">Về trang chủ</button>
         </div>
-        <div class="lock-note">Sau khi nộp bài, đáp án bị khóa, không sửa bài và không hiện giải thích.</div>
         <div class="submit-status" id="submitStatus"></div>
         <div class="result-panel" id="resultPanel">
-          <h3>Đã nộp bài</h3>
+          <h3>Kết quả</h3>
           <div class="result-grid">
             <div class="result-mini"><b id="scoreText">0/46</b><span>Đúng</span></div>
             <div class="result-mini percent"><b id="percentText">0%</b><span>Tỷ lệ</span></div>
             <div class="result-mini"><b id="wrongText">0</b><span>Sai</span></div>
             <div class="result-mini"><b id="blankText">0</b><span>Trống</span></div>
           </div>
-          <p class="lock-note" id="resultNote">Kết quả của bạn sẽ hiện ở đây ngay sau khi nộp bài. Không hiện giải thích trong chế độ thi.</p>
+          <p class="lock-note" id="resultNote"></p>
         </div>
       </div>
     </aside>
@@ -212,7 +211,7 @@ function syncExamMeta(){
   const startP = document.querySelector('.start-card p');
   if(startP) startP.innerHTML = `Nội dung đề đang được làm mờ. Khi bấm <b>Bắt đầu</b>, hệ thống mới mở đề và bắt đầu đếm ngược ${minutes} phút.`;
   const startMeta = document.querySelector('.start-meta');
-  if(startMeta) startMeta.innerHTML = `<span>Part 5 + 6</span><span>${total} câu</span><span>${minutes} phút</span><span>Nộp 1 lần</span>`;
+  if(startMeta) startMeta.innerHTML = `<span>Part 5 + 6</span><span>${total} câu</span><span>${minutes} phút</span>`;
   const remain = document.getElementById('remainingCount');
   if(remain) remain.textContent = total;
   const score = document.getElementById('scoreText');
@@ -378,7 +377,7 @@ async function confirmSubmit(payload){
   const unanswered = payload.blankCount;
   const html = unanswered
     ? `Bạn còn <b>${unanswered}</b> câu chưa chọn. Các câu trống sẽ tính sai.<br>Bạn chắc chắn muốn nộp bài?`
-    : `Bạn đã chọn đủ <b>${payload.total}</b> câu.<br>Sau khi nộp sẽ không sửa được.`;
+    : `Bạn đã chọn đủ <b>${payload.total}</b> câu.<br>Bạn chắc chắn muốn nộp bài?`;
   if(window.Swal){
     const res = await Swal.fire({icon:'warning',title:'Xác nhận nộp bài',html,showCancelButton:true,confirmButtonText:'Nộp bài',cancelButtonText:'Kiểm tra lại',reverseButtons:true,focusCancel:true,confirmButtonColor:'#2563eb',cancelButtonColor:'#64748b'});
     return !!res.isConfirmed;
@@ -403,7 +402,8 @@ async function submitExam(reason='manual'){
   clearInterval(timerId);
   document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
   document.getElementById('submitBtn').disabled = true;
-  document.getElementById('submitBtn').textContent = 'Đã nộp';
+  document.getElementById('submitBtn').textContent = 'Hoàn thành';
+  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Thời lượng: <b>' + EXAM_DATA.timerMinutes + ' phút</b><br>Trạng thái: <b>hoàn thành</b>';
   document.querySelectorAll('.nav-q').forEach(btn => {
     const no = Number(btn.dataset.nav);
     const q = EXAM_DATA.questions.find(item => item.no === no);
@@ -414,23 +414,19 @@ async function submitExam(reason='manual'){
   document.getElementById('wrongText').textContent = payload.wrong;
   document.getElementById('percentText').textContent = payload.percent + '%';
   document.getElementById('blankText').textContent = payload.blankCount;
-  document.getElementById('resultNote').textContent = 'Thời gian làm bài: ' + formatTime(payload.timeSpentSeconds) + '. Answer sheet phía trên đã tô màu trạng thái từng câu. Không hiển thị đáp án đúng.';
+  document.getElementById('resultNote').textContent = 'Thời gian: ' + formatTime(payload.timeSpentSeconds);
   renderSubmissionReview(payload);
   document.getElementById('resultPanel').classList.add('show');
   const status = document.getElementById('submitStatus');
-  status.className = 'submit-status show';
-  status.textContent = 'Đang gửi kết quả chi tiết về admin...';
+  status.className = 'submit-status';
+  status.textContent = '';
   try{
     const res = await fetch('/api/results', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
     const data = await res.json().catch(() => ({}));
     if(!res.ok || !data.ok) throw new Error(data.error || 'Không lưu được kết quả.');
-    status.className = 'submit-status ok';
-    status.textContent = 'Đã gửi kết quả thành công. Mã bài nộp: ' + data.id;
-    showStudentResult(payload, true);
-    toast('Đã nộp bài và gửi kết quả cho giáo viên.', 'success');
   }catch(err){
     status.className = 'submit-status err';
-    status.textContent = 'Không gửi được lên KV/API. Bấm link dưới để tải JSON dự phòng gửi giáo viên.';
+    status.textContent = 'Không gửi được kết quả về admin. Tải JSON dự phòng bên dưới.';
     const blob = new Blob([JSON.stringify(payload,null,2)], {type:'application/json'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -440,7 +436,6 @@ async function submitExam(reason='manual'){
     a.className = 'btn light';
     a.style.marginTop = '12px';
     status.insertAdjacentElement('afterend', a);
-    showStudentResult(payload, false);
   }
 }
 
@@ -453,7 +448,7 @@ function renderSubmissionReview(payload){
     const status = item.isBlank ? 'blank' : (item.isCorrect ? 'correct' : 'wrong');
     btn.classList.remove('answered','correct-after','wrong-after','blank-after');
     btn.classList.add(status + '-after');
-    btn.title = `Câu ${no}: ${status === 'correct' ? 'Đúng' : status === 'wrong' ? 'Sai' : 'Trống'}`;
+    btn.title = `Câu ${no}`;
   });
   document.querySelectorAll('.question-card').forEach(card => {
     const no = Number(card.dataset.question);
@@ -470,18 +465,6 @@ function renderSubmissionReview(payload){
       }
     });
   });
-}
-function showStudentResult(payload, saved){
-  if(!window.Swal) return;
-  const html = `
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;text-align:center;margin-top:8px">
-      <div style="border:2px solid #bfdbfe;border-radius:14px;padding:10px"><b style="font-size:24px;color:#1d4ed8">${payload.score}/${payload.total}</b><br><span>Đúng</span></div>
-      <div style="border:2px solid #bfdbfe;border-radius:14px;padding:10px"><b style="font-size:24px;color:#1d4ed8">${payload.percent}%</b><br><span>Tỷ lệ</span></div>
-      <div style="border:2px solid #fecdd3;border-radius:14px;padding:10px"><b style="font-size:24px;color:#be123c">${payload.wrong}</b><br><span>Sai</span></div>
-      <div style="border:2px solid #fed7aa;border-radius:14px;padding:10px"><b style="font-size:24px;color:#9a3412">${payload.blankCount}</b><br><span>Trống</span></div>
-    </div>
-    <p style="margin-top:12px;font-size:14px;color:#64748b">${saved ? 'Kết quả chi tiết đã gửi về admin.' : 'Kết quả đã hiện tại máy; file JSON dự phòng nằm bên dưới nếu API/KV lỗi.'}<br>Answer sheet phía trên đã được tô màu, không hiện đáp án đúng.</p>`;
-  Swal.fire({icon:saved?'success':'warning',title:'Kết quả của bạn',html,confirmButtonText:'Đã hiểu',confirmButtonColor:'#2563eb'});
 }
 function toast(message, icon='info'){
   if(window.Swal){
