@@ -177,6 +177,12 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
         <div class="pill-row"><span class="pill">100 câu</span><span class="pill">Chọn đề trong bài</span><span class="pill">Test mode</span></div>
         <button class="btn" type="button" onclick="openLogin('toeic-listening.html')">Vào bài nghe</button>
       </article>
+      <article class="card lesson-card" data-lesson-id="ets-summer-2021-test1-part5-6">
+        <h2>ETS Summer 2021 Test 1</h2>
+        <p>Phòng thi TOEIC computer-based cho Part 5 + Part 6. Làm 46 câu trong 25 phút, nộp một lần và gửi kết quả về admin.</p>
+        <div class="pill-row"><span class="pill">Part 5 + 6</span><span class="pill">46 câu</span><span class="pill">25 phút</span></div>
+        <button class="btn" type="button" onclick="openLogin('ets-summer-2021-test1-part5-6.html')">Vào phòng thi</button>
+      </article>
       <article class="card lesson-card vocab-index-card" data-lesson-id="vocabulary-box">
         <div class="vocab-index-art" aria-hidden="true"></div>
         <div class="vocab-index-spark" aria-hidden="true">📚</div>
@@ -271,6 +277,7 @@ function lessonIdsForResult(result){
   if(id.includes('noun-prep-collocation-1') || title.includes('Collocation 1')) return ['noun-prep-collocation-1'];
   if(id.includes('noun-prep-collocation-2') || title.includes('Collocation 2')) return ['noun-prep-collocation-2'];
   if(id.includes('vocabulary-box') || title.toLowerCase().includes('hòm từ vựng')) return ['vocabulary-box'];
+  if(id.includes('ets-summer-2021-test1-part5-6') || title.includes('ETS Summer 2021 Test 1')) return ['ets-summer-2021-test1-part5-6'];
   return [id].filter(Boolean);
 }
 function resultTone(percent){

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETS Summer 2021 Test 1 - Part 5 + 6</title>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}
+body{overflow-x:hidden}
+body.auth-pending .exam-app{display:none}
+body.submitted input, body.submitted label.option{cursor:not-allowed!important}
+html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}
+.exam-app{min-height:100vh;background:radial-gradient(circle at top left,rgba(59,130,246,.13),transparent 34%),radial-gradient(circle at bottom right,rgba(14,165,233,.13),transparent 34%),#fff}
+.top-line{position:fixed;top:0;left:0;height:7px;width:100%;background:#2563eb;z-index:200}
+.exam-header{position:sticky;top:0;z-index:150;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:2px solid #dbeafe;box-shadow:0 10px 24px rgba(15,23,42,.08)}
+.header-inner{max-width:1280px;margin:0 auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:14px;min-width:0}
+.cbt-badge{width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;display:grid;place-items:center;font-size:18px;font-weight:700;box-shadow:0 10px 22px rgba(37,99,235,.24)}
+.exam-title{min-width:0}
+.exam-title h1{font-size:22px;line-height:1.2;color:#0f172a;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.exam-title p{font-size:14px;color:#64748b;font-weight:700}
+.timer-box{display:flex;align-items:center;gap:12px;background:#0f172a;color:#fff;border-radius:20px;padding:10px 14px;box-shadow:0 10px 22px rgba(15,23,42,.18);white-space:nowrap}
+.timer-label{font-size:12px;color:#cbd5e1;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.timer-value{font-size:25px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.timer-box.warning{background:#fff7ed;color:#9a3412;border:2px solid #fed7aa}
+.timer-box.danger{background:#fff1f2;color:#be123c;border:2px solid #fecdd3;animation:pulse 1s infinite}
+@keyframes pulse{50%{transform:scale(1.015)}}
+.exam-main{max-width:1280px;margin:0 auto;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px}
+.exam-panel{background:#f8fafc;border:2px solid #e2e8f0;border-radius:26px;box-shadow:0 18px 40px rgba(15,23,42,.08);overflow:hidden}
+.section-head{background:linear-gradient(135deg,#1d4ed8,#0ea5e9);color:#fff;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.section-head h2{font-size:23px;font-weight:700}
+.section-head span{font-size:14px;font-weight:700;background:rgba(255,255,255,.18);padding:7px 12px;border-radius:999px}
+.instructions{padding:18px 22px;background:#eff6ff;border-bottom:2px solid #dbeafe;color:#334155;font-size:16px;line-height:1.5}
+.question-grid{padding:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.question-card{background:#fff;border:2px solid #dbeafe;border-radius:22px;padding:18px;box-shadow:0 12px 26px rgba(37,99,235,.07);scroll-margin-top:108px}
+.question-card.active{outline:4px solid rgba(37,99,235,.16);border-color:#60a5fa}
+.question-no{display:inline-flex;align-items:center;gap:8px;background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;border-radius:999px;padding:7px 12px;font-size:15px;font-weight:700;margin-bottom:12px}
+.stem{font-size:18px;line-height:1.55;color:#0f172a;margin-bottom:14px;font-weight:600}
+.options{display:grid;gap:8px}
+.option{display:flex;align-items:flex-start;gap:11px;border:2px solid #e2e8f0;background:#fff;border-radius:16px;padding:12px;cursor:pointer;transition:.18s ease;color:#334155;font-size:16px;line-height:1.35}
+.option:hover{border-color:#93c5fd;background:#eff6ff;transform:translateY(-1px)}
+.option input{margin-top:2px;width:18px;height:18px;accent-color:#2563eb;flex:0 0 auto}
+.option .letter{font-weight:700;color:#1d4ed8;min-width:22px}
+.option:has(input:checked){border-color:#2563eb;background:#eff6ff;box-shadow:0 8px 16px rgba(37,99,235,.12)}
+.passage-block{padding:22px;border-top:2px solid #dbeafe}
+.passage-shell{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);gap:18px;align-items:start}
+.passage-text{background:#fff;border:2px solid #dbeafe;border-radius:22px;padding:22px;box-shadow:0 12px 26px rgba(37,99,235,.07);font-size:18px;line-height:1.85;color:#0f172a}
+.passage-text h3{font-size:21px;color:#0f172a;margin-bottom:14px}
+.passage-text p+p{margin-top:14px}
+.blank{display:inline-grid;place-items:center;min-width:42px;height:26px;border-bottom:3px solid #0f172a;color:#1d4ed8;font-weight:700;line-height:1;margin:0 3px}
+.blank.sentence{min-width:56px}
+.passage-questions{display:grid;gap:14px}
+.sidebar{position:sticky;top:98px;display:grid;gap:16px;align-self:start}
+.status-card{background:#f8fafc;border:2px solid #e2e8f0;border-radius:24px;padding:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}
+.status-card h3{font-size:20px;color:#0f172a;margin-bottom:10px}
+.student-line{font-size:14px;line-height:1.5;color:#64748b;font-weight:700;word-break:break-word}
+.progress-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.metric{background:#fff;border:2px solid #dbeafe;border-radius:17px;padding:12px;text-align:center}
+.metric b{display:block;font-size:24px;color:#1d4ed8;font-weight:700}
+.metric span{font-size:13px;color:#64748b;font-weight:700}
+.navigator{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}
+.nav-q{border:2px solid #cbd5e1;background:#fff;border-radius:13px;padding:9px 0;font-size:14px;font-weight:700;color:#334155;cursor:pointer;transition:.16s ease}
+.nav-q:hover{border-color:#93c5fd;background:#eff6ff}
+.nav-q.answered{background:#dbeafe;border-color:#60a5fa;color:#1d4ed8}
+.nav-q.current{outline:3px solid rgba(37,99,235,.22)}
+.nav-q.blank-after{background:#fff1f2;border-color:#fb7185;color:#be123c}
+.action-stack{display:grid;gap:10px;margin-top:14px}
+.btn{border:none;cursor:pointer;border-radius:999px;font-weight:700;font-size:15px;padding:13px 18px;box-shadow:0 10px 20px rgba(15,23,42,.15);transition:.18s ease;text-decoration:none;text-align:center;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:#2563eb;color:#fff}
+.btn.primary:hover{background:#1d4ed8}
+.btn.dark{background:#0f172a;color:#fff}
+.btn.light{background:#e2e8f0;color:#0f172a}
+.btn.light:hover{background:#cbd5e1}
+.btn.danger{background:#e11d48;color:#fff}
+.submit-status{display:none;margin-top:12px;border-radius:16px;padding:12px;font-size:14px;line-height:1.45;font-weight:700}
+.submit-status.show{display:block}
+.submit-status.ok{display:block;background:#f0fdf4;border:2px solid #bbf7d0;color:#166534}
+.submit-status.err{display:block;background:#fff1f2;border:2px solid #fecdd3;color:#be123c}
+.result-panel{display:none;background:#fff;border:2px solid #bbf7d0;border-radius:22px;padding:18px;margin-top:14px}
+.result-panel.show{display:block}
+.result-panel h3{font-size:20px;color:#166534;margin-bottom:10px}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.result-mini{background:#f8fafc;border:2px solid #e2e8f0;border-radius:16px;padding:10px;text-align:center}
+.result-mini b{display:block;font-size:22px;color:#0f172a}
+.result-mini span{font-size:12px;color:#64748b;font-weight:700}
+.lock-note{font-size:13px;color:#64748b;line-height:1.45;margin-top:10px}
+.footer-space{height:34px}
+@media(max-width:980px){.exam-main{grid-template-columns:1fr;padding:16px}.sidebar{position:static;order:-1}.question-grid{grid-template-columns:1fr;padding:16px}.passage-shell{grid-template-columns:1fr}.navigator{grid-template-columns:repeat(10,1fr)}.header-inner{padding:12px 14px}.exam-title h1{font-size:18px}.timer-value{font-size:22px}}
+@media(max-width:620px){.brand{gap:9px}.cbt-badge{width:44px;height:44px;border-radius:15px;font-size:15px}.timer-box{padding:8px 10px}.timer-label{display:none}.navigator{grid-template-columns:repeat(6,1fr)}.section-head{display:block}.section-head h2{font-size:20px;margin-bottom:8px}.question-card,.passage-text{padding:15px}.stem,.passage-text{font-size:16px}.option{font-size:15px}.result-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="auth-pending">
+<div class="top-line"></div>
+<div class="exam-app">
+  <header class="exam-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="cbt-badge">CBT</div>
+        <div class="exam-title">
+          <h1>ETS Summer 2021 Test 1 · Part 5 + 6</h1>
+          <p>Computer-based TOEIC Reading mini test · 46 questions</p>
+        </div>
+      </div>
+      <div class="timer-box" id="timerBox"><div><div class="timer-label">Time left</div><div class="timer-value" id="timerValue">25:00</div></div></div>
+    </div>
+  </header>
+  <main class="exam-main">
+    <section class="exam-panel" id="examContent">
+      <div class="section-head"><h2>PART 5</h2><span>Questions 101-130</span></div>
+      <div class="instructions"><b>Directions:</b> A word or phrase is missing in each sentence. Choose the best answer. Không có giải thích trong chế độ thi.</div>
+      <div class="question-grid" id="part5Grid"></div>
+      <div class="section-head"><h2>PART 6</h2><span>Questions 131-146</span></div>
+      <div class="instructions"><b>Directions:</b> Read each text and choose the best answer for each blank. Câu bỏ trống sẽ được tính sai khi nộp bài.</div>
+      <div id="part6Wrap"></div>
+      <div class="footer-space"></div>
+    </section>
+    <aside class="sidebar">
+      <div class="status-card">
+        <h3>Phòng thi</h3>
+        <div class="student-line" id="studentLine">Đang kiểm tra đăng nhập...</div>
+        <div class="progress-row">
+          <div class="metric"><b id="answeredCount">0</b><span>Đã chọn</span></div>
+          <div class="metric"><b id="remainingCount">46</b><span>Còn lại</span></div>
+        </div>
+        <div class="navigator" id="navigator"></div>
+        <div class="action-stack">
+          <button class="btn primary" type="button" id="submitBtn">Nộp bài</button>
+          <button class="btn light" type="button" onclick="scrollToFirstBlank()">Tới câu trống</button>
+          <button class="btn dark" type="button" onclick="goHome()">Về trang chủ</button>
+        </div>
+        <div class="lock-note">Sau khi nộp bài, đáp án bị khóa, không sửa bài và không hiện giải thích.</div>
+        <div class="submit-status" id="submitStatus"></div>
+        <div class="result-panel" id="resultPanel">
+          <h3>Đã nộp bài</h3>
+          <div class="result-grid">
+            <div class="result-mini"><b id="scoreText">0/46</b><span>Đúng</span></div>
+            <div class="result-mini"><b id="wrongText">0</b><span>Sai</span></div>
+            <div class="result-mini"><b id="blankText">0</b><span>Trống</span></div>
+          </div>
+          <p class="lock-note">Kết quả chi tiết đã được gửi về trang admin. Học viên không xem đáp án/giải thích trong chế độ thi.</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+</div>
+<script>
+const EXAM_DATA = {"id": "ets-summer-2021-test1-part5-6", "title": "ETS Summer 2021 Test 1 · Part 5 + 6", "sourceLabel": "ETS Summer 2021 · Reading Test 1", "timerMinutes": 25, "questions": [{"id": "q101", "no": 101, "part": 5, "stem": "Mr. Sokolov ------- a positive review of his stay at the Olana Hotel.", "options": {"A": "write", "B": "wrote", "C": "writing", "D": "was written"}, "answer": "B"}, {"id": "q102", "no": 102, "part": 5, "stem": "The manager often leads new employees through the safety procedures -------.", "options": {"A": "her", "B": "herself", "C": "hers", "D": "she"}, "answer": "B"}, {"id": "q103", "no": 103, "part": 5, "stem": "The corporate fitness center is equipped ------- fourteen stationary bicycles.", "options": {"A": "at", "B": "on", "C": "with", "D": "about"}, "answer": "C"}, {"id": "q104", "no": 104, "part": 5, "stem": "Professor Phuong will go over the use of the laboratory ------- with the interns next week.", "options": {"A": "instruments", "B": "instrumental", "C": "instrumentally", "D": "instrumented"}, "answer": "A"}, {"id": "q105", "no": 105, "part": 5, "stem": "Arnby Cable ------- £25.00 to all Internet subscribers after the weeklong service interruption.", "options": {"A": "refunded", "B": "accepted", "C": "divided", "D": "deposited"}, "answer": "A"}, {"id": "q106", "no": 106, "part": 5, "stem": "The board of directors will meet next Monday to examine the current hiring -------.", "options": {"A": "purpose", "B": "intent", "C": "assembly", "D": "policy"}, "answer": "D"}, {"id": "q107", "no": 107, "part": 5, "stem": "Passengers should not leave their seats ------- a flight attendant gives them permission to do so.", "options": {"A": "unless", "B": "rather", "C": "instead", "D": "otherwise"}, "answer": "A"}, {"id": "q108", "no": 108, "part": 5, "stem": "The goal of the committee was to evaluate the company’s bylaws and offer ------- for improvement.", "options": {"A": "renewals", "B": "registrations", "C": "recommendations", "D": "reimbursements"}, "answer": "C"}, {"id": "q109", "no": 109, "part": 5, "stem": "The building’s new ventilation system circulates heat much ------- than before.", "options": {"A": "even", "B": "most even", "C": "evenly", "D": "more evenly"}, "answer": "D"}, {"id": "q110", "no": 110, "part": 5, "stem": "Glowood Appliances promises customers their money back ------- they are not satisfied with their purchase.", "options": {"A": "while", "B": "and", "C": "if", "D": "then"}, "answer": "C"}, {"id": "q111", "no": 111, "part": 5, "stem": "The theater doors will close and the show will start at precisely 8:00 p.m., so guests are reminded to be -------.", "options": {"A": "rapid", "B": "sudden", "C": "punctual", "D": "instant"}, "answer": "C"}, {"id": "q112", "no": 112, "part": 5, "stem": "All vacation requests must be made to your supervisor ------- the requested date.", "options": {"A": "prior to", "B": "except for", "C": "previously", "D": "because"}, "answer": "A"}, {"id": "q113", "no": 113, "part": 5, "stem": "Most banks now offer clients the option of receiving their statements electronically or ------- mail.", "options": {"A": "from", "B": "of", "C": "in", "D": "by"}, "answer": "D"}, {"id": "q114", "no": 114, "part": 5, "stem": "Construction at Langhall Plaza is going so well that shops might open before the expected ------- date.", "options": {"A": "completion", "B": "selection", "C": "decision", "D": "option"}, "answer": "A"}, {"id": "q115", "no": 115, "part": 5, "stem": "Kohmek, Inc., is seeking a suitable site ------- the construction of its electronics factory.", "options": {"A": "for", "B": "so", "C": "to", "D": "more"}, "answer": "A"}, {"id": "q116", "no": 116, "part": 5, "stem": "Studies show that the average audience forms its ------- of the speaker within the first few seconds of the presentation.", "options": {"A": "impress", "B": "impressive", "C": "impressively", "D": "impression"}, "answer": "D"}, {"id": "q117", "no": 117, "part": 5, "stem": "Mr. Cutler has been asked to ------- domestic sales of low-calorie beverages.", "options": {"A": "oversee", "B": "possess", "C": "succeed", "D": "persist"}, "answer": "A"}, {"id": "q118", "no": 118, "part": 5, "stem": "Cranford Culinary Academy offers 35 different classes for ------- chefs.", "options": {"A": "aspires", "B": "aspirations", "C": "aspiring", "D": "to aspire"}, "answer": "C"}, {"id": "q119", "no": 119, "part": 5, "stem": "-------, items sold at the Scottville Craft Fair are unique and of very high quality.", "options": {"A": "Fairly", "B": "Typically", "C": "Simply", "D": "Entirely"}, "answer": "B"}, {"id": "q120", "no": 120, "part": 5, "stem": "Mamton Home Furnishings ------- customized furniture in Pennsylvania for more than a century.", "options": {"A": "manufactures", "B": "is manufacturing", "C": "has manufactured", "D": "manufacture"}, "answer": "C"}, {"id": "q121", "no": 121, "part": 5, "stem": "Please hold any phone calls for Ms. Tanaka ------- she will be in meetings all day.", "options": {"A": "as", "B": "but", "C": "despite", "D": "similarly"}, "answer": "A"}, {"id": "q122", "no": 122, "part": 5, "stem": "Dolores Gutierrez excels as an estate planning attorney who helps clients manage their assets -------.", "options": {"A": "effect", "B": "effectively", "C": "effects", "D": "effective"}, "answer": "B"}, {"id": "q123", "no": 123, "part": 5, "stem": "Mr. Singh was ------- about sales of the fragrance after the first round of customer focus groups.", "options": {"A": "extensive", "B": "distinct", "C": "optimistic", "D": "superior"}, "answer": "C"}, {"id": "q124", "no": 124, "part": 5, "stem": "Data from the finance department was used to ------- predict the company’s future expenses.", "options": {"A": "either", "B": "ever", "C": "yet", "D": "better"}, "answer": "D"}, {"id": "q125", "no": 125, "part": 5, "stem": "Immediately after the decrease in production was announced, everyone began discussing how ------- would impact work schedules.", "options": {"A": "us", "B": "it", "C": "theirs", "D": "yours"}, "answer": "B"}, {"id": "q126", "no": 126, "part": 5, "stem": "Every year Arrow Mill, Inc., processes a ------- amount of grain.", "options": {"A": "durable", "B": "direct", "C": "resolute", "D": "substantial"}, "answer": "D"}, {"id": "q127", "no": 127, "part": 5, "stem": "Tomorrow morning, both escalators in the store will be turned off periodically in order to perform ------- maintenance.", "options": {"A": "required", "B": "require", "C": "requiring", "D": "requires"}, "answer": "A"}, {"id": "q128", "no": 128, "part": 5, "stem": "Those who wish to volunteer at the annual Sebastian Park flower-planting event this Saturday ------- to arrive early.", "options": {"A": "asks", "B": "are asked", "C": "has been asking", "D": "to ask"}, "answer": "B"}, {"id": "q129", "no": 129, "part": 5, "stem": "Although Mr. Yanamura’s theory is ------- controversial, it does help explain the latest changes in the market.", "options": {"A": "neatly", "B": "urgently", "C": "gracefully", "D": "certainly"}, "answer": "D"}, {"id": "q130", "no": 130, "part": 5, "stem": "A recent ------- found that property values in the Agate Valley region had increased by 3 percent between January and June.", "options": {"A": "assessment", "B": "assessed", "C": "assessable", "D": "to assess"}, "answer": "A"}, {"id": "q131", "no": 131, "part": 6, "options": {"A": "attracted", "B": "entered", "C": "awarded", "D": "promoted"}, "answer": "A", "passageIndex": 0, "stem": "Questions 131-134 refer to the following information."}, {"id": "q132", "no": 132, "part": 6, "options": {"A": "they", "B": "them", "C": "themselves", "D": "theirs"}, "answer": "C", "passageIndex": 0, "stem": "Questions 131-134 refer to the following information."}, {"id": "q133", "no": 133, "part": 6, "options": {"A": "location", "B": "situation", "C": "machine", "D": "schedule"}, "answer": "D", "passageIndex": 0, "stem": "Questions 131-134 refer to the following information."}, {"id": "q134", "no": 134, "part": 6, "options": {"A": "Registration begins on 3 February and continues through 18 March.", "B": "This speaker is well-known throughout the industry.", "C": "The conference was held in New Zealand in previous years.", "D": "We’d like to get your feedback on last year’s conference."}, "answer": "A", "passageIndex": 0, "stem": "Questions 131-134 refer to the following information."}, {"id": "q135", "no": 135, "part": 6, "options": {"A": "who", "B": "accordingly", "C": "recently", "D": "where"}, "answer": "A", "passageIndex": 1, "stem": "Questions 135-138 refer to the following advertisement."}, {"id": "q136", "no": 136, "part": 6, "options": {"A": "provided", "B": "will provide", "C": "will have provided", "D": "is providing"}, "answer": "B", "passageIndex": 1, "stem": "Questions 135-138 refer to the following advertisement."}, {"id": "q137", "no": 137, "part": 6, "options": {"A": "Your travel expenses are covered by Wallace & Prence.", "B": "We place clients in apartments throughout the world.", "C": "Duties also include supporting clients after their arrival.", "D": "Incomplete applications will not be considered."}, "answer": "C", "passageIndex": 1, "stem": "Questions 135-138 refer to the following advertisement."}, {"id": "q138", "no": 138, "part": 6, "options": {"A": "questions", "B": "documents", "C": "references", "D": "qualifications"}, "answer": "D", "passageIndex": 1, "stem": "Questions 135-138 refer to the following advertisement."}, {"id": "q139", "no": 139, "part": 6, "options": {"A": "doubted", "B": "estimated", "C": "crowded", "D": "organized"}, "answer": "C", "passageIndex": 2, "stem": "Questions 139-142 refer to the following newspaper article."}, {"id": "q140", "no": 140, "part": 6, "options": {"A": "She usually serves them warm.", "B": "She created them when she started the restaurant.", "C": "His family members prefer eating healthy meals.", "D": "His social media campaign has also boosted sales."}, "answer": "D", "passageIndex": 2, "stem": "Questions 139-142 refer to the following newspaper article."}, {"id": "q141", "no": 141, "part": 6, "options": {"A": "leave", "B": "left", "C": "is leaving", "D": "have left"}, "answer": "B", "passageIndex": 2, "stem": "Questions 139-142 refer to the following newspaper article."}, {"id": "q142", "no": 142, "part": 6, "options": {"A": "expansion", "B": "supervision", "C": "submission", "D": "division"}, "answer": "A", "passageIndex": 2, "stem": "Questions 139-142 refer to the following newspaper article."}, {"id": "q143", "no": 143, "part": 6, "options": {"A": "However", "B": "Therefore", "C": "In addition", "D": "For example"}, "answer": "A", "passageIndex": 3, "stem": "Questions 143-146 refer to the following memo."}, {"id": "q144", "no": 144, "part": 6, "options": {"A": "sent", "B": "will be sent", "C": "will have sent", "D": "had been sent"}, "answer": "B", "passageIndex": 3, "stem": "Questions 143-146 refer to the following memo."}, {"id": "q145", "no": 145, "part": 6, "options": {"A": "Support", "B": "Absence", "C": "Failure", "D": "Approval"}, "answer": "C", "passageIndex": 3, "stem": "Questions 143-146 refer to the following memo."}, {"id": "q146", "no": 146, "part": 6, "options": {"A": "I will see you at the meeting.", "B": "Write down your new log-in ID.", "C": "Let me know when this is done.", "D": "Thank you for your cooperation."}, "answer": "D", "passageIndex": 3, "stem": "Questions 143-146 refer to the following memo."}], "passages": [{"title": "Questions 131-134 refer to the following information.", "label": "Information", "html": "<p>The Design Present Conference is an annual event held in Melbourne for graphic-design professionals. The conference is steadily growing in popularity. Last year, it <span class=\"blank\">131</span> more than 3,000 attendees from Australia and around the world. The next Design Present Conference, which will be held from 20 to 23 March, will offer more than 100 workshops, plus keynote speeches and plenary sessions. This year, several opportunities for professional networking will be added. Attendees will have the chance to market <span class=\"blank\">132</span> to firms in several different industries. Periods for networking will be included in the <span class=\"blank\">133</span> each day. Whether you are a design enthusiast, student, freelance designer, or business owner, Design Present has something for you. <span class=\"blank sentence\">134</span></p>", "questions": [{"id": "q131", "no": 131, "part": 6, "options": {"A": "attracted", "B": "entered", "C": "awarded", "D": "promoted"}, "answer": "A", "passageIndex": 0, "stem": "Questions 131-134 refer to the following information."}, {"id": "q132", "no": 132, "part": 6, "options": {"A": "they", "B": "them", "C": "themselves", "D": "theirs"}, "answer": "C", "passageIndex": 0, "stem": "Questions 131-134 refer to the following information."}, {"id": "q133", "no": 133, "part": 6, "options": {"A": "location", "B": "situation", "C": "machine", "D": "schedule"}, "answer": "D", "passageIndex": 0, "stem": "Questions 131-134 refer to the following information."}, {"id": "q134", "no": 134, "part": 6, "options": {"A": "Registration begins on 3 February and continues through 18 March.", "B": "This speaker is well-known throughout the industry.", "C": "The conference was held in New Zealand in previous years.", "D": "We’d like to get your feedback on last year’s conference."}, "answer": "A", "passageIndex": 0, "stem": "Questions 131-134 refer to the following information."}]}, {"title": "Questions 135-138 refer to the following advertisement.", "label": "Advertisement", "html": "<h3>Housing Specialist Needed</h3><p>Wallace &amp; Prence Realty is currently seeking a housing specialist to work with our international clients. We specialize in securing appropriate short-term housing for individuals <span class=\"blank\">135</span> will be working in the Toronto area for only a short time. As part of our client-relations department, the housing specialist <span class=\"blank\">136</span> guidance to clients preparing for temporary relocation. <span class=\"blank sentence\">137</span> The successful candidate must have knowledge of real estate and rental agencies in the Toronto area. Also required are a minimum of two years of customer-service experience. Individuals with the necessary <span class=\"blank\">138</span> are encouraged to contact us at recruitment@wallaceprence.ca.</p>", "questions": [{"id": "q135", "no": 135, "part": 6, "options": {"A": "who", "B": "accordingly", "C": "recently", "D": "where"}, "answer": "A", "passageIndex": 1, "stem": "Questions 135-138 refer to the following advertisement."}, {"id": "q136", "no": 136, "part": 6, "options": {"A": "provided", "B": "will provide", "C": "will have provided", "D": "is providing"}, "answer": "B", "passageIndex": 1, "stem": "Questions 135-138 refer to the following advertisement."}, {"id": "q137", "no": 137, "part": 6, "options": {"A": "Your travel expenses are covered by Wallace & Prence.", "B": "We place clients in apartments throughout the world.", "C": "Duties also include supporting clients after their arrival.", "D": "Incomplete applications will not be considered."}, "answer": "C", "passageIndex": 1, "stem": "Questions 135-138 refer to the following advertisement."}, {"id": "q138", "no": 138, "part": 6, "options": {"A": "questions", "B": "documents", "C": "references", "D": "qualifications"}, "answer": "D", "passageIndex": 1, "stem": "Questions 135-138 refer to the following advertisement."}]}, {"title": "Questions 139-142 refer to the following newspaper article.", "label": "Newspaper article", "html": "<p><b>LOWELL (March 3)</b>—Just one year after opening, Viggo’s Sweet Shop on Park Street has become the place to go for residents wishing to satisfy their sugary cravings. Says owner Viggo Magnusson, “Returning customers bring friends and relatives with them, so the shop is always <span class=\"blank\">139</span>.” Mr. Magnusson credits the success of his business to the recipes he inherited from his grandmother about a decade ago. <span class=\"blank sentence\">140</span></p><p>But the popularity of the pastry shop <span class=\"blank\">141</span> Mr. Magnusson with an unanticipated problem: lack of store space. So when the shoe store next door went out of business recently, he purchased the property to allow for the <span class=\"blank\">142</span> of his shop. Renovations will start in April.</p>", "questions": [{"id": "q139", "no": 139, "part": 6, "options": {"A": "doubted", "B": "estimated", "C": "crowded", "D": "organized"}, "answer": "C", "passageIndex": 2, "stem": "Questions 139-142 refer to the following newspaper article."}, {"id": "q140", "no": 140, "part": 6, "options": {"A": "She usually serves them warm.", "B": "She created them when she started the restaurant.", "C": "His family members prefer eating healthy meals.", "D": "His social media campaign has also boosted sales."}, "answer": "D", "passageIndex": 2, "stem": "Questions 139-142 refer to the following newspaper article."}, {"id": "q141", "no": 141, "part": 6, "options": {"A": "leave", "B": "left", "C": "is leaving", "D": "have left"}, "answer": "B", "passageIndex": 2, "stem": "Questions 139-142 refer to the following newspaper article."}, {"id": "q142", "no": 142, "part": 6, "options": {"A": "expansion", "B": "supervision", "C": "submission", "D": "division"}, "answer": "A", "passageIndex": 2, "stem": "Questions 139-142 refer to the following newspaper article."}]}, {"title": "Questions 143-146 refer to the following memo.", "label": "Memo", "html": "<p><b>To:</b> All Employees<br><b>From:</b> Jennifer Prasad<br><b>Subject:</b> Updated Password Policy<br><b>Date:</b> Tuesday, February 8</p><p>Dear Employees,</p><p>As an enhanced security measure, you will now be required to change the password you use to access the company network on the first workday of each month. <span class=\"blank\">143</span>, your log-in ID will remain the same.</p><p>Each password must be at least twelve characters long and include one capital letter, one lowercase letter, one number, and one special character.</p><p>An e-mail <span class=\"blank\">144</span> on the last workday of each month reminding you to set a new password on the next workday. <span class=\"blank\">145</span> to do so will result in your being locked out of your account, and you will have to contact our platform provider, Securities Services, for assistance.</p><p>We are doing our best to ensure that our employees and our clients have the highest possible level of security. <span class=\"blank sentence\">146</span></p><p>Jennifer Prasad, CEO</p>", "questions": [{"id": "q143", "no": 143, "part": 6, "options": {"A": "However", "B": "Therefore", "C": "In addition", "D": "For example"}, "answer": "A", "passageIndex": 3, "stem": "Questions 143-146 refer to the following memo."}, {"id": "q144", "no": 144, "part": 6, "options": {"A": "sent", "B": "will be sent", "C": "will have sent", "D": "had been sent"}, "answer": "B", "passageIndex": 3, "stem": "Questions 143-146 refer to the following memo."}, {"id": "q145", "no": 145, "part": 6, "options": {"A": "Support", "B": "Absence", "C": "Failure", "D": "Approval"}, "answer": "C", "passageIndex": 3, "stem": "Questions 143-146 refer to the following memo."}, {"id": "q146", "no": 146, "part": 6, "options": {"A": "I will see you at the meeting.", "B": "Write down your new log-in ID.", "C": "Let me know when this is done.", "D": "Thank you for your cooperation."}, "answer": "D", "passageIndex": 3, "stem": "Questions 143-146 refer to the following memo."}]}]};
+const STUDENT_KEY = 'toeic_student_session';
+let studentSession = null;
+let timeLeft = EXAM_DATA.timerMinutes * 60;
+let timerId = null;
+let resultSubmitted = false;
+let currentQuestionNo = 101;
+
+function getStudentSession(){
+  try{return JSON.parse(localStorage.getItem(STUDENT_KEY)||'null');}catch(e){return null;}
+}
+function requireStudentSession(){
+  const student = getStudentSession();
+  if(!student || !student.email){
+    alert('Bạn cần đăng nhập bằng email đã được cấp quyền trước khi làm bài.');
+    location.href = 'index.html';
+    return null;
+  }
+  return student;
+}
+function escapeText(text){
+  return String(text ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+function optionHtml(q, key, text){
+  return `<label class="option"><input type="radio" name="${q.id}" value="${key}"><span class="letter">(${key})</span><span>${escapeText(text)}</span></label>`;
+}
+function questionHtml(q, compact=false){
+  const opts = Object.entries(q.options).map(([key,text]) => optionHtml(q,key,text)).join('');
+  const stem = q.part === 5 ? `<div class="stem">${escapeText(q.stem)}</div>` : '';
+  return `<article class="question-card" id="question-${q.no}" data-question="${q.no}"><div class="question-no">Question ${q.no}</div>${stem}<div class="options">${opts}</div></article>`;
+}
+function renderExam(){
+  const part5 = EXAM_DATA.questions.filter(q => q.part === 5);
+  const part5Grid = document.getElementById('part5Grid');
+  part5Grid.innerHTML = part5.map(q => questionHtml(q)).join('');
+
+  const part6Wrap = document.getElementById('part6Wrap');
+  part6Wrap.innerHTML = EXAM_DATA.passages.map((p,idx) => {
+    const qs = p.questions.map(q => questionHtml(q,true)).join('');
+    return `<div class="passage-block"><div class="passage-shell"><div class="passage-text"><div class="question-no">${escapeText(p.title)}</div>${p.html}</div><div class="passage-questions">${qs}</div></div></div>`;
+  }).join('');
+
+  const nav = document.getElementById('navigator');
+  nav.innerHTML = EXAM_DATA.questions.map(q => `<button type="button" class="nav-q" data-nav="${q.no}">${q.no}</button>`).join('');
+
+  document.querySelectorAll('input[type="radio"]').forEach(input => input.addEventListener('change', () => {
+    currentQuestionNo = Number(input.closest('.question-card')?.dataset.question || currentQuestionNo);
+    updateProgress();
+  }));
+  document.querySelectorAll('.nav-q').forEach(btn => btn.addEventListener('click', () => scrollToQuestion(Number(btn.dataset.nav))));
+  document.querySelectorAll('.question-card').forEach(card => card.addEventListener('click', () => {
+    currentQuestionNo = Number(card.dataset.question || currentQuestionNo);
+    updateProgress();
+  }));
+}
+function selectedFor(q){
+  const el = document.querySelector(`input[name="${CSS.escape(q.id)}"]:checked`);
+  return el ? el.value : null;
+}
+function updateProgress(){
+  const answered = EXAM_DATA.questions.filter(q => selectedFor(q)).length;
+  document.getElementById('answeredCount').textContent = answered;
+  document.getElementById('remainingCount').textContent = EXAM_DATA.questions.length - answered;
+  document.querySelectorAll('.nav-q').forEach(btn => {
+    const no = Number(btn.dataset.nav);
+    const q = EXAM_DATA.questions.find(item => item.no === no);
+    btn.classList.toggle('answered', !!selectedFor(q));
+    btn.classList.toggle('current', no === currentQuestionNo);
+  });
+  document.querySelectorAll('.question-card').forEach(card => card.classList.toggle('active', Number(card.dataset.question) === currentQuestionNo));
+}
+function scrollToQuestion(no){
+  currentQuestionNo = no;
+  updateProgress();
+  document.getElementById('question-'+no)?.scrollIntoView({behavior:'smooth', block:'center'});
+}
+function scrollToFirstBlank(){
+  const q = EXAM_DATA.questions.find(item => !selectedFor(item));
+  if(q) scrollToQuestion(q.no);
+  else toast('Bạn đã chọn đủ 46 câu.', 'success');
+}
+function formatTime(sec){
+  const m = Math.floor(sec/60);
+  const s = sec%60;
+  return String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+}
+function updateTimer(){
+  const timerValue = document.getElementById('timerValue');
+  const timerBox = document.getElementById('timerBox');
+  timerValue.textContent = formatTime(Math.max(0,timeLeft));
+  timerBox.classList.toggle('warning', timeLeft <= 300 && timeLeft > 60);
+  timerBox.classList.toggle('danger', timeLeft <= 60);
+}
+function startTimer(){
+  updateTimer();
+  timerId = setInterval(() => {
+    if(resultSubmitted) return;
+    timeLeft -= 1;
+    updateTimer();
+    if(timeLeft <= 0){
+      clearInterval(timerId);
+      submitExam('timeup');
+    }
+  }, 1000);
+}
+function collectPayload(reason='manual'){
+  const submittedAt = new Date().toISOString();
+  let score = 0;
+  let blankCount = 0;
+  const answers = EXAM_DATA.questions.map(q => {
+    const selected = selectedFor(q);
+    if(!selected) blankCount++;
+    const selectedText = selected ? q.options[selected] : null;
+    const correctText = q.options[q.answer];
+    const isCorrect = selected === q.answer;
+    if(isCorrect) score++;
+    return {
+      no:q.no,
+      id:q.id,
+      part:q.part,
+      selected,
+      selectedText,
+      correctAnswer:q.answer,
+      correctText,
+      isCorrect,
+      isBlank:!selected,
+      prompt:q.part===5 ? q.stem : q.stem
+    };
+  });
+  return {
+    student:{email:studentSession?.email||'', loginAt:studentSession?.loginAt||''},
+    quiz:{id:EXAM_DATA.id,title:EXAM_DATA.title,total:EXAM_DATA.questions.length,timerMinutes:EXAM_DATA.timerMinutes,source:EXAM_DATA.sourceLabel},
+    submittedAt,
+    submitReason:reason,
+    timeSpentSeconds:EXAM_DATA.timerMinutes*60 - Math.max(0,timeLeft),
+    score,
+    total:EXAM_DATA.questions.length,
+    wrong:EXAM_DATA.questions.length - score,
+    blankCount,
+    percent:Math.round(score/EXAM_DATA.questions.length*100),
+    answers
+  };
+}
+async function confirmSubmit(payload){
+  const unanswered = payload.blankCount;
+  const html = unanswered
+    ? `Bạn còn <b>${unanswered}</b> câu chưa chọn. Các câu trống sẽ tính sai.<br>Bạn chắc chắn muốn nộp bài?`
+    : `Bạn đã chọn đủ <b>${payload.total}</b> câu.<br>Sau khi nộp sẽ không sửa được.`;
+  if(window.Swal){
+    const res = await Swal.fire({icon:'warning',title:'Xác nhận nộp bài',html,showCancelButton:true,confirmButtonText:'Nộp bài',cancelButtonText:'Kiểm tra lại',reverseButtons:true,focusCancel:true,confirmButtonColor:'#2563eb',cancelButtonColor:'#64748b'});
+    return !!res.isConfirmed;
+  }
+  return confirm(unanswered ? `Bạn còn ${unanswered} câu trống. Nộp bài?` : 'Bạn chắc chắn muốn nộp bài?');
+}
+async function submitExam(reason='manual'){
+  if(resultSubmitted) return;
+  const payload = collectPayload(reason);
+  if(reason === 'manual'){
+    const ok = await confirmSubmit(payload);
+    if(!ok) return;
+  } else if(window.Swal){
+    await Swal.fire({icon:'info',title:'Hết giờ',text:'Hệ thống sẽ tự động nộp bài. Câu trống được tính sai.',confirmButtonText:'Đã hiểu',confirmButtonColor:'#2563eb'});
+  } else {
+    alert('Hết giờ. Hệ thống sẽ tự động nộp bài.');
+  }
+
+  resultSubmitted = true;
+  document.body.classList.add('submitted');
+  clearInterval(timerId);
+  document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('submitBtn').textContent = 'Đã nộp';
+  document.querySelectorAll('.nav-q').forEach(btn => {
+    const no = Number(btn.dataset.nav);
+    const q = EXAM_DATA.questions.find(item => item.no === no);
+    if(q && !selectedFor(q)) btn.classList.add('blank-after');
+  });
+
+  document.getElementById('scoreText').textContent = payload.score + '/' + payload.total;
+  document.getElementById('wrongText').textContent = payload.wrong;
+  document.getElementById('blankText').textContent = payload.blankCount;
+  document.getElementById('resultPanel').classList.add('show');
+  const status = document.getElementById('submitStatus');
+  status.className = 'submit-status show';
+  status.textContent = 'Đang gửi kết quả chi tiết về admin...';
+  try{
+    const res = await fetch('/api/results', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data = await res.json().catch(() => ({}));
+    if(!res.ok || !data.ok) throw new Error(data.error || 'Không lưu được kết quả.');
+    status.className = 'submit-status ok';
+    status.textContent = 'Đã gửi kết quả thành công. Mã bài nộp: ' + data.id;
+    toast('Đã nộp bài và gửi kết quả cho giáo viên.', 'success');
+  }catch(err){
+    status.className = 'submit-status err';
+    status.textContent = 'Không gửi được lên KV/API. Bấm link dưới để tải JSON dự phòng gửi giáo viên.';
+    const blob = new Blob([JSON.stringify(payload,null,2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'student_result_' + String(payload.student.email||'student').replace(/[^a-z0-9._-]/gi,'_') + '_' + Date.now() + '.json';
+    a.textContent = 'Tải JSON kết quả dự phòng';
+    a.className = 'btn light';
+    a.style.marginTop = '12px';
+    status.insertAdjacentElement('afterend', a);
+  }
+}
+function toast(message, icon='info'){
+  if(window.Swal){
+    Swal.fire({toast:true,position:'top',icon,title:message,showConfirmButton:false,timer:2200,timerProgressBar:true});
+  }
+}
+async function goHome(){
+  if(resultSubmitted){ location.href='index.html'; return; }
+  if(window.Swal){
+    const res = await Swal.fire({icon:'question',title:'Rời phòng thi?',text:'Bài chưa nộp sẽ không được lưu.',showCancelButton:true,confirmButtonText:'Về trang chủ',cancelButtonText:'Ở lại',reverseButtons:true,confirmButtonColor:'#0f172a'});
+    if(res.isConfirmed) location.href='index.html';
+  } else if(confirm('Bài chưa nộp sẽ không được lưu. Về trang chủ?')) location.href='index.html';
+}
+function setupAntiCopy(){
+  document.documentElement.classList.add('anti-download-lock');
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('dragstart', e => e.preventDefault());
+  document.addEventListener('selectstart', e => e.preventDefault());
+  document.addEventListener('copy', e => e.preventDefault());
+  document.addEventListener('cut', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    const key = String(e.key || '').toLowerCase();
+    if(e.key === 'F12' ||
+       (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(key)) ||
+       (e.ctrlKey && ['u','s','p','c','a','x'].includes(key)) ||
+       (e.metaKey && ['u','s','p','c','a','x'].includes(key))){
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+  }, true);
+}
+window.addEventListener('beforeunload', e => {
+  if(!resultSubmitted){ e.preventDefault(); e.returnValue=''; }
+});
+document.getElementById('submitBtn').addEventListener('click', () => submitExam('manual'));
+(function init(){
+  setupAntiCopy();
+  studentSession = requireStudentSession();
+  if(!studentSession) return;
+  document.body.classList.remove('auth-pending');
+  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Thời lượng: <b>25 phút</b>';
+  renderExam();
+  updateProgress();
+  startTimer();
+})();
+</script>
+</body>
+</html>

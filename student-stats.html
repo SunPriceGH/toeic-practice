@@ -71,7 +71,7 @@ async function getUsableStudentSession(){
 function escapeHtml(s){return String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
 function setStatus(msg,ok){const el=document.getElementById('status');el.textContent=msg;el.className='status '+(ok?'ok':'err');}
 function tone(percent){percent=Number(percent||0);if(percent>=80)return'good';if(percent>=60)return'warn';return'bad';}
-function lessonKey(result){const p=result.payload||result||{};const q=p.quiz||{};const id=String(q.id||'');if(id.includes('toeic-2024-test')||id.includes('listening'))return'toeic-listening';return id||q.title||'unknown';}
+function lessonKey(result){const p=result.payload||result||{};const q=p.quiz||{};const id=String(q.id||'');if(id.includes('toeic-2024-test')||id.includes('listening'))return'toeic-listening';if(id.includes('ets-summer-2021-test1-part5-6'))return'ets-summer-2021-test1-part5-6';return id||q.title||'unknown';}
 function lessonTitle(result){const p=result.payload||result||{};const q=p.quiz||{};if(lessonKey(result)==='toeic-listening')return'TOEIC Listening ETS 2024';return q.title||q.id||'Bài chưa rõ tên';}
 async function loadStudentResults(){
   const session=await getUsableStudentSession();
