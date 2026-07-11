@@ -12,6 +12,19 @@ body{overflow-x:hidden}
 body.auth-pending .exam-app{display:none}
 body.submitted input, body.submitted label.option{cursor:not-allowed!important}
 html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}
+
+body.exam-not-started #examContent{filter:blur(6px);pointer-events:none;user-select:none;transition:filter .22s ease}
+body.exam-not-started .navigator,body.exam-not-started .action-stack{opacity:.45;pointer-events:none}
+body.exam-not-started .timer-box{background:#475569}
+.start-gate{display:none;position:fixed;inset:78px 0 0 0;z-index:140;align-items:center;justify-content:center;padding:24px;background:rgba(239,246,255,.38);backdrop-filter:blur(2px)}
+body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
+.start-card{width:min(560px,94vw);background:#fff;border:2px solid #bfdbfe;border-radius:28px;padding:28px;text-align:center;box-shadow:0 28px 80px rgba(15,23,42,.28)}
+.start-card .start-icon{width:68px;height:68px;margin:0 auto 14px;border-radius:22px;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;display:grid;place-items:center;font-size:22px;font-weight:700;box-shadow:0 12px 26px rgba(37,99,235,.28)}
+.start-card h2{font-size:28px;color:#0f172a;margin-bottom:10px}
+.start-card p{font-size:17px;line-height:1.55;color:#475569;margin-bottom:18px}
+.start-meta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.start-meta span{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;border-radius:999px;padding:8px 12px;font-size:14px;font-weight:700}
+.result-mini.percent b{color:#1d4ed8}
 .exam-app{min-height:100vh;background:radial-gradient(circle at top left,rgba(59,130,246,.13),transparent 34%),radial-gradient(circle at bottom right,rgba(14,165,233,.13),transparent 34%),#fff}
 .top-line{position:fixed;top:0;left:0;height:7px;width:100%;background:#2563eb;z-index:200}
 .exam-header{position:sticky;top:0;z-index:150;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:2px solid #dbeafe;box-shadow:0 10px 24px rgba(15,23,42,.08)}
@@ -82,7 +95,7 @@ html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!im
 .result-panel{display:none;background:#fff;border:2px solid #bbf7d0;border-radius:22px;padding:18px;margin-top:14px}
 .result-panel.show{display:block}
 .result-panel h3{font-size:20px;color:#166534;margin-bottom:10px}
-.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .result-mini{background:#f8fafc;border:2px solid #e2e8f0;border-radius:16px;padding:10px;text-align:center}
 .result-mini b{display:block;font-size:22px;color:#0f172a}
 .result-mini span{font-size:12px;color:#64748b;font-weight:700}
@@ -92,7 +105,7 @@ html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!im
 @media(max-width:620px){.brand{gap:9px}.cbt-badge{width:44px;height:44px;border-radius:15px;font-size:15px}.timer-box{padding:8px 10px}.timer-label{display:none}.navigator{grid-template-columns:repeat(6,1fr)}.section-head{display:block}.section-head h2{font-size:20px;margin-bottom:8px}.question-card,.passage-text{padding:15px}.stem,.passage-text{font-size:16px}.option{font-size:15px}.result-grid{grid-template-columns:1fr}}
 </style>
 </head>
-<body class="auth-pending">
+<body class="auth-pending exam-not-started">
 <div class="top-line"></div>
 <div class="exam-app">
   <header class="exam-header">
@@ -107,6 +120,16 @@ html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!im
       <div class="timer-box" id="timerBox"><div><div class="timer-label">Time left</div><div class="timer-value" id="timerValue">25:00</div></div></div>
     </div>
   </header>
+  <div class="start-gate" id="startGate" aria-live="polite">
+    <div class="start-card">
+      <div class="start-icon">CBT</div>
+      <h2>Sẵn sàng vào phòng thi?</h2>
+      <p>Nội dung đề đang được làm mờ. Khi bấm <b>Bắt đầu</b>, hệ thống mới mở đề và bắt đầu đếm ngược 25 phút.</p>
+      <div class="start-meta"><span>Part 5 + 6</span><span>46 câu</span><span>25 phút</span><span>Nộp 1 lần</span></div>
+      <button class="btn primary" type="button" id="startBtn">Bắt đầu</button>
+      <button class="btn light" type="button" onclick="goHome()" style="margin-left:8px">Về trang chủ</button>
+    </div>
+  </div>
   <main class="exam-main">
     <section class="exam-panel" id="examContent">
       <div class="section-head"><h2>PART 5</h2><span>Questions 101-130</span></div>
@@ -137,10 +160,11 @@ html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!im
           <h3>Đã nộp bài</h3>
           <div class="result-grid">
             <div class="result-mini"><b id="scoreText">0/46</b><span>Đúng</span></div>
+            <div class="result-mini percent"><b id="percentText">0%</b><span>Tỷ lệ</span></div>
             <div class="result-mini"><b id="wrongText">0</b><span>Sai</span></div>
             <div class="result-mini"><b id="blankText">0</b><span>Trống</span></div>
           </div>
-          <p class="lock-note">Kết quả chi tiết đã được gửi về trang admin. Học viên không xem đáp án/giải thích trong chế độ thi.</p>
+          <p class="lock-note" id="resultNote">Kết quả của bạn sẽ hiện ở đây ngay sau khi nộp bài. Không hiện giải thích trong chế độ thi.</p>
         </div>
       </div>
     </aside>
@@ -153,6 +177,7 @@ let studentSession = null;
 let timeLeft = EXAM_DATA.timerMinutes * 60;
 let timerId = null;
 let resultSubmitted = false;
+let examStarted = false;
 let currentQuestionNo = 101;
 
 function getStudentSession(){
@@ -224,6 +249,7 @@ function scrollToQuestion(no){
   document.getElementById('question-'+no)?.scrollIntoView({behavior:'smooth', block:'center'});
 }
 function scrollToFirstBlank(){
+  if(!examStarted){ toast('Bấm Bắt đầu để mở đề và tính giờ.', 'info'); return; }
   const q = EXAM_DATA.questions.find(item => !selectedFor(item));
   if(q) scrollToQuestion(q.no);
   else toast('Bạn đã chọn đủ 46 câu.', 'success');
@@ -241,6 +267,7 @@ function updateTimer(){
   timerBox.classList.toggle('danger', timeLeft <= 60);
 }
 function startTimer(){
+  clearInterval(timerId);
   updateTimer();
   timerId = setInterval(() => {
     if(resultSubmitted) return;
@@ -251,6 +278,19 @@ function startTimer(){
       submitExam('timeup');
     }
   }, 1000);
+}
+function startExam(){
+  if(examStarted || resultSubmitted) return;
+  examStarted = true;
+  timeLeft = EXAM_DATA.timerMinutes * 60;
+  document.body.classList.remove('exam-not-started');
+  const btn=document.getElementById('submitBtn');
+  if(btn) btn.disabled=false;
+  const startBtn=document.getElementById('startBtn');
+  if(startBtn) startBtn.disabled=true;
+  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Thời lượng: <b>25 phút</b><br>Trạng thái: <b>đang làm bài</b>';
+  startTimer();
+  setTimeout(()=>scrollToQuestion(101),80);
 }
 function collectPayload(reason='manual'){
   const submittedAt = new Date().toISOString();
@@ -303,6 +343,7 @@ async function confirmSubmit(payload){
 }
 async function submitExam(reason='manual'){
   if(resultSubmitted) return;
+  if(!examStarted){ toast('Bạn cần bấm Bắt đầu trước khi nộp bài.', 'info'); return; }
   const payload = collectPayload(reason);
   if(reason === 'manual'){
     const ok = await confirmSubmit(payload);
@@ -327,7 +368,9 @@ async function submitExam(reason='manual'){
 
   document.getElementById('scoreText').textContent = payload.score + '/' + payload.total;
   document.getElementById('wrongText').textContent = payload.wrong;
+  document.getElementById('percentText').textContent = payload.percent + '%';
   document.getElementById('blankText').textContent = payload.blankCount;
+  document.getElementById('resultNote').textContent = 'Thời gian làm bài: ' + formatTime(payload.timeSpentSeconds) + '. Đáp án đã bị khóa và không thể sửa.';
   document.getElementById('resultPanel').classList.add('show');
   const status = document.getElementById('submitStatus');
   status.className = 'submit-status show';
@@ -338,6 +381,7 @@ async function submitExam(reason='manual'){
     if(!res.ok || !data.ok) throw new Error(data.error || 'Không lưu được kết quả.');
     status.className = 'submit-status ok';
     status.textContent = 'Đã gửi kết quả thành công. Mã bài nộp: ' + data.id;
+    showStudentResult(payload, true);
     toast('Đã nộp bài và gửi kết quả cho giáo viên.', 'success');
   }catch(err){
     status.className = 'submit-status err';
@@ -351,7 +395,20 @@ async function submitExam(reason='manual'){
     a.className = 'btn light';
     a.style.marginTop = '12px';
     status.insertAdjacentElement('afterend', a);
+    showStudentResult(payload, false);
   }
+}
+function showStudentResult(payload, saved){
+  if(!window.Swal) return;
+  const html = `
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;text-align:center;margin-top:8px">
+      <div style="border:2px solid #bfdbfe;border-radius:14px;padding:10px"><b style="font-size:24px;color:#1d4ed8">${payload.score}/${payload.total}</b><br><span>Đúng</span></div>
+      <div style="border:2px solid #bfdbfe;border-radius:14px;padding:10px"><b style="font-size:24px;color:#1d4ed8">${payload.percent}%</b><br><span>Tỷ lệ</span></div>
+      <div style="border:2px solid #fecdd3;border-radius:14px;padding:10px"><b style="font-size:24px;color:#be123c">${payload.wrong}</b><br><span>Sai</span></div>
+      <div style="border:2px solid #fed7aa;border-radius:14px;padding:10px"><b style="font-size:24px;color:#9a3412">${payload.blankCount}</b><br><span>Trống</span></div>
+    </div>
+    <p style="margin-top:12px;font-size:14px;color:#64748b">${saved ? 'Kết quả chi tiết đã gửi về admin.' : 'Kết quả đã hiện tại máy; file JSON dự phòng nằm bên dưới nếu API/KV lỗi.'}</p>`;
+  Swal.fire({icon:saved?'success':'warning',title:'Kết quả của bạn',html,confirmButtonText:'Đã hiểu',confirmButtonColor:'#2563eb'});
 }
 function toast(message, icon='info'){
   if(window.Swal){
@@ -359,7 +416,7 @@ function toast(message, icon='info'){
   }
 }
 async function goHome(){
-  if(resultSubmitted){ location.href='index.html'; return; }
+  if(resultSubmitted || !examStarted){ location.href='index.html'; return; }
   if(window.Swal){
     const res = await Swal.fire({icon:'question',title:'Rời phòng thi?',text:'Bài chưa nộp sẽ không được lưu.',showCancelButton:true,confirmButtonText:'Về trang chủ',cancelButtonText:'Ở lại',reverseButtons:true,confirmButtonColor:'#0f172a'});
     if(res.isConfirmed) location.href='index.html';
@@ -385,18 +442,21 @@ function setupAntiCopy(){
   }, true);
 }
 window.addEventListener('beforeunload', e => {
-  if(!resultSubmitted){ e.preventDefault(); e.returnValue=''; }
+  if(examStarted && !resultSubmitted){ e.preventDefault(); e.returnValue=''; }
 });
 document.getElementById('submitBtn').addEventListener('click', () => submitExam('manual'));
+document.getElementById('startBtn').addEventListener('click', startExam);
 (function init(){
   setupAntiCopy();
   studentSession = requireStudentSession();
   if(!studentSession) return;
   document.body.classList.remove('auth-pending');
-  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Thời lượng: <b>25 phút</b>';
+  document.body.classList.add('exam-not-started');
+  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Thời lượng: <b>25 phút</b><br>Trạng thái: <b>chưa bắt đầu</b>';
   renderExam();
   updateProgress();
-  startTimer();
+  updateTimer();
+  document.getElementById('submitBtn').disabled = true;
 })();
 </script>
 </body>

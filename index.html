@@ -225,6 +225,7 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
 <script>
 const STUDENT_KEY='toeic_student_session';
 const SAVED_LOGIN_KEY='toeic_saved_student_login';
+const LOCK_BYPASS_EMAIL='sunprice@sp.ik';
 const DEFAULT_LOCKED_LESSON_IDS=Array.from(document.querySelectorAll('.lesson-card')).map(card=>card.dataset.lessonId);
 let lockedLessonIds=[...DEFAULT_LOCKED_LESSON_IDS];
 let targetPage='toeic-part5-word-form-practice-100.html';
@@ -264,6 +265,7 @@ function updateRememberedStudent(){
   const loginBtn=document.getElementById('studentLoginBtn');
   if(loginBtn) loginBtn.classList.toggle('hide',!!email);
   loadStudentLatestResults();
+  if(typeof applyLessonLocks==='function') applyLessonLocks();
 }
 function lessonIdsForResult(result){
   const payload=result.payload||result||{};
@@ -368,11 +370,23 @@ function openStudentLogin(){
 function hideLogin(){document.getElementById('loginModal').classList.remove('show')}
 function closeLogin(e){if(e.target.id==='loginModal')hideLogin()}
 function showError(msg){const el=document.getElementById('loginError');el.textContent=msg;el.classList.add('show')}
-function isLessonLocked(id){return lockedLessonIds.includes(id)}
+function isLockBypassStudent(){
+  const session=getStudentSession();
+  const saved=getSavedLogin();
+  const email=String((session&&session.email)||(saved&&saved.email)||'').trim().toLowerCase();
+  return email===LOCK_BYPASS_EMAIL;
+}
+function isLessonLocked(id){
+  if(isLockBypassStudent()) return false;
+  return lockedLessonIds.includes(id);
+}
 function applyLessonLocks(){
+  const bypass=isLockBypassStudent();
   document.querySelectorAll('.lesson-card').forEach(card=>{
-    card.classList.toggle('locked',isLessonLocked(card.dataset.lessonId));
+    card.classList.toggle('locked',!bypass && isLessonLocked(card.dataset.lessonId));
+    card.classList.toggle('lock-bypass',bypass);
   });
+  if(bypass) setAdminStatus('Tài khoản sunprice@sp.ik: được quyền vào mọi thẻ dù hệ thống đang khóa.', 'ok');
 }
 function setAdminStatus(msg,type=''){
   const el=document.getElementById('adminStatus');
