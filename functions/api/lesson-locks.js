@@ -10,12 +10,14 @@ const DEFAULT_LESSON_IDS = [
   'toeic-listening',
   'ets-summer-2021-test1-part5-6',
   'ets-summer-2021-test1-part5-6-practice',
+  'ets2024-p56-practice',
   'vocabulary-box',
   'results'
 ];
 
 const DEFAULT_LOCK_WHEN_MISSING_IDS = [
-  'ets-summer-2021-test1-part5-6-practice'
+  'ets-summer-2021-test1-part5-6-practice',
+  'ets2024-p56-practice'
 ];
 
 export async function onRequestGet(context) {
