@@ -1087,6 +1087,7 @@ input,textarea{
         <select class="part-sort-select" id="userPackageSort" onchange="setPackageSort(this.value)" aria-label="Lọc từ trong hòm theo gói" disabled>
           <option value="">Theo gói: Tất cả</option>
         </select>
+        <button class="package-action-btn package-delete-btn" id="deletePackageOpenBtn" type="button" onclick="openDeletePackagePanel()" disabled>🗑️ Xóa theo gói</button>
       </div>
       <div class="list" id="userList"></div>
     </section>
@@ -1126,7 +1127,6 @@ input,textarea{
           <option value="phrasal verb">phrasal verb</option>
         </select>
         <button class="package-action-btn package-add-btn" type="button" onclick="openPackagePanel()">📦 Thêm gói từ</button>
-        <button class="package-action-btn package-delete-btn" type="button" onclick="openDeletePackagePanel()">🗑️ Xóa theo gói</button>
       </div>
       <div class="list" id="commonList"></div>
 
@@ -2294,6 +2294,11 @@ function syncUserPackageSelect(){
   select.value=userPackageSort;
   select.disabled=loaded.length===0;
   select.title=loaded.length?'Chỉ hiển thị từ thuộc gói đã nạp':'Bạn chưa nạp gói từ nào';
+  const deleteBtn=document.getElementById('deletePackageOpenBtn');
+  if(deleteBtn){
+    deleteBtn.disabled=loaded.length===0;
+    deleteBtn.title=loaded.length?'Xóa các từ thuộc gói đã nạp trong hòm':'Chưa có gói nào trong hòm để xóa';
+  }
 }
 function setPackageSort(packageId){
   userPackageSort=String(packageId||'');
