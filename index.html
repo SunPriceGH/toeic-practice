@@ -271,6 +271,13 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
         <div class="pill-row"><span class="pill">Part 5 + 6</span><span class="pill">46 câu</span><span class="pill">Practice</span></div>
         <button class="btn" type="button" onclick="openLogin('ets-summer-2021-test1-part5-6-practice.html')">Vào bài luyện</button>
       </article>
+
+      <article class="card lesson-card practice-test-card" data-lesson-id="ets2024-p56-practice">
+        <h2>Luyện đề ETS 2024 - part 5 + 6</h2>
+        <p>Làm từng câu, chọn đề 6-10 trong bài, kiểm tra đáp án và xem sửa chi tiết ngay.</p>
+        <div class="pill-row"><span class="pill">Part 5 + 6</span><span class="pill">5 đề</span><span class="pill">Practice</span></div>
+        <button class="btn" type="button" onclick="openLogin('ets-2024-part5-6-practice.html')">Vào bài luyện</button>
+      </article>
       <article class="card lesson-card vocab-index-card" data-lesson-id="vocabulary-box">
         <div class="vocab-index-art" aria-hidden="true"></div>
         <div class="vocab-index-spark" aria-hidden="true">📚</div>
@@ -368,6 +375,7 @@ function lessonIdsForResult(result){
   if(id.includes('noun-prep-collocation-2') || title.includes('Collocation 2')) return ['noun-prep-collocation-2'];
   if(id.includes('vocabulary-box') || title.toLowerCase().includes('hòm từ vựng')) return ['vocabulary-box'];
   if(id.includes('ets-summer-2021-test1-part5-6-practice') || title.includes('Luyện đề ETS 2021')) return ['ets-summer-2021-test1-part5-6-practice'];
+  if(id.includes('ets2024-p56-practice') || title.includes('Luyện đề ETS 2024')) return ['ets2024-p56-practice'];
   if(id.includes('ets-summer-2021-test1-part5-6') || title.includes('ETS Summer 2021 Test 1')) return ['ets-summer-2021-test1-part5-6'];
   return [id].filter(Boolean);
 }
