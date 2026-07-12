@@ -67,7 +67,6 @@ let quizDataMap={};
 let passageByQuestionNo={};
 let slides=[];
 let currentSlide=0;
-let resultSubmitted=false;
 const checkedAnswers={};
 
 function escapeHtml(str){return String(str ?? '').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));}
@@ -111,7 +110,7 @@ function quizSlideHtml(item,index){
   }
   return '<section class="slide quiz-slide'+(index===0?' active':'')+'" data-question="'+escapeHtml(item.id)+'" data-no="'+escapeHtml(item.no)+'"><div class="slide-label">Practice · '+partLabel+'</div><h2>'+escapeHtml(title)+'</h2><div class="content-area">'+questionPanelHtml(item)+'</div></section>';
 }
-function finalResultSlide(){return '<section class="slide result-slide"><div class="slide-label">Hoàn thành</div><h2>Kết quả luyện đề ETS 2021</h2><div class="content-area"><div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><div class="score-box"><div class="score-pill" id="answeredPill">Đã chọn: 0</div><div class="score-pill" id="checkedPill">Đã sửa: 0</div></div><p class="submit-status" id="submitStatus"></p><button class="nav-btn submit-btn" id="submitResultBtn" type="button" onclick="submitFinalResult()" style="display:inline-block;margin-top:16px">Nộp kết quả</button><button class="nav-btn home-btn" type="button" onclick="goHome()" style="display:inline-block;margin-top:16px;margin-left:10px">Về trang chủ</button></div></div></section>';}
+function finalResultSlide(){return '<section class="slide result-slide"><div class="slide-label">Hoàn thành</div><h2>Kết quả luyện đề ETS 2021</h2><div class="content-area"><div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><div class="score-box"><div class="score-pill" id="answeredPill">Đã chọn: 0</div><div class="score-pill" id="checkedPill">Đã sửa: 0</div></div><button class="nav-btn home-btn" type="button" onclick="goHome()" style="display:inline-block;margin-top:16px">Về trang chủ</button></div></div></section>';}
 function renderSlides(){
   buildPassageMap();
   quizData=[...EXAM_DATA.questions].sort((a,b)=>Number(a.no)-Number(b.no));
@@ -170,21 +169,11 @@ function collectPayload(){
 }
 function showFinalResultPreview(){
   const payload=collectPayload();
-  const scoreEl=document.getElementById('finalScoreText');const metaEl=document.getElementById('finalMetaText');const answeredPill=document.getElementById('answeredPill');const checkedPill=document.getElementById('checkedPill');const btn=document.getElementById('submitResultBtn');
+  const scoreEl=document.getElementById('finalScoreText');const metaEl=document.getElementById('finalMetaText');const answeredPill=document.getElementById('answeredPill');const checkedPill=document.getElementById('checkedPill');
   if(scoreEl)scoreEl.innerHTML='<b>Điểm của bạn:</b> '+payload.score+' / '+payload.total+' ('+payload.percent+'%)';
   if(metaEl)metaEl.textContent='Email: '+payload.student.email+' · Câu trống tính sai.';
   if(answeredPill)answeredPill.textContent='Đã chọn: '+payload.answeredCount;
   if(checkedPill)checkedPill.textContent='Đã sửa: '+payload.checkedCount;
-  if(btn&&!resultSubmitted){btn.style.display='inline-block';btn.disabled=false;btn.textContent='Nộp kết quả';}
-}
-async function confirmSubmit(payload){if(window.Swal){const res=await Swal.fire({icon:'question',title:'Nộp kết quả luyện?',html:'Điểm hiện tại: <b>'+payload.score+'/'+payload.total+'</b> ('+payload.percent+'%).<br>Câu trống tính sai.',showCancelButton:true,confirmButtonText:'Nộp kết quả',cancelButtonText:'Ở lại',reverseButtons:true,confirmButtonColor:'#2563eb',cancelButtonColor:'#64748b'});return !!res.isConfirmed;}return confirm('Nộp kết quả luyện?');}
-async function submitFinalResult(){
-  if(resultSubmitted)return;const payload=collectPayload();const ok=await confirmSubmit(payload);if(!ok)return;
-  const status=document.getElementById('submitStatus');const btn=document.getElementById('submitResultBtn');
-  if(btn){btn.disabled=true;btn.textContent='Đang nộp...';}
-  if(status){status.className='submit-status';status.textContent='';}
-  try{const res=await fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const data=await res.json().catch(()=>({}));if(!res.ok||!data.ok)throw new Error(data.error||'Không lưu được kết quả.');resultSubmitted=true;if(status){status.className='submit-status ok';status.textContent='Đã lưu kết quả.';}if(btn){btn.style.display='none';}}
-  catch(err){if(status){status.className='submit-status err';status.textContent='Không gửi được kết quả về admin. Tải JSON dự phòng bên dưới.';}if(btn){btn.disabled=false;btn.textContent='Nộp kết quả';btn.style.display='inline-block';}const old=document.getElementById('downloadResultJson');if(old)old.remove();const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='student_result_'+String(payload.student.email||'student').replace(/[^a-z0-9._-]/gi,'_')+'_'+Date.now()+'.json';a.textContent='Tải JSON kết quả dự phòng';a.className='nav-btn';a.id='downloadResultJson';a.style.display='inline-block';a.style.marginTop='14px';status?.insertAdjacentElement('afterend',a);}
 }
 function goHome(){location.href='index.html';}
 function setupAntiCopy(){document.documentElement.classList.add('anti-download-lock');const block=e=>{e.preventDefault();e.stopPropagation();return false;};['contextmenu','dragstart','drop','copy','cut','paste','selectstart'].forEach(evt=>document.addEventListener(evt,block,true));document.addEventListener('keydown',e=>{const key=String(e.key||'').toLowerCase();const ctrl=e.ctrlKey||e.metaKey;if(e.key==='F12'||(ctrl&&['s','u','p','o','a','c','x','v'].includes(key))||(ctrl&&e.shiftKey&&['i','j','c','s'].includes(key)))return block(e);},true);}
