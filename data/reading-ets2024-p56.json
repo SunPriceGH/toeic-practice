@@ -2,831 +2,335 @@
   "sourceLabel": "ETS 2024 Reading Part 5 + 6",
   "version": "1.0",
   "tests": [
+{
+  "id": "test6",
+  "testNo": 6,
+  "title": "ETS 2024 Test 6",
+  "explanationUpdates": [
     {
-      "id": "test6",
-      "testNo": 6,
-      "title": "ETS 2024 Test 6",
-      "questions": [
-        {
-          "id": "t6q101",
-          "no": 101,
-          "part": 5,
-          "stem": "The new policy allows employees to set ------- own working hours under certain conditions.",
-          "options": {
-            "A": "they",
-            "B": "their",
-            "C": "theirs",
-            "D": "themselves"
-          },
-          "answer": "B",
-          "skill": "Possessive determiner",
-          "explanationVi": "Sau chỗ trống là cụm danh từ <b>own working hours</b>, mang nghĩa \"giờ làm việc riêng\", nên vị trí trống cần một tính từ sở hữu đứng trước cụm danh từ này. Chủ thể được nhắc đến là <b>employees</b>, mang nghĩa \"nhân viên\", nên chọn <b>their</b> để tạo cụm hoàn chỉnh <b>their own working hours</b>, mang nghĩa \"giờ làm việc riêng của họ\". Các đáp án còn lại không phù hợp về từ loại/vị trí: <b>they</b> (họ) là đại từ chủ ngữ, <b>theirs</b> (của họ) là đại từ sở hữu đứng độc lập, <b>themselves</b> (chính họ) là đại từ phản thân.",
-          "explanation": "Sau chỗ trống là cụm danh từ <b>own working hours</b>, mang nghĩa \"giờ làm việc riêng\", nên vị trí trống cần một tính từ sở hữu đứng trước cụm danh từ này. Chủ thể được nhắc đến là <b>employees</b>, mang nghĩa \"nhân viên\", nên chọn <b>their</b> để tạo cụm hoàn chỉnh <b>their own working hours</b>, mang nghĩa \"giờ làm việc riêng của họ\". Các đáp án còn lại không phù hợp về từ loại/vị trí: <b>they</b> (họ) là đại từ chủ ngữ, <b>theirs</b> (của họ) là đại từ sở hữu đứng độc lập, <b>themselves</b> (chính họ) là đại từ phản thân."
-        },
-        {
-          "id": "t6q102",
-          "no": 102,
-          "part": 5,
-          "stem": "Based on last year’s data, Paik Company increased its sales projections ------- the current year.",
-          "options": {
-            "A": "when",
-            "B": "for",
-            "C": "if",
-            "D": "or"
-          },
-          "answer": "B",
-          "skill": "Preposition",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Paik Company increased its sales projections</b> và sau chỗ trống có <b>the current year.</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>for</b> (cho/đối với) để tạo cụm/cấu trúc <b>Paik Company increased its sales projections for the current year.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>when</b> (khi), <b>if</b> (nếu), <b>or</b> (hoặc).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Paik Company increased its sales projections</b> và sau chỗ trống có <b>the current year.</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>for</b> (cho/đối với) để tạo cụm/cấu trúc <b>Paik Company increased its sales projections for the current year.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>when</b> (khi), <b>if</b> (nếu), <b>or</b> (hoặc)."
-        },
-        {
-          "id": "t6q103",
-          "no": 103,
-          "part": 5,
-          "stem": "Harbison’s Department Store interviews applicants ------- standard business hours.",
-          "options": {
-            "A": "among",
-            "B": "beside",
-            "C": "during",
-            "D": "onto"
-          },
-          "answer": "C",
-          "skill": "Preposition",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Harbison’s Department Store interviews applicants</b> và sau chỗ trống có <b>standard business hours.</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>during</b> (trong suốt) để tạo cụm/cấu trúc <b>Harbison’s Department Store interviews applicants during standard business hours.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>among</b> (giữa nhiều người/vật), <b>beside</b> (bên cạnh), <b>onto</b> (lên trên bề mặt).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Harbison’s Department Store interviews applicants</b> và sau chỗ trống có <b>standard business hours.</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>during</b> (trong suốt) để tạo cụm/cấu trúc <b>Harbison’s Department Store interviews applicants during standard business hours.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>among</b> (giữa nhiều người/vật), <b>beside</b> (bên cạnh), <b>onto</b> (lên trên bề mặt)."
-        },
-        {
-          "id": "t6q104",
-          "no": 104,
-          "part": 5,
-          "stem": "Takealong Industries’ commercial propane heaters deliver more warmth to ------- areas.",
-          "options": {
-            "A": "wideness",
-            "B": "widen",
-            "C": "wider",
-            "D": "widely"
-          },
-          "answer": "C",
-          "skill": "Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>propane heaters deliver more warmth to</b> và sau chỗ trống có <b>areas.</b>, nên cần dạng từ đúng với vị trí trong câu. Chọn <b>wider</b> (rộng hơn) để tạo cụm/cấu trúc <b>propane heaters deliver more warmth to wider areas.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>wideness</b> (độ rộng), <b>widen</b> (mở rộng), <b>widely</b> (một cách rộng rãi).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>propane heaters deliver more warmth to</b> và sau chỗ trống có <b>areas.</b>, nên cần dạng từ đúng với vị trí trong câu. Chọn <b>wider</b> (rộng hơn) để tạo cụm/cấu trúc <b>propane heaters deliver more warmth to wider areas.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>wideness</b> (độ rộng), <b>widen</b> (mở rộng), <b>widely</b> (một cách rộng rãi)."
-        },
-        {
-          "id": "t6q105",
-          "no": 105,
-          "part": 5,
-          "stem": "By switching to new project-management software, the editorial team has ------- improved its publication processes.",
-          "options": {
-            "A": "great",
-            "B": "greatly",
-            "C": "greater",
-            "D": "greatest"
-          },
-          "answer": "B",
-          "skill": "Adverb / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>project-management software, the editorial team has</b> và sau chỗ trống có <b>improved its publication processes.</b>, nên cần một trạng từ để bổ nghĩa cho động từ, tính từ hoặc cả mệnh đề. Chọn <b>greatly</b> (đáng kể) để tạo cụm/cấu trúc <b>project-management software, the editorial team has greatly improved its publication processes.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>great</b> (lớn/tuyệt vời), <b>greater</b> (lớn hơn), <b>greatest</b> (lớn nhất).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>project-management software, the editorial team has</b> và sau chỗ trống có <b>improved its publication processes.</b>, nên cần một trạng từ để bổ nghĩa cho động từ, tính từ hoặc cả mệnh đề. Chọn <b>greatly</b> (đáng kể) để tạo cụm/cấu trúc <b>project-management software, the editorial team has greatly improved its publication processes.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>great</b> (lớn/tuyệt vời), <b>greater</b> (lớn hơn), <b>greatest</b> (lớn nhất)."
-        },
-        {
-          "id": "t6q106",
-          "no": 106,
-          "part": 5,
-          "stem": "The search committee ------- three candidates for the chief executive position.",
-          "options": {
-            "A": "nominating",
-            "B": "nomination",
-            "C": "has nominated",
-            "D": "has been nominated"
-          },
-          "answer": "C",
-          "skill": "Verb form / Structure",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>The search committee</b> và sau chỗ trống có <b>three candidates for the chief executive position.</b>, nên cần dạng động từ/cấu trúc động từ phù hợp. Chọn <b>has nominated</b> (đã đề cử) để tạo cụm/cấu trúc <b>The search committee has nominated three candidates for the chief executive position.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>nominating</b> (đang đề cử), <b>nomination</b> (sự đề cử), <b>has been nominated</b> (đã được đề cử).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>The search committee</b> và sau chỗ trống có <b>three candidates for the chief executive position.</b>, nên cần dạng động từ/cấu trúc động từ phù hợp. Chọn <b>has nominated</b> (đã đề cử) để tạo cụm/cấu trúc <b>The search committee has nominated three candidates for the chief executive position.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>nominating</b> (đang đề cử), <b>nomination</b> (sự đề cử), <b>has been nominated</b> (đã được đề cử)."
-        },
-        {
-          "id": "t6q107",
-          "no": 107,
-          "part": 5,
-          "stem": "------- a two-month delay, new carpeting was installed in the east conference room.",
-          "options": {
-            "A": "Additionally",
-            "B": "Although",
-            "C": "After",
-            "D": "Furthermore"
-          },
-          "answer": "C",
-          "skill": "Preposition",
-          "explanationVi": "Vị trí trống đứng ở chỗ sau chỗ trống có <b>a two-month delay, new carpeting was installed</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>After</b> (sau khi) để tạo cụm/cấu trúc <b>After a two-month delay, new carpeting was installed</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>Additionally</b> (ngoài ra), <b>Although</b> (mặc dù), <b>Furthermore</b> (hơn nữa).",
-          "explanation": "Vị trí trống đứng ở chỗ sau chỗ trống có <b>a two-month delay, new carpeting was installed</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>After</b> (sau khi) để tạo cụm/cấu trúc <b>After a two-month delay, new carpeting was installed</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>Additionally</b> (ngoài ra), <b>Although</b> (mặc dù), <b>Furthermore</b> (hơn nữa)."
-        },
-        {
-          "id": "t6q108",
-          "no": 108,
-          "part": 5,
-          "stem": "To boost -------, the Makeup Artist Academy is offering a free starter kit to new students.",
-          "options": {
-            "A": "enroll",
-            "B": "enrolled",
-            "C": "enrolling",
-            "D": "enrollment"
-          },
-          "answer": "D",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>To boost</b> và sau chỗ trống có <b>, the Makeup Artist Academy is offering</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>enrollment</b> (việc ghi danh/số lượng ghi danh) để tạo cụm/cấu trúc <b>To boost enrollment , the Makeup Artist Academy is offering</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>enroll</b> (ghi danh), <b>enrolled</b> (đã ghi danh), <b>enrolling</b> (việc ghi danh/đang ghi danh).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>To boost</b> và sau chỗ trống có <b>, the Makeup Artist Academy is offering</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>enrollment</b> (việc ghi danh/số lượng ghi danh) để tạo cụm/cấu trúc <b>To boost enrollment , the Makeup Artist Academy is offering</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>enroll</b> (ghi danh), <b>enrolled</b> (đã ghi danh), <b>enrolling</b> (việc ghi danh/đang ghi danh)."
-        },
-        {
-          "id": "t6q109",
-          "no": 109,
-          "part": 5,
-          "stem": "Because Lectula Furniture Company ------- its delivery times, we were able to set a firm opening date for the new hotel.",
-          "options": {
-            "A": "guarantees",
-            "B": "advises",
-            "C": "requires",
-            "D": "delays"
-          },
-          "answer": "A",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Because Lectula Furniture Company</b> và sau chỗ trống có <b>its delivery times, we were able to</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>guarantees</b> (bảo đảm) để tạo cụm/cấu trúc <b>Because Lectula Furniture Company guarantees its delivery times, we were able to</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>advises</b> (khuyên/thông báo), <b>requires</b> (yêu cầu), <b>delays</b> (trì hoãn).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Because Lectula Furniture Company</b> và sau chỗ trống có <b>its delivery times, we were able to</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>guarantees</b> (bảo đảm) để tạo cụm/cấu trúc <b>Because Lectula Furniture Company guarantees its delivery times, we were able to</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>advises</b> (khuyên/thông báo), <b>requires</b> (yêu cầu), <b>delays</b> (trì hoãn)."
-        },
-        {
-          "id": "t6q110",
-          "no": 110,
-          "part": 5,
-          "stem": "The computer technician was very ------- but was not able to solve my problem.",
-          "options": {
-            "A": "friendly",
-            "B": "neutral",
-            "C": "possible",
-            "D": "frequent"
-          },
-          "answer": "A",
-          "skill": "Adverb / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>The computer technician was very</b> và sau chỗ trống có <b>but was not able to solve my</b>, nên cần một trạng từ để bổ nghĩa cho động từ, tính từ hoặc cả mệnh đề. Chọn <b>friendly</b> (thân thiện) để tạo cụm/cấu trúc <b>The computer technician was very friendly but was not able to solve my</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>neutral</b> (trung lập), <b>possible</b> (có thể), <b>frequent</b> (thường xuyên).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>The computer technician was very</b> và sau chỗ trống có <b>but was not able to solve my</b>, nên cần một trạng từ để bổ nghĩa cho động từ, tính từ hoặc cả mệnh đề. Chọn <b>friendly</b> (thân thiện) để tạo cụm/cấu trúc <b>The computer technician was very friendly but was not able to solve my</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>neutral</b> (trung lập), <b>possible</b> (có thể), <b>frequent</b> (thường xuyên)."
-        },
-        {
-          "id": "t6q111",
-          "no": 111,
-          "part": 5,
-          "stem": "To make room for conference attendees, ------- visitors to the office building should use the rear parking area tomorrow.",
-          "options": {
-            "A": "regular",
-            "B": "regularly",
-            "C": "regularize",
-            "D": "regularity"
-          },
-          "answer": "A",
-          "skill": "Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>To make room for conference attendees,</b> và sau chỗ trống có <b>visitors to the office building should use</b>, nên cần dạng từ đúng với vị trí trong câu. Chọn <b>regular</b> (thường xuyên) để tạo cụm/cấu trúc <b>To make room for conference attendees, regular visitors to the office building should use</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>regularly</b> (một cách thường xuyên), <b>regularize</b> (làm cho hợp thức hóa), <b>regularity</b> (tính đều đặn).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>To make room for conference attendees,</b> và sau chỗ trống có <b>visitors to the office building should use</b>, nên cần dạng từ đúng với vị trí trong câu. Chọn <b>regular</b> (thường xuyên) để tạo cụm/cấu trúc <b>To make room for conference attendees, regular visitors to the office building should use</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>regularly</b> (một cách thường xuyên), <b>regularize</b> (làm cho hợp thức hóa), <b>regularity</b> (tính đều đặn)."
-        },
-        {
-          "id": "t6q112",
-          "no": 112,
-          "part": 5,
-          "stem": "Employees must wear their security badge in a way that is ------- visible when in the building.",
-          "options": {
-            "A": "clearly",
-            "B": "recently",
-            "C": "evenly",
-            "D": "secretly"
-          },
-          "answer": "A",
-          "skill": "Adverb / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>badge in a way that is</b> và sau chỗ trống có <b>visible when in the building.</b>, nên cần một trạng từ để bổ nghĩa cho động từ, tính từ hoặc cả mệnh đề. Chọn <b>clearly</b> (một cách rõ ràng) để tạo cụm/cấu trúc <b>badge in a way that is clearly visible when in the building.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>recently</b> (gần đây), <b>evenly</b> (một cách đều đặn), <b>secretly</b> (một cách bí mật).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>badge in a way that is</b> và sau chỗ trống có <b>visible when in the building.</b>, nên cần một trạng từ để bổ nghĩa cho động từ, tính từ hoặc cả mệnh đề. Chọn <b>clearly</b> (một cách rõ ràng) để tạo cụm/cấu trúc <b>badge in a way that is clearly visible when in the building.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>recently</b> (gần đây), <b>evenly</b> (một cách đều đặn), <b>secretly</b> (một cách bí mật)."
-        },
-        {
-          "id": "t6q113",
-          "no": 113,
-          "part": 5,
-          "stem": "Ms. Phon wanted to attend the gallery opening; -------, the inclement weather made that impossible.",
-          "options": {
-            "A": "therefore",
-            "B": "following",
-            "C": "however",
-            "D": "for example"
-          },
-          "answer": "C",
-          "skill": "Connector / Transition",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>wanted to attend the gallery opening;</b> và sau chỗ trống có <b>, the inclement weather made that impossible.</b>, nên cần từ nối phù hợp với quan hệ ý nghĩa giữa các vế/câu. Chọn <b>however</b> (tuy nhiên) để tạo cụm/cấu trúc <b>wanted to attend the gallery opening; however , the inclement weather made that impossible.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>therefore</b> (vì vậy), <b>following</b> (không phù hợp trong ngữ cảnh), <b>for example</b> (không phù hợp trong ngữ cảnh).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>wanted to attend the gallery opening;</b> và sau chỗ trống có <b>, the inclement weather made that impossible.</b>, nên cần từ nối phù hợp với quan hệ ý nghĩa giữa các vế/câu. Chọn <b>however</b> (tuy nhiên) để tạo cụm/cấu trúc <b>wanted to attend the gallery opening; however , the inclement weather made that impossible.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>therefore</b> (vì vậy), <b>following</b> (không phù hợp trong ngữ cảnh), <b>for example</b> (không phù hợp trong ngữ cảnh)."
-        },
-        {
-          "id": "t6q114",
-          "no": 114,
-          "part": 5,
-          "stem": "Giving leadership tasks to warehouse package handlers often ------- them to work more productively.",
-          "options": {
-            "A": "adopts",
-            "B": "reinforces",
-            "C": "motivates",
-            "D": "attracts"
-          },
-          "answer": "C",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>tasks to warehouse package handlers often</b> và sau chỗ trống có <b>them to work more productively.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>motivates</b> (thúc đẩy/khuyến khích) để tạo cụm/cấu trúc <b>tasks to warehouse package handlers often motivates them to work more productively.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>adopts</b> (áp dụng/nhận nuôi), <b>reinforces</b> (củng cố), <b>attracts</b> (thu hút).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>tasks to warehouse package handlers often</b> và sau chỗ trống có <b>them to work more productively.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>motivates</b> (thúc đẩy/khuyến khích) để tạo cụm/cấu trúc <b>tasks to warehouse package handlers often motivates them to work more productively.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>adopts</b> (áp dụng/nhận nuôi), <b>reinforces</b> (củng cố), <b>attracts</b> (thu hút)."
-        },
-        {
-          "id": "t6q115",
-          "no": 115,
-          "part": 5,
-          "stem": "Kaybing Construction works ------- on large commercial projects in the Newfoundland area.",
-          "options": {
-            "A": "exclusively",
-            "B": "exclusive",
-            "C": "exclusivity",
-            "D": "exclusives"
-          },
-          "answer": "A",
-          "skill": "Adverb / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Kaybing Construction works</b> và sau chỗ trống có <b>on large commercial projects in the Newfoundland</b>, nên cần một trạng từ để bổ nghĩa cho động từ, tính từ hoặc cả mệnh đề. Chọn <b>exclusively</b> (chỉ/riêng) để tạo cụm/cấu trúc <b>Kaybing Construction works exclusively on large commercial projects in the Newfoundland</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>exclusive</b> (độc quyền/riêng biệt), <b>exclusivity</b> (tính độc quyền), <b>exclusives</b> (các sản phẩm/tin độc quyền).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Kaybing Construction works</b> và sau chỗ trống có <b>on large commercial projects in the Newfoundland</b>, nên cần một trạng từ để bổ nghĩa cho động từ, tính từ hoặc cả mệnh đề. Chọn <b>exclusively</b> (chỉ/riêng) để tạo cụm/cấu trúc <b>Kaybing Construction works exclusively on large commercial projects in the Newfoundland</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>exclusive</b> (độc quyền/riêng biệt), <b>exclusivity</b> (tính độc quyền), <b>exclusives</b> (các sản phẩm/tin độc quyền)."
-        },
-        {
-          "id": "t6q116",
-          "no": 116,
-          "part": 5,
-          "stem": "Carly Logan plans -------, so Alan Zill has volunteered to be the stamp club’s next treasurer.",
-          "options": {
-            "A": "resigning",
-            "B": "to resign",
-            "C": "resigns",
-            "D": "to have resigned"
-          },
-          "answer": "B",
-          "skill": "Verb form / Structure",
-          "explanationVi": "Trước chỗ trống là động từ <b>plans</b>, mang nghĩa \"dự định\", nên phía sau cần cấu trúc <b>to V</b>. Cấu trúc đúng là <b>plan to do something</b>, mang nghĩa \"dự định làm gì\". Vì vậy chọn <b>to resign</b> để tạo cụm <b>plans to resign</b>, mang nghĩa \"dự định từ chức\". Các đáp án còn lại không phù hợp về cấu trúc: <b>resigning</b> (đang từ chức/V-ing) không đi trực tiếp sau <b>plans</b>, <b>resigns</b> (từ chức - hiện tại đơn) sai dạng sau <b>plans</b>, <b>to have resigned</b> (đã từ chức trước đó) không phù hợp với ngữ cảnh dự định sắp làm.",
-          "explanation": "Trước chỗ trống là động từ <b>plans</b>, mang nghĩa \"dự định\", nên phía sau cần cấu trúc <b>to V</b>. Cấu trúc đúng là <b>plan to do something</b>, mang nghĩa \"dự định làm gì\". Vì vậy chọn <b>to resign</b> để tạo cụm <b>plans to resign</b>, mang nghĩa \"dự định từ chức\". Các đáp án còn lại không phù hợp về cấu trúc: <b>resigning</b> (đang từ chức/V-ing) không đi trực tiếp sau <b>plans</b>, <b>resigns</b> (từ chức - hiện tại đơn) sai dạng sau <b>plans</b>, <b>to have resigned</b> (đã từ chức trước đó) không phù hợp với ngữ cảnh dự định sắp làm."
-        },
-        {
-          "id": "t6q117",
-          "no": 117,
-          "part": 5,
-          "stem": "Although the housing market slowed ------- the summer months, sales began to pick up again in the autumn.",
-          "options": {
-            "A": "apart",
-            "B": "even",
-            "C": "only",
-            "D": "over"
-          },
-          "answer": "D",
-          "skill": "Preposition",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Although the housing market slowed</b> và sau chỗ trống có <b>the summer months, sales began to pick</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>over</b> (trong suốt) để tạo cụm/cấu trúc <b>Although the housing market slowed over the summer months, sales began to pick</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>apart</b> (không phù hợp trong ngữ cảnh), <b>even</b> (không phù hợp trong ngữ cảnh), <b>only</b> (không phù hợp trong ngữ cảnh).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Although the housing market slowed</b> và sau chỗ trống có <b>the summer months, sales began to pick</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>over</b> (trong suốt) để tạo cụm/cấu trúc <b>Although the housing market slowed over the summer months, sales began to pick</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>apart</b> (không phù hợp trong ngữ cảnh), <b>even</b> (không phù hợp trong ngữ cảnh), <b>only</b> (không phù hợp trong ngữ cảnh)."
-        },
-        {
-          "id": "t6q118",
-          "no": 118,
-          "part": 5,
-          "stem": "To remain fully functional, the exercise machines need to be cleaned -------.",
-          "options": {
-            "A": "rather",
-            "B": "almost",
-            "C": "routinely",
-            "D": "openly"
-          },
-          "answer": "C",
-          "skill": "Adverb / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>exercise machines need to be cleaned</b> và sau chỗ trống có <b>.</b>, nên cần một trạng từ để bổ nghĩa cho động từ, tính từ hoặc cả mệnh đề. Chọn <b>routinely</b> (định kỳ/thường xuyên) để tạo cụm/cấu trúc <b>exercise machines need to be cleaned routinely .</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>rather</b> (khá/hơn là), <b>almost</b> (gần như), <b>openly</b> (một cách công khai).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>exercise machines need to be cleaned</b> và sau chỗ trống có <b>.</b>, nên cần một trạng từ để bổ nghĩa cho động từ, tính từ hoặc cả mệnh đề. Chọn <b>routinely</b> (định kỳ/thường xuyên) để tạo cụm/cấu trúc <b>exercise machines need to be cleaned routinely .</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>rather</b> (khá/hơn là), <b>almost</b> (gần như), <b>openly</b> (một cách công khai)."
-        },
-        {
-          "id": "t6q119",
-          "no": 119,
-          "part": 5,
-          "stem": "The extended warranty is good for ten years or 100,000 miles, ------- comes first.",
-          "options": {
-            "A": "whoever",
-            "B": "either",
-            "C": "whichever",
-            "D": "another"
-          },
-          "answer": "C",
-          "skill": "Pronoun / Determiner",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>for ten years or 100,000 miles,</b> và sau chỗ trống có <b>comes first.</b>, nên cần đại từ/từ hạn định phù hợp với chức năng trong câu. Chọn <b>whichever</b> (bất cứ điều/cái nào) để tạo cụm/cấu trúc <b>for ten years or 100,000 miles, whichever comes first.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/vị trí: <b>whoever</b> (bất cứ ai), <b>either</b> (một trong hai), <b>another</b> (một cái khác).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>for ten years or 100,000 miles,</b> và sau chỗ trống có <b>comes first.</b>, nên cần đại từ/từ hạn định phù hợp với chức năng trong câu. Chọn <b>whichever</b> (bất cứ điều/cái nào) để tạo cụm/cấu trúc <b>for ten years or 100,000 miles, whichever comes first.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/vị trí: <b>whoever</b> (bất cứ ai), <b>either</b> (một trong hai), <b>another</b> (một cái khác)."
-        },
-        {
-          "id": "t6q120",
-          "no": 120,
-          "part": 5,
-          "stem": "Atlantic Grocers must offer online shopping options or ------- losing customers to other supermarkets.",
-          "options": {
-            "A": "risk",
-            "B": "protect",
-            "C": "cancel",
-            "D": "hold"
-          },
-          "answer": "A",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>must offer online shopping options or</b> và sau chỗ trống có <b>losing customers to other supermarkets.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>risk</b> (có nguy cơ) để tạo cụm/cấu trúc <b>must offer online shopping options or risk losing customers to other supermarkets.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>protect</b> (bảo vệ), <b>cancel</b> (hủy), <b>hold</b> (giữ/tổ chức).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>must offer online shopping options or</b> và sau chỗ trống có <b>losing customers to other supermarkets.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>risk</b> (có nguy cơ) để tạo cụm/cấu trúc <b>must offer online shopping options or risk losing customers to other supermarkets.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>protect</b> (bảo vệ), <b>cancel</b> (hủy), <b>hold</b> (giữ/tổ chức)."
-        },
-        {
-          "id": "t6q121",
-          "no": 121,
-          "part": 5,
-          "stem": "------- client is assigned to a personal financial adviser to whom inquiries should be addressed.",
-          "options": {
-            "A": "Each",
-            "B": "All",
-            "C": "Some",
-            "D": "Most"
-          },
-          "answer": "A",
-          "skill": "Pronoun / Determiner",
-          "explanationVi": "Vị trí trống đứng ở chỗ sau chỗ trống có <b>client is assigned to a personal financial</b>, nên cần đại từ/từ hạn định phù hợp với chức năng trong câu. Chọn <b>Each</b> (mỗi) để tạo cụm/cấu trúc <b>Each client is assigned to a personal financial</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/vị trí: <b>All</b> (tất cả), <b>Some</b> (một vài), <b>Most</b> (hầu hết).",
-          "explanation": "Vị trí trống đứng ở chỗ sau chỗ trống có <b>client is assigned to a personal financial</b>, nên cần đại từ/từ hạn định phù hợp với chức năng trong câu. Chọn <b>Each</b> (mỗi) để tạo cụm/cấu trúc <b>Each client is assigned to a personal financial</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/vị trí: <b>All</b> (tất cả), <b>Some</b> (một vài), <b>Most</b> (hầu hết)."
-        },
-        {
-          "id": "t6q122",
-          "no": 122,
-          "part": 5,
-          "stem": "Mr. Singh wants to form a ------- to explore some employee reward programs.",
-          "options": {
-            "A": "supervisor",
-            "B": "suggestion",
-            "C": "notification",
-            "D": "committee"
-          },
-          "answer": "D",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Mr. Singh wants to form a</b> và sau chỗ trống có <b>to explore some employee reward programs.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>committee</b> (ủy ban) để tạo cụm/cấu trúc <b>Mr. Singh wants to form a committee to explore some employee reward programs.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>supervisor</b> (người giám sát), <b>suggestion</b> (đề xuất), <b>notification</b> (thông báo).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Mr. Singh wants to form a</b> và sau chỗ trống có <b>to explore some employee reward programs.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>committee</b> (ủy ban) để tạo cụm/cấu trúc <b>Mr. Singh wants to form a committee to explore some employee reward programs.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>supervisor</b> (người giám sát), <b>suggestion</b> (đề xuất), <b>notification</b> (thông báo)."
-        },
-        {
-          "id": "t6q123",
-          "no": 123,
-          "part": 5,
-          "stem": "Please provide your phone number ------- the delivery driver needs to contact you.",
-          "options": {
-            "A": "whereas",
-            "B": "despite",
-            "C": "if not",
-            "D": "in case"
-          },
-          "answer": "D",
-          "skill": "Preposition",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Please provide your phone number</b> và sau chỗ trống có <b>the delivery driver needs to contact you.</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>in case</b> (phòng khi/trong trường hợp) để tạo cụm/cấu trúc <b>Please provide your phone number in case the delivery driver needs to contact you.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>whereas</b> (trong khi/ngược lại), <b>despite</b> (mặc dù), <b>if not</b> (nếu không).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Please provide your phone number</b> và sau chỗ trống có <b>the delivery driver needs to contact you.</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>in case</b> (phòng khi/trong trường hợp) để tạo cụm/cấu trúc <b>Please provide your phone number in case the delivery driver needs to contact you.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>whereas</b> (trong khi/ngược lại), <b>despite</b> (mặc dù), <b>if not</b> (nếu không)."
-        },
-        {
-          "id": "t6q124",
-          "no": 124,
-          "part": 5,
-          "stem": "------- of Pondview Tower are required to make rent payments on or before the first day of every month.",
-          "options": {
-            "A": "Owners",
-            "B": "Buyers",
-            "C": "Tourists",
-            "D": "Tenants"
-          },
-          "answer": "D",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ sau chỗ trống có <b>of Pondview Tower are required to make</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>Tenants</b> (người thuê nhà) để tạo cụm/cấu trúc <b>Tenants of Pondview Tower are required to make</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>Owners</b> (chủ sở hữu), <b>Buyers</b> (người mua), <b>Tourists</b> (khách du lịch).",
-          "explanation": "Vị trí trống đứng ở chỗ sau chỗ trống có <b>of Pondview Tower are required to make</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>Tenants</b> (người thuê nhà) để tạo cụm/cấu trúc <b>Tenants of Pondview Tower are required to make</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>Owners</b> (chủ sở hữu), <b>Buyers</b> (người mua), <b>Tourists</b> (khách du lịch)."
-        },
-        {
-          "id": "t6q125",
-          "no": 125,
-          "part": 5,
-          "stem": "Likoni Hospitality Group, one of Mombasa’s largest employers, has a ------- impact on the local economy.",
-          "options": {
-            "A": "considerably",
-            "B": "considerable",
-            "C": "considering",
-            "D": "consideration"
-          },
-          "answer": "B",
-          "skill": "Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>of Mombasa’s largest employers, has a</b> và sau chỗ trống có <b>impact on the local economy.</b>, nên cần dạng từ đúng với vị trí trong câu. Chọn <b>considerable</b> (đáng kể) để tạo cụm/cấu trúc <b>of Mombasa’s largest employers, has a considerable impact on the local economy.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>considerably</b> (đáng kể), <b>considering</b> (xét đến), <b>consideration</b> (sự cân nhắc).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>of Mombasa’s largest employers, has a</b> và sau chỗ trống có <b>impact on the local economy.</b>, nên cần dạng từ đúng với vị trí trong câu. Chọn <b>considerable</b> (đáng kể) để tạo cụm/cấu trúc <b>of Mombasa’s largest employers, has a considerable impact on the local economy.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>considerably</b> (đáng kể), <b>considering</b> (xét đến), <b>consideration</b> (sự cân nhắc)."
-        },
-        {
-          "id": "t6q126",
-          "no": 126,
-          "part": 5,
-          "stem": "------- best sellers, Booksters offers a wide selection of classics and biographies.",
-          "options": {
-            "A": "Besides",
-            "B": "Somewhat",
-            "C": "Whose",
-            "D": "Becoming"
-          },
-          "answer": "A",
-          "skill": "Preposition",
-          "explanationVi": "Vị trí trống đứng ở chỗ sau chỗ trống có <b>best sellers, Booksters offers a wide selection</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>Besides</b> (ngoài ra) để tạo cụm/cấu trúc <b>Besides best sellers, Booksters offers a wide selection</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>Somewhat</b> (hơi/khá), <b>Whose</b> (không phù hợp trong ngữ cảnh), <b>Becoming</b> (không phù hợp trong ngữ cảnh).",
-          "explanation": "Vị trí trống đứng ở chỗ sau chỗ trống có <b>best sellers, Booksters offers a wide selection</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>Besides</b> (ngoài ra) để tạo cụm/cấu trúc <b>Besides best sellers, Booksters offers a wide selection</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>Somewhat</b> (hơi/khá), <b>Whose</b> (không phù hợp trong ngữ cảnh), <b>Becoming</b> (không phù hợp trong ngữ cảnh)."
-        },
-        {
-          "id": "t6q127",
-          "no": 127,
-          "part": 5,
-          "stem": "New food regulations require all Dean’s Burgers packaging to contain the notice that ------- undercooked meat can be harmful.",
-          "options": {
-            "A": "consumer",
-            "B": "consumption",
-            "C": "consumes",
-            "D": "consuming"
-          },
-          "answer": "D",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>packaging to contain the notice that</b> và sau chỗ trống có <b>undercooked meat can be harmful.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>consuming</b> (việc ăn/tiêu thụ) để tạo cụm/cấu trúc <b>packaging to contain the notice that consuming undercooked meat can be harmful.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>consumer</b> (người tiêu dùng), <b>consumption</b> (sự tiêu thụ), <b>consumes</b> (tiêu thụ).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>packaging to contain the notice that</b> và sau chỗ trống có <b>undercooked meat can be harmful.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>consuming</b> (việc ăn/tiêu thụ) để tạo cụm/cấu trúc <b>packaging to contain the notice that consuming undercooked meat can be harmful.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>consumer</b> (người tiêu dùng), <b>consumption</b> (sự tiêu thụ), <b>consumes</b> (tiêu thụ)."
-        },
-        {
-          "id": "t6q128",
-          "no": 128,
-          "part": 5,
-          "stem": "Each Genutria snack bar contains as much protein as two eggs, with none ------- the fat and cholesterol.",
-          "options": {
-            "A": "of",
-            "B": "by",
-            "C": "out",
-            "D": "minus"
-          },
-          "answer": "A",
-          "skill": "Preposition",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>protein as two eggs, with none</b> và sau chỗ trống có <b>the fat and cholesterol.</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>of</b> (của) để tạo cụm/cấu trúc <b>protein as two eggs, with none of the fat and cholesterol.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>by</b> (bằng/trước hạn), <b>out</b> (không phù hợp trong ngữ cảnh), <b>minus</b> (không phù hợp trong ngữ cảnh).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>protein as two eggs, with none</b> và sau chỗ trống có <b>the fat and cholesterol.</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>of</b> (của) để tạo cụm/cấu trúc <b>protein as two eggs, with none of the fat and cholesterol.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>by</b> (bằng/trước hạn), <b>out</b> (không phù hợp trong ngữ cảnh), <b>minus</b> (không phù hợp trong ngữ cảnh)."
-        },
-        {
-          "id": "t6q129",
-          "no": 129,
-          "part": 5,
-          "stem": "Fisko eyeglass frames come in various -------, including round, square, and oval.",
-          "options": {
-            "A": "sights",
-            "B": "methods",
-            "C": "shapes",
-            "D": "materials"
-          },
-          "answer": "C",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Fisko eyeglass frames come in various</b> và sau chỗ trống có <b>, including round, square, and oval.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>shapes</b> (hình dạng) để tạo cụm/cấu trúc <b>Fisko eyeglass frames come in various shapes , including round, square, and oval.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>sights</b> (cảnh/điểm tham quan), <b>methods</b> (phương pháp), <b>materials</b> (chất liệu).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Fisko eyeglass frames come in various</b> và sau chỗ trống có <b>, including round, square, and oval.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>shapes</b> (hình dạng) để tạo cụm/cấu trúc <b>Fisko eyeglass frames come in various shapes , including round, square, and oval.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>sights</b> (cảnh/điểm tham quan), <b>methods</b> (phương pháp), <b>materials</b> (chất liệu)."
-        },
-        {
-          "id": "t6q130",
-          "no": 130,
-          "part": 5,
-          "stem": "The CEO wants a greater portion of next year’s budget ------- to research and development.",
-          "options": {
-            "A": "allocated",
-            "B": "imprinted",
-            "C": "economized",
-            "D": "rationalized"
-          },
-          "answer": "A",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>greater portion of next year’s budget</b> và sau chỗ trống có <b>to research and development.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>allocated</b> (được phân bổ) để tạo cụm/cấu trúc <b>greater portion of next year’s budget allocated to research and development.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>imprinted</b> (được in/dập), <b>economized</b> (được tiết kiệm), <b>rationalized</b> (được hợp lý hóa).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>greater portion of next year’s budget</b> và sau chỗ trống có <b>to research and development.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>allocated</b> (được phân bổ) để tạo cụm/cấu trúc <b>greater portion of next year’s budget allocated to research and development.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>imprinted</b> (được in/dập), <b>economized</b> (được tiết kiệm), <b>rationalized</b> (được hợp lý hóa)."
-        },
-        {
-          "id": "t6q131",
-          "no": 131,
-          "part": 6,
-          "stem": "Questions 131-134 refer to the following advertisement.",
-          "options": {
-            "A": "is",
-            "B": "or",
-            "C": "likely",
-            "D": "from"
-          },
-          "answer": "B",
-          "skill": "Connector / Transition",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Best Whether you play acoustic guitar</b> và sau chỗ trống có <b>electric, taking lessons with an Estella Guitar</b>, nên cần từ nối phù hợp với quan hệ ý nghĩa giữa các vế/câu. Chọn <b>or</b> (hoặc) để tạo cụm/cấu trúc <b>Best Whether you play acoustic guitar or electric, taking lessons with an Estella Guitar</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>is</b> (không phù hợp trong ngữ cảnh), <b>likely</b> (không phù hợp trong ngữ cảnh), <b>from</b> (từ).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Best Whether you play acoustic guitar</b> và sau chỗ trống có <b>electric, taking lessons with an Estella Guitar</b>, nên cần từ nối phù hợp với quan hệ ý nghĩa giữa các vế/câu. Chọn <b>or</b> (hoặc) để tạo cụm/cấu trúc <b>Best Whether you play acoustic guitar or electric, taking lessons with an Estella Guitar</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>is</b> (không phù hợp trong ngữ cảnh), <b>likely</b> (không phù hợp trong ngữ cảnh), <b>from</b> (từ)."
-        },
-        {
-          "id": "t6q132",
-          "no": 132,
-          "part": 6,
-          "stem": "Questions 131-134 refer to the following advertisement.",
-          "options": {
-            "A": "our",
-            "B": "ourselves",
-            "C": "ours",
-            "D": "us"
-          },
-          "answer": "A",
-          "skill": "Possessive determiner",
-          "explanationVi": "Sau chỗ trống là danh từ/cụm danh từ <b>qualified instructors</b>, mang nghĩa \"giảng viên đủ chuyên môn\", nên vị trí trống cần một tính từ sở hữu. Chọn <b>our</b> để tạo cụm hoàn chỉnh <b>our qualified instructors</b>, mang nghĩa \"các giảng viên đủ chuyên môn của chúng tôi\". Các đáp án còn lại không phù hợp về từ loại/vị trí: <b>ourselves</b> (chính chúng tôi) là đại từ phản thân, <b>ours</b> (của chúng tôi) là đại từ sở hữu đứng độc lập, <b>us</b> (chúng tôi) là tân ngữ.",
-          "explanation": "Sau chỗ trống là danh từ/cụm danh từ <b>qualified instructors</b>, mang nghĩa \"giảng viên đủ chuyên môn\", nên vị trí trống cần một tính từ sở hữu. Chọn <b>our</b> để tạo cụm hoàn chỉnh <b>our qualified instructors</b>, mang nghĩa \"các giảng viên đủ chuyên môn của chúng tôi\". Các đáp án còn lại không phù hợp về từ loại/vị trí: <b>ourselves</b> (chính chúng tôi) là đại từ phản thân, <b>ours</b> (của chúng tôi) là đại từ sở hữu đứng độc lập, <b>us</b> (chúng tôi) là tân ngữ."
-        },
-        {
-          "id": "t6q133",
-          "no": 133,
-          "part": 6,
-          "stem": "Questions 131-134 refer to the following advertisement.",
-          "options": {
-            "A": "Contact a technician for questions about repairs.",
-            "B": "A high-quality instrument will help you to perform at your best.",
-            "C": "The best resource for you as a learner is an expert to guide your progress.",
-            "D": "It took them several years to master their instruments."
-          },
-          "answer": "C",
-          "skill": "Sentence insertion / Context",
-          "explanationVi": "Đây là câu chèn trong Part 6, nên cần chọn câu nối mạch ý giữa phần trước và phần sau chỗ trống. Trước vị trí này, đoạn đang nói đến <b>cause many players to get discouraged.</b>; sau vị trí này, đoạn tiếp tục với <b>An Estella Guitar teacher will help boost</b>. Chọn <b>The best resource for you as a learner is an expert to guide your progress.</b> vì câu này nối đúng chủ đề và làm đoạn văn tiếp tục tự nhiên. Các đáp án còn lại không phù hợp về mạch văn/ngữ cảnh: <b>Contact a technician for questions about repairs.</b> (câu này không phù hợp với mạch văn), <b>A high-quality instrument will help you to perform at your best.</b> (câu này không phù hợp với mạch văn), <b>It took them several years to master their instruments.</b> (câu này không phù hợp với mạch văn).",
-          "explanation": "Đây là câu chèn trong Part 6, nên cần chọn câu nối mạch ý giữa phần trước và phần sau chỗ trống. Trước vị trí này, đoạn đang nói đến <b>cause many players to get discouraged.</b>; sau vị trí này, đoạn tiếp tục với <b>An Estella Guitar teacher will help boost</b>. Chọn <b>The best resource for you as a learner is an expert to guide your progress.</b> vì câu này nối đúng chủ đề và làm đoạn văn tiếp tục tự nhiên. Các đáp án còn lại không phù hợp về mạch văn/ngữ cảnh: <b>Contact a technician for questions about repairs.</b> (câu này không phù hợp với mạch văn), <b>A high-quality instrument will help you to perform at your best.</b> (câu này không phù hợp với mạch văn), <b>It took them several years to master their instruments.</b> (câu này không phù hợp với mạch văn)."
-        },
-        {
-          "id": "t6q134",
-          "no": 134,
-          "part": 6,
-          "stem": "Questions 131-134 refer to the following advertisement.",
-          "options": {
-            "A": "So far",
-            "B": "With that in mind",
-            "C": "On a different note",
-            "D": "At that point"
-          },
-          "answer": "B",
-          "skill": "Connector / Transition",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>is a way of expressing yourself.</b> và sau chỗ trống có <b>, we will help you go beyond</b>, nên cần từ nối phù hợp với quan hệ ý nghĩa giữa các vế/câu. Chọn <b>With that in mind</b> (với điều đó trong đầu) để tạo cụm/cấu trúc <b>is a way of expressing yourself. With that in mind , we will help you go beyond</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>So far</b> (cho đến nay), <b>On a different note</b> (nói sang chuyện khác), <b>At that point</b> (vào thời điểm đó).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>is a way of expressing yourself.</b> và sau chỗ trống có <b>, we will help you go beyond</b>, nên cần từ nối phù hợp với quan hệ ý nghĩa giữa các vế/câu. Chọn <b>With that in mind</b> (với điều đó trong đầu) để tạo cụm/cấu trúc <b>is a way of expressing yourself. With that in mind , we will help you go beyond</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>So far</b> (cho đến nay), <b>On a different note</b> (nói sang chuyện khác), <b>At that point</b> (vào thời điểm đó)."
-        },
-        {
-          "id": "t6q135",
-          "no": 135,
-          "part": 6,
-          "stem": "Questions 135-138 refer to the following policy.",
-          "options": {
-            "A": "garden",
-            "B": "records",
-            "C": "residence",
-            "D": "organization"
-          },
-          "answer": "C",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>based on the location of your</b> và sau chỗ trống có <b>and your availability for accepting the item.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>residence</b> (nơi cư trú/nhà ở) để tạo cụm/cấu trúc <b>based on the location of your residence and your availability for accepting the item.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>garden</b> (không phù hợp trong ngữ cảnh), <b>records</b> (hồ sơ), <b>organization</b> (không phù hợp trong ngữ cảnh).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>based on the location of your</b> và sau chỗ trống có <b>and your availability for accepting the item.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>residence</b> (nơi cư trú/nhà ở) để tạo cụm/cấu trúc <b>based on the location of your residence and your availability for accepting the item.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>garden</b> (không phù hợp trong ngữ cảnh), <b>records</b> (hồ sơ), <b>organization</b> (không phù hợp trong ngữ cảnh)."
-        },
-        {
-          "id": "t6q136",
-          "no": 136,
-          "part": 6,
-          "stem": "Questions 135-138 refer to the following policy.",
-          "options": {
-            "A": "to schedule",
-            "B": "is scheduling",
-            "C": "as a schedule",
-            "D": "that scheduled"
-          },
-          "answer": "A",
-          "skill": "Verb form / Structure",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Furniture will work with a carrier</b> và sau chỗ trống có <b>an appointment that is convenient for you.</b>, nên cần dạng động từ/cấu trúc động từ phù hợp. Chọn <b>to schedule</b> (để sắp xếp lịch) để tạo cụm/cấu trúc <b>Furniture will work with a carrier to schedule an appointment that is convenient for you.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>is scheduling</b> (không phù hợp trong ngữ cảnh), <b>as a schedule</b> (không phù hợp trong ngữ cảnh), <b>that scheduled</b> (không phù hợp trong ngữ cảnh).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Furniture will work with a carrier</b> và sau chỗ trống có <b>an appointment that is convenient for you.</b>, nên cần dạng động từ/cấu trúc động từ phù hợp. Chọn <b>to schedule</b> (để sắp xếp lịch) để tạo cụm/cấu trúc <b>Furniture will work with a carrier to schedule an appointment that is convenient for you.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>is scheduling</b> (không phù hợp trong ngữ cảnh), <b>as a schedule</b> (không phù hợp trong ngữ cảnh), <b>that scheduled</b> (không phù hợp trong ngữ cảnh)."
-        },
-        {
-          "id": "t6q137",
-          "no": 137,
-          "part": 6,
-          "stem": "Questions 135-138 refer to the following policy.",
-          "options": {
-            "A": "if so",
-            "B": "when",
-            "C": "though",
-            "D": "in the meantime"
-          },
-          "answer": "C",
-          "skill": "Connector / Transition",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>between 8 A.M. and 5 P.M.,</b> và sau chỗ trống có <b>evening appointments can often be arranged. Upon</b>, nên cần từ nối phù hợp với quan hệ ý nghĩa giữa các vế/câu. Chọn <b>though</b> (tuy nhiên/dù vậy) để tạo cụm/cấu trúc <b>between 8 A.M. and 5 P.M., though evening appointments can often be arranged. Upon</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>if so</b> (không phù hợp trong ngữ cảnh), <b>when</b> (khi), <b>in the meantime</b> (không phù hợp trong ngữ cảnh).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>between 8 A.M. and 5 P.M.,</b> và sau chỗ trống có <b>evening appointments can often be arranged. Upon</b>, nên cần từ nối phù hợp với quan hệ ý nghĩa giữa các vế/câu. Chọn <b>though</b> (tuy nhiên/dù vậy) để tạo cụm/cấu trúc <b>between 8 A.M. and 5 P.M., though evening appointments can often be arranged. Upon</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>if so</b> (không phù hợp trong ngữ cảnh), <b>when</b> (khi), <b>in the meantime</b> (không phù hợp trong ngữ cảnh)."
-        },
-        {
-          "id": "t6q138",
-          "no": 138,
-          "part": 6,
-          "stem": "Questions 135-138 refer to the following policy.",
-          "options": {
-            "A": "When buying a home, location is extremely important.",
-            "B": "Refinishing furniture is a form of art.",
-            "C": "Furnished apartments can be found online.",
-            "D": "All packing materials will be removed."
-          },
-          "answer": "D",
-          "skill": "Sentence insertion / Context",
-          "explanationVi": "Đây là câu chèn trong Part 6, nên cần chọn câu nối mạch ý giữa phần trước và phần sau chỗ trống. Trước vị trí này, đoạn đang nói đến <b>placed in the location you desire.</b>; sau vị trí này, đoạn tiếp tục với <b>Assembly is included as well.</b>. Chọn <b>All packing materials will be removed.</b> vì câu này nối đúng chủ đề và làm đoạn văn tiếp tục tự nhiên. Các đáp án còn lại không phù hợp về mạch văn/ngữ cảnh: <b>When buying a home, location is extremely important.</b> (câu này không phù hợp với mạch văn), <b>Refinishing furniture is a form of art.</b> (câu này không phù hợp với mạch văn), <b>Furnished apartments can be found online.</b> (câu này không phù hợp với mạch văn).",
-          "explanation": "Đây là câu chèn trong Part 6, nên cần chọn câu nối mạch ý giữa phần trước và phần sau chỗ trống. Trước vị trí này, đoạn đang nói đến <b>placed in the location you desire.</b>; sau vị trí này, đoạn tiếp tục với <b>Assembly is included as well.</b>. Chọn <b>All packing materials will be removed.</b> vì câu này nối đúng chủ đề và làm đoạn văn tiếp tục tự nhiên. Các đáp án còn lại không phù hợp về mạch văn/ngữ cảnh: <b>When buying a home, location is extremely important.</b> (câu này không phù hợp với mạch văn), <b>Refinishing furniture is a form of art.</b> (câu này không phù hợp với mạch văn), <b>Furnished apartments can be found online.</b> (câu này không phù hợp với mạch văn)."
-        },
-        {
-          "id": "t6q139",
-          "no": 139,
-          "part": 6,
-          "stem": "Questions 139-142 refer to the following e-mail.",
-          "options": {
-            "A": "Thank you for your timely order.",
-            "B": "We have processed your request.",
-            "C": "This is a payment reminder.",
-            "D": "Please contact us to update your information."
-          },
-          "answer": "B",
-          "skill": "Sentence insertion / Context",
-          "explanationVi": "Đây là câu chèn trong Part 6, nên cần chọn câu nối mạch ý giữa phần trước và phần sau chỗ trống. Trước vị trí này, đoạn đang nói đến <b>17 Subject: Subscription Dear Mr. Pham,</b>; sau vị trí này, đoạn tiếp tục với <b>Your subscription to Medical Innovations Quarterly has</b>. Chọn <b>We have processed your request.</b> vì câu này nối đúng chủ đề và làm đoạn văn tiếp tục tự nhiên. Các đáp án còn lại không phù hợp về mạch văn/ngữ cảnh: <b>Thank you for your timely order.</b> (câu này không phù hợp với mạch văn), <b>This is a payment reminder.</b> (câu này không phù hợp với mạch văn), <b>Please contact us to update your information.</b> (câu này không phù hợp với mạch văn).",
-          "explanation": "Đây là câu chèn trong Part 6, nên cần chọn câu nối mạch ý giữa phần trước và phần sau chỗ trống. Trước vị trí này, đoạn đang nói đến <b>17 Subject: Subscription Dear Mr. Pham,</b>; sau vị trí này, đoạn tiếp tục với <b>Your subscription to Medical Innovations Quarterly has</b>. Chọn <b>We have processed your request.</b> vì câu này nối đúng chủ đề và làm đoạn văn tiếp tục tự nhiên. Các đáp án còn lại không phù hợp về mạch văn/ngữ cảnh: <b>Thank you for your timely order.</b> (câu này không phù hợp với mạch văn), <b>This is a payment reminder.</b> (câu này không phù hợp với mạch văn), <b>Please contact us to update your information.</b> (câu này không phù hợp với mạch văn)."
-        },
-        {
-          "id": "t6q140",
-          "no": 140,
-          "part": 6,
-          "stem": "Questions 139-142 refer to the following e-mail.",
-          "options": {
-            "A": "Starts",
-            "B": "Started",
-            "C": "Starter",
-            "D": "Starting"
-          },
-          "answer": "D",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Medical Innovations Quarterly has been canceled.</b> và sau chỗ trống có <b>May 1, you will no longer receive</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>Starting</b> (bắt đầu từ) để tạo cụm/cấu trúc <b>Medical Innovations Quarterly has been canceled. Starting May 1, you will no longer receive</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>Starts</b> (không phù hợp trong ngữ cảnh), <b>Started</b> (không phù hợp trong ngữ cảnh), <b>Starter</b> (không phù hợp trong ngữ cảnh).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>Medical Innovations Quarterly has been canceled.</b> và sau chỗ trống có <b>May 1, you will no longer receive</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>Starting</b> (bắt đầu từ) để tạo cụm/cấu trúc <b>Medical Innovations Quarterly has been canceled. Starting May 1, you will no longer receive</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>Starts</b> (không phù hợp trong ngữ cảnh), <b>Started</b> (không phù hợp trong ngữ cảnh), <b>Starter</b> (không phù hợp trong ngữ cảnh)."
-        },
-        {
-          "id": "t6q141",
-          "no": 141,
-          "part": 6,
-          "stem": "Questions 139-142 refer to the following e-mail.",
-          "options": {
-            "A": "distributor",
-            "B": "producer",
-            "C": "reader",
-            "D": "teacher"
-          },
-          "answer": "C",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>will consider once again becoming a</b> và sau chỗ trống có <b>of our publications. Academe Media publishes many</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>reader</b> (độc giả) để tạo cụm/cấu trúc <b>will consider once again becoming a reader of our publications. Academe Media publishes many</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>distributor</b> (không phù hợp trong ngữ cảnh), <b>producer</b> (không phù hợp trong ngữ cảnh), <b>teacher</b> (không phù hợp trong ngữ cảnh).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>will consider once again becoming a</b> và sau chỗ trống có <b>of our publications. Academe Media publishes many</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>reader</b> (độc giả) để tạo cụm/cấu trúc <b>will consider once again becoming a reader of our publications. Academe Media publishes many</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>distributor</b> (không phù hợp trong ngữ cảnh), <b>producer</b> (không phù hợp trong ngữ cảnh), <b>teacher</b> (không phù hợp trong ngữ cảnh)."
-        },
-        {
-          "id": "t6q142",
-          "no": 142,
-          "part": 6,
-          "stem": "Questions 139-142 refer to the following e-mail.",
-          "options": {
-            "A": "until",
-            "B": "upon",
-            "C": "without",
-            "D": "next"
-          },
-          "answer": "B",
-          "skill": "Preposition",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>www.academemedia.com/shop and enter the code DOUBLE</b> và sau chỗ trống có <b>checkout. If you have any feedback that</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>upon</b> (khi/ngay khi) để tạo cụm/cấu trúc <b>www.academemedia.com/shop and enter the code DOUBLE upon checkout. If you have any feedback that</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>until</b> (cho đến khi), <b>without</b> (không có), <b>next</b> (kế tiếp).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>www.academemedia.com/shop and enter the code DOUBLE</b> và sau chỗ trống có <b>checkout. If you have any feedback that</b>, nên cần một giới từ/cụm giới từ phù hợp với quan hệ ý nghĩa. Chọn <b>upon</b> (khi/ngay khi) để tạo cụm/cấu trúc <b>www.academemedia.com/shop and enter the code DOUBLE upon checkout. If you have any feedback that</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về quan hệ ý nghĩa/cấu trúc: <b>until</b> (cho đến khi), <b>without</b> (không có), <b>next</b> (kế tiếp)."
-        },
-        {
-          "id": "t6q143",
-          "no": 143,
-          "part": 6,
-          "stem": "Questions 143-146 refer to the following information.",
-          "options": {
-            "A": "ranges",
-            "B": "ranger",
-            "C": "ranged",
-            "D": "ranging"
-          },
-          "answer": "A",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>required to have a thermometer that</b> và sau chỗ trống có <b>from 0°F (-18°C) to 220°F (104°C). To</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>ranges</b> (có phạm vi/dao động) để tạo cụm/cấu trúc <b>required to have a thermometer that ranges from 0°F (-18°C) to 220°F (104°C). To</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>ranger</b> (không phù hợp trong ngữ cảnh), <b>ranged</b> (không phù hợp trong ngữ cảnh), <b>ranging</b> (không phù hợp trong ngữ cảnh).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>required to have a thermometer that</b> và sau chỗ trống có <b>from 0°F (-18°C) to 220°F (104°C). To</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>ranges</b> (có phạm vi/dao động) để tạo cụm/cấu trúc <b>required to have a thermometer that ranges from 0°F (-18°C) to 220°F (104°C). To</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>ranger</b> (không phù hợp trong ngữ cảnh), <b>ranged</b> (không phù hợp trong ngữ cảnh), <b>ranging</b> (không phù hợp trong ngữ cảnh)."
-        },
-        {
-          "id": "t6q144",
-          "no": 144,
-          "part": 6,
-          "stem": "Questions 143-146 refer to the following information.",
-          "options": {
-            "A": "size",
-            "B": "safety",
-            "C": "reliability",
-            "D": "placement"
-          },
-          "answer": "D",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>times. Also important to consider is</b> và sau chỗ trống có <b>. Thermometers should always be located in</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>placement</b> (vị trí đặt) để tạo cụm/cấu trúc <b>times. Also important to consider is placement . Thermometers should always be located in</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>size</b> (không phù hợp trong ngữ cảnh), <b>safety</b> (không phù hợp trong ngữ cảnh), <b>reliability</b> (không phù hợp trong ngữ cảnh).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>times. Also important to consider is</b> và sau chỗ trống có <b>. Thermometers should always be located in</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>placement</b> (vị trí đặt) để tạo cụm/cấu trúc <b>times. Also important to consider is placement . Thermometers should always be located in</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>size</b> (không phù hợp trong ngữ cảnh), <b>safety</b> (không phù hợp trong ngữ cảnh), <b>reliability</b> (không phù hợp trong ngữ cảnh)."
-        },
-        {
-          "id": "t6q145",
-          "no": 145,
-          "part": 6,
-          "stem": "Questions 143-146 refer to the following information.",
-          "options": {
-            "A": "Remove them carefully.",
-            "B": "This is typically inside the door.",
-            "C": "It should be kept cool at all times.",
-            "D": "They can also be purchased in bulk."
-          },
-          "answer": "B",
-          "skill": "Sentence insertion / Context",
-          "explanationVi": "Đây là câu chèn trong Part 6, nên cần chọn câu nối mạch ý giữa phần trước và phần sau chỗ trống. Trước vị trí này, đoạn đang nói đến <b>the warmest spot in the refrigerator.</b>; sau vị trí này, đoạn tiếp tục với <b>This location is also appropriate because it</b>. Chọn <b>This is typically inside the door.</b> vì câu này nối đúng chủ đề và làm đoạn văn tiếp tục tự nhiên. Các đáp án còn lại không phù hợp về mạch văn/ngữ cảnh: <b>Remove them carefully.</b> (câu này không phù hợp với mạch văn), <b>It should be kept cool at all times.</b> (câu này không phù hợp với mạch văn), <b>They can also be purchased in bulk.</b> (câu này không phù hợp với mạch văn).",
-          "explanation": "Đây là câu chèn trong Part 6, nên cần chọn câu nối mạch ý giữa phần trước và phần sau chỗ trống. Trước vị trí này, đoạn đang nói đến <b>the warmest spot in the refrigerator.</b>; sau vị trí này, đoạn tiếp tục với <b>This location is also appropriate because it</b>. Chọn <b>This is typically inside the door.</b> vì câu này nối đúng chủ đề và làm đoạn văn tiếp tục tự nhiên. Các đáp án còn lại không phù hợp về mạch văn/ngữ cảnh: <b>Remove them carefully.</b> (câu này không phù hợp với mạch văn), <b>It should be kept cool at all times.</b> (câu này không phù hợp với mạch văn), <b>They can also be purchased in bulk.</b> (câu này không phù hợp với mạch văn)."
-        },
-        {
-          "id": "t6q146",
-          "no": 146,
-          "part": 6,
-          "stem": "Questions 143-146 refer to the following information.",
-          "options": {
-            "A": "sold",
-            "B": "seen",
-            "C": "repaired",
-            "D": "removed"
-          },
-          "answer": "B",
-          "skill": "Vocabulary / Word form",
-          "explanationVi": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>allows the thermometer to be easily</b> và sau chỗ trống có <b>as soon as the door is opened.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>seen</b> (được nhìn thấy) để tạo cụm/cấu trúc <b>allows the thermometer to be easily seen as soon as the door is opened.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>sold</b> (không phù hợp trong ngữ cảnh), <b>repaired</b> (không phù hợp trong ngữ cảnh), <b>removed</b> (không phù hợp trong ngữ cảnh).",
-          "explanation": "Vị trí trống đứng ở chỗ trước chỗ trống có <b>allows the thermometer to be easily</b> và sau chỗ trống có <b>as soon as the door is opened.</b>, nên cần từ vựng đúng nghĩa với ngữ cảnh. Chọn <b>seen</b> (được nhìn thấy) để tạo cụm/cấu trúc <b>allows the thermometer to be easily seen as soon as the door is opened.</b> phù hợp với ngữ cảnh. Các đáp án còn lại không phù hợp về từ loại/cấu trúc: <b>sold</b> (không phù hợp trong ngữ cảnh), <b>repaired</b> (không phù hợp trong ngữ cảnh), <b>removed</b> (không phù hợp trong ngữ cảnh)."
-        }
-      ],
-      "passages": [
-        {
-          "id": "t6p131_134",
-          "title": "Questions 131-134",
-          "questionRange": "131-134",
-          "html": "<p><b>Estella Guitar Lessons: Play with the Best</b></p><p>Whether you play acoustic guitar <span class=\"blank\">131</span> electric, taking lessons with an Estella Guitar teacher is the best way to improve your ability. With years of experience crafting playing techniques, <span class=\"blank\">132</span> qualified instructors can tailor lessons to focus on the skills you want to fine-tune. Receive a customized learning plan to set goals and overcome the challenges that cause many players to get discouraged. <span class=\"blank sentence\">133</span> An Estella Guitar teacher will help boost your confidence.</p><p>At Estella Guitar, we believe that playing music is a way of expressing yourself. <span class=\"blank sentence\">134</span>, we will help you go beyond the familiar chords and riffs to develop your own identity as a musician. Ready to get started? Visit www.estellaguitar.com/lessons to get matched with the right instructor for you!</p>",
-          "questions": [
-            {
-              "no": 131
-            },
-            {
-              "no": 132
-            },
-            {
-              "no": 133
-            },
-            {
-              "no": 134
-            }
-          ]
-        },
-        {
-          "id": "t6p135_138",
-          "title": "Questions 135-138",
-          "questionRange": "135-138",
-          "html": "<p>In-home delivery takes approximately one week after an order is shipped from our warehouse.</p><p>The actual time may vary based on the location of your <span class=\"blank\">135</span> and your availability for accepting the item. Vernico Furniture will work with a carrier <span class=\"blank\">136</span> an appointment that is convenient for you. Typical hours are Monday through Friday between 8 A.M. and 5 P.M., <span class=\"blank\">137</span> evening appointments can often be arranged. Upon arrival at your home, the item will be placed in the location you desire. <span class=\"blank sentence\">138</span> Assembly is included as well.</p>",
-          "questions": [
-            {
-              "no": 135
-            },
-            {
-              "no": 136
-            },
-            {
-              "no": 137
-            },
-            {
-              "no": 138
-            }
-          ]
-        },
-        {
-          "id": "t6p139_142",
-          "title": "Questions 139-142",
-          "questionRange": "139-142",
-          "html": "<p><b>To:</b> Thao Pham &lt;thaopham@amail.com&gt;<br><b>From:</b> Leena Montoya &lt;lmontoya@academemedia.com&gt;<br><b>Date:</b> April 17<br><b>Subject:</b> Subscription</p><p>Dear Mr. Pham,</p><p><span class=\"blank sentence\">139</span> Your subscription to Medical Innovations Quarterly has been canceled. <span class=\"blank\">140</span> May 1, you will no longer receive the print edition.</p><p>We hope that you will consider once again becoming a <span class=\"blank\">141</span> of our publications. Academe Media publishes many high-quality scientific journals in addition to Medical Innovations Quarterly. Should you wish to subscribe to one by May 31, we can offer you a two-year subscription at the annual rate. Visit www.academemedia.com/shop and enter the code DOUBLE <span class=\"blank\">142</span> checkout.</p><p>If you have any feedback that could help us improve our products or services, please call me directly at 212-555-0122.</p><p>Sincerely,<br>Leena Montoya<br>Customer Service Manager, Academe Media</p>",
-          "questions": [
-            {
-              "no": 139
-            },
-            {
-              "no": 140
-            },
-            {
-              "no": 141
-            },
-            {
-              "no": 142
-            }
-          ]
-        },
-        {
-          "id": "t6p143_146",
-          "title": "Questions 143-146",
-          "questionRange": "143-146",
-          "html": "<p>In a commercial kitchen, all refrigerators are required to have a thermometer that <span class=\"blank\">143</span> from 0°F (-18°C) to 220°F (104°C). To prevent the growth of bacteria, refrigerated foods must be stored at 41°F (5°C) or below. The head chef is responsible for checking these thermometers throughout the day to ensure that the kitchen is in compliance at all times.</p><p>Also important to consider is <span class=\"blank\">144</span>. Thermometers should always be located in the warmest spot in the refrigerator. <span class=\"blank sentence\">145</span> This location is also appropriate because it allows the thermometer to be easily <span class=\"blank\">146</span> as soon as the door is opened.</p>",
-          "questions": [
-            {
-              "no": 143
-            },
-            {
-              "no": 144
-            },
-            {
-              "no": 145
-            },
-            {
-              "no": 146
-            }
-          ]
-        }
-      ]
+      "id": "t6q101",
+      "no": 101,
+      "answer": "B",
+      "skill": "Possessive determiner",
+      "explanationVi": "Sau chỗ trống là cụm danh từ <b>own working hours</b>, mang nghĩa \"giờ làm việc riêng\", nên vị trí trống cần một tính từ sở hữu. Chủ thể là <b>employees</b>, mang nghĩa \"nhân viên\", nên chọn <b>their</b> để tạo cụm <b>their own working hours</b>, mang nghĩa \"giờ làm việc riêng của họ\". Các đáp án còn lại không phù hợp về từ loại/vị trí: <b>they</b> (họ) là đại từ chủ ngữ, <b>theirs</b> (của họ) là đại từ sở hữu đứng độc lập, <b>themselves</b> (chính họ) là đại từ phản thân."
     },
+    {
+      "id": "t6q102",
+      "no": 102,
+      "answer": "B",
+      "skill": "Preposition",
+      "explanationVi": "Sau chỗ trống là cụm danh từ <b>the current year</b>, mang nghĩa \"năm hiện tại\". Cụm tự nhiên là <b>sales projections for the current year</b>, mang nghĩa \"dự báo doanh số cho năm hiện tại\", nên chọn <b>for</b>. Các đáp án còn lại không phù hợp: <b>when</b> (khi) và <b>if</b> (nếu) là liên từ, không đứng trước cụm danh từ theo cách này; <b>or</b> (hoặc) dùng để nối lựa chọn."
+    },
+    {
+      "id": "t6q103",
+      "no": 103,
+      "answer": "C",
+      "skill": "Preposition of time",
+      "explanationVi": "Sau chỗ trống là cụm thời gian <b>standard business hours</b>, mang nghĩa \"giờ làm việc tiêu chuẩn\". Để nói một việc xảy ra trong một khoảng thời gian, dùng <b>during</b>, nên chọn <b>during standard business hours</b>. Các đáp án còn lại sai nghĩa: <b>among</b> (giữa nhiều người/vật), <b>beside</b> (bên cạnh), <b>onto</b> (lên trên bề mặt)."
+    },
+    {
+      "id": "t6q104",
+      "no": 104,
+      "answer": "C",
+      "skill": "Comparative adjective",
+      "explanationVi": "Sau chỗ trống là danh từ <b>areas</b>, mang nghĩa \"khu vực\", nên vị trí trống cần tính từ bổ nghĩa cho danh từ. Về nghĩa, câu nói máy sưởi tạo nhiều hơi ấm hơn cho các khu vực rộng hơn, nên chọn <b>wider</b>. Các đáp án còn lại sai từ loại: <b>wideness</b> (độ rộng) là danh từ, <b>widen</b> (mở rộng) là động từ, <b>widely</b> (một cách rộng rãi) là trạng từ."
+    },
+    {
+      "id": "t6q105",
+      "no": 105,
+      "answer": "B",
+      "skill": "Adverb",
+      "explanationVi": "Sau chỗ trống là động từ <b>improved</b>, mang nghĩa \"cải thiện\", nên vị trí trống cần trạng từ bổ nghĩa cho động từ. Chọn <b>greatly</b> để diễn tả mức độ cải thiện đáng kể. Các đáp án còn lại sai từ loại: <b>great</b> (lớn/tuyệt vời), <b>greater</b> (lớn hơn), <b>greatest</b> (lớn nhất) đều là tính từ."
+    },
+    {
+      "id": "t6q106",
+      "no": 106,
+      "answer": "C",
+      "skill": "Present perfect active",
+      "explanationVi": "Sau chỗ trống là tân ngữ <b>three candidates</b>, mang nghĩa \"ba ứng viên\", nên động từ ở chỗ trống phải là dạng chủ động. Chủ ngữ <b>The search committee</b>, mang nghĩa \"ủy ban tìm kiếm\", là bên thực hiện hành động đề cử, nên chọn <b>has nominated</b>. Các đáp án còn lại không phù hợp: <b>nominating</b> (đang đề cử/V-ing) thiếu trợ động từ, <b>nomination</b> (sự đề cử) là danh từ, <b>has been nominated</b> (đã được đề cử) là bị động nên không đi trực tiếp với tân ngữ <b>three candidates</b>."
+    },
+    {
+      "id": "t6q107",
+      "no": 107,
+      "answer": "C",
+      "skill": "Preposition of time",
+      "explanationVi": "Sau chỗ trống là cụm danh từ <b>a two-month delay</b>, mang nghĩa \"một sự trì hoãn hai tháng\". Câu cần nói việc lắp thảm xảy ra sau khoảng trì hoãn đó, nên chọn <b>After</b>. Các đáp án còn lại không phù hợp: <b>Additionally</b> (ngoài ra) và <b>Furthermore</b> (hơn nữa) là trạng từ nối; <b>Although</b> (mặc dù) cần một mệnh đề đầy đủ phía sau."
+    },
+    {
+      "id": "t6q108",
+      "no": 108,
+      "answer": "D",
+      "skill": "Noun form",
+      "explanationVi": "Trước chỗ trống là động từ <b>boost</b>, mang nghĩa \"tăng/thúc đẩy\", nên phía sau cần danh từ làm tân ngữ. Chọn <b>enrollment</b>, mang nghĩa \"số lượng ghi danh/việc ghi danh\", phù hợp với việc học viện tặng bộ dụng cụ để thu hút học viên mới. Các đáp án còn lại sai từ loại/vị trí: <b>enroll</b> (ghi danh) là động từ, <b>enrolled</b> (đã ghi danh) là V-ed, <b>enrolling</b> (đang ghi danh/việc ghi danh) không tự nhiên bằng danh từ <b>enrollment</b> trong câu này."
+    },
+    {
+      "id": "t6q109",
+      "no": 109,
+      "answer": "A",
+      "skill": "Vocabulary",
+      "explanationVi": "Sau chỗ trống là cụm danh từ <b>its delivery times</b>, mang nghĩa \"thời gian giao hàng của công ty\". Ngữ cảnh nói vì công ty bảo đảm thời gian giao hàng nên khách sạn có thể ấn định ngày khai trương, nên chọn <b>guarantees</b>, mang nghĩa \"bảo đảm\". Các đáp án còn lại sai nghĩa: <b>advises</b> (khuyên/thông báo), <b>requires</b> (yêu cầu), <b>delays</b> (trì hoãn)."
+    },
+    {
+      "id": "t6q110",
+      "no": 110,
+      "answer": "A",
+      "skill": "Adjective after linking verb",
+      "explanationVi": "Trước chỗ trống có <b>was very</b>, nên vị trí trống cần một tính từ mô tả người kỹ thuật viên. Chọn <b>friendly</b>, mang nghĩa \"thân thiện\", phù hợp với ý tuy kỹ thuật viên thân thiện nhưng không giải quyết được vấn đề. Các đáp án còn lại không hợp nghĩa mô tả người trong ngữ cảnh này: <b>neutral</b> (trung lập), <b>possible</b> (có thể), <b>frequent</b> (thường xuyên)."
+    },
+    {
+      "id": "t6q111",
+      "no": 111,
+      "answer": "A",
+      "skill": "Adjective",
+      "explanationVi": "Sau chỗ trống là danh từ <b>visitors</b>, mang nghĩa \"khách đến thăm\", nên vị trí trống cần tính từ bổ nghĩa cho danh từ. Chọn <b>regular</b>, mang nghĩa \"thường xuyên\", để chỉ những khách thường xuyên đến tòa nhà. Các đáp án còn lại sai từ loại: <b>regularly</b> (một cách thường xuyên) là trạng từ, <b>regularize</b> (hợp thức hóa/điều chỉnh cho đều) là động từ, <b>regularity</b> (tính đều đặn) là danh từ."
+    },
+    {
+      "id": "t6q112",
+      "no": 112,
+      "answer": "A",
+      "skill": "Adverb",
+      "explanationVi": "Sau chỗ trống là tính từ <b>visible</b>, mang nghĩa \"có thể nhìn thấy\", nên vị trí trống cần trạng từ bổ nghĩa cho tính từ. Chọn <b>clearly</b>, mang nghĩa \"rõ ràng\", vì thẻ an ninh phải được đeo sao cho dễ nhìn thấy. Các đáp án còn lại sai nghĩa: <b>recently</b> (gần đây), <b>evenly</b> (đều), <b>secretly</b> (một cách bí mật)."
+    },
+    {
+      "id": "t6q113",
+      "no": 113,
+      "answer": "C",
+      "skill": "Transition",
+      "explanationVi": "Câu trước nói bà Phon muốn tham dự buổi khai mạc phòng tranh; câu sau nói thời tiết xấu khiến việc đó không thể xảy ra. Hai ý này tương phản, nên chọn <b>however</b>, mang nghĩa \"tuy nhiên\". Các đáp án còn lại không đúng quan hệ ý: <b>therefore</b> (vì vậy) chỉ kết quả, <b>following</b> (sau/theo sau) không hợp vị trí này, <b>for example</b> (ví dụ) dùng để nêu ví dụ."
+    },
+    {
+      "id": "t6q114",
+      "no": 114,
+      "answer": "C",
+      "skill": "Verb pattern: motivate somebody to V",
+      "explanationVi": "Sau chỗ trống có <b>them to work</b>, nên cần một động từ đi với mẫu <b>somebody to V</b>. Chọn <b>motivates</b>, mang nghĩa \"thúc đẩy\", vì giao nhiệm vụ lãnh đạo có thể thúc đẩy nhân viên làm việc năng suất hơn. Các đáp án còn lại sai nghĩa: <b>adopts</b> (áp dụng/nhận nuôi), <b>reinforces</b> (củng cố), <b>attracts</b> (thu hút)."
+    },
+    {
+      "id": "t6q115",
+      "no": 115,
+      "answer": "A",
+      "skill": "Adverb",
+      "explanationVi": "Trước chỗ trống là động từ <b>works</b>, nên vị trí trống cần trạng từ bổ nghĩa cho động từ. Chọn <b>exclusively</b>, mang nghĩa \"chỉ/riêng\", để nói công ty chỉ làm các dự án thương mại lớn. Các đáp án còn lại sai từ loại: <b>exclusive</b> (độc quyền/riêng biệt) là tính từ, <b>exclusivity</b> (tính độc quyền) là danh từ, <b>exclusives</b> là danh từ số nhiều."
+    },
+    {
+      "id": "t6q116",
+      "no": 116,
+      "answer": "B",
+      "skill": "Verb pattern: plan to V",
+      "explanationVi": "Trước chỗ trống là động từ <b>plans</b>, mang nghĩa \"dự định\", nên phía sau cần cấu trúc <b>to V</b>. Chọn <b>to resign</b>, mang nghĩa \"từ chức\". Các đáp án còn lại không phù hợp về cấu trúc: <b>resigning</b> (đang từ chức/V-ing) không đi trực tiếp sau <b>plans</b>, <b>resigns</b> (từ chức - hiện tại đơn) sai dạng, <b>to have resigned</b> (đã từ chức trước đó) không phù hợp với ý dự định sắp làm."
+    },
+    {
+      "id": "t6q117",
+      "no": 117,
+      "answer": "D",
+      "skill": "Preposition of time",
+      "explanationVi": "Sau chỗ trống là cụm thời gian <b>the summer months</b>, mang nghĩa \"các tháng mùa hè\". Dùng <b>over</b> để nói sự việc diễn ra trong suốt một giai đoạn, nên chọn <b>over the summer months</b>. Các đáp án còn lại không hợp nghĩa: <b>apart</b> (tách rời), <b>even</b> (thậm chí/đều), <b>only</b> (chỉ)."
+    },
+    {
+      "id": "t6q118",
+      "no": 118,
+      "answer": "C",
+      "skill": "Adverb",
+      "explanationVi": "Trước chỗ trống là cụm bị động <b>need to be cleaned</b>, mang nghĩa \"cần được vệ sinh\", nên vị trí trống cần trạng từ chỉ cách thức/tần suất. Chọn <b>routinely</b>, mang nghĩa \"định kỳ/thường xuyên\", phù hợp với việc giữ máy tập hoạt động tốt. Các đáp án còn lại sai nghĩa: <b>rather</b> (khá/là), <b>almost</b> (hầu như), <b>openly</b> (công khai)."
+    },
+    {
+      "id": "t6q119",
+      "no": 119,
+      "answer": "C",
+      "skill": "Pronoun / Fixed expression",
+      "explanationVi": "Câu đưa ra hai giới hạn là <b>ten years</b> và <b>100,000 miles</b>. Cụm đúng là <b>whichever comes first</b>, mang nghĩa \"điều nào đến trước thì tính điều đó\", nên chọn <b>whichever</b>. Các đáp án còn lại không phù hợp: <b>whoever</b> (bất cứ ai) dùng cho người, <b>either</b> (một trong hai) không đi với <b>comes first</b> theo cách này, <b>another</b> (một cái/người khác) sai nghĩa."
+    },
+    {
+      "id": "t6q120",
+      "no": 120,
+      "answer": "A",
+      "skill": "Verb pattern: risk V-ing",
+      "explanationVi": "Sau chỗ trống là <b>losing</b>, dạng V-ing của động từ <b>lose</b>. Cấu trúc đúng là <b>risk V-ing</b>, mang nghĩa \"có nguy cơ làm gì\", nên chọn <b>risk</b>. Các đáp án còn lại sai nghĩa và không đi tự nhiên với <b>losing customers</b>: <b>protect</b> (bảo vệ), <b>cancel</b> (hủy), <b>hold</b> (giữ)."
+    },
+    {
+      "id": "t6q121",
+      "no": 121,
+      "answer": "A",
+      "skill": "Determiner",
+      "explanationVi": "Sau chỗ trống là danh từ số ít <b>client</b>, mang nghĩa \"khách hàng\". <b>Each</b> đi với danh từ số ít để nói \"mỗi khách hàng\", nên chọn <b>Each</b>. Các đáp án còn lại thường đi với danh từ số nhiều trong nghĩa này: <b>All</b> (tất cả), <b>Some</b> (một vài), <b>Most</b> (hầu hết)."
+    },
+    {
+      "id": "t6q122",
+      "no": 122,
+      "answer": "D",
+      "skill": "Collocation / Vocabulary",
+      "explanationVi": "Trước chỗ trống có <b>form a</b>, mang nghĩa \"thành lập một\". Danh từ phù hợp nhất là <b>committee</b>, mang nghĩa \"ủy ban\", vì ông Singh muốn lập một nhóm để xem xét các chương trình thưởng cho nhân viên. Các đáp án còn lại sai nghĩa: <b>supervisor</b> (người giám sát), <b>suggestion</b> (đề xuất), <b>notification</b> (thông báo)."
+    },
+    {
+      "id": "t6q123",
+      "no": 123,
+      "answer": "D",
+      "skill": "Connector",
+      "explanationVi": "Sau chỗ trống là mệnh đề <b>the delivery driver needs to contact you</b>, mang nghĩa \"tài xế giao hàng cần liên hệ với bạn\". Câu yêu cầu cung cấp số điện thoại để phòng trường hợp tài xế cần liên hệ, nên chọn <b>in case</b>, mang nghĩa \"phòng khi\". Các đáp án còn lại sai quan hệ ý: <b>whereas</b> (trong khi) chỉ tương phản, <b>despite</b> (mặc dù) đi với danh từ/V-ing, <b>if not</b> (nếu không) không hợp mạch câu."
+    },
+    {
+      "id": "t6q124",
+      "no": 124,
+      "answer": "D",
+      "skill": "Vocabulary",
+      "explanationVi": "Sau chỗ trống có <b>of Pondview Tower</b> và câu nói những người này phải trả tiền thuê hằng tháng. Người phải trả tiền thuê là <b>Tenants</b>, mang nghĩa \"người thuê nhà/người thuê căn hộ\". Các đáp án còn lại sai nghĩa: <b>Owners</b> (chủ sở hữu), <b>Buyers</b> (người mua), <b>Tourists</b> (khách du lịch)."
+    },
+    {
+      "id": "t6q125",
+      "no": 125,
+      "answer": "B",
+      "skill": "Adjective",
+      "explanationVi": "Sau chỗ trống là danh từ <b>impact</b>, mang nghĩa \"tác động\", nên vị trí trống cần tính từ bổ nghĩa cho danh từ. Chọn <b>considerable</b>, mang nghĩa \"đáng kể/lớn\", để nói tập đoàn có tác động lớn đến kinh tế địa phương. Các đáp án còn lại sai từ loại: <b>considerably</b> (đáng kể) là trạng từ, <b>considering</b> (xét đến/đang cân nhắc) không phù hợp, <b>consideration</b> (sự cân nhắc) là danh từ."
+    },
+    {
+      "id": "t6q126",
+      "no": 126,
+      "answer": "A",
+      "skill": "Preposition",
+      "explanationVi": "Sau chỗ trống là cụm danh từ <b>best sellers</b>, mang nghĩa \"sách bán chạy\". Câu nói ngoài sách bán chạy, Booksters còn có nhiều sách kinh điển và tiểu sử, nên chọn <b>Besides</b>, mang nghĩa \"ngoài/bên cạnh\". Các đáp án còn lại không phù hợp: <b>Somewhat</b> (hơi/phần nào) là trạng từ, <b>Whose</b> (của ai) dùng để chỉ sở hữu, <b>Becoming</b> (trở nên) không hợp vị trí này."
+    },
+    {
+      "id": "t6q127",
+      "no": 127,
+      "answer": "D",
+      "skill": "Gerund as subject",
+      "explanationVi": "Sau chỗ trống là cụm danh từ <b>undercooked meat</b>, mang nghĩa \"thịt chưa nấu chín\". Mệnh đề sau <b>that</b> cần một chủ ngữ cho <b>can be harmful</b>, nên dùng V-ing như danh động từ. Chọn <b>consuming</b>, mang nghĩa \"việc ăn/tiêu thụ\". Các đáp án còn lại không phù hợp: <b>consumer</b> (người tiêu dùng) là danh từ chỉ người, <b>consumption</b> (sự tiêu thụ) không đi trực tiếp với <b>undercooked meat</b> tự nhiên bằng <b>consuming</b>, <b>consumes</b> (tiêu thụ) là động từ chia thì."
+    },
+    {
+      "id": "t6q128",
+      "no": 128,
+      "answer": "A",
+      "skill": "Expression: none of + noun",
+      "explanationVi": "Sau chỗ trống là cụm danh từ <b>the fat and cholesterol</b>, mang nghĩa \"chất béo và cholesterol\". Cụm đúng là <b>none of</b>, mang nghĩa \"không có chút nào trong số\", nên chọn <b>of</b>. Các đáp án còn lại không tạo nghĩa đúng: <b>by</b> (bởi/bằng), <b>out</b> (ra ngoài), <b>minus</b> (trừ đi) không dùng trong cụm <b>none of</b>."
+    },
+    {
+      "id": "t6q129",
+      "no": 129,
+      "answer": "C",
+      "skill": "Vocabulary",
+      "explanationVi": "Các từ <b>round</b>, <b>square</b> và <b>oval</b> đều là các dạng hình dáng. Vì vậy danh từ đúng là <b>shapes</b>, mang nghĩa \"hình dạng\". Các đáp án còn lại sai nghĩa: <b>sights</b> (cảnh vật/tầm nhìn), <b>methods</b> (phương pháp), <b>materials</b> (vật liệu)."
+    },
+    {
+      "id": "t6q130",
+      "no": 130,
+      "answer": "A",
+      "skill": "Participle adjective / Vocabulary",
+      "explanationVi": "Trước chỗ trống là danh từ <b>budget</b>, mang nghĩa \"ngân sách\", và sau đó có <b>to research and development</b>, mang nghĩa \"cho nghiên cứu và phát triển\". Chọn <b>allocated</b>, mang nghĩa \"được phân bổ\", để nói một phần ngân sách được phân bổ cho mục này. Các đáp án còn lại sai nghĩa: <b>imprinted</b> (in/dập lên), <b>economized</b> (tiết kiệm), <b>rationalized</b> (hợp lý hóa/biện minh)."
+    },
+    {
+      "id": "t6q131",
+      "no": 131,
+      "answer": "B",
+      "skill": "Coordinating conjunction",
+      "explanationVi": "Chỗ trống nằm giữa hai lựa chọn <b>acoustic guitar</b> và <b>electric</b>. Câu muốn nói dù bạn chơi guitar acoustic hay electric, nên chọn <b>or</b>, mang nghĩa \"hoặc\". Các đáp án còn lại không nối hai lựa chọn theo nghĩa này: <b>is</b> (là), <b>likely</b> (có khả năng), <b>from</b> (từ)."
+    },
+    {
+      "id": "t6q132",
+      "no": 132,
+      "answer": "A",
+      "skill": "Possessive determiner",
+      "explanationVi": "Sau chỗ trống là cụm danh từ <b>qualified instructors</b>, mang nghĩa \"giảng viên đủ chuyên môn\", nên vị trí trống cần một tính từ sở hữu. Chọn <b>our</b> để nói \"các giảng viên của chúng tôi\" trong quảng cáo của Estella Guitar. Các đáp án còn lại sai từ loại/vị trí: <b>ourselves</b> (chính chúng tôi) là đại từ phản thân, <b>ours</b> (của chúng tôi) là đại từ sở hữu đứng độc lập, <b>us</b> (chúng tôi) là tân ngữ."
+    },
+    {
+      "id": "t6q133",
+      "no": 133,
+      "answer": "C",
+      "skill": "Sentence insertion / Context",
+      "explanationVi": "Trước chỗ trống nói người học có kế hoạch học riêng để đặt mục tiêu và vượt qua khó khăn khiến họ nản chí. Câu sau nói giáo viên Estella sẽ giúp người học tự tin hơn. Đáp án <b>The best resource for you as a learner is an expert to guide your progress</b> nối đúng hai ý này vì nhấn mạnh vai trò của chuyên gia hướng dẫn người học tiến bộ. Các đáp án còn lại lệch mạch: <b>Contact a technician for questions about repairs</b> nói về sửa chữa, <b>A high-quality instrument will help you to perform at your best</b> nói về nhạc cụ, <b>It took them several years to master their instruments</b> nói về người khác mất nhiều năm luyện tập."
+    },
+    {
+      "id": "t6q134",
+      "no": 134,
+      "answer": "B",
+      "skill": "Transition",
+      "explanationVi": "Câu trước nói chơi nhạc là cách thể hiện bản thân. Câu sau nói Estella sẽ giúp người học vượt qua các hợp âm quen thuộc để phát triển bản sắc riêng. <b>With that in mind</b>, mang nghĩa \"với ý đó trong đầu\", nối tự nhiên hai ý này. Các đáp án còn lại không hợp mạch: <b>So far</b> (cho đến nay) chỉ thời gian, <b>On a different note</b> (chuyển sang chuyện khác) làm lệch chủ đề, <b>At that point</b> (vào thời điểm đó) không phù hợp."
+    },
+    {
+      "id": "t6q135",
+      "no": 135,
+      "answer": "C",
+      "skill": "Vocabulary",
+      "explanationVi": "Sau chỗ trống đang nói thời gian giao hàng thay đổi tùy theo địa điểm của nơi nhận hàng. Vì đây là chính sách giao hàng tận nhà, từ phù hợp là <b>residence</b>, mang nghĩa \"nơi ở\". Các đáp án còn lại sai nghĩa: <b>garden</b> (khu vườn), <b>records</b> (hồ sơ/bản ghi), <b>organization</b> (tổ chức)."
+    },
+    {
+      "id": "t6q136",
+      "no": 136,
+      "answer": "A",
+      "skill": "Infinitive of purpose",
+      "explanationVi": "Trước chỗ trống có <b>will work with a carrier</b>, và sau chỗ trống là <b>an appointment</b>. Câu muốn nói Vernico sẽ làm việc với đơn vị vận chuyển để sắp xếp lịch hẹn, nên chọn <b>to schedule</b>. Các đáp án còn lại không phù hợp: <b>is scheduling</b> là động từ chia thì, <b>as a schedule</b> là cụm danh từ không hợp nghĩa, <b>that scheduled</b> sai cấu trúc trong câu này."
+    },
+    {
+      "id": "t6q137",
+      "no": 137,
+      "answer": "C",
+      "skill": "Concession connector",
+      "explanationVi": "Trước chỗ trống nói giờ giao hàng thông thường là thứ Hai đến thứ Sáu từ 8 giờ sáng đến 5 giờ chiều. Sau chỗ trống nói vẫn có thể sắp xếp lịch buổi tối. Hai ý này mang sắc thái nhượng bộ, nên chọn <b>though</b>, mang nghĩa \"tuy nhiên/mặc dù vậy\". Các đáp án còn lại không hợp quan hệ ý: <b>if so</b> (nếu vậy), <b>when</b> (khi), <b>in the meantime</b> (trong lúc đó)."
+    },
+    {
+      "id": "t6q138",
+      "no": 138,
+      "answer": "D",
+      "skill": "Sentence insertion / Context",
+      "explanationVi": "Trước chỗ trống nói món hàng sẽ được đặt ở vị trí khách muốn. Câu sau nói việc lắp ráp cũng được bao gồm. Đáp án <b>All packing materials will be removed</b> phù hợp vì tiếp tục nói các dịch vụ đi kèm khi giao hàng tận nhà. Các đáp án còn lại lệch chủ đề: <b>When buying a home, location is extremely important</b> nói về mua nhà, <b>Refinishing furniture is a form of art</b> nói về hoàn thiện lại đồ nội thất, <b>Furnished apartments can be found online</b> nói về căn hộ có nội thất."
+    },
+    {
+      "id": "t6q139",
+      "no": 139,
+      "answer": "B",
+      "skill": "Sentence insertion / Context",
+      "explanationVi": "Câu sau nói đăng ký tạp chí của ông Pham đã được hủy. Vì vậy câu đứng trước cần thông báo rằng yêu cầu của ông đã được xử lý. Đáp án <b>We have processed your request</b> phù hợp nhất. Các đáp án còn lại lệch mục đích email: <b>Thank you for your timely order</b> nói về đơn hàng, <b>This is a payment reminder</b> nói về nhắc thanh toán, <b>Please contact us to update your information</b> yêu cầu cập nhật thông tin."
+    },
+    {
+      "id": "t6q140",
+      "no": 140,
+      "answer": "D",
+      "skill": "Preposition-like participle before date",
+      "explanationVi": "Sau chỗ trống là mốc thời gian <b>May 1</b>. Để nói \"bắt đầu từ ngày 1 tháng 5\", dùng <b>Starting</b>. Các đáp án còn lại không phù hợp: <b>Starts</b> là động từ chia thì, <b>Started</b> là quá khứ/V-ed, <b>Starter</b> là danh từ chỉ người/vật bắt đầu."
+    },
+    {
+      "id": "t6q141",
+      "no": 141,
+      "answer": "C",
+      "skill": "Vocabulary",
+      "explanationVi": "Sau chỗ trống có <b>of our publications</b>, và đoạn email nói về việc đăng ký các tạp chí của Academe Media. Người đọc ấn phẩm là <b>reader</b>, mang nghĩa \"độc giả\", nên chọn đáp án này. Các đáp án còn lại sai nghĩa: <b>distributor</b> (nhà phân phối), <b>producer</b> (nhà sản xuất), <b>teacher</b> (giáo viên)."
+    },
+    {
+      "id": "t6q142",
+      "no": 142,
+      "answer": "B",
+      "skill": "Preposition",
+      "explanationVi": "Sau chỗ trống là danh từ <b>checkout</b>, mang nghĩa \"bước thanh toán\". Cụm <b>upon checkout</b> có nghĩa là \"khi thanh toán/tại bước thanh toán\", phù hợp với hướng dẫn nhập mã giảm giá. Các đáp án còn lại không hợp nghĩa: <b>until</b> (cho đến khi), <b>without</b> (mà không có), <b>next</b> (tiếp theo)."
+    },
+    {
+      "id": "t6q143",
+      "no": 143,
+      "answer": "A",
+      "skill": "Verb form / Vocabulary",
+      "explanationVi": "Sau chỗ trống là <b>from 0°F to 220°F</b>, nên cần động từ diễn tả một nhiệt kế có dải đo từ mức này đến mức kia. Chọn <b>ranges</b>, mang nghĩa \"dao động/có phạm vi\". Các đáp án còn lại không phù hợp: <b>ranger</b> (kiểm lâm/người tuần tra) là danh từ chỉ người, <b>ranged</b> là quá khứ/V-ed, <b>ranging</b> là V-ing và không phù hợp sau chủ ngữ <b>that</b> ở đây."
+    },
+    {
+      "id": "t6q144",
+      "no": 144,
+      "answer": "D",
+      "skill": "Vocabulary / Context",
+      "explanationVi": "Câu sau nói nhiệt kế phải luôn được đặt ở vị trí ấm nhất trong tủ lạnh. Vì vậy ý cần nói là vị trí đặt nhiệt kế cũng quan trọng, nên chọn <b>placement</b>, mang nghĩa \"vị trí đặt\". Các đáp án còn lại không khớp với câu sau: <b>size</b> (kích thước), <b>safety</b> (an toàn), <b>reliability</b> (độ tin cậy)."
+    },
+    {
+      "id": "t6q145",
+      "no": 145,
+      "answer": "B",
+      "skill": "Sentence insertion / Context",
+      "explanationVi": "Câu trước nói nhiệt kế nên được đặt ở chỗ ấm nhất trong tủ lạnh. Câu sau bắt đầu bằng <b>This location</b>, nên câu cần chèn phải nêu một vị trí cụ thể. Đáp án <b>This is typically inside the door</b> phù hợp vì xác định vị trí đó là bên trong cửa. Các đáp án còn lại không tạo được liên kết với <b>This location</b>: <b>Remove them carefully</b> nói về tháo bỏ, <b>It should be kept cool at all times</b> nói về giữ lạnh, <b>They can also be purchased in bulk</b> nói về mua số lượng lớn."
+    },
+    {
+      "id": "t6q146",
+      "no": 146,
+      "answer": "B",
+      "skill": "Vocabulary",
+      "explanationVi": "Trước chỗ trống có <b>easily</b> và sau đó là <b>as soon as the door is opened</b>. Ngữ cảnh nói nhiệt kế đặt ở vị trí dễ nhìn thấy ngay khi mở cửa, nên chọn <b>seen</b>, mang nghĩa \"được nhìn thấy\". Các đáp án còn lại sai nghĩa: <b>sold</b> (được bán), <b>repaired</b> (được sửa), <b>removed</b> (được tháo bỏ)."
+    }
+  ]
+},
     {
       "id": "test7",
       "testNo": 7,
