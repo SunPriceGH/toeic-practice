@@ -1,0 +1,2157 @@
+{
+  "version": 2,
+  "packages": [
+    {
+      "id": "ets-summer-2021-test1-part1",
+      "name": "ETS 2021 Test 1 - Package 1",
+      "description": "Gói 1/4 · 50 từ, cụm từ, cấu trúc và collocation từ ETS Summer 2021 Test 1 Part 5–6.",
+      "source": "ETS Summer 2021 · Reading Test 1 · Part 5 + 6",
+      "words": [
+        {
+          "word": "write a positive review",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "viết một bài đánh giá tích cực"
+          ],
+          "note": "Q101 · collocation"
+        },
+        {
+          "word": "positive review",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "bài đánh giá tích cực"
+          ],
+          "note": "Q101"
+        },
+        {
+          "word": "stay",
+          "parts": [
+            "noun",
+            "verb"
+          ],
+          "meanings": [
+            "thời gian lưu trú",
+            "ở lại; lưu trú"
+          ],
+          "meaningsByPart": {
+            "noun": [
+              "thời gian lưu trú"
+            ],
+            "verb": [
+              "ở lại; lưu trú"
+            ]
+          },
+          "note": "Q101"
+        },
+        {
+          "word": "lead someone through something",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "hướng dẫn ai thực hiện hoặc đi qua việc gì"
+          ],
+          "note": "Q102 · structure"
+        },
+        {
+          "word": "safety procedure",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "quy trình an toàn"
+          ],
+          "note": "Q102"
+        },
+        {
+          "word": "be equipped with",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "được trang bị với"
+          ],
+          "note": "Q103 · fixed structure"
+        },
+        {
+          "word": "stationary bicycle",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "xe đạp tập tại chỗ"
+          ],
+          "note": "Q103"
+        },
+        {
+          "word": "go over",
+          "parts": [
+            "phrasal verb"
+          ],
+          "meanings": [
+            "xem xét; giải thích kỹ"
+          ],
+          "note": "Q104"
+        },
+        {
+          "word": "laboratory instrument",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "dụng cụ phòng thí nghiệm"
+          ],
+          "note": "Q104"
+        },
+        {
+          "word": "intern",
+          "parts": [
+            "noun",
+            "verb"
+          ],
+          "meanings": [
+            "thực tập sinh",
+            "thực tập"
+          ],
+          "meaningsByPart": {
+            "noun": [
+              "thực tập sinh"
+            ],
+            "verb": [
+              "thực tập"
+            ]
+          },
+          "note": "Q104"
+        },
+        {
+          "word": "refund",
+          "parts": [
+            "noun",
+            "verb"
+          ],
+          "meanings": [
+            "khoản tiền hoàn lại",
+            "hoàn tiền"
+          ],
+          "meaningsByPart": {
+            "noun": [
+              "khoản tiền hoàn lại"
+            ],
+            "verb": [
+              "hoàn tiền"
+            ]
+          },
+          "note": "Q105"
+        },
+        {
+          "word": "refund money to someone",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "hoàn tiền cho ai"
+          ],
+          "note": "Q105 · structure"
+        },
+        {
+          "word": "subscriber",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "người đăng ký thuê bao"
+          ],
+          "note": "Q105"
+        },
+        {
+          "word": "service interruption",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "sự gián đoạn dịch vụ"
+          ],
+          "note": "Q105"
+        },
+        {
+          "word": "board of directors",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "hội đồng quản trị"
+          ],
+          "note": "Q106"
+        },
+        {
+          "word": "examine",
+          "parts": [
+            "verb"
+          ],
+          "meanings": [
+            "kiểm tra; xem xét kỹ"
+          ],
+          "note": "Q106"
+        },
+        {
+          "word": "hiring policy",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "chính sách tuyển dụng"
+          ],
+          "note": "Q106"
+        },
+        {
+          "word": "purpose",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "mục đích"
+          ],
+          "note": "Q106 · option"
+        },
+        {
+          "word": "intent",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "ý định; mục đích"
+          ],
+          "note": "Q106 · option"
+        },
+        {
+          "word": "assembly",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "cuộc họp; sự lắp ráp"
+          ],
+          "note": "Q106 · option"
+        },
+        {
+          "word": "flight attendant",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "tiếp viên hàng không"
+          ],
+          "note": "Q107"
+        },
+        {
+          "word": "give someone permission to do something",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "cho phép ai làm việc gì"
+          ],
+          "note": "Q107 · structure"
+        },
+        {
+          "word": "unless",
+          "parts": [
+            "conjunction"
+          ],
+          "meanings": [
+            "trừ khi"
+          ],
+          "note": "Q107"
+        },
+        {
+          "word": "rather",
+          "parts": [
+            "adverb"
+          ],
+          "meanings": [
+            "đúng hơn; khá"
+          ],
+          "note": "Q107 · option"
+        },
+        {
+          "word": "instead",
+          "parts": [
+            "adverb"
+          ],
+          "meanings": [
+            "thay vào đó"
+          ],
+          "note": "Q107 · option"
+        },
+        {
+          "word": "otherwise",
+          "parts": [
+            "adverb"
+          ],
+          "meanings": [
+            "nếu không thì; mặt khác"
+          ],
+          "note": "Q107 · option"
+        },
+        {
+          "word": "evaluate",
+          "parts": [
+            "verb"
+          ],
+          "meanings": [
+            "đánh giá"
+          ],
+          "note": "Q108"
+        },
+        {
+          "word": "bylaw",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "điều lệ; quy định nội bộ"
+          ],
+          "note": "Q108"
+        },
+        {
+          "word": "offer recommendations",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "đưa ra các khuyến nghị"
+          ],
+          "note": "Q108 · collocation"
+        },
+        {
+          "word": "recommendation for improvement",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "khuyến nghị nhằm cải thiện"
+          ],
+          "note": "Q108"
+        },
+        {
+          "word": "renewal",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "sự gia hạn; sự đổi mới"
+          ],
+          "note": "Q108 · option"
+        },
+        {
+          "word": "registration",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "sự đăng ký"
+          ],
+          "note": "Q108 · option; P131–134"
+        },
+        {
+          "word": "reimbursement",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "khoản hoàn trả chi phí"
+          ],
+          "note": "Q108 · option"
+        },
+        {
+          "word": "ventilation system",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "hệ thống thông gió"
+          ],
+          "note": "Q109"
+        },
+        {
+          "word": "circulate",
+          "parts": [
+            "verb"
+          ],
+          "meanings": [
+            "lưu thông; luân chuyển"
+          ],
+          "note": "Q109"
+        },
+        {
+          "word": "evenly",
+          "parts": [
+            "adverb"
+          ],
+          "meanings": [
+            "một cách đồng đều"
+          ],
+          "note": "Q109"
+        },
+        {
+          "word": "more evenly than before",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "đồng đều hơn trước"
+          ],
+          "note": "Q109 · comparative structure"
+        },
+        {
+          "word": "promise someone their money back",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "cam kết hoàn tiền cho ai"
+          ],
+          "note": "Q110 · structure"
+        },
+        {
+          "word": "be satisfied with",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "hài lòng với"
+          ],
+          "note": "Q110 · collocation"
+        },
+        {
+          "word": "purchase",
+          "parts": [
+            "noun",
+            "verb"
+          ],
+          "meanings": [
+            "việc mua; món hàng đã mua",
+            "mua"
+          ],
+          "meaningsByPart": {
+            "noun": [
+              "việc mua; món hàng đã mua"
+            ],
+            "verb": [
+              "mua"
+            ]
+          },
+          "note": "Q110; P139–142"
+        },
+        {
+          "word": "punctual",
+          "parts": [
+            "adjective"
+          ],
+          "meanings": [
+            "đúng giờ"
+          ],
+          "note": "Q111"
+        },
+        {
+          "word": "precisely",
+          "parts": [
+            "adverb"
+          ],
+          "meanings": [
+            "chính xác"
+          ],
+          "note": "Q111"
+        },
+        {
+          "word": "rapid",
+          "parts": [
+            "adjective"
+          ],
+          "meanings": [
+            "nhanh; mau chóng"
+          ],
+          "note": "Q111 · option"
+        },
+        {
+          "word": "sudden",
+          "parts": [
+            "adjective"
+          ],
+          "meanings": [
+            "đột ngột"
+          ],
+          "note": "Q111 · option"
+        },
+        {
+          "word": "instant",
+          "parts": [
+            "noun",
+            "adjective"
+          ],
+          "meanings": [
+            "khoảnh khắc",
+            "tức thì"
+          ],
+          "meaningsByPart": {
+            "noun": [
+              "khoảnh khắc"
+            ],
+            "adjective": [
+              "tức thì"
+            ]
+          },
+          "note": "Q111 · option"
+        },
+        {
+          "word": "prior to",
+          "parts": [
+            "preposition"
+          ],
+          "meanings": [
+            "trước; trước khi"
+          ],
+          "note": "Q112"
+        },
+        {
+          "word": "vacation request",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "yêu cầu nghỉ phép"
+          ],
+          "note": "Q112"
+        },
+        {
+          "word": "requested date",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "ngày được yêu cầu; ngày dự kiến"
+          ],
+          "note": "Q112"
+        },
+        {
+          "word": "except for",
+          "parts": [
+            "preposition"
+          ],
+          "meanings": [
+            "ngoại trừ"
+          ],
+          "note": "Q112 · option"
+        },
+        {
+          "word": "previously",
+          "parts": [
+            "adverb"
+          ],
+          "meanings": [
+            "trước đây"
+          ],
+          "note": "Q112 · option"
+        }
+      ]
+    },
+    {
+      "id": "ets-summer-2021-test1-part2",
+      "name": "ETS 2021 Test 1 - Package 2",
+      "description": "Gói 2/4 · 50 từ, cụm từ, cấu trúc và collocation từ ETS Summer 2021 Test 1 Part 5–6.",
+      "source": "ETS Summer 2021 · Reading Test 1 · Part 5 + 6",
+      "words": [
+        {
+          "word": "bank statement",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "sao kê ngân hàng"
+          ],
+          "note": "Q113"
+        },
+        {
+          "word": "electronically",
+          "parts": [
+            "adverb"
+          ],
+          "meanings": [
+            "bằng phương thức điện tử"
+          ],
+          "note": "Q113"
+        },
+        {
+          "word": "by mail",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "qua đường bưu điện"
+          ],
+          "note": "Q113 · fixed phrase"
+        },
+        {
+          "word": "completion date",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "ngày hoàn thành"
+          ],
+          "note": "Q114"
+        },
+        {
+          "word": "selection",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "sự lựa chọn; danh mục lựa chọn"
+          ],
+          "note": "Q114 · option"
+        },
+        {
+          "word": "suitable site",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "địa điểm phù hợp"
+          ],
+          "note": "Q115"
+        },
+        {
+          "word": "construction",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "việc xây dựng"
+          ],
+          "note": "Q114–115"
+        },
+        {
+          "word": "electronics factory",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "nhà máy điện tử"
+          ],
+          "note": "Q115"
+        },
+        {
+          "word": "a site for something",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "địa điểm dành cho việc gì"
+          ],
+          "note": "Q115 · structure"
+        },
+        {
+          "word": "form an impression of",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "hình thành ấn tượng về"
+          ],
+          "note": "Q116 · collocation"
+        },
+        {
+          "word": "within the first few seconds",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "trong vài giây đầu tiên"
+          ],
+          "note": "Q116"
+        },
+        {
+          "word": "presentation",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "bài thuyết trình"
+          ],
+          "note": "Q116"
+        },
+        {
+          "word": "oversee",
+          "parts": [
+            "verb"
+          ],
+          "meanings": [
+            "giám sát; phụ trách"
+          ],
+          "note": "Q117"
+        },
+        {
+          "word": "domestic sales",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "doanh số nội địa"
+          ],
+          "note": "Q117"
+        },
+        {
+          "word": "low-calorie beverage",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "đồ uống ít calo"
+          ],
+          "note": "Q117"
+        },
+        {
+          "word": "possess",
+          "parts": [
+            "verb"
+          ],
+          "meanings": [
+            "sở hữu"
+          ],
+          "note": "Q117 · option"
+        },
+        {
+          "word": "succeed",
+          "parts": [
+            "verb"
+          ],
+          "meanings": [
+            "thành công; kế nhiệm"
+          ],
+          "note": "Q117 · option"
+        },
+        {
+          "word": "persist",
+          "parts": [
+            "verb"
+          ],
+          "meanings": [
+            "kiên trì; tiếp diễn"
+          ],
+          "note": "Q117 · option"
+        },
+        {
+          "word": "aspiring chef",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "người đang theo đuổi nghề đầu bếp"
+          ],
+          "note": "Q118"
+        },
+        {
+          "word": "culinary academy",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "học viện ẩm thực"
+          ],
+          "note": "Q118"
+        },
+        {
+          "word": "aspiration",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "khát vọng; nguyện vọng"
+          ],
+          "note": "Q118 · option"
+        },
+        {
+          "word": "typically",
+          "parts": [
+            "adverb"
+          ],
+          "meanings": [
+            "thông thường; điển hình là"
+          ],
+          "note": "Q119"
+        },
+        {
+          "word": "craft fair",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "hội chợ thủ công"
+          ],
+          "note": "Q119"
+        },
+        {
+          "word": "unique",
+          "parts": [
+            "adjective"
+          ],
+          "meanings": [
+            "độc đáo; duy nhất"
+          ],
+          "note": "Q119"
+        },
+        {
+          "word": "of high quality",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "có chất lượng cao"
+          ],
+          "note": "Q119"
+        },
+        {
+          "word": "home furnishings",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "đồ nội thất gia đình"
+          ],
+          "note": "Q120"
+        },
+        {
+          "word": "customized furniture",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "đồ nội thất được làm theo yêu cầu"
+          ],
+          "note": "Q120"
+        },
+        {
+          "word": "manufacture",
+          "parts": [
+            "noun",
+            "verb"
+          ],
+          "meanings": [
+            "hoạt động sản xuất",
+            "sản xuất"
+          ],
+          "meaningsByPart": {
+            "noun": [
+              "hoạt động sản xuất"
+            ],
+            "verb": [
+              "sản xuất"
+            ]
+          },
+          "note": "Q120"
+        },
+        {
+          "word": "for more than a century",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "trong hơn một thế kỷ"
+          ],
+          "note": "Q120 · time structure"
+        },
+        {
+          "word": "hold phone calls",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "tạm giữ các cuộc gọi; không chuyển máy"
+          ],
+          "note": "Q121"
+        },
+        {
+          "word": "all day",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "suốt cả ngày"
+          ],
+          "note": "Q121"
+        },
+        {
+          "word": "estate planning attorney",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "luật sư hoạch định tài sản"
+          ],
+          "note": "Q122"
+        },
+        {
+          "word": "asset",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "tài sản"
+          ],
+          "note": "Q122"
+        },
+        {
+          "word": "effectively",
+          "parts": [
+            "adverb"
+          ],
+          "meanings": [
+            "một cách hiệu quả"
+          ],
+          "note": "Q122"
+        },
+        {
+          "word": "focus group",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "nhóm thảo luận khảo sát"
+          ],
+          "note": "Q123"
+        },
+        {
+          "word": "be optimistic about",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "lạc quan về"
+          ],
+          "note": "Q123 · collocation"
+        },
+        {
+          "word": "fragrance",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "nước hoa; hương thơm"
+          ],
+          "note": "Q123"
+        },
+        {
+          "word": "extensive",
+          "parts": [
+            "adjective"
+          ],
+          "meanings": [
+            "rộng lớn; sâu rộng"
+          ],
+          "note": "Q123 · option"
+        },
+        {
+          "word": "distinct",
+          "parts": [
+            "adjective"
+          ],
+          "meanings": [
+            "riêng biệt; rõ ràng"
+          ],
+          "note": "Q123 · option"
+        },
+        {
+          "word": "superior",
+          "parts": [
+            "adjective"
+          ],
+          "meanings": [
+            "vượt trội; cao cấp hơn"
+          ],
+          "note": "Q123 · option"
+        },
+        {
+          "word": "predict",
+          "parts": [
+            "verb"
+          ],
+          "meanings": [
+            "dự đoán"
+          ],
+          "note": "Q124"
+        },
+        {
+          "word": "future expense",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "chi phí trong tương lai"
+          ],
+          "note": "Q124"
+        },
+        {
+          "word": "better predict",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "dự đoán tốt hơn"
+          ],
+          "note": "Q124"
+        },
+        {
+          "word": "decrease in production",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "sự sụt giảm sản lượng"
+          ],
+          "note": "Q125"
+        },
+        {
+          "word": "impact work schedules",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "ảnh hưởng đến lịch làm việc"
+          ],
+          "note": "Q125"
+        },
+        {
+          "word": "process",
+          "parts": [
+            "noun",
+            "verb"
+          ],
+          "meanings": [
+            "quy trình",
+            "xử lý"
+          ],
+          "meaningsByPart": {
+            "noun": [
+              "quy trình"
+            ],
+            "verb": [
+              "xử lý"
+            ]
+          },
+          "note": "Q126"
+        },
+        {
+          "word": "a substantial amount of",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "một lượng lớn; một lượng đáng kể"
+          ],
+          "note": "Q126 · structure"
+        },
+        {
+          "word": "grain",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "ngũ cốc; hạt"
+          ],
+          "note": "Q126"
+        },
+        {
+          "word": "durable",
+          "parts": [
+            "adjective"
+          ],
+          "meanings": [
+            "bền; lâu hỏng"
+          ],
+          "note": "Q126 · option"
+        },
+        {
+          "word": "resolute",
+          "parts": [
+            "adjective"
+          ],
+          "meanings": [
+            "kiên quyết"
+          ],
+          "note": "Q126 · option"
+        }
+      ]
+    },
+    {
+      "id": "ets-summer-2021-test1-part3",
+      "name": "ETS 2021 Test 1 - Package 3",
+      "description": "Gói 3/4 · 50 từ, cụm từ, cấu trúc và collocation từ ETS Summer 2021 Test 1 Part 5–6.",
+      "source": "ETS Summer 2021 · Reading Test 1 · Part 5 + 6",
+      "words": [
+        {
+          "word": "escalator",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "thang cuốn"
+          ],
+          "note": "Q127"
+        },
+        {
+          "word": "periodically",
+          "parts": [
+            "adverb"
+          ],
+          "meanings": [
+            "định kỳ; thỉnh thoảng theo chu kỳ"
+          ],
+          "note": "Q127"
+        },
+        {
+          "word": "in order to",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "để; nhằm"
+          ],
+          "note": "Q127 · purpose structure"
+        },
+        {
+          "word": "perform maintenance",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "thực hiện bảo trì"
+          ],
+          "note": "Q127 · collocation"
+        },
+        {
+          "word": "required maintenance",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "việc bảo trì bắt buộc; bảo trì cần thiết"
+          ],
+          "note": "Q127"
+        },
+        {
+          "word": "volunteer",
+          "parts": [
+            "noun",
+            "verb"
+          ],
+          "meanings": [
+            "tình nguyện viên",
+            "tình nguyện"
+          ],
+          "meaningsByPart": {
+            "noun": [
+              "tình nguyện viên"
+            ],
+            "verb": [
+              "tình nguyện"
+            ]
+          },
+          "note": "Q128"
+        },
+        {
+          "word": "annual event",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "sự kiện thường niên"
+          ],
+          "note": "Q128; P131–134"
+        },
+        {
+          "word": "flower-planting event",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "sự kiện trồng hoa"
+          ],
+          "note": "Q128"
+        },
+        {
+          "word": "be asked to do something",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "được yêu cầu làm việc gì"
+          ],
+          "note": "Q128 · passive structure"
+        },
+        {
+          "word": "arrive early",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "đến sớm"
+          ],
+          "note": "Q128"
+        },
+        {
+          "word": "controversial",
+          "parts": [
+            "adjective"
+          ],
+          "meanings": [
+            "gây tranh cãi"
+          ],
+          "note": "Q129"
+        },
+        {
+          "word": "explain the latest changes",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "giải thích những thay đổi mới nhất"
+          ],
+          "note": "Q129"
+        },
+        {
+          "word": "assessment",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "sự đánh giá; cuộc thẩm định"
+          ],
+          "note": "Q130"
+        },
+        {
+          "word": "property value",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "giá trị bất động sản"
+          ],
+          "note": "Q130"
+        },
+        {
+          "word": "region",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "khu vực; vùng"
+          ],
+          "note": "Q130"
+        },
+        {
+          "word": "increase by",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "tăng thêm một lượng hoặc tỷ lệ"
+          ],
+          "note": "Q130 · structure"
+        },
+        {
+          "word": "assessable",
+          "parts": [
+            "adjective"
+          ],
+          "meanings": [
+            "có thể đánh giá; có thể chịu thuế"
+          ],
+          "note": "Q130 · option"
+        },
+        {
+          "word": "attract attendees",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "thu hút người tham dự"
+          ],
+          "note": "P131–134"
+        },
+        {
+          "word": "attendee",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "người tham dự"
+          ],
+          "note": "P131–134"
+        },
+        {
+          "word": "graphic-design professional",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "chuyên gia thiết kế đồ họa"
+          ],
+          "note": "P131–134"
+        },
+        {
+          "word": "grow in popularity",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "ngày càng trở nên phổ biến"
+          ],
+          "note": "P131–134 · collocation"
+        },
+        {
+          "word": "steadily",
+          "parts": [
+            "adverb"
+          ],
+          "meanings": [
+            "đều đặn; ổn định"
+          ],
+          "note": "P131–134"
+        },
+        {
+          "word": "keynote speech",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "bài phát biểu chủ đạo"
+          ],
+          "note": "P131–134"
+        },
+        {
+          "word": "plenary session",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "phiên họp toàn thể"
+          ],
+          "note": "P131–134"
+        },
+        {
+          "word": "professional networking",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "hoạt động kết nối nghề nghiệp"
+          ],
+          "note": "P131–134"
+        },
+        {
+          "word": "market oneself to",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "quảng bá bản thân với"
+          ],
+          "note": "Q132 · structure"
+        },
+        {
+          "word": "firm",
+          "parts": [
+            "noun",
+            "adjective"
+          ],
+          "meanings": [
+            "công ty",
+            "vững chắc; kiên quyết"
+          ],
+          "meaningsByPart": {
+            "noun": [
+              "công ty"
+            ],
+            "adjective": [
+              "vững chắc; kiên quyết"
+            ]
+          },
+          "note": "P131–134"
+        },
+        {
+          "word": "industry",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "ngành công nghiệp; lĩnh vực kinh doanh"
+          ],
+          "note": "P131–134"
+        },
+        {
+          "word": "schedule",
+          "parts": [
+            "noun",
+            "verb"
+          ],
+          "meanings": [
+            "lịch trình",
+            "lên lịch"
+          ],
+          "meaningsByPart": {
+            "noun": [
+              "lịch trình"
+            ],
+            "verb": [
+              "lên lịch"
+            ]
+          },
+          "note": "Q133"
+        },
+        {
+          "word": "design enthusiast",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "người yêu thích thiết kế"
+          ],
+          "note": "P131–134"
+        },
+        {
+          "word": "freelance designer",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "nhà thiết kế tự do"
+          ],
+          "note": "P131–134"
+        },
+        {
+          "word": "business owner",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "chủ doanh nghiệp"
+          ],
+          "note": "P131–134"
+        },
+        {
+          "word": "throughout",
+          "parts": [
+            "preposition",
+            "adverb"
+          ],
+          "meanings": [
+            "khắp; xuyên suốt",
+            "ở khắp nơi; suốt toàn bộ thời gian"
+          ],
+          "meaningsByPart": {
+            "preposition": [
+              "khắp; xuyên suốt"
+            ],
+            "adverb": [
+              "ở khắp nơi; suốt toàn bộ thời gian"
+            ]
+          },
+          "note": "Q134 · option"
+        },
+        {
+          "word": "feedback",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "ý kiến phản hồi"
+          ],
+          "note": "Q134 · option"
+        },
+        {
+          "word": "housing specialist",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "chuyên viên nhà ở"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "realty",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "bất động sản"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "seek",
+          "parts": [
+            "verb"
+          ],
+          "meanings": [
+            "tìm kiếm"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "international client",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "khách hàng quốc tế"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "specialize in",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "chuyên về"
+          ],
+          "note": "P135–138 · collocation"
+        },
+        {
+          "word": "secure appropriate short-term housing",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "tìm và thu xếp chỗ ở ngắn hạn phù hợp"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "short-term housing",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "chỗ ở ngắn hạn"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "client-relations department",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "bộ phận quan hệ khách hàng"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "provide guidance to",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "cung cấp hướng dẫn cho"
+          ],
+          "note": "Q136 · collocation"
+        },
+        {
+          "word": "temporary relocation",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "việc chuyển nơi ở hoặc làm việc tạm thời"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "duty",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "nhiệm vụ; trách nhiệm"
+          ],
+          "note": "Q137"
+        },
+        {
+          "word": "support clients after their arrival",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "hỗ trợ khách hàng sau khi họ đến"
+          ],
+          "note": "Q137"
+        },
+        {
+          "word": "successful candidate",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "ứng viên được tuyển; ứng viên thành công"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "knowledge of",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "kiến thức về"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "real estate",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "bất động sản"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "rental agency",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "đại lý cho thuê"
+          ],
+          "note": "P135–138"
+        }
+      ]
+    },
+    {
+      "id": "ets-summer-2021-test1-part4",
+      "name": "ETS 2021 Test 1 - Package 4",
+      "description": "Gói 4/4 · 50 từ, cụm từ, cấu trúc và collocation từ ETS Summer 2021 Test 1 Part 5–6.",
+      "source": "ETS Summer 2021 · Reading Test 1 · Part 5 + 6",
+      "words": [
+        {
+          "word": "a minimum of",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "tối thiểu"
+          ],
+          "note": "P135–138 · structure"
+        },
+        {
+          "word": "customer-service experience",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "kinh nghiệm dịch vụ khách hàng"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "qualification",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "trình độ; năng lực; điều kiện chuyên môn"
+          ],
+          "note": "Q138"
+        },
+        {
+          "word": "be encouraged to",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "được khuyến khích làm gì"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "recruitment",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "việc tuyển dụng"
+          ],
+          "note": "P135–138"
+        },
+        {
+          "word": "travel expense",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "chi phí đi lại"
+          ],
+          "note": "Q137 · option"
+        },
+        {
+          "word": "be covered by",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "được chi trả bởi; được bao phủ bởi"
+          ],
+          "note": "Q137 · option"
+        },
+        {
+          "word": "incomplete application",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "hồ sơ chưa đầy đủ"
+          ],
+          "note": "Q137 · option"
+        },
+        {
+          "word": "be considered",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "được xem xét"
+          ],
+          "note": "Q137 · option"
+        },
+        {
+          "word": "satisfy a craving",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "thỏa mãn cơn thèm"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "sugary craving",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "cơn thèm đồ ngọt"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "returning customer",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "khách hàng quay lại"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "relative",
+          "parts": [
+            "noun",
+            "adjective"
+          ],
+          "meanings": [
+            "người thân",
+            "tương đối; có liên quan"
+          ],
+          "meaningsByPart": {
+            "noun": [
+              "người thân"
+            ],
+            "adjective": [
+              "tương đối; có liên quan"
+            ]
+          },
+          "note": "P139–142"
+        },
+        {
+          "word": "crowded",
+          "parts": [
+            "adjective"
+          ],
+          "meanings": [
+            "đông đúc"
+          ],
+          "note": "Q139"
+        },
+        {
+          "word": "credit the success of something to",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "cho rằng thành công của việc gì là nhờ vào"
+          ],
+          "note": "P139–142 · structure"
+        },
+        {
+          "word": "recipe",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "công thức nấu ăn"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "inherit",
+          "parts": [
+            "verb"
+          ],
+          "meanings": [
+            "thừa hưởng; thừa kế"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "decade",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "thập kỷ"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "social media campaign",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "chiến dịch truyền thông xã hội"
+          ],
+          "note": "Q140"
+        },
+        {
+          "word": "boost sales",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "thúc đẩy doanh số"
+          ],
+          "note": "Q140 · collocation"
+        },
+        {
+          "word": "pastry shop",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "cửa hàng bánh ngọt"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "leave someone with a problem",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "khiến ai phải đối mặt với một vấn đề"
+          ],
+          "note": "Q141 · structure"
+        },
+        {
+          "word": "unanticipated problem",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "vấn đề không lường trước"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "lack of space",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "sự thiếu không gian"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "go out of business",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "ngừng kinh doanh; phá sản"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "purchase the property",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "mua bất động sản đó"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "allow for",
+          "parts": [
+            "phrasal verb"
+          ],
+          "meanings": [
+            "tạo điều kiện cho; tính đến"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "expansion",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "sự mở rộng"
+          ],
+          "note": "Q142"
+        },
+        {
+          "word": "renovation",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "việc cải tạo; sửa sang"
+          ],
+          "note": "P139–142"
+        },
+        {
+          "word": "enhanced security measure",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "biện pháp bảo mật tăng cường"
+          ],
+          "note": "P143–146"
+        },
+        {
+          "word": "be required to",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "được yêu cầu; bắt buộc phải"
+          ],
+          "note": "P143–146"
+        },
+        {
+          "word": "access the company network",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "truy cập mạng công ty"
+          ],
+          "note": "P143–146"
+        },
+        {
+          "word": "log-in ID",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "mã đăng nhập"
+          ],
+          "note": "P143–146"
+        },
+        {
+          "word": "remain the same",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "vẫn giữ nguyên"
+          ],
+          "note": "Q143"
+        },
+        {
+          "word": "capital letter",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "chữ cái viết hoa"
+          ],
+          "note": "P143–146"
+        },
+        {
+          "word": "lowercase letter",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "chữ cái viết thường"
+          ],
+          "note": "P143–146"
+        },
+        {
+          "word": "special character",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "ký tự đặc biệt"
+          ],
+          "note": "P143–146"
+        },
+        {
+          "word": "remind someone to do something",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "nhắc ai làm việc gì"
+          ],
+          "note": "Q144 · structure"
+        },
+        {
+          "word": "set a new password",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "đặt mật khẩu mới"
+          ],
+          "note": "P143–146"
+        },
+        {
+          "word": "failure to do so",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "việc không làm như vậy"
+          ],
+          "note": "Q145 · fixed structure"
+        },
+        {
+          "word": "result in",
+          "parts": [
+            "phrasal verb"
+          ],
+          "meanings": [
+            "dẫn đến; gây ra"
+          ],
+          "note": "Q145"
+        },
+        {
+          "word": "be locked out of an account",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "bị khóa không thể truy cập tài khoản"
+          ],
+          "note": "Q145"
+        },
+        {
+          "word": "platform provider",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "nhà cung cấp nền tảng"
+          ],
+          "note": "P143–146"
+        },
+        {
+          "word": "for assistance",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "để được hỗ trợ"
+          ],
+          "note": "P143–146"
+        },
+        {
+          "word": "ensure",
+          "parts": [
+            "verb"
+          ],
+          "meanings": [
+            "đảm bảo"
+          ],
+          "note": "P143–146"
+        },
+        {
+          "word": "the highest possible level",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "mức cao nhất có thể"
+          ],
+          "note": "P143–146"
+        },
+        {
+          "word": "supervisor",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "người giám sát; quản lý trực tiếp"
+          ],
+          "note": "Q112"
+        },
+        {
+          "word": "finance department",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "bộ phận tài chính"
+          ],
+          "note": "Q124"
+        },
+        {
+          "word": "work schedule",
+          "parts": [
+            "noun"
+          ],
+          "meanings": [
+            "lịch làm việc"
+          ],
+          "note": "Q125"
+        },
+        {
+          "word": "Thank you for your cooperation",
+          "parts": [
+            "phrase"
+          ],
+          "meanings": [
+            "Cảm ơn sự hợp tác của bạn"
+          ],
+          "note": "Q146 · business closing"
+        }
+      ]
+    }
+  ]
+}
