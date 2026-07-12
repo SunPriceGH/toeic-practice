@@ -270,6 +270,100 @@ h1,h2,h3,h4,h5,h6,b,strong,.word-title,.stat b,.tool-card b,.mode-copy b,.histor
   .question-part-pill{min-width:auto}
 }
 
+/* ===== Vocabulary packages ===== */
+.package-action-btn{
+  background:#eefbf4;
+  border-color:#bdebd1;
+  color:#16784a;
+}
+.package-action-btn:hover{
+  background:#dcf8e9;
+  border-color:#83d9aa;
+  color:#11643d;
+}
+.package-backdrop{
+  position:fixed;
+  inset:0;
+  z-index:240;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(25,42,72,.48);
+  backdrop-filter:blur(8px);
+}
+.package-backdrop.show{display:flex}
+.package-panel{
+  width:min(720px,100%);
+  max-height:min(760px,calc(100vh - 40px));
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  background:#fff;
+  border:2px solid #ddecff;
+  border-radius:30px;
+  box-shadow:0 28px 70px rgba(24,49,88,.24);
+}
+.package-panel-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  padding:22px 24px 16px;
+  border-bottom:2px solid #edf4ff;
+}
+.package-panel-head h3{margin:0;font-size:24px}
+.package-panel-head p{margin:6px 0 0;color:var(--muted);font-weight:700;line-height:1.45}
+.package-close{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  border:2px solid #ddecff;
+  border-radius:50%;
+  background:#fff;
+  color:#52627d;
+  font-size:24px;
+  cursor:pointer;
+}
+.package-list{
+  overflow:auto;
+  display:grid;
+  gap:12px;
+  padding:18px 24px;
+}
+.package-option{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:14px;
+  align-items:center;
+  padding:16px;
+  border:2px solid #e4efff;
+  border-radius:22px;
+  background:#fbfdff;
+  cursor:pointer;
+  transition:.18s ease;
+}
+.package-option:hover,.package-option:has(input:checked){
+  border-color:#8fc9ff;
+  background:#eef8ff;
+  transform:translateY(-1px);
+}
+.package-option input{width:22px;height:22px;accent-color:#4f7cff;cursor:pointer}
+.package-option-copy b{display:block;font-size:17px;color:var(--ink)}
+.package-option-copy span{display:block;margin-top:5px;color:var(--muted);font-size:13px;font-weight:700;line-height:1.4}
+.package-count{white-space:nowrap;border-radius:999px;background:#fff;border:2px solid #ddecff;padding:7px 10px;color:#3264d8;font-size:12px;font-weight:700}
+.package-loaded{color:#16784a;border-color:#bdebd1;background:#eefbf4}
+.package-panel-foot{padding:16px 24px 22px;border-top:2px solid #edf4ff;background:#fbfdff}
+.package-panel-foot .actions{margin-top:0;justify-content:flex-end}
+.package-empty{padding:22px;border:2px dashed #ddecff;border-radius:20px;color:var(--muted);font-weight:700;text-align:center}
+@media(max-width:560px){
+  .package-backdrop{padding:10px}
+  .package-panel{max-height:calc(100vh - 20px);border-radius:24px}
+  .package-panel-head,.package-list,.package-panel-foot{padding-left:16px;padding-right:16px}
+  .package-option{grid-template-columns:auto 1fr}
+  .package-count{grid-column:2;justify-self:start}
+}
+
 
 
 /* ===== Patch: anti-copy + touch/hover button feedback ===== */
@@ -965,6 +1059,9 @@ input,textarea{
           <option value="phrase">phrase</option>
           <option value="phrasal verb">phrasal verb</option>
         </select>
+        <select class="part-sort-select" id="userPackageSort" onchange="setPackageSort(this.value)" aria-label="Lọc từ trong hòm theo gói" disabled>
+          <option value="">Theo gói: Tất cả</option>
+        </select>
       </div>
       <div class="list" id="userList"></div>
     </section>
@@ -1003,6 +1100,7 @@ input,textarea{
           <option value="phrase">phrase</option>
           <option value="phrasal verb">phrasal verb</option>
         </select>
+        <button class="sort-btn package-action-btn" type="button" onclick="openPackagePanel()">📦 Thêm gói từ</button>
       </div>
       <div class="list" id="commonList"></div>
 
@@ -1074,6 +1172,26 @@ input,textarea{
   </div>
 </div>
 
+<div class="package-backdrop" id="packageBackdrop" onclick="closePackagePanel(event)">
+  <div class="package-panel" role="dialog" aria-modal="true" aria-labelledby="packagePanelTitle">
+    <div class="package-panel-head">
+      <div>
+        <h3 id="packagePanelTitle">📦 Thêm gói từ</h3>
+        <p>Chọn một hoặc nhiều gói. Từ trùng sẽ được cập nhật theo dữ liệu mới và không tạo bản sao.</p>
+      </div>
+      <button class="package-close" type="button" onclick="closePackagePanel()" aria-label="Đóng">×</button>
+    </div>
+    <div class="package-list" id="packageList"><div class="package-empty">Đang tải danh sách gói từ...</div></div>
+    <div class="package-panel-foot">
+      <div class="status" id="packageStatus"></div>
+      <div class="actions">
+        <button class="btn secondary" type="button" onclick="closePackagePanel()">Đóng</button>
+        <button class="btn good" id="loadPackageBtn" type="button" onclick="loadSelectedPackages()">Nạp hòm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </main>
 
 <script>
@@ -1099,6 +1217,7 @@ const RANKS=[
 ];
 
 let TOEIC_COMMON_SEED_CACHE=null;
+let VOCAB_PACKAGE_CACHE=null;
 function simplePart(part){
   return String(part||'').trim().toLowerCase().replace(/\s+/g,' ');
 }
@@ -1134,6 +1253,16 @@ function normalizeSeedItem(item,index){
     meaningsByPart[parts[0]]=meanings.slice();
   }
 
+  const packageIds=[];
+  const rawPackageIds=[]
+    .concat(Array.isArray(item.packageIds)?item.packageIds:[])
+    .concat(Array.isArray(item.packages)?item.packages:[])
+    .concat(item.packageId?[item.packageId]:[]);
+  rawPackageIds.forEach(function(value){
+    const id=String(value||'').trim();
+    if(id&&!packageIds.includes(id)) packageIds.push(id);
+  });
+
   return {
     id:String(item.id||seedIdFromWord(word,index)),
     word:word,
@@ -1142,6 +1271,7 @@ function normalizeSeedItem(item,index){
     meaningsByPart:meaningsByPart,
     note:String(item.note||'').trim(),
     audioUrl:String(item.audioUrl||'').trim(),
+    packageIds:packageIds,
     fromJsonSeed:true
   };
 }
@@ -1183,6 +1313,49 @@ async function getToeicCommonSeed(){
   TOEIC_COMMON_SEED_CACHE=[];
   return TOEIC_COMMON_SEED_CACHE;
 }
+function normalizeVocabularyPackage(pkg,index){
+  pkg=pkg||{};
+  const id=String(pkg.id||('package-'+(index+1))).trim().toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9._-]+/g,'-').replace(/^-+|-+$/g,'');
+  const name=String(pkg.name||('Gói từ '+(index+1))).trim();
+  const words=(Array.isArray(pkg.words)?pkg.words:[]).map(function(item,wordIndex){
+    const normalized=normalizeSeedItem(item,wordIndex);
+    normalized.id=String(item&&item.id||('package:'+id+':'+wordIndex));
+    normalized.packageIds=[id];
+    normalized.source='package';
+    return normalized;
+  }).filter(function(item){return item.word;});
+  return {
+    id:id,
+    name:name,
+    description:String(pkg.description||'').trim(),
+    source:String(pkg.source||'').trim(),
+    words:words
+  };
+}
+function parseVocabularyPackagesText(text){
+  const src=String(text||'').trim().replace(/^\uFEFF/,'');
+  if(!src) return [];
+  const data=JSON.parse(src);
+  const packages=Array.isArray(data)?data:(data&&Array.isArray(data.packages)?data.packages:[]);
+  return packages.map(normalizeVocabularyPackage).filter(function(pkg){return pkg.id&&pkg.words.length;});
+}
+async function getVocabularyPackages(){
+  if(Array.isArray(VOCAB_PACKAGE_CACHE)) return VOCAB_PACKAGE_CACHE;
+  const paths=['data/vocabulary-packages.json','./data/vocabulary-packages.json','/data/vocabulary-packages.json'];
+  let lastErr=null;
+  for(const path of paths){
+    try{
+      const res=await fetch(path+'?v='+Date.now(),{cache:'no-store'});
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      VOCAB_PACKAGE_CACHE=parseVocabularyPackagesText(await res.text());
+      console.info('[Vocab] Packages loaded:',path,VOCAB_PACKAGE_CACHE.length);
+      return VOCAB_PACKAGE_CACHE;
+    }catch(err){lastErr=err;}
+  }
+  console.error('[Vocab] Package load failed:',lastErr);
+  VOCAB_PACKAGE_CACHE=[];
+  return VOCAB_PACKAGE_CACHE;
+}
 function itemForSave(item){
   return {
     word:String(item&&item.word||'').trim(),
@@ -1191,6 +1364,7 @@ function itemForSave(item){
     meaningsByPart:item&&item.meaningsByPart&&typeof item.meaningsByPart==='object'?item.meaningsByPart:{},
     note:String(item&&item.note||'').trim(),
     audioUrl:String(item&&item.audioUrl||'').trim(),
+    packageIds:Array.isArray(item&&item.packageIds)?item.packageIds.map(function(id){return String(id||'').trim();}).filter(Boolean):[],
     useInGame:item&&item.useInGame===false?false:true
   };
 }
@@ -1216,6 +1390,7 @@ let userWords=[];
 let commonWords=[];
 let commonKvWords=[];
 let commonSeedWords=[];
+let vocabularyPackages=[];
 let selectedMode='choice';
 let game=null;
 let activeAudio=null;
@@ -1225,6 +1400,7 @@ let userSortDir='asc';
 let commonSortDir='asc';
 let userPartSort='';
 let commonPartSort='';
+let userPackageSort='';
 let vocabCloudDisabled=false;
 let userDeletedKeys=[];
 let rankAutoScrollDone=false;
@@ -1649,6 +1825,16 @@ async function loadVocabulary(){
   }
 
   try{
+    vocabularyPackages=await getVocabularyPackages();
+    renderPackagePanel();
+    syncUserPackageSelect();
+  }catch(packageErr){
+    vocabularyPackages=[];
+    renderPackagePanel();
+    console.error('[Vocab] Không tải được gói từ:',packageErr);
+  }
+
+  try{
     commonSeedWords=await getToeicCommonSeed();
     commonKvWords=[];
     rebuildCommonWords();
@@ -2034,6 +2220,123 @@ function setPartSort(scope,part){
   if(scope==='user') userPartSort=part;
   if(scope==='common') commonPartSort=part;
   renderAll();
+}
+
+function wordPackageIds(item){
+  return Array.isArray(item&&item.packageIds)
+    ? item.packageIds.map(function(id){return String(id||'').trim();}).filter(Boolean)
+    : [];
+}
+function wordMatchesPackage(item,packageId){
+  packageId=String(packageId||'').trim();
+  return !packageId||wordPackageIds(item).includes(packageId);
+}
+function packageIsLoaded(packageId){
+  return userWords.some(function(item){return wordPackageIds(item).includes(packageId);});
+}
+function loadedVocabularyPackages(){
+  return vocabularyPackages.filter(function(pkg){return packageIsLoaded(pkg.id);});
+}
+function syncUserPackageSelect(){
+  const select=document.getElementById('userPackageSort');
+  if(!select) return;
+  const loaded=loadedVocabularyPackages();
+  if(userPackageSort&&!loaded.some(function(pkg){return pkg.id===userPackageSort;})) userPackageSort='';
+  select.innerHTML='<option value="">Theo gói: Tất cả</option>'+loaded.map(function(pkg){
+    return '<option value="'+escapeHtml(pkg.id)+'">'+escapeHtml(pkg.name)+'</option>';
+  }).join('');
+  select.value=userPackageSort;
+  select.disabled=loaded.length===0;
+  select.title=loaded.length?'Chỉ hiển thị từ thuộc gói đã nạp':'Bạn chưa nạp gói từ nào';
+}
+function setPackageSort(packageId){
+  userPackageSort=String(packageId||'');
+  renderAll();
+}
+function renderPackagePanel(){
+  const list=document.getElementById('packageList');
+  const button=document.getElementById('loadPackageBtn');
+  if(!list) return;
+  if(!vocabularyPackages.length){
+    list.innerHTML='<div class="package-empty">Chưa có gói từ nào trong data/vocabulary-packages.json.</div>';
+    if(button) button.disabled=true;
+    return;
+  }
+  if(button) button.disabled=false;
+  list.innerHTML=vocabularyPackages.map(function(pkg){
+    const loaded=packageIsLoaded(pkg.id);
+    const description=pkg.description||pkg.source||'Gói từ vựng';
+    return '<label class="package-option"><input type="checkbox" name="vocabPackage" value="'+escapeHtml(pkg.id)+'"><span class="package-option-copy"><b>'+escapeHtml(pkg.name)+'</b><span>'+escapeHtml(description)+'</span></span><span class="package-count '+(loaded?'package-loaded':'')+'">'+pkg.words.length+' từ'+(loaded?' · Đã nạp':'')+'</span></label>';
+  }).join('');
+}
+function openPackagePanel(){
+  renderPackagePanel();
+  setStatus('packageStatus','');
+  document.getElementById('packageBackdrop')?.classList.add('show');
+}
+function closePackagePanel(event){
+  if(event&&event.target&&event.target.id!=='packageBackdrop') return;
+  document.getElementById('packageBackdrop')?.classList.remove('show');
+}
+function selectedPackageIds(){
+  return Array.from(document.querySelectorAll('input[name="vocabPackage"]:checked')).map(function(input){return input.value;});
+}
+function importPackageWord(item,packageId){
+  const key=normalizeText(item&&item.word);
+  if(!key) return 'skipped';
+  const existingIndex=userWords.findIndex(function(word){return normalizeText(word.word)===key;});
+  const existing=existingIndex>=0?userWords[existingIndex]:null;
+  const packageIds=[];
+  wordPackageIds(existing).concat(wordPackageIds(item),[packageId]).forEach(function(id){
+    id=String(id||'').trim();
+    if(id&&!packageIds.includes(id)) packageIds.push(id);
+  });
+  const replacement=makeLocalUserItem(Object.assign({},item,{
+    id:existing&&existing.id?existing.id:undefined,
+    source:'package',
+    commonId:existing&&existing.commonId?existing.commonId:'',
+    createdAt:existing&&existing.createdAt?existing.createdAt:undefined,
+    useInGame:existing&&existing.useInGame===false?false:true,
+    packageIds:packageIds
+  }));
+  if(existingIndex>=0) userWords.splice(existingIndex,1,replacement);
+  else userWords.unshift(replacement);
+  userDeletedKeys=(userDeletedKeys||[]).filter(function(deleted){return normalizeText(deleted)!==key;});
+  return existingIndex>=0?'overwritten':'added';
+}
+async function loadSelectedPackages(){
+  const ids=selectedPackageIds();
+  if(!ids.length){
+    setStatus('packageStatus','Hãy chọn ít nhất một gói từ.','err');
+    cuteToast('Hãy chọn ít nhất một gói từ','warning');
+    return;
+  }
+  const button=document.getElementById('loadPackageBtn');
+  if(button){button.disabled=true;button.textContent='Đang nạp...';}
+  let added=0;
+  let overwritten=0;
+  try{
+    ids.forEach(function(id){
+      const pkg=vocabularyPackages.find(function(item){return item.id===id;});
+      if(!pkg) return;
+      pkg.words.forEach(function(word){
+        const result=importPackageWord(word,pkg.id);
+        if(result==='added') added++;
+        if(result==='overwritten') overwritten++;
+      });
+    });
+    saveUserCache();
+    renderAll();
+    renderPackagePanel();
+    setStatus('packageStatus','Đã nạp '+added+' từ mới và cập nhật '+overwritten+' từ trùng.','ok');
+    cuteToast('Đã nạp gói từ vào hòm','success');
+    setTimeout(function(){closePackagePanel();},850);
+  }catch(err){
+    setStatus('packageStatus',err.message||'Không nạp được gói từ.','err');
+    cuteToast(err.message||'Không nạp được gói từ','error');
+  }finally{
+    if(button){button.disabled=false;button.textContent='Nạp hòm';}
+  }
 }
 
 
@@ -2470,7 +2773,8 @@ window.addEventListener('resize',function(){
 function renderAll(){
   const userQ=document.getElementById('userSearch').value||'';
   const commonQ=document.getElementById('commonSearch').value||'';
-  const filteredUser=sortWords(userWords.filter(item=>wordMatches(item,userQ)&&wordMatchesPart(item,userPartSort)),userSortMode,userSortDir);
+  syncUserPackageSelect();
+  const filteredUser=sortWords(userWords.filter(item=>wordMatches(item,userQ)&&wordMatchesPart(item,userPartSort)&&wordMatchesPackage(item,userPackageSort)),userSortMode,userSortDir);
   const filteredCommon=sortWords(commonWords.filter(item=>wordMatches(item,commonQ)&&wordMatchesPart(item,commonPartSort)),commonSortMode,commonSortDir);
   document.getElementById('userCount').textContent=userWords.length;
   document.getElementById('commonCount').textContent=commonWords.length;
@@ -2484,6 +2788,7 @@ function renderAll(){
   document.getElementById('userList').innerHTML=filteredUser.length?filteredUser.map(item=>renderWordCard(item,'user')).join(''):'<div class="empty">Chưa có từ nào khớp tìm kiếm hoặc loại từ đang chọn.</div>';
   document.getElementById('commonList').innerHTML=filteredCommon.length?filteredCommon.map(item=>renderWordCard(item,'common')).join(''):'<div class="empty">Kho chung đang trống hoặc không có kết quả theo loại từ đang chọn.</div>';
   updateSortButtons();
+  renderPackagePanel();
   renderHistory();
 }
 function selectMode(mode){
@@ -2772,6 +3077,7 @@ function installAntiContentGuard(){
   });
   document.addEventListener('keydown',function(e){
     const key=String(e.key||'').toLowerCase();
+    if(e.key==='Escape') closePackagePanel();
     const editable=isEditableTarget(e.target);
     const blockedDev=e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['i','j','c'].includes(key));
     const blockedPage=e.ctrlKey&&['u','s','p'].includes(key);
