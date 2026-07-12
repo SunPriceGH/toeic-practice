@@ -865,6 +865,28 @@ input,textarea{
 .rank-detail-note{color:#64748b;font-size:13px;line-height:1.45;font-weight:700;background:#f8fbff;border:1px solid #e5eefb;border-radius:16px;padding:10px;margin-top:10px}
 .rank-detail-next{color:#6d4200;background:#fff7d6;border-color:#ffe0a3}
 @media(max-width:560px){.rank-detail-grid{grid-template-columns:1fr}.rank-detail-title b{font-size:21px}}
+.package-add-btn{
+  border:2px solid #bdebd1;
+  background:#eefbf4;
+  color:#16784a;
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.18s ease;
+}
+
+.package-add-btn:hover{
+  background:#dcf8e9;
+  border-color:#83d9aa;
+  color:#11643d;
+  transform:translateY(-1px);
+}
+
+.package-add-btn:active{
+  transform:translateY(1px) scale(.97);
+}
 </style>
 
 
@@ -1100,7 +1122,7 @@ input,textarea{
           <option value="phrase">phrase</option>
           <option value="phrasal verb">phrasal verb</option>
         </select>
-        <button class="sort-btn package-action-btn" type="button" onclick="openPackagePanel()">📦 Thêm gói từ</button>
+        <button class="package-action-btn package-add-btn" type="button" onclick="openPackagePanel()">📦 Thêm gói từ</button>
       </div>
       <div class="list" id="commonList"></div>
 
@@ -2191,16 +2213,17 @@ function sortLabel(mode,dir){
   return dir==='desc'?'Z → A':'A → Z';
 }
 function updateSortButtons(){
-  document.querySelectorAll('.sort-btn').forEach(function(btn){
-    const scope=btn.dataset.scope;
-    const mode=btn.dataset.sort;
-    const currentMode=scope==='user'?userSortMode:commonSortMode;
-    const currentDir=scope==='user'?userSortDir:commonSortDir;
-    const active=currentMode===mode;
-    btn.classList.toggle('active',active);
-    btn.textContent=sortLabel(mode,active?currentDir:'asc');
-    btn.setAttribute('aria-pressed',active?'true':'false');
-    btn.title=active?'Bấm lần nữa để đảo chiều':'Bấm để sắp xếp theo '+sortLabel(mode,'asc');
+  document.querySelectorAll('.sort-btn[data-scope][data-sort]').forEach(function(btn){
+    const scope = btn.dataset.scope;
+    const mode = btn.dataset.sort;
+    const currentMode = scope === 'user' ? userSortMode : commonSortMode;
+    const currentDir = scope === 'user' ? userSortDir : commonSortDir;
+    const active = currentMode === mode;
+
+    btn.classList.toggle('active', active);
+    btn.textContent = sortLabel(mode, active ? currentDir : 'asc');
+    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    btn.title = active ? 'Bấm lần nữa để đảo chiều' : 'Bấm để sắp xếp theo ' + sortLabel(mode, 'asc');
   });
 }
 function setSort(scope,mode){
