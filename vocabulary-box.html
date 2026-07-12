@@ -272,14 +272,39 @@ h1,h2,h3,h4,h5,h6,b,strong,.word-title,.stat b,.tool-card b,.mode-copy b,.histor
 
 /* ===== Vocabulary packages ===== */
 .package-action-btn{
+  border:2px solid #bdebd1;
   background:#eefbf4;
-  border-color:#bdebd1;
   color:#16784a;
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.18s ease;
 }
 .package-action-btn:hover{
   background:#dcf8e9;
   border-color:#83d9aa;
   color:#11643d;
+  transform:translateY(-1px);
+}
+.package-action-btn:active{
+  transform:translateY(1px) scale(.97);
+}
+.package-add-btn{
+  background:#eefbf4;
+  border-color:#bdebd1;
+  color:#16784a;
+}
+.package-delete-btn{
+  background:#fff0f4;
+  border-color:#ffd0dc;
+  color:#b51d43;
+}
+.package-delete-btn:hover{
+  background:#ffe1e9;
+  border-color:#ffb4c8;
+  color:#9d1738;
 }
 .package-backdrop{
   position:fixed;
@@ -865,28 +890,6 @@ input,textarea{
 .rank-detail-note{color:#64748b;font-size:13px;line-height:1.45;font-weight:700;background:#f8fbff;border:1px solid #e5eefb;border-radius:16px;padding:10px;margin-top:10px}
 .rank-detail-next{color:#6d4200;background:#fff7d6;border-color:#ffe0a3}
 @media(max-width:560px){.rank-detail-grid{grid-template-columns:1fr}.rank-detail-title b{font-size:21px}}
-.package-add-btn{
-  border:2px solid #bdebd1;
-  background:#eefbf4;
-  color:#16784a;
-  border-radius:999px;
-  padding:8px 12px;
-  font-size:13px;
-  font-weight:700;
-  cursor:pointer;
-  transition:.18s ease;
-}
-
-.package-add-btn:hover{
-  background:#dcf8e9;
-  border-color:#83d9aa;
-  color:#11643d;
-  transform:translateY(-1px);
-}
-
-.package-add-btn:active{
-  transform:translateY(1px) scale(.97);
-}
 </style>
 
 
@@ -1123,6 +1126,7 @@ input,textarea{
           <option value="phrasal verb">phrasal verb</option>
         </select>
         <button class="package-action-btn package-add-btn" type="button" onclick="openPackagePanel()">📦 Thêm gói từ</button>
+        <button class="package-action-btn package-delete-btn" type="button" onclick="openDeletePackagePanel()">🗑️ Xóa theo gói</button>
       </div>
       <div class="list" id="commonList"></div>
 
@@ -1209,6 +1213,26 @@ input,textarea{
       <div class="actions">
         <button class="btn secondary" type="button" onclick="closePackagePanel()">Đóng</button>
         <button class="btn good" id="loadPackageBtn" type="button" onclick="loadSelectedPackages()">Nạp hòm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="package-backdrop" id="deletePackageBackdrop" onclick="closeDeletePackagePanel(event)">
+  <div class="package-panel" role="dialog" aria-modal="true" aria-labelledby="deletePackagePanelTitle">
+    <div class="package-panel-head">
+      <div>
+        <h3 id="deletePackagePanelTitle">🗑️ Xóa theo gói</h3>
+        <p>Chọn gói đã nạp trong hòm. App sẽ xóa các từ thuộc gói đó khỏi hòm cá nhân.</p>
+      </div>
+      <button class="package-close" type="button" onclick="closeDeletePackagePanel()" aria-label="Đóng">×</button>
+    </div>
+    <div class="package-list" id="deletePackageList"><div class="package-empty">Đang kiểm tra gói đã nạp...</div></div>
+    <div class="package-panel-foot">
+      <div class="status" id="deletePackageStatus"></div>
+      <div class="actions">
+        <button class="btn secondary" type="button" onclick="closeDeletePackagePanel()">Đóng</button>
+        <button class="btn danger" id="deletePackageBtn" type="button" onclick="deleteSelectedPackages()">Xóa gói đã chọn</button>
       </div>
     </div>
   </div>
@@ -2214,16 +2238,15 @@ function sortLabel(mode,dir){
 }
 function updateSortButtons(){
   document.querySelectorAll('.sort-btn[data-scope][data-sort]').forEach(function(btn){
-    const scope = btn.dataset.scope;
-    const mode = btn.dataset.sort;
-    const currentMode = scope === 'user' ? userSortMode : commonSortMode;
-    const currentDir = scope === 'user' ? userSortDir : commonSortDir;
-    const active = currentMode === mode;
-
-    btn.classList.toggle('active', active);
-    btn.textContent = sortLabel(mode, active ? currentDir : 'asc');
-    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
-    btn.title = active ? 'Bấm lần nữa để đảo chiều' : 'Bấm để sắp xếp theo ' + sortLabel(mode, 'asc');
+    const scope=btn.dataset.scope;
+    const mode=btn.dataset.sort;
+    const currentMode=scope==='user'?userSortMode:commonSortMode;
+    const currentDir=scope==='user'?userSortDir:commonSortDir;
+    const active=currentMode===mode;
+    btn.classList.toggle('active',active);
+    btn.textContent=sortLabel(mode,active?currentDir:'asc');
+    btn.setAttribute('aria-pressed',active?'true':'false');
+    btn.title=active?'Bấm lần nữa để đảo chiều':'Bấm để sắp xếp theo '+sortLabel(mode,'asc');
   });
 }
 function setSort(scope,mode){
@@ -2359,6 +2382,108 @@ async function loadSelectedPackages(){
     cuteToast(err.message||'Không nạp được gói từ','error');
   }finally{
     if(button){button.disabled=false;button.textContent='Nạp hòm';}
+  }
+}
+
+function packageWordCount(packageId){
+  packageId=String(packageId||'').trim();
+  if(!packageId) return 0;
+  return userWords.filter(function(item){return wordPackageIds(item).includes(packageId);}).length;
+}
+function renderDeletePackagePanel(){
+  const list=document.getElementById('deletePackageList');
+  const button=document.getElementById('deletePackageBtn');
+  if(!list) return;
+  const loaded=loadedVocabularyPackages().map(function(pkg){
+    return {pkg:pkg,count:packageWordCount(pkg.id)};
+  }).filter(function(row){return row.count>0;});
+  if(!loaded.length){
+    list.innerHTML='<div class="package-empty">Chưa có gói nào đang nằm trong hòm để xóa.</div>';
+    if(button) button.disabled=true;
+    return;
+  }
+  if(button) button.disabled=false;
+  list.innerHTML=loaded.map(function(row){
+    const pkg=row.pkg;
+    const description=pkg.description||pkg.source||'Gói từ vựng';
+    return '<label class="package-option"><input type="checkbox" name="deleteVocabPackage" value="'+escapeHtml(pkg.id)+'"><span class="package-option-copy"><b>'+escapeHtml(pkg.name)+'</b><span>'+escapeHtml(description)+'</span></span><span class="package-count package-loaded">'+row.count+' từ trong hòm</span></label>';
+  }).join('');
+}
+function openDeletePackagePanel(){
+  syncUserPackageSelect();
+  renderDeletePackagePanel();
+  setStatus('deletePackageStatus','');
+  document.getElementById('deletePackageBackdrop')?.classList.add('show');
+}
+function closeDeletePackagePanel(event){
+  if(event&&event.target&&event.target.id!=='deletePackageBackdrop') return;
+  document.getElementById('deletePackageBackdrop')?.classList.remove('show');
+}
+function selectedDeletePackageIds(){
+  return Array.from(document.querySelectorAll('input[name="deleteVocabPackage"]:checked')).map(function(input){return input.value;});
+}
+async function deleteSelectedPackages(){
+  const ids=selectedDeletePackageIds();
+  if(!ids.length){
+    setStatus('deletePackageStatus','Hãy chọn ít nhất một gói cần xóa.','err');
+    cuteToast('Hãy chọn ít nhất một gói cần xóa','warning');
+    return;
+  }
+  const selectedSet=new Set(ids.map(String));
+  const selectedPkgs=vocabularyPackages.filter(function(pkg){return selectedSet.has(String(pkg.id));});
+  const toDelete=userWords.filter(function(item){
+    return wordPackageIds(item).some(function(id){return selectedSet.has(String(id));});
+  });
+  if(!toDelete.length){
+    setStatus('deletePackageStatus','Không có từ nào thuộc gói đã chọn trong hòm.','warn');
+    cuteToast('Không có từ nào thuộc gói đã chọn','info');
+    renderDeletePackagePanel();
+    return;
+  }
+  const names=selectedPkgs.map(function(pkg){return pkg.name;}).join(', ');
+  const ok=await cuteConfirm({
+    title:'Xóa '+toDelete.length+' từ khỏi hòm?',
+    text:'Gói sẽ xóa: '+names+'. Hành động này chỉ xóa khỏi hòm cá nhân của bạn.',
+    confirmButtonText:'Xóa',
+    icon:'warning'
+  });
+  if(!ok) return;
+  const button=document.getElementById('deletePackageBtn');
+  if(button){button.disabled=true;button.textContent='Đang xóa...';}
+  try{
+    const deleteIds=toDelete.map(function(item){return String(item.id);});
+    const deleteIdSet=new Set(deleteIds);
+    toDelete.forEach(function(item){
+      const key=normalizeText(item&&item.word);
+      if(key&&!userDeletedKeys.map(normalizeText).includes(key)) userDeletedKeys.push(key);
+    });
+    userWords=userWords.filter(function(item){return !deleteIdSet.has(String(item.id));});
+    saveUserCache();
+    if(userPackageSort&&ids.includes(userPackageSort)) userPackageSort='';
+    syncUserPackageSelect();
+    renderAll();
+    renderDeletePackagePanel();
+    setStatus('deletePackageStatus','Đã xóa '+toDelete.length+' từ khỏi hòm. Đang đồng bộ online...','ok');
+    cuteToast('Đã xóa '+toDelete.length+' từ khỏi hòm','success');
+
+    let synced=0;
+    for(const id of deleteIds){
+      const okSync=await syncUserItemToCloud(null,'delete',id);
+      if(okSync) synced++;
+      if(vocabCloudDisabled) break;
+    }
+    if(vocabCloudDisabled){
+      setStatus('userStatus','Đã xóa trên thiết bị này. Cloudflare KV đang hết giới hạn hôm nay nên dữ liệu online sẽ đồng bộ lại sau.','warn');
+    }else{
+      setStatus('userStatus','Đã xóa '+toDelete.length+' từ thuộc '+ids.length+' gói khỏi hòm.','ok');
+      setTimeout(()=>setStatus('userStatus',''),1600);
+    }
+    setTimeout(function(){closeDeletePackagePanel();},900);
+  }catch(err){
+    setStatus('deletePackageStatus',err.message||'Không xóa được gói từ.','err');
+    cuteToast(err.message||'Không xóa được gói từ','error');
+  }finally{
+    if(button){button.disabled=false;button.textContent='Xóa gói đã chọn';}
   }
 }
 
