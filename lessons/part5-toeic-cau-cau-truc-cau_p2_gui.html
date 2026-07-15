@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOEIC Part 5 - Cấu trúc câu</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}
+    body{overflow-x:hidden}
+    .lesson-wrapper{width:100%;min-height:100vh;position:relative;background:#eef4ff}
+    .slide{width:100%;min-height:100vh;padding:56px 72px 120px;display:none;background:radial-gradient(circle at top left,rgba(59,130,246,.12),transparent 35%),radial-gradient(circle at bottom right,rgba(14,165,233,.12),transparent 35%),#fff}
+    .slide.active{display:flex;flex-direction:column;animation:slideIn .35s ease}
+    @keyframes slideIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .slide-label{display:inline-block;width:fit-content;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:15px;margin-bottom:18px}
+    h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px;font-weight:950}
+    h2{font-size:42px;line-height:1.15;color:#0f172a;margin-bottom:24px;font-weight:950}
+    h3{font-size:28px;color:#1e3a8a;margin-bottom:14px;font-weight:950}
+    p{font-size:24px;line-height:1.55;margin-bottom:14px;font-weight:650}
+    .content-area{max-width:1120px;margin-top:10px;padding-bottom:40px}
+    .reveal{opacity:0;transform:translateY(18px);filter:blur(3px);transition:all .45s ease;pointer-events:none}
+    .reveal.show{opacity:1;transform:translateY(0);filter:blur(0);pointer-events:auto}
+    .intro-box,.method-box,.note-box,.danger-box,.example-box{border-radius:22px;padding:26px 30px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}
+    .intro-box{background:#f8fafc;border:2px solid #e2e8f0}
+    .method-box{background:#f0fdf4;border:2px solid #bbf7d0}
+    .method-box h3{color:#166534}
+    .note-box{background:#fff7ed;border:2px solid #fed7aa;color:#9a3412}
+    .note-box h3{color:#9a3412}
+    .danger-box{background:#fff1f2;border:2px solid #fecdd3;color:#be123c}
+    .danger-box h3{color:#be123c}
+    .example-box{background:#eff6ff;border-left:8px solid #2563eb}
+    .example-title{font-size:22px;font-weight:900;color:#1d4ed8;margin-bottom:10px}
+    .example-text{font-size:32px;font-weight:900;line-height:1.35;color:#0f172a;margin:12px 0}
+    .vn{font-size:20px;color:#64748b;font-style:italic;font-weight:800;margin-top:6px}
+    .formula{font-size:clamp(32px,3.6vw,58px);font-weight:1000;line-height:1.25;padding:22px 26px;margin:18px 0;background:#eff6ff;border:4px solid #93c5fd;border-radius:24px;color:#0f172a;text-align:center;box-shadow:0 12px 28px rgba(37,99,235,.12)}
+    .big-word{font-size:72px;font-weight:1000;color:#1d4ed8;letter-spacing:-2px;margin-bottom:12px}
+    .keyword{color:#2563eb;font-weight:950}
+    .s{color:#0f5f8f}.vc{color:#dc2626}.o{color:#16a34a}.adv{color:#7c3aed}.extra{color:#f59e0b}
+    .hl-s{background:#bae6fd;color:#075985}.hl-vc{background:#fecaca;color:#991b1b}.hl-o{background:#bbf7d0;color:#166534}.hl-adv{background:#ddd6fe;color:#5b21b6}.hl-extra{background:#fde68a;color:#92400e}
+    .highlight{padding:2px 8px;border-radius:9px;font-weight:950}
+    .pill-row{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+    .pill{display:inline-flex;align-items:center;border-radius:999px;padding:12px 18px;background:#e0f2fe;color:#075985;border:2px solid #7dd3fc;font-size:22px;font-weight:950}
+    .pill.red{background:#fef2f2;color:#991b1b;border-color:#fca5a5}.pill.green{background:#ecfdf5;color:#166534;border-color:#86efac}.pill.purple{background:#f5f3ff;color:#5b21b6;border-color:#c4b5fd}.pill.orange{background:#fffbeb;color:#92400e;border-color:#fbbf24}
+    .steps{list-style:none;margin-top:12px}.steps li{font-size:23px;line-height:1.5;padding:9px 0 9px 38px;position:relative;font-weight:700}.steps li::before{content:"✓";position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:#22c55e;color:white;font-size:17px;display:grid;place-items:center;font-weight:900}
+    .danger-box .steps li::before{content:"!";background:#e11d48}
+    table{width:100%;border-collapse:collapse;margin-top:16px;font-size:22px;font-weight:800;table-layout:fixed;background:#fff;border-radius:16px;overflow:hidden}th{background:#0f5f8f;color:#fff;text-align:left;padding:14px 16px}td{padding:13px 16px;border:2px solid #e2e8f0;vertical-align:top;line-height:1.35}td:first-child{font-weight:950;color:#0f172a}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));gap:18px;margin-top:18px}.card{background:#f8fafc;border:2px solid #e2e8f0;border-radius:18px;padding:22px 24px;box-shadow:0 10px 22px rgba(15,23,42,.06)}.card strong{display:block;color:#1d4ed8;font-size:26px;margin-bottom:8px}.card span{font-size:20px;color:#475569;line-height:1.4;font-weight:700}
+    .control-bar{position:fixed;left:0;right:0;bottom:16px;z-index:100;display:flex;justify-content:center;align-items:center;gap:14px;pointer-events:none}.go-btn,.nav-btn{pointer-events:auto;border:none;cursor:pointer;font-weight:900;transition:all .2s ease;box-shadow:0 8px 18px rgba(15,23,42,.18)}.go-btn{width:54px;height:54px;border-radius:50%;background:#2563eb;color:white;font-size:15px;letter-spacing:.5px}.go-btn:hover{transform:scale(1.08);background:#1d4ed8}.nav-btn{border-radius:999px;padding:10px 16px;background:#e2e8f0;color:#0f172a;font-size:14px}.nav-btn:hover{background:#cbd5e1}
+    .progress{position:fixed;top:24px;right:36px;font-size:16px;font-weight:900;color:#64748b;z-index:120;background:rgba(255,255,255,.85);padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px)}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:0%;transition:width .35s ease;z-index:130}
+    @media(max-width:768px){.slide{padding:36px 24px 120px}h1{font-size:34px}h2{font-size:32px}p,.steps li{font-size:19px}.example-text{font-size:25px}.big-word{font-size:46px}.grid-2{grid-template-columns:1fr}.go-btn{width:48px;height:48px;font-size:13px}.nav-btn{padding:9px 13px;font-size:13px}.progress{top:14px;right:14px;font-size:13px}.pill{font-size:18px}.formula{font-size:30px}table{font-size:18px}}
+  .home-btn{background:linear-gradient(135deg,#0f172a,#334155)!important;color:#fff!important}
+.home-btn:hover{filter:brightness(1.08)}
+</style>
+</head>
+<body>
+  <div class="lesson-wrapper">
+    <div class="top-line" id="topLine"></div>
+    <div class="progress" id="progressText">1 / 13</div>
+
+    <section class="slide active">
+      <div class="slide-label reveal">TOEIC Part 5</div>
+      <h1 class="reveal">Cấu trúc câu cơ bản</h1>
+      <div class="content-area">
+        <div class="formula reveal"><span class="s">S</span> + <span class="vc">Vc</span> + <span class="o">O</span> + <span class="adv">Adv</span></div>
+        <div class="intro-box reveal"><p>Mục tiêu của bài này là hiểu các thành phần chính trong câu để xử lý Part 5 nhanh hơn.</p></div>
+        <div class="note-box reveal"><p><b>Điểm quan trọng:</b> Trong một câu tiếng Anh cơ bản, <span class="keyword">S</span> và <span class="keyword">Vc</span> là hai thành phần quan trọng nhất.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-label reveal">Tổng quan</div>
+      <h2 class="reveal">4 thành phần chính trong câu</h2>
+      <div class="content-area">
+        <div class="grid-2">
+          <div class="card reveal"><strong class="s">S - Subject</strong><span>Chủ ngữ: người/vật/việc thực hiện hoặc được nói đến trong câu.</span></div>
+          <div class="card reveal"><strong class="vc">Vc - Verb chính</strong><span>Động từ chính phải được chia thì, hòa hợp với chủ ngữ.</span></div>
+          <div class="card reveal"><strong class="o">O - Object</strong><span>Tân ngữ: đối tượng nhận hành động từ động từ.</span></div>
+          <div class="card reveal"><strong class="adv">Adv - Adverbial</strong><span>Trạng ngữ: bổ sung thông tin về thời gian, nơi chốn, cách thức, tần suất, lý do...</span></div>
+        </div>
+        <div class="method-box reveal"><h3>Công thức nền</h3><p><span class="s"><b>S</b></span> + <span class="vc"><b>Vc</b></span> là lõi câu. <span class="o"><b>O</b></span> và <span class="adv"><b>Adv</b></span> có thể thêm vào tùy nghĩa.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-label reveal">Thành phần 01</div>
+      <div class="big-word reveal">S</div>
+      <h2 class="reveal">Subject - Chủ ngữ là gì?</h2>
+      <div class="content-area">
+        <div class="intro-box reveal"><p><b>Subject</b> là thành phần cho biết câu đang nói về <b>ai</b>, <b>cái gì</b>, hoặc <b>việc gì</b>.</p></div>
+        <div class="pill-row reveal"><span class="pill">Noun</span><span class="pill">Pronoun</span><span class="pill">Noun phrase</span><span class="pill">Gerund</span><span class="pill">To V</span></div>
+        <div class="example-box reveal"><div class="example-title">Ví dụ</div><p class="example-text"><span class="highlight hl-s">The manager</span> approved the request.</p><p class="example-text"><span class="highlight hl-s">She</span> works in accounting.</p><p class="example-text"><span class="highlight hl-s">Completing the report</span> took two hours.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-label reveal">Thành phần 02</div>
+      <div class="big-word reveal">Vc</div>
+      <h2 class="reveal">Verb chính là gì?</h2>
+      <div class="content-area">
+        <div class="intro-box reveal"><p><b>Vc</b> là <b>động từ chính đã chia thì</b> trong câu. Đây là thành phần cho biết hành động hoặc trạng thái của chủ ngữ.</p></div>
+        <div class="method-box reveal"><h3>Đặc điểm quan trọng</h3><ul class="steps"><li>Vc phải chia theo thì: hiện tại, quá khứ, hoàn thành, tương lai...</li><li>Vc phải hòa hợp với chủ ngữ: số ít / số nhiều.</li><li>Một cụm V-ing hoặc V3 đứng riêng thường chưa phải là Vc hoàn chỉnh.</li></ul></div>
+        <div class="example-box reveal"><div class="example-title">Ví dụ</div><p class="example-text">The report <span class="highlight hl-vc">was submitted</span> yesterday.</p><p class="example-text">The employees <span class="highlight hl-vc">attend</span> training every month.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-label reveal">Thành phần 03</div>
+      <div class="big-word reveal">O</div>
+      <h2 class="reveal">Object - Tân ngữ là gì?</h2>
+      <div class="content-area">
+        <div class="intro-box reveal"><p><b>Object</b> là đối tượng nhận hành động từ động từ.</p></div>
+        <div class="note-box reveal"><p>Không phải câu nào cũng có O. Chỉ những động từ cần tân ngữ mới bắt buộc có O.</p></div>
+        <div class="example-box reveal"><div class="example-title">Ví dụ</div><p class="example-text">The assistant prepared <span class="highlight hl-o">the presentation</span>.</p><p class="example-text">We contacted <span class="highlight hl-o">the client</span>.</p><p class="example-text">She enjoys <span class="highlight hl-o">working with customers</span>.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-label reveal">Thành phần 04</div>
+      <div class="big-word reveal">Adv</div>
+      <h2 class="reveal">Adverbial - Trạng ngữ là gì?</h2>
+      <div class="content-area">
+        <div class="intro-box reveal"><p><b>Adv</b> trong cấu trúc câu là thành phần bổ sung thông tin cho hành động hoặc cả câu.</p></div>
+        <div class="grid-2">
+          <div class="card reveal"><strong>Thời gian</strong><span>yesterday, next week, every month</span></div>
+          <div class="card reveal"><strong>Nơi chốn</strong><span>in the office, at the front desk</span></div>
+          <div class="card reveal"><strong>Cách thức</strong><span>carefully, by e-mail, in detail</span></div>
+          <div class="card reveal"><strong>Tần suất / lý do</strong><span>often, regularly, because of the delay</span></div>
+        </div>
+        <div class="method-box reveal"><p>Adv có thể đứng cuối câu, giữa câu hoặc đầu câu, tùy loại trạng ngữ và ý nhấn mạnh.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-label reveal">Thành phần bắt buộc</div>
+      <h2 class="reveal">Thành phần nào luôn phải có?</h2>
+      <div class="content-area">
+        <div class="formula reveal"><span class="s">S</span> + <span class="vc">Vc</span></div>
+        <div class="method-box reveal"><h3>Lõi câu cơ bản</h3><ul class="steps"><li><b>S</b> cho biết câu nói về ai/cái gì.</li><li><b>Vc</b> cho biết chủ ngữ làm gì hoặc ở trạng thái nào.</li><li><b>O</b> và <b>Adv</b> thường là phần mở rộng.</li></ul></div>
+        <div class="danger-box reveal"><h3>Lưu ý</h3><ul class="steps"><li>Câu mệnh lệnh có thể lược bỏ chủ ngữ: <b>Please send the file.</b></li><li>Nhưng trong Part 5, đa số câu đầy đủ vẫn cần xác định S và Vc.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-label reveal">Mẫu câu 01</div>
+      <h2 class="reveal">S + Vc</h2>
+      <div class="content-area">
+        <div class="formula reveal"><span class="s">S</span> + <span class="vc">Vc</span></div>
+        <div class="intro-box reveal"><p>Mẫu này dùng với động từ không cần tân ngữ. Câu vẫn đủ nghĩa cơ bản.</p></div>
+        <div class="example-box reveal"><div class="example-title">Ví dụ</div><p class="example-text"><span class="highlight hl-s">The meeting</span> <span class="highlight hl-vc">ended</span>.</p><p class="vn">Cuộc họp đã kết thúc.</p><p class="example-text"><span class="highlight hl-s">The price</span> <span class="highlight hl-vc">increased</span>.</p><p class="vn">Giá đã tăng.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-label reveal">Mẫu câu 02</div>
+      <h2 class="reveal">S + Vc + O</h2>
+      <div class="content-area">
+        <div class="formula reveal"><span class="s">S</span> + <span class="vc">Vc</span> + <span class="o">O</span></div>
+        <div class="intro-box reveal"><p>Mẫu này dùng khi động từ cần một đối tượng nhận hành động.</p></div>
+        <div class="example-box reveal"><div class="example-title">Ví dụ</div><p class="example-text"><span class="highlight hl-s">The manager</span> <span class="highlight hl-vc">approved</span> <span class="highlight hl-o">the budget</span>.</p><p class="vn">Quản lý đã phê duyệt ngân sách.</p><p class="example-text"><span class="highlight hl-s">We</span> <span class="highlight hl-vc">received</span> <span class="highlight hl-o">your application</span>.</p><p class="vn">Chúng tôi đã nhận đơn ứng tuyển của bạn.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-label reveal">Mẫu câu 03</div>
+      <h2 class="reveal">S + Vc + O</h2>
+      <div class="content-area">
+        <div class="intro-box reveal"><p>Cùng là <b>S + Vc + O</b>, nhưng O có thể có nhiều dạng khác nhau.</p></div>
+        <table class="reveal"><tr><th>Dạng O</th><th>Ví dụ</th></tr><tr><td>Noun phrase</td><td>The team completed <b>the project</b>.</td></tr><tr><td>Pronoun</td><td>Ms. Park called <b>him</b>.</td></tr><tr><td>Gerund</td><td>She enjoys <b>training new staff</b>.</td></tr><tr><td>To V</td><td>They agreed <b>to revise the contract</b>.</td></tr><tr><td>Clause</td><td>We confirmed <b>that the order was shipped</b>.</td></tr></table>
+        <div class="note-box reveal"><p>Trong Part 5, nhận diện O giúp biết động từ phía trước cần dạng gì và câu đã đủ nghĩa chưa.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-label reveal">Mẫu câu 04</div>
+      <h2 class="reveal">S + Vc + O + Adv</h2>
+      <div class="content-area">
+        <div class="formula reveal"><span class="s">S</span> + <span class="vc">Vc</span> + <span class="o">O</span> + <span class="adv">Adv</span></div>
+        <div class="intro-box reveal"><p>Trạng ngữ thường đứng cuối câu để bổ sung thời gian, nơi chốn, cách thức hoặc lý do.</p></div>
+        <div class="example-box reveal"><div class="example-title">Ví dụ</div><p class="example-text"><span class="highlight hl-s">The staff</span> <span class="highlight hl-vc">submitted</span> <span class="highlight hl-o">the report</span> <span class="highlight hl-adv">on Monday</span>.</p><p class="example-text"><span class="highlight hl-s">She</span> <span class="highlight hl-vc">explained</span> <span class="highlight hl-o">the procedure</span> <span class="highlight hl-adv">in detail</span>.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-label reveal">Mẫu câu 05</div>
+      <h2 class="reveal">Adv, S + Vc + O</h2>
+      <div class="content-area">
+        <div class="formula reveal"><span class="adv">Adv</span>, <span class="s">S</span> + <span class="vc">Vc</span> + <span class="o">O</span></div>
+        <div class="intro-box reveal"><p>Trạng ngữ có thể đứng đầu câu để nhấn mạnh bối cảnh, thường có dấu phẩy phía sau.</p></div>
+        <div class="example-box reveal"><div class="example-title">Ví dụ</div><p class="example-text"><span class="highlight hl-adv">After the meeting</span>, <span class="highlight hl-s">the manager</span> <span class="highlight hl-vc">sent</span> <span class="highlight hl-o">the summary</span>.</p><p class="example-text"><span class="highlight hl-adv">Because of the delay</span>, <span class="highlight hl-s">we</span> <span class="highlight hl-vc">changed</span> <span class="highlight hl-o">the schedule</span>.</p></div>
+        <div class="note-box reveal"><p>Khi Adv đứng đầu câu, phần phía sau vẫn phải có lõi câu: <b>S + Vc</b>.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-label reveal">Tổng kết</div>
+      <h2 class="reveal">Công thức cần nhớ</h2>
+      <div class="content-area">
+        <div class="formula reveal"><span class="s">S</span> + <span class="vc">Vc</span> + <span class="o">O</span> + <span class="adv">Adv</span></div>
+        <table class="reveal"><tr><th>Thành phần</th><th>Vai trò</th><th>Bắt buộc?</th></tr><tr><td>S</td><td>Chủ ngữ</td><td>Thường bắt buộc</td></tr><tr><td>Vc</td><td>Động từ chính đã chia thì</td><td>Bắt buộc</td></tr><tr><td>O</td><td>Tân ngữ nhận hành động</td><td>Tùy động từ</td></tr><tr><td>Adv</td><td>Bổ sung thời gian, nơi chốn, cách thức, lý do...</td><td>Không bắt buộc</td></tr></table>
+        <div class="method-box reveal"><p>Muốn phân tích câu nhanh: tìm <b>S</b> trước, tìm <b>Vc</b> tiếp theo, sau đó xem câu có <b>O</b> và <b>Adv</b> hay không.</p></div>
+      </div>
+    </section>
+
+    <div class="control-bar">
+      <button class="nav-btn home-btn" onclick="goHomeIndex()">⌂ Về trang chủ</button>
+      <button class="nav-btn" onclick="prevSlide()">← Prev</button>
+      <button class="go-btn" onclick="goReveal()">GO</button>
+      <button class="nav-btn" onclick="nextSlide()">Next →</button>
+    </div>
+  </div>
+
+  <script>
+    function goHomeIndex(){window.location.href='part5-toeic-index.html';}
+const slides=document.querySelectorAll('.slide');
+    const progressText=document.getElementById('progressText');
+    const topLine=document.getElementById('topLine');
+    let currentSlide=0;
+    let revealIndex=0;
+    function updateProgress(){progressText.textContent=`${currentSlide+1} / ${slides.length}`;topLine.style.width=`${((currentSlide+1)/slides.length)*100}%`;}
+    function resetSlideReveal(slide){slide.querySelectorAll('.reveal').forEach(item=>item.classList.remove('show'));}
+    function showSlide(index){slides[currentSlide].classList.remove('active');resetSlideReveal(slides[currentSlide]);currentSlide=index;revealIndex=0;slides[currentSlide].classList.add('active');window.scrollTo({top:0,behavior:'smooth'});updateProgress();}
+    function goReveal(){const activeSlide=slides[currentSlide];const revealItems=activeSlide.querySelectorAll('.reveal');if(revealIndex<revealItems.length){revealItems[revealIndex].classList.add('show');setTimeout(()=>{revealItems[revealIndex]?.scrollIntoView({behavior:'smooth',block:'center'});},80);revealIndex++;}else{if(currentSlide<slides.length-1)showSlide(currentSlide+1);}}
+    function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
+    function prevSlide(){if(currentSlide>0)showSlide(currentSlide-1);}
+    document.addEventListener('keydown',function(e){if(e.code==='Space'||e.code==='Enter'){e.preventDefault();goReveal();}if(e.code==='ArrowRight')nextSlide();if(e.code==='ArrowLeft')prevSlide();});
+    updateProgress();
+  </script>
+</body>
+</html>

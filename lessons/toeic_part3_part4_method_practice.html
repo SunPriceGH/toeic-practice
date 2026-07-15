@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TOEIC Part 3 + 4 - Cách làm & Practice</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  width:100%;min-height:100%;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#eef4ff;color:#172033;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;
+}
+body{overflow-x:hidden}
+.lesson-wrapper{width:100%;min-height:100vh;position:relative;background:#eef4ff}
+.slide{
+  width:100%;min-height:100vh;padding:56px 72px 128px;display:none;
+  background:
+    radial-gradient(circle at top left,rgba(37,99,235,.12),transparent 34%),
+    radial-gradient(circle at bottom right,rgba(14,165,233,.12),transparent 35%),
+    #fff;
+}
+.slide.active{display:flex;flex-direction:column;animation:slideIn .32s ease}
+@keyframes slideIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.slide-label{
+  display:inline-block;width:fit-content;padding:8px 16px;border-radius:999px;
+  background:#dbeafe;color:#1d4ed8;font-weight:700;font-size:15px;margin-bottom:18px
+}
+h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:18px;letter-spacing:-1px}
+h2{font-size:40px;line-height:1.18;color:#0f172a;margin-bottom:20px;letter-spacing:-.5px}
+h3{font-size:25px;color:#1e3a8a;margin-bottom:12px}
+p{font-size:22px;line-height:1.55;margin-bottom:13px;color:#334155}
+.content-area{max-width:1180px;margin-top:10px;padding-bottom:40px}
+.reveal{opacity:0;transform:translateY(18px);filter:blur(3px);transition:all .38s ease;pointer-events:none}
+.reveal.show{opacity:1;transform:translateY(0);filter:blur(0);pointer-events:auto}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+.card{
+  background:#f8fafc;border:2px solid #e2e8f0;border-radius:22px;padding:22px 24px;
+  box-shadow:0 12px 28px rgba(15,23,42,.07)
+}
+.card.blue{background:#eff6ff;border-color:#bfdbfe}
+.card.green{background:#f0fdf4;border-color:#bbf7d0}
+.card.orange{background:#fff7ed;border-color:#fed7aa}
+.card.rose{background:#fff1f2;border-color:#fecdd3}
+.card h3{font-size:24px;margin-bottom:10px}
+.card p,.card li{font-size:20px;line-height:1.48;color:#334155}
+.steps{list-style:none;margin-top:8px}
+.steps li{position:relative;padding:9px 0 9px 36px}
+.steps li::before{
+  content:"✓";position:absolute;left:0;top:9px;width:24px;height:24px;border-radius:50%;
+  display:grid;place-items:center;background:#22c55e;color:white;font-size:15px;font-weight:700
+}
+.steps.warning li::before{content:"!";background:#f97316}
+.big-word{font-size:64px;font-weight:700;color:#1d4ed8;letter-spacing:-2px;margin:4px 0 14px}
+.formula{
+  font-size:clamp(26px,2.6vw,40px);font-weight:700;line-height:1.28;
+  padding:20px 24px;margin:18px 0;background:#eff6ff;border:4px solid #93c5fd;
+  border-radius:24px;color:#0f172a;text-align:center
+}
+.keyword-demo,.practice-panel{
+  background:#fff;border:2px solid #dbeafe;border-radius:24px;padding:24px;
+  box-shadow:0 14px 30px rgba(37,99,235,.10);margin-top:18px
+}
+.demo-question,.practice-question{
+  font-size:30px;line-height:1.35;font-weight:700;color:#0f172a;margin-bottom:16px
+}
+.option-list{display:grid;gap:10px;margin-top:10px}
+.option{
+  position:relative;display:flex;align-items:flex-start;gap:12px;
+  border:2px solid #dbeafe;background:#fff;border-radius:16px;padding:14px 16px;
+  color:#334155;font-size:21px;line-height:1.35;cursor:pointer;transition:.18s ease
+}
+.option:hover{border-color:#93c5fd;transform:translateY(-1px)}
+.option input{width:20px;height:20px;margin-top:4px;accent-color:#2563eb;flex:0 0 auto}
+.option-letter{font-weight:700;color:#1d4ed8;min-width:30px;width:30px;height:30px;border-radius:999px;border:2px solid #bfdbfe;display:inline-flex;align-items:center;justify-content:center;background:#eff6ff;flex:0 0 30px}
+.option.correct .option-letter{background:#22c55e;color:#fff;border-color:#16a34a}
+.option.wrong .option-letter{background:#ef4444;color:#fff;border-color:#dc2626}
+.option.correct{border-color:#22c55e;background:#ecfdf5}
+.option.wrong{border-color:#ef4444;background:#fff1f2}
+.option.locked{cursor:not-allowed}
+.option.locked:hover{transform:none}
+mark.kw{
+  background:#fde68a;color:#7c2d12;border-radius:7px;padding:1px 4px;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;font-weight:700
+}
+.keyword-row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}
+.keyword-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#dbeafe;color:#1d4ed8;border:1px solid #bfdbfe;
+  border-radius:999px;padding:8px 12px;font-size:17px;font-weight:700
+}
+.keyword-chip.option-chip{background:#f0fdf4;color:#166534;border-color:#bbf7d0}
+.keyword-zone{
+  display:none;margin-top:16px;background:#f8fafc;border:2px dashed #bfdbfe;border-radius:18px;padding:16px 18px
+}
+.keyword-zone.show{display:block;animation:fadeUp .22s ease}
+.mini-title{font-size:18px;font-weight:700;color:#475569;margin:6px 0}
+.quick-rule-box{margin-top:26px}
+.transcript-btn{
+  border:none;cursor:pointer;border-radius:999px;background:#0f172a;color:#fff;
+  padding:11px 16px;font-size:15px;font-weight:700;box-shadow:0 8px 16px rgba(15,23,42,.16);
+  transition:.18s ease;margin:8px 0 12px
+}
+.transcript-btn:hover{transform:translateY(-1px);background:#1d4ed8}
+
+.audio-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:6px 0 12px}
+.audio-btn{
+  border:none;cursor:pointer;border-radius:999px;background:#2563eb;color:#fff;
+  padding:11px 16px;font-size:15px;font-weight:700;box-shadow:0 8px 16px rgba(37,99,235,.16);
+  transition:.18s ease;display:inline-flex;align-items:center;gap:7px
+}
+.audio-btn:hover{transform:translateY(-1px);background:#1d4ed8}
+.audio-btn.playing{background:#16a34a}
+.audio-path{font-size:14px;color:#64748b;font-weight:700;background:#f8fafc;border:1px solid #e2e8f0;border-radius:999px;padding:7px 10px}
+.transcript-box{
+  display:none;background:#f8fafc;border:2px solid #e2e8f0;border-radius:18px;padding:16px 18px;margin:6px 0 16px
+}
+.transcript-box.show{display:block;animation:fadeUp .22s ease}
+.turn{font-size:20px;line-height:1.55;margin:8px 0;color:#334155}
+.speaker{font-weight:700;color:#1d4ed8;margin-right:7px}
+.result-box{
+  display:none;margin-top:18px;border-radius:22px;border:2px solid #bfdbfe;background:#eff6ff;
+  padding:20px 22px;box-shadow:0 12px 26px rgba(37,99,235,.08)
+}
+.result-box.show{display:block;animation:fadeUp .22s ease}
+.result-box.correct-result{border-color:#86efac;background:#f0fdf4}
+.result-box.wrong-result{border-color:#fecdd3;background:#fff1f2}
+.result-box.no-answer{border-color:#fed7aa;background:#fff7ed}
+.answer-line{font-size:22px;line-height:1.5;color:#334155;margin:8px 0}
+.answer-key{font-weight:700;color:#15803d}
+.wrong-text{font-weight:700;color:#be123c}
+.correct-text{font-weight:700;color:#15803d}
+.method-table{
+  width:100%;border-collapse:separate;border-spacing:0;margin-top:16px;overflow:hidden;border-radius:18px;
+  border:2px solid #dbeafe;background:#fff
+}
+.method-table th,.method-table td{padding:15px 16px;text-align:left;border-bottom:1px solid #e2e8f0;font-size:20px;line-height:1.35}
+.method-table th{background:#eff6ff;color:#1d4ed8;font-weight:700}
+.method-table tr:last-child td{border-bottom:none}
+.control-bar{
+  position:fixed;left:0;right:0;bottom:16px;z-index:100;
+  display:flex;justify-content:center;align-items:center;gap:14px;pointer-events:none;flex-wrap:wrap;padding:0 12px
+}
+.go-btn,.check-btn,.nav-btn{
+  pointer-events:auto;border:none;cursor:pointer;font-weight:700;transition:all .18s ease;
+  box-shadow:0 8px 18px rgba(15,23,42,.18)
+}
+.go-btn{
+  width:54px;height:54px;border-radius:50%;background:#2563eb;color:white;
+  font-size:15px;letter-spacing:.5px
+}
+.go-btn:hover,.check-btn:hover{transform:scale(1.05);background:#1d4ed8}
+.check-btn{border-radius:999px;background:#2563eb;color:#fff;font-size:15px;letter-spacing:.5px;padding:13px 22px}
+.check-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.nav-btn{border-radius:999px;padding:10px 16px;background:#e2e8f0;color:#0f172a;font-size:14px}
+.nav-btn:hover{background:#cbd5e1}
+.progress{
+  position:fixed;top:24px;right:36px;z-index:120;font-size:16px;font-weight:700;color:#64748b;
+  background:rgba(255,255,255,.86);padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px);
+  box-shadow:0 6px 14px rgba(15,23,42,.08)
+}
+.progress-btn{border:none;cursor:pointer}
+.progress-btn:hover{background:#eff6ff;color:#1d4ed8}
+.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:0%;transition:width .3s ease;z-index:130}
+.page-picker-overlay{
+  position:fixed;inset:0;background:rgba(15,23,42,.42);z-index:300;display:none;
+  align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)
+}
+.page-picker-overlay.show{display:flex}
+.page-picker-panel{
+  width:min(980px,96vw);max-height:84vh;overflow:auto;background:#fff;border-radius:26px;
+  border:2px solid #dbeafe;box-shadow:0 24px 60px rgba(15,23,42,.24);padding:22px
+}
+.page-picker-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
+.page-picker-head h3{margin:0;color:#0f172a;font-size:28px}
+.page-picker-head p{margin:6px 0 0;color:#64748b;font-size:17px;line-height:1.4}
+.page-picker-close{border:none;cursor:pointer;width:40px;height:40px;border-radius:999px;background:#e2e8f0;color:#0f172a;font-size:28px;line-height:1;font-weight:700}
+.page-picker-close:hover{background:#cbd5e1}
+.page-picker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px}
+.page-jump-btn{
+  border:2px solid #dbeafe;border-radius:16px;background:#f8fafc;color:#0f172a;padding:10px 8px;
+  min-height:58px;cursor:pointer;text-align:left;transition:.18s ease;font-size:14px;font-weight:700;line-height:1.25
+}
+.page-jump-btn:hover{border-color:#93c5fd;background:#eff6ff;transform:translateY(-1px)}
+.page-jump-btn.active{border-color:#2563eb;background:#dbeafe;color:#1d4ed8}
+.page-jump-btn.done-correct{border-color:#22c55e;background:#ecfdf5}
+.page-jump-btn.done-wrong{border-color:#ef4444;background:#fff1f2}
+.page-jump-btn .page-no{display:block;font-size:18px;font-weight:700}
+.page-jump-btn .page-title{display:block;color:#64748b;font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){
+  .slide{padding:36px 24px 132px}
+  h1{font-size:34px}h2{font-size:30px}.big-word{font-size:42px}
+  p,.card p,.card li,.method-table th,.method-table td,.turn,.answer-line{font-size:18px}
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .demo-question,.practice-question{font-size:24px}
+  .option{font-size:18px}
+  .go-btn{width:48px;height:48px;font-size:13px}
+  .check-btn{padding:11px 16px;font-size:13px}
+  .nav-btn{padding:9px 13px;font-size:13px}
+  .progress{top:14px;right:14px;font-size:13px}
+  .page-picker-grid{grid-template-columns:repeat(auto-fill,minmax(86px,1fr))}
+}
+
+.visual-card{
+  background:transparent;border:0;border-radius:0;padding:0 0 8px;
+  margin:4px 0 16px;box-shadow:none;overflow-x:auto;overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;max-width:100%
+}
+.visual-title{font-size:20px;font-weight:700;color:#1d4ed8;margin-bottom:12px;white-space:nowrap}
+.visual-note{font-size:16px;color:#64748b;font-weight:700;margin-top:8px}
+.graphic-table{min-width:640px;width:100%;border-collapse:separate;border-spacing:0;border:2px solid #cbd5e1;border-radius:16px;overflow:hidden;background:#fff}
+.graphic-table th,.graphic-table td{padding:12px 14px;border-bottom:1px solid #e2e8f0;border-right:1px solid #e2e8f0;font-size:18px;text-align:left;color:#334155}
+.graphic-table th{background:#eff6ff;color:#1d4ed8;font-weight:700}
+.graphic-table tr:last-child td{border-bottom:none}.graphic-table th:last-child,.graphic-table td:last-child{border-right:none}
+.coupon-box{min-width:560px;border:3px dashed #93c5fd;border-radius:20px;background:#eff6ff;padding:18px;text-align:center}
+.coupon-main{font-size:34px;font-weight:700;color:#1d4ed8;line-height:1.2}.coupon-sub{font-size:20px;font-weight:700;color:#334155;margin-top:8px}
+.notice-grid{min-width:620px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.notice-item{background:#fff;border:2px solid #e2e8f0;border-radius:16px;padding:12px}.notice-item b{color:#1d4ed8}
+@media(max-width:900px){.graphic-table th,.graphic-table td{font-size:15px;padding:10px}.coupon-main{font-size:26px}.notice-grid{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div class="lesson-wrapper">
+  <div class="top-line" id="topLine"></div>
+  <button class="progress progress-btn" id="progressText" onclick="openPagePicker()" type="button" title="Chọn trang">1 / 1</button>
+  <div id="slideMount"></div>
+
+  <div class="page-picker-overlay" id="pagePicker" onclick="closePagePicker(event)">
+    <div class="page-picker-panel" role="dialog" aria-modal="true" aria-labelledby="pagePickerTitle">
+      <div class="page-picker-head">
+        <div>
+          <h3 id="pagePickerTitle">Chọn trang</h3>
+          <p>Click để nhảy nhanh đến phương pháp hoặc bài luyện tập.</p>
+        </div>
+        <button class="page-picker-close" onclick="closePagePicker()" type="button">×</button>
+      </div>
+      <div class="page-picker-grid" id="pagePickerGrid"></div>
+    </div>
+  </div>
+
+  <div class="control-bar">
+    <button class="nav-btn" onclick="prevSlide()" type="button">← PREV</button>
+    <button class="go-btn" onclick="goReveal()" type="button">GO</button>
+    <button class="check-btn" id="checkBtn" onclick="checkAnswer()" type="button">CHECK</button>
+    <button class="nav-btn" onclick="nextSlide()" type="button">NEXT →</button>
+  </div>
+</div>
+
+<script>
+
+const part3PracticeData = [
+  {
+    "part": "Part 3",
+    "tag": "Conversation",
+    "title": "Part 3 · Câu 1 · Hỏi địa điểm",
+    "transcript": [
+      {
+        "speaker": "M",
+        "text": "Hi, I’m here to pick up the new projector for room 204."
+      },
+      {
+        "speaker": "W",
+        "text": "It’s not at the front desk anymore. The office assistant moved it to the supply room."
+      },
+      {
+        "speaker": "M",
+        "text": "Thanks. I’ll go there now."
+      }
+    ],
+    "question": "Where will the man need to go?",
+    "qKeywords": [
+      "Where",
+      "the man",
+      "need to go"
+    ],
+    "optionKeywords": [
+      "room 204",
+      "supply room",
+      "office assistant’s desk",
+      "front desk"
+    ],
+    "options": [
+      [
+        "A",
+        "To room 204"
+      ],
+      [
+        "B",
+        "To the supply room"
+      ],
+      [
+        "C",
+        "To the office assistant’s desk"
+      ],
+      [
+        "D",
+        "To the front desk"
+      ]
+    ],
+    "answer": "B",
+    "explain": "Câu hỏi hỏi <b>Where</b> và đối tượng là <b>the man</b>. Người phụ nữ nói vật đã được chuyển đến <b>the supply room</b>, sau đó người đàn ông nói <b>I’ll go there now</b>. Vì vậy nơi anh ấy cần đến là <b>the supply room</b>.",
+    "audio": "audio/part3-4/q01.mp3"
+  },
+  {
+    "part": "Part 3",
+    "tag": "Conversation",
+    "title": "Part 3 · Câu 2 · Hỏi hành động tiếp theo",
+    "transcript": [
+      {
+        "speaker": "W",
+        "text": "The client presentation starts at two, but I still need the charts printed."
+      },
+      {
+        "speaker": "M",
+        "text": "The copy center is busy. I can print them here if you email me the file."
+      },
+      {
+        "speaker": "W",
+        "text": "Great, I’ll send it right away."
+      }
+    ],
+    "question": "What will the woman do next?",
+    "qKeywords": [
+      "What",
+      "the woman",
+      "do next"
+    ],
+    "optionKeywords": [
+      "Call a client",
+      "Visit a copy center",
+      "Change a presentation time",
+      "Email a file"
+    ],
+    "options": [
+      [
+        "A",
+        "Call a client"
+      ],
+      [
+        "B",
+        "Visit a copy center"
+      ],
+      [
+        "C",
+        "Change a presentation time"
+      ],
+      [
+        "D",
+        "Email a file"
+      ]
+    ],
+    "answer": "D",
+    "explain": "Cụm <b>do next</b> báo hiệu cần nghe hành động sau cùng. Người đàn ông yêu cầu <b>email me the file</b>, và người phụ nữ đáp <b>I’ll send it right away</b>. <b>Send it</b> tương đương với <b>email a file</b>.",
+    "audio": "audio/part3-4/q02.mp3"
+  },
+  {
+    "part": "Part 3",
+    "tag": "Conversation",
+    "title": "Part 3 · Câu 3 · Hỏi vấn đề",
+    "transcript": [
+      {
+        "speaker": "M",
+        "text": "I tried to reserve the conference room for Friday, but it’s already booked."
+      },
+      {
+        "speaker": "W",
+        "text": "We can use the training room instead. It has enough chairs."
+      },
+      {
+        "speaker": "M",
+        "text": "Good idea. I’ll update the invitation."
+      }
+    ],
+    "question": "What problem does the man mention?",
+    "qKeywords": [
+      "What problem",
+      "the man",
+      "mention"
+    ],
+    "optionKeywords": [
+      "not enough chairs",
+      [
+        "training room",
+        "closed",
+        "Friday"
+      ],
+      [
+        "conference room",
+        "already booked"
+      ],
+      [
+        "invitation",
+        "received"
+      ]
+    ],
+    "options": [
+      [
+        "A",
+        "There are not enough chairs."
+      ],
+      [
+        "B",
+        "The training room is closed on Friday."
+      ],
+      [
+        "C",
+        "The conference room is already booked."
+      ],
+      [
+        "D",
+        "The invitation has not been received."
+      ]
+    ],
+    "answer": "C",
+    "explain": "Keyword quan trọng là <b>problem</b>. Người đàn ông nói <b>the conference room</b> đã <b>already booked</b>. Option B có keyword <b>received</b> nhưng bài nghe không nói thư mời chưa được nhận. Vì vậy chọn C.",
+    "audio": "audio/part3-4/q03.mp3"
+  },
+  {
+    "part": "Part 3",
+    "tag": "Conversation",
+    "title": "Part 3 · Câu 4 · Hỏi việc đã làm",
+    "transcript": [
+      {
+        "speaker": "W",
+        "text": "Welcome back. Did the laptop repair take long?"
+      },
+      {
+        "speaker": "M",
+        "text": "No, they only replaced the battery."
+      },
+      {
+        "speaker": "W",
+        "text": "Great. Please install the inventory software before tomorrow’s workshop."
+      }
+    ],
+    "question": "What did the repair shop do?",
+    "qKeywords": [
+      "What",
+      "repair shop",
+      "do"
+    ],
+    "optionKeywords": [
+      [
+        "replaced",
+        "battery"
+      ],
+      [
+        "ordered",
+        "new laptop"
+      ],
+      [
+        "scheduled",
+        "workshop"
+      ],
+      [
+        "installed inventory software",
+        "inventory software"
+      ]
+    ],
+    "options": [
+      [
+        "A",
+        "It replaced a battery."
+      ],
+      [
+        "B",
+        "It ordered a new laptop."
+      ],
+      [
+        "C",
+        "It scheduled a workshop."
+      ],
+      [
+        "D",
+        "It installed inventory software."
+      ]
+    ],
+    "answer": "A",
+    "explain": "Câu hỏi dùng <b>did</b> nên hỏi việc đã xảy ra ở tiệm sửa. Người đàn ông nói <b>they only replaced the battery</b>. Cụm <b>install inventory software</b> là việc người phụ nữ yêu cầu làm sau đó, không phải việc tiệm sửa đã làm.",
+    "audio": "audio/part3-4/q04.mp3"
+  },
+  {
+    "part": "Part 3",
+    "tag": "Conversation",
+    "title": "Part 3 · Câu 5 · Hỏi mục đích gọi",
+    "transcript": [
+      {
+        "speaker": "W",
+        "text": "I’m calling about the delivery of our office chairs. They were supposed to arrive this morning."
+      },
+      {
+        "speaker": "M",
+        "text": "The truck was delayed by traffic. They’ll be there by three this afternoon."
+      },
+      {
+        "speaker": "W",
+        "text": "OK, I’ll let the team know."
+      }
+    ],
+    "question": "Why is the woman calling?",
+    "qKeywords": [
+      "Why",
+      "the woman",
+      "calling"
+    ],
+    "optionKeywords": [
+      [
+        "order",
+        "more chairs"
+      ],
+      [
+        "ask about",
+        "delivery"
+      ],
+      [
+        "request",
+        "refund"
+      ],
+      [
+        "arrange",
+        "meeting"
+      ]
+    ],
+    "options": [
+      [
+        "A",
+        "To order more chairs"
+      ],
+      [
+        "B",
+        "To ask about a delivery"
+      ],
+      [
+        "C",
+        "To request a refund"
+      ],
+      [
+        "D",
+        "To arrange a meeting"
+      ]
+    ],
+    "answer": "B",
+    "explain": "Câu hỏi <b>Why is the woman calling?</b> hỏi mục đích. Ngay câu đầu, người phụ nữ nói <b>I’m calling about the delivery</b> của <b>office chairs</b>. Vì vậy chọn B.",
+    "audio": "audio/part3-4/q05.mp3"
+  },
+  {
+    "part": "Part 3",
+    "tag": "Conversation",
+    "title": "Part 3 · Câu 6 · Hỏi đề xuất",
+    "transcript": [
+      {
+        "speaker": "M",
+        "text": "The restaurant for tonight is fully booked."
+      },
+      {
+        "speaker": "W",
+        "text": "There’s a new café across from the theater. It serves dinner and still has space."
+      },
+      {
+        "speaker": "M",
+        "text": "Let’s try that."
+      }
+    ],
+    "question": "What does the woman suggest?",
+    "qKeywords": [
+      "What",
+      "woman",
+      "suggest"
+    ],
+    "optionKeywords": [
+      [
+        "dinner",
+        "home"
+      ],
+      [
+        "show",
+        "theater"
+      ],
+      "restaurant reservation",
+      [
+        "Going",
+        "new café"
+      ]
+    ],
+    "options": [
+      [
+        "A",
+        "Having dinner at home"
+      ],
+      [
+        "B",
+        "Watching a show at a theater"
+      ],
+      [
+        "C",
+        "Keeping the restaurant reservation"
+      ],
+      [
+        "D",
+        "Going to a new café"
+      ]
+    ],
+    "answer": "D",
+    "explain": "Keyword <b>suggest</b> yêu cầu nghe lời đề xuất của người phụ nữ. Cô ấy nói có <b>a new café</b> đối diện rạp hát và còn chỗ. Người đàn ông đồng ý: <b>Let’s try that</b>.",
+    "audio": "audio/part3-4/q06.mp3"
+  },
+  {
+    "part": "Part 3",
+    "tag": "Conversation",
+    "title": "Part 3 · Câu 7 · Hỏi nghề nghiệp/người nói",
+    "transcript": [
+      {
+        "speaker": "M",
+        "text": "Your car is ready, Ms. Nguyen. We changed the oil and checked the brakes."
+      },
+      {
+        "speaker": "W",
+        "text": "Thanks. How much do I owe?"
+      },
+      {
+        "speaker": "M",
+        "text": "The total is eighty-five dollars."
+      }
+    ],
+    "question": "Who most likely is the man?",
+    "qKeywords": [
+      "Who",
+      "the man",
+      "most likely"
+    ],
+    "optionKeywords": [
+      "sales clerk",
+      "tour guide",
+      "mechanic",
+      "hotel manager"
+    ],
+    "options": [
+      [
+        "A",
+        "A sales clerk"
+      ],
+      [
+        "B",
+        "A tour guide"
+      ],
+      [
+        "C",
+        "A mechanic"
+      ],
+      [
+        "D",
+        "A hotel manager"
+      ]
+    ],
+    "answer": "C",
+    "explain": "Câu hỏi <b>Who most likely</b> yêu cầu suy ra vai trò. Người đàn ông nói xe đã sẵn sàng, đã <b>changed the oil</b> và <b>checked the brakes</b>. Đây là công việc của <b>a mechanic</b>.",
+    "audio": "audio/part3-4/q07.mp3"
+  },
+  {
+    "part": "Part 3",
+    "tag": "Conversation",
+    "title": "Part 3 · Câu 8 · Hỏi sự kiện tương lai",
+    "transcript": [
+      {
+        "speaker": "W",
+        "text": "The sales report is ready, but Ms. Kim wants the numbers updated."
+      },
+      {
+        "speaker": "M",
+        "text": "OK. I’ll finish the changes before Friday’s meeting."
+      },
+      {
+        "speaker": "W",
+        "text": "Good. She’ll review it then."
+      }
+    ],
+    "question": "What will happen on Friday?",
+    "qKeywords": [
+      "What",
+      "happen",
+      "Friday"
+    ],
+    "optionKeywords": [
+      [
+        "report",
+        "reviewed"
+      ],
+      [
+        "customer",
+        "contacted"
+      ],
+      [
+        "new employee",
+        "trained"
+      ],
+      [
+        "numbers",
+        "updated"
+      ]
+    ],
+    "options": [
+      [
+        "A",
+        "A report will be reviewed."
+      ],
+      [
+        "B",
+        "A customer will be contacted."
+      ],
+      [
+        "C",
+        "A new employee will be trained."
+      ],
+      [
+        "D",
+        "Some numbers will be updated."
+      ]
+    ],
+    "answer": "A",
+    "explain": "Keyword thời gian là <b>Friday</b>. Người đàn ông sẽ sửa số liệu <b>before Friday’s meeting</b>, còn người phụ nữ nói <b>She’ll review it then</b>. <b>Then</b> chỉ cuộc họp thứ Sáu, nên chọn A.",
+    "audio": "audio/part3-4/q08.mp3"
+  },
+  {
+    "part": "Part 3",
+    "tag": "Conversation",
+    "title": "Part 3 · Câu 9 · Hỏi yêu cầu",
+    "transcript": [
+      {
+        "speaker": "M",
+        "text": "We’re running low on printer paper."
+      },
+      {
+        "speaker": "W",
+        "text": "I can order more this afternoon."
+      },
+      {
+        "speaker": "M",
+        "text": "Could you also get some envelopes?"
+      }
+    ],
+    "question": "What does the man ask the woman to do?",
+    "qKeywords": [
+      "What",
+      "man ask",
+      "woman to do"
+    ],
+    "optionKeywords": [
+      [
+        "Fix",
+        "printer"
+      ],
+      [
+        "Send",
+        "package"
+      ],
+      [
+        "Order",
+        "printer"
+      ],
+      [
+        "Get",
+        "envelopes"
+      ]
+    ],
+    "options": [
+      [
+        "A",
+        "Fix a printer"
+      ],
+      [
+        "B",
+        "Send a package"
+      ],
+      [
+        "C",
+        "Order a printer"
+      ],
+      [
+        "D",
+        "Get some envelopes"
+      ]
+    ],
+    "answer": "D",
+    "explain": "Cụm <b>ask the woman to do</b> hướng đến lời yêu cầu. Người đàn ông nói <b>Could you also get some envelopes?</b>. Vì vậy đáp án là D.",
+    "audio": "audio/part3-4/q09.mp3"
+  },
+  {
+    "part": "Part 3",
+    "tag": "Conversation",
+    "title": "Part 3 · Câu 10 · Hỏi lý do trì hoãn",
+    "transcript": [
+      {
+        "speaker": "W",
+        "text": "Is the new website ready to launch?"
+      },
+      {
+        "speaker": "M",
+        "text": "Not yet. The payment page still has an error."
+      },
+      {
+        "speaker": "W",
+        "text": "Then we should wait until the developer fixes it."
+      }
+    ],
+    "question": "Why is the website launch delayed?",
+    "qKeywords": [
+      "Why",
+      "website launch",
+      "delayed"
+    ],
+    "optionKeywords": [
+      [
+        "design",
+        "unfinished"
+      ],
+      [
+        "payment page",
+        "error"
+      ],
+      [
+        "customer",
+        "complained"
+      ],
+      [
+        "developer",
+        "absent"
+      ]
+    ],
+    "options": [
+      [
+        "A",
+        "The design is unfinished."
+      ],
+      [
+        "B",
+        "The payment page has an error."
+      ],
+      [
+        "C",
+        "A customer complained."
+      ],
+      [
+        "D",
+        "The developer is absent."
+      ]
+    ],
+    "answer": "B",
+    "explain": "Câu hỏi hỏi <b>Why</b> nên cần lý do. Người đàn ông nói <b>The payment page still has an error</b>, vì vậy việc ra mắt website bị trì hoãn.",
+    "audio": "audio/part3-4/q10.mp3"
+  }
+];
+const part3VisualPracticeData = [
+  {
+    "part": "Part 3",
+    "tag": "Conversation · Graphic",
+    "title": "Part 3 · Câu hình 1 · Bảng phòng họp",
+    "visual": {
+      "title": "Park View Hotel · Meeting Rooms",
+      "html": "<table class=\"graphic-table\"><thead><tr><th>Room</th><th>Capacity</th><th>Available Time</th></tr></thead><tbody><tr><td>Garden Room</td><td>10 people</td><td>10:00 A.M.</td></tr><tr><td>Harbor Room</td><td>8 people</td><td>3:00 P.M.</td></tr><tr><td>Summit Room</td><td>20 people</td><td>4:00 P.M.</td></tr><tr><td>Boardroom</td><td>6 people</td><td>9:00 A.M.</td></tr></tbody></table>"
+    },
+    "transcript": [
+      {
+        "speaker": "M",
+        "text": "I need to book a meeting room for Tuesday afternoon."
+      },
+      {
+        "speaker": "W",
+        "text": "The Harbor Room is available at three P.M., but it only seats eight people."
+      },
+      {
+        "speaker": "M",
+        "text": "That’s fine. We only have six people."
+      }
+    ],
+    "question": "Look at the graphic. Which room will the man reserve?",
+    "qKeywords": [
+      "Look at the graphic",
+      "Which room",
+      "man reserve"
+    ],
+    "optionKeywords": [
+      "Boardroom",
+      "Garden Room",
+      "Harbor Room",
+      "Summit Room"
+    ],
+    "options": [
+      [
+        "A",
+        "Boardroom"
+      ],
+      [
+        "B",
+        "Garden Room"
+      ],
+      [
+        "C",
+        "Harbor Room"
+      ],
+      [
+        "D",
+        "Summit Room"
+      ]
+    ],
+    "answer": "C",
+    "explain": "Câu có hình phải ghép <b>audio clue</b> và <b>graphic clue</b>. Audio nói cần phòng <b>Tuesday afternoon</b>, phòng <b>Harbor Room</b> có lúc <b>3 P.M.</b> và chứa <b>8 people</b>. Người đàn ông nói chỉ có 6 người, nên phòng phù hợp là C.",
+    "audio": "audio/part3-4/q11.mp3"
+  },
+  {
+    "part": "Part 3",
+    "tag": "Conversation · Graphic",
+    "title": "Part 3 · Câu hình 2 · Bảng sản phẩm",
+    "visual": {
+      "title": "Furniture Catalog",
+      "html": "<table class=\"graphic-table\"><thead><tr><th>Model</th><th>Item</th><th>Price</th></tr></thead><tbody><tr><td>Elm</td><td>Sofa</td><td>$549</td></tr><tr><td>Westport</td><td>Sofa</td><td>$689</td></tr><tr><td>Cedar</td><td>Chair</td><td>$299</td></tr><tr><td>Oak</td><td>Desk</td><td>$625</td></tr></tbody></table>"
+    },
+    "transcript": [
+      {
+        "speaker": "M",
+        "text": "Are you still interested in the sofa in the catalog?"
+      },
+      {
+        "speaker": "W",
+        "text": "I liked the Westport model, but I need something under six hundred dollars."
+      },
+      {
+        "speaker": "M",
+        "text": "Then the Elm model is a better choice. It’s on sale this week."
+      }
+    ],
+    "question": "Look at the graphic. Which model will the woman probably choose?",
+    "qKeywords": [
+      "Look at the graphic",
+      "Which model",
+      "woman choose"
+    ],
+    "optionKeywords": [
+      "Oak",
+      "Cedar",
+      "Westport",
+      "Elm"
+    ],
+    "options": [
+      [
+        "A",
+        "Oak"
+      ],
+      [
+        "B",
+        "Cedar"
+      ],
+      [
+        "C",
+        "Westport"
+      ],
+      [
+        "D",
+        "Elm"
+      ]
+    ],
+    "answer": "D",
+    "explain": "Audio cho biết người phụ nữ cần <b>something under six hundred dollars</b> và đang nói về <b>sofa</b>. Trong hình, <b>Elm</b> là sofa giá <b>$549</b>, còn Westport là $689. Vì vậy chọn D.",
+    "audio": "audio/part3-4/q12.mp3"
+  }
+];
+const part4PracticeData = [
+  {
+    "part": "Part 4",
+    "tag": "Announcement",
+    "title": "Part 4 · Câu 1 · Hỏi thay đổi",
+    "transcript": [
+      {
+        "speaker": "Speaker",
+        "text": "Good morning, passengers. Flight 218 to Osaka will now depart from Gate 12 instead of Gate 8. Boarding will begin in about fifteen minutes. Please check the monitors for updates."
+      }
+    ],
+    "question": "What has changed?",
+    "qKeywords": [
+      "What",
+      "changed"
+    ],
+    "optionKeywords": [
+      "boarding time",
+      "flight number",
+      "departure gate",
+      "destination"
+    ],
+    "options": [
+      [
+        "A",
+        "The boarding time"
+      ],
+      [
+        "B",
+        "The flight number"
+      ],
+      [
+        "C",
+        "The departure gate"
+      ],
+      [
+        "D",
+        "The destination"
+      ]
+    ],
+    "answer": "C",
+    "explain": "Keyword <b>changed</b> yêu cầu nghe thông tin khác với trước. Bài nói nêu <b>Gate 12 instead of Gate 8</b>, nghĩa là cổng khởi hành đã đổi.",
+    "audio": "audio/part3-4/q13.mp3"
+  },
+  {
+    "part": "Part 4",
+    "tag": "Voicemail",
+    "title": "Part 4 · Câu 2 · Hỏi mục đích cuộc gọi",
+    "transcript": [
+      {
+        "speaker": "Speaker",
+        "text": "Hello, Mr. Lee, this is Dana from City Dental. We need to reschedule your cleaning appointment because Dr. Park will be attending a morning seminar. Please call us by 5 P.M. today."
+      }
+    ],
+    "question": "Why is the speaker calling?",
+    "qKeywords": [
+      "Why",
+      "speaker",
+      "calling"
+    ],
+    "optionKeywords": [
+      [
+        "confirm",
+        "payment"
+      ],
+      [
+        "reschedule",
+        "appointment"
+      ],
+      [
+        "cancel",
+        "seminar"
+      ],
+      [
+        "give directions",
+        "office"
+      ]
+    ],
+    "options": [
+      [
+        "A",
+        "To confirm a payment"
+      ],
+      [
+        "B",
+        "To reschedule an appointment"
+      ],
+      [
+        "C",
+        "To cancel a seminar"
+      ],
+      [
+        "D",
+        "To give directions to an office"
+      ]
+    ],
+    "answer": "B",
+    "explain": "Câu hỏi <b>Why is the speaker calling?</b> thường hỏi mục đích. Người nói nêu rõ <b>We need to reschedule your cleaning appointment</b>. Vì vậy chọn B.",
+    "audio": "audio/part3-4/q14.mp3"
+  },
+  {
+    "part": "Part 4",
+    "tag": "Announcement",
+    "title": "Part 4 · Câu 3 · Hỏi nơi chốn",
+    "transcript": [
+      {
+        "speaker": "Speaker",
+        "text": "Attention staff, the cafeteria on the second floor will be closed tomorrow for electrical work. Free boxed lunches will be available in the lobby from noon to one P.M."
+      }
+    ],
+    "question": "Where can employees get lunch tomorrow?",
+    "qKeywords": [
+      "Where",
+      "employees",
+      "get lunch",
+      "tomorrow"
+    ],
+    "optionKeywords": [
+      "second-floor office",
+      "electrical room",
+      "cafeteria",
+      "lobby"
+    ],
+    "options": [
+      [
+        "A",
+        "In a second-floor office"
+      ],
+      [
+        "B",
+        "In the electrical room"
+      ],
+      [
+        "C",
+        "In the cafeteria"
+      ],
+      [
+        "D",
+        "In the lobby"
+      ]
+    ],
+    "answer": "D",
+    "explain": "Câu hỏi hỏi <b>Where</b> và mốc <b>tomorrow</b>. Bài nói nêu bữa trưa hộp sẽ có ở <b>the lobby</b>, nên chọn D.",
+    "audio": "audio/part3-4/q15.mp3"
+  },
+  {
+    "part": "Part 4",
+    "tag": "Radio Announcement",
+    "title": "Part 4 · Câu 4 · Hỏi lý do hoãn",
+    "transcript": [
+      {
+        "speaker": "Speaker",
+        "text": "Due to heavy rain expected this evening, the outdoor concert at Lakeside Park has been postponed until Saturday. Tickets for tonight’s show will be accepted at the new date."
+      }
+    ],
+    "question": "Why has the concert been postponed?",
+    "qKeywords": [
+      "Why",
+      "concert",
+      "postponed"
+    ],
+    "optionKeywords": [
+      "Heavy rain",
+      [
+        "performer",
+        "sick"
+      ],
+      [
+        "park",
+        "closed"
+      ],
+      "ticket problem"
+    ],
+    "options": [
+      [
+        "A",
+        "Heavy rain is expected."
+      ],
+      [
+        "B",
+        "A performer is sick."
+      ],
+      [
+        "C",
+        "The park is permanently closed."
+      ],
+      [
+        "D",
+        "There is a ticket problem."
+      ]
+    ],
+    "answer": "A",
+    "explain": "Câu hỏi hỏi <b>Why</b>. Câu đầu nêu <b>Due to heavy rain</b>, nên lý do hoãn là trời mưa lớn.",
+    "audio": "audio/part3-4/q16.mp3"
+  },
+  {
+    "part": "Part 4",
+    "tag": "Tour Information",
+    "title": "Part 4 · Câu 5 · Hỏi nơi bắt đầu",
+    "transcript": [
+      {
+        "speaker": "Speaker",
+        "text": "Welcome to the City Art Museum. The guided tour will begin in the main lobby in ten minutes. Please keep your tickets with you, as they will be checked before entering the gallery."
+      }
+    ],
+    "question": "Where will the tour begin?",
+    "qKeywords": [
+      "Where",
+      "tour",
+      "begin"
+    ],
+    "optionKeywords": [
+      "ticket counter",
+      "museum shop",
+      "main lobby",
+      "gallery"
+    ],
+    "options": [
+      [
+        "A",
+        "At the ticket counter"
+      ],
+      [
+        "B",
+        "In the museum shop"
+      ],
+      [
+        "C",
+        "In the main lobby"
+      ],
+      [
+        "D",
+        "In the gallery"
+      ]
+    ],
+    "answer": "C",
+    "explain": "Keyword <b>Where</b> và <b>tour begin</b>. Người nói nêu <b>The guided tour will begin in the main lobby</b>. Vì vậy chọn C.",
+    "audio": "audio/part3-4/q17.mp3"
+  },
+  {
+    "part": "Part 4",
+    "tag": "Train Announcement",
+    "title": "Part 4 · Câu 6 · Hỏi thông tin mới",
+    "transcript": [
+      {
+        "speaker": "Speaker",
+        "text": "Attention passengers waiting for the 6:40 train to Brighton. This train will now leave from Platform 5, not Platform 2. Please use the stairs at the east end of the station."
+      }
+    ],
+    "question": "What are passengers told to do?",
+    "qKeywords": [
+      "What",
+      "passengers",
+      "told to do"
+    ],
+    "optionKeywords": [
+      [
+        "Use",
+        "west exit"
+      ],
+      [
+        "Go",
+        "Platform 5"
+      ],
+      [
+        "Buy",
+        "new tickets"
+      ],
+      [
+        "Wait",
+        "6:40",
+        "tomorrow"
+      ]
+    ],
+    "options": [
+      [
+        "A",
+        "Use the west exit"
+      ],
+      [
+        "B",
+        "Go to Platform 5"
+      ],
+      [
+        "C",
+        "Buy new tickets"
+      ],
+      [
+        "D",
+        "Wait for the 6:40 train tomorrow"
+      ]
+    ],
+    "answer": "B",
+    "explain": "Người nói thông báo tàu sẽ rời từ <b>Platform 5</b>, không phải Platform 2. Vì vậy hành khách cần đến Platform 5.",
+    "audio": "audio/part3-4/q18.mp3"
+  },
+  {
+    "part": "Part 4",
+    "tag": "Office Notice",
+    "title": "Part 4 · Câu 7 · Hỏi yêu cầu nhân viên",
+    "transcript": [
+      {
+        "speaker": "Speaker",
+        "text": "This is a reminder that a short security drill will take place at 10 A.M. today. When the alarm sounds, please leave the building through the nearest exit and gather in the parking lot."
+      }
+    ],
+    "question": "What should employees do when the alarm sounds?",
+    "qKeywords": [
+      "What",
+      "employees do",
+      "alarm sounds"
+    ],
+    "optionKeywords": [
+      [
+        "Leave",
+        "building"
+      ],
+      [
+        "Call",
+        "security office"
+      ],
+      [
+        "Move cars",
+        "parking lot"
+      ],
+      [
+        "Return",
+        "desks"
+      ]
+    ],
+    "options": [
+      [
+        "A",
+        "Leave the building"
+      ],
+      [
+        "B",
+        "Call the security office"
+      ],
+      [
+        "C",
+        "Move cars from the parking lot"
+      ],
+      [
+        "D",
+        "Return to their desks"
+      ]
+    ],
+    "answer": "A",
+    "explain": "Cụm <b>when the alarm sounds</b> là mốc nghe. Bài nói yêu cầu <b>leave the building</b> và tập trung ở bãi đậu xe. Hành động chính là rời tòa nhà.",
+    "audio": "audio/part3-4/q19.mp3"
+  },
+  {
+    "part": "Part 4",
+    "tag": "Workplace Reminder",
+    "title": "Part 4 · Câu 8 · Hỏi hạn chót",
+    "transcript": [
+      {
+        "speaker": "Speaker",
+        "text": "All department managers should submit their monthly budget reports by Friday afternoon. The finance team will review the reports next Monday before preparing the final company summary."
+      }
+    ],
+    "question": "When are the budget reports due?",
+    "qKeywords": [
+      "When",
+      "budget reports",
+      "due"
+    ],
+    "optionKeywords": [
+      [
+        "Next Monday",
+        "morning"
+      ],
+      "end of the month",
+      [
+        "final summary",
+        "prepared"
+      ],
+      "Friday afternoon"
+    ],
+    "options": [
+      [
+        "A",
+        "Next Monday morning"
+      ],
+      [
+        "B",
+        "At the end of the month"
+      ],
+      [
+        "C",
+        "After the final summary is prepared"
+      ],
+      [
+        "D",
+        "By Friday afternoon"
+      ]
+    ],
+    "answer": "D",
+    "explain": "Câu hỏi hỏi <b>When</b> và <b>due</b>. Bài nói nêu <b>submit their monthly budget reports by Friday afternoon</b>. Vì vậy chọn D.",
+    "audio": "audio/part3-4/q20.mp3"
+  },
+  {
+    "part": "Part 4",
+    "tag": "Talk · Graphic",
+    "title": "Part 4 · Câu 9 · Câu có hình · Lịch hội thảo",
+    "visual": {
+      "title": "Business Seminar Schedule",
+      "html": "<table class=\"graphic-table\"><thead><tr><th>Time</th><th>Session</th><th>Room</th></tr></thead><tbody><tr><td>9:00 A.M.</td><td>Customer Service</td><td>Room A</td></tr><tr><td>11:00 A.M.</td><td>Online Sales</td><td>Room C</td></tr><tr><td>2:00 P.M.</td><td>Marketing Basics</td><td>Room B</td></tr><tr><td>4:00 P.M.</td><td>Team Leadership</td><td>Room D</td></tr></tbody></table>"
+    },
+    "transcript": [
+      {
+        "speaker": "Speaker",
+        "text": "Welcome to today’s business seminar. Please note that the marketing workshop originally planned for the morning will now begin at two P.M. in Room B. Signs near the entrance have been updated."
+      }
+    ],
+    "question": "Look at the graphic. Which session is the speaker discussing?",
+    "qKeywords": [
+      "Look at the graphic",
+      "Which session",
+      "speaker discussing"
+    ],
+    "optionKeywords": [
+      "Online Sales",
+      "Team Leadership",
+      "Marketing Basics",
+      "Customer Service"
+    ],
+    "options": [
+      [
+        "A",
+        "Online Sales"
+      ],
+      [
+        "B",
+        "Team Leadership"
+      ],
+      [
+        "C",
+        "Marketing Basics"
+      ],
+      [
+        "D",
+        "Customer Service"
+      ]
+    ],
+    "answer": "C",
+    "explain": "Audio nêu <b>marketing workshop</b>, thời gian <b>two P.M.</b> và <b>Room B</b>. Trong hình, dòng khớp với 2:00 P.M. Room B là <b>Marketing Basics</b>. Vì vậy chọn C.",
+    "audio": "audio/part3-4/q21.mp3"
+  },
+  {
+    "part": "Part 4",
+    "tag": "Advertisement · Graphic",
+    "title": "Part 4 · Câu 10 · Câu có hình · Ưu đãi",
+    "visual": {
+      "title": "Harper Supply Weekly Sale",
+      "html": "<div class=\"coupon-box\"><div class=\"coupon-main\">20% OFF</div><div class=\"coupon-sub\">Desks and Chairs · Second Floor Showroom</div><div class=\"visual-note\">Sale ends Friday</div></div>"
+    },
+    "transcript": [
+      {
+        "speaker": "Speaker",
+        "text": "Looking for office furniture? This week, Harper Supply is offering a twenty percent discount on desks and chairs in our second-floor showroom. The sale ends Friday, and delivery is free for online orders."
+      }
+    ],
+    "question": "Look at the graphic. What is being offered?",
+    "qKeywords": [
+      "Look at the graphic",
+      "What",
+      "being offered"
+    ],
+    "optionKeywords": [
+      [
+        "discount",
+        "desks and chairs"
+      ],
+      "downtown office",
+      "Friday delivery",
+      "desk assembly"
+    ],
+    "options": [
+      [
+        "A",
+        "A discount on desks and chairs"
+      ],
+      [
+        "B",
+        "A new downtown office"
+      ],
+      [
+        "C",
+        "Friday delivery only"
+      ],
+      [
+        "D",
+        "Free desk assembly"
+      ]
+    ],
+    "answer": "A",
+    "explain": "Keyword <b>being offered</b> hỏi ưu đãi. Audio nói <b>twenty percent discount</b>, còn hình ghi <b>20% OFF</b> cho <b>Desks and Chairs</b>. Vì vậy đáp án là A.",
+    "audio": "audio/part3-4/q22.mp3"
+  }
+];
+const practiceData = [...part3PracticeData, ...part3VisualPracticeData, ...part4PracticeData];
+
+let currentSlide = 0;
+let slides = [];
+const answered = {};
+
+function escapeHtml(str){
+  return String(str ?? '').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+}
+function escapeRegExp(str){return String(str).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+function normalizeKeywordList(list){
+  return (list || []).flatMap(k=>Array.isArray(k) ? k : [k]).filter(Boolean);
+}
+function primaryKeywordList(list){
+  return (list || []).flatMap(k=>Array.isArray(k) ? [k[0]] : [k]).filter(Boolean);
+}
+function renderKeywordChips(list, cls=''){
+  return primaryKeywordList(list).map(k=>`<span class="keyword-chip ${cls}">${escapeHtml(k)}</span>`).join('');
+}
+function highlightText(text, phrases){
+  const src = String(text ?? '');
+  const keys = [...new Set((phrases || []).filter(Boolean).map(String))]
+    .sort((a,b)=>b.length-a.length);
+  if(!keys.length) return escapeHtml(src);
+
+  const ranges = [];
+  keys.forEach(key=>{
+    const pattern = escapeRegExp(key).replace(/\s+/g,'\\s+');
+    const re = new RegExp(pattern,'gi');
+    let match;
+    while((match = re.exec(src))){
+      const start = match.index;
+      const end = start + match[0].length;
+      if(end <= start) break;
+      const overlaps = ranges.some(r=>start < r.end && end > r.start);
+      if(!overlaps) ranges.push({start,end});
+    }
+  });
+
+  if(!ranges.length) return escapeHtml(src);
+  ranges.sort((a,b)=>a.start-b.start);
+  let out = '';
+  let last = 0;
+  ranges.forEach(r=>{
+    out += escapeHtml(src.slice(last, r.start));
+    out += `<mark class="kw">${escapeHtml(src.slice(r.start, r.end))}</mark>`;
+    last = r.end;
+  });
+  out += escapeHtml(src.slice(last));
+  return out;
+}
+function transcriptHtml(item){
+  return item.transcript.map(t=>`<p class="turn"><span class="speaker">${escapeHtml(t.speaker)}:</span>${escapeHtml(t.text)}</p>`).join('');
+}
+function optionHtml(item, idx){
+  return item.options.map(opt=>{
+    const [letter, text] = opt;
+    return `<label class="option" data-letter="${letter}">
+      <input type="radio" name="q${idx}" value="${letter}">
+      <span class="option-letter">${letter}</span>
+      <span class="option-text" data-raw="${escapeHtml(text)}">${escapeHtml(text)}</span>
+    </label>`;
+  }).join('');
+}
+function visualHtml(item){
+  if(!item.visual) return '';
+  return `<div class="visual-card">
+    <div class="visual-title">🖼 ${escapeHtml(item.visual.title || 'Graphic')}</div>
+    ${item.visual.html || ''}
+  </div>`;
+}
+function practiceSlideHtml(item, idx){
+  return `<section class="slide practice-slide" data-kind="practice" data-practice="${idx}">
+    <span class="slide-label">${escapeHtml(item.part)} · ${escapeHtml(item.tag)}</span>
+    <h2>${escapeHtml(item.title)}</h2>
+    <div class="content-area">
+      <div class="practice-panel">
+        <div class="audio-row">
+          <button class="audio-btn" id="audio-btn-${idx}" onclick="playQuestionAudio(${idx})" type="button">▶ PLAY</button>
+          <button class="transcript-btn" onclick="toggleTranscript(${idx})" type="button">TRANSCRIPT</button>
+        </div>
+        <div class="transcript-box" id="transcript-${idx}">${transcriptHtml(item)}</div>
+        ${visualHtml(item)}
+        <div class="practice-question" data-raw="${escapeHtml(item.question)}">${escapeHtml(item.question)}</div>
+
+        <div class="option-list">${optionHtml(item, idx)}</div>
+
+        <div class="result-box" id="result-${idx}"></div>
+      </div>
+    </div>
+  </section>`;
+}
+function lessonSlidesHtml(){
+  return `
+  <section class="slide">
+    <span class="slide-label">TOEIC Listening</span>
+    <h1>Part 3<br>Cách làm bằng keyword</h1>
+    <div class="content-area">
+      <p class="reveal">Mục tiêu: đọc câu hỏi nhanh, bắt keyword đúng, nghe theo nhiệm vụ, rồi chọn đáp án dựa trên thông tin thật trong bài nghe.</p>
+      <div class="grid-3">
+        <div class="card blue reveal"><h3>1. Đọc câu hỏi</h3><p>Xác định hỏi <b>ai</b>, hỏi <b>gì</b>, hỏi <b>thời điểm nào</b>.</p></div>
+        <div class="card green reveal"><h3>2. Gạch keyword</h3><p>Lấy 3–5 từ chính trong câu hỏi và từ khác biệt ở mỗi option.</p></div>
+        <div class="card orange reveal"><h3>3. Chi tiết trả lời cho Part 3 thường theo thứ tự câu hỏi</h3><p>Part 3 thường đi theo dòng hội thoại. Không nghe từng chữ.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="slide-label">Phương pháp chính</span>
+    <h2>Quy trình làm Part 3</h2>
+    <div class="content-area">
+      <div class="grid-2">
+        <div class="card green reveal">
+          <h3>Trước khi nghe</h3>
+          <ul class="steps">
+            <li>Đọc câu hỏi trước, chưa cần dịch cả câu.</li>
+            <li>Khoanh loại câu hỏi: Where / Why / What / Who / When / How.</li>
+            <li>Lấy chủ thể: man, woman, speaker, listener, caller, employee, customer.</li>
+            <li>Lấy hành động chính: need to go, do next, mention, suggest, request.</li>
+          </ul>
+        </div>
+        <div class="card blue reveal">
+          <h3>Khi nghe</h3>
+          <ul class="steps">
+            <li>Nghe ý tương đương, không chờ đúng y nguyên option.</li>
+            <li>Để ý tín hiệu: actually, instead, because, please, I’ll...</li>
+            <li>Với câu “next”, ưu tiên phần cuối đoạn.</li>
+            <li>Với câu “why/purpose”, nghe lý do hoặc mục đích ở đầu đoạn.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-kind="demo-question-keywords">
+    <span class="slide-label">Cách lấy keyword</span>
+    <h2>Lấy keyword trong câu hỏi</h2>
+    <div class="content-area">
+      <table class="method-table">
+        <thead><tr><th>Thành phần cần lấy</th><th>Ví dụ</th><th>Lý do</th></tr></thead>
+        <tbody>
+          <tr><td>Từ hỏi / chức năng câu hỏi</td><td>Where, Why, What, Who, When, How, What problem, What next</td><td>Cho biết cần nghe nơi chốn, lý do, hành động, người, thời gian...</td></tr>
+          <tr><td>Chủ thể</td><td>the man, the woman, the speaker, employees, customers</td><td>Tránh nhầm lời của người này với người kia.</td></tr>
+          <tr><td>Hành động / nhiệm vụ nghe</td><td>need to go, do next, mention, suggest, request, offer</td><td>Cho biết phải bắt động từ hoặc ý chính nào trong audio.</td></tr>
+          <tr><td>Mốc thời gian / thứ tự</td><td>next, first, tomorrow, this afternoon, before Friday</td><td>Giúp tìm đúng đoạn thông tin trong bài nghe.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="keyword-demo" data-demo="q1">
+        <div class="mini-title">Ví dụ bắt keywords trong câu hỏi</div>
+        <div class="demo-question" data-raw="Where will the man need to go?">Where will the man need to go?</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-kind="demo-option-keywords">
+    <span class="slide-label">Cách lấy keyword</span>
+    <h2>Lấy keyword trong option</h2>
+    <div class="content-area">
+      <div class="keyword-demo" data-demo="options">
+        <div class="mini-title">Ví dụ bắt keywords trong option</div>
+        <div class="demo-question" data-raw="Where will the man need to go?">Where will the man need to go?</div>
+        <div class="option-list">
+          <div class="option"><span class="option-letter">A</span><span class="option-text" data-raw="To the front desk">To the front desk</span></div>
+          <div class="option"><span class="option-letter">B</span><span class="option-text" data-raw="To room 204">To room 204</span></div>
+          <div class="option"><span class="option-letter">C</span><span class="option-text" data-raw="To the supply room">To the supply room</span></div>
+          <div class="option"><span class="option-letter">D</span><span class="option-text" data-raw="To the office assistant’s desk">To the office assistant’s desk</span></div>
+        </div>
+      </div>
+      <div class="card orange reveal quick-rule-box">
+        <h3>QUY TẮC NHANH</h3>
+        <ul class="steps warning">
+          <li>Nếu 4 option là nơi chốn → lấy danh từ nơi chốn.</li>
+          <li>Nếu 4 option là hành động → lấy động từ chính.</li>
+          <li>Nếu 4 option là lý do → lấy cụm because / due to / problem.</li>
+          <li>Nếu 4 option là thời gian → lấy thứ, giờ, ngày, mốc hạn chót.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="slide-label">Bẫy thường gặp</span>
+    <h2>Nghe keyword nhưng không chọn máy móc</h2>
+    <div class="content-area">
+      <div class="grid-2">
+        <div class="card rose reveal"><h3>Bẫy 1: nghe thấy từ nhưng ý sai</h3><p>Option có thể lặp lại từ trong audio nhưng không trả lời đúng câu hỏi.</p></div>
+        <div class="card orange reveal"><h3>Bẫy 2: đổi cách nói</h3><p>Audio: <b>I’ll send it right away</b>. Option: <b>Email a file</b>.</p></div>
+        <div class="card green reveal"><h3>Bẫy 3: câu “next”</h3><p>Thường nằm ở cuối đoạn: <b>I’ll...</b>, <b>Please...</b>, <b>Let’s...</b>, <b>We should...</b>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  
+  `;
+}
+function visualMethodSlidesHtml(){
+  return `
+  <section class="slide">
+    <span class="slide-label">Part 3 · Câu có hình</span>
+    <h2>Cách làm câu có hình</h2>
+    <div class="content-area">
+      <div class="grid-2">
+        <div class="card blue reveal">
+          <h3>1. Nhìn hình trước</h3>
+          <ul class="steps">
+            <li>Xem tiêu đề hình: schedule, menu, map, receipt, coupon, table.</li>
+            <li>Lấy cột/dòng dễ phân biệt: time, room, price, item, location.</li>
+            <li>Không cần đọc hết; chỉ nhớ cấu trúc của hình.</li>
+          </ul>
+        </div>
+        <div class="card green reveal">
+          <h3>2. Nghe man/woman nói gì</h3>
+          <ul class="steps">
+            <li>Audio thường không đọc nguyên đáp án.</li>
+            <li>Nghe điều kiện: time, budget, number of people, preference, problem.</li>
+            <li>Sau đó quay lại hình để chọn dòng khớp điều kiện.</li>
+          </ul>
+        </div>
+      </div>
+</div>
+  </section>
+
+  <section class="slide">
+    <span class="slide-label">Part 3 · Câu có hình</span>
+    <h2>Keyword của câu có hình</h2>
+    <div class="content-area">
+      <table class="method-table reveal">
+        <thead><tr><th>Dạng hình</th><th>Keyword cần lấy</th><th>Cách nghe</th></tr></thead>
+        <tbody>
+          <tr><td>Lịch / Schedule</td><td>time, session, room, date</td><td>Nghe giờ/ngày trong audio rồi đối chiếu dòng trong hình.</td></tr>
+          <tr><td>Bảng giá / Catalog</td><td>price, item, model, discount</td><td>Nghe ngân sách hoặc món hàng người nói cần.</td></tr>
+          <tr><td>Bản đồ / Map</td><td>gate, floor, entrance, section</td><td>Nghe địa điểm hoặc hướng di chuyển.</td></tr>
+          <tr><td>Coupon / Notice</td><td>discount, valid date, product</td><td>Nghe ưu đãi thật sự được nhắc đến.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  `;
+}
+function part4IntroSlidesHtml(){
+  return `
+  <section class="slide">
+    <span class="slide-label">TOEIC Listening Part 4</span>
+    <h1>Part 4<br>Một người nói</h1>
+    <div class="content-area">
+      <p class="reveal">Part 4 không phải hội thoại. Thường là <b>announcement</b>, <b>voicemail</b>, <b>advertisement</b>, <b>talk</b>, <b>recorded message</b>.</p>
+      <div class="grid-3">
+        <div class="card blue reveal"><h3>Điểm giống Part 3</h3><p>Vẫn đọc câu hỏi trước, lấy keyword câu hỏi và option.</p></div>
+        <div class="card green reveal"><h3>Điểm khác</h3><p>Chỉ có một người nói, nên phải bám mục đích bài nói và các mốc thông tin.</p></div>
+        <div class="card orange reveal"><h3>Câu có hình</h3><p>Giống Part 3: nghe điều kiện trong audio rồi đối chiếu hình.</p></div>
+      </div>
+    </div>
+  </section>
+  `;
+}
+function renderPracticeGroup(data, startIndex){
+  return data.map((item,i)=>practiceSlideHtml(item,startIndex+i)).join('');
+}
+function renderSlides(){
+  const mount = document.getElementById('slideMount');
+  const p3Start = 0;
+  const p3VisualStart = part3PracticeData.length;
+  const p4Start = part3PracticeData.length + part3VisualPracticeData.length;
+  mount.innerHTML = lessonSlidesHtml()
+    + renderPracticeGroup(part3PracticeData, p3Start)
+    + visualMethodSlidesHtml()
+    + renderPracticeGroup(part3VisualPracticeData, p3VisualStart)
+    + part4IntroSlidesHtml()
+    + renderPracticeGroup(part4PracticeData, p4Start);
+  slides = Array.from(document.querySelectorAll('.slide'));
+  buildPagePicker();
+  showSlide(0);
+}
+function buildPagePicker(){
+  const grid = document.getElementById('pagePickerGrid');
+  grid.innerHTML = slides.map((s,i)=>{
+    let title = s.querySelector('h1,h2')?.textContent?.trim() || `Trang ${i+1}`;
+    title = title.replace(/\s+/g,' ');
+    return `<button class="page-jump-btn" data-page="${i}" onclick="jumpToSlide(${i})" type="button">
+      <span class="page-no">${i+1}</span>
+      <span class="page-title">${escapeHtml(title)}</span>
+    </button>`;
+  }).join('');
+}
+function showSlide(index){
+  if(index < 0 || index >= slides.length) return;
+  slides[currentSlide]?.classList.remove('active');
+  currentSlide = index;
+  slides[currentSlide].classList.add('active');
+  document.getElementById('progressText').textContent = `${currentSlide+1} / ${slides.length}`;
+  document.getElementById('topLine').style.width = `${((currentSlide+1)/slides.length)*100}%`;
+  const isPractice = slides[currentSlide].dataset.kind === 'practice';
+  document.getElementById('checkBtn').disabled = !isPractice;
+  updatePagePickerState();
+}
+function updatePagePickerState(){
+  document.querySelectorAll('.page-jump-btn').forEach(btn=>{
+    const page = Number(btn.dataset.page);
+    btn.classList.toggle('active', page === currentSlide);
+    btn.classList.remove('done-correct','done-wrong');
+    const slide = slides[page];
+    if(slide?.dataset.kind === 'practice'){
+      const idx = slide.dataset.practice;
+      if(answered[idx]?.correct) btn.classList.add('done-correct');
+      else if(answered[idx]) btn.classList.add('done-wrong');
+    }
+  });
+}
+function nextSlide(){ if(currentSlide < slides.length-1) showSlide(currentSlide+1); }
+function prevSlide(){ if(currentSlide > 0) showSlide(currentSlide-1); }
+function jumpToSlide(i){ closePagePicker(); showSlide(i); }
+function openPagePicker(){document.getElementById('pagePicker').classList.add('show');}
+function closePagePicker(e){
+  if(e && e.target && !e.target.classList.contains('page-picker-overlay')) return;
+  document.getElementById('pagePicker').classList.remove('show');
+}
+function highlightDemo(slide){
+  const demo = slide.querySelector('.keyword-demo');
+  if(!demo) return false;
+  const q = demo.querySelector('.demo-question');
+  const demoType = demo.dataset.demo || '';
+  if(q && demoType === 'q1') q.innerHTML = highlightText(q.dataset.raw, ['Where','the man','need to go']);
+  if(q && demoType === 'options') q.innerHTML = highlightText(q.dataset.raw, ['Where','the man','need to go']);
+  if(demoType === 'options'){
+    const optionTexts = demo.querySelectorAll('.option-text');
+    const phrases = ['front desk','room 204','supply room','assistant’s desk'];
+    optionTexts.forEach(el=>{ el.innerHTML = highlightText(el.dataset.raw, phrases); });
+  }
+  return true;
+}
+function highlightPractice(idx){
+  const item = practiceData[idx];
+  const slide = slides[currentSlide];
+  const q = slide.querySelector('.practice-question');
+  q.innerHTML = highlightText(q.dataset.raw, item.qKeywords);
+  slide.querySelectorAll('.option-text').forEach((el,i)=>{
+    const phrases = normalizeKeywordList([item.optionKeywords[i]]);
+    el.innerHTML = highlightText(el.dataset.raw, phrases);
+  });
+}
+function goReveal(){
+  const slide = slides[currentSlide];
+  if(slide.dataset.kind === 'practice'){
+    highlightPractice(Number(slide.dataset.practice));
+    return;
+  }
+  if(slide.dataset.kind === 'demo-question-keywords'){
+    highlightDemo(slide);
+    return;
+  }
+  if(slide.dataset.kind === 'demo-option-keywords'){
+    const step = Number(slide.dataset.demoStep || 0);
+    const quickRule = slide.querySelector('.quick-rule-box');
+    if(step === 0){
+      highlightDemo(slide);
+      slide.dataset.demoStep = '1';
+      return;
+    }
+    if(step === 1 && quickRule && !quickRule.classList.contains('show')){
+      quickRule.classList.add('show');
+      slide.dataset.demoStep = '2';
+      return;
+    }
+    highlightDemo(slide);
+    return;
+  }
+  const hidden = slide.querySelector('.reveal:not(.show)');
+  if(hidden){
+    hidden.classList.add('show');
+    if(hidden.classList.contains('keyword-demo')) highlightDemo(slide);
+    return;
+  }
+  highlightDemo(slide);
+}
+
+let currentAudio = null;
+let currentAudioBtn = null;
+function playQuestionAudio(idx){
+  const item = practiceData[idx];
+  const src = item.audio || `audio/part3-4/q${String(idx+1).padStart(2,'0')}.mp3`;
+  const btn = document.getElementById(`audio-btn-${idx}`);
+
+  if(currentAudio && currentAudioBtn === btn && !currentAudio.paused){
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+    btn?.classList.remove('playing');
+    if(btn) btn.textContent = '▶ PLAY';
+    return;
+  }
+
+  if(currentAudio){
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+    currentAudioBtn?.classList.remove('playing');
+    if(currentAudioBtn) currentAudioBtn.textContent = '▶ PLAY';
+  }
+
+  currentAudio = new Audio(src);
+  currentAudioBtn = btn;
+  btn?.classList.add('playing');
+  if(btn) btn.textContent = '⏸ PLAYING';
+  currentAudio.addEventListener('ended',()=>{
+    btn?.classList.remove('playing');
+    if(btn) btn.textContent = '▶ PLAY';
+  });
+  currentAudio.addEventListener('error',()=>{
+    btn?.classList.remove('playing');
+    if(btn) btn.textContent = '▶ PLAY';
+  });
+  currentAudio.play().catch(()=>{
+    btn?.classList.remove('playing');
+    if(btn) btn.textContent = '▶ PLAY';
+  });
+}
+
+function toggleTranscript(idx){
+  const box = document.getElementById(`transcript-${idx}`);
+  box.classList.toggle('show');
+}
+function checkAnswer(){
+  const slide = slides[currentSlide];
+  if(slide.dataset.kind !== 'practice') return;
+  const idx = Number(slide.dataset.practice);
+  const item = practiceData[idx];
+
+  highlightPractice(idx);
+
+  const selected = slide.querySelector(`input[name="q${idx}"]:checked`);
+  const selectedValue = selected ? selected.value : '';
+  const isCorrect = selectedValue === item.answer;
+  answered[idx] = {selected:selectedValue, correct:isCorrect};
+
+  slide.querySelectorAll('.option').forEach(opt=>{
+    const letter = opt.dataset.letter;
+    opt.classList.add('locked');
+    opt.querySelector('input').disabled = true;
+    opt.classList.remove('correct','wrong');
+    if(letter === item.answer) opt.classList.add('correct');
+    if(selectedValue && letter === selectedValue && letter !== item.answer) opt.classList.add('wrong');
+  });
+
+  const result = document.getElementById(`result-${idx}`);
+  result.className = 'result-box show ' + (!selectedValue ? 'no-answer' : isCorrect ? 'correct-result' : 'wrong-result');
+  const answerText = item.options.find(o=>o[0]===item.answer)?.[1] || '';
+  const selectedLine = selectedValue
+    ? (isCorrect ? `<span class="correct-text">Bạn chọn ${selectedValue}: đúng.</span>` : `<span class="wrong-text">Bạn chọn ${selectedValue}: chưa đúng.</span>`)
+    : `<span class="wrong-text">Bạn chưa chọn đáp án.</span>`;
+
+  result.innerHTML = `
+    <h3>${selectedLine}</h3>
+    <div class="answer-line"><b>Đáp án:</b> <span class="answer-key">${item.answer}. ${escapeHtml(answerText)}</span></div>
+    <div class="answer-line"><b>Giải thích:</b> ${item.explain}</div>
+  `;
+  updatePagePickerState();
+}
+document.addEventListener('keydown', e=>{
+  if(e.key === 'ArrowRight') nextSlide();
+  if(e.key === 'ArrowLeft') prevSlide();
+  if(e.key === 'Enter') goReveal();
+  if(e.key.toLowerCase() === 'c') checkAnswer();
+});
+document.addEventListener('contextmenu', e=>e.preventDefault());
+renderSlides();
+</script>
+</body>
+</html>
