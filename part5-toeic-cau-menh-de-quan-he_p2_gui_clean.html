@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 5 TOEIC - Câu mệnh đề quan hệ</title>
+  <style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}
+body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:relative;background:#eef4ff}
+.slide{width:100%;min-height:100vh;padding:56px 72px 120px;display:none;background:radial-gradient(circle at top left,rgba(59,130,246,.12),transparent 35%),radial-gradient(circle at bottom right,rgba(14,165,233,.12),transparent 35%),#fff}.slide.active{display:flex;flex-direction:column;animation:slideIn .35s ease}@keyframes slideIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.slide-label{display:inline-block;width:fit-content;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:800;font-size:15px;margin-bottom:18px}h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size:42px;line-height:1.15;color:#0f172a;margin-bottom:24px}h3{font-size:28px;color:#1e3a8a;margin-bottom:14px}p{font-size:24px;line-height:1.55;margin-bottom:14px}.content-area{max-width:1120px;margin-top:10px;padding-bottom:40px}.reveal{opacity:0;transform:translateY(18px);filter:blur(3px);transition:all .45s ease;pointer-events:none}.reveal.show{opacity:1;transform:translateY(0);filter:blur(0);pointer-events:auto}.intro-box{background:#f8fafc;border:2px solid #e2e8f0;border-radius:22px;padding:28px 32px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}.warning-box{background:#fff7ed;border:2px solid #fed7aa;color:#9a3412;border-radius:18px;padding:20px 24px;font-size:24px;line-height:1.45;margin-top:18px;font-weight:800}.sample-box{background:#eff6ff;border-left:8px solid #2563eb;border-radius:18px;padding:26px 30px;margin-top:16px;box-shadow:0 12px 28px rgba(37,99,235,.12)}.sample-title{font-size:22px;font-weight:800;color:#1d4ed8;margin-bottom:10px}.question{font-size:32px;font-weight:900;color:#0f172a;margin-bottom:16px;line-height:1.25}.answer{font-size:24px;padding:12px 14px;margin:8px 0;color:#334155;border:2px solid #dbeafe;border-radius:14px;background:#fff;transition:.25s ease;position:relative}.method-box{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:24px 28px;margin-top:20px}.method-box h3{color:#166534}.danger-box{background:#fff1f2;border:2px solid #fecdd3;border-radius:20px;padding:24px 28px;margin-top:20px}.danger-box h3{color:#be123c}.steps{list-style:none;margin-top:12px}.steps li{font-size:23px;line-height:1.5;padding:9px 0 9px 38px;position:relative}.steps li::before{content:"✓";position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:#22c55e;color:white;font-size:17px;display:grid;place-items:center;font-weight:800}.danger-box .steps li::before{content:"!";background:#e11d48}.control-bar{position:fixed;left:0;right:0;bottom:16px;z-index:100;display:flex;justify-content:center;align-items:center;gap:14px;pointer-events:none}.go-btn,.nav-btn{pointer-events:auto;border:none;cursor:pointer;font-weight:900;transition:all .2s ease;box-shadow:0 8px 18px rgba(15,23,42,.18)}.go-btn{width:54px;height:54px;border-radius:50%;background:#2563eb;color:white;font-size:15px;letter-spacing:.5px}.go-btn:hover{transform:scale(1.08);background:#1d4ed8}.nav-btn{border-radius:999px;padding:10px 16px;background:#e2e8f0;color:#0f172a;font-size:14px}.nav-btn:hover{background:#cbd5e1}.progress{position:fixed;top:24px;right:36px;font-size:16px;font-weight:800;color:#64748b;z-index:120;background:rgba(255,255,255,.85);padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px)}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:0%;transition:width .35s ease;z-index:130}.keyword{color:#2563eb;font-weight:900}.big-word{font-size:72px;font-weight:1000;color:#1d4ed8;letter-spacing:-2px;margin-bottom:12px}.mini-note{font-size:20px;color:#64748b;margin-top:10px}.formula-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px}.formula-item{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;padding:14px 20px;border-radius:16px;font-size:24px;font-weight:900}.formula{font-size:clamp(30px,2.7vw,50px);font-weight:1000;line-height:1.25;padding:18px 22px;margin:18px 0;background:#eff6ff;border:4px solid #93c5fd;border-radius:22px;color:#0f172a;text-align:center}.det{color:#f59e0b}.adv{color:#7c3aed}.adj{color:#2f7d32}.np{color:#dc2626}.nc{color:#0b78b6}.highlight{padding:1px 8px;border-radius:8px;font-weight:950}.h-det{background:#fde68a;color:#92400e}.h-adv{background:#ddd6fe;color:#5b21b6}.h-adj{background:#bbf7d0;color:#166534}.h-np{background:#fecaca;color:#991b1b}.h-nc{background:#bae6fd;color:#075985}.pill-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}.pill{display:inline-flex;align-items:center;font-size:22px;font-weight:900;padding:10px 16px;border-radius:999px;background:#e0f2fe;color:#075985;border:2px solid #7dd3fc}.pill.orange{background:#fffbeb;color:#92400e;border-color:#fbbf24}.pill.green{background:#ecfdf5;color:#166534;border-color:#86efac}.pill.purple{background:#f5f3ff;color:#5b21b6;border-color:#c4b5fd}.pill.red{background:#fef2f2;color:#991b1b;border-color:#fca5a5}table{width:100%;border-collapse:collapse;margin-top:12px;font-size:22px;font-weight:800;table-layout:fixed}th{background:#0f5f8f;color:white;text-align:left;padding:12px 14px}td{padding:10px 12px;border:2px solid #cbd5e1;vertical-align:top;line-height:1.25}.quiz-box .clue{transition:.25s ease;border-radius:8px;padding:0 6px}.quiz-box.clue-on .clue{background:#ffedd5;box-shadow:0 0 0 3px rgba(249,115,22,.22)}.quiz-box .blank-clue{border-radius:8px;padding:0 8px}.quiz-box.clue-on .blank-clue{background:#fed7aa;color:#9a3412;box-shadow:inset 0 0 0 2px #f97316}.tick{display:none;margin-left:10px;width:28px;height:28px;border-radius:50%;background:#22c55e;color:white;font-size:18px;font-weight:1000;place-items:center}.quiz-box.answer-on .answer.correct{color:#15803d;background:#dcfce7;border-color:#22c55e;font-weight:1000;box-shadow:0 8px 18px rgba(34,197,94,.18)}.quiz-box.answer-on .answer.correct .tick{display:inline-grid}.explain-box{display:none;background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:22px 26px;margin-top:18px;animation:fadeUp .35s ease}.quiz-box.explain-on .explain-box{display:block}@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.slide{padding:36px 24px 120px}h1{font-size:34px}h2{font-size:32px}p,.answer,.steps li{font-size:19px}.question{font-size:25px}.big-word{font-size:46px}.go-btn{width:48px;height:48px;font-size:13px}.nav-btn{padding:9px 13px;font-size:13px}.progress{top:14px;right:14px;font-size:13px}.formula-item{font-size:19px}.pill{font-size:18px}}
+.home-btn{background:linear-gradient(135deg,#0f172a,#334155)!important;color:#fff!important}
+.home-btn:hover{filter:brightness(1.08)}
+</style>
+</head>
+<body>
+  <div class="lesson-wrapper">
+    <div class="top-line" id="topLine"></div>
+    <div class="progress" id="progressText">1 / 18</div>
+
+    <section class="slide active">
+      <div class="slide-label reveal">Part 5 TOEIC</div>
+      <div class="big-word reveal">RELATIVE</div>
+      <h2 class="reveal">Mệnh đề quan hệ là gì?</h2>
+      <div class="content-area">
+        <div class="intro-box reveal"><p><b>Mệnh đề quan hệ</b> là phần đứng sau một danh từ để bổ nghĩa, giải thích danh từ đó là ai / cái gì / nơi nào / thời điểm nào.</p></div><div class="formula reveal"><span class="nc">Noun</span> + <span class="adv">Relative Word</span> + <span class="np">Clause</span></div><div class="method-box reveal"><h3>Mục tiêu</h3><ul class="steps"><li>Nhìn danh từ trước chỗ trống.</li><li>Nhìn cấu trúc sau chỗ trống.</li><li>Chọn who / which / that / whose / where / when.</li></ul></div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Nhận diện</div>
+      
+      <h2 class="reveal">Đặc điểm trong Part 5</h2>
+      <div class="content-area">
+        <p class="reveal">Mệnh đề quan hệ thường xuất hiện ngay sau <b>người / vật / nơi chốn / thời gian</b>.</p><table class="reveal"><tr><th>Danh từ trước chỗ trống</th><th>Thường chọn</th></tr><tr><td>Người</td><td>who / whom / whose</td></tr><tr><td>Vật / việc</td><td>which / that</td></tr><tr><td>Nơi chốn</td><td>where</td></tr><tr><td>Thời gian</td><td>when</td></tr></table><div class="warning-box reveal">Quy tắc chính: <b>nhìn trước</b> để biết danh từ loại gì, rồi <b>nhìn sau</b> để biết thiếu vai trò gì.</div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Dạng 1</div>
+      
+      <h2 class="reveal">Người → who / whom / whose</h2>
+      <div class="content-area">
+        <div class="sample-box reveal quiz-box" data-step="0">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The <span class="clue">applicant</span> ______ <span class="clue">submitted</span> the form has been contacted.</div>
+          <div class="answer correct">A. who<span class="tick">✓</span></div><div class="answer">B. which</div><div class="answer">C. where</div><div class="answer">D. when</div>
+          <div class="explain-box"><h3>Giải thích</h3><p><b>applicant</b> = người.</p><p>Sau chỗ trống là động từ <b>submitted</b>, tức thiếu chủ ngữ cho mệnh đề quan hệ → chọn <b>who</b>.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Dạng 2</div>
+      
+      <h2 class="reveal">Vật / việc → which / that</h2>
+      <div class="content-area">
+        <div class="sample-box reveal quiz-box" data-step="0">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The <span class="clue">report</span> ______ <span class="clue">was released</span> yesterday contains sales figures.</div>
+          <div class="answer">A. who</div><div class="answer correct">B. which<span class="tick">✓</span></div><div class="answer">C. where</div><div class="answer">D. whose</div>
+          <div class="explain-box"><h3>Giải thích</h3><p><b>report</b> = vật/tài liệu.</p><p>Sau chỗ trống là động từ bị động <b>was released</b>, mệnh đề thiếu chủ ngữ → chọn <b>which</b>.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Dạng 3</div>
+      
+      <h2 class="reveal">Sau chỗ trống thiếu S</h2>
+      <div class="content-area">
+        <div class="formula reveal"><span class="nc">Noun</span> + <span class="adv">who / which / that</span> + <span class="np">V</span></div><div class="method-box reveal"><h3>Cách nhận diện</h3><ul class="steps"><li>Nếu sau chỗ trống là động từ ngay.</li><li>Mệnh đề quan hệ đang thiếu chủ ngữ.</li><li>Người → who; vật → which/that.</li></ul></div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Ví dụ 3</div>
+      
+      <h2 class="reveal">Người + thiếu S → who</h2>
+      <div class="content-area">
+        <div class="sample-box reveal quiz-box" data-step="0">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question"><span class="clue">Employees</span> ______ <span class="clue">work</span> overtime will receive extra pay.</div>
+          <div class="answer correct">A. who<span class="tick">✓</span></div><div class="answer">B. whom</div><div class="answer">C. where</div><div class="answer">D. when</div>
+          <div class="explain-box"><h3>Giải thích</h3><p><b>Employees</b> = người.</p><p>Sau chỗ trống là động từ <b>work</b>, nên mệnh đề thiếu chủ ngữ → chọn <b>who</b>.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Dạng 4</div>
+      
+      <h2 class="reveal">Sau chỗ trống có S + V</h2>
+      <div class="content-area">
+        <div class="sample-box reveal quiz-box" data-step="0">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The <span class="clue">consultant</span> ______ <span class="clue">we hired</span> last month will lead the project.</div>
+          <div class="answer">A. who</div><div class="answer correct">B. whom<span class="tick">✓</span></div><div class="answer">C. where</div><div class="answer">D. when</div>
+          <div class="explain-box"><h3>Giải thích</h3><p>Sau chỗ trống đã có <b>we hired</b> = S + V.</p><p><b>consultant</b> là người được thuê, đóng vai trò tân ngữ → đáp án chuẩn là <b>whom</b>.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Dạng 5</div>
+      
+      <h2 class="reveal">Sở hữu → whose + N</h2>
+      <div class="content-area">
+        <div class="sample-box reveal quiz-box" data-step="0">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The <span class="clue">employee</span> ______ <span class="clue">laptop</span> was stolen reported the incident.</div>
+          <div class="answer">A. who</div><div class="answer correct">B. whose<span class="tick">✓</span></div><div class="answer">C. whom</div><div class="answer">D. which</div>
+          <div class="explain-box"><h3>Giải thích</h3><p>Sau chỗ trống là danh từ <b>laptop</b>.</p><p>Laptop thuộc về employee → dùng <b>whose + noun</b>.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Dạng 6</div>
+      
+      <h2 class="reveal">Nơi chốn → where</h2>
+      <div class="content-area">
+        <div class="sample-box reveal quiz-box" data-step="0">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The <span class="clue">branch</span> ______ <span class="clue">Ms. Lee works</span> is being renovated.</div>
+          <div class="answer correct">A. where<span class="tick">✓</span></div><div class="answer">B. when</div><div class="answer">C. who</div><div class="answer">D. whose</div>
+          <div class="explain-box"><h3>Giải thích</h3><p><b>branch</b> = chi nhánh/nơi chốn.</p><p>Sau chỗ trống có mệnh đề <b>Ms. Lee works</b> → chọn <b>where</b>.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Dạng 7</div>
+      
+      <h2 class="reveal">Thời gian → when</h2>
+      <div class="content-area">
+        <div class="sample-box reveal quiz-box" data-step="0">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The <span class="clue">day</span> ______ <span class="clue">the new policy begins</span> has not been announced.</div>
+          <div class="answer">A. where</div><div class="answer correct">B. when<span class="tick">✓</span></div><div class="answer">C. who</div><div class="answer">D. which</div>
+          <div class="explain-box"><h3>Giải thích</h3><p><b>day</b> = thời gian.</p><p>Sau chỗ trống là mệnh đề, nên dùng <b>when</b>.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Dạng 8</div>
+      
+      <h2 class="reveal">Sau giới từ → whom / which</h2>
+      <div class="content-area">
+        <div class="sample-box reveal quiz-box" data-step="0">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The client <span class="clue">with</span> ______ we spoke yesterday requested a refund.</div>
+          <div class="answer">A. who</div><div class="answer correct">B. whom<span class="tick">✓</span></div><div class="answer">C. whose</div><div class="answer">D. where</div>
+          <div class="explain-box"><h3>Giải thích</h3><p>Ngay trước chỗ trống có giới từ <b>with</b>.</p><p><b>with + người</b> → dùng <b>whom</b>, không dùng who/that trong văn chuẩn.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Dạng 9</div>
+      
+      <h2 class="reveal">Dấu phẩy → không dùng that</h2>
+      <div class="content-area">
+        <div class="sample-box reveal quiz-box" data-step="0">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The new <span class="clue">software,</span> ______ <span class="clue">was installed yesterday,</span> runs faster.</div>
+          <div class="answer">A. that</div><div class="answer correct">B. which<span class="tick">✓</span></div><div class="answer">C. who</div><div class="answer">D. where</div>
+          <div class="explain-box"><h3>Giải thích</h3><p>Có dấu phẩy, đây là mệnh đề quan hệ không xác định.</p><p>Danh từ trước là <b>software</b> = vật, nên dùng <b>which</b>. Không dùng <b>that</b> trong mệnh đề có dấu phẩy.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Dạng 10</div>
+      
+      <h2 class="reveal">Rút gọn mệnh đề quan hệ</h2>
+      <div class="content-area">
+        <p class="reveal">TOEIC cũng hay kiểm tra dạng rút gọn: bỏ đại từ quan hệ và biến động từ thành <b>V-ing</b> hoặc <b>V3/ed</b>.</p><table class="reveal"><tr><th>Dạng đầy đủ</th><th>Dạng rút gọn</th></tr><tr><td>employees who work here</td><td>employees working here</td></tr><tr><td>documents that were submitted</td><td>documents submitted</td></tr></table><div class="method-box reveal"><h3>Nhớ nhanh</h3><ul class="steps"><li>Chủ động → V-ing.</li><li>Bị động → V3/ed.</li></ul></div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Ví dụ rút gọn 1</div>
+      
+      <h2 class="reveal">Chủ động → V-ing</h2>
+      <div class="content-area">
+        <div class="sample-box reveal quiz-box" data-step="0">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The <span class="clue">employees</span> ______ <span class="clue">in the lobby</span> are waiting for the tour.</div>
+          <div class="answer correct">A. standing<span class="tick">✓</span></div><div class="answer">B. stood</div><div class="answer">C. were standing</div><div class="answer">D. stand</div>
+          <div class="explain-box"><h3>Giải thích</h3><p>Employees là người đang tự đứng ở lobby.</p><p>Rút gọn mệnh đề quan hệ chủ động → dùng <b>V-ing</b>: <b>standing</b>.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Ví dụ rút gọn 2</div>
+      
+      <h2 class="reveal">Bị động → V3/ed</h2>
+      <div class="content-area">
+        <div class="sample-box reveal quiz-box" data-step="0">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The <span class="clue">documents</span> ______ <span class="clue">yesterday</span> must be reviewed.</div>
+          <div class="answer">A. submitting</div><div class="answer correct">B. submitted<span class="tick">✓</span></div><div class="answer">C. submit</div><div class="answer">D. submits</div>
+          <div class="explain-box"><h3>Giải thích</h3><p>Documents không tự nộp, mà được nộp.</p><p>Rút gọn mệnh đề quan hệ bị động → dùng <b>V3/ed</b>: <b>submitted</b>.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Quy trình</div>
+      
+      <h2 class="reveal">Cách làm nhanh</h2>
+      <div class="content-area">
+        <div class="formula reveal"><span class="adv">1. Nhìn danh từ trước</span> → <span class="nc">2. Nhìn sau chỗ trống</span> → <span class="np">3. Chọn từ quan hệ</span></div><ul class="steps reveal"><li>Người → who / whom / whose</li><li>Vật → which / that</li><li>Nơi → where</li><li>Thời gian → when</li><li>Sở hữu → whose + N</li><li>Rút gọn → V-ing hoặc V3/ed</li></ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Mini Practice</div>
+      
+      <h2 class="reveal">Luyện nhanh</h2>
+      <div class="content-area">
+        <div class="sample-box reveal quiz-box" data-step="0">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The <span class="clue">assistant</span> ______ <span class="clue">prepared</span> the presentation will join the meeting.</div>
+          <div class="answer correct">A. who<span class="tick">✓</span></div><div class="answer">B. which</div><div class="answer">C. where</div><div class="answer">D. when</div>
+          <div class="explain-box"><h3>Giải thích</h3><p><b>assistant</b> = người.</p><p>Sau chỗ trống là động từ <b>prepared</b>, mệnh đề thiếu chủ ngữ → chọn <b>who</b>.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide-label reveal">Kết luận</div>
+      
+      <h2 class="reveal">Chốt bài</h2>
+      <div class="content-area">
+        <div class="intro-box reveal"><h3>Nhìn trước & nhìn sau</h3><div class="formula"><span class="nc">Noun trước</span> + <span class="adv">Cấu trúc sau</span> = <span class="np">Đáp án</span></div><p>Mệnh đề quan hệ Part 5 không cần phân tích quá dài. Chỉ cần xác định danh từ trước và phần sau chỗ trống.</p></div><div class="method-box reveal"><h3>Nhớ nhanh</h3><ul class="steps"><li>Người / vật / nơi / thời gian.</li><li>Thiếu S hay đã có S + V.</li><li>Có sở hữu, giới từ, dấu phẩy hay rút gọn không?</li></ul></div>
+      </div>
+    </section>
+
+    <div class="control-bar">
+      <button class="nav-btn home-btn" onclick="goHomeIndex()">⌂ Về trang chủ</button>
+      <button class="nav-btn" onclick="prevSlide()">← Prev</button>
+      <button class="go-btn" onclick="goReveal()">GO</button>
+      <button class="nav-btn" onclick="nextSlide()">Next →</button>
+    </div>
+  </div>
+
+  <script>
+function goHomeIndex(){window.location.href='part5-toeic-index.html';}
+const slides=document.querySelectorAll('.slide');
+const progressText=document.getElementById('progressText');
+const topLine=document.getElementById('topLine');
+let currentSlide=0;
+let revealIndex=0;
+function updateProgress(){progressText.textContent=`${currentSlide+1} / ${slides.length}`;topLine.style.width=`${((currentSlide+1)/slides.length)*100}%`;}
+function resetSlideReveal(slide){slide.querySelectorAll('.reveal').forEach(item=>item.classList.remove('show'));slide.querySelectorAll('.quiz-box').forEach(q=>{q.dataset.step='0';q.classList.remove('clue-on','answer-on','explain-on','done');});}
+function showSlide(index){slides[currentSlide].classList.remove('active');resetSlideReveal(slides[currentSlide]);currentSlide=index;revealIndex=0;slides[currentSlide].classList.add('active');window.scrollTo({top:0,behavior:'smooth'});updateProgress();}
+function stepQuiz(quiz){const step=Number(quiz.dataset.step||0)+1;quiz.dataset.step=String(step);if(step===1){quiz.classList.add('clue-on');}else if(step===2){quiz.classList.add('answer-on');}else if(step===3){quiz.classList.add('explain-on','done');}setTimeout(()=>quiz.scrollIntoView({behavior:'smooth',block:'center'}),80);}
+function goReveal(){const activeSlide=slides[currentSlide];const activeQuiz=activeSlide.querySelector('.quiz-box.show:not(.done)');if(activeQuiz){stepQuiz(activeQuiz);return;}const revealItems=activeSlide.querySelectorAll('.reveal');if(revealIndex<revealItems.length){const item=revealItems[revealIndex];item.classList.add('show');revealIndex++;setTimeout(()=>item.scrollIntoView({behavior:'smooth',block:'center'}),80);return;}if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
+function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}function prevSlide(){if(currentSlide>0)showSlide(currentSlide-1);}document.addEventListener('keydown',function(e){if(e.code==='Space'||e.code==='Enter'){e.preventDefault();goReveal();}if(e.code==='ArrowRight')nextSlide();if(e.code==='ArrowLeft')prevSlide();});updateProgress();
+</script>
+</body>
+</html>
