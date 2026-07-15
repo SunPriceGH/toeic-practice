@@ -757,7 +757,11 @@ const checkedState = {};
 
 
 function audioPathForQuestion(q){
-  if(q.image) return q.image.replace(/^image\//,'audio/').replace(/\.[^.]+$/,'.mp3');
+  if(q.image){
+    const fileName = q.image.split('/').pop().replace(/\.[^.]+$/, '.mp3');
+    return '/audio/p1/' + fileName;
+  }
+
   return '/audio/p1/' + q.scene + '.mp3';
 }
 
