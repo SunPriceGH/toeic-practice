@@ -194,6 +194,95 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
 .practice-test-card .btn:hover{background:linear-gradient(135deg,#15803d,#1d4ed8)}
 .practice-test-card:hover{transform:translateY(-3px);border-color:#22c55e}
 
+
+/* ===== Lesson / Practice section tabs ===== */
+.section-switch{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:22px 0 10px;
+}
+.section-tab{
+  border:2px solid #dbeafe;
+  background:#fff;
+  color:#1d4ed8;
+  border-radius:999px;
+  padding:13px 22px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 8px 18px rgba(15,23,42,.10);
+  transition:.18s ease;
+}
+.section-tab:hover{
+  background:#eff6ff;
+  transform:translateY(-1px);
+}
+.section-tab.active{
+  background:#2563eb;
+  border-color:#2563eb;
+  color:#fff;
+  box-shadow:0 12px 24px rgba(37,99,235,.22);
+}
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:18px 0 4px;
+  color:#0f172a;
+  font-size:28px;
+  font-weight:700;
+}
+.section-title .section-dot{
+  width:14px;
+  height:14px;
+  border-radius:999px;
+  background:#2563eb;
+  box-shadow:0 0 0 6px rgba(37,99,235,.12);
+}
+body.show-lessons .practice-section-card{display:none!important}
+body.show-practice .lesson-section-card{display:none!important}
+
+.lesson-index-card{
+  overflow:hidden;
+  border-color:#93c5fd;
+  background:
+    radial-gradient(circle at top right,rgba(59,130,246,.22),transparent 34%),
+    linear-gradient(145deg,#eff6ff 0%,#ffffff 58%,#f8fafc 100%);
+  box-shadow:0 22px 48px rgba(37,99,235,.14),0 12px 30px rgba(15,23,42,.08);
+}
+.lesson-index-card:before{
+  content:"LESSON";
+  position:absolute;
+  top:18px;
+  right:18px;
+  z-index:1;
+  padding:8px 13px;
+  border-radius:999px;
+  background:#1d4ed8;
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.06em;
+  box-shadow:0 10px 22px rgba(37,99,235,.20);
+}
+.lesson-index-card h2{
+  padding-right:94px;
+  color:#1e3a8a;
+}
+.lesson-index-card .pill{
+  background:#eff6ff;
+  color:#1d4ed8;
+  border-color:#bfdbfe;
+}
+.lesson-index-card .btn{
+  background:linear-gradient(135deg,#2563eb,#0ea5e9);
+}
+.lesson-index-card:hover{
+  transform:translateY(-3px);
+  border-color:#60a5fa;
+}
+
 </style>
 </head>
 <body>
@@ -222,63 +311,135 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
     <h1>Kho bài luyện TOEIC</h1>
     <p class="lead">Chọn bài luyện và đăng nhập bằng email đã được cấp quyền và mật khẩu lớp học trước khi làm bài.</p>
     <div class="student-memory" id="studentMemory">Thiết bị đang ghi nhớ: <b id="rememberedStudentEmail"></b><a class="stats-link" href="student-stats.html">Thống kê của tôi</a><button type="button" onclick="forgetSavedLogin()">Đổi tài khoản</button></div>
+    
+    <div class="section-switch" aria-label="Chọn nhóm thẻ">
+      <button class="section-tab" id="lessonTabBtn" type="button" onclick="switchIndexSection('lessons')">LESSONS</button>
+      <button class="section-tab active" id="practiceTabBtn" type="button" onclick="switchIndexSection('practice')">PRACTICES</button>
+    </div>
+    <div class="section-title" id="sectionTitle"><span class="section-dot"></span><span id="sectionTitleText">Practices</span></div>
     <div class="grid">
-      <article class="card lesson-card" data-lesson-id="word-form-100">
+
+      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part1-photos">
+        <h2>Part 1 Photos</h2>
+        <p>Bài học Part 1: cách nhìn ảnh, bắt chủ thể, hành động và trạng ngữ trong hình.</p>
+        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 1</span><span class="pill">Photos</span></div>
+        <button class="btn" type="button" onclick="openLogin('part1_photos_lesson_practice.html')">Vào bài học</button>
+      </article>
+
+      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part3-4-method">
+        <h2>Part 3 + 4 Method</h2>
+        <p>Bài học cách bắt keyword trong câu hỏi, option, hội thoại Part 3 và bài nói Part 4.</p>
+        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 3 + 4</span><span class="pill">Keyword</span></div>
+        <button class="btn" type="button" onclick="openLogin('toeic_part3_part4_method_practice.html')">Vào bài học</button>
+      </article>
+
+      
+      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part5-cau-truc-cau">
+        <h2>Part 5 - Cấu trúc câu</h2>
+        <p>Bài học Part 5 về cấu trúc câu: xác định thành phần câu và vị trí cần điền.</p>
+        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 5</span><span class="pill">Cấu trúc câu</span></div>
+        <button class="btn" type="button" onclick="openLogin('part5-toeic-cau-cau-truc-cau_p2_gui.html')">Vào bài học</button>
+      </article>
+
+      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part5-chia-thi">
+        <h2>Part 5 - Chia thì</h2>
+        <p>Bài học Part 5 về dấu hiệu thì, thời điểm và cách chọn dạng động từ phù hợp.</p>
+        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 5</span><span class="pill">Chia thì</span></div>
+        <button class="btn" type="button" onclick="openLogin('part5-toeic-cau-chia-thi_p2_gui_clean.html')">Vào bài học</button>
+      </article>
+
+      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part5-lien-gioi">
+        <h2>Part 5 - Liên từ / Giới từ</h2>
+        <p>Bài học Part 5 về cách phân biệt liên từ, giới từ và các cụm nối thường gặp.</p>
+        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 5</span><span class="pill">Liên từ / Giới từ</span></div>
+        <button class="btn" type="button" onclick="openLogin('part5-toeic-cau-lien-gioi_p2_gui_clean.html')">Vào bài học</button>
+      </article>
+
+      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part5-menh-de-quan-he">
+        <h2>Part 5 - Mệnh đề quan hệ</h2>
+        <p>Bài học Part 5 về who, which, that, where, when và cách nhận diện mệnh đề quan hệ.</p>
+        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 5</span><span class="pill">Mệnh đề quan hệ</span></div>
+        <button class="btn" type="button" onclick="openLogin('part5-toeic-cau-menh-de-quan-he_p2_gui_clean.html')">Vào bài học</button>
+      </article>
+
+      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part5-tu-loai">
+        <h2>Part 5 - Từ loại</h2>
+        <p>Bài học Part 5 về noun, verb, adjective, adverb và cách nhìn vị trí trong câu.</p>
+        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 5</span><span class="pill">Từ loại</span></div>
+        <button class="btn" type="button" onclick="openLogin('part5-toeic-cau-tu-loai_p2_gui_clean.html')">Vào bài học</button>
+      </article>
+
+      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part5-tu-vung">
+        <h2>Part 5 - Từ vựng</h2>
+        <p>Bài học Part 5 về cách chọn từ theo nghĩa, collocation và ngữ cảnh câu.</p>
+        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 5</span><span class="pill">Từ vựng</span></div>
+        <button class="btn" type="button" onclick="openLogin('part5-toeic-cau-tu-vung_p2_gui_clean.html')">Vào bài học</button>
+      </article>
+
+<article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part7-reading">
+        <h2>Part 7 Reading</h2>
+        <p>Bài học đọc hiểu Part 7: cách đọc câu hỏi, tìm đoạn chứa đáp án và xử lý bẫy paraphrase.</p>
+        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 7</span><span class="pill">Reading</span></div>
+        <button class="btn" type="button" onclick="openLogin('part7_reading_lesson_practice.html')">Vào bài học</button>
+      </article>
+
+
+      <article class="card lesson-card practice-section-card" data-lesson-id="word-form-100">
         <h2>100 câu từ loại TOEIC</h2>
         <p>Practice Part 5 dạng word form: noun, verb, adjective, adverb và các bẫy từ loại thường gặp.</p>
         <div class="pill-row"><span class="pill">100 câu</span><span class="pill">Word class</span><span class="pill">Part 5</span></div>
         <button class="btn" type="button" onclick="openLogin('toeic-part5-word-form-practice-100.html')">Vào bài luyện</button>
       </article>
-      <article class="card lesson-card" data-lesson-id="be-adj-v3-v-ed-prep-1">
+      <article class="card lesson-card practice-section-card" data-lesson-id="be-adj-v3-v-ed-prep-1">
         <h2>Be + Adj/V3/-ed + Prep 1</h2>
         <p>Luyện 52 câu cấu trúc be + adjective/V3/-ed + preposition, nhóm 1.</p>
         <div class="pill-row"><span class="pill">52 câu</span><span class="pill">Nhóm 1</span><span class="pill">Preposition</span></div>
         <button class="btn" type="button" onclick="openLogin('cau-truc-be-adj-v3-v-ed-prep-1.html')">Vào bài luyện</button>
       </article>
-      <article class="card lesson-card" data-lesson-id="be-adj-v3-v-ed-prep-2">
+      <article class="card lesson-card practice-section-card" data-lesson-id="be-adj-v3-v-ed-prep-2">
         <h2>Be + Adj/V3/-ed + Prep 2</h2>
         <p>Luyện 52 câu cấu trúc be + adjective/V3/-ed + preposition, nhóm 2.</p>
         <div class="pill-row"><span class="pill">52 câu</span><span class="pill">Nhóm 2</span><span class="pill">Preposition</span></div>
         <button class="btn" type="button" onclick="openLogin('cau-truc-be-adj-v3-v-ed-prep-2.html')">Vào bài luyện</button>
       </article>
-      <article class="card lesson-card" data-lesson-id="noun-prep-collocation-1">
+      <article class="card lesson-card practice-section-card" data-lesson-id="noun-prep-collocation-1">
         <h2>Noun + Prep Collocation 1</h2>
         <p>Luyện 62 câu collocation danh từ đi với giới từ trong TOEIC, nhóm 1.</p>
         <div class="pill-row"><span class="pill">62 câu</span><span class="pill">Nhóm 1</span><span class="pill">Noun + Prep</span></div>
         <button class="btn" type="button" onclick="openLogin('noun-prep-collocation-1.html')">Vào bài luyện</button>
       </article>
-      <article class="card lesson-card" data-lesson-id="noun-prep-collocation-2">
+      <article class="card lesson-card practice-section-card" data-lesson-id="noun-prep-collocation-2">
         <h2>Noun + Prep Collocation 2</h2>
         <p>Luyện 60 câu collocation danh từ đi với giới từ trong TOEIC, nhóm 2.</p>
         <div class="pill-row"><span class="pill">60 câu</span><span class="pill">Nhóm 2</span><span class="pill">Noun + Prep</span></div>
         <button class="btn" type="button" onclick="openLogin('noun-prep-collocation-2.html')">Vào bài luyện</button>
       </article>
-      <article class="card lesson-card" data-lesson-id="toeic-listening">
+      <article class="card lesson-card practice-section-card" data-lesson-id="toeic-listening">
         <h2>TOEIC Listening ETS 2024</h2>
         <p>Vào phòng nghe rồi chọn đề ETS 2024 Test 6, 7, 8, 9 hoặc 10. Audio nguyên đề, 100 câu, đồng hồ 45 phút.</p>
         <div class="pill-row"><span class="pill">100 câu</span><span class="pill">Chọn đề trong bài</span><span class="pill">Test mode</span></div>
         <button class="btn" type="button" onclick="openLogin('toeic-listening.html')">Vào bài nghe</button>
       </article>
-      <article class="card lesson-card exam-index-card" data-lesson-id="ets-summer-2021-test1-part5-6">
+      <article class="card lesson-card practice-section-card exam-index-card" data-lesson-id="ets-summer-2021-test1-part5-6">
         <h2>Thi thử ETS 2021 - part 5 + 6</h2>
         <p>Thi thử part 5 + 6 trong thời gian giới hạn.</p>
         <div class="pill-row"><span class="pill">Part 5 + 6</span><span class="pill">46 câu</span><span class="pill">25 phút</span></div>
         <button class="btn" type="button" onclick="openLogin('ets-summer-2021-test1-part5-6.html')">Vào phòng thi</button>
       </article>
-      <article class="card lesson-card practice-test-card" data-lesson-id="ets-summer-2021-test1-part5-6-practice">
+      <article class="card lesson-card practice-section-card practice-test-card" data-lesson-id="ets-summer-2021-test1-part5-6-practice">
         <h2>Luyện đề ETS 2021 - part 5 + 6</h2>
         <p>Làm từng câu, kiểm tra đáp án và xem sửa chi tiết ngay.</p>
         <div class="pill-row"><span class="pill">Part 5 + 6</span><span class="pill">46 câu</span><span class="pill">Practice</span></div>
         <button class="btn" type="button" onclick="openLogin('ets-summer-2021-test1-part5-6-practice.html')">Vào bài luyện</button>
       </article>
 
-      <article class="card lesson-card practice-test-card" data-lesson-id="ets2024-p56-practice">
+      <article class="card lesson-card practice-section-card practice-test-card" data-lesson-id="ets2024-p56-practice">
         <h2>Luyện đề ETS 2024 - part 5 + 6</h2>
         <p>Làm từng câu, chọn đề 6-10 trong bài, kiểm tra đáp án và xem sửa chi tiết ngay.</p>
         <div class="pill-row"><span class="pill">Part 5 + 6</span><span class="pill">5 đề</span><span class="pill">Practice</span></div>
         <button class="btn" type="button" onclick="openLogin('ets-2024-part5-6-practice.html')">Vào bài luyện</button>
       </article>
-      <article class="card lesson-card vocab-index-card" data-lesson-id="vocabulary-box">
+      <article class="card lesson-card practice-section-card vocab-index-card" data-lesson-id="vocabulary-box">
         <div class="vocab-index-art" aria-hidden="true"></div>
         <div class="vocab-index-spark" aria-hidden="true">📚</div>
         <h2>Hòm từ vựng cá nhân</h2>
@@ -286,7 +447,7 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
         <div class="pill-row"><span class="pill">Hòm từ vựng</span><span class="pill">Kho từ chung</span><span class="pill">Luyện tập từ</span></div>
         <button class="btn" type="button" onclick="openLogin('vocabulary-box.html')">Mở hòm từ</button>
       </article>
-      <article class="card lesson-card" data-lesson-id="results">
+      <article class="card lesson-card practice-section-card" data-lesson-id="results">
         <h2>Kết quả học viên</h2>
         <p>Dành cho giáo viên xem danh sách bài nộp và tải JSON kết quả.</p>
         <a class="btn secondary" href="results.html">Mở trang kết quả</a>
@@ -638,7 +799,23 @@ async function loginStudent(e){
     showError(err.message||'Không đăng nhập được. Kiểm tra lại mật khẩu hoặc Functions.');
   }
 }
+
+function switchIndexSection(section){
+  const isLesson = section === 'lessons';
+  document.body.classList.toggle('show-lessons', isLesson);
+  document.body.classList.toggle('show-practice', !isLesson);
+
+  const lessonBtn = document.getElementById('lessonTabBtn');
+  const practiceBtn = document.getElementById('practiceTabBtn');
+  if(lessonBtn) lessonBtn.classList.toggle('active', isLesson);
+  if(practiceBtn) practiceBtn.classList.toggle('active', !isLesson);
+
+  const title = document.getElementById('sectionTitleText');
+  if(title) title.textContent = isLesson ? 'Lessons' : 'Practices';
+}
+
 const params=new URLSearchParams(location.search);if(params.get('next')) openLogin(params.get('next'));
+switchIndexSection('practice');
 updateRememberedStudent();
 loadLessonLocks();
 </script>
