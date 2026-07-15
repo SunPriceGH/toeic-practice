@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TOEIC Part 1 Photos - Lesson & Practice</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:relative;background:#eef4ff}
+.slide{width:100%;min-height:100vh;padding:56px 72px 120px;display:none;background:radial-gradient(circle at top left,rgba(59,130,246,.12),transparent 35%),radial-gradient(circle at bottom right,rgba(14,165,233,.12),transparent 35%),#fff}.slide.active{display:flex;flex-direction:column;animation:slideIn .35s ease}@keyframes slideIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.slide-label{display:inline-block;width:fit-content;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:700;font-size:15px;margin-bottom:18px}h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size:42px;line-height:1.15;color:#0f172a;margin-bottom:24px}h3{font-size:28px;color:#1e3a8a;margin-bottom:14px}p{font-size:23px;line-height:1.55;margin-bottom:14px}.content-area{max-width:1180px;margin-top:10px;padding-bottom:40px}.reveal{opacity:0;transform:translateY(18px);filter:blur(3px);transition:all .45s ease;pointer-events:none}.reveal.show{opacity:1;transform:translateY(0);filter:blur(0);pointer-events:auto}.intro-box{background:#f8fafc;border:2px solid #e2e8f0;border-radius:22px;padding:28px 32px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}
+.method-box{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:24px 28px;margin-top:20px}.method-box h3{color:#166534}.danger-box{background:#fff1f2;border:2px solid #fecdd3;border-radius:20px;padding:24px 28px;margin-top:20px}.danger-box h3{color:#be123c}.warning-box{background:#fff7ed;border:2px solid #fed7aa;color:#9a3412;border-radius:18px;padding:20px 24px;font-size:23px;line-height:1.45;margin-top:18px;font-weight:700}
+.steps{list-style:none;margin-top:12px}.steps li{font-size:22px;line-height:1.5;padding:9px 0 9px 38px;position:relative}.steps li::before{content:"✓";position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:#22c55e;color:white;font-size:17px;display:grid;place-items:center;font-weight:700}.danger-box .steps li::before{content:"!";background:#e11d48}
+.sample-box{background:#eff6ff;border-left:8px solid #2563eb;border-radius:18px;padding:26px 30px;margin-top:16px;box-shadow:0 12px 28px rgba(37,99,235,.12)}.sample-title{font-size:22px;font-weight:700;color:#1d4ed8;margin-bottom:10px}.question{font-size:31px;font-weight:700;color:#0f172a;margin-bottom:16px;line-height:1.32}.answer,.option{font-size:22px;padding:15px 16px;margin:8px 0;color:#334155;border:2px solid #dbeafe;border-radius:14px;background:#fff;transition:.25s ease;position:relative}.option{display:flex;align-items:center;gap:14px;cursor:pointer}.option:hover{border-color:#93c5fd;transform:translateY(-1px)}.quiz-slide.answer-locked .option{cursor:not-allowed;opacity:.78}.quiz-slide.answer-locked .option:hover{transform:none;border-color:#dbeafe}.quiz-slide.answer-locked .option input{cursor:not-allowed}.option input{width:20px;height:20px;accent-color:#2563eb}.option-letter{font-weight:700;color:#1d4ed8;min-width:28px}.option-vn{display:block;font-size:18px;color:#64748b;margin-top:4px;font-weight:700}.result-box{display:none}.result-box.show{display:block;animation:fadeUp .25s ease}.result-box.wrong-box{background:#fff1f2;border-color:#fecdd3}.result-box.wrong-box h3{color:#be123c}.result-box.no-answer .explain{display:none!important}.result-box.no-answer{background:#fff7ed!important;border-color:#fed7aa!important}.result-box.no-answer .result-title{margin-bottom:0!important}
+.control-bar{position:fixed;left:0;right:0;bottom:16px;z-index:100;display:flex;justify-content:center;align-items:center;gap:14px;pointer-events:none;flex-wrap:wrap;padding:0 12px}.go-btn,.check-btn,.nav-btn{pointer-events:auto;border:none;cursor:pointer;font-weight:700;transition:all .2s ease;box-shadow:0 8px 18px rgba(15,23,42,.18)}.go-btn{width:54px;height:54px;border-radius:50%;background:#2563eb;color:white;font-size:15px;letter-spacing:.5px}.go-btn:hover,.check-btn:hover{transform:scale(1.06);background:#1d4ed8}.check-btn{border-radius:999px;background:#2563eb;color:#fff;font-size:15px;letter-spacing:.5px;padding:13px 22px}.check-btn:disabled{opacity:.45;cursor:not-allowed}.nav-btn{border-radius:999px;padding:10px 16px;background:#e2e8f0;color:#0f172a;font-size:14px}.nav-btn:hover{background:#cbd5e1}.progress{position:fixed;top:24px!important;right:36px!important;bottom:auto!important;left:auto!important;font-size:16px;font-weight:700;color:#64748b;z-index:120;background:rgba(255,255,255,.85);padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 14px rgba(15,23,42,.08)}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:0%;transition:width .35s ease;z-index:130}.keyword{color:#2563eb;font-weight:700}.answer-key{font-weight:700;color:#15803d}.correct-text{color:#15803d}.wrong-text{color:#be123c}.big-word{font-size:66px;font-weight:700;color:#1d4ed8;letter-spacing:-2px;margin-bottom:12px}.score-box{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}.score-pill{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;padding:12px 18px;border-radius:999px;font-size:20px;font-weight:700}
+.photo-layout{display:grid;grid-template-columns:minmax(360px,520px) 1fr;gap:22px;align-items:start}.photo-frame{width:100%;background:#f8fafc;border:2px solid #dbeafe;border-radius:24px;overflow:hidden;box-shadow:0 16px 34px rgba(15,23,42,.12)}.image-stage{position:relative}.photo-frame svg{display:block;width:100%;height:auto}.photo-frame img.real-photo{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}.annotation-overlay.photo-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.annotation-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.annotation-line{stroke:#111827;stroke-width:2.8;stroke-linecap:round}.annotation-dot{fill:#111827}.annotation-note-box{fill:rgba(255,255,255,.96);stroke:#111827;stroke-width:1.6;rx:12;ry:12}.annotation-note-title{font-size:11px;font-weight:700;fill:#0f172a}.annotation-note-value{font-size:12px;font-weight:700;fill:#1e3a8a}.photo-caption{font-size:17px;color:#64748b;font-weight:700;padding:10px 14px;background:#fff;border-top:1px solid #e2e8f0}.photo-caption-mask{padding:14px 16px}.caption-meta{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-bottom:10px}.caption-tag{display:none!important}.peek-toggle{border:none;cursor:pointer;display:inline-grid;place-items:center;width:40px;height:40px;margin-left:auto;border-radius:999px;background:#0f172a;color:#fff;font-size:18px;font-weight:700;box-shadow:0 6px 14px rgba(15,23,42,.14);transition:all .18s ease}.peek-toggle:hover{transform:translateY(-1px)}.peek-toggle.active{background:#7c3aed}.peek-icon{font-size:16px;line-height:1}.caption-sentence{font-size:18px;line-height:1.52;color:#0f172a;font-weight:700;transition:filter .22s ease, opacity .22s ease;word-break:break-word}.caption-sentence.sentence-blur{filter:blur(6px);opacity:.72;user-select:none}.analysis-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.mini-card{background:#fff;border:2px solid #dbeafe;border-radius:18px;padding:16px 18px}.mini-card h4{font-size:20px;color:#1d4ed8;margin-bottom:8px}.mini-card p{font-size:19px;margin:0;color:#334155}.formula{font-size:clamp(27px,2.4vw,42px);font-weight:700;line-height:1.25;padding:18px 22px;margin:18px 0;background:#eff6ff;border:4px solid #93c5fd;border-radius:22px;color:#0f172a;text-align:center}
+
+.audio-btn{
+  border:none;cursor:pointer;display:inline-grid;place-items:center;
+  width:40px;height:40px;border-radius:999px;background:#2563eb;color:#fff;
+  font-size:18px;font-weight:700;box-shadow:0 6px 14px rgba(37,99,235,.18);
+  transition:all .18s ease;
+}
+.audio-btn:hover,.peek-toggle:hover{transform:translateY(-1px)}
+.audio-btn.playing{background:#16a34a}
+.option-text.option-blur{
+  filter:blur(6px);
+  opacity:.62;
+  user-select:none;
+  transition:filter .22s ease, opacity .22s ease;
+}
+.quiz-slide.answer-checked .option-text.option-blur{
+  filter:none;
+  opacity:1;
+  user-select:auto;
+}
+
+.translation-box{display:none;background:linear-gradient(135deg,#f8fafc,#eef6ff);border:2px solid #dbeafe;border-left:8px solid #60a5fa;border-radius:20px;padding:22px 26px;margin-top:16px;box-shadow:0 10px 24px rgba(37,99,235,.08);animation:fadeUp .25s ease}.translation-box.show{display:block}.translation-box h3{color:#1d4ed8;font-size:24px;margin-bottom:12px}.translation-item{background:#fff;border:1.5px solid #dbeafe;border-radius:14px;padding:12px 14px;font-size:20px;line-height:1.45;color:#334155;margin-top:8px}.translation-item b{color:#0f172a}.letter{color:#1d4ed8;font-weight:700;margin-right:6px}.audio-note{display:inline-block;background:#fef3c7;color:#92400e;border:1px solid #fde68a;border-radius:999px;padding:7px 12px;font-size:15px;font-weight:700;margin-left:8px}
+.progress-btn{border:none;cursor:pointer;pointer-events:auto}.progress-btn:hover{background:#eff6ff;color:#1d4ed8;transform:translateY(-1px)}.page-picker-overlay{position:fixed;inset:0;background:rgba(15,23,42,.42);z-index:300;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)}.page-picker-overlay.show{display:flex}.page-picker-panel{width:min(960px,96vw);max-height:84vh;overflow:auto;background:#fff;border-radius:26px;border:2px solid #dbeafe;box-shadow:0 24px 60px rgba(15,23,42,.24);padding:22px}.page-picker-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}.page-picker-head h3{margin:0;color:#0f172a;font-size:28px}.page-picker-head p{margin:6px 0 0;color:#64748b;font-size:17px;line-height:1.4}.page-picker-close{border:none;cursor:pointer;width:40px;height:40px;border-radius:999px;background:#e2e8f0;color:#0f172a;font-size:28px;line-height:1;font-weight:700}.page-picker-close:hover{background:#cbd5e1}.page-picker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}.page-jump-btn{border:2px solid #dbeafe;border-radius:16px;background:#f8fafc;color:#0f172a;padding:10px 8px;min-height:58px;cursor:pointer;text-align:left;transition:.18s ease;font-size:14px;font-weight:700;line-height:1.25}.page-jump-btn:hover{border-color:#93c5fd;background:#eff6ff;transform:translateY(-1px)}.page-jump-btn.active{border-color:#2563eb;background:#dbeafe;color:#1d4ed8}.page-jump-btn.correct-answer{border-color:#22c55e!important;background:#ecfdf5!important}.page-jump-btn.wrong-answer{border-color:#ef4444!important;background:#fff1f2!important}.page-jump-btn .page-no{display:block;font-size:18px;font-weight:700}.page-jump-btn .page-title{display:block;color:#64748b;font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.photo-layout{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}.slide{padding:36px 24px 130px}h1{font-size:34px}h2{font-size:31px}p,.answer,.steps li{font-size:19px}.question{font-size:24px}.big-word{font-size:44px}.go-btn{width:48px;height:48px;font-size:13px}.check-btn{padding:11px 16px;font-size:13px}.nav-btn{padding:9px 13px;font-size:13px}.progress{top:14px!important;right:14px!important;font-size:13px}.page-picker-panel{padding:18px;border-radius:20px}.page-picker-grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}.page-jump-btn{min-height:54px;font-size:12px}.page-picker-head h3{font-size:24px}.caption-meta{align-items:flex-start;flex-direction:column}.caption-sentence{font-size:16px}.annotation-note-title{font-size:10px}.annotation-note-value{font-size:11px}}
+
+.inline-audio-btn{
+  display:inline-grid;
+  vertical-align:middle;
+  margin-left:10px;
+  transform:translateY(-2px);
+}
+.inline-audio-btn:hover{transform:translateY(-3px)}
+.photo-caption,.photo-caption-mask,.caption-meta,.caption-sentence{display:none!important}
+
+
+/* ===== FIX v6: Practice layout từ trên xuống ===== */
+.quiz-slide .photo-layout{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:22px!important;
+  align-items:stretch!important;
+}
+.quiz-slide .photo-frame{
+  width:min(720px,100%)!important;
+  margin:0 auto!important;
+}
+.quiz-slide .practice-side{
+  width:100%!important;
+  max-width:980px!important;
+  margin:0 auto!important;
+}
+.quiz-slide .sample-box{
+  width:100%!important;
+  display:block!important;
+}
+.quiz-slide .question{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  flex-wrap:wrap!important;
+}
+.quiz-slide .option{
+  display:flex!important;
+}
+.option-text.option-blur{
+  filter:blur(6px);
+  opacity:.62;
+  user-select:none;
+  transition:filter .22s ease, opacity .22s ease;
+}
+.quiz-slide.answer-checked .option-text.option-blur{
+  filter:none;
+  opacity:1;
+  user-select:auto;
+}
+.inline-audio-btn{
+  display:inline-grid!important;
+  vertical-align:middle;
+  margin-left:8px;
+  transform:none!important;
+}
+.photo-caption,.photo-caption-mask,.caption-meta,.caption-sentence{
+  display:none!important;
+}
+
+
+/* ===== Practice annotation: box-only, top-left stacked ===== */
+.quiz-slide .annotation-overlay .annotation-line,
+.quiz-slide .annotation-overlay .annotation-dot{
+  display:none!important;
+}
+.quiz-slide .annotation-overlay .annotation-note-box{
+  fill:rgba(255,255,255,.96)!important;
+  stroke:#111827!important;
+  stroke-width:2.2!important;
+  rx:14!important;
+  ry:14!important;
+}
+.quiz-slide .annotation-overlay .annotation-note-title{
+  font-size:18px!important;
+  font-weight:700!important;
+  fill:#0f172a!important;
+}
+.quiz-slide .annotation-overlay .annotation-note-value{
+  font-size:20px!important;
+  font-weight:700!important;
+  fill:#1d4ed8!important;
+}
+.quiz-slide .annotation-overlay .annotation-step{
+  transform-box:fill-box;
+  transform-origin:center;
+}
+
+
+/* Practice no translation quick box */
+.quiz-slide .translation-box{display:none!important}
+
+
+/* ===== SAFE unified lesson nav v5: titled slide index + home, weight <= 700 ===== */
+.progress{
+  display:none!important;
+}
+.lesson-top-nav{
+  position:fixed;
+  top:18px;
+  right:24px;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
+  font-family:Arial,Helvetica,sans-serif;
+  pointer-events:none;
+}
+.lesson-top-nav button,
+.lesson-top-nav a{
+  pointer-events:auto;
+}
+.lesson-index-btn,
+.lesson-home-btn{
+  min-height:42px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 16px;
+  border:2px solid #dbeafe;
+  box-shadow:0 10px 24px rgba(15,23,42,.14);
+  backdrop-filter:blur(10px);
+  font-size:14px;
+  font-weight:700;
+  line-height:1;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .16s ease,background .16s ease,border-color .16s ease,box-shadow .16s ease;
+}
+.lesson-index-btn{
+  color:#1d4ed8;
+  background:linear-gradient(135deg,#eff6ff,#fff);
+}
+.lesson-home-btn{
+  color:#166534;
+  background:linear-gradient(135deg,#f0fdf4,#fff);
+  border-color:#bbf7d0;
+}
+.lesson-index-btn:hover,
+.lesson-home-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px rgba(37,99,235,.18);
+}
+.lesson-index-btn:hover{
+  background:#dbeafe;
+  border-color:#93c5fd;
+}
+.lesson-home-btn:hover{
+  background:#dcfce7;
+  border-color:#86efac;
+}
+.lesson-index-dot{
+  width:9px;
+  height:9px;
+  border-radius:999px;
+  background:#2563eb;
+  box-shadow:0 0 0 5px rgba(37,99,235,.12);
+}
+.lesson-home-icon{
+  font-size:15px;
+  line-height:1;
+}
+.unified-page-picker-overlay{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(15,23,42,.42);
+}
+.unified-page-picker-overlay.show{
+  display:flex;
+}
+.unified-page-picker-panel{
+  width:min(980px,96vw);
+  max-height:82vh;
+  overflow:auto;
+  background:#fff;
+  border:2px solid #dbeafe;
+  border-radius:26px;
+  box-shadow:0 28px 80px rgba(15,23,42,.30);
+  padding:22px;
+  animation:unifiedPanelPop .14s ease;
+}
+@keyframes unifiedPanelPop{
+  from{opacity:0;transform:translateY(10px) scale(.985)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.unified-page-picker-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:16px;
+  padding-bottom:14px;
+  border-bottom:2px solid #eff6ff;
+}
+.unified-page-picker-title{
+  margin:0;
+  color:#0f172a;
+  font-size:27px;
+  font-weight:700;
+  line-height:1.16;
+}
+.unified-page-picker-subtitle{
+  margin:6px 0 0;
+  color:#64748b;
+  font-size:15px;
+  font-weight:700;
+  line-height:1.4;
+}
+.unified-page-picker-close{
+  width:40px;
+  height:40px;
+  flex:0 0 40px;
+  border:none;
+  border-radius:999px;
+  background:#e2e8f0;
+  color:#0f172a;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  font-size:26px;
+  font-weight:700;
+  line-height:1;
+  transition:.16s ease;
+}
+.unified-page-picker-close:hover{
+  background:#cbd5e1;
+  transform:rotate(90deg);
+}
+.unified-page-picker-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:10px;
+}
+.unified-page-jump-btn{
+  border:2px solid #dbeafe;
+  background:#f8fafc;
+  color:#0f172a;
+  border-radius:17px;
+  padding:11px 12px;
+  min-height:74px;
+  cursor:pointer;
+  text-align:left;
+  transition:transform .14s ease,background .14s ease,border-color .14s ease,box-shadow .14s ease;
+}
+.unified-page-jump-btn:hover{
+  background:#eff6ff;
+  border-color:#93c5fd;
+  transform:translateY(-1px);
+  box-shadow:0 8px 18px rgba(37,99,235,.10);
+}
+.unified-page-jump-btn.active{
+  background:#dbeafe;
+  border-color:#2563eb;
+  box-shadow:0 10px 22px rgba(37,99,235,.18);
+}
+.unified-page-no{
+  display:block;
+  color:#1d4ed8;
+  font-size:17px;
+  font-weight:700;
+  margin-bottom:5px;
+}
+.unified-page-title{
+  display:block;
+  color:#475569;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.28;
+}
+.unified-page-jump-btn.active .unified-page-title{
+  color:#1e3a8a;
+}
+@media(max-width:768px){
+  .lesson-top-nav{
+    top:12px;
+    right:12px;
+    gap:7px;
+  }
+  .lesson-index-btn,
+  .lesson-home-btn{
+    min-height:38px;
+    padding:9px 11px;
+    font-size:12px;
+  }
+  .lesson-home-text{
+    display:none;
+  }
+  .unified-page-picker-overlay{
+    padding:14px;
+  }
+  .unified-page-picker-panel{
+    border-radius:20px;
+    padding:16px;
+  }
+  .unified-page-picker-title{
+    font-size:23px;
+  }
+  .unified-page-picker-grid{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .unified-page-jump-btn{
+    min-height:58px;
+    padding:10px;
+    border-radius:14px;
+  }
+  .unified-page-no{
+    font-size:16px;
+    margin-bottom:3px;
+  }
+  .unified-page-title{
+    font-size:12px;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="lesson-wrapper">
+<div class="top-line" id="topLine"></div>
+<button class="progress progress-btn" id="progressText" onclick="openPagePicker()" type="button" title="Chọn trang">1 / 1</button>
+<div id="slideMount"></div>
+<div class="page-picker-overlay" id="pagePicker" onclick="closePagePicker(event)">
+  <div class="page-picker-panel" role="dialog" aria-modal="true" aria-labelledby="pagePickerTitle">
+    <div class="page-picker-head"><div><h3 id="pagePickerTitle">Chọn trang</h3><p>Click để nhảy nhanh đến phần bài học hoặc câu luyện tập.</p></div><button class="page-picker-close" onclick="closePagePicker()" type="button">×</button></div>
+    <div class="page-picker-grid" id="pagePickerGrid"></div>
+  </div>
+</div>
+<div class="control-bar">
+<button class="nav-btn" onclick="prevSlide()" type="button">← PREV</button>
+<button class="go-btn" onclick="goReveal()" type="button">GO</button>
+<button class="check-btn" id="checkBtn" onclick="checkAnswer()" type="button">CHECK</button>
+<button class="nav-btn" onclick="nextSlide()" type="button">NEXT →</button>
+</div>
+</div>
+<script>
+function escapeHtml(str){return String(str ?? '').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));}
+
+const partTypes = [
+  {
+    type:'one-person', no:1, title:'Loại 1: Ảnh một người đang hành động', short:'One person',
+    idea:'Ảnh có một người là dạng dễ gặp nhất. Trọng tâm là người đó đang làm gì, đang cầm gì, đang đứng/ngồi ở đâu.',
+    formula:'WHO + is/are + V-ing + OBJECT / PLACE',
+    tips:['Nhìn hành động chính trước: reading, carrying, typing, watering, repairing.','Cẩn thận đáp án dùng danh từ đúng nhưng hành động sai.','Nếu ảnh có người, đáp án thường dùng hiện tại tiếp diễn: is/are + V-ing.','Đừng chọn đáp án suy diễn mục đích nếu ảnh không thể hiện rõ.'],
+    example:{scene:'ex-one-person', caption:'A woman is watering plants in a garden.', answer:'B', options:[['A','A woman is cutting flowers.','Một phụ nữ đang cắt hoa.'],['B','A woman is watering some plants.','Một phụ nữ đang tưới cây.'],['C','A woman is painting a fence.','Một phụ nữ đang sơn hàng rào.'],['D','A woman is sweeping the floor.','Một phụ nữ đang quét sàn.']], analysis:['Người trong ảnh đang cầm bình tưới.','Động tác chính là watering plants.','Không có hành động cutting/painting/sweeping.']}
+  },
+  {
+    type:'many-people', no:2, title:'Loại 2: Ảnh nhiều người / tương tác', short:'People',
+    idea:'Ảnh có hai người trở lên thường hỏi hành động chung, vị trí tương đối, hoặc một người đang đưa/nhận/cầm thứ gì.',
+    formula:'Several people / Two people + are + V-ing',
+    tips:['Đếm số người và xem họ có cùng làm một hành động hay không.','Chú ý giới từ: across from, beside, around, behind, in front of.','Cẩn thận đáp án nói một người đang làm việc mà ảnh là cả nhóm.','Không chọn hành động không thấy rõ như signing, paying, calling nếu ảnh không thể hiện.'],
+    example:{scene:'ex-many-people', caption:'Two colleagues are shaking hands beside a table.', answer:'C', options:[['A','Two people are moving chairs.','Hai người đang di chuyển ghế.'],['B','Two people are eating lunch.','Hai người đang ăn trưa.'],['C','Two people are shaking hands.','Hai người đang bắt tay.'],['D','Two people are hanging pictures.','Hai người đang treo tranh.']], analysis:['Có hai người đối diện nhau.','Tay của họ chạm nhau ở giữa.','Hành động chính là shaking hands.']}
+  },
+  {
+    type:'object', no:3, title:'Loại 3: Tả cảnh vật / không có người', short:'Scenes & Objects',
+    idea:'Nhóm này gom ảnh đồ vật, cảnh trong nhà, cảnh ngoài trời, phương tiện và công trình. Không ép đủ O hoặc ADV; câu có thành phần nào thì phân tích thành phần đó.',
+    formula:'SCENE / OBJECT + is/are + arranged / placed / parked / docked / located + PLACE',
+    tips:['Nhìn danh từ/cảnh chính trước: tables, chairs, vehicles, shelves, boats, buildings, theater, harbor.','Nếu ảnh chỉ là trạng thái, không ép hành động động như walking/running/working.','Cẩn thận giới từ/vị trí: under, near, around, above, by, at, in.','Không phải câu nào cũng có tân ngữ hoặc trạng ngữ. Có gì rõ thì phân tích cái đó.'],
+    example:{scene:'ex-object', caption:'Several chairs are arranged around a table.', answer:'A', options:[['A','Several chairs are arranged around a table.','Nhiều ghế được sắp quanh một chiếc bàn.'],['B','Some books are stacked on the floor.','Một vài quyển sách được xếp trên sàn.'],['C','A computer is being repaired.','Một máy tính đang được sửa.'],['D','A table is covered with food.','Một chiếc bàn được phủ đầy thức ăn.']], analysis:['Ảnh không có người.','Danh từ chính là chairs và table.','Giới từ đúng là around a table.']}
+  }
+];
+
+const quizData = [
+{type:'one-person',scene:'p1',image:'/images/p1-prac/office_phone.png',photoId:'photo1',caption:'A woman is talking on the phone at a desk.',answer:'B',options:[['A','A woman is shelving some books.','Một phụ nữ đang xếp sách lên kệ.'],['B','A woman is talking on the phone at a desk.','Một phụ nữ đang nói chuyện điện thoại tại bàn làm việc.'],['C','A woman is opening a window.','Một phụ nữ đang mở cửa sổ.'],['D','A woman is carrying a box.','Một phụ nữ đang mang một chiếc hộp.']],explain:'Người phụ nữ đang cầm ống nghe điện thoại và ngồi ở bàn làm việc, vì vậy đáp án đúng là talking on the phone at a desk.'},
+{type:'one-person',scene:'p2',image:'/images/p1-prac/folded_towels.png',photoId:'photo2',caption:'A woman is placing some folded towels on top of a cabinet.',answer:'C',options:[['A','A woman is sweeping the floor.','Một phụ nữ đang quét sàn nhà.'],['B','A woman is checking the time on a watch.','Một phụ nữ đang xem giờ trên đồng hồ đeo tay.'],['C','A woman is placing some folded towels on top of a cabinet.','Một phụ nữ đang đặt vài chiếc khăn đã gấp lên trên tủ.'],['D','A woman is ironing a shirt.','Một phụ nữ đang ủi áo sơ mi.']],explain:'Người phụ nữ đang với tay lên cao để đặt những chiếc khăn đã gấp lên trên nóc tủ.'},
+{type:'one-person',scene:'p3',image:'/images/p1-prac/shovel_work.png',photoId:'photo3',caption:'A man is using a shovel beside a house.',answer:'A',options:[['A','A man is using a shovel beside a house.','Một người đàn ông đang dùng xẻng bên cạnh một ngôi nhà.'],['B','A man is washing a truck.','Một người đàn ông đang rửa xe tải.'],['C','A man is painting a fence.','Một người đàn ông đang sơn hàng rào.'],['D','A man is carrying a ladder indoors.','Một người đàn ông đang mang thang vào trong nhà.']],explain:'Người đàn ông đang cúi xuống, cầm xẻng và làm việc dọc theo mép ngôi nhà.'},
+{type:'one-person',scene:'p4',image:'/images/p1-prac/library_shelf.png',photoId:'photo4',caption:'A woman is reaching for a book on a shelf.',answer:'D',options:[['A','A woman is pushing a cart through a hallway.','Một phụ nữ đang đẩy xe đẩy qua hành lang.'],['B','A woman is sitting at a reference desk.','Một phụ nữ đang ngồi ở quầy tra cứu.'],['C','A woman is closing a file cabinet.','Một phụ nữ đang đóng tủ hồ sơ.'],['D','A woman is reaching for a book on a shelf.','Một phụ nữ đang với lấy một quyển sách trên kệ.']],explain:'Người phụ nữ đứng giữa hai dãy kệ sách và đang vươn tay lấy một quyển sách.'},
+{type:'one-person',scene:'p5',image:'/images/p1-prac/bench_phone.png',photoId:'photo5',caption:'A woman is talking on a phone while sitting on a bench.',answer:'B',options:[['A','A woman is jogging along a street.','Một phụ nữ đang chạy bộ dọc theo con đường.'],['B','A woman is talking on a phone while sitting on a bench.','Một phụ nữ đang nói chuyện điện thoại khi ngồi trên ghế băng.'],['C','A woman is loading groceries into a car.','Một phụ nữ đang chất đồ tạp hóa vào xe hơi.'],['D','A woman is feeding some birds in a park.','Một phụ nữ đang cho chim ăn trong công viên.']],explain:'Người phụ nữ đang ngồi trên ghế băng ngoài trời và cầm điện thoại bên tai.'},
+{type:'many-people',scene:'m1',image:'/images/p1-prac/group_laptop.png',photoId:'photo6',caption:'Several businesspeople are gathered around a laptop in the office.',answer:'B',options:[['A','Several businesspeople are repairing a laptop.','Một vài doanh nhân đang sửa máy tính xách tay.'],['B','Several businesspeople are gathered around a laptop in the office.','Một vài doanh nhân đang tụ tập quanh máy tính xách tay trong văn phòng.'],['C','Several businesspeople are standing in line at a counter.','Một vài doanh nhân đang xếp hàng ở quầy.'],['D','Several businesspeople are moving chairs into a room.','Một vài doanh nhân đang chuyển ghế vào phòng.']],explain:'Nhóm người mặc trang phục công sở đang tụ tập quanh máy tính xách tay trong văn phòng.'},
+{type:'many-people',scene:'m2',image:'/images/p1-prac/dry_cleaning_counter.png',photoId:'photo7',caption:'A clerk is handing a garment to a customer across a counter.',answer:'A',options:[['A','A clerk is handing a garment to a customer across a counter.','Một nhân viên đang đưa một bộ quần áo cho khách qua quầy.'],['B','A customer is sweeping the floor near a counter.','Một khách hàng đang quét sàn gần quầy.'],['C','A clerk is hanging a clock on the wall.','Một nhân viên đang treo đồng hồ lên tường.'],['D','Two customers are folding towels on a shelf.','Hai khách hàng đang gấp khăn trên kệ.']],explain:'Nhân viên ở phía sau quầy đang đưa món đồ được bọc cho khách hàng.'},
+{type:'many-people',scene:'m3',image:'/images/p1-prac/two_women_table.png',photoId:'photo8',caption:'Two women are sitting at a table.',answer:'D',options:[['A','Two women are riding bicycles outside.','Hai phụ nữ đang đạp xe ngoài trời.'],['B','Two women are painting a wall together.','Hai phụ nữ đang cùng sơn tường.'],['C','Two women are loading boxes onto a truck.','Hai phụ nữ đang chất thùng lên xe tải.'],['D','Two women are sitting at a table.','Hai phụ nữ đang ngồi ở bàn.']],explain:'Hai phụ nữ đang ngồi tại bàn. Chiếc túi có trong ảnh nhưng không cần đưa vào mô tả chính.'},
+{type:'many-people',scene:'m4',image:'/images/p1-prac/study_group_table.png',photoId:'photo9',caption:'Three women are reading together at a table.',answer:'C',options:[['A','Three women are waiting at a bus stop.','Ba phụ nữ đang chờ ở trạm xe buýt.'],['B','Three women are carrying luggage through an airport.','Ba phụ nữ đang mang hành lý qua sân bay.'],['C','Three women are reading together at a table.','Ba phụ nữ đang đọc cùng nhau tại một chiếc bàn.'],['D','Three women are washing dishes in a kitchen.','Ba phụ nữ đang rửa chén trong bếp.']],explain:'Ba phụ nữ đang nhìn vào sách/tài liệu mở trên bàn, nên động từ phù hợp là are reading.'},
+{type:'many-people',scene:'m5',image:'/images/p1-prac/colleagues_map.png',photoId:'photo10',caption:'Two colleagues are looking at a map on a desk.',answer:'A',options:[['A','Two colleagues are looking at a map on a desk.','Hai đồng nghiệp đang nhìn vào một bản đồ trên bàn.'],['B','Two colleagues are carrying a ladder outside.','Hai đồng nghiệp đang mang thang ngoài trời.'],['C','Two colleagues are serving food to customers.','Hai đồng nghiệp đang phục vụ thức ăn cho khách.'],['D','Two colleagues are stacking books on a shelf.','Hai đồng nghiệp đang xếp sách lên kệ.']],explain:'Hai người đang cúi nhìn bản đồ/tài liệu lớn trên bàn; một người đang chỉ vào đó.'},
+  {type:'object',scene:'scene1',image:'/images/p1-prac/seaside_cafe_umbrellas.png',photoId:'scene1',caption:'Tables and chairs are arranged under umbrellas by the water.',answer:'A',options:[['A','Tables and chairs are arranged under umbrellas by the water.','Bàn ghế được sắp dưới các ô che nắng cạnh mặt nước.'],['B','An airplane is parked at the airport.','Một máy bay đang đậu tại cổng sân bay.'],['C','Cars are being transported on a truck.','Xe hơi đang được chở trên xe tải.'],['D','Mugs are arranged on shelves above a counter.','Ly được sắp trên kệ phía trên quầy.']],explain:'Ảnh có bàn ghế ngoài trời được sắp dưới các ô che nắng, cạnh mặt nước.'},
+  {type:'object',scene:'scene2',image:'/images/p1-prac/airplane_at_gate.png',photoId:'scene2',caption:'An airplane is parked at the airport.',answer:'B',options:[['A','An airplane is taking off from a runway.','Một máy bay đang cất cánh khỏi đường băng.'],['B','An airplane is parked at an airport gate.','Một máy bay đang đậu tại cổng sân bay.'],['C','An airplane is floating near waterfront buildings.','Một máy bay đang nổi gần các tòa nhà ven nước.'],['D','An airplane is displayed on a shelf.','Một máy bay được trưng bày trên kệ.']],explain:'Máy bay đứng yên tại cổng sân bay; không có cảnh cất cánh.'},
+  {type:'object',scene:'scene3',image:'/images/p1-prac/car_transporter_highway.png',photoId:'scene3',caption:'Cars are being transported on a truck.',answer:'C',options:[['A','Cars are parked around a courtyard.','Xe hơi được đậu quanh sân trong.'],['B','Cars are arranged under umbrellas by the water.','Xe hơi được sắp dưới ô che nắng cạnh mặt nước.'],['C','Cars are being transported on a truck.','Xe hơi đang được chở trên xe tải.'],['D','Cars are docked in a harbor.','Xe hơi được neo ở bến cảng.']],explain:'Nhiều xe hơi nằm trên xe chuyên chở đang chạy trên đường.'},
+  {type:'object',scene:'scene4',image:'/images/p1-prac/empty_theater.png',photoId:'scene4',caption:'Rows of seats are facing a large screen in a theater.',answer:'D',options:[['A','Rows of seats are being loaded onto a truck.','Nhiều hàng ghế đang được chất lên xe tải.'],['B','Rows of seats are floating in a harbor.','Nhiều hàng ghế đang nổi ở cảng.'],['C','Rows of seats are arranged above a kitchen counter.','Nhiều hàng ghế được sắp phía trên quầy bếp.'],['D','Rows of seats are facing a large screen in a theater.','Nhiều hàng ghế đang hướng về màn hình lớn trong rạp.']],explain:'Các hàng ghế trong rạp hướng về màn hình lớn phía trước.'},
+  {type:'object',scene:'scene5',image:'/images/p1-prac/garden_table_cleanup.png',photoId:'scene5',caption:'A rake and a bag are placed beside a table in a garden.',answer:'B',options:[['A','A rake and a bag are floating in a harbor.','Một cái cào và một túi đang nổi ở cảng.'],['B','A rake and a bag are placed beside a table in a garden.','Một cái cào và một chiếc túi được đặt cạnh bàn trong vườn.'],['C','A rake and a bag are being transported on a truck.','Một cái cào và một chiếc túi đang được chở trên xe tải.'],['D','A rake and a bag are arranged on shelves above a counter.','Một cái cào và một chiếc túi được sắp trên kệ phía trên quầy.']],explain:'Ảnh có bàn ghế ngoài vườn, một cái cào và túi lớn đặt bên cạnh.'},
+  {type:'object',scene:'scene6',image:'/images/p1-prac/boats_near_buildings.png',photoId:'scene6',caption:'Boats are floating near waterfront buildings.',answer:'A',options:[['A','Boats are floating near waterfront buildings.','Thuyền đang nổi gần các tòa nhà ven nước.'],['B','Boats are parked around a courtyard.','Thuyền được đậu quanh sân trong.'],['C','Boats are arranged on kitchen shelves.','Thuyền được sắp trên kệ bếp.'],['D','Boats are facing a movie screen.','Thuyền đang hướng về màn hình chiếu phim.']],explain:'Ảnh có thuyền trên mặt nước và các tòa nhà ven bờ phía sau.'},
+  {type:'object',scene:'scene7',image:'/images/p1-prac/courtyard_cars.png',photoId:'scene7',caption:'Cars are parked around a large courtyard.',answer:'C',options:[['A','Cars are being transported on a truck.','Xe hơi đang được chở trên xe tải.'],['B','Cars are floating near waterfront buildings.','Xe hơi đang nổi gần các tòa nhà ven nước.'],['C','Cars are parked around a large courtyard.','Xe hơi được đậu quanh một sân trong rộng.'],['D','Cars are arranged under umbrellas by the water.','Xe hơi được sắp dưới ô che nắng cạnh mặt nước.']],explain:'Ảnh chụp từ trên cao cho thấy xe hơi đậu xung quanh sân trong.'},
+  {type:'object',scene:'scene8',image:'/images/p1-prac/harbor_mountain_view.png',photoId:'scene8',caption:'Many boats are docked in a harbor near rocky hills.',answer:'B',options:[['A','Many boats are parked around a courtyard.','Nhiều thuyền được đậu quanh sân trong.'],['B','Many boats are docked in a harbor near rocky hills.','Nhiều thuyền được neo ở bến cảng gần các đồi đá.'],['C','Many boats are facing a large screen.','Nhiều thuyền đang hướng về màn hình lớn.'],['D','Many boats are arranged on shelves above a counter.','Nhiều thuyền được sắp trên kệ phía trên quầy.']],explain:'Có nhiều thuyền neo tại bến cảng, phía sau là cảnh đồi đá.'},
+  {type:'object',scene:'scene9',image:'/images/p1-prac/lounge_chair_vase.png',photoId:'scene9',caption:'A chair and a small table are placed near a dresser.',answer:'D',options:[['A','A chair and a table are being transported on a truck.','Một ghế và bàn đang được chở trên xe tải.'],['B','A chair and a table are docked in a harbor.','Một ghế và bàn được neo ở bến cảng.'],['C','A chair and a table are floating near buildings.','Một ghế và bàn đang nổi gần các tòa nhà.'],['D','A chair and a small table are placed near a dresser.','Một ghế và một bàn nhỏ được đặt gần tủ.']],explain:'Trong phòng có ghế bành, bàn nhỏ và tủ trang trí.'},
+  {type:'object',scene:'scene10',image:'/images/p1-prac/kitchen_shelves_mugs.png',photoId:'scene10',caption:'Mugs and containers are arranged on shelves above a counter.',answer:'A',options:[['A','Mugs and containers are arranged on shelves above a counter.','Ly và hộp đựng được sắp trên kệ phía trên quầy.'],['B','Mugs and containers are parked around a courtyard.','Ly và hộp đựng được đậu quanh sân trong.'],['C','Mugs and containers are being transported on a truck.','Ly và hộp đựng đang được chở trên xe tải.'],['D','Mugs and containers are docked in a harbor.','Ly và hộp đựng được neo ở cảng.']],explain:'Các ly/cốc và hộp đựng được sắp thành hàng trên kệ phía trên quầy.'}
+];
+
+function sceneSvg(id){
+  const baseStart = `<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg" role="img"><defs><linearGradient id="sky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#f8fafc"/></linearGradient></defs><rect width="520" height="340" fill="url(#sky)"/><rect y="255" width="520" height="85" fill="#e2e8f0"/>`;
+  const end = `</svg>`;
+  const person = (x,y,color='#2563eb',female=false)=> female
+    ? `<path d="M${x-20} ${y+2} q20 -33 40 0 v24 q-20 16 -40 0z" fill="#334155"/><circle cx="${x}" cy="${y}" r="15" fill="#f8c9a0"/><path d="M${x-20} ${y+18} h40 l12 64 h-64z" fill="${color}"/><line x1="${x-10}" y1="${y+78}" x2="${x-26}" y2="${y+116}" stroke="#334155" stroke-width="9" stroke-linecap="round"/><line x1="${x+10}" y1="${y+78}" x2="${x+26}" y2="${y+116}" stroke="#334155" stroke-width="9" stroke-linecap="round"/>`
+    : `<circle cx="${x}" cy="${y}" r="16" fill="#f8c9a0"/><rect x="${x-18}" y="${y+17}" width="36" height="58" rx="13" fill="${color}"/><line x1="${x-12}" y1="${y+74}" x2="${x-26}" y2="${y+116}" stroke="#334155" stroke-width="10" stroke-linecap="round"/><line x1="${x+12}" y1="${y+74}" x2="${x+26}" y2="${y+116}" stroke="#334155" stroke-width="10" stroke-linecap="round"/>`;
+  const desk = `<rect x="210" y="214" width="170" height="16" rx="4" fill="#8b5e34"/><rect x="230" y="230" width="12" height="52" fill="#6b4423"/><rect x="350" y="230" width="12" height="52" fill="#6b4423"/>`;
+  const laptop = `<rect x="270" y="178" width="70" height="44" rx="5" fill="#0f172a"/><rect x="278" y="186" width="54" height="28" fill="#93c5fd"/><rect x="260" y="222" width="90" height="8" rx="3" fill="#475569"/>`;
+  const table = `<ellipse cx="270" cy="235" rx="95" ry="24" fill="#8b5e34"/><rect x="248" y="235" width="18" height="58" fill="#6b4423"/><rect x="292" y="235" width="18" height="58" fill="#6b4423"/>`;
+  const boxes = `<rect x="330" y="205" width="54" height="42" fill="#d97706" stroke="#92400e" stroke-width="3"/><rect x="385" y="205" width="54" height="42" fill="#f59e0b" stroke="#92400e" stroke-width="3"/><rect x="358" y="162" width="54" height="42" fill="#fbbf24" stroke="#92400e" stroke-width="3"/>`;
+  const shelf = `<rect x="80" y="85" width="350" height="18" fill="#8b5e34"/><rect x="80" y="160" width="350" height="18" fill="#8b5e34"/><rect x="80" y="235" width="350" height="18" fill="#8b5e34"/><rect x="90" y="90" width="14" height="170" fill="#6b4423"/><rect x="405" y="90" width="14" height="170" fill="#6b4423"/>`;
+  const truck = `<rect x="130" y="180" width="180" height="72" rx="8" fill="#2563eb"/><rect x="310" y="205" width="85" height="47" rx="5" fill="#1d4ed8"/><rect x="330" y="212" width="36" height="22" fill="#bfdbfe"/><circle cx="178" cy="258" r="22" fill="#0f172a"/><circle cx="350" cy="258" r="22" fill="#0f172a"/><circle cx="178" cy="258" r="10" fill="#cbd5e1"/><circle cx="350" cy="258" r="10" fill="#cbd5e1"/>`;
+  const building = `<rect x="345" y="70" width="110" height="185" fill="#cbd5e1"/><rect x="365" y="95" width="24" height="28" fill="#60a5fa"/><rect x="410" y="95" width="24" height="28" fill="#60a5fa"/><rect x="365" y="145" width="24" height="28" fill="#60a5fa"/><rect x="410" y="145" width="24" height="28" fill="#60a5fa"/>`;
+  const machine = `<rect x="290" y="170" width="120" height="85" rx="10" fill="#94a3b8"/><circle cx="320" cy="200" r="18" fill="#dbeafe"/><rect x="350" y="190" width="38" height="14" fill="#334155"/><rect x="315" y="252" width="80" height="12" fill="#64748b"/>`;
+  let s = baseStart;
+  switch(id){
+    case 'ex-one-person': s+=`<rect x="0" y="248" width="520" height="92" fill="#bbf7d0"/><circle cx="430" cy="70" r="34" fill="#fde68a"/>${person(170,126,'#e11d48',true)}<line x1="188" y1="168" x2="240" y2="142" stroke="#e11d48" stroke-width="9" stroke-linecap="round"/><path d="M238 145 q38 18 18 54 q-38 -18 -18 -54" fill="#60a5fa"/><line x1="256" y1="178" x2="310" y2="222" stroke="#60a5fa" stroke-width="5"/><line x1="266" y1="174" x2="322" y2="216" stroke="#60a5fa" stroke-width="5"/><rect x="315" y="205" width="55" height="42" fill="#92400e"/><ellipse cx="342" cy="198" rx="34" ry="15" fill="#22c55e"/>`; break;
+    case 'ex-many-people': s+=`${table}${person(170,116,'#2563eb')}${person(350,116,'#16a34a',true)}<line x1="188" y1="164" x2="260" y2="188" stroke="#2563eb" stroke-width="9" stroke-linecap="round"/><line x1="332" y1="164" x2="260" y2="188" stroke="#16a34a" stroke-width="9" stroke-linecap="round"/>`; break;
+    case 'ex-object': s+=`${table}<rect x="125" y="203" width="42" height="70" rx="8" fill="#93c5fd"/><rect x="365" y="203" width="42" height="70" rx="8" fill="#93c5fd"/><rect x="210" y="270" width="42" height="50" rx="8" fill="#93c5fd"/><rect x="270" y="270" width="42" height="50" rx="8" fill="#93c5fd"/>`; break;
+    case 'ex-workplace': s+=`${desk}${laptop}${person(215,126,'#2563eb')}<line x1="233" y1="170" x2="270" y2="205" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/><line x1="197" y1="170" x2="268" y2="210" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>`; break;
+    case 'ex-outdoor': s+=`<rect x="0" y="250" width="520" height="90" fill="#94a3b8"/>${building}${truck}`; break;
+    case 'p1': s+=`<rect x="0" y="248" width="520" height="92" fill="#bbf7d0"/><rect x="140" y="225" width="240" height="18" rx="6" fill="#8b5e34"/><rect x="160" y="243" width="14" height="48" fill="#6b4423"/><rect x="340" y="243" width="14" height="48" fill="#6b4423"/>${person(245,128,'#2563eb')}<rect x="270" y="150" width="55" height="40" fill="#fff" stroke="#64748b" stroke-width="3"/><line x1="262" y1="168" x2="290" y2="171" stroke="#2563eb" stroke-width="7"/>`; break;
+    case 'p2': s+=`${person(225,112,'#db2777',true)}<rect x="250" y="160" width="62" height="48" fill="#f59e0b" stroke="#92400e" stroke-width="3"/><rect x="196" y="170" width="58" height="44" fill="#fbbf24" stroke="#92400e" stroke-width="3"/><line x1="242" y1="160" x2="250" y2="182" stroke="#db2777" stroke-width="8"/>`; break;
+    case 'p3': s+=`${machine}${person(220,113,'#0f766e')}<line x1="238" y1="160" x2="295" y2="195" stroke="#0f766e" stroke-width="8" stroke-linecap="round"/><circle cx="300" cy="198" r="7" fill="#111827"/>`; break;
+    case 'p4': s+=`<rect x="80" y="220" width="360" height="30" rx="6" fill="#8b5e34"/>${person(210,110,'#ef4444')}<rect x="255" y="192" width="82" height="24" rx="12" fill="#fff" stroke="#94a3b8"/><circle cx="295" cy="203" r="9" fill="#22c55e"/><rect x="176" y="90" width="70" height="22" rx="10" fill="#fff"/>`; break;
+    case 'p5': s+=`${desk}${laptop}${person(210,128,'#7c3aed',true)}<line x1="228" y1="172" x2="270" y2="204" stroke="#7c3aed" stroke-width="8" stroke-linecap="round"/>`; break;
+    case 'm1': s+=`${table}${person(155,105,'#2563eb')}${person(245,92,'#16a34a')}${person(345,108,'#db2777',true)}<rect x="240" y="205" width="56" height="28" fill="#fff" stroke="#94a3b8"/>`; break;
+    case 'm2': s+=`${person(190,118,'#2563eb')}${person(315,118,'#16a34a',true)}<rect x="245" y="165" width="65" height="45" rx="6" fill="#0f172a"/><rect x="253" y="173" width="49" height="29" fill="#93c5fd"/><line x1="208" y1="165" x2="248" y2="185" stroke="#2563eb" stroke-width="8"/><line x1="297" y1="165" x2="308" y2="188" stroke="#16a34a" stroke-width="8"/>`; break;
+    case 'm3': s+=`${table}${person(155,105,'#0ea5e9')}${person(305,116,'#16a34a')}${person(385,116,'#db2777')}<rect x="180" y="180" width="75" height="20" rx="10" fill="#fff" stroke="#94a3b8"/><line x1="173" y1="158" x2="215" y2="188" stroke="#0ea5e9" stroke-width="8"/>`; break;
+    case 'm4': s+=`${person(170,112,'#f97316')}${person(330,112,'#0f766e')}<rect x="215" y="172" width="90" height="58" fill="#f59e0b" stroke="#92400e" stroke-width="3"/><line x1="188" y1="160" x2="218" y2="190" stroke="#f97316" stroke-width="8"/><line x1="312" y1="160" x2="302" y2="190" stroke="#0f766e" stroke-width="8"/>`; break;
+    case 'm5': s+=`<rect x="330" y="142" width="100" height="100" rx="10" fill="#8b5e34"/><rect x="340" y="130" width="80" height="24" rx="6" fill="#dbeafe"/>${person(105,130,'#2563eb')}${person(185,130,'#16a34a')}${person(265,130,'#db2777')}<line x1="90" y1="248" x2="300" y2="248" stroke="#64748b" stroke-width="6"/>`; break;
+    case 'o1': s+=`<rect x="110" y="170" width="300" height="8" fill="#64748b"/><rect x="125" y="145" width="8" height="80" fill="#64748b"/><rect x="225" y="145" width="8" height="80" fill="#64748b"/><rect x="325" y="145" width="8" height="80" fill="#64748b"/><circle cx="190" cy="230" r="30" fill="none" stroke="#0f172a" stroke-width="8"/><circle cx="285" cy="230" r="30" fill="none" stroke="#0f172a" stroke-width="8"/><path d="M190 230 L230 185 L285 230 L235 230 Z" fill="none" stroke="#2563eb" stroke-width="8"/>`; break;
+    case 'o2': s+=`${shelf}<circle cx="150" cy="135" r="18" fill="#60a5fa"/><circle cx="210" cy="135" r="18" fill="#f97316"/><circle cx="270" cy="135" r="18" fill="#22c55e"/><circle cx="330" cy="135" r="18" fill="#a855f7"/><rect x="140" y="115" width="22" height="34" rx="6" fill="#60a5fa"/><rect x="200" y="115" width="22" height="34" rx="6" fill="#f97316"/><rect x="260" y="115" width="22" height="34" rx="6" fill="#22c55e"/><rect x="320" y="115" width="22" height="34" rx="6" fill="#a855f7"/>`; break;
+    case 'o3': s+=`<rect x="330" y="90" width="90" height="166" fill="#f8fafc" stroke="#94a3b8" stroke-width="5"/><circle cx="405" cy="178" r="5" fill="#334155"/><rect x="170" y="190" width="88" height="75" rx="12" fill="#2563eb"/><path d="M195 190 q18 -28 38 0" fill="none" stroke="#0f172a" stroke-width="7"/>`; break;
+    case 'o4': s+=`<rect x="115" y="230" width="290" height="22" rx="6" fill="#8b5e34"/><rect x="140" y="252" width="14" height="45" fill="#6b4423"/><rect x="370" y="252" width="14" height="45" fill="#6b4423"/><rect x="185" y="205" width="85" height="16" rx="8" fill="#64748b"/><circle cx="280" cy="210" r="15" fill="#475569"/><rect x="295" y="194" width="70" height="14" rx="7" fill="#f97316"/>`; break;
+    case 'o5': s+=`<rect x="70" y="80" width="370" height="170" fill="#f1f5f9" stroke="#cbd5e1"/><rect x="105" y="220" width="50" height="42" fill="#92400e"/><ellipse cx="130" cy="205" rx="42" ry="20" fill="#22c55e"/><rect x="215" y="220" width="50" height="42" fill="#92400e"/><ellipse cx="240" cy="205" rx="42" ry="20" fill="#16a34a"/><rect x="325" y="220" width="50" height="42" fill="#92400e"/><ellipse cx="350" cy="205" rx="42" ry="20" fill="#22c55e"/>`; break;
+    case 'w1': s+=`${desk}${laptop}${person(215,126,'#2563eb')}<path d="M205 125 q-28 -8 -32 18" fill="none" stroke="#0f172a" stroke-width="5"/><circle cx="173" cy="145" r="8" fill="#0f172a"/><line x1="230" y1="150" x2="250" y2="158" stroke="#0f172a" stroke-width="5"/>`; break;
+    case 'w2': s+=`${shelf}<rect x="130" y="112" width="42" height="38" fill="#60a5fa"/><rect x="205" y="112" width="42" height="38" fill="#f97316"/><rect x="280" y="112" width="42" height="38" fill="#22c55e"/><rect x="130" y="188" width="42" height="38" fill="#a855f7"/><rect x="205" y="188" width="42" height="38" fill="#ef4444"/><rect x="280" y="188" width="42" height="38" fill="#14b8a6"/>`; break;
+    case 'w3': s+=`<rect x="300" y="85" width="140" height="110" fill="#fff" stroke="#94a3b8" stroke-width="5"/><polyline points="320,170 350,145 375,155 420,115" fill="none" stroke="#2563eb" stroke-width="8"/>${person(180,118,'#16a34a')}<line x1="198" y1="160" x2="330" y2="135" stroke="#16a34a" stroke-width="8" stroke-linecap="round"/>`; break;
+    case 'w4': s+=`<rect x="95" y="205" width="330" height="38" rx="8" fill="#8b5e34"/>${person(185,115,'#2563eb')}${person(350,120,'#db2777',true)}<line x1="205" y1="160" x2="320" y2="166" stroke="#2563eb" stroke-width="8"/><rect x="262" y="156" width="18" height="10" rx="3" fill="#fbbf24"/>`; break;
+    case 'w5': s+=`<rect x="285" y="160" width="105" height="80" rx="10" fill="#94a3b8"/><rect x="305" y="135" width="65" height="35" fill="#fff" stroke="#64748b"/><rect x="150" y="190" width="90" height="12" fill="#dbeafe" stroke="#94a3b8"/><rect x="150" y="204" width="90" height="12" fill="#bfdbfe" stroke="#94a3b8"/><rect x="150" y="218" width="90" height="12" fill="#dbeafe" stroke="#94a3b8"/>`; break;
+    case 't1': s+=`<rect x="0" y="250" width="520" height="90" fill="#94a3b8"/><rect x="80" y="265" width="360" height="10" fill="#f8fafc"/><rect x="120" y="150" width="270" height="95" rx="12" fill="#2563eb"/><rect x="145" y="165" width="55" height="35" fill="#bfdbfe"/><rect x="220" y="165" width="55" height="35" fill="#bfdbfe"/><rect x="295" y="165" width="55" height="35" fill="#bfdbfe"/><circle cx="170" cy="250" r="22" fill="#0f172a"/><circle cx="340" cy="250" r="22" fill="#0f172a"/>`; break;
+    case 't2': s+=`<rect x="0" y="248" width="520" height="92" fill="#bbf7d0"/>${person(195,112,'#f97316')}<rect x="183" y="88" width="25" height="13" fill="#facc15"/><circle cx="320" cy="235" r="28" fill="none" stroke="#0f172a" stroke-width="8"/><path d="M250 190 L330 220 L292 244 Z" fill="#94a3b8"/><line x1="215" y1="160" x2="260" y2="198" stroke="#f97316" stroke-width="8"/>`; break;
+    case 't3': s+=`<rect x="340" y="70" width="80" height="180" fill="#cbd5e1"/><line x1="210" y1="255" x2="365" y2="90" stroke="#d97706" stroke-width="12" stroke-linecap="round"/><line x1="235" y1="228" x2="272" y2="228" stroke="#d97706" stroke-width="8"/><line x1="260" y1="202" x2="300" y2="202" stroke="#d97706" stroke-width="8"/><line x1="286" y1="174" x2="326" y2="174" stroke="#d97706" stroke-width="8"/>`; break;
+    case 't4': s+=`${truck}<rect x="105" y="205" width="48" height="38" fill="#f59e0b" stroke="#92400e" stroke-width="3"/><rect x="158" y="205" width="48" height="38" fill="#fbbf24" stroke="#92400e" stroke-width="3"/><rect x="212" y="205" width="48" height="38" fill="#d97706" stroke="#92400e" stroke-width="3"/>`; break;
+    case 't5': s+=`<rect x="0" y="220" width="520" height="120" fill="#93c5fd"/><rect x="60" y="185" width="170" height="24" fill="#8b5e34"/><rect x="80" y="209" width="14" height="80" fill="#6b4423"/><path d="M265 220 q75 45 160 0 q-22 65 -135 58 q-40 -10 -25 -58" fill="#f97316" stroke="#92400e" stroke-width="4"/><line x1="260" y1="224" x2="225" y2="198" stroke="#334155" stroke-width="5"/>`; break;
+    default: s+=`${person(220,120,'#2563eb')}${desk}`;
+  }
+  return s + end;
+}
+
+
+function normalizeCaptionText(text){
+  return String(text||'').replace(/[.]+$/,'').trim();
+}
+function parseCaptionParts(caption){
+  const raw = normalizeCaptionText(caption);
+  const auxMatch = raw.match(/\b(is|are)\b/i);
+  if(!auxMatch){return {subject:raw, action:'', object:'', adverbial:''};}
+  const idx = auxMatch.index;
+  const subject = raw.slice(0, idx).trim();
+  let rest = raw.slice(idx + auxMatch[0].length).trim();
+  const words = rest.split(/\s+/).filter(Boolean);
+  const prepWords = ['in','on','at','by','beside','near','around','under','over','onto','to','against','across','inside','outside','with','for','from','into','off'];
+  let actionCount = 1;
+  if(words[0] === 'being' && words.length > 1) actionCount = 2;
+  else if(words.length > 1 && prepWords.includes(words[1].toLowerCase())) actionCount = 2;
+  let action = words.slice(0, actionCount).join(' ');
+  let remaining = words.slice(actionCount);
+  let splitAt = remaining.findIndex(w => prepWords.includes(w.toLowerCase()));
+  let object = '';
+  let adverbial = '';
+  if(splitAt === -1){
+    object = remaining.join(' ');
+  } else {
+    object = remaining.slice(0, splitAt).join(' ');
+    adverbial = remaining.slice(splitAt).join(' ');
+  }
+  if(action.toLowerCase()==='waiting in' && object.toLowerCase()==='line'){ action='waiting'; object='in line'; }
+  if(action.toLowerCase()==='looking at' && object){ action='looking at'; }
+  return {subject, action, object, adverbial};
+}
+function sceneGroup(scene){
+  if(scene.startsWith('ex-one-person') || /^p\d+$/.test(scene)) return 'one-person';
+  if(scene.startsWith('ex-many-people') || /^m\d+$/.test(scene)) return 'many-people';
+  if(scene.startsWith('ex-object') || /^o\d+$/.test(scene)) return 'object';
+  if(scene.startsWith('ex-workplace') || /^w\d+$/.test(scene)) return 'workplace';
+  if(scene.startsWith('ex-outdoor') || /^t\d+$/.test(scene)) return 'outdoor';
+  return 'one-person';
+}
+const annotationLayouts = {
+  'one-person': [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:205, ay:142},
+    {key:'action', title:'Hành động', bx:312, by:18, ax:252, ay:170},
+    {key:'object', title:'Tân ngữ', bx:300, by:116, ax:314, ay:202},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:245, ay:240}
+  ],
+  'many-people': [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:18, ax:250, ay:118},
+    {key:'action', title:'Hành động', bx:315, by:18, ax:262, ay:184},
+    {key:'object', title:'Tân ngữ', bx:308, by:126, ax:330, ay:208},
+    {key:'adverbial', title:'Trạng ngữ', bx:20, by:274, ax:250, ay:246}
+  ],
+  'object': [
+    {key:'subject', title:'Đối tượng chính', bx:16, by:16, ax:248, ay:192},
+    {key:'action', title:'Hành động', bx:312, by:18, ax:300, ay:238},
+    {key:'object', title:'Tân ngữ', bx:310, by:122, ax:354, ay:214},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:250, ay:246}
+  ],
+  'workplace': [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:18, ax:206, ay:126},
+    {key:'action', title:'Hành động', bx:312, by:18, ax:258, ay:186},
+    {key:'object', title:'Tân ngữ', bx:304, by:126, ax:312, ay:204},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:292, ay:220}
+  ],
+  'outdoor': [
+    {key:'subject', title:'Đối tượng chính', bx:16, by:16, ax:248, ay:194},
+    {key:'action', title:'Hành động', bx:312, by:18, ax:310, ay:216},
+    {key:'object', title:'Tân ngữ', bx:304, by:126, ax:365, ay:180},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:230, ay:250}
+  ]
+};
+const sceneAnnotationLayouts = {
+  'ex-one-person': [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:170, ay:126},
+    {key:'action', title:'Hành động', bx:302, by:20, ax:230, ay:158},
+    {key:'object', title:'Tân ngữ', bx:304, by:120, ax:342, ay:205},
+    {key:'adverbial', title:'Trạng ngữ', bx:20, by:274, ax:275, ay:238}
+  ],
+  'ex-many-people': [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:18, ax:260, ay:122},
+    {key:'action', title:'Hành động', bx:304, by:24, ax:260, ay:188},
+    {key:'object', title:'Tân ngữ', bx:300, by:126, ax:268, ay:186},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:270, ay:235}
+  ],
+  'ex-object': [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:18, ax:270, ay:268},
+    {key:'action', title:'Hành động', bx:306, by:18, ax:300, ay:250},
+    {key:'object', title:'Tân ngữ', bx:306, by:122, ax:270, ay:235},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:270, ay:235}
+  ],
+  'ex-workplace': [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:18, ax:215, ay:126},
+    {key:'action', title:'Hành động', bx:302, by:18, ax:245, ay:190},
+    {key:'object', title:'Tân ngữ', bx:302, by:124, ax:310, ay:198},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:292, ay:222}
+  ],
+  'ex-outdoor': [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:20, ax:260, ay:214},
+    {key:'action', title:'Hành động', bx:306, by:20, ax:280, ay:252},
+    {key:'object', title:'Tân ngữ', bx:306, by:124, ax:405, ay:158},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:370, ay:210}
+  ],
+  p1: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:245, ay:128},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:280, ay:166},
+    {key:'object', title:'Tân ngữ', bx:302, by:124, ax:300, ay:170},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:260, ay:232}
+  ],
+  p2: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:225, ay:114},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:248, ay:160},
+    {key:'object', title:'Tân ngữ', bx:302, by:124, ax:280, ay:185},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:225, ay:240}
+  ],
+  p3: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:220, ay:114},
+    {key:'action', title:'Hành động', bx:306, by:18, ax:285, ay:192},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:350, ay:205},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:340, ay:240}
+  ],
+  p4: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:210, ay:112},
+    {key:'action', title:'Hành động', bx:306, by:18, ax:255, ay:192},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:295, ay:203},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:260, ay:220}
+  ],
+  p5: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:210, ay:130},
+    {key:'action', title:'Hành động', bx:306, by:18, ax:258, ay:170},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:305, ay:196},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:300, ay:222}
+  ],
+  m1: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:245, ay:112},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:245, ay:210},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:275, ay:220},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:270, ay:235}
+  ],
+  m2: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:252, ay:120},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:255, ay:176},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:278, ay:188},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:278, ay:188}
+  ],
+  m3: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:190, ay:120},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:245, ay:185},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:330, ay:140},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:295, ay:222}
+  ],
+  m4: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:250, ay:120},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:255, ay:175},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:250, ay:190},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:250, ay:240}
+  ],
+  m5: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:185, ay:130},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:190, ay:245},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:200, ay:245},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:380, ay:190}
+  ],
+  o1: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:250, ay:230},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:250, ay:190},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:280, ay:230},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:250, ay:240}
+  ],
+  o2: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:240, ay:136},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:255, ay:100},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:255, ay:160},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:255, ay:100}
+  ],
+  o3: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:215, ay:220},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:220, ay:200},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:378, ay:170},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:360, ay:170}
+  ],
+  o4: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:280, ay:210},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:280, ay:208},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:280, ay:210},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:260, ay:235}
+  ],
+  o5: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:240, ay:205},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:240, ay:205},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:240, ay:205},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:255, ay:250}
+  ],
+  w1: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:215, ay:126},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:245, ay:180},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:305, ay:198},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:295, ay:224}
+  ],
+  w2: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:240, ay:140},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:245, ay:100},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:245, ay:190},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:250, ay:160}
+  ],
+  w3: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:180, ay:118},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:250, ay:160},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:370, ay:130},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:365, ay:165}
+  ],
+  w4: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:265, ay:125},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:265, ay:162},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:270, ay:160},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:260, ay:220}
+  ],
+  w5: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:195, ay:205},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:195, ay:205},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:340, ay:180},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:330, ay:210}
+  ],
+  t1: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:250, ay:195},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:250, ay:250},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:250, ay:195},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:150, ay:265}
+  ],
+  t2: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:195, ay:112},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:245, ay:185},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:315, ay:230},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:270, ay:245}
+  ],
+  t3: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:285, ay:185},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:305, ay:170},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:362, ay:120},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:360, ay:110}
+  ],
+  t4: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:180, ay:220},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:280, ay:215},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:245, ay:205},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:310, ay:210}
+  ],
+  t5: [
+    {key:'subject', title:'Đối tượng chính', bx:18, by:16, ax:335, ay:240},
+    {key:'action', title:'Hành động', bx:304, by:18, ax:256, ay:224},
+    {key:'object', title:'Tân ngữ', bx:304, by:124, ax:150, ay:205},
+    {key:'adverbial', title:'Trạng ngữ', bx:18, by:274, ax:150, ay:205}
+  ]
+};
+function getAnnotationLayout(scene){
+  return sceneAnnotationLayouts[scene] || annotationLayouts[sceneGroup(scene)] || annotationLayouts['one-person'];
+}
+function fitText(value, maxLen=22){
+  value = String(value || '').trim();
+  if(value.length <= maxLen) return value;
+  return value.slice(0, maxLen-1).trim() + '…';
+}
+function annotationOverlay(scene, caption){
+  const parts = parseCaptionParts(caption);
+  const group = sceneGroup(scene);
+  const layout = getAnnotationLayout(scene);
+  const values = {
+    subject: parts.subject,
+    action: parts.action,
+    object: parts.object,
+    adverbial: parts.adverbial
+  };
+  const boxes = layout.filter(item => values[item.key]).map(item => {
+    const value = fitText(values[item.key]);
+    const bw = Math.max(148, Math.min(210, 58 + value.length * 6.2));
+    const bh = 42;
+    const cx = item.bx + bw / 2;
+    const cy = item.by + bh / 2;
+    return `<g class="annotation-step reveal"><line class="annotation-line" x1="${cx}" y1="${cy}" x2="${item.ax}" y2="${item.ay}" /><circle class="annotation-dot" cx="${item.ax}" cy="${item.ay}" r="4" /><rect class="annotation-note-box" x="${item.bx}" y="${item.by}" width="${bw}" height="${bh}" /><text class="annotation-note-title" x="${item.bx+10}" y="${item.by+14}">${escapeHtml(item.title)}</text><text class="annotation-note-value" x="${item.bx+10}" y="${item.by+29}">${escapeHtml(value)}</text></g>`;
+  }).join('');
+  return `<svg class="annotation-overlay" viewBox="0 0 520 340" preserveAspectRatio="none" aria-hidden="true">${boxes}</svg>`;
+}
+function renderMaskedCaption(caption, key, audioSrc=''){
+  const audioBtn = audioSrc ? `<button type="button" class="audio-btn" onclick="playPhotoAudio('${audioSrc}', this)" aria-label="Play audio">🔊</button>` : '';
+  return `<div class="photo-caption photo-caption-mask" id="mask-${key}"><div class="caption-meta">${audioBtn}<button type="button" class="peek-toggle" onclick="toggleMaskedCaption('${key}', this)" aria-label="Hiện hoặc ẩn câu mô tả"><span class="peek-icon">🙈</span></button></div><div class="caption-sentence sentence-blur">${escapeHtml(caption)}</div></div>`;
+}
+function toggleMaskedCaption(key, btn){
+  const wrap = document.getElementById('mask-' + key);
+  if(!wrap) return;
+  const sentence = wrap.querySelector('.caption-sentence');
+  const isHidden = sentence.classList.contains('sentence-blur');
+  sentence.classList.toggle('sentence-blur', !isHidden);
+  btn.classList.toggle('active', isHidden);
+  const icon = btn.querySelector('.peek-icon');
+  if(icon) icon.textContent = isHidden ? '👁️' : '🙈';
+}
+
+let currentAudio = null;
+function playPhotoAudio(src, btn){
+  try{
+    if(currentAudio){
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+      document.querySelectorAll('.audio-btn.playing').forEach(b=>b.classList.remove('playing'));
+    }
+    currentAudio = new Audio(src);
+    btn.classList.add('playing');
+    currentAudio.addEventListener('ended',()=>btn.classList.remove('playing'));
+    currentAudio.addEventListener('error',()=>{
+      btn.classList.remove('playing');
+      alert('Chưa tìm thấy file audio: ' + src);
+    });
+    currentAudio.play();
+  }catch(err){
+    alert('Không phát được audio: ' + src);
+  }
+}
+
+function renderAnnotatedFrame(scene, caption, key, mode='normal'){
+  const overlay = mode === 'practice' ? practiceAnnotationOverlay(scene, caption) : annotationOverlay(scene, caption);
+  return `<div class="photo-frame"><div class="image-stage">${sceneSvg(scene)}${overlay}</div></div>`;
+}
+
+const photoAnnotations = {
+  photo1: [
+    {title:'Đối tượng chính', value:'A woman'},
+    {title:'Hành động', value:'is talking'},
+    {title:'Tân ngữ', value:'on the phone'},
+    {title:'Trạng ngữ', value:'at a desk'}
+  ],
+  photo2: [
+    {title:'Đối tượng chính', value:'A woman'},
+    {title:'Hành động', value:'is placing'},
+    {title:'Tân ngữ', value:'folded towels'},
+    {title:'Trạng ngữ', value:'on top of a cabinet'}
+  ],
+  photo3: [
+    {title:'Đối tượng chính', value:'A man'},
+    {title:'Hành động', value:'is using'},
+    {title:'Tân ngữ', value:'a shovel'},
+    {title:'Trạng ngữ', value:'beside a house'}
+  ],
+  photo4: [
+    {title:'Đối tượng chính', value:'A woman'},
+    {title:'Hành động', value:'is reaching'},
+    {title:'Tân ngữ', value:'for a book'},
+    {title:'Trạng ngữ', value:'on a shelf'}
+  ],
+  photo5: [
+    {title:'Đối tượng chính', value:'A woman'},
+    {title:'Hành động', value:'is talking'},
+    {title:'Tân ngữ', value:'on a phone'},
+    {title:'Trạng ngữ', value:'on a bench'}
+  ],
+  photo6: [
+    {title:'Đối tượng chính', value:'Several businesspeople'},
+    {title:'Hành động', value:'are gathered'},
+    {title:'Tân ngữ', value:'around a laptop'},
+    {title:'Trạng ngữ', value:'in the office'}
+  ],
+  photo7: [
+    {title:'Đối tượng chính', value:'A clerk'},
+    {title:'Hành động', value:'is handing'},
+    {title:'Tân ngữ', value:'a garment'},
+    {title:'Trạng ngữ', value:'across a counter'}
+  ],
+  photo8: [
+    {title:'Đối tượng chính', value:'Two women'},
+    {title:'Hành động', value:'are sitting'},
+    {title:'Trạng ngữ', value:'at a table'}
+  ],
+  photo9: [
+    {title:'Đối tượng chính', value:'Three women'},
+    {title:'Hành động', value:'are reading'},
+    {title:'Trạng ngữ', value:'at a table'}
+  ],
+  photo10: [
+    {title:'Đối tượng chính', value:'Two colleagues'},
+    {title:'Hành động', value:'are looking'},
+    {title:'Tân ngữ', value:'at a map'},
+    {title:'Trạng ngữ', value:'on a desk'}
+  ],
+  scene1: [
+    {title:'Đối tượng chính', value:'Tables and chairs'},
+    {title:'Hành động', value:'are arranged'},
+    {title:'Trạng ngữ', value:'under umbrellas by the water'}
+  ],
+  scene2: [
+    {title:'Đối tượng chính', value:'An airplane'},
+    {title:'Hành động', value:'is parked'},
+    {title:'Trạng ngữ', value:'at the airport'}
+  ],
+  scene3: [
+    {title:'Đối tượng chính', value:'Cars'},
+    {title:'Hành động', value:'are being transported'},
+    {title:'Trạng ngữ', value:'on a truck'}
+  ],
+  scene4: [
+    {title:'Đối tượng chính', value:'Rows of seats'},
+    {title:'Hành động', value:'are facing'},
+    {title:'Tân ngữ', value:'a large screen'},
+    {title:'Trạng ngữ', value:'in a theater'}
+  ],
+  scene5: [
+    {title:'Đối tượng chính', value:'A rake and a bag'},
+    {title:'Hành động', value:'are placed'},
+    {title:'Trạng ngữ', value:'beside a table in a garden'}
+  ],
+  scene6: [
+    {title:'Đối tượng chính', value:'Boats'},
+    {title:'Hành động', value:'are floating'},
+    {title:'Trạng ngữ', value:'near waterfront buildings'}
+  ],
+  scene7: [
+    {title:'Đối tượng chính', value:'Cars'},
+    {title:'Hành động', value:'are parked'},
+    {title:'Trạng ngữ', value:'around a large courtyard'}
+  ],
+  scene8: [
+    {title:'Đối tượng chính', value:'Many boats'},
+    {title:'Hành động', value:'are docked'},
+    {title:'Trạng ngữ', value:'in a harbor near rocky hills'}
+  ],
+  scene9: [
+    {title:'Đối tượng chính', value:'A chair and a small table'},
+    {title:'Hành động', value:'are placed'},
+    {title:'Trạng ngữ', value:'near a dresser'}
+  ],
+  scene10: [
+    {title:'Đối tượng chính', value:'Mugs and containers'},
+    {title:'Hành động', value:'are arranged'},
+    {title:'Trạng ngữ', value:'on shelves above a counter'}
+  ]
+};
+
+function practiceBoxGroup(item, index){
+  const top = 18 + index * 74;
+  const left = 18;
+  const bw = 340;
+  const bh = 58;
+  const labelMap = {
+    'Đối tượng chính':'S',
+    'Hành động':'V',
+    'Tân ngữ':'O',
+    'Trạng ngữ':'ADV'
+  };
+  const title = labelMap[item.title] || item.title;
+  const value = fitText(item.value, 34);
+  return `<g class="annotation-step reveal">
+    <rect class="annotation-note-box" x="${left}" y="${top}" width="${bw}" height="${bh}" />
+    <text class="annotation-note-title" x="${left+14}" y="${top+22}">${escapeHtml(title)}</text>
+    <text class="annotation-note-value" x="${left+14}" y="${top+46}">${escapeHtml(value)}</text>
+  </g>`;
+}
+function renderPracticePhotoOverlay(photoId){
+  const source = photoAnnotations[photoId] || [];
+  const order = ['Đối tượng chính','Hành động','Tân ngữ','Trạng ngữ'];
+  const items = order.map(title => source.find(x => x.title === title)).filter(Boolean);
+  const boxes = items.map((item, index)=>practiceBoxGroup(item, index)).join('');
+  return `<svg class="annotation-overlay photo-overlay" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">${boxes}</svg>`;
+}
+function practiceAnnotationOverlay(scene, caption){
+  const parts = parseCaptionParts(caption);
+  const items = [
+    {title:'Đối tượng chính', value:parts.subject},
+    {title:'Hành động', value:parts.action},
+    {title:'Tân ngữ', value:parts.object},
+    {title:'Trạng ngữ', value:parts.adverbial}
+  ].filter(x => x.value);
+  const boxes = items.map((item, index)=>practiceBoxGroup(item, index)).join('');
+  return `<svg class="annotation-overlay" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">${boxes}</svg>`;
+}
+
+function renderPhotoOverlay(photoId){
+  const items = photoAnnotations[photoId] || [];
+  const boxes = items.map(item => {
+    const value = fitText(item.value, 24);
+    const bw = Math.max(150, Math.min(220, 58 + value.length * 6.2));
+    const bh = 42;
+    const cx = item.bx + bw / 2;
+    const cy = item.by + bh / 2;
+    return `<g class="annotation-step reveal"><line class="annotation-line" x1="${cx}" y1="${cy}" x2="${item.ax}" y2="${item.ay}" /><circle class="annotation-dot" cx="${item.ax}" cy="${item.ay}" r="4" /><rect class="annotation-note-box" x="${item.bx}" y="${item.by}" width="${bw}" height="${bh}" /><text class="annotation-note-title" x="${item.bx+10}" y="${item.by+14}">${escapeHtml(item.title)}</text><text class="annotation-note-value" x="${item.bx+10}" y="${item.by+29}">${escapeHtml(value)}</text></g>`;
+  }).join('');
+  return `<svg class="annotation-overlay photo-overlay" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">${boxes}</svg>`;
+}
+function renderCustomPhotoFrame(src, caption, key, photoId, mode='normal'){
+  const overlay = mode === 'practice' ? renderPracticePhotoOverlay(photoId) : renderPhotoOverlay(photoId);
+  return `<div class="photo-frame"><div class="image-stage"><img class="real-photo" src="${src}" alt="${escapeHtml(caption)}">${overlay}</div></div>`;
+}
+
+const slides = [];
+slides.push({kind:'intro', label:'TOEIC PART 1 · PHOTOS', title:'Chiến thuật làm TOEIC Part 1: Photos', html:`<div class="content-area"><div class="big-word">Part 1: Photos</div><p>Trong Part 1, bạn nhìn một bức ảnh và nghe 4 câu mô tả A, B, C, D. Nhiệm vụ là chọn câu mô tả <span class="keyword">đúng nhất với ảnh</span>.</p><div class="intro-box reveal"><h3>Quy trình 5 giây trước khi nghe</h3><ul class="steps"><li>Nhìn ảnh: có người hay không có người?</li><li>Nếu có người: hỏi ngay “Ai đang làm gì?”</li><li>Nếu không có người: hỏi “Vật gì ở đâu / được sắp xếp thế nào?”</li><li>Nghe động từ và giới từ thật kỹ.</li><li>Loại đáp án suy diễn, chỉ chọn cái nhìn thấy rõ trong ảnh.</li></ul></div><div class="warning-box reveal">Bài này dùng chữ A-D để luyện chiến thuật. Khi vào đề thật, bạn sẽ nghe audio và không thấy chữ đáp án.</div></div>`});
+
+partTypes.forEach(t=>{
+  slides.push({kind:'lesson', label:`TYPE ${t.no}`, title:t.title, pageTitle:`Type ${t.no}`, html:`<div class="content-area"><p>${t.idea}</p><div class="formula reveal">${t.formula}</div><div class="photo-layout reveal">${renderAnnotatedFrame(t.example.scene, t.example.caption, 'lesson-'+t.no)}<div><div class="method-box"><h3>Cách làm</h3><ul class="steps">${t.tips.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="danger-box"><h3>Lưu ý bẫy thường gặp</h3><ul class="steps"><li>Danh từ đúng nhưng động từ sai.</li><li>Động từ đúng nhưng giới từ/vị trí sai.</li><li>Câu mô tả điều không nhìn thấy trong ảnh.</li></ul></div></div></div></div>`});
+  slides.push({kind:'example', label:`TYPE ${t.no} · VÍ DỤ`, title:`Ví dụ phân tích: ${t.short}`, pageTitle:`Example ${t.no}`, html:`<div class="content-area"><div class="photo-layout"><div class="reveal show">${renderAnnotatedFrame(t.example.scene, t.example.caption, 'example-'+t.no)}</div><div class="sample-box reveal"><div class="sample-title">Nghe/chọn câu mô tả đúng</div><div class="question">Bức ảnh mô tả điều gì?</div>${t.example.options.map(o=>`<div class="answer"><b>${o[0]}.</b> ${o[1]}<span class="option-vn">${o[2]}</span></div>`).join('')}</div></div><div class="method-box reveal"><h3>Phân tích</h3><ul class="steps">${t.example.analysis.map(a=>`<li>${a}</li>`).join('')}<li><span class="answer-key">Đáp án đúng: ${t.example.answer}</span></li></ul></div></div>`});
+  quizData.filter(q=>q.type===t.type).forEach((q,i)=>slides.push({kind:'quiz', label:`TYPE ${t.no} · PRACTICE`, title:`${t.short} · Câu ${i+1}/5`, pageTitle:`Q${slides.length}`, data:q}));
+});
+slides.push({kind:'summary', label:'TỔNG KẾT', title:'Tổng kết Part 1 Photos', pageTitle:'Summary', html:`<div class="content-area"><div class="intro-box"><h3>Checklist khi làm TOEIC Part 1</h3><ul class="steps"><li>Có người → nghe hành động đang diễn ra.</li><li>Nhiều người → nghe hành động chung và vị trí tương đối.</li><li>Không có người → nghe vị trí/trạng thái cảnh vật.</li><li>Cảnh vật → phân biệt arranged/placed/parked/docked/located/being transported.</li><li>Không ép đủ O/ADV nếu câu không có.</li></ul></div><div class="score-box reveal"><div class="score-pill" id="scorePill">Điểm Practice: đang tính...</div><div class="score-pill">25 câu luyện tập</div></div></div>`});
+
+let currentSlide=0;
+const checkedState = {};
+
+
+function audioPathForQuestion(q){
+  if(q.image){
+    const fileName = q.image.split('/').pop().replace(/\.[^.]+$/, '.mp3');
+    return '/audio/p1/' + fileName;
+  }
+
+  return '/audio/p1/' + q.scene + '.mp3';
+}
+
+function renderSlides(){
+  const mount=document.getElementById('slideMount');
+
+  mount.innerHTML = slides.map((s,idx)=>{
+    if(s.kind==='quiz'){
+      const q=s.data;
+      const photoHtml = q.image
+        ? renderCustomPhotoFrame(q.image, q.caption, 'quiz-'+idx, q.photoId, 'practice')
+        : renderAnnotatedFrame(q.scene, q.caption, 'quiz-'+idx, 'practice');
+
+      const optionsHtml = q.options.map(o=>`
+        <label class="option">
+          <input type="radio" name="q${idx}" value="${o[0]}">
+          <span class="option-letter">${o[0]}.</span>
+          <span class="option-text option-blur">
+            ${escapeHtml(o[1])}
+            <span class="option-vn">${escapeHtml(o[2])}</span>
+          </span>
+        </label>
+      `).join('');
+
+      return `<section class="slide quiz-slide" data-index="${idx}">
+        <span class="slide-label">${escapeHtml(s.label)}</span>
+        <h2>${escapeHtml(s.title)}</h2>
+
+        <div class="content-area">
+          <div class="photo-layout">
+            <div class="reveal show">${photoHtml}</div>
+
+            <div class="practice-side">
+              <div class="sample-box reveal show">
+                <div class="sample-title">
+                  Part 1 Practice <span class="audio-note">Luyện bằng chữ trước khi nghe audio</span>
+                </div>
+
+                <div class="question">
+                  <span>Which sentence best describes the photo?</span>
+                  <button type="button" class="audio-btn inline-audio-btn" onclick="playPhotoAudio(audioPathForQuestion(slides[currentSlide].data), this)" aria-label="Play audio">🔊</button>
+                </div>
+
+                ${optionsHtml}
+              </div>
+
+              <div class="method-box result-box" id="result-${idx}">
+                <h3 class="result-title"></h3>
+                <p class="explain"></p>
+              </div>
+</div>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    return `<section class="slide" data-index="${idx}">
+      <span class="slide-label">${escapeHtml(s.label)}</span>
+      <h1>${escapeHtml(s.title)}</h1>
+      ${s.html}
+    </section>`;
+  }).join('');
+}
+
+function renderPicker(){
+  const grid=document.getElementById('pagePickerGrid');
+  grid.innerHTML=slides.map((s,i)=>{
+    let cls='page-jump-btn';
+    if(i===currentSlide) cls+=' active';
+    if(s.kind==='quiz' && checkedState[i]) cls += checkedState[i].isCorrect ? ' correct-answer' : ' wrong-answer';
+    const title=s.kind==='quiz' ? s.title : (s.pageTitle || s.label);
+    return `<button type="button" class="${cls}" onclick="jumpToSlide(${i})"><span class="page-no">${i+1}</span><span class="page-title">${escapeHtml(title)}</span></button>`;
+  }).join('');
+}
+
+function updateProgress(){
+  document.getElementById('progressText').textContent=(currentSlide+1)+' / '+slides.length;
+  document.getElementById('topLine').style.width=((currentSlide+1)/slides.length*100)+'%';
+  const isQuiz=slides[currentSlide]?.kind==='quiz';
+  document.getElementById('checkBtn').disabled=!isQuiz || !!checkedState[currentSlide];
+  renderPicker();
+  updateScore();
+}
+function showSlide(index){
+  const slideEls=[...document.querySelectorAll('.slide')];
+  if(index<0||index>=slideEls.length) return;
+  slideEls.forEach(s=>s.classList.remove('active'));
+  currentSlide=index;
+  slideEls[currentSlide].classList.add('active');
+  slideEls[currentSlide].querySelectorAll('.reveal').forEach((el,i)=>{ if(i===0) el.classList.add('show'); else el.classList.remove('show'); });
+  updateProgress();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goReveal(){
+  const items=[...document.querySelectorAll('.slide.active .reveal')];
+  const next=items.find(el=>!el.classList.contains('show'));
+  if(next) next.classList.add('show');
+}
+function nextSlide(){showSlide(Math.min(currentSlide+1,slides.length-1));}
+function prevSlide(){showSlide(Math.max(currentSlide-1,0));}
+function jumpToSlide(i){closePagePicker();showSlide(i);}
+function openPagePicker(){renderPicker();document.getElementById('pagePicker').classList.add('show');}
+function closePagePicker(e){if(!e || e.target.id==='pagePicker' || e.target.classList.contains('page-picker-close')) document.getElementById('pagePicker').classList.remove('show');}
+
+function checkAnswer(){
+  const s=slides[currentSlide];
+  if(!s || s.kind!=='quiz') return;
+  if(checkedState[currentSlide]) return;
+  const slide=document.querySelector('.slide.active');
+  const selected=slide.querySelector('input[type="radio"]:checked');
+  const result=slide.querySelector('.result-box');
+  const title=result.querySelector('.result-title');
+  const explain=result.querySelector('.explain');
+  result.className='method-box result-box show';
+  if(!selected){
+    result.classList.add('no-answer');
+    title.innerHTML='<span class="wrong-text">Hãy chọn một đáp án trước.</span>';
+    return;
+  }
+  const q=s.data;
+  const isCorrect=selected.value===q.answer;
+  checkedState[currentSlide]={selected:selected.value,isCorrect};
+  if(isCorrect){title.innerHTML='<span class="correct-text">Chính xác!</span>';}
+  else{result.classList.add('wrong-box');title.innerHTML='<span class="wrong-text">Chưa đúng.</span>';}
+  explain.innerHTML=`<span class="answer-key">Đáp án đúng: ${q.answer}</span> — ${escapeHtml(q.explain)}`;
+  slide.querySelectorAll('input[type="radio"]').forEach(x=>x.disabled=true);
+  slide.classList.add('answer-locked','answer-checked');
+  updateProgress();
+}
+function updateScore(){
+  const pill=document.getElementById('scorePill');
+  if(!pill) return;
+  const total=quizData.length;
+  const done=Object.values(checkedState).length;
+  const correct=Object.values(checkedState).filter(x=>x.isCorrect).length;
+  pill.textContent=`Điểm Practice: ${correct} / ${total} · Đã check ${done}/${total}`;
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight') nextSlide();
+  if(e.key==='ArrowLeft') prevSlide();
+  if(e.key==='Enter') goReveal();
+});
+
+
+function installContentGuards(){
+  const block = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  };
+  ['contextmenu','dragstart','selectstart','copy','cut','paste'].forEach(evt=>{
+    document.addEventListener(evt, block, {capture:true});
+  });
+  document.addEventListener('keydown', e=>{
+    const key = String(e.key || '').toLowerCase();
+    const blocked =
+      key === 'f12' ||
+      (e.ctrlKey && ['s','u','p','o','a','c','x','v'].includes(key)) ||
+      (e.ctrlKey && e.shiftKey && ['i','j','c','s'].includes(key)) ||
+      (e.metaKey && ['s','u','p','o','a','c','x','v'].includes(key));
+    if(blocked) block(e);
+  }, {capture:true});
+}
+installContentGuards();
+
+renderSlides();
+renderPicker();
+showSlide(0);
+</script>
+
+
+
+
+<script>
+/* ===== SAFE unified lesson nav v5: titled slide index + home, weight <= 700 ===== */
+(function(){
+  'use strict';
+
+  var SLIDE_TITLES = ["Slide 1", "Slide 2", "Slide 3", "Slide 4"];
+  var slides = [];
+  var pickerBuilt = false;
+
+  function refreshSlides(){
+    slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    return slides;
+  }
+
+  function getSlides(){
+    return slides.length ? slides : refreshSlides();
+  }
+
+  function getActiveIndex(){
+    var list = getSlides();
+    for(var i = 0; i < list.length; i++){
+      if(list[i].classList.contains('active')) return i;
+    }
+    return 0;
+  }
+
+  function escapeHtml(str){
+    return String(str || '').replace(/[&<>"']/g, function(s){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s];
+    });
+  }
+
+  function updateIndexText(){
+    var list = getSlides();
+    var active = getActiveIndex();
+    var txt = document.getElementById('lessonIndexText');
+    if(txt) txt.textContent = (active + 1) + ' / ' + Math.max(list.length, 1);
+
+    var current = document.querySelector('.unified-page-jump-btn.active');
+    if(current) current.classList.remove('active');
+
+    var next = document.querySelector('.unified-page-jump-btn[data-page="' + active + '"]');
+    if(next) next.classList.add('active');
+  }
+
+  function buildNav(){
+    if(document.getElementById('lessonTopNav')) return;
+
+    var nav = document.createElement('div');
+    nav.className = 'lesson-top-nav';
+    nav.id = 'lessonTopNav';
+    nav.innerHTML =
+      '<button class="lesson-index-btn" id="lessonIndexBtn" type="button" aria-label="Mở danh sách slide">' +
+        '<span class="lesson-index-dot" aria-hidden="true"></span>' +
+        '<span id="lessonIndexText">1 / 1</span>' +
+      '</button>' +
+      '<a class="lesson-home-btn" href="../index.html" aria-label="Về trang chủ">' +
+        '<span class="lesson-home-icon" aria-hidden="true">🏠</span>' +
+        '<span class="lesson-home-text">Trang chủ</span>' +
+      '</a>';
+
+    var overlay = document.createElement('div');
+    overlay.className = 'unified-page-picker-overlay';
+    overlay.id = 'unifiedPagePicker';
+    overlay.innerHTML =
+      '<div class="unified-page-picker-panel" role="dialog" aria-modal="true">' +
+        '<div class="unified-page-picker-head">' +
+          '<div>' +
+            '<h3 class="unified-page-picker-title">Chọn slide</h3>' +
+            '<p class="unified-page-picker-subtitle">Danh sách lấy từ tiêu đề / nhãn slide gốc.</p>' +
+          '</div>' +
+          '<button class="unified-page-picker-close" id="unifiedPagePickerClose" type="button" aria-label="Đóng">×</button>' +
+        '</div>' +
+        '<div class="unified-page-picker-grid" id="unifiedPagePickerGrid"></div>' +
+      '</div>';
+
+    document.body.appendChild(nav);
+    document.body.appendChild(overlay);
+
+    document.getElementById('lessonIndexBtn').onclick = openPicker;
+    document.getElementById('unifiedPagePickerClose').onclick = closePicker;
+
+    overlay.onclick = function(e){
+      if(e.target === overlay) closePicker();
+    };
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closePicker();
+    }, {passive:true});
+  }
+
+  function buildPickerOnce(){
+    if(pickerBuilt) return;
+
+    var grid = document.getElementById('unifiedPagePickerGrid');
+    if(!grid) return;
+
+    var list = getSlides();
+    var count = Math.max(list.length, SLIDE_TITLES.length);
+    var html = '';
+
+    for(var i = 0; i < count; i++){
+      var title = SLIDE_TITLES[i] || ('Slide ' + (i + 1));
+      html += '<button class="unified-page-jump-btn" type="button" data-page="' + i + '">' +
+        '<span class="unified-page-no">Slide ' + (i + 1) + '</span>' +
+        '<span class="unified-page-title">' + escapeHtml(title) + '</span>' +
+      '</button>';
+    }
+
+    grid.innerHTML = html;
+
+    grid.onclick = function(e){
+      var btn = e.target.closest('.unified-page-jump-btn');
+      if(!btn) return;
+
+      var index = parseInt(btn.getAttribute('data-page'), 10);
+      closePicker();
+      jumpToSlide(index);
+    };
+
+    pickerBuilt = true;
+  }
+
+  function openPicker(){
+    buildPickerOnce();
+    updateIndexText();
+    var overlay = document.getElementById('unifiedPagePicker');
+    if(overlay) overlay.classList.add('show');
+  }
+
+  function closePicker(){
+    var overlay = document.getElementById('unifiedPagePicker');
+    if(overlay) overlay.classList.remove('show');
+  }
+
+  function jumpToSlide(index){
+    var list = getSlides();
+    if(index < 0 || index >= list.length) return;
+
+    if(typeof window.showSlide === 'function'){
+      window.showSlide(index);
+    }else{
+      for(var i = 0; i < list.length; i++){
+        list[i].classList.remove('active');
+      }
+      list[index].classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    updateIndexText();
+  }
+
+  function init(){
+    refreshSlides();
+    buildNav();
+    updateIndexText();
+
+    document.addEventListener('click', function(e){
+      if(
+        e.target.closest('.nav-btn') ||
+        e.target.closest('.go-btn') ||
+        e.target.closest('.check-btn')
+      ){
+        setTimeout(updateIndexText, 60);
+      }
+    }, true);
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  }else{
+    init();
+  }
+
+  window.openUnifiedPagePicker = openPicker;
+  window.closeUnifiedPagePicker = closePicker;
+})();
+</script>
+
+</body>
+</html>

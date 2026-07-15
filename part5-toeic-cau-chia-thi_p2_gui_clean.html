@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 5 TOEIC - Câu chia thì</title>
+  <style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}
+body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:relative;background:#eef4ff}
+.slide{width:100%;min-height:100vh;padding:56px 72px 120px;display:none;background:radial-gradient(circle at top left,rgba(59,130,246,.12),transparent 35%),radial-gradient(circle at bottom right,rgba(14,165,233,.12),transparent 35%),#fff}.slide.active{display:flex;flex-direction:column;animation:slideIn .35s ease}@keyframes slideIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.slide-label{display:inline-block;width:fit-content;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:700;font-size:15px;margin-bottom:18px}h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size:42px;line-height:1.15;color:#0f172a;margin-bottom:24px}h3{font-size:28px;color:#1e3a8a;margin-bottom:14px}p{font-size:24px;line-height:1.55;margin-bottom:14px}.content-area{max-width:1120px;margin-top:10px;padding-bottom:40px}.reveal{opacity:0;transform:translateY(18px);filter:blur(3px);transition:all .45s ease;pointer-events:none}.reveal.show{opacity:1;transform:translateY(0);filter:blur(0);pointer-events:auto}.intro-box{background:#f8fafc;border:2px solid #e2e8f0;border-radius:22px;padding:28px 32px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}.warning-box{background:#fff7ed;border:2px solid #fed7aa;color:#9a3412;border-radius:18px;padding:20px 24px;font-size:24px;line-height:1.45;margin-top:18px;font-weight:700}.sample-box{background:#eff6ff;border-left:8px solid #2563eb;border-radius:18px;padding:26px 30px;margin-top:16px;box-shadow:0 12px 28px rgba(37,99,235,.12)}.sample-title{font-size:22px;font-weight:700;color:#1d4ed8;margin-bottom:10px}.question{font-size:32px;font-weight:700;color:#0f172a;margin-bottom:16px;line-height:1.25}.answer{font-size:24px;padding:12px 14px;margin:8px 0;color:#334155;border:2px solid #dbeafe;border-radius:14px;background:#fff;transition:.25s ease;position:relative}.method-box{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:24px 28px;margin-top:20px}.method-box h3{color:#166534}.danger-box{background:#fff1f2;border:2px solid #fecdd3;border-radius:20px;padding:24px 28px;margin-top:20px}.danger-box h3{color:#be123c}.steps{list-style:none;margin-top:12px}.steps li{font-size:23px;line-height:1.5;padding:9px 0 9px 38px;position:relative}.steps li::before{content:"✓";position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:#22c55e;color:white;font-size:17px;display:grid;place-items:center;font-weight:700}.danger-box .steps li::before{content:"!";background:#e11d48}.control-bar{position:fixed;left:0;right:0;bottom:16px;z-index:100;display:flex;justify-content:center;align-items:center;gap:14px;pointer-events:none}.go-btn,.nav-btn{pointer-events:auto;border:none;cursor:pointer;font-weight:700;transition:all .2s ease;box-shadow:0 8px 18px rgba(15,23,42,.18)}.go-btn{width:54px;height:54px;border-radius:50%;background:#2563eb;color:white;font-size:15px;letter-spacing:.5px}.go-btn:hover{transform:scale(1.08);background:#1d4ed8}.nav-btn{border-radius:999px;padding:10px 16px;background:#e2e8f0;color:#0f172a;font-size:14px}.nav-btn:hover{background:#cbd5e1}.progress{position:fixed;top:24px;right:36px;font-size:16px;font-weight:700;color:#64748b;z-index:120;background:rgba(255,255,255,.85);padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px)}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:0%;transition:width .35s ease;z-index:130}.keyword{color:#2563eb;font-weight:700}.big-word{font-size:72px;font-weight:700;color:#1d4ed8;letter-spacing:-2px;margin-bottom:12px}.mini-note{font-size:20px;color:#64748b;margin-top:10px}.formula-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px}.formula-item{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;padding:14px 20px;border-radius:16px;font-size:24px;font-weight:700}.formula{font-size:clamp(30px,2.7vw,50px);font-weight:700;line-height:1.25;padding:18px 22px;margin:18px 0;background:#eff6ff;border:4px solid #93c5fd;border-radius:22px;color:#0f172a;text-align:center}.det{color:#f59e0b}.adv{color:#7c3aed}.adj{color:#2f7d32}.np{color:#dc2626}.nc{color:#0b78b6}.highlight{padding:1px 8px;border-radius:8px;font-weight:700}.h-det{background:#fde68a;color:#92400e}.h-adv{background:#ddd6fe;color:#5b21b6}.h-adj{background:#bbf7d0;color:#166534}.h-np{background:#fecaca;color:#991b1b}.h-nc{background:#bae6fd;color:#075985}.pill-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}.pill{display:inline-flex;align-items:center;font-size:22px;font-weight:700;padding:10px 16px;border-radius:999px;background:#e0f2fe;color:#075985;border:2px solid #7dd3fc}.pill.orange{background:#fffbeb;color:#92400e;border-color:#fbbf24}.pill.green{background:#ecfdf5;color:#166534;border-color:#86efac}.pill.purple{background:#f5f3ff;color:#5b21b6;border-color:#c4b5fd}.pill.red{background:#fef2f2;color:#991b1b;border-color:#fca5a5}table{width:100%;border-collapse:collapse;margin-top:12px;font-size:22px;font-weight:700;table-layout:fixed}th{background:#0f5f8f;color:white;text-align:left;padding:12px 14px}td{padding:10px 12px;border:2px solid #cbd5e1;vertical-align:top;line-height:1.25}.quiz-box .clue{transition:.25s ease;border-radius:8px;padding:0 6px}.quiz-box.clue-on .clue{background:#ffedd5;box-shadow:0 0 0 3px rgba(249,115,22,.22)}.quiz-box .blank-clue{border-radius:8px;padding:0 8px}.quiz-box.clue-on .blank-clue{background:#fed7aa;color:#9a3412;box-shadow:inset 0 0 0 2px #f97316}.tick{display:none;margin-left:10px;width:28px;height:28px;border-radius:50%;background:#22c55e;color:white;font-size:18px;font-weight:700;place-items:center}.quiz-box.answer-on .answer.correct{color:#15803d;background:#dcfce7;border-color:#22c55e;font-weight:700;box-shadow:0 8px 18px rgba(34,197,94,.18)}.quiz-box.answer-on .answer.correct .tick{display:inline-grid}.explain-box{display:none;background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:22px 26px;margin-top:18px;animation:fadeUp .35s ease}.quiz-box.explain-on .explain-box{display:block}@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.slide{padding:36px 24px 120px}h1{font-size:34px}h2{font-size:32px}p,.answer,.steps li{font-size:19px}.question{font-size:25px}.big-word{font-size:46px}.go-btn{width:48px;height:48px;font-size:13px}.nav-btn{padding:9px 13px;font-size:13px}.progress{top:14px;right:14px;font-size:13px}.formula-item{font-size:19px}.pill{font-size:18px}}
+.home-btn{background:linear-gradient(135deg,#0f172a,#334155)!important;color:#fff!important}
+.home-btn:hover{filter:brightness(1.08)}
+
+
+/* ===== SAFE unified lesson nav v5: titled slide index + home, weight <= 700 ===== */
+.progress{
+  display:none!important;
+}
+.lesson-top-nav{
+  position:fixed;
+  top:18px;
+  right:24px;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
+  font-family:Arial,Helvetica,sans-serif;
+  pointer-events:none;
+}
+.lesson-top-nav button,
+.lesson-top-nav a{
+  pointer-events:auto;
+}
+.lesson-index-btn,
+.lesson-home-btn{
+  min-height:42px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 16px;
+  border:2px solid #dbeafe;
+  box-shadow:0 10px 24px rgba(15,23,42,.14);
+  backdrop-filter:blur(10px);
+  font-size:14px;
+  font-weight:700;
+  line-height:1;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .16s ease,background .16s ease,border-color .16s ease,box-shadow .16s ease;
+}
+.lesson-index-btn{
+  color:#1d4ed8;
+  background:linear-gradient(135deg,#eff6ff,#fff);
+}
+.lesson-home-btn{
+  color:#166534;
+  background:linear-gradient(135deg,#f0fdf4,#fff);
+  border-color:#bbf7d0;
+}
+.lesson-index-btn:hover,
+.lesson-home-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px rgba(37,99,235,.18);
+}
+.lesson-index-btn:hover{
+  background:#dbeafe;
+  border-color:#93c5fd;
+}
+.lesson-home-btn:hover{
+  background:#dcfce7;
+  border-color:#86efac;
+}
+.lesson-index-dot{
+  width:9px;
+  height:9px;
+  border-radius:999px;
+  background:#2563eb;
+  box-shadow:0 0 0 5px rgba(37,99,235,.12);
+}
+.lesson-home-icon{
+  font-size:15px;
+  line-height:1;
+}
+.unified-page-picker-overlay{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(15,23,42,.42);
+}
+.unified-page-picker-overlay.show{
+  display:flex;
+}
+.unified-page-picker-panel{
+  width:min(980px,96vw);
+  max-height:82vh;
+  overflow:auto;
+  background:#fff;
+  border:2px solid #dbeafe;
+  border-radius:26px;
+  box-shadow:0 28px 80px rgba(15,23,42,.30);
+  padding:22px;
+  animation:unifiedPanelPop .14s ease;
+}
+@keyframes unifiedPanelPop{
+  from{opacity:0;transform:translateY(10px) scale(.985)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.unified-page-picker-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:16px;
+  padding-bottom:14px;
+  border-bottom:2px solid #eff6ff;
+}
+.unified-page-picker-title{
+  margin:0;
+  color:#0f172a;
+  font-size:27px;
+  font-weight:700;
+  line-height:1.16;
+}
+.unified-page-picker-subtitle{
+  margin:6px 0 0;
+  color:#64748b;
+  font-size:15px;
+  font-weight:700;
+  line-height:1.4;
+}
+.unified-page-picker-close{
+  width:40px;
+  height:40px;
+  flex:0 0 40px;
+  border:none;
+  border-radius:999px;
+  background:#e2e8f0;
+  color:#0f172a;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  font-size:26px;
+  font-weight:700;
+  line-height:1;
+  transition:.16s ease;
+}
+.unified-page-picker-close:hover{
+  background:#cbd5e1;
+  transform:rotate(90deg);
+}
+.unified-page-picker-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:10px;
+}
+.unified-page-jump-btn{
+  border:2px solid #dbeafe;
+  background:#f8fafc;
+  color:#0f172a;
+  border-radius:17px;
+  padding:11px 12px;
+  min-height:74px;
+  cursor:pointer;
+  text-align:left;
+  transition:transform .14s ease,background .14s ease,border-color .14s ease,box-shadow .14s ease;
+}
+.unified-page-jump-btn:hover{
+  background:#eff6ff;
+  border-color:#93c5fd;
+  transform:translateY(-1px);
+  box-shadow:0 8px 18px rgba(37,99,235,.10);
+}
+.unified-page-jump-btn.active{
+  background:#dbeafe;
+  border-color:#2563eb;
+  box-shadow:0 10px 22px rgba(37,99,235,.18);
+}
+.unified-page-no{
+  display:block;
+  color:#1d4ed8;
+  font-size:17px;
+  font-weight:700;
+  margin-bottom:5px;
+}
+.unified-page-title{
+  display:block;
+  color:#475569;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.28;
+}
+.unified-page-jump-btn.active .unified-page-title{
+  color:#1e3a8a;
+}
+@media(max-width:768px){
+  .lesson-top-nav{
+    top:12px;
+    right:12px;
+    gap:7px;
+  }
+  .lesson-index-btn,
+  .lesson-home-btn{
+    min-height:38px;
+    padding:9px 11px;
+    font-size:12px;
+  }
+  .lesson-home-text{
+    display:none;
+  }
+  .unified-page-picker-overlay{
+    padding:14px;
+  }
+  .unified-page-picker-panel{
+    border-radius:20px;
+    padding:16px;
+  }
+  .unified-page-picker-title{
+    font-size:23px;
+  }
+  .unified-page-picker-grid{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .unified-page-jump-btn{
+    min-height:58px;
+    padding:10px;
+    border-radius:14px;
+  }
+  .unified-page-no{
+    font-size:16px;
+    margin-bottom:3px;
+  }
+  .unified-page-title{
+    font-size:12px;
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="lesson-wrapper">
+    <div class="top-line" id="topLine"></div>
+    <div class="progress" id="progressText">1 / 15</div>
+    <section class="slide active">
+  <div class="slide-label reveal">TOEIC Part 5</div><h1 class="reveal">Câu chia thì</h1><div class="content-area"><div class="intro-box reveal"><p>Dạng câu yêu cầu chọn đúng <b>dạng động từ</b> dựa trên thời gian, chủ ngữ và nghĩa chủ động/bị động.</p></div><div class="formula reveal"><span class="adv">Time Adv</span> → <span class="nc">S-V Agreement</span> → <span class="np">Active / Passive</span></div><div class="warning-box reveal">Mục tiêu: nhìn dấu hiệu trong câu, loại suy đáp án nhanh và chính xác.</div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">1. Tổng quan</div><h2 class="reveal">Câu chia thì là câu thế nào?</h2><div class="content-area"><div class="intro-box reveal"><p><b>Câu chia thì</b> là câu hỏi chọn đúng dạng của động từ.</p></div><div class="method-box reveal"><h3>Đáp án thường khác nhau ở:</h3><ul class="steps"><li>Thì: hiện tại, quá khứ, hoàn thành, tương lai.</li><li>Hòa hợp chủ-vị: số ít hay số nhiều.</li><li>Thể: chủ động hay bị động.</li></ul></div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">2. Quy trình</div><h2 class="reveal">Cách làm gồm 3 bước</h2><div class="content-area"><div class="formula reveal"><span class="adv">1. Adv thời gian</span> → <span class="nc">2. Hòa hợp S-V</span> → <span class="np">3. Chủ động / Bị động</span></div><div class="intro-box reveal"><p>Mỗi bước đều giúp bạn chọn đáp án hoặc loại đáp án sai.</p></div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">Bước 1</div><div class="big-word reveal">TIME</div><h2 class="reveal">Tìm trạng từ thời gian</h2><div class="content-area"><div class="pill-row reveal"><span class="pill orange">yesterday</span><span class="pill orange">last week</span><span class="pill orange">currently</span><span class="pill orange">now</span><span class="pill orange">since</span><span class="pill orange">for</span><span class="pill orange">by next month</span></div><div class="method-box reveal"><h3>Ý chính</h3><ul class="steps"><li>Thời gian rõ → ưu tiên chọn thì phù hợp.</li><li>Không có thời gian rõ → chuyển sang chủ-vị và nghĩa câu.</li></ul></div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">Ví dụ 1</div><h2 class="reveal">Adv thời gian → chọn thì</h2><div class="content-area"><div class="sample-box reveal quiz-box" data-step="0">
+  <div class="sample-title">Câu ví dụ</div>
+  <div class="question">The marketing team ______ the campaign <span class="clue">last month</span>.</div>
+  <div class="answer">A. launches<span class="tick">✓</span></div><div class="answer correct">B. launched<span class="tick">✓</span></div><div class="answer">C. has launched<span class="tick">✓</span></div><div class="answer">D. launching<span class="tick">✓</span></div>
+  <div class="explain-box"><h3>Giải thích</h3><p><b>last month</b> là dấu hiệu quá khứ. Chủ ngữ <b>The marketing team</b> tự thực hiện hành động, nên dùng quá khứ đơn chủ động: <b>launched</b>.</p></div>
+</div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">Ví dụ 2</div><h2 class="reveal">Currently → hiện tại tiếp diễn</h2><div class="content-area"><div class="sample-box reveal quiz-box" data-step="0">
+  <div class="sample-title">Câu ví dụ</div>
+  <div class="question">Our technicians ______ the equipment <span class="clue">currently</span>.</div>
+  <div class="answer">A. inspect<span class="tick">✓</span></div><div class="answer">B. inspected<span class="tick">✓</span></div><div class="answer correct">C. are inspecting<span class="tick">✓</span></div><div class="answer">D. have inspected<span class="tick">✓</span></div>
+  <div class="explain-box"><h3>Giải thích</h3><p><b>currently</b> gợi ý hành động đang diễn ra ở hiện tại. Chủ ngữ <b>technicians</b> số nhiều nên dùng <b>are inspecting</b>.</p></div>
+</div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">Bước 2</div><div class="big-word reveal">S - V</div><h2 class="reveal">Hòa hợp chủ-vị</h2><div class="content-area"><div class="formula reveal"><span class="nc">S số ít</span> → <span class="adv">V-s/es</span> &nbsp; | &nbsp; <span class="nc">S số nhiều</span> → <span class="adv">V nguyên mẫu</span></div><div class="intro-box reveal"><p>Bước này giúp loại các đáp án đúng thì nhưng sai dạng động từ.</p></div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">Ví dụ 3</div><h2 class="reveal">Chủ ngữ số ít</h2><div class="content-area"><div class="sample-box reveal quiz-box" data-step="0">
+  <div class="sample-title">Câu ví dụ</div>
+  <div class="question"><span class="clue">The director</span> ______ all budget requests every Friday.</div>
+  <div class="answer">A. review<span class="tick">✓</span></div><div class="answer correct">B. reviews<span class="tick">✓</span></div><div class="answer">C. reviewing<span class="tick">✓</span></div><div class="answer">D. reviewed<span class="tick">✓</span></div>
+  <div class="explain-box"><h3>Giải thích</h3><p><b>The director</b> là chủ ngữ số ít. <b>every Friday</b> chỉ thói quen → hiện tại đơn. Vì vậy dùng <b>reviews</b>.</p></div>
+</div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">Ví dụ 4</div><h2 class="reveal">Chủ ngữ số nhiều</h2><div class="content-area"><div class="sample-box reveal quiz-box" data-step="0">
+  <div class="sample-title">Câu ví dụ</div>
+  <div class="question"><span class="clue">Several employees</span> ______ to the new branch each week.</div>
+  <div class="answer">A. travels<span class="tick">✓</span></div><div class="answer correct">B. travel<span class="tick">✓</span></div><div class="answer">C. traveling<span class="tick">✓</span></div><div class="answer">D. has traveled<span class="tick">✓</span></div>
+  <div class="explain-box"><h3>Giải thích</h3><p><b>Several employees</b> là chủ ngữ số nhiều. <b>each week</b> chỉ thói quen → dùng hiện tại đơn dạng nguyên mẫu: <b>travel</b>.</p></div>
+</div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">Bước 3</div><div class="big-word reveal">ACTIVE / PASSIVE</div><h2 class="reveal">Chủ động hay bị động?</h2><div class="content-area"><div class="formula reveal"><span class="nc">S làm hành động</span> → <span class="adv">Active</span><br><span class="nc">S bị tác động</span> → <span class="np">Passive: be + V3/ed</span></div><div class="danger-box reveal"><h3>Bẫy thường gặp</h3><ul class="steps"><li>Đáp án đúng thì nhưng sai nghĩa chủ động/bị động.</li><li>Hãy hỏi: chủ ngữ tự làm hay bị làm?</li></ul></div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">Ví dụ 5</div><h2 class="reveal">Bị động</h2><div class="content-area"><div class="sample-box reveal quiz-box" data-step="0">
+  <div class="sample-title">Câu ví dụ</div>
+  <div class="question">The invoice ______ <span class="clue">by the accounting department yesterday</span>.</div>
+  <div class="answer">A. sent<span class="tick">✓</span></div><div class="answer correct">B. was sent<span class="tick">✓</span></div><div class="answer">C. sends<span class="tick">✓</span></div><div class="answer">D. has sent<span class="tick">✓</span></div>
+  <div class="explain-box"><h3>Giải thích</h3><p><b>invoice</b> không tự gửi. Cụm <b>by the accounting department</b> cho thấy bị động. <b>yesterday</b> → quá khứ, nên dùng <b>was sent</b>.</p></div>
+</div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">Ví dụ 6</div><h2 class="reveal">Chủ động</h2><div class="content-area"><div class="sample-box reveal quiz-box" data-step="0">
+  <div class="sample-title">Câu ví dụ</div>
+  <div class="question"><span class="clue">The accounting department</span> ______ the invoice yesterday.</div>
+  <div class="answer">A. was sent<span class="tick">✓</span></div><div class="answer correct">B. sent<span class="tick">✓</span></div><div class="answer">C. is sent<span class="tick">✓</span></div><div class="answer">D. sending<span class="tick">✓</span></div>
+  <div class="explain-box"><h3>Giải thích</h3><p>Chủ ngữ <b>The accounting department</b> là bên thực hiện hành động gửi. <b>yesterday</b> → quá khứ đơn, nên chọn <b>sent</b>.</p></div>
+</div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">So sánh</div><h2 class="reveal">Cùng một động từ, khác nghĩa</h2><div class="content-area"><table class="reveal"><tr><th>Câu</th><th>Phân tích</th><th>Dạng</th></tr><tr><td>The manager approved the plan.</td><td>Manager tự phê duyệt</td><td>Chủ động</td></tr><tr><td>The plan was approved by the manager.</td><td>Plan được phê duyệt</td><td>Bị động</td></tr></table><div class="method-box reveal"><h3>Câu hỏi cần tự hỏi</h3><ul class="steps"><li>Chủ ngữ là người/vật nào?</li><li>Chủ ngữ tự làm hay bị tác động?</li></ul></div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">Mini Practice</div><h2 class="reveal">Luyện nhanh</h2><div class="content-area"><div class="sample-box reveal quiz-box" data-step="0">
+  <div class="sample-title">Câu luyện tập</div>
+  <div class="question">The safety guidelines ______ <span class="clue">by all employees last week</span>.</div>
+  <div class="answer">A. reviewed<span class="tick">✓</span></div><div class="answer correct">B. were reviewed<span class="tick">✓</span></div><div class="answer">C. reviews<span class="tick">✓</span></div><div class="answer">D. have reviewed<span class="tick">✓</span></div>
+  <div class="explain-box"><h3>Giải thích</h3><p><b>last week</b> → quá khứ. <b>guidelines</b> được review bởi employees → bị động. Chủ ngữ số nhiều nên dùng <b>were reviewed</b>.</p></div>
+</div></div>
+</section><section class="slide">
+  <div class="slide-label reveal">Tổng kết</div><h2 class="reveal">Công thức xử lý câu chia thì</h2><div class="content-area"><div class="formula reveal"><span class="adv">1. Time Adv</span> → <span class="nc">2. S-V Agreement</span> → <span class="np">3. Active / Passive</span></div><div class="method-box reveal"><h3>Chốt bài</h3><ul class="steps"><li>Tìm dấu hiệu thời gian trước.</li><li>Kiểm tra chủ ngữ số ít/số nhiều.</li><li>Xét nghĩa chủ động/bị động.</li><li>Đừng đoán thì chỉ dựa vào cảm giác.</li></ul></div></div>
+</section>
+    <div class="control-bar">
+      
+      <button class="nav-btn" onclick="prevSlide()">← Prev</button>
+      <button class="go-btn" onclick="goReveal()">GO</button>
+      <button class="nav-btn" onclick="nextSlide()">Next →</button>
+    </div>
+  </div>
+<script>
+function goHomeIndex(){window.location.href='part5-toeic-index.html';}
+const slides=document.querySelectorAll('.slide');
+const progressText=document.getElementById('progressText');
+const topLine=document.getElementById('topLine');
+let currentSlide=0;
+let revealIndex=0;
+function updateProgress(){progressText.textContent=`${currentSlide+1} / ${slides.length}`;topLine.style.width=`${((currentSlide+1)/slides.length)*100}%`;}
+function resetSlideReveal(slide){slide.querySelectorAll('.reveal').forEach(item=>item.classList.remove('show'));slide.querySelectorAll('.quiz-box').forEach(q=>{q.dataset.step='0';q.classList.remove('clue-on','answer-on','explain-on','done');});}
+function showSlide(index){slides[currentSlide].classList.remove('active');resetSlideReveal(slides[currentSlide]);currentSlide=index;revealIndex=0;slides[currentSlide].classList.add('active');window.scrollTo({top:0,behavior:'smooth'});updateProgress();}
+function stepQuiz(quiz){const step=Number(quiz.dataset.step||0)+1;quiz.dataset.step=String(step);if(step===1){quiz.classList.add('clue-on');}else if(step===2){quiz.classList.add('answer-on');}else if(step===3){quiz.classList.add('explain-on','done');}setTimeout(()=>quiz.scrollIntoView({behavior:'smooth',block:'center'}),80);}
+function goReveal(){const activeSlide=slides[currentSlide];const activeQuiz=activeSlide.querySelector('.quiz-box.show:not(.done)');if(activeQuiz){stepQuiz(activeQuiz);return;}const revealItems=activeSlide.querySelectorAll('.reveal');if(revealIndex<revealItems.length){const item=revealItems[revealIndex];item.classList.add('show');revealIndex++;setTimeout(()=>item.scrollIntoView({behavior:'smooth',block:'center'}),80);return;}if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
+function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}function prevSlide(){if(currentSlide>0)showSlide(currentSlide-1);}document.addEventListener('keydown',function(e){if(e.code==='Space'||e.code==='Enter'){e.preventDefault();goReveal();}if(e.code==='ArrowRight')nextSlide();if(e.code==='ArrowLeft')prevSlide();});updateProgress();
+</script>
+
+
+
+
+<script>
+/* ===== SAFE unified lesson nav v5: titled slide index + home, weight <= 700 ===== */
+(function(){
+  'use strict';
+
+  var SLIDE_TITLES = ["TOEIC Part 5 · Câu chia thì", "1. Tổng quan · Câu chia thì là câu thế nào?", "2. Quy trình · Cách làm gồm 3 bước", "Bước 1 · Tìm trạng từ thời gian", "Ví dụ 1 · Adv thời gian → chọn thì", "Ví dụ 2 · Currently → hiện tại tiếp diễn", "Bước 2 · Hòa hợp chủ-vị", "Ví dụ 3 · Chủ ngữ số ít", "Ví dụ 4 · Chủ ngữ số nhiều", "Ví dụ 5 · Bị động", "Ví dụ 6 · Chủ động", "So sánh · Cùng một động từ, khác nghĩa", "Mini Practice · Luyện nhanh", "Tổng kết · Công thức xử lý câu chia thì"];
+  var slides = [];
+  var pickerBuilt = false;
+
+  function refreshSlides(){
+    slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    return slides;
+  }
+
+  function getSlides(){
+    return slides.length ? slides : refreshSlides();
+  }
+
+  function getActiveIndex(){
+    var list = getSlides();
+    for(var i = 0; i < list.length; i++){
+      if(list[i].classList.contains('active')) return i;
+    }
+    return 0;
+  }
+
+  function escapeHtml(str){
+    return String(str || '').replace(/[&<>"']/g, function(s){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s];
+    });
+  }
+
+  function updateIndexText(){
+    var list = getSlides();
+    var active = getActiveIndex();
+    var txt = document.getElementById('lessonIndexText');
+    if(txt) txt.textContent = (active + 1) + ' / ' + Math.max(list.length, 1);
+
+    var current = document.querySelector('.unified-page-jump-btn.active');
+    if(current) current.classList.remove('active');
+
+    var next = document.querySelector('.unified-page-jump-btn[data-page="' + active + '"]');
+    if(next) next.classList.add('active');
+  }
+
+  function buildNav(){
+    if(document.getElementById('lessonTopNav')) return;
+
+    var nav = document.createElement('div');
+    nav.className = 'lesson-top-nav';
+    nav.id = 'lessonTopNav';
+    nav.innerHTML =
+      '<button class="lesson-index-btn" id="lessonIndexBtn" type="button" aria-label="Mở danh sách slide">' +
+        '<span class="lesson-index-dot" aria-hidden="true"></span>' +
+        '<span id="lessonIndexText">1 / 1</span>' +
+      '</button>' +
+      '<a class="lesson-home-btn" href="../index.html" aria-label="Về trang chủ">' +
+        '<span class="lesson-home-icon" aria-hidden="true">🏠</span>' +
+        '<span class="lesson-home-text">Trang chủ</span>' +
+      '</a>';
+
+    var overlay = document.createElement('div');
+    overlay.className = 'unified-page-picker-overlay';
+    overlay.id = 'unifiedPagePicker';
+    overlay.innerHTML =
+      '<div class="unified-page-picker-panel" role="dialog" aria-modal="true">' +
+        '<div class="unified-page-picker-head">' +
+          '<div>' +
+            '<h3 class="unified-page-picker-title">Chọn slide</h3>' +
+            '<p class="unified-page-picker-subtitle">Danh sách lấy từ tiêu đề / nhãn slide gốc.</p>' +
+          '</div>' +
+          '<button class="unified-page-picker-close" id="unifiedPagePickerClose" type="button" aria-label="Đóng">×</button>' +
+        '</div>' +
+        '<div class="unified-page-picker-grid" id="unifiedPagePickerGrid"></div>' +
+      '</div>';
+
+    document.body.appendChild(nav);
+    document.body.appendChild(overlay);
+
+    document.getElementById('lessonIndexBtn').onclick = openPicker;
+    document.getElementById('unifiedPagePickerClose').onclick = closePicker;
+
+    overlay.onclick = function(e){
+      if(e.target === overlay) closePicker();
+    };
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closePicker();
+    }, {passive:true});
+  }
+
+  function buildPickerOnce(){
+    if(pickerBuilt) return;
+
+    var grid = document.getElementById('unifiedPagePickerGrid');
+    if(!grid) return;
+
+    var list = getSlides();
+    var count = Math.max(list.length, SLIDE_TITLES.length);
+    var html = '';
+
+    for(var i = 0; i < count; i++){
+      var title = SLIDE_TITLES[i] || ('Slide ' + (i + 1));
+      html += '<button class="unified-page-jump-btn" type="button" data-page="' + i + '">' +
+        '<span class="unified-page-no">Slide ' + (i + 1) + '</span>' +
+        '<span class="unified-page-title">' + escapeHtml(title) + '</span>' +
+      '</button>';
+    }
+
+    grid.innerHTML = html;
+
+    grid.onclick = function(e){
+      var btn = e.target.closest('.unified-page-jump-btn');
+      if(!btn) return;
+
+      var index = parseInt(btn.getAttribute('data-page'), 10);
+      closePicker();
+      jumpToSlide(index);
+    };
+
+    pickerBuilt = true;
+  }
+
+  function openPicker(){
+    buildPickerOnce();
+    updateIndexText();
+    var overlay = document.getElementById('unifiedPagePicker');
+    if(overlay) overlay.classList.add('show');
+  }
+
+  function closePicker(){
+    var overlay = document.getElementById('unifiedPagePicker');
+    if(overlay) overlay.classList.remove('show');
+  }
+
+  function jumpToSlide(index){
+    var list = getSlides();
+    if(index < 0 || index >= list.length) return;
+
+    if(typeof window.showSlide === 'function'){
+      window.showSlide(index);
+    }else{
+      for(var i = 0; i < list.length; i++){
+        list[i].classList.remove('active');
+      }
+      list[index].classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    updateIndexText();
+  }
+
+  function init(){
+    refreshSlides();
+    buildNav();
+    updateIndexText();
+
+    document.addEventListener('click', function(e){
+      if(
+        e.target.closest('.nav-btn') ||
+        e.target.closest('.go-btn') ||
+        e.target.closest('.check-btn')
+      ){
+        setTimeout(updateIndexText, 60);
+      }
+    }, true);
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  }else{
+    init();
+  }
+
+  window.openUnifiedPagePicker = openPicker;
+  window.closeUnifiedPagePicker = closePicker;
+})();
+</script>
+
+</body>
+</html>
