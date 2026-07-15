@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TOEIC Part 7 Reading - Lesson & Practice</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:relative;background:#eef4ff}
+.slide{width:100%;min-height:100vh;padding:56px 72px 120px;display:none;background:radial-gradient(circle at top left,rgba(59,130,246,.12),transparent 35%),radial-gradient(circle at bottom right,rgba(14,165,233,.12),transparent 35%),#fff}.slide.active{display:flex;flex-direction:column;animation:slideIn .35s ease}@keyframes slideIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.slide-label{display:inline-block;width:fit-content;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:700;font-size:15px;margin-bottom:18px}h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size:42px;line-height:1.15;color:#0f172a;margin-bottom:24px}h3{font-size:28px;color:#1e3a8a;margin-bottom:14px}p{font-size:23px;line-height:1.55;margin-bottom:14px}.content-area{max-width:1180px;margin-top:10px;padding-bottom:40px}.reveal{opacity:0;transform:translateY(18px);filter:blur(3px);transition:all .45s ease;pointer-events:none}.reveal.show{opacity:1;transform:translateY(0);filter:blur(0);pointer-events:auto}.intro-box{background:#f8fafc;border:2px solid #e2e8f0;border-radius:22px;padding:28px 32px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}
+.method-box{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:24px 28px;margin-top:20px}.method-box h3{color:#166534}.danger-box{background:#fff1f2;border:2px solid #fecdd3;border-radius:20px;padding:24px 28px;margin-top:20px}.danger-box h3{color:#be123c}.warning-box{background:#fff7ed;border:2px solid #fed7aa;color:#9a3412;border-radius:18px;padding:20px 24px;font-size:23px;line-height:1.45;margin-top:18px;font-weight:700}
+.steps{list-style:none;margin-top:12px}.steps li{font-size:22px;line-height:1.5;padding:9px 0 9px 38px;position:relative}.steps li::before{content:"✓";position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:#22c55e;color:white;font-size:17px;display:grid;place-items:center;font-weight:700}.danger-box .steps li::before{content:"!";background:#e11d48}
+.sample-box{background:#eff6ff;border-left:8px solid #2563eb;border-radius:18px;padding:26px 30px;margin-top:16px;box-shadow:0 12px 28px rgba(37,99,235,.12)}.sample-title{font-size:22px;font-weight:700;color:#1d4ed8;margin-bottom:10px}.question{font-size:31px;font-weight:700;color:#0f172a;margin-bottom:16px;line-height:1.32}.answer,.option{font-size:22px;padding:15px 16px;margin:8px 0;color:#334155;border:2px solid #dbeafe;border-radius:14px;background:#fff;transition:.25s ease;position:relative}.option{display:flex;align-items:center;gap:14px;cursor:pointer}.option:hover{border-color:#93c5fd;transform:translateY(-1px)}.quiz-slide.answer-locked .option{cursor:not-allowed;opacity:.78}.quiz-slide.answer-locked .option:hover{transform:none;border-color:#dbeafe}.quiz-slide.answer-locked .option input{cursor:not-allowed}.option input{width:20px;height:20px;accent-color:#2563eb}.option-letter{font-weight:700;color:#1d4ed8;min-width:28px}.option-vn{display:block;font-size:18px;color:#64748b;margin-top:4px;font-weight:700}.result-box{display:none}.result-box.show{display:block;animation:fadeUp .25s ease}.result-box.wrong-box{background:#fff1f2;border-color:#fecdd3}.result-box.wrong-box h3{color:#be123c}.result-box.no-answer .explain{display:none!important}.result-box.no-answer{background:#fff7ed!important;border-color:#fed7aa!important}.result-box.no-answer .result-title{margin-bottom:0!important}
+.control-bar{position:fixed;left:0;right:0;bottom:16px;z-index:100;display:flex;justify-content:center;align-items:center;gap:14px;pointer-events:none;flex-wrap:wrap;padding:0 12px}.go-btn,.check-btn,.nav-btn{pointer-events:auto;border:none;cursor:pointer;font-weight:700;transition:all .2s ease;box-shadow:0 8px 18px rgba(15,23,42,.18)}.go-btn{width:54px;height:54px;border-radius:50%;background:#2563eb;color:white;font-size:15px;letter-spacing:.5px}.go-btn:hover,.check-btn:hover{transform:scale(1.06);background:#1d4ed8}.check-btn{border-radius:999px;background:#2563eb;color:#fff;font-size:15px;letter-spacing:.5px;padding:13px 22px}.check-btn:disabled{opacity:.45;cursor:not-allowed}.nav-btn{border-radius:999px;padding:10px 16px;background:#e2e8f0;color:#0f172a;font-size:14px}.nav-btn:hover{background:#cbd5e1}.progress{position:fixed;top:24px!important;right:36px!important;bottom:auto!important;left:auto!important;font-size:16px;font-weight:700;color:#64748b;z-index:120;background:rgba(255,255,255,.85);padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 14px rgba(15,23,42,.08)}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:0%;transition:width .35s ease;z-index:130}.keyword{color:#2563eb;font-weight:700}.answer-key{font-weight:700;color:#15803d}.correct-text{color:#15803d}.wrong-text{color:#be123c}.big-word{font-size:66px;font-weight:700;color:#1d4ed8;letter-spacing:-2px;margin-bottom:12px}.score-box{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}.score-pill{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;padding:12px 18px;border-radius:999px;font-size:20px;font-weight:700}
+.photo-layout{display:grid;grid-template-columns:minmax(360px,520px) 1fr;gap:22px;align-items:start}.photo-frame{width:100%;background:#f8fafc;border:2px solid #dbeafe;border-radius:24px;overflow:hidden;box-shadow:0 16px 34px rgba(15,23,42,.12)}.image-stage{position:relative}.photo-frame svg{display:block;width:100%;height:auto}.photo-frame img.real-photo{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}.annotation-overlay.photo-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.annotation-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.annotation-line{stroke:#111827;stroke-width:2.8;stroke-linecap:round}.annotation-dot{fill:#111827}.annotation-note-box{fill:rgba(255,255,255,.96);stroke:#111827;stroke-width:1.6;rx:12;ry:12}.annotation-note-title{font-size:11px;font-weight:700;fill:#0f172a}.annotation-note-value{font-size:12px;font-weight:700;fill:#1e3a8a}.photo-caption{font-size:17px;color:#64748b;font-weight:700;padding:10px 14px;background:#fff;border-top:1px solid #e2e8f0}.photo-caption-mask{padding:14px 16px}.caption-meta{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-bottom:10px}.caption-tag{display:none!important}.peek-toggle{border:none;cursor:pointer;display:inline-grid;place-items:center;width:40px;height:40px;margin-left:auto;border-radius:999px;background:#0f172a;color:#fff;font-size:18px;font-weight:700;box-shadow:0 6px 14px rgba(15,23,42,.14);transition:all .18s ease}.peek-toggle:hover{transform:translateY(-1px)}.peek-toggle.active{background:#7c3aed}.peek-icon{font-size:16px;line-height:1}.caption-sentence{font-size:18px;line-height:1.52;color:#0f172a;font-weight:700;transition:filter .22s ease, opacity .22s ease;word-break:break-word}.caption-sentence.sentence-blur{filter:blur(6px);opacity:.72;user-select:none}.analysis-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.mini-card{background:#fff;border:2px solid #dbeafe;border-radius:18px;padding:16px 18px}.mini-card h4{font-size:20px;color:#1d4ed8;margin-bottom:8px}.mini-card p{font-size:19px;margin:0;color:#334155}.formula{font-size:clamp(27px,2.4vw,42px);font-weight:700;line-height:1.25;padding:18px 22px;margin:18px 0;background:#eff6ff;border:4px solid #93c5fd;border-radius:22px;color:#0f172a;text-align:center}
+
+.audio-btn{
+  border:none;cursor:pointer;display:inline-grid;place-items:center;
+  width:40px;height:40px;border-radius:999px;background:#2563eb;color:#fff;
+  font-size:18px;font-weight:700;box-shadow:0 6px 14px rgba(37,99,235,.18);
+  transition:all .18s ease;
+}
+.audio-btn:hover,.peek-toggle:hover{transform:translateY(-1px)}
+.audio-btn.playing{background:#16a34a}
+.option-text.option-blur{
+  filter:blur(6px);
+  opacity:.62;
+  user-select:none;
+  transition:filter .22s ease, opacity .22s ease;
+}
+.quiz-slide.answer-checked .option-text.option-blur{
+  filter:none;
+  opacity:1;
+  user-select:auto;
+}
+
+.translation-box{display:none;background:linear-gradient(135deg,#f8fafc,#eef6ff);border:2px solid #dbeafe;border-left:8px solid #60a5fa;border-radius:20px;padding:22px 26px;margin-top:16px;box-shadow:0 10px 24px rgba(37,99,235,.08);animation:fadeUp .25s ease}.translation-box.show{display:block}.translation-box h3{color:#1d4ed8;font-size:24px;margin-bottom:12px}.translation-item{background:#fff;border:1.5px solid #dbeafe;border-radius:14px;padding:12px 14px;font-size:20px;line-height:1.45;color:#334155;margin-top:8px}.translation-item b{color:#0f172a}.letter{color:#1d4ed8;font-weight:700;margin-right:6px}.audio-note{display:inline-block;background:#fef3c7;color:#92400e;border:1px solid #fde68a;border-radius:999px;padding:7px 12px;font-size:15px;font-weight:700;margin-left:8px}
+.progress-btn{border:none;cursor:pointer;pointer-events:auto}.progress-btn:hover{background:#eff6ff;color:#1d4ed8;transform:translateY(-1px)}.page-picker-overlay{position:fixed;inset:0;background:rgba(15,23,42,.42);z-index:300;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)}.page-picker-overlay.show{display:flex}.page-picker-panel{width:min(960px,96vw);max-height:84vh;overflow:auto;background:#fff;border-radius:26px;border:2px solid #dbeafe;box-shadow:0 24px 60px rgba(15,23,42,.24);padding:22px}.page-picker-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}.page-picker-head h3{margin:0;color:#0f172a;font-size:28px}.page-picker-head p{margin:6px 0 0;color:#64748b;font-size:17px;line-height:1.4}.page-picker-close{border:none;cursor:pointer;width:40px;height:40px;border-radius:999px;background:#e2e8f0;color:#0f172a;font-size:28px;line-height:1;font-weight:700}.page-picker-close:hover{background:#cbd5e1}.page-picker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}.page-jump-btn{border:2px solid #dbeafe;border-radius:16px;background:#f8fafc;color:#0f172a;padding:10px 8px;min-height:58px;cursor:pointer;text-align:left;transition:.18s ease;font-size:14px;font-weight:700;line-height:1.25}.page-jump-btn:hover{border-color:#93c5fd;background:#eff6ff;transform:translateY(-1px)}.page-jump-btn.active{border-color:#2563eb;background:#dbeafe;color:#1d4ed8}.page-jump-btn.correct-answer{border-color:#22c55e!important;background:#ecfdf5!important}.page-jump-btn.wrong-answer{border-color:#ef4444!important;background:#fff1f2!important}.page-jump-btn .page-no{display:block;font-size:18px;font-weight:700}.page-jump-btn .page-title{display:block;color:#64748b;font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.photo-layout{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}.slide{padding:36px 24px 130px}h1{font-size:34px}h2{font-size:31px}p,.answer,.steps li{font-size:19px}.question{font-size:24px}.big-word{font-size:44px}.go-btn{width:48px;height:48px;font-size:13px}.check-btn{padding:11px 16px;font-size:13px}.nav-btn{padding:9px 13px;font-size:13px}.progress{top:14px!important;right:14px!important;font-size:13px}.page-picker-panel{padding:18px;border-radius:20px}.page-picker-grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}.page-jump-btn{min-height:54px;font-size:12px}.page-picker-head h3{font-size:24px}.caption-meta{align-items:flex-start;flex-direction:column}.caption-sentence{font-size:16px}.annotation-note-title{font-size:10px}.annotation-note-value{font-size:11px}}
+
+.inline-audio-btn{
+  display:inline-grid;
+  vertical-align:middle;
+  margin-left:10px;
+  transform:translateY(-2px);
+}
+.inline-audio-btn:hover{transform:translateY(-3px)}
+.photo-caption,.photo-caption-mask,.caption-meta,.caption-sentence{display:none!important}
+
+
+/* ===== FIX v6: Practice layout từ trên xuống ===== */
+.quiz-slide .photo-layout{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:22px!important;
+  align-items:stretch!important;
+}
+.quiz-slide .photo-frame{
+  width:min(720px,100%)!important;
+  margin:0 auto!important;
+}
+.quiz-slide .practice-side{
+  width:100%!important;
+  max-width:980px!important;
+  margin:0 auto!important;
+}
+.quiz-slide .sample-box{
+  width:100%!important;
+  display:block!important;
+}
+.quiz-slide .question{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  flex-wrap:wrap!important;
+}
+.quiz-slide .option{
+  display:flex!important;
+}
+.option-text.option-blur{
+  filter:blur(6px);
+  opacity:.62;
+  user-select:none;
+  transition:filter .22s ease, opacity .22s ease;
+}
+.quiz-slide.answer-checked .option-text.option-blur{
+  filter:none;
+  opacity:1;
+  user-select:auto;
+}
+.inline-audio-btn{
+  display:inline-grid!important;
+  vertical-align:middle;
+  margin-left:8px;
+  transform:none!important;
+}
+.photo-caption,.photo-caption-mask,.caption-meta,.caption-sentence{
+  display:none!important;
+}
+
+
+/* ===== Practice annotation: box-only, top-left stacked ===== */
+.quiz-slide .annotation-overlay .annotation-line,
+.quiz-slide .annotation-overlay .annotation-dot{
+  display:none!important;
+}
+.quiz-slide .annotation-overlay .annotation-note-box{
+  fill:rgba(255,255,255,.96)!important;
+  stroke:#111827!important;
+  stroke-width:2.2!important;
+  rx:14!important;
+  ry:14!important;
+}
+.quiz-slide .annotation-overlay .annotation-note-title{
+  font-size:18px!important;
+  font-weight:700!important;
+  fill:#0f172a!important;
+}
+.quiz-slide .annotation-overlay .annotation-note-value{
+  font-size:20px!important;
+  font-weight:700!important;
+  fill:#1d4ed8!important;
+}
+.quiz-slide .annotation-overlay .annotation-step{
+  transform-box:fill-box;
+  transform-origin:center;
+}
+
+
+/* Practice no translation quick box */
+.quiz-slide .translation-box{display:none!important}
+
+/* ===== SAFE unified lesson nav v5: titled slide index + home, weight <= 700 ===== */
+.progress{
+  display:none!important;
+}
+.lesson-top-nav{
+  position:fixed;
+  top:18px;
+  right:24px;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
+  font-family:Arial,Helvetica,sans-serif;
+  pointer-events:none;
+}
+.lesson-top-nav button,
+.lesson-top-nav a{
+  pointer-events:auto;
+}
+.lesson-index-btn,
+.lesson-home-btn{
+  min-height:42px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 16px;
+  border:2px solid #dbeafe;
+  box-shadow:0 10px 24px rgba(15,23,42,.14);
+  backdrop-filter:blur(10px);
+  font-size:14px;
+  font-weight:700;
+  line-height:1;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .16s ease,background .16s ease,border-color .16s ease,box-shadow .16s ease;
+}
+.lesson-index-btn{
+  color:#1d4ed8;
+  background:linear-gradient(135deg,#eff6ff,#fff);
+}
+.lesson-home-btn{
+  color:#166534;
+  background:linear-gradient(135deg,#f0fdf4,#fff);
+  border-color:#bbf7d0;
+}
+.lesson-index-btn:hover,
+.lesson-home-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px rgba(37,99,235,.18);
+}
+.lesson-index-btn:hover{
+  background:#dbeafe;
+  border-color:#93c5fd;
+}
+.lesson-home-btn:hover{
+  background:#dcfce7;
+  border-color:#86efac;
+}
+.lesson-index-dot{
+  width:9px;
+  height:9px;
+  border-radius:999px;
+  background:#2563eb;
+  box-shadow:0 0 0 5px rgba(37,99,235,.12);
+}
+.lesson-home-icon{
+  font-size:15px;
+  line-height:1;
+}
+.unified-page-picker-overlay{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(15,23,42,.42);
+}
+.unified-page-picker-overlay.show{
+  display:flex;
+}
+.unified-page-picker-panel{
+  width:min(980px,96vw);
+  max-height:82vh;
+  overflow:auto;
+  background:#fff;
+  border:2px solid #dbeafe;
+  border-radius:26px;
+  box-shadow:0 28px 80px rgba(15,23,42,.30);
+  padding:22px;
+  animation:unifiedPanelPop .14s ease;
+}
+@keyframes unifiedPanelPop{
+  from{opacity:0;transform:translateY(10px) scale(.985)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.unified-page-picker-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:16px;
+  padding-bottom:14px;
+  border-bottom:2px solid #eff6ff;
+}
+.unified-page-picker-title{
+  margin:0;
+  color:#0f172a;
+  font-size:27px;
+  font-weight:700;
+  line-height:1.16;
+}
+.unified-page-picker-subtitle{
+  margin:6px 0 0;
+  color:#64748b;
+  font-size:15px;
+  font-weight:700;
+  line-height:1.4;
+}
+.unified-page-picker-close{
+  width:40px;
+  height:40px;
+  flex:0 0 40px;
+  border:none;
+  border-radius:999px;
+  background:#e2e8f0;
+  color:#0f172a;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  font-size:26px;
+  font-weight:700;
+  line-height:1;
+  transition:.16s ease;
+}
+.unified-page-picker-close:hover{
+  background:#cbd5e1;
+  transform:rotate(90deg);
+}
+.unified-page-picker-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:10px;
+}
+.unified-page-jump-btn{
+  border:2px solid #dbeafe;
+  background:#f8fafc;
+  color:#0f172a;
+  border-radius:17px;
+  padding:11px 12px;
+  min-height:74px;
+  cursor:pointer;
+  text-align:left;
+  transition:transform .14s ease,background .14s ease,border-color .14s ease,box-shadow .14s ease;
+}
+.unified-page-jump-btn:hover{
+  background:#eff6ff;
+  border-color:#93c5fd;
+  transform:translateY(-1px);
+  box-shadow:0 8px 18px rgba(37,99,235,.10);
+}
+.unified-page-jump-btn.active{
+  background:#dbeafe;
+  border-color:#2563eb;
+  box-shadow:0 10px 22px rgba(37,99,235,.18);
+}
+.unified-page-no{
+  display:block;
+  color:#1d4ed8;
+  font-size:17px;
+  font-weight:700;
+  margin-bottom:5px;
+}
+.unified-page-title{
+  display:block;
+  color:#475569;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.28;
+}
+.unified-page-jump-btn.active .unified-page-title{
+  color:#1e3a8a;
+}
+@media(max-width:768px){
+  .lesson-top-nav{
+    top:12px;
+    right:12px;
+    gap:7px;
+  }
+  .lesson-index-btn,
+  .lesson-home-btn{
+    min-height:38px;
+    padding:9px 11px;
+    font-size:12px;
+  }
+  .lesson-home-text{
+    display:none;
+  }
+  .unified-page-picker-overlay{
+    padding:14px;
+  }
+  .unified-page-picker-panel{
+    border-radius:20px;
+    padding:16px;
+  }
+  .unified-page-picker-title{
+    font-size:23px;
+  }
+  .unified-page-picker-grid{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .unified-page-jump-btn{
+    min-height:58px;
+    padding:10px;
+    border-radius:14px;
+  }
+  .unified-page-no{
+    font-size:16px;
+    margin-bottom:3px;
+  }
+  .unified-page-title{
+    font-size:12px;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="lesson-wrapper">
+<div class="top-line" id="topLine"></div>
+<button class="progress progress-btn" id="progressText" onclick="openPagePicker()" type="button" title="Chọn trang">1 / 1</button>
+<div id="slideMount"></div>
+<div class="page-picker-overlay" id="pagePicker" onclick="closePagePicker(event)">
+  <div class="page-picker-panel" role="dialog" aria-modal="true" aria-labelledby="pagePickerTitle">
+    <div class="page-picker-head"><div><h3 id="pagePickerTitle">Chọn trang</h3><p>Click để nhảy nhanh đến phần bài học hoặc câu luyện tập.</p></div><button class="page-picker-close" onclick="closePagePicker()" type="button">×</button></div>
+    <div class="page-picker-grid" id="pagePickerGrid"></div>
+  </div>
+</div>
+<div class="control-bar">
+<button class="nav-btn" onclick="prevSlide()" type="button">← PREV</button>
+<button class="go-btn" onclick="goReveal()" type="button">GO</button>
+<button class="check-btn" id="checkBtn" onclick="checkAnswer()" type="button">CHECK</button>
+<button class="nav-btn" onclick="nextSlide()" type="button">NEXT →</button>
+</div>
+</div>
+<script>
+function escapeHtml(str){return String(str ?? '').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));}
+
+const lessonBlocks = [
+  {
+    label:'PART 7 · OVERVIEW',
+    title:'TOEIC Part 7 Reading: đọc để tìm chứng cứ',
+    html:`<div class="content-area"><div class="big-word">Part 7</div><p>Part 7 kiểm tra khả năng đọc văn bản thực tế: email, notice, advertisement, article, chat, form, schedule, invoice, website, double/triple passages.</p><div class="intro-box reveal"><h3>Mục tiêu chính</h3><ul class="steps"><li>Không đọc lan man. Mỗi câu hỏi phải tìm được <span class="keyword">dòng chứng cứ</span>.</li><li>Nhận diện loại câu hỏi trước khi đọc sâu.</li><li>Làm từ câu dễ lấy điểm đến câu khó cần suy luận.</li><li>Với double/triple passages, luôn nối thông tin giữa các văn bản.</li></ul></div><div class="warning-box reveal">Nguyên tắc vàng: câu đúng không cần giống y chang bài đọc, nhưng phải paraphrase đúng ý từ bài đọc.</div></div>`
+  },
+  {
+    label:'ROADMAP',
+    title:'Thứ tự làm từ dễ đến khó',
+    html:`<div class="content-area"><div class="method-box reveal"><h3>Thang độ khó Part 7</h3><ul class="steps"><li>Dễ: câu hỏi chi tiết có keyword rõ.</li><li>Dễ-vừa: mục đích văn bản, người nhận/người gửi, chủ đề chính.</li><li>Vừa: NOT/TRUE, thông tin đúng-sai.</li><li>Khó: suy luận, ý ngụ ý, câu hỏi yêu cầu nối 2 văn bản.</li><li>Rất khó: sentence insertion, vocabulary in context, triple passages nhiều mốc thời gian.</li></ul></div><div class="danger-box reveal"><h3>Không nên làm</h3><ul class="steps"><li>Đọc hết bài rồi mới nhìn câu hỏi.</li><li>Chọn đáp án vì thấy từ khóa giống hệt nhưng sai ngữ cảnh.</li><li>Bỏ qua ngày tháng, người nói, chức vụ, điều kiện và ngoại lệ.</li></ul></div></div>`
+  },
+  {
+    label:'METHOD',
+    title:'Quy trình 4 bước cho mọi câu Part 7',
+    html:`<div class="content-area"><div class="formula reveal">Question type → Keyword → Evidence line → Paraphrase</div><div class="intro-box reveal"><h3>4 bước cố định</h3><ul class="steps"><li>Đọc câu hỏi trước, xác định nó hỏi gì.</li><li>Gạch keyword: tên người, ngày, số tiền, địa điểm, hành động.</li><li>Quay về bài đọc tìm vùng chứa keyword hoặc từ đồng nghĩa.</li><li>So đáp án với chứng cứ, loại bẫy sai chi tiết.</li></ul></div><div class="sample-box reveal"><div class="sample-title">Ví dụ rất ngắn</div><p><b>Text:</b> The shipment will arrive on Friday instead of Wednesday because of a supplier delay.</p><p><b>Question:</b> Why was the delivery postponed?</p><p><b>Correct idea:</b> Because the supplier was late.</p></div></div>`
+  }
+];
+
+const questionTypes = [
+  {
+    level:'LEVEL 1', title:'Câu hỏi chi tiết: tìm thông tin trực tiếp', short:'Detail',
+    idea:'Đây là dạng dễ nhất. Câu hỏi thường có keyword rõ như tên người, ngày, giờ, số tiền, địa điểm, sản phẩm.',
+    method:['Đọc câu hỏi và khoanh keyword.', 'Scan bài đọc để tìm keyword hoặc từ cùng nghĩa.', 'Đọc 1-2 câu xung quanh keyword.', 'Chọn đáp án khớp chứng cứ, không chọn đáp án chỉ có từ giống.'],
+    trap:['Đáp án đổi ngày/giờ/số tiền.', 'Đáp án lấy thông tin từ dòng khác nhưng không trả lời câu hỏi.', 'Keyword giống nhưng hành động sai.'],
+    example:{passage:'Notice: The staff meeting originally scheduled for Tuesday has been moved to Thursday at 3 P.M. in Conference Room B.', question:'When will the staff meeting take place?', options:['Tuesday at 3 P.M.','Thursday at 3 P.M.','Thursday at 9 A.M.','In Conference Room A'], answer:'B', explain:'Câu hỏi hỏi thời gian. Chứng cứ là moved to Thursday at 3 P.M.'}
+  },
+  {
+    level:'LEVEL 2', title:'Main idea / Purpose: văn bản này để làm gì?', short:'Purpose',
+    idea:'Dạng này hỏi mục đích hoặc chủ đề chung. Không cần đọc từng chi tiết ngay; hãy đọc mở đầu, tiêu đề, câu đầu và câu cuối.',
+    method:['Nhìn loại văn bản: email, notice, advertisement, article.', 'Đọc câu đầu để biết lý do viết.', 'Đọc câu cuối để biết hành động mong muốn.', 'Chọn đáp án bao quát, không quá hẹp.'],
+    trap:['Đáp án chỉ đúng một chi tiết nhỏ.', 'Đáp án nghe hợp lý nhưng không phải mục đích chính.', 'Nhầm thông báo với quảng cáo, nhầm complaint với request.'],
+    example:{passage:'E-mail: I am writing to remind all employees to submit their travel receipts by Friday so reimbursements can be processed before the end of the month.', question:'What is the purpose of the e-mail?', options:['To advertise a travel service','To request documents from employees','To announce a new hiring policy','To complain about late payments'], answer:'B', explain:'Cụm I am writing to remind... submit their travel receipts cho thấy mục đích là yêu cầu nộp chứng từ.'}
+  },
+  {
+    level:'LEVEL 3', title:'NOT / TRUE: kiểm tra đúng-sai từng lựa chọn', short:'True / Not',
+    idea:'Dạng này tốn thời gian vì phải kiểm tra nhiều đáp án. Hãy xử lý bằng cách tìm chứng cứ cho từng option, không đoán bằng cảm giác.',
+    method:['Đọc kỹ đề hỏi TRUE hay NOT true.', 'Xử từng đáp án một, đánh dấu đúng/sai bên cạnh.', 'Nếu gặp NOT, 3 đáp án đúng trong bài, 1 đáp án sai hoặc không được nói đến.', 'Đừng để chữ NOT làm bạn chọn ngược.'],
+    trap:['Quên chữ NOT/EXCEPT.', 'Đáp án không được nhắc đến nhưng nghe hợp lý.', 'Đáp án đổi điều kiện: only, all, before, after, must.'],
+    example:{passage:'The cafe is open from 7 A.M. to 6 P.M. Monday through Friday. On Saturdays, it closes at 2 P.M. It is closed on Sundays.', question:'What is NOT true about the cafe?', options:['It opens on weekdays.','It closes at 2 P.M. on Saturdays.','It is open on Sundays.','It opens at 7 A.M. on Mondays.'], answer:'C', explain:'Bài nói closed on Sundays, nên It is open on Sundays là sai.'}
+  },
+  {
+    level:'LEVEL 4', title:'Inference: suy luận có chứng cứ', short:'Inference',
+    idea:'Inference không phải đoán xa. Nó là kết luận hợp lý từ 1-2 câu trong bài. Chọn đáp án được chứng cứ hỗ trợ mạnh nhất.',
+    method:['Tìm vùng liên quan đến câu hỏi.', 'Hỏi: từ chi tiết này có thể kết luận điều gì chắc nhất?', 'Ưu tiên đáp án khiêm tốn, không quá tuyệt đối.', 'Loại đáp án vượt quá thông tin bài đọc.'],
+    trap:['Suy diễn theo đời sống thật nhưng bài không nói.', 'Đáp án dùng all/always/never quá mạnh.', 'Lấy chi tiết đúng nhưng kết luận sai.'],
+    example:{passage:'Ms. Chen, your presentation room has been changed to Room 204 because the projector in Room 110 is not working.', question:'What can be inferred about Room 110?', options:['It is larger than Room 204.','It has a problem with its equipment.','It is located on the second floor.','It will be closed permanently.'], answer:'B', explain:'Projector not working là vấn đề thiết bị. Không có chứng cứ cho larger, second floor hoặc permanently.'}
+  },
+  {
+    level:'LEVEL 5', title:'Vocabulary in context: nghĩa theo ngữ cảnh', short:'Vocabulary',
+    idea:'TOEIC thường hỏi một từ quen nhưng nghĩa trong bài khác nghĩa phổ biến. Đọc cả câu chứa từ và câu trước/sau.',
+    method:['Không dịch từ đơn lẻ ngay.', 'Đọc câu chứa từ cần hỏi.', 'Thử thay từng đáp án vào câu.', 'Chọn nghĩa làm câu vẫn hợp lý trong văn cảnh công việc.'],
+    trap:['Chọn nghĩa phổ biến nhất nhưng sai ngữ cảnh.', 'Không nhìn chủ ngữ và tân ngữ quanh từ.', 'Bỏ qua sắc thái positive/negative.'],
+    example:{passage:'The manager will address the issue during tomorrow’s staff meeting.', question:'The word "address" is closest in meaning to', options:['write a location','speak to','deal with','mail'], answer:'C', explain:'address the issue nghĩa là xử lý/vào việc với vấn đề, không phải địa chỉ.'}
+  },
+  {
+    level:'LEVEL 6', title:'Sentence insertion: chèn câu vào vị trí đúng', short:'Insertion',
+    idea:'Dạng này yêu cầu hiểu mạch văn. Hãy nhìn đại từ, từ nối, this/these/such, và quan hệ nguyên nhân-kết quả.',
+    method:['Đọc câu cần chèn, tìm từ nối hoặc đại từ.', 'Xác định câu trước phải giới thiệu được danh từ/ý đó.', 'Xác định câu sau phải tiếp tục mạch logic.', 'Chèn thử và đọc lại 3 câu liên tiếp.'],
+    trap:['Chỉ dựa vào keyword giống nhau.', 'Không kiểm tra đại từ this/they/it đang chỉ gì.', 'Bỏ qua however, therefore, as a result.'],
+    example:{passage:'[1] The company installed new printers last month. [2] Employees reported that the machines often jammed. [3] A technician will inspect them on Friday. [4] Replacement parts have already been ordered.', question:'Where should the sentence "This problem has slowed several departments." be placed?', options:['[1]','[2]','[3]','[4]'], answer:'C', explain:'This problem phải chỉ việc printers jammed ở câu [2], nên đặt sau [2], tức vị trí [3].'}
+  },
+  {
+    level:'LEVEL 7', title:'Double / Triple passages: nối thông tin nhiều văn bản', short:'Multiple texts',
+    idea:'Đây là nhóm khó nhất. Câu trả lời thường nằm ở việc nối tên, ngày, đơn hàng, sự kiện giữa 2-3 văn bản.',
+    method:['Đọc câu hỏi trước để biết cần nối thông tin nào.', 'Xác định mỗi văn bản đang đóng vai trò gì: email, receipt, schedule, reply.', 'Tạo cầu nối: tên người, số đơn hàng, ngày, sản phẩm.', 'Không trả lời nếu mới đọc một văn bản mà câu hỏi yêu cầu liên kết.'],
+    trap:['Chỉ đọc passage đầu và chọn vội.', 'Nhầm người gửi với người nhận.', 'Không kiểm tra ngày mới nhất hoặc thông tin cập nhật sau cùng.'],
+    example:{passage:'Text 1: An invoice shows Order 718 for 40 office chairs. Text 2: An e-mail says 10 chairs from Order 718 were damaged and will be replaced next week.', question:'What will happen next week?', options:['A new invoice will be issued.','Some chairs will be replaced.','The order will be canceled.','A payment will be refunded.'], answer:'B', explain:'Phải nối Order 718 ở invoice với e-mail. E-mail nói 10 chairs will be replaced next week.'}
+  }
+];
+
+const quizData = [
+  {title:'Detail question', passage:'E-mail: Please note that the product demonstration for the new scanner will begin at 10 A.M. in Room 305. All sales representatives should arrive ten minutes early to pick up the handouts.', question:'Where will the demonstration be held?', options:[['A','In Room 305'],['B','In the sales office'],['C','At 10 A.M.'],['D','Near the reception desk']], answer:'A', explain:'Câu hỏi hỏi Where. Chứng cứ: in Room 305.'},
+  {title:'Purpose question', passage:'Notice: Starting next Monday, employees must use their identification cards to enter the parking garage. Security staff will be available at the entrance to assist anyone who has trouble with the new system.', question:'What is the notice mainly about?', options:[['A','A change in parking access'],['B','A new employee training program'],['C','A security staff meeting'],['D','A garage cleaning schedule']], answer:'A', explain:'Notice nói từ thứ Hai phải dùng ID card để vào parking garage.'},
+  {title:'NOT question', passage:'Advertisement: The Lakeside Fitness Center offers yoga classes, swimming lessons, and personal training sessions. Members can use the sauna for free. The center is closed on national holidays.', question:'What is NOT mentioned as being offered by the center?', options:[['A','Yoga classes'],['B','Swimming lessons'],['C','Nutrition workshops'],['D','Personal training']], answer:'C', explain:'Bài có yoga, swimming, personal training; không nhắc nutrition workshops.'},
+  {title:'Inference question', passage:'Memo: Because several customers complained about long wait times, we will add two cashiers during the lunch period beginning tomorrow.', question:'What can be inferred about the store?', options:[['A','It has been too busy at a certain time of day'],['B','It will stop serving lunch'],['C','It recently hired a new manager'],['D','It received complaints about product quality']], answer:'A', explain:'Long wait times + add cashiers during lunch cho thấy giờ trưa quá đông.'},
+  {title:'Vocabulary question', passage:'The hotel will waive the late checkout fee for guests attending the conference.', question:'The word "waive" is closest in meaning to', options:[['A','increase'],['B','cancel'],['C','collect'],['D','explain']], answer:'B', explain:'waive a fee nghĩa là bỏ/miễn khoản phí.'},
+  {title:'Sentence insertion', passage:'[1] Our online ordering system was updated yesterday. [2] Some customers may need to reset their passwords before placing an order. [3] Customer service agents are prepared to help with this process. [4] We apologize for any inconvenience.', question:'Where should the sentence "This step should take less than two minutes." be placed?', options:[['A','[1]'],['B','[2]'],['C','[3]'],['D','[4]']], answer:'C', explain:'This step chỉ việc reset passwords ở câu [2], nên đặt sau [2], vị trí [3].'},
+  {title:'Double passage', passage:'Text 1 - Receipt: Order 4421, desk lamps, delivery date May 12. Text 2 - E-mail: The lamps from Order 4421 arrived with damaged shades. Replacements will be shipped on May 15.', question:'What problem is mentioned in the e-mail?', options:[['A','The order number is incorrect'],['B','The lamps arrived late'],['C','Some parts were damaged'],['D','The delivery address changed']], answer:'C', explain:'E-mail nói arrived with damaged shades. Đây là damaged parts.'},
+  {title:'Triple passage', passage:'Text 1 - Schedule: Training session, June 4, 9 A.M. Text 2 - E-mail: Ms. Patel cannot attend on June 4 because of a client visit. Text 3 - Reply: A recording will be sent to anyone absent from the session.', question:'What will Ms. Patel most likely receive?', options:[['A','A client invoice'],['B','A recording of the training'],['C','A new schedule for June 4'],['D','A travel reimbursement form']], answer:'B', explain:'Phải nối Text 2 Ms. Patel absent với Text 3 recording sent to anyone absent.'}
+];
+
+const slides = [];
+lessonBlocks.forEach(x=>slides.push({kind:'lesson', pageTitle:x.label, label:x.label, title:x.title, html:x.html}));
+questionTypes.forEach((t,idx)=>{
+  slides.push({kind:'lesson', pageTitle:t.short, label:t.level, title:t.title, html:`<div class="content-area"><p>${t.idea}</p><div class="method-box reveal"><h3>Cách làm</h3><ul class="steps">${t.method.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="danger-box reveal"><h3>Bẫy thường gặp</h3><ul class="steps">${t.trap.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`});
+  slides.push({kind:'example', pageTitle:`Example ${idx+1}`, label:`${t.level} · EXAMPLE`, title:`Ví dụ: ${t.short}`, html:`<div class="content-area"><div class="sample-box reveal show"><div class="sample-title">Passage</div><p>${t.example.passage}</p><div class="question">${t.example.question}</div>${t.example.options.map((o,i)=>`<div class="answer"><b>${String.fromCharCode(65+i)}.</b> ${o}</div>`).join('')}</div><div class="method-box reveal"><h3>Phân tích</h3><ul class="steps"><li>${t.example.explain}</li><li><span class="answer-key">Đáp án đúng: ${t.example.answer}</span></li></ul></div></div>`});
+});
+quizData.forEach((q,i)=>slides.push({kind:'quiz', pageTitle:`Practice ${i+1}`, label:'PART 7 · PRACTICE', title:`Practice ${i+1}: ${q.title}`, data:q}));
+slides.push({kind:'summary', pageTitle:'Summary', label:'TỔNG KẾT', title:'Checklist Part 7 Reading', html:`<div class="content-area"><div class="intro-box"><h3>Checklist trước khi chọn đáp án</h3><ul class="steps"><li>Đã xác định loại câu hỏi chưa?</li><li>Đã tìm được dòng chứng cứ chưa?</li><li>Đáp án có bị đổi ngày, số tiền, người, điều kiện không?</li><li>Nếu là inference, đáp án có suy quá xa không?</li><li>Nếu là double/triple, đã nối đúng văn bản chưa?</li></ul></div><div class="score-box reveal"><div class="score-pill" id="scorePill">Điểm Practice: đang tính...</div><div class="score-pill">8 câu luyện tập</div></div></div>`});
+
+let currentSlide=0;
+let checkedState={};
+let slideEls=[];
+
+function renderSlides(){
+  const mount=document.getElementById('slideMount');
+  mount.innerHTML=slides.map((s,idx)=>{
+    if(s.kind==='quiz') return renderQuizSlide(s,idx);
+    return `<section class="slide ${idx===0?'active':''}" data-index="${idx}"><span class="slide-label">${s.label}</span><h1>${s.title}</h1>${s.html}</section>`;
+  }).join('');
+  slideEls=[...document.querySelectorAll('.slide')];
+  renderPicker();
+  updateProgress();
+  showSlide(0);
+}
+
+function renderQuizSlide(s,idx){
+  const q=s.data;
+  return `<section class="slide quiz-slide" data-index="${idx}"><span class="slide-label">${s.label}</span><h1>${s.title}</h1><div class="content-area"><div class="sample-box reveal show"><div class="sample-title">Passage</div><p>${escapeHtml(q.passage)}</p><div class="question">${escapeHtml(q.question)}</div>${q.options.map(o=>`<label class="option"><input type="radio" name="quiz-${idx}" value="${o[0]}"><span class="option-letter">${o[0]}.</span><span class="option-text">${escapeHtml(o[1])}</span></label>`).join('')}</div><div class="result-box sample-box" id="result-${idx}"></div></div></section>`;
+}
+
+function renderPicker(){
+  const grid=document.getElementById('pagePickerGrid');
+  grid.innerHTML=slides.map((s,i)=>`<button class="page-jump-btn ${i===currentSlide?'active':''}" onclick="jumpToSlide(${i})" type="button"><span class="page-no">${i+1}</span><span class="page-title">${escapeHtml(s.pageTitle||s.label)}</span></button>`).join('');
+}
+function updateProgress(){
+  document.getElementById('progressText').textContent=(currentSlide+1)+' / '+slides.length;
+  document.getElementById('topLine').style.width=((currentSlide+1)/slides.length*100)+'%';
+  const isQuiz=slides[currentSlide]?.kind==='quiz';
+  document.getElementById('checkBtn').disabled=!isQuiz || !!checkedState[currentSlide];
+  renderPicker();
+}
+function showSlide(index){
+  currentSlide=Math.max(0,Math.min(index,slides.length-1));
+  slideEls.forEach(el=>el.classList.remove('active'));
+  slideEls[currentSlide].classList.add('active');
+  slideEls[currentSlide].querySelectorAll('.reveal').forEach((el,i)=>{ if(i===0) el.classList.add('show'); else el.classList.remove('show'); });
+  updateProgress();
+  updateScore();
+}
+function goReveal(){
+  const hidden=[...slideEls[currentSlide].querySelectorAll('.reveal:not(.show)')];
+  if(hidden.length) hidden[0].classList.add('show');
+  else nextSlide();
+}
+function nextSlide(){showSlide(currentSlide+1)}
+function prevSlide(){showSlide(currentSlide-1)}
+function jumpToSlide(i){closePagePicker();showSlide(i)}
+function openPagePicker(){document.getElementById('pagePicker').classList.add('show')}
+function closePagePicker(e){if(!e || e.target.id==='pagePicker' || e.target.classList.contains('page-picker-close'))document.getElementById('pagePicker').classList.remove('show')}
+
+function checkAnswer(){
+  const s=slides[currentSlide];
+  if(!s || s.kind!=='quiz' || checkedState[currentSlide]) return;
+  const selected=document.querySelector(`input[name="quiz-${currentSlide}"]:checked`);
+  const result=document.getElementById('result-'+currentSlide);
+  if(!selected){
+    result.className='result-box sample-box wrong-box no-answer show';
+    result.innerHTML='<h3 class="result-title">Chưa chọn đáp án</h3>';
+    return;
+  }
+  const isCorrect=selected.value===s.data.answer;
+  checkedState[currentSlide]={selected:selected.value,isCorrect};
+  slideEls[currentSlide].classList.add('answer-checked','answer-locked');
+  result.className='result-box sample-box '+(isCorrect?'show':'wrong-box show');
+  result.innerHTML=`<h3>${isCorrect?'Đúng rồi':'Chưa đúng'}</h3><p><b>Bạn chọn:</b> ${selected.value}</p><p><b>Đáp án đúng:</b> <span class="answer-key">${s.data.answer}</span></p><p>${escapeHtml(s.data.explain)}</p>`;
+  document.getElementById('checkBtn').disabled=true;
+  updateScore();
+}
+function updateScore(){
+  const pill=document.getElementById('scorePill');
+  if(!pill) return;
+  const done=Object.values(checkedState);
+  const correct=done.filter(x=>x.isCorrect).length;
+  pill.textContent='Điểm Practice: '+correct+' / '+quizData.length;
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight') nextSlide();
+  if(e.key==='ArrowLeft') prevSlide();
+  if(e.key==='Enter') goReveal();
+});
+renderSlides();
+</script>
+
+<script>
+/* ===== SAFE unified lesson nav v5: titled slide index + home, weight <= 700 ===== */
+(function(){
+  'use strict';
+
+  var SLIDE_TITLES = ["PART 7 · OVERVIEW · TOEIC Part 7 Reading: đọc để tìm chứng cứ", "ROADMAP · Thứ tự làm từ dễ đến khó", "METHOD · Quy trình 4 bước cho mọi câu Part 7", "TỔNG KẾT · Checklist Part 7 Reading", "LEVEL 1 · Câu hỏi chi tiết: tìm thông tin trực tiếp", "LEVEL 1 · EXAMPLE · Ví dụ: Detail", "LEVEL 2 · Main idea / Purpose: văn bản này để làm gì?", "LEVEL 2 · EXAMPLE · Ví dụ: Purpose", "LEVEL 3 · NOT / TRUE: kiểm tra đúng-sai từng lựa chọn", "LEVEL 3 · EXAMPLE · Ví dụ: True / Not", "LEVEL 4 · Inference: suy luận có chứng cứ", "LEVEL 4 · EXAMPLE · Ví dụ: Inference", "LEVEL 5 · Vocabulary in context: nghĩa theo ngữ cảnh", "LEVEL 5 · EXAMPLE · Ví dụ: Vocabulary", "LEVEL 6 · Sentence insertion: chèn câu vào vị trí đúng", "LEVEL 6 · EXAMPLE · Ví dụ: Insertion", "LEVEL 7 · Double / Triple passages: nối thông tin nhiều văn bản", "LEVEL 7 · EXAMPLE · Ví dụ: Multiple texts", "PART 7 · PRACTICE · Practice 1: Detail question", "PART 7 · PRACTICE · Practice 2: Purpose question", "PART 7 · PRACTICE · Practice 3: NOT question", "PART 7 · PRACTICE · Practice 4: Inference question", "PART 7 · PRACTICE · Practice 5: Vocabulary question", "PART 7 · PRACTICE · Practice 6: Sentence insertion", "PART 7 · PRACTICE · Practice 7: Double passage", "PART 7 · PRACTICE · Practice 8: Triple passage", "TỔNG KẾT · Checklist Part 7 Reading"];
+  var slides = [];
+  var pickerBuilt = false;
+
+  function refreshSlides(){
+    slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    return slides;
+  }
+
+  function getSlides(){
+    return slides.length ? slides : refreshSlides();
+  }
+
+  function getActiveIndex(){
+    var list = getSlides();
+    for(var i = 0; i < list.length; i++){
+      if(list[i].classList.contains('active')) return i;
+    }
+    return 0;
+  }
+
+  function escapeHtml(str){
+    return String(str || '').replace(/[&<>"']/g, function(s){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s];
+    });
+  }
+
+  function updateIndexText(){
+    var list = getSlides();
+    var active = getActiveIndex();
+    var txt = document.getElementById('lessonIndexText');
+    if(txt) txt.textContent = (active + 1) + ' / ' + Math.max(list.length, 1);
+
+    var current = document.querySelector('.unified-page-jump-btn.active');
+    if(current) current.classList.remove('active');
+
+    var next = document.querySelector('.unified-page-jump-btn[data-page="' + active + '"]');
+    if(next) next.classList.add('active');
+  }
+
+  function buildNav(){
+    if(document.getElementById('lessonTopNav')) return;
+
+    var nav = document.createElement('div');
+    nav.className = 'lesson-top-nav';
+    nav.id = 'lessonTopNav';
+    nav.innerHTML =
+      '<button class="lesson-index-btn" id="lessonIndexBtn" type="button" aria-label="Mở danh sách slide">' +
+        '<span class="lesson-index-dot" aria-hidden="true"></span>' +
+        '<span id="lessonIndexText">1 / 1</span>' +
+      '</button>' +
+      '<a class="lesson-home-btn" href="../index.html" aria-label="Về trang chủ">' +
+        '<span class="lesson-home-icon" aria-hidden="true">🏠</span>' +
+        '<span class="lesson-home-text">Trang chủ</span>' +
+      '</a>';
+
+    var overlay = document.createElement('div');
+    overlay.className = 'unified-page-picker-overlay';
+    overlay.id = 'unifiedPagePicker';
+    overlay.innerHTML =
+      '<div class="unified-page-picker-panel" role="dialog" aria-modal="true">' +
+        '<div class="unified-page-picker-head">' +
+          '<div>' +
+            '<h3 class="unified-page-picker-title">Chọn slide</h3>' +
+            '<p class="unified-page-picker-subtitle">Danh sách lấy từ tiêu đề / nhãn slide gốc.</p>' +
+          '</div>' +
+          '<button class="unified-page-picker-close" id="unifiedPagePickerClose" type="button" aria-label="Đóng">×</button>' +
+        '</div>' +
+        '<div class="unified-page-picker-grid" id="unifiedPagePickerGrid"></div>' +
+      '</div>';
+
+    document.body.appendChild(nav);
+    document.body.appendChild(overlay);
+
+    document.getElementById('lessonIndexBtn').onclick = openPicker;
+    document.getElementById('unifiedPagePickerClose').onclick = closePicker;
+
+    overlay.onclick = function(e){
+      if(e.target === overlay) closePicker();
+    };
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closePicker();
+    }, {passive:true});
+  }
+
+  function buildPickerOnce(){
+    if(pickerBuilt) return;
+
+    var grid = document.getElementById('unifiedPagePickerGrid');
+    if(!grid) return;
+
+    var list = getSlides();
+    var count = Math.max(list.length, SLIDE_TITLES.length);
+    var html = '';
+
+    for(var i = 0; i < count; i++){
+      var title = SLIDE_TITLES[i] || ('Slide ' + (i + 1));
+      html += '<button class="unified-page-jump-btn" type="button" data-page="' + i + '">' +
+        '<span class="unified-page-no">Slide ' + (i + 1) + '</span>' +
+        '<span class="unified-page-title">' + escapeHtml(title) + '</span>' +
+      '</button>';
+    }
+
+    grid.innerHTML = html;
+
+    grid.onclick = function(e){
+      var btn = e.target.closest('.unified-page-jump-btn');
+      if(!btn) return;
+
+      var index = parseInt(btn.getAttribute('data-page'), 10);
+      closePicker();
+      jumpToSlide(index);
+    };
+
+    pickerBuilt = true;
+  }
+
+  function openPicker(){
+    buildPickerOnce();
+    updateIndexText();
+    var overlay = document.getElementById('unifiedPagePicker');
+    if(overlay) overlay.classList.add('show');
+  }
+
+  function closePicker(){
+    var overlay = document.getElementById('unifiedPagePicker');
+    if(overlay) overlay.classList.remove('show');
+  }
+
+  function jumpToSlide(index){
+    var list = getSlides();
+    if(index < 0 || index >= list.length) return;
+
+    if(typeof window.showSlide === 'function'){
+      window.showSlide(index);
+    }else{
+      for(var i = 0; i < list.length; i++){
+        list[i].classList.remove('active');
+      }
+      list[index].classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    updateIndexText();
+  }
+
+  function init(){
+    refreshSlides();
+    buildNav();
+    updateIndexText();
+
+    document.addEventListener('click', function(e){
+      if(
+        e.target.closest('.nav-btn') ||
+        e.target.closest('.go-btn') ||
+        e.target.closest('.check-btn')
+      ){
+        setTimeout(updateIndexText, 60);
+      }
+    }, true);
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  }else{
+    init();
+  }
+
+  window.openUnifiedPagePicker = openPicker;
+  window.closeUnifiedPagePicker = closePicker;
+})();
+</script>
+
+</body>
+</html>

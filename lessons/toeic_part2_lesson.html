@@ -186,7 +186,7 @@
 
     .question {
       font-size: 32px;
-      font-weight: 800;
+      font-weight: 700;
       color: #0f172a;
       margin-bottom: 16px;
     }
@@ -199,7 +199,7 @@
 
     .correct {
       color: #15803d;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     .method-box {
@@ -277,7 +277,7 @@
       pointer-events: auto;
       border: none;
       cursor: pointer;
-      font-weight: 800;
+      font-weight: 700;
       transition: all 0.2s ease;
       box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
     }
@@ -336,12 +336,12 @@
 
     .keyword {
       color: #2563eb;
-      font-weight: 900;
+      font-weight: 700;
     }
 
     .big-word {
       font-size: 72px;
-      font-weight: 900;
+      font-weight: 700;
       color: #1d4ed8;
       letter-spacing: -2px;
       margin-bottom: 12px;
@@ -368,13 +368,13 @@
       padding: 14px 20px;
       border-radius: 16px;
       font-size: 24px;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     .arrow {
       color: #64748b;
       font-size: 28px;
-      font-weight: 900;
+      font-weight: 700;
     }
 
     @media (max-width: 768px) {
@@ -426,7 +426,8 @@
       }
     }
   
-/* ===== SAFE unified lesson nav v4: titled slide index + home ===== */
+
+/* ===== SAFE unified lesson nav v5: titled slide index + home, weight <= 700 ===== */
 .progress{
   display:none!important;
 }
@@ -459,7 +460,7 @@
   box-shadow:0 10px 24px rgba(15,23,42,.14);
   backdrop-filter:blur(10px);
   font-size:14px;
-  font-weight:900;
+  font-weight:700;
   line-height:1;
   text-decoration:none;
   cursor:pointer;
@@ -539,7 +540,7 @@
   margin:0;
   color:#0f172a;
   font-size:27px;
-  font-weight:1000;
+  font-weight:700;
   line-height:1.16;
 }
 .unified-page-picker-subtitle{
@@ -561,7 +562,7 @@
   display:grid;
   place-items:center;
   font-size:26px;
-  font-weight:900;
+  font-weight:700;
   line-height:1;
   transition:.16s ease;
 }
@@ -600,14 +601,14 @@
   display:block;
   color:#1d4ed8;
   font-size:17px;
-  font-weight:1000;
+  font-weight:700;
   margin-bottom:5px;
 }
 .unified-page-title{
   display:block;
   color:#475569;
   font-size:13px;
-  font-weight:800;
+  font-weight:700;
   line-height:1.28;
 }
 .unified-page-jump-btn.active .unified-page-title{
@@ -1213,8 +1214,11 @@
     updateProgress();
   </script>
 
+
+
+
 <script>
-/* ===== SAFE unified lesson nav v4: titled slide index + home ===== */
+/* ===== SAFE unified lesson nav v5: titled slide index + home, weight <= 700 ===== */
 (function(){
   'use strict';
 
@@ -1352,7 +1356,6 @@
     var list = getSlides();
     if(index < 0 || index >= list.length) return;
 
-    // Không patch showSlide. Không observer. Chỉ gọi đúng 1 lần khi chọn từ popup.
     if(typeof window.showSlide === 'function'){
       window.showSlide(index);
     }else{
