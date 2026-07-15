@@ -981,6 +981,75 @@ input,textarea{
 }
 </style>
 
+
+<style>
+/* ===== Practice game popup + automatic answer audio ===== */
+body.game-popup-open{overflow:hidden!important}
+.game-popup-backdrop{
+  position:fixed;
+  inset:0;
+  z-index:700;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  background:rgba(15,31,58,.58);
+  backdrop-filter:blur(9px);
+}
+.game-popup-backdrop.show{display:flex;animation:gameBackdropIn .18s ease}
+.game-popup-shell{
+  width:min(860px,100%);
+  max-height:calc(100vh - 36px);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  background:linear-gradient(180deg,#fafdff,#f6fbff);
+  border:2px solid #ddecff;
+  border-radius:32px;
+  box-shadow:0 30px 90px rgba(15,31,58,.30);
+  animation:gamePopupIn .2s ease;
+}
+.game-popup-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 16px;
+  border-bottom:2px solid #eaf2fc;
+  background:rgba(255,255,255,.92);
+}
+.game-popup-title{display:flex;align-items:center;gap:10px;min-width:0}
+.game-popup-title span{font-size:24px}
+.game-popup-title b{font-size:18px;color:#172033;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.game-popup-close{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  border:2px solid #ddecff;
+  border-radius:50%;
+  background:#fff;
+  color:#52627d;
+  font-size:25px;
+  line-height:1;
+  cursor:pointer;
+}
+.game-popup-close:hover{background:#fff0f4;border-color:#ffd0dc;color:#b51d43}
+.game-popup-content{overflow:auto;padding:18px}
+.game-popup-content .practice{display:block;margin-top:0}
+.game-popup-content .game-card{box-shadow:none}
+.feedback-auto-note{display:inline-flex;align-items:center;gap:7px;margin-left:6px;font-size:13px;opacity:.82}
+.feedback-auto-note:before{content:"🔊"}
+@keyframes gameBackdropIn{from{opacity:0}to{opacity:1}}
+@keyframes gamePopupIn{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:560px){
+  .game-popup-backdrop{padding:8px;align-items:stretch}
+  .game-popup-shell{max-height:none;height:calc(100dvh - 16px);border-radius:25px}
+  .game-popup-content{padding:12px}
+  .game-popup-content .game-card{padding:17px;border-radius:24px}
+  .game-popup-title b{font-size:16px}
+}
+</style>
+
 </head>
 <body>
 <div class="top-line"></div>
@@ -1159,8 +1228,19 @@ input,textarea{
           <span class="mode-copy"><b>Trò 2 · Gõ từ</b><span>Nhìn nghĩa, xem gợi ý dấu gạch rồi gõ chính xác từ.</span></span>
         </button>
       </div>
-      <div class="practice" id="practiceArea"></div>
     </section>
+
+    <div class="game-popup-backdrop" id="gamePopupBackdrop" role="presentation">
+      <div class="game-popup-shell" role="dialog" aria-modal="true" aria-labelledby="gamePopupTitle">
+        <div class="game-popup-head">
+          <div class="game-popup-title"><span>🎮</span><b id="gamePopupTitle">Luyện tập từ vựng</b></div>
+          <button class="game-popup-close" type="button" onclick="closePracticePopup()" aria-label="Đóng trò chơi">×</button>
+        </div>
+        <div class="game-popup-content">
+          <div class="practice" id="practiceArea"></div>
+        </div>
+      </div>
+    </div>
 
     <section class="view-panel" id="panel-history">
       <div class="panel-head">
@@ -1727,6 +1807,40 @@ function speakText(text){
     return false;
   }
 }
+function stopCurrentAudio(){
+  if(activeAudio){
+    try{activeAudio.pause();activeAudio.currentTime=0;}catch(e){}
+    activeAudio=null;
+  }
+  try{if('speechSynthesis' in window) window.speechSynthesis.cancel();}catch(e){}
+}
+function speakTextAndWait(text){
+  return new Promise(function(resolve){
+    const clean=String(text||'').trim();
+    if(!clean||!('speechSynthesis' in window)){resolve(false);return;}
+    stopCurrentAudio();
+    let finished=false;
+    const finish=function(ok){
+      if(finished) return;
+      finished=true;
+      clearTimeout(timer);
+      resolve(ok);
+    };
+    const estimated=Math.max(1800,Math.min(8500,1200+clean.length*105));
+    const timer=setTimeout(function(){finish(false);},estimated);
+    try{
+      const utter=new SpeechSynthesisUtterance(clean);
+      utter.lang='en-US';
+      utter.rate=.86;
+      utter.pitch=1;
+      const voice=pickEnglishVoice();
+      if(voice) utter.voice=voice;
+      utter.onend=function(){finish(true);};
+      utter.onerror=function(){finish(false);};
+      window.speechSynthesis.speak(utter);
+    }catch(e){finish(false);}
+  });
+}
 function canTryMediaUrl(url){
   const u=String(url||'').split('?')[0].toLowerCase();
   if(!u) return false;
@@ -1767,6 +1881,48 @@ async function playTextAudio(text,btn,knownUrl){
     setAudioButtonLoading(btn,false);
   }
 }
+async function playTextAudioAndWait(text,btn,knownUrl){
+  const clean=String(text||'').trim();
+  if(!clean) return false;
+  setAudioButtonLoading(btn,true);
+  stopCurrentAudio();
+  try{
+    if(/\s/.test(normalizeText(clean))){
+      return await speakTextAndWait(clean);
+    }
+    let url=knownUrl||cachedAudioUrl(clean)||'';
+    if(!url) url=await resolveAudioUrl(clean);
+    if(url&&canTryMediaUrl(url)){
+      const played=await new Promise(function(resolve){
+        let finished=false;
+        const finish=function(ok){
+          if(finished) return;
+          finished=true;
+          clearTimeout(timer);
+          resolve(ok);
+        };
+        const audio=new Audio(url);
+        activeAudio=audio;
+        const timer=setTimeout(function(){finish(false);},9000);
+        audio.onended=function(){finish(true);};
+        audio.onerror=function(){finish(false);};
+        audio.play().catch(function(){finish(false);});
+      });
+      if(played) return true;
+    }
+    return await speakTextAndWait(clean);
+  }catch(e){
+    return await speakTextAndWait(clean);
+  }finally{
+    setAudioButtonLoading(btn,false);
+  }
+}
+function playCurrentGameAudioAndWait(btn){
+  const item=game?currentItem():null;
+  if(!item) return Promise.resolve(false);
+  return playTextAudioAndWait(item.word,btn,item.audioUrl||'');
+}
+
 function findWordByScope(scope,id){
   const list=scope==='common'?commonWords:userWords;
   return list.find(function(x){return String(x.id)===String(id);});
@@ -2984,13 +3140,24 @@ function renderQuestionMeaning(text,part){
   return '<div class="question-meaning"><span class="question-part-pill">'+escapeHtml(label)+'</span><span class="question-meaning-text">'+escapeHtml(text)+'</span></div>';
 }
 function scrollPracticeCenter(extraDelay){
-  const target=document.querySelector('#practiceArea .game-card')||document.getElementById('practiceArea')||document.getElementById('panel-practice');
-  if(!target) return;
-  const run=function(){
-    target.scrollIntoView({behavior:'smooth',block:'center',inline:'nearest'});
-  };
+  const scroller=document.querySelector('.game-popup-content');
+  if(!scroller) return;
+  const run=function(){scroller.scrollTo({top:0,behavior:'smooth'});};
   requestAnimationFrame(run);
-  setTimeout(run, typeof extraDelay==='number'?extraDelay:90);
+  setTimeout(run,typeof extraDelay==='number'?extraDelay:90);
+}
+function openPracticePopup(){
+  const popup=document.getElementById('gamePopupBackdrop');
+  if(!popup) return;
+  popup.classList.add('show');
+  document.body.classList.add('game-popup-open');
+}
+function closePracticePopup(){
+  const popup=document.getElementById('gamePopupBackdrop');
+  if(popup) popup.classList.remove('show');
+  document.body.classList.remove('game-popup-open');
+  stopCurrentAudio();
+  if(game) game.answerToken=(game.answerToken||0)+1;
 }
 function startPractice(mode){
   showPanel('practice');
@@ -2999,10 +3166,12 @@ function startPractice(mode){
     cuteToast('Cần tick ít nhất 20 từ để luyện tập','warning');
     return;
   }
-  game={mode,items:shuffle(pool).slice(0,10),pool:pool,index:0,score:0,wrongs:[],answerLog:[],answered:false,historySaved:false};
+  stopCurrentAudio();
+  game={mode,items:shuffle(pool).slice(0,10),pool:pool,index:0,score:0,wrongs:[],answerLog:[],answered:false,historySaved:false,answerToken:0};
   document.getElementById('practiceArea').classList.add('show');
+  openPracticePopup();
   renderQuestion();
-  scrollPracticeCenter(180);
+  scrollPracticeCenter(80);
 }
 function currentItem(){return game.items[game.index];}
 function modeTitle(){return game.mode==='choice'?'Trò 1 · Chọn đáp án':'Trò 2 · Gõ đúng từ';}
@@ -3058,9 +3227,26 @@ function recordAnswer(item,ok,answer,gameLabel){
   });
 }
 
+async function handleAnswerAudioAndNext(ok,token){
+  await playCurrentGameAudioAndWait();
+  if(!game||token!==game.answerToken) return;
+  if(!document.getElementById('gamePopupBackdrop').classList.contains('show')) return;
+  if(ok) goToNextQuestion();
+}
+function goToNextQuestion(){
+  if(!game) return;
+  stopCurrentAudio();
+  game.answerToken=(game.answerToken||0)+1;
+  game.index++;
+  game.answered=false;
+  renderQuestion();
+  scrollPracticeCenter(80);
+}
 function answerChoice(btn,choice){
   if(!game||game.answered) return;
   game.answered=true;
+  game.answerToken=(game.answerToken||0)+1;
+  const token=game.answerToken;
   const item=currentItem();
   const ok=normalizeText(choice)===normalizeText(item.word);
   document.querySelectorAll('.choice').forEach(function(el){
@@ -3069,40 +3255,51 @@ function answerChoice(btn,choice){
     else if(el===btn) el.classList.add('wrong');
     el.disabled=true;
   });
-  if(ok){game.score++;recordAnswer(item,true,choice,'Trò 1');showFeedback(true,'Đúng rồi! +1 điểm '+feedbackAudioButtonHtml());}
-  else{
+  if(ok){
+    game.score++;
+    recordAnswer(item,true,choice,'Trò 1');
+    showFeedback(true,'Đúng rồi! +1 điểm <span class="feedback-auto-note">Đang đọc và sẽ tự chuyển câu</span>');
+  }else{
     recordAnswer(item,false,choice,'Trò 1');
     game.wrongs.push({game:'Trò 1',meaning:item._currentMeaning,correct:item.word,answer:choice});
     showFeedback(false,'Sai. Đáp án đúng là: <b>'+escapeHtml(item.word)+'</b> '+feedbackAudioButtonHtml());
+    addNextButton();
   }
-  addNextButton();
-  scrollPracticeCenter(100);
+  handleAnswerAudioAndNext(ok,token);
+  scrollPracticeCenter(80);
 }
 function answerTyping(e){
   e.preventDefault();
   if(!game||game.answered) return;
   game.answered=true;
+  game.answerToken=(game.answerToken||0)+1;
+  const token=game.answerToken;
   const item=currentItem();
   const answer=document.getElementById('typingAnswer').value;
   const ok=normalizeText(answer)===normalizeText(item.word);
-  if(ok){game.score++;recordAnswer(item,true,answer,'Trò 2');showFeedback(true,'Đúng rồi! +1 điểm '+feedbackAudioButtonHtml());}
-  else{
+  if(ok){
+    game.score++;
+    recordAnswer(item,true,answer,'Trò 2');
+    showFeedback(true,'Đúng rồi! +1 điểm <span class="feedback-auto-note">Đang đọc và sẽ tự chuyển câu</span>');
+  }else{
     recordAnswer(item,false,answer||'(bỏ trống)','Trò 2');
     game.wrongs.push({game:'Trò 2',meaning:item._currentMeaning,correct:item.word,answer:answer||'(bỏ trống)'});
     showFeedback(false,'Sai. Đáp án đúng là: <b>'+escapeHtml(item.word)+'</b> '+feedbackAudioButtonHtml());
+    addNextButton();
   }
   document.getElementById('typingAnswer').disabled=true;
-  addNextButton();
-  scrollPracticeCenter(100);
+  handleAnswerAudioAndNext(ok,token);
+  scrollPracticeCenter(80);
 }
 function addNextButton(){
-  const box=document.querySelector('.game-card');
+  const box=document.querySelector('#practiceArea .game-card');
+  if(!box||box.querySelector('.manual-next-btn')) return;
   const btn=document.createElement('button');
-  btn.className='btn';
+  btn.className='btn manual-next-btn';
   btn.type='button';
   btn.textContent=game.index===game.items.length-1?'Xem kết quả':'Câu tiếp theo';
   btn.style.marginTop='14px';
-  btn.onclick=function(){game.index++;game.answered=false;renderQuestion();scrollPracticeCenter(150);};
+  btn.onclick=goToNextQuestion;
   box.appendChild(btn);
 }
 function renderGameEnd(){
@@ -3110,7 +3307,7 @@ function renderGameEnd(){
   celebrateGreatScore();
   const percent=Math.round(game.score/game.items.length*100);
   const wrongHtml=game.wrongs.length?'<div class="wrong-list">'+game.wrongs.map(function(w,i){return '<div class="wrong-item"><b>Câu sai '+(i+1)+' · '+escapeHtml(w.game)+'</b><br>Nghĩa: '+escapeHtml(w.meaning)+'<br>Bạn trả lời: '+escapeHtml(w.answer)+'<br>Đáp án đúng: <b>'+escapeHtml(w.correct)+'</b></div>';}).join('')+'</div>':'<div class="status show ok">Không có câu sai. Rất tốt!</div>';
-  document.getElementById('practiceArea').innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">Hoàn thành</div><div class="progress-pill">'+game.score+' / '+game.items.length+' · '+percent+'%</div></div><div class="question-meaning">Kết quả luyện tập</div><p class="muted">Lịch sử luyện tập đã được lưu để bạn xem lại trong mục Lịch sử.</p><div class="actions"><button class="btn secondary" type="button" onclick="startPractice(selectedMode)">Luyện lại 10 từ khác</button><button class="btn" type="button" onclick="showPanel(\'history\')">Xem lịch sử</button></div>'+wrongHtml+'</div>';
+  document.getElementById('practiceArea').innerHTML='<div class="game-card"><div class="game-top"><div class="progress-pill">Hoàn thành</div><div class="progress-pill">'+game.score+' / '+game.items.length+' · '+percent+'%</div></div><div class="question-meaning">Kết quả luyện tập</div><p class="muted">Lịch sử luyện tập đã được lưu để bạn xem lại trong mục Lịch sử.</p><div class="actions"><button class="btn secondary" type="button" onclick="startPractice(selectedMode)">Luyện lại 10 từ khác</button><button class="btn" type="button" onclick="closePracticePopup();showPanel(\'history\')">Xem lịch sử</button></div>'+wrongHtml+'</div>';
   scrollPracticeCenter(180);
 }
 
@@ -3244,7 +3441,7 @@ function installAntiContentGuard(){
   });
   document.addEventListener('keydown',function(e){
     const key=String(e.key||'').toLowerCase();
-    if(e.key==='Escape') closePackagePanel();
+    if(e.key==='Escape'){closePackagePanel();closeDeletePackagePanel();closePracticePopup();}
     const editable=isEditableTarget(e.target);
     const blockedDev=e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['i','j','c'].includes(key));
     const blockedPage=e.ctrlKey&&['u','s','p'].includes(key);
