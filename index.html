@@ -252,7 +252,7 @@ body.show-practice .lesson-section-card{display:none!important}
   box-shadow:0 22px 48px rgba(37,99,235,.14),0 12px 30px rgba(15,23,42,.08);
 }
 .lesson-index-card:before{
-  content:"LESSON";
+  content:attr(data-badge);
   position:absolute;
   top:18px;
   right:18px;
@@ -282,6 +282,49 @@ body.show-practice .lesson-section-card{display:none!important}
   transform:translateY(-3px);
   border-color:#60a5fa;
 }
+
+
+.lesson-index-card.lesson-listening:before{
+  background:#ea580c;
+  box-shadow:0 10px 22px rgba(234,88,12,.20);
+}
+.lesson-index-card.lesson-listening{
+  border-color:#fed7aa;
+  background:
+    radial-gradient(circle at top right,rgba(251,146,60,.22),transparent 34%),
+    linear-gradient(145deg,#fff7ed 0%,#ffffff 58%,#f8fafc 100%);
+}
+.lesson-index-card.lesson-listening h2{color:#7c2d12}
+.lesson-index-card.lesson-listening .pill{background:#fff7ed;color:#9a3412;border-color:#fed7aa}
+.lesson-index-card.lesson-listening .btn{background:linear-gradient(135deg,#f97316,#2563eb)}
+
+.lesson-index-card.lesson-reading:before{
+  background:#0f766e;
+  box-shadow:0 10px 22px rgba(15,118,110,.20);
+}
+.lesson-index-card.lesson-reading{
+  border-color:#99f6e4;
+  background:
+    radial-gradient(circle at top right,rgba(20,184,166,.20),transparent 34%),
+    linear-gradient(145deg,#ecfdf5 0%,#ffffff 58%,#f8fafc 100%);
+}
+.lesson-index-card.lesson-reading h2{color:#134e4a}
+.lesson-index-card.lesson-reading .pill{background:#ecfdf5;color:#0f766e;border-color:#99f6e4}
+.lesson-index-card.lesson-reading .btn{background:linear-gradient(135deg,#0f766e,#2563eb)}
+
+.lesson-index-card.lesson-grammar:before{
+  background:#7c3aed;
+  box-shadow:0 10px 22px rgba(124,58,237,.20);
+}
+.lesson-index-card.lesson-grammar{
+  border-color:#ddd6fe;
+  background:
+    radial-gradient(circle at top right,rgba(124,58,237,.18),transparent 34%),
+    linear-gradient(145deg,#f5f3ff 0%,#ffffff 58%,#f8fafc 100%);
+}
+.lesson-index-card.lesson-grammar h2{color:#4c1d95}
+.lesson-index-card.lesson-grammar .pill{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe}
+.lesson-index-card.lesson-grammar .btn{background:linear-gradient(135deg,#7c3aed,#2563eb)}
 
 </style>
 </head>
@@ -319,68 +362,68 @@ body.show-practice .lesson-section-card{display:none!important}
     <div class="section-title" id="sectionTitle"><span class="section-dot"></span><span id="sectionTitleText">Practices</span></div>
     <div class="grid">
 
-      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part1-photos">
+      <article class="card lesson-card lesson-index-card lesson-section-card lesson-listening" data-lesson-id="lesson-part1-photos" data-badge="LISTENING">
         <h2>Part 1 Photos</h2>
         <p>Bài học Part 1: cách nhìn ảnh, bắt chủ thể, hành động và trạng ngữ trong hình.</p>
-        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 1</span><span class="pill">Photos</span></div>
-        <button class="btn" type="button" onclick="openLogin('part1_photos_lesson_practice.html')">Vào bài học</button>
+        <div class="pill-row"><span class="pill">Listening</span><span class="pill">Part 1</span><span class="pill">Photos</span></div>
+        <button class="btn" type="button" onclick="openLogin('lessons/part1_photos_lesson_practice.html')">Vào bài học</button>
       </article>
 
-      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part3-4-method">
+      <article class="card lesson-card lesson-index-card lesson-section-card lesson-listening" data-lesson-id="lesson-part3-4-method" data-badge="LISTENING">
         <h2>Part 3 + 4 Method</h2>
         <p>Bài học cách bắt keyword trong câu hỏi, option, hội thoại Part 3 và bài nói Part 4.</p>
-        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 3 + 4</span><span class="pill">Keyword</span></div>
-        <button class="btn" type="button" onclick="openLogin('toeic_part3_part4_method_practice.html')">Vào bài học</button>
+        <div class="pill-row"><span class="pill">Listening</span><span class="pill">Part 3 + 4</span><span class="pill">Keyword</span></div>
+        <button class="btn" type="button" onclick="openLogin('lessons/toeic_part3_part4_method_practice.html')">Vào bài học</button>
       </article>
 
       
-      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part5-cau-truc-cau">
+      <article class="card lesson-card lesson-index-card lesson-section-card lesson-grammar" data-lesson-id="lesson-part5-cau-truc-cau" data-badge="GRAMMAR">
         <h2>Part 5 - Cấu trúc câu</h2>
         <p>Bài học Part 5 về cấu trúc câu: xác định thành phần câu và vị trí cần điền.</p>
-        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 5</span><span class="pill">Cấu trúc câu</span></div>
-        <button class="btn" type="button" onclick="openLogin('part5-toeic-cau-cau-truc-cau_p2_gui.html')">Vào bài học</button>
+        <div class="pill-row"><span class="pill">Grammar</span><span class="pill">Part 5</span><span class="pill">Cấu trúc câu</span></div>
+        <button class="btn" type="button" onclick="openLogin('lessons/part5-toeic-cau-cau-truc-cau_p2_gui.html')">Vào bài học</button>
       </article>
 
-      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part5-chia-thi">
+      <article class="card lesson-card lesson-index-card lesson-section-card lesson-grammar" data-lesson-id="lesson-part5-chia-thi" data-badge="GRAMMAR">
         <h2>Part 5 - Chia thì</h2>
         <p>Bài học Part 5 về dấu hiệu thì, thời điểm và cách chọn dạng động từ phù hợp.</p>
-        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 5</span><span class="pill">Chia thì</span></div>
-        <button class="btn" type="button" onclick="openLogin('part5-toeic-cau-chia-thi_p2_gui_clean.html')">Vào bài học</button>
+        <div class="pill-row"><span class="pill">Grammar</span><span class="pill">Part 5</span><span class="pill">Chia thì</span></div>
+        <button class="btn" type="button" onclick="openLogin('lessons/part5-toeic-cau-chia-thi_p2_gui_clean.html')">Vào bài học</button>
       </article>
 
-      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part5-lien-gioi">
+      <article class="card lesson-card lesson-index-card lesson-section-card lesson-grammar" data-lesson-id="lesson-part5-lien-gioi" data-badge="GRAMMAR">
         <h2>Part 5 - Liên từ / Giới từ</h2>
         <p>Bài học Part 5 về cách phân biệt liên từ, giới từ và các cụm nối thường gặp.</p>
-        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 5</span><span class="pill">Liên từ / Giới từ</span></div>
-        <button class="btn" type="button" onclick="openLogin('part5-toeic-cau-lien-gioi_p2_gui_clean.html')">Vào bài học</button>
+        <div class="pill-row"><span class="pill">Grammar</span><span class="pill">Part 5</span><span class="pill">Liên từ / Giới từ</span></div>
+        <button class="btn" type="button" onclick="openLogin('lessons/part5-toeic-cau-lien-gioi_p2_gui_clean.html')">Vào bài học</button>
       </article>
 
-      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part5-menh-de-quan-he">
+      <article class="card lesson-card lesson-index-card lesson-section-card lesson-grammar" data-lesson-id="lesson-part5-menh-de-quan-he" data-badge="GRAMMAR">
         <h2>Part 5 - Mệnh đề quan hệ</h2>
         <p>Bài học Part 5 về who, which, that, where, when và cách nhận diện mệnh đề quan hệ.</p>
-        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 5</span><span class="pill">Mệnh đề quan hệ</span></div>
-        <button class="btn" type="button" onclick="openLogin('part5-toeic-cau-menh-de-quan-he_p2_gui_clean.html')">Vào bài học</button>
+        <div class="pill-row"><span class="pill">Grammar</span><span class="pill">Part 5</span><span class="pill">Mệnh đề quan hệ</span></div>
+        <button class="btn" type="button" onclick="openLogin('lessons/part5-toeic-cau-menh-de-quan-he_p2_gui_clean.html')">Vào bài học</button>
       </article>
 
-      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part5-tu-loai">
+      <article class="card lesson-card lesson-index-card lesson-section-card lesson-grammar" data-lesson-id="lesson-part5-tu-loai" data-badge="GRAMMAR">
         <h2>Part 5 - Từ loại</h2>
         <p>Bài học Part 5 về noun, verb, adjective, adverb và cách nhìn vị trí trong câu.</p>
-        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 5</span><span class="pill">Từ loại</span></div>
-        <button class="btn" type="button" onclick="openLogin('part5-toeic-cau-tu-loai_p2_gui_clean.html')">Vào bài học</button>
+        <div class="pill-row"><span class="pill">Grammar</span><span class="pill">Part 5</span><span class="pill">Từ loại</span></div>
+        <button class="btn" type="button" onclick="openLogin('lessons/part5-toeic-cau-tu-loai_p2_gui_clean.html')">Vào bài học</button>
       </article>
 
-      <article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part5-tu-vung">
+      <article class="card lesson-card lesson-index-card lesson-section-card lesson-reading" data-lesson-id="lesson-part5-tu-vung" data-badge="READING">
         <h2>Part 5 - Từ vựng</h2>
         <p>Bài học Part 5 về cách chọn từ theo nghĩa, collocation và ngữ cảnh câu.</p>
-        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 5</span><span class="pill">Từ vựng</span></div>
-        <button class="btn" type="button" onclick="openLogin('part5-toeic-cau-tu-vung_p2_gui_clean.html')">Vào bài học</button>
+        <div class="pill-row"><span class="pill">Reading</span><span class="pill">Part 5</span><span class="pill">Từ vựng</span></div>
+        <button class="btn" type="button" onclick="openLogin('lessons/part5-toeic-cau-tu-vung_p2_gui_clean.html')">Vào bài học</button>
       </article>
 
-<article class="card lesson-card lesson-index-card lesson-section-card" data-lesson-id="lesson-part7-reading">
+<article class="card lesson-card lesson-index-card lesson-section-card lesson-reading" data-lesson-id="lesson-part7-reading" data-badge="READING">
         <h2>Part 7 Reading</h2>
         <p>Bài học đọc hiểu Part 7: cách đọc câu hỏi, tìm đoạn chứa đáp án và xử lý bẫy paraphrase.</p>
-        <div class="pill-row"><span class="pill">Lesson</span><span class="pill">Part 7</span><span class="pill">Reading</span></div>
-        <button class="btn" type="button" onclick="openLogin('part7_reading_lesson_practice.html')">Vào bài học</button>
+        <div class="pill-row"><span class="pill">Reading</span><span class="pill">Part 7</span><span class="pill">Reading</span></div>
+        <button class="btn" type="button" onclick="openLogin('lessons/part7_reading_lesson_practice.html')">Vào bài học</button>
       </article>
 
 
