@@ -879,8 +879,32 @@ function switchIndexSection(section){
   if(title) title.textContent = isLesson ? 'Lessons' : 'Practices';
 }
 
+  function getInitialIndexSection(){
+    const hash = (window.location.hash || '').toLowerCase();
+    const query = new URLSearchParams(window.location.search);
+    const tab = (query.get('tab') || query.get('section') || '').toLowerCase();
+
+    if(hash === '#lessons' || tab === 'lessons' || tab === 'lesson'){
+      return 'lessons';
+    }
+
+    if(hash === '#practices' || hash === '#practice' || tab === 'practices' || tab === 'practice'){
+      return 'practice';
+    }
+
+    return 'practice';
+  }
+
+  window.addEventListener('hashchange', function(){
+    const section = getInitialIndexSection();
+    if(section === 'lessons' || section === 'practice'){
+      switchIndexSection(section);
+    }
+  });
+
+
 const params=new URLSearchParams(location.search);if(params.get('next')) openLogin(params.get('next'));
-switchIndexSection('practice');
+switchIndexSection(getInitialIndexSection());
 updateRememberedStudent();
 loadLessonLocks();
 </script>
