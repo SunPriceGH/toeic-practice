@@ -14,7 +14,7 @@ body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:rela
 .home-btn{background:linear-gradient(135deg,#0f172a,#334155)!important;color:#fff!important}
 .home-btn:hover{filter:brightness(1.08)}
 
-/* ===== SAFE unified lesson nav: index + home, no showSlide patch ===== */
+/* ===== SAFE unified lesson nav v4: titled slide index + home ===== */
 .progress{
   display:none!important;
 }
@@ -100,7 +100,7 @@ body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:rela
   display:flex;
 }
 .unified-page-picker-panel{
-  width:min(880px,96vw);
+  width:min(980px,96vw);
   max-height:82vh;
   overflow:auto;
   background:#fff;
@@ -159,20 +159,18 @@ body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:rela
 }
 .unified-page-picker-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(64px,1fr));
-  gap:8px;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:10px;
 }
 .unified-page-jump-btn{
   border:2px solid #dbeafe;
   background:#f8fafc;
-  color:#1d4ed8;
-  border-radius:15px;
-  padding:10px 8px;
-  min-height:48px;
+  color:#0f172a;
+  border-radius:17px;
+  padding:11px 12px;
+  min-height:74px;
   cursor:pointer;
-  text-align:center;
-  font-size:16px;
-  font-weight:1000;
+  text-align:left;
   transition:transform .14s ease,background .14s ease,border-color .14s ease,box-shadow .14s ease;
 }
 .unified-page-jump-btn:hover{
@@ -182,10 +180,26 @@ body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:rela
   box-shadow:0 8px 18px rgba(37,99,235,.10);
 }
 .unified-page-jump-btn.active{
-  background:#2563eb;
+  background:#dbeafe;
   border-color:#2563eb;
-  color:#fff;
   box-shadow:0 10px 22px rgba(37,99,235,.18);
+}
+.unified-page-no{
+  display:block;
+  color:#1d4ed8;
+  font-size:17px;
+  font-weight:1000;
+  margin-bottom:5px;
+}
+.unified-page-title{
+  display:block;
+  color:#475569;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.28;
+}
+.unified-page-jump-btn.active .unified-page-title{
+  color:#1e3a8a;
 }
 @media(max-width:768px){
   .lesson-top-nav{
@@ -213,14 +227,20 @@ body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:rela
     font-size:23px;
   }
   .unified-page-picker-grid{
-    grid-template-columns:repeat(auto-fill,minmax(52px,1fr));
-    gap:7px;
+    grid-template-columns:1fr;
+    gap:8px;
   }
   .unified-page-jump-btn{
-    min-height:42px;
-    padding:8px 5px;
-    border-radius:13px;
-    font-size:14px;
+    min-height:58px;
+    padding:10px;
+    border-radius:14px;
+  }
+  .unified-page-no{
+    font-size:16px;
+    margin-bottom:3px;
+  }
+  .unified-page-title{
+    font-size:12px;
   }
 }
 
@@ -319,10 +339,11 @@ function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
 </script>
 
 <script>
-/* ===== SAFE unified lesson nav: index + home, no showSlide patch ===== */
+/* ===== SAFE unified lesson nav v4: titled slide index + home ===== */
 (function(){
   'use strict';
 
+  var SLIDE_TITLES = ["TOEIC Part 5 · Câu chia thì", "1. Tổng quan · Câu chia thì là câu thế nào?", "2. Quy trình · Cách làm gồm 3 bước", "Bước 1 · Tìm trạng từ thời gian", "Ví dụ 1 · Adv thời gian → chọn thì", "Ví dụ 2 · Currently → hiện tại tiếp diễn", "Bước 2 · Hòa hợp chủ-vị", "Ví dụ 3 · Chủ ngữ số ít", "Ví dụ 4 · Chủ ngữ số nhiều", "Ví dụ 5 · Bị động", "Ví dụ 6 · Chủ động", "So sánh · Cùng một động từ, khác nghĩa", "Mini Practice · Luyện nhanh", "Tổng kết · Công thức xử lý câu chia thì"];
   var slides = [];
   var pickerBuilt = false;
 
@@ -341,6 +362,12 @@ function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
       if(list[i].classList.contains('active')) return i;
     }
     return 0;
+  }
+
+  function escapeHtml(str){
+    return String(str || '').replace(/[&<>"']/g, function(s){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s];
+    });
   }
 
   function updateIndexText(){
@@ -380,7 +407,7 @@ function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
         '<div class="unified-page-picker-head">' +
           '<div>' +
             '<h3 class="unified-page-picker-title">Chọn slide</h3>' +
-            '<p class="unified-page-picker-subtitle">Chọn nhanh theo số slide.</p>' +
+            '<p class="unified-page-picker-subtitle">Danh sách lấy từ tiêu đề / nhãn slide gốc.</p>' +
           '</div>' +
           '<button class="unified-page-picker-close" id="unifiedPagePickerClose" type="button" aria-label="Đóng">×</button>' +
         '</div>' +
@@ -390,13 +417,8 @@ function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
     document.body.appendChild(nav);
     document.body.appendChild(overlay);
 
-    document.getElementById('lessonIndexBtn').onclick = function(){
-      openPicker();
-    };
-
-    document.getElementById('unifiedPagePickerClose').onclick = function(){
-      closePicker();
-    };
+    document.getElementById('lessonIndexBtn').onclick = openPicker;
+    document.getElementById('unifiedPagePickerClose').onclick = closePicker;
 
     overlay.onclick = function(e){
       if(e.target === overlay) closePicker();
@@ -414,9 +436,15 @@ function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
     if(!grid) return;
 
     var list = getSlides();
+    var count = Math.max(list.length, SLIDE_TITLES.length);
     var html = '';
-    for(var i = 0; i < list.length; i++){
-      html += '<button class="unified-page-jump-btn" type="button" data-page="' + i + '">' + (i + 1) + '</button>';
+
+    for(var i = 0; i < count; i++){
+      var title = SLIDE_TITLES[i] || ('Slide ' + (i + 1));
+      html += '<button class="unified-page-jump-btn" type="button" data-page="' + i + '">' +
+        '<span class="unified-page-no">Slide ' + (i + 1) + '</span>' +
+        '<span class="unified-page-title">' + escapeHtml(title) + '</span>' +
+      '</button>';
     }
 
     grid.innerHTML = html;
@@ -449,7 +477,7 @@ function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
     var list = getSlides();
     if(index < 0 || index >= list.length) return;
 
-    // Không patch showSlide. Chỉ gọi đúng 1 lần khi user chọn từ popup.
+    // Không patch showSlide. Không observer. Chỉ gọi đúng 1 lần khi chọn từ popup.
     if(typeof window.showSlide === 'function'){
       window.showSlide(index);
     }else{
@@ -468,7 +496,6 @@ function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
     buildNav();
     updateIndexText();
 
-    // Chỉ update text sau các nút điều hướng sẵn có. Không gọi showSlide, không observer.
     document.addEventListener('click', function(e){
       if(
         e.target.closest('.nav-btn') ||

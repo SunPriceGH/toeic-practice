@@ -151,7 +151,7 @@
 @media print{.control-audio.native-audio-wrap{display:none!important}}
 
 
-/* ===== SAFE unified lesson nav: index + home, no showSlide patch ===== */
+/* ===== SAFE unified lesson nav v4: titled slide index + home ===== */
 .progress{
   display:none!important;
 }
@@ -237,7 +237,7 @@
   display:flex;
 }
 .unified-page-picker-panel{
-  width:min(880px,96vw);
+  width:min(980px,96vw);
   max-height:82vh;
   overflow:auto;
   background:#fff;
@@ -296,20 +296,18 @@
 }
 .unified-page-picker-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(64px,1fr));
-  gap:8px;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:10px;
 }
 .unified-page-jump-btn{
   border:2px solid #dbeafe;
   background:#f8fafc;
-  color:#1d4ed8;
-  border-radius:15px;
-  padding:10px 8px;
-  min-height:48px;
+  color:#0f172a;
+  border-radius:17px;
+  padding:11px 12px;
+  min-height:74px;
   cursor:pointer;
-  text-align:center;
-  font-size:16px;
-  font-weight:1000;
+  text-align:left;
   transition:transform .14s ease,background .14s ease,border-color .14s ease,box-shadow .14s ease;
 }
 .unified-page-jump-btn:hover{
@@ -319,10 +317,26 @@
   box-shadow:0 8px 18px rgba(37,99,235,.10);
 }
 .unified-page-jump-btn.active{
-  background:#2563eb;
+  background:#dbeafe;
   border-color:#2563eb;
-  color:#fff;
   box-shadow:0 10px 22px rgba(37,99,235,.18);
+}
+.unified-page-no{
+  display:block;
+  color:#1d4ed8;
+  font-size:17px;
+  font-weight:1000;
+  margin-bottom:5px;
+}
+.unified-page-title{
+  display:block;
+  color:#475569;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.28;
+}
+.unified-page-jump-btn.active .unified-page-title{
+  color:#1e3a8a;
 }
 @media(max-width:768px){
   .lesson-top-nav{
@@ -350,14 +364,20 @@
     font-size:23px;
   }
   .unified-page-picker-grid{
-    grid-template-columns:repeat(auto-fill,minmax(52px,1fr));
-    gap:7px;
+    grid-template-columns:1fr;
+    gap:8px;
   }
   .unified-page-jump-btn{
-    min-height:42px;
-    padding:8px 5px;
-    border-radius:13px;
-    font-size:14px;
+    min-height:58px;
+    padding:10px;
+    border-radius:14px;
+  }
+  .unified-page-no{
+    font-size:16px;
+    margin-bottom:3px;
+  }
+  .unified-page-title{
+    font-size:12px;
   }
 }
 
@@ -1347,10 +1367,11 @@
   </script>
 
 <script>
-/* ===== SAFE unified lesson nav: index + home, no showSlide patch ===== */
+/* ===== SAFE unified lesson nav v4: titled slide index + home ===== */
 (function(){
   'use strict';
 
+  var SLIDE_TITLES = ["TOEIC Listening Part 2 Practice · Mini Test Part 2: WH, Yes/No, Tag, Choice", "WH Questions · Question 1 · Câu 1", "WH Questions · Question 2 · Câu 2", "WH Questions · Question 3 · Câu 3", "WH Questions · Question 4 · Câu 4", "WH Questions · Question 5 · Câu 5", "WH Questions · Question 6 · Câu 6", "WH Questions · Question 7 · Câu 7", "WH Questions · Question 8 · Câu 8", "WH Questions · Question 9 · Câu 9", "WH Questions · Question 10 · Câu 10", "WH Questions · Question 11 · Câu 11", "WH Questions · Question 12 · Câu 12", "WH Questions · Question 13 · Câu 13", "WH Questions · Question 14 · Câu 14", "WH Questions · Question 15 · Câu 15", "WH Questions · Question 16 · Câu 16", "WH Questions · Question 17 · Câu 17", "WH Questions · Question 18 · Câu 18", "WH Questions · Question 19 · Câu 19", "WH Questions · Question 20 · Câu 20", "Yes / No Questions · Question 21 · Câu 21", "Yes / No Questions · Question 22 · Câu 22", "Yes / No Questions · Question 23 · Câu 23", "Yes / No Questions · Question 24 · Câu 24", "Yes / No Questions · Question 25 · Câu 25", "Yes / No Questions · Question 26 · Câu 26", "Yes / No Questions · Question 27 · Câu 27", "Yes / No Questions · Question 28 · Câu 28", "Yes / No Questions · Question 29 · Câu 29", "Yes / No Questions · Question 30 · Câu 30", "Tag Questions · Question 31 · Câu 31", "Tag Questions · Question 32 · Câu 32", "Tag Questions · Question 33 · Câu 33", "Tag Questions · Question 34 · Câu 34", "Tag Questions · Question 35 · Câu 35", "Choice Questions · Question 36 · Câu 36", "Choice Questions · Question 37 · Câu 37", "Choice Questions · Question 38 · Câu 38", "Choice Questions · Question 39 · Câu 39", "Choice Questions · Question 40 · Câu 40"];
   var slides = [];
   var pickerBuilt = false;
 
@@ -1369,6 +1390,12 @@
       if(list[i].classList.contains('active')) return i;
     }
     return 0;
+  }
+
+  function escapeHtml(str){
+    return String(str || '').replace(/[&<>"']/g, function(s){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s];
+    });
   }
 
   function updateIndexText(){
@@ -1408,7 +1435,7 @@
         '<div class="unified-page-picker-head">' +
           '<div>' +
             '<h3 class="unified-page-picker-title">Chọn slide</h3>' +
-            '<p class="unified-page-picker-subtitle">Chọn nhanh theo số slide.</p>' +
+            '<p class="unified-page-picker-subtitle">Danh sách lấy từ tiêu đề / nhãn slide gốc.</p>' +
           '</div>' +
           '<button class="unified-page-picker-close" id="unifiedPagePickerClose" type="button" aria-label="Đóng">×</button>' +
         '</div>' +
@@ -1418,13 +1445,8 @@
     document.body.appendChild(nav);
     document.body.appendChild(overlay);
 
-    document.getElementById('lessonIndexBtn').onclick = function(){
-      openPicker();
-    };
-
-    document.getElementById('unifiedPagePickerClose').onclick = function(){
-      closePicker();
-    };
+    document.getElementById('lessonIndexBtn').onclick = openPicker;
+    document.getElementById('unifiedPagePickerClose').onclick = closePicker;
 
     overlay.onclick = function(e){
       if(e.target === overlay) closePicker();
@@ -1442,9 +1464,15 @@
     if(!grid) return;
 
     var list = getSlides();
+    var count = Math.max(list.length, SLIDE_TITLES.length);
     var html = '';
-    for(var i = 0; i < list.length; i++){
-      html += '<button class="unified-page-jump-btn" type="button" data-page="' + i + '">' + (i + 1) + '</button>';
+
+    for(var i = 0; i < count; i++){
+      var title = SLIDE_TITLES[i] || ('Slide ' + (i + 1));
+      html += '<button class="unified-page-jump-btn" type="button" data-page="' + i + '">' +
+        '<span class="unified-page-no">Slide ' + (i + 1) + '</span>' +
+        '<span class="unified-page-title">' + escapeHtml(title) + '</span>' +
+      '</button>';
     }
 
     grid.innerHTML = html;
@@ -1477,7 +1505,7 @@
     var list = getSlides();
     if(index < 0 || index >= list.length) return;
 
-    // Không patch showSlide. Chỉ gọi đúng 1 lần khi user chọn từ popup.
+    // Không patch showSlide. Không observer. Chỉ gọi đúng 1 lần khi chọn từ popup.
     if(typeof window.showSlide === 'function'){
       window.showSlide(index);
     }else{
@@ -1496,7 +1524,6 @@
     buildNav();
     updateIndexText();
 
-    // Chỉ update text sau các nút điều hướng sẵn có. Không gọi showSlide, không observer.
     document.addEventListener('click', function(e){
       if(
         e.target.closest('.nav-btn') ||
