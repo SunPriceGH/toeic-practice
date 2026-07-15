@@ -1087,6 +1087,90 @@ body.game-popup-open{overflow:hidden!important}
 .admin-word-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
 .admin-word-progress{display:flex;gap:3px;margin-top:7px}.admin-word-progress i{display:block;flex:1;height:6px;border-radius:999px;background:#d9e5f4}.admin-word-progress i.on{background:linear-gradient(90deg,#7bc7ff,#48c78e)}
 @media(max-width:700px){.admin-detail-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-word-grid{grid-template-columns:1fr}}
+
+
+/* ===== Admin detail rank icon + reversible word sorting ===== */
+.admin-rank-badge{
+  display:inline-flex!important;
+  align-items:center;
+  gap:7px;
+  padding:5px 10px 5px 6px!important;
+}
+.admin-rank-badge img{
+  width:30px;
+  height:30px;
+  object-fit:contain;
+  display:block;
+  border-radius:10px;
+  background:#fffaf0;
+}
+.admin-detail-rank-hero{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  border:2px solid #ffe0a3;
+  background:linear-gradient(135deg,#fffaf0,#ffffff 62%,#eef8ff);
+  border-radius:24px;
+  padding:14px;
+  margin:8px 0 12px;
+  box-shadow:0 12px 28px rgba(226,132,18,.10);
+}
+.admin-detail-rank-icon{
+  width:86px;
+  height:86px;
+  flex:0 0 86px;
+  display:grid;
+  place-items:center;
+  border-radius:27px;
+  background:radial-gradient(circle,#fff7d6 0,#fff 72%);
+  border:2px solid #ffcf70;
+  box-shadow:0 0 0 7px rgba(255,207,112,.18),0 14px 28px rgba(226,132,18,.13);
+}
+.admin-detail-rank-icon img{width:78px;height:78px;object-fit:contain;display:block}
+.admin-detail-rank-copy{min-width:0}
+.admin-detail-rank-copy span{display:block;color:#b57400;font-size:12px;font-weight:700}
+.admin-detail-rank-copy b{display:block;margin-top:4px;color:#42210b;font-size:25px;line-height:1.05;font-weight:700}
+.admin-detail-rank-copy small{display:block;margin-top:6px;color:#64748b;font-size:13px;font-weight:700;word-break:break-all}
+.admin-detail-sort-strip{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px;
+  margin:9px 0 11px;
+}
+.admin-detail-sort-btn{
+  border:2px solid #ddecff;
+  background:#fff;
+  color:#31415d;
+  border-radius:999px;
+  padding:8px 11px;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.16s ease;
+}
+.admin-detail-sort-btn:hover,.admin-detail-sort-btn.active{
+  border-color:#8fc9ff;
+  background:#eef7ff;
+  color:#3264d8;
+  transform:translateY(-1px);
+}
+.admin-detail-sort-btn.active:before{content:'↕ ';font-size:13px}
+.admin-detail-word-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.admin-detail-word-heading small{color:#64748b;font-size:12px;font-weight:700}
+.admin-detail-row .admin-word-stat-line{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.admin-word-stat-chip{display:inline-flex;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:700;border:1.5px solid #ddecff;background:#fff;color:#52627d}
+.admin-word-stat-chip.progress{background:#eef7ff;border-color:#cfe7ff;color:#3264d8}
+.admin-word-stat-chip.total{background:#fff8e8;border-color:#ffe0a3;color:#8b5400}
+.admin-word-stat-chip.correct{background:#e6fff2;border-color:#b7f3d3;color:#107342}
+.admin-word-stat-chip.wrong{background:#fff0f4;border-color:#ffd0dc;color:#b51d43}
+@media(max-width:560px){
+  .admin-detail-rank-hero{align-items:flex-start}
+  .admin-detail-rank-icon{width:72px;height:72px;flex-basis:72px}
+  .admin-detail-rank-icon img{width:66px;height:66px}
+  .admin-detail-rank-copy b{font-size:21px}
+  .admin-detail-sort-btn{font-size:11px;padding:7px 9px}
+}
 </style>
 
 </head>
@@ -1567,6 +1651,10 @@ let vocabProgressSyncInFlight=false;
 let vocabProgressSyncPending=false;
 let adminProgressStudents=[];
 let adminProgressLoaded=false;
+let adminDetailSnapshot=null;
+let adminDetailSortMode='progress';
+let adminDetailSortDir='desc';
+let celebrationAudioContext=null;
 let userWords=[];
 let commonWords=[];
 let commonKvWords=[];
@@ -3234,6 +3322,7 @@ function closePracticePopup(){
   if(game) game.answerToken=(game.answerToken||0)+1;
 }
 function startPractice(mode){
+  unlockCelebrationAudio();
   showPanel('practice');
   const pool=activeUserWords();
   if(pool.length<20){
@@ -3607,13 +3696,76 @@ function fireConfetti(){
     setTimeout(function(){el.remove();},2600);
   }
 }
+function getCelebrationAudioContext(){
+  try{
+    const Ctx=window.AudioContext||window.webkitAudioContext;
+    if(!Ctx) return null;
+    if(!celebrationAudioContext) celebrationAudioContext=new Ctx();
+    return celebrationAudioContext;
+  }catch(e){return null;}
+}
+function unlockCelebrationAudio(){
+  const ctx=getCelebrationAudioContext();
+  if(ctx&&ctx.state==='suspended') ctx.resume().catch(function(){});
+}
+function playScoreCelebrationSound(score,total){
+  if(Number(total)!==10||Number(score)<8) return;
+  const ctx=getCelebrationAudioContext();
+  if(!ctx) return;
+  const melodies={
+    8:[523.25,659.25,783.99],
+    9:[523.25,659.25,783.99,987.77],
+    10:[523.25,659.25,783.99,1046.50,1318.51]
+  };
+  const level=Math.max(8,Math.min(10,Number(score||0)));
+  const notes=melodies[level]||melodies[8];
+  const play=function(){
+    const startAt=ctx.currentTime+.035;
+    notes.forEach(function(freq,index){
+      const osc=ctx.createOscillator();
+      const gain=ctx.createGain();
+      const noteAt=startAt+index*.13;
+      osc.type=level===10?'triangle':'sine';
+      osc.frequency.setValueAtTime(freq,noteAt);
+      gain.gain.setValueAtTime(.0001,noteAt);
+      gain.gain.exponentialRampToValueAtTime(level===10?.16:.12,noteAt+.025);
+      gain.gain.exponentialRampToValueAtTime(.0001,noteAt+.25);
+      osc.connect(gain);gain.connect(ctx.destination);
+      osc.start(noteAt);osc.stop(noteAt+.27);
+    });
+    if(level===10){
+      [1046.50,1318.51,1567.98].forEach(function(freq,index){
+        const osc=ctx.createOscillator();
+        const gain=ctx.createGain();
+        const noteAt=startAt+.68+index*.07;
+        osc.type='sine';osc.frequency.value=freq;
+        gain.gain.setValueAtTime(.0001,noteAt);
+        gain.gain.exponentialRampToValueAtTime(.075,noteAt+.018);
+        gain.gain.exponentialRampToValueAtTime(.0001,noteAt+.22);
+        osc.connect(gain);gain.connect(ctx.destination);
+        osc.start(noteAt);osc.stop(noteAt+.24);
+      });
+    }
+  };
+  if(ctx.state==='suspended') ctx.resume().then(play).catch(function(){}); else play();
+}
 function celebrateGreatScore(){
-  if(!game||game._celebrated||game.score<9) return;
+  if(!game||game._celebrated) return;
+  const score=Number(game.score||0);
+  const total=Number(game.items&&game.items.length||0);
+  if(total!==10||score<8) return;
   game._celebrated=true;
   fireConfetti();
+  playScoreCelebrationSound(score,total);
+  const title=score>=10?'Hoàn hảo! 🏆':score===9?'Xuất sắc! 🎉':'Rất tốt! 🌟';
+  const message=score>=10
+    ? 'Bạn đã trả lời đúng toàn bộ 10 từ!'
+    : score===9
+      ? 'Chỉ còn thiếu một câu để đạt điểm tuyệt đối.'
+      : 'Bạn đã vượt mốc 8/10. Tiếp tục giữ phong độ nhé!';
   if(window.Swal){
-    Swal.fire({icon:'success',title:'Xuất sắc! 🎉',html:'Bạn đạt <b>'+game.score+'/'+game.items.length+'</b>. Hòm từ đang lên cấp rồi!',showConfirmButton:false,timer:3000,timerProgressBar:true});
-  }else cuteToast('Xuất sắc! Bạn đạt '+game.score+'/'+game.items.length,'success');
+    Swal.fire({icon:'success',title:title,html:'Bạn đạt <b>'+score+'/'+total+'</b>.<br>'+message,showConfirmButton:false,timer:3200,timerProgressBar:true});
+  }else cuteToast(title+' '+score+'/'+total,'success');
 }
 
 
@@ -3643,6 +3795,13 @@ async function loadAdminProgress(force){
     if(list) list.innerHTML='<div class="empty">'+escapeHtml(err.message||'Không tải được dữ liệu.')+'</div>';
   }
 }
+function adminRankInfo(summary){
+  summary=summary||{};
+  const index=Number(summary.rankIndex);
+  if(Number.isFinite(index)&&index>=0&&index<RANKS.length) return RANKS[index];
+  const wanted=normalizeText(summary.rankName||'');
+  return RANKS.find(function(rank){return normalizeText(rank.name)===wanted||normalizeText(rank.key)===wanted;})||RANKS[0];
+}
 function renderAdminProgressList(){
   const root=document.getElementById('adminProgressList');
   const summaryRoot=document.getElementById('adminProgressSummary');
@@ -3658,10 +3817,12 @@ function renderAdminProgressList(){
   if(!rows.length){root.innerHTML='<div class="empty">Không có học viên khớp tìm kiếm.</div>';return;}
   root.innerHTML=rows.map(function(x){
     const a=x.summary||{};
-    return '<article class="admin-student-card"><div class="admin-student-head"><div class="admin-student-email">'+escapeHtml(x.email||'')+'</div><span class="admin-rank-badge">'+escapeHtml(a.rankName||'Egg')+'</span></div>'+
-      '<div class="admin-student-stats"><div class="admin-student-stat"><span>Từ đạt 10/10</span><b>'+Number(a.masteredWords||0)+' / '+Number(a.totalWords||0)+'</b></div><div class="admin-student-stat"><span>Lượt luyện</span><b>'+Number(a.totalSessions||0)+'</b></div><div class="admin-student-stat"><span>Đúng</span><b>'+Number(a.totalCorrect||0)+'</b></div><div class="admin-student-stat"><span>Sai</span><b>'+Number(a.totalWrong||0)+'</b></div></div>'+
-      '<div class="admin-student-meta">Luyện gần nhất: '+escapeHtml(formatDateTime(a.lastPracticeAt||x.updatedAt||''))+'<br>Đồng bộ: '+escapeHtml(formatDateTime(x.updatedAt||''))+'</div>'+
-      '<div class="actions"><button class="btn secondary" type="button" onclick="openAdminStudentDetail(\''+escapeHtml(String(x.email||'').replace(/'/g,"\\'"))+'\')">Xem chi tiết</button></div></article>';
+    const rank=adminRankInfo(a);
+    const encodedEmail=encodeURIComponent(String(x.email||''));
+    return '<article class="admin-student-card"><div class="admin-student-head"><div class="admin-student-email">'+escapeHtml(x.email||'')+'</div><span class="admin-rank-badge"><img src="'+rank.icon+'" alt="'+escapeHtml(rank.name)+'"><span>'+escapeHtml(rank.name)+'</span></span></div>'+ 
+      '<div class="admin-student-stats"><div class="admin-student-stat"><span>Từ đạt 10/10</span><b>'+Number(a.masteredWords||0)+' / '+Number(a.totalWords||0)+'</b></div><div class="admin-student-stat"><span>Lượt luyện</span><b>'+Number(a.totalSessions||0)+'</b></div><div class="admin-student-stat"><span>Đúng</span><b>'+Number(a.totalCorrect||0)+'</b></div><div class="admin-student-stat"><span>Sai</span><b>'+Number(a.totalWrong||0)+'</b></div></div>'+ 
+      '<div class="admin-student-meta">Luyện gần nhất: '+escapeHtml(formatDateTime(a.lastPracticeAt||x.updatedAt||''))+'<br>Đồng bộ: '+escapeHtml(formatDateTime(x.updatedAt||''))+'</div>'+ 
+      '<div class="actions"><button class="btn secondary" type="button" onclick="openAdminStudentDetail(decodeURIComponent(\''+encodedEmail+'\'))">Xem chi tiết</button></div></article>';
   }).join('');
 }
 function progressBars(level){
@@ -3670,6 +3831,67 @@ function progressBars(level){
   for(let i=1;i<=10;i++) out+='<i class="'+(i<=level?'on':'')+'"></i>';
   return out+'</div>';
 }
+function adminDetailSortLabel(mode,dir){
+  if(mode==='total') return dir==='asc'?'Luyện ít → nhiều':'Luyện nhiều → ít';
+  if(mode==='wrong') return dir==='asc'?'Sai ít → nhiều':'Sai nhiều → ít';
+  if(mode==='correct') return dir==='asc'?'Đúng ít → nhiều':'Đúng nhiều → ít';
+  if(mode==='az') return dir==='desc'?'Z → A':'A → Z';
+  return dir==='asc'?'Tiến độ thấp → cao':'Tiến độ cao → thấp';
+}
+function setAdminDetailSort(mode){
+  mode=mode||'progress';
+  if(adminDetailSortMode===mode) adminDetailSortDir=adminDetailSortDir==='asc'?'desc':'asc';
+  else{
+    adminDetailSortMode=mode;
+    adminDetailSortDir=mode==='az'?'asc':'desc';
+  }
+  renderAdminStudentDetailContent();
+}
+function sortedAdminDetailWords(words){
+  const mode=adminDetailSortMode;
+  const direction=adminDetailSortDir==='asc'?1:-1;
+  return words.slice().sort(function(a,b){
+    if(mode==='az') return String(a.word||'').localeCompare(String(b.word||''),'en',{sensitivity:'base'})*direction;
+    const av=Number(a&&a[mode]||0);
+    const bv=Number(b&&b[mode]||0);
+    const diff=av-bv;
+    if(diff) return diff*direction;
+    return String(a.word||'').localeCompare(String(b.word||''),'en',{sensitivity:'base'});
+  });
+}
+function renderAdminDetailSortButtons(){
+  return ['progress','total','wrong','correct','az'].map(function(mode){
+    const active=adminDetailSortMode===mode;
+    const dir=active?adminDetailSortDir:(mode==='az'?'asc':'desc');
+    return '<button class="admin-detail-sort-btn '+(active?'active':'')+'" type="button" onclick="setAdminDetailSort(\''+mode+'\')">'+escapeHtml(adminDetailSortLabel(mode,dir))+'</button>';
+  }).join('');
+}
+function renderAdminStudentDetailContent(){
+  const host=document.getElementById('adminStudentDetailContent');
+  if(!host||!adminDetailSnapshot) return;
+  const snap=adminDetailSnapshot;
+  const a=snap.summary||{};
+  const rank=adminRankInfo(a);
+  const sessions=snap.history&&Array.isArray(snap.history.sessions)?snap.history.sessions:[];
+  const rawWords=Array.isArray(snap.words)?snap.words:[];
+  const words=sortedAdminDetailWords(rawWords);
+  const sessionHtml=sessions.slice(0,100).map(function(s){
+    const answers=Array.isArray(s.answers)?s.answers:[];
+    const wrongs=answers.filter(function(x){return !x.correct;}).map(function(x){return x.word;});
+    return '<div class="admin-detail-row"><b>'+(s.completed===false?'Lượt chưa hoàn thành':'Lượt hoàn thành')+' · '+escapeHtml(s.modeTitle||s.mode||'')+' · '+Number(s.score||0)+'/'+Number(s.total||0)+'</b><small>'+escapeHtml(formatDateTime(s.at||''))+'</small><small>'+(wrongs.length?'Sai: '+escapeHtml(wrongs.join(', ')):'Không sai từ nào')+'</small></div>';
+  }).join('')||'<div class="empty">Chưa có lượt luyện.</div>';
+  const wordHtml=words.map(function(w){
+    const progress=Math.max(0,Math.min(10,Number(w.progress||0)));
+    return '<div class="admin-detail-row"><b>'+escapeHtml(w.word||'')+'</b>'+progressBars(progress)+
+      '<div class="admin-word-stat-line"><span class="admin-word-stat-chip progress">Tiến độ '+progress+'/10</span><span class="admin-word-stat-chip total">Luyện '+Number(w.total||0)+' lần</span><span class="admin-word-stat-chip correct">Đúng '+Number(w.correct||0)+'</span><span class="admin-word-stat-chip wrong">Sai '+Number(w.wrong||0)+'</span></div>'+ 
+      '<small>'+(w.useInGame===false?'Đang tắt khỏi trò chơi':'Đang dùng trong trò chơi')+(w.latest?' · Gần nhất: '+escapeHtml(formatDateTime(w.latest)):'')+'</small></div>';
+  }).join('')||'<div class="empty">Chưa có dữ liệu từ.</div>';
+  host.innerHTML='<div class="admin-detail-wrap">'+
+    '<div class="admin-detail-rank-hero"><div class="admin-detail-rank-icon"><img src="'+rank.icon+'" alt="'+escapeHtml(rank.name)+'"></div><div class="admin-detail-rank-copy"><span>RANK HIỆN TẠI</span><b>'+escapeHtml(rank.name)+'</b><small>'+escapeHtml(snap.email||'')+'</small></div></div>'+ 
+    '<div class="admin-detail-summary"><div class="admin-detail-box"><span>Đạt 10/10</span><b>'+Number(a.masteredWords||0)+'/'+Number(a.totalWords||0)+'</b></div><div class="admin-detail-box"><span>Lượt luyện</span><b>'+Number(a.totalSessions||0)+'</b></div><div class="admin-detail-box"><span>Tổng đúng</span><b>'+Number(a.totalCorrect||0)+'</b></div><div class="admin-detail-box"><span>Tổng sai</span><b>'+Number(a.totalWrong||0)+'</b></div></div>'+ 
+    '<div class="admin-detail-section"><div class="admin-detail-word-heading"><h3>Tiến độ từng từ</h3><small>'+words.length+' từ · Bấm lại nút đang chọn để đảo chiều</small></div><div class="admin-detail-sort-strip">'+renderAdminDetailSortButtons()+'</div><div class="admin-word-grid">'+wordHtml+'</div></div>'+ 
+    '<div class="admin-detail-section"><h3>Lịch sử từng lượt</h3>'+sessionHtml+'</div></div>';
+}
 async function openAdminStudentDetail(email){
   if(!isProgressAdminAccount()) return;
   Swal.fire({title:'Đang tải chi tiết...',allowOutsideClick:false,didOpen:function(){Swal.showLoading();}});
@@ -3677,21 +3899,10 @@ async function openAdminStudentDetail(email){
     const res=await fetch('/api/vocabulary-progress?email='+encodeURIComponent(email),{headers:{'x-student-email':student.email,'x-student-token':student.token||''},cache:'no-store'});
     const data=await res.json().catch(function(){return {};});
     if(!res.ok||!data.ok||!data.snapshot) throw new Error(data.error||'Không tải được chi tiết học viên.');
-    const snap=data.snapshot;
-    const a=snap.summary||{};
-    const sessions=snap.history&&Array.isArray(snap.history.sessions)?snap.history.sessions:[];
-    const words=Array.isArray(snap.words)?snap.words.slice():[];
-    words.sort(function(x,y){return Number(y.wrong||0)-Number(x.wrong||0)||Number(y.total||0)-Number(x.total||0)||String(x.word||'').localeCompare(String(y.word||''));});
-    const sessionHtml=sessions.slice(0,100).map(function(s,i){
-      const answers=Array.isArray(s.answers)?s.answers:[];
-      const wrongs=answers.filter(function(x){return !x.correct;}).map(function(x){return x.word;});
-      return '<div class="admin-detail-row"><b>'+(s.completed===false?'Lượt chưa hoàn thành':'Lượt hoàn thành')+' · '+escapeHtml(s.modeTitle||s.mode||'')+' · '+Number(s.score||0)+'/'+Number(s.total||0)+'</b><small>'+escapeHtml(formatDateTime(s.at||''))+'</small><small>'+(wrongs.length?'Sai: '+escapeHtml(wrongs.join(', ')):'Không sai từ nào')+'</small></div>';
-    }).join('')||'<div class="empty">Chưa có lượt luyện.</div>';
-    const wordHtml=words.map(function(w){
-      return '<div class="admin-detail-row"><b>'+escapeHtml(w.word||'')+' · '+Number(w.progress||0)+'/10</b>'+progressBars(w.progress)+'<small>Đúng '+Number(w.correct||0)+' · Sai '+Number(w.wrong||0)+' · Tổng '+Number(w.total||0)+(w.useInGame===false?' · Đang tắt khỏi trò chơi':'')+'</small></div>';
-    }).join('')||'<div class="empty">Chưa có dữ liệu từ.</div>';
-    const html='<div class="admin-detail-wrap"><div><b style="font-size:18px">'+escapeHtml(snap.email||email)+'</b></div><div class="admin-detail-summary"><div class="admin-detail-box"><span>Rank</span><b>'+escapeHtml(a.rankName||'Egg')+'</b></div><div class="admin-detail-box"><span>Đạt 10/10</span><b>'+Number(a.masteredWords||0)+'/'+Number(a.totalWords||0)+'</b></div><div class="admin-detail-box"><span>Lượt luyện</span><b>'+Number(a.totalSessions||0)+'</b></div><div class="admin-detail-box"><span>Đúng / Sai</span><b>'+Number(a.totalCorrect||0)+' / '+Number(a.totalWrong||0)+'</b></div></div><div class="admin-detail-section"><h3>Tiến độ từng từ</h3><div class="admin-word-grid">'+wordHtml+'</div></div><div class="admin-detail-section"><h3>Lịch sử từng lượt</h3>'+sessionHtml+'</div></div>';
-    Swal.fire({title:'Chi tiết luyện tập',html:html,width:980,confirmButtonText:'Đóng'});
+    adminDetailSnapshot=data.snapshot;
+    adminDetailSortMode='progress';
+    adminDetailSortDir='desc';
+    Swal.fire({title:'Chi tiết luyện tập',html:'<div id="adminStudentDetailContent"></div>',width:1040,confirmButtonText:'Đóng',didOpen:function(){renderAdminStudentDetailContent();},willClose:function(){adminDetailSnapshot=null;}});
   }catch(err){Swal.fire({icon:'error',title:'Không tải được',text:err.message||'Có lỗi xảy ra.'});}
 }
 
