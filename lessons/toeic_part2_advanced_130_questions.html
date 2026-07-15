@@ -2781,7 +2781,7 @@
 <button class="nav-btn" onclick="prevSlide()">← Prev</button>
 <div class="control-audio native-audio-wrap" id="controlAudio" aria-label="Audio player">
   <span class="audio-type" id="audioType">WH</span>
-  <audio id="mainAudio" controls controlslist="nodownload" oncontextmenu="return false" preload="metadata" src="audio/p2_adv_WH.mp3"></audio>
+  <audio id="mainAudio" controls controlslist="nodownload" oncontextmenu="return false" preload="metadata" src="/audio/p2/p2_adv_WH.mp3"></audio>
 </div>
 <button class="check-btn" disabled="" id="checkBtn" onclick="checkAnswer()">CHECK</button>
 <button class="nav-btn" onclick="nextSlide()">Next →</button>
@@ -2898,12 +2898,12 @@
     });
     // ===== Native control-bar audio player =====
     const audioMap = {
-      WH: 'audio/p2_adv_WH.mp3',
-      YN: 'audio/p2_adv_YN.mp3',
-      TAG: 'audio/p2_adv_tag.mp3',
-      CHOICE: 'audio/p2_adv_choice.mp3',
-      STATEMENT: 'audio/p2_adv_statement.mp3',
-      SUGGESTION: 'audio/p2_adv_suggestion.mp3'
+      WH: '/audio/p2/p2_adv_WH.mp3',
+      YN: '/audio/p2/p2_adv_YN.mp3',
+      TAG: '/audio/p2/p2_adv_tag.mp3',
+      CHOICE: '/audio/p2/p2_adv_choice.mp3',
+      STATEMENT: '/audio/p2/p2_adv_statement.mp3',
+      SUGGESTION: '/audio/p2/p2_adv_suggestion.mp3'
     };
     const audio = document.getElementById('mainAudio');
     const audioType = document.getElementById('audioType');
