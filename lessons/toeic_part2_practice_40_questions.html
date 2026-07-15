@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TOEIC Listening Part 2 Practice</title>
+<style>
+
+    *{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;min-height:100%;font-family:Arial,sans-serif;background:#eef4ff;color:#1f2937}body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:relative;background:#eef4ff}.slide{width:100%;min-height:100vh;padding:56px 72px 130px;display:none;background:radial-gradient(circle at top left,rgba(59,130,246,.12),transparent 35%),radial-gradient(circle at bottom right,rgba(14,165,233,.12),transparent 35%),#fff}.slide.active{display:flex;flex-direction:column;animation:slideIn .35s ease}@keyframes slideIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}.slide-label{display:inline-block;width:fit-content;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:700;font-size:15px;margin-bottom:18px}h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size:42px;line-height:1.15;color:#0f172a;margin-bottom:24px}h3{font-size:26px;color:#1e3a8a;margin-bottom:14px}p{font-size:22px;line-height:1.55;margin-bottom:14px}.content-area{max-width:1080px;margin-top:10px;padding-bottom:40px}.intro-box{background:#f8fafc;border:2px solid #e2e8f0;border-radius:22px;padding:28px 32px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}.sample-box{background:#eff6ff;border-left:8px solid #2563eb;border-radius:18px;padding:26px 30px;margin-top:16px;box-shadow:0 12px 28px rgba(37,99,235,.12)}.sample-title{font-size:22px;font-weight:700;color:#1d4ed8;margin-bottom:10px}.question{font-size:31px;font-weight:800;color:#0f172a;margin-bottom:18px;line-height:1.35}.options{display:grid;gap:12px;margin-top:18px}.option{display:flex;align-items:center;gap:14px;background:#fff;border:2px solid #dbeafe;border-radius:16px;padding:16px 18px;font-size:22px;cursor:pointer;transition:.2s}.option:hover{border-color:#93c5fd;transform:translateY(-1px)}.option input{width:20px;height:20px;accent-color:#2563eb}.option-letter{font-weight:900;color:#1d4ed8;min-width:28px}.method-box{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:24px 28px;margin-top:20px;display:none}.method-box.show{display:block;animation:fadeUp .25s ease}.method-box h3{color:#166534}.wrong-box{background:#fff1f2;border-color:#fecdd3}.wrong-box h3{color:#be123c}@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.explain{font-size:22px;line-height:1.55}.keyword{color:#2563eb;font-weight:900}.score-box{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}.score-pill{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;padding:12px 18px;border-radius:999px;font-size:20px;font-weight:800}.control-bar{position:fixed;left:0;right:0;bottom:16px;z-index:100;display:flex;justify-content:center;align-items:center;gap:14px;pointer-events:none}.check-btn,.nav-btn{pointer-events:auto;border:none;cursor:pointer;font-weight:900;transition:all .2s ease;box-shadow:0 8px 18px rgba(15,23,42,.18)}.check-btn{border-radius:999px;background:#2563eb;color:#fff;font-size:15px;letter-spacing:.5px;padding:13px 22px}.check-btn:hover{transform:scale(1.04);background:#1d4ed8}.check-btn:disabled{background:#94a3b8;cursor:not-allowed;transform:none;box-shadow:none;opacity:.75}.check-btn:disabled:hover{background:#94a3b8;transform:none}.nav-btn{border-radius:999px;padding:10px 16px;background:#e2e8f0;color:#0f172a;font-size:14px}.nav-btn:hover{background:#cbd5e1}.progress{position:fixed;top:24px;right:36px;bottom:auto;font-size:16px;font-weight:700;color:#64748b;z-index:120;background:rgba(255,255,255,.85);padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 14px rgba(15,23,42,.08)}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:0%;transition:width .35s ease;z-index:130}.result-dot{font-weight:900}.correct-text{color:#15803d}.wrong-text{color:#be123c}.answer-key{font-weight:900;color:#15803d}.category-note{font-size:20px;color:#64748b;margin-top:-8px}
+.eye-btn{margin-left:10px;border:none;background:#dbeafe;color:#1d4ed8;border-radius:999px;width:34px;height:34px;font-size:17px;cursor:not-allowed;vertical-align:middle;box-shadow:0 4px 10px rgba(37,99,235,.16);transition:.2s}.eye-btn.enabled{cursor:pointer;background:#2563eb;color:#fff}.eye-btn.enabled:hover{transform:scale(1.08);background:#1d4ed8}.secret-text{display:inline-block;filter:blur(7px);user-select:none;transition:filter .25s ease, opacity .25s ease}.slide.revealed .secret-text{filter:blur(0);user-select:text}.option .secret-text{max-width:100%}.sample-title.question-title{display:flex;align-items:center;gap:8px}
+
+/* Range fix: cho phép kéo tua/volume ổn định trên desktop + mobile */
+.control-audio, .control-audio *{pointer-events:auto}
+.audio-seek,.audio-volume{
+  position:relative;
+  z-index:160;
+  display:block;
+  appearance:auto;
+  -webkit-appearance:auto;
+  touch-action:none;
+  user-select:none;
+}
+.audio-seek::-webkit-slider-thumb,.audio-volume::-webkit-slider-thumb{cursor:pointer}
+.audio-seek::-moz-range-thumb,.audio-volume::-moz-range-thumb{cursor:pointer}
+
+@media(max-width:768px){.slide{padding:36px 24px 130px}h1{font-size:34px}h2{font-size:31px}p,.explain{font-size:19px}.question{font-size:24px}.option{font-size:18px;padding:14px}.check-btn{padding:11px 16px;font-size:13px}.nav-btn{padding:9px 13px;font-size:13px}.progress{top:14px;right:14px;bottom:auto;font-size:13px}}
+
+  
+
+
+/* ===== Control-bar Audio Player ===== */
+.control-bar{padding:0 14px;flex-wrap:wrap;row-gap:8px}
+.control-audio{
+  pointer-events:auto;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  width:min(460px,42vw);
+  min-width:280px;
+  padding:7px 10px;
+  border:1px solid #dbeafe;
+  border-radius:999px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 8px 18px rgba(15,23,42,.14);
+  backdrop-filter:blur(8px);
+}
+.control-audio .audio-type{
+  flex:0 0 auto;
+  color:#1d4ed8;
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+  border-radius:999px;
+  padding:5px 8px;
+  font-size:12px;
+  font-weight:900;
+  line-height:1;
+  white-space:nowrap;
+}
+.audio-btn{
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  border:0;
+  border-radius:999px;
+  cursor:pointer;
+  color:white;
+  background:#2563eb;
+  font-size:12px;
+  font-weight:900;
+  box-shadow:none;
+  transition:.18s;
+  flex:0 0 auto;
+}
+.audio-btn:hover{transform:scale(1.04);background:#1d4ed8}
+.audio-time{
+  min-width:72px;
+  text-align:center;
+  color:#64748b;
+  font-size:12px;
+  font-weight:800;
+  font-variant-numeric:tabular-nums;
+}
+.audio-seek,.audio-volume{accent-color:#2563eb;cursor:pointer}
+.audio-seek{flex:1;min-width:90px;height:18px}
+.volume-wrap{display:flex;align-items:center;gap:5px;flex:0 0 auto}
+.volume-btn{width:28px;height:28px;background:#e2e8f0;color:#0f172a;font-size:12px}
+.volume-btn:hover{background:#cbd5e1}
+.audio-volume{width:56px;flex:0 0 56px;height:18px}
+@media(max-width:768px){
+  .control-bar{bottom:10px;gap:8px;padding:0 8px}
+  .control-audio{order:-1;width:min(96vw,520px);min-width:0;flex:1 1 96vw;border-radius:18px;padding:7px 9px}
+  .audio-seek{min-width:110px}
+  .audio-volume{width:48px;flex-basis:48px}
+  .progress{top:14px;right:14px;bottom:auto}
+}
+@media print{.control-audio{display:none!important}}
+
+/* HARD FIX: progress must stay at the top-right, never near the control bar */
+.progress{top:24px!important;right:36px!important;bottom:auto!important;left:auto!important}
+@media(max-width:768px){.progress{top:14px!important;right:14px!important;bottom:auto!important;left:auto!important}}
+
+
+/* ===== Native audio controls: clean + draggable seek bar ===== */
+.control-audio.native-audio-wrap{
+  pointer-events:auto!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  width:min(520px,46vw)!important;
+  min-width:330px!important;
+  padding:6px 10px!important;
+  border:1px solid #dbeafe!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.94)!important;
+  box-shadow:0 8px 18px rgba(15,23,42,.12)!important;
+  backdrop-filter:blur(8px)!important;
+}
+.control-audio.native-audio-wrap .audio-type{
+  flex:0 0 auto!important;
+  color:#1d4ed8!important;
+  background:#eff6ff!important;
+  border:1px solid #bfdbfe!important;
+  border-radius:999px!important;
+  padding:6px 9px!important;
+  font-size:12px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+.control-audio.native-audio-wrap audio{
+  flex:1 1 auto!important;
+  width:100%!important;
+  height:34px!important;
+  display:block!important;
+  pointer-events:auto!important;
+  accent-color:#2563eb!important;
+}
+@media(max-width:768px){
+  .control-audio.native-audio-wrap{
+    order:-1!important;
+    width:min(96vw,560px)!important;
+    min-width:0!important;
+    flex:1 1 96vw!important;
+    border-radius:18px!important;
+    padding:7px 9px!important;
+  }
+  .control-audio.native-audio-wrap audio{height:36px!important}
+}
+@media print{.control-audio.native-audio-wrap{display:none!important}}
+
+</style>
+</head>
+<body>
+<div class="lesson-wrapper">
+<div class="top-line" id="topLine"></div>
+<div class="progress" id="progressText">1 / 41</div>
+<section class="slide active" data-intro="true">
+<div class="slide-label">TOEIC Listening Part 2 Practice</div>
+<h1>Mini Test Part 2: WH, Yes/No, Tag, Choice</h1>
+<div class="content-area">
+<div class="intro-box">
+<p>Bài luyện gồm <span class="keyword">40 câu</span>: 20 WH Questions, 10 Yes/No Questions, 5 Tag Questions và 5 Choice Questions.</p>
+<p>Mỗi câu có 3 lựa chọn <b>A / B / C</b>. Chọn đáp án rồi bấm <b>CHECK</b> để xem đúng/sai và giải thích.</p>
+<div class="score-box">
+<div class="score-pill">20 WH</div>
+<div class="score-pill">10 Yes/No</div>
+<div class="score-pill">5 Tag</div>
+<div class="score-pill">5 Choice</div>
+</div>
+</div>
+<div class="intro-box">
+<p><b>Lưu ý:</b> Trong đề thi thật, Part 2 sẽ không hiện transcript.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q1">
+<div class="slide-label">WH Questions · Question 1</div>
+<h2>Câu 1</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">When will the new catalog be available?</span></div>
+<div class="options">
+<label class="option"><input name="q1" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">At the front desk.</span></label>
+<label class="option"><input name="q1" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">Next Monday morning.</span></label>
+<label class="option"><input name="q1" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">Ms. Parker designed it.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-1">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> When hỏi thời gian, nên đáp án đúng là Next Monday morning.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q2">
+<div class="slide-label">WH Questions · Question 2</div>
+<h2>Câu 2</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Where should I put these invoices?</span></div>
+<div class="options">
+<label class="option"><input name="q2" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">In the accounting folder.</span></label>
+<label class="option"><input name="q2" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">Because they are overdue.</span></label>
+<label class="option"><input name="q2" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">Three copies, please.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-2">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> Where hỏi địa điểm/vị trí, nên chọn In the accounting folder.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q3">
+<div class="slide-label">WH Questions · Question 3</div>
+<h2>Câu 3</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Why did the shipment arrive late?</span></div>
+<div class="options">
+<label class="option"><input name="q3" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">At the loading dock.</span></label>
+<label class="option"><input name="q3" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">Because of heavy traffic.</span></label>
+<label class="option"><input name="q3" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">It arrived at noon.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-3">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> Why hỏi lý do, nên đáp án có Because là hợp lý.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q4">
+<div class="slide-label">WH Questions · Question 4</div>
+<h2>Câu 4</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Who is leading the orientation session?</span></div>
+<div class="options">
+<label class="option"><input name="q4" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">In conference room B.</span></label>
+<label class="option"><input name="q4" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">The HR manager is.</span></label>
+<label class="option"><input name="q4" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">It starts after lunch.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-4">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> Who hỏi người/chức vụ, nên chọn The HR manager is.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q5">
+<div class="slide-label">WH Questions · Question 5</div>
+<h2>Câu 5</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">What time does the workshop begin?</span></div>
+<div class="options">
+<label class="option"><input name="q5" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">At 10:30 a.m.</span></label>
+<label class="option"><input name="q5" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">In the training center.</span></label>
+<label class="option"><input name="q5" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">The workshop is free.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-5">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> What time hỏi giờ cụ thể, nên đáp án là At 10:30 a.m.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q6">
+<div class="slide-label">WH Questions · Question 6</div>
+<h2>Câu 6</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">How often do you update the client list?</span></div>
+<div class="options">
+<label class="option"><input name="q6" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">The marketing team does.</span></label>
+<label class="option"><input name="q6" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">By e-mail.</span></label>
+<label class="option"><input name="q6" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">Every Friday.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-6">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> How often hỏi tần suất, nên chọn Every Friday.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q7">
+<div class="slide-label">WH Questions · Question 7</div>
+<h2>Câu 7</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">When is the payment deadline?</span></div>
+<div class="options">
+<label class="option"><input name="q7" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">The finance department.</span></label>
+<label class="option"><input name="q7" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">By the end of this week.</span></label>
+<label class="option"><input name="q7" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">In the main office.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-7">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> When hỏi thời hạn/thời điểm, By the end of this week phù hợp.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q8">
+<div class="slide-label">WH Questions · Question 8</div>
+<h2>Câu 8</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Where can I find the application forms?</span></div>
+<div class="options">
+<label class="option"><input name="q8" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">They are due tomorrow.</span></label>
+<label class="option"><input name="q8" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">On the company website.</span></label>
+<label class="option"><input name="q8" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">Mr. Lee filled them out.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-8">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> Where can I find hỏi nơi tìm thấy, nên chọn On the company website.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q9">
+<div class="slide-label">WH Questions · Question 9</div>
+<h2>Câu 9</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Why is the copy machine out of service?</span></div>
+<div class="options">
+<label class="option"><input name="q9" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">The technician is repairing it.</span></label>
+<label class="option"><input name="q9" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">Near the reception desk.</span></label>
+<label class="option"><input name="q9" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">At 4 o’clock.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-9">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> Why hỏi nguyên nhân; The technician is repairing it giải thích tình trạng máy.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q10">
+<div class="slide-label">WH Questions · Question 10</div>
+<h2>Câu 10</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Who should I contact about the schedule?</span></div>
+<div class="options">
+<label class="option"><input name="q10" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">In the break room.</span></label>
+<label class="option"><input name="q10" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">It was updated yesterday.</span></label>
+<label class="option"><input name="q10" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">Contact Mr. Evans.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-10">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> Who should I contact hỏi người cần liên hệ.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q11">
+<div class="slide-label">WH Questions · Question 11</div>
+<h2>Câu 11</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">What time will the train leave?</span></div>
+<div class="options">
+<label class="option"><input name="q11" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">From platform 6.</span></label>
+<label class="option"><input name="q11" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">At 7:45.</span></label>
+<label class="option"><input name="q11" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">For the annual conference.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-11">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> What time hỏi giờ, nên chọn At 7:45.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q12">
+<div class="slide-label">WH Questions · Question 12</div>
+<h2>Câu 12</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">How often are staff meetings held?</span></div>
+<div class="options">
+<label class="option"><input name="q12" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">In the boardroom.</span></label>
+<label class="option"><input name="q12" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">Once a month.</span></label>
+<label class="option"><input name="q12" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">The manager held one.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-12">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> How often hỏi tần suất, Once a month là đáp án đúng.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q13">
+<div class="slide-label">WH Questions · Question 13</div>
+<h2>Câu 13</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Where did you park the delivery van?</span></div>
+<div class="options">
+<label class="option"><input name="q13" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Behind the warehouse.</span></label>
+<label class="option"><input name="q13" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">At 8 this morning.</span></label>
+<label class="option"><input name="q13" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">To deliver office supplies.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-13">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> Where did you park hỏi nơi đậu xe.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q14">
+<div class="slide-label">WH Questions · Question 14</div>
+<h2>Câu 14</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Why did Ms. Chen leave early?</span></div>
+<div class="options">
+<label class="option"><input name="q14" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Her office is upstairs.</span></label>
+<label class="option"><input name="q14" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">She had a doctor’s appointment.</span></label>
+<label class="option"><input name="q14" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">At about 3 p.m.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-14">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> Why hỏi lý do; had a doctor’s appointment là lý do.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q15">
+<div class="slide-label">WH Questions · Question 15</div>
+<h2>Câu 15</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Who approved the budget proposal?</span></div>
+<div class="options">
+<label class="option"><input name="q15" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">For the advertising campaign.</span></label>
+<label class="option"><input name="q15" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">It was approved last week.</span></label>
+<label class="option"><input name="q15" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">The department director did.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-15">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> Who hỏi người phê duyệt.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q16">
+<div class="slide-label">WH Questions · Question 16</div>
+<h2>Câu 16</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">When are the technicians coming?</span></div>
+<div class="options">
+<label class="option"><input name="q16" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">To install the new printer.</span></label>
+<label class="option"><input name="q16" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">Sometime this afternoon.</span></label>
+<label class="option"><input name="q16" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">From the service company.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-16">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> When hỏi thời gian; this afternoon phù hợp.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q17">
+<div class="slide-label">WH Questions · Question 17</div>
+<h2>Câu 17</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Where will the guests be seated?</span></div>
+<div class="options">
+<label class="option"><input name="q17" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">At table five.</span></label>
+<label class="option"><input name="q17" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">After the opening speech.</span></label>
+<label class="option"><input name="q17" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">The event coordinator will.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-17">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> Where hỏi vị trí chỗ ngồi.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q18">
+<div class="slide-label">WH Questions · Question 18</div>
+<h2>Câu 18</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Why are the lights turned off?</span></div>
+<div class="options">
+<label class="option"><input name="q18" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Around midnight.</span></label>
+<label class="option"><input name="q18" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">They are in the hallway.</span></label>
+<label class="option"><input name="q18" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">To save electricity.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-18">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> Why hỏi lý do; To save electricity là mục đích/lý do.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q19">
+<div class="slide-label">WH Questions · Question 19</div>
+<h2>Câu 19</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Who arranged the business trip?</span></div>
+<div class="options">
+<label class="option"><input name="q19" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Next Thursday morning.</span></label>
+<label class="option"><input name="q19" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">It was arranged online.</span></label>
+<label class="option"><input name="q19" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">The travel coordinator did.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-19">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> Who hỏi người sắp xếp chuyến đi.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q20">
+<div class="slide-label">WH Questions · Question 20</div>
+<h2>Câu 20</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">How often does the system back up data?</span></div>
+<div class="options">
+<label class="option"><input name="q20" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Automatically.</span></label>
+<label class="option"><input name="q20" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">Every two hours.</span></label>
+<label class="option"><input name="q20" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">In the IT office.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-20">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> How often hỏi tần suất; Every two hours là đáp án đúng.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q21">
+<div class="slide-label">Yes / No Questions · Question 21</div>
+<h2>Câu 21</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Did you reserve a room for the seminar?</span></div>
+<div class="options">
+<label class="option"><input name="q21" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Yes, I booked one yesterday.</span></label>
+<label class="option"><input name="q21" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">In the east wing.</span></label>
+<label class="option"><input name="q21" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">The seminar begins at nine.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-21">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> Câu hỏi Did you...? Nếu không chắc, ưu tiên đáp án Yes/No; A trả lời trực tiếp và đúng trọng tâm.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q22">
+<div class="slide-label">Yes / No Questions · Question 22</div>
+<h2>Câu 22</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Are the reports ready for review?</span></div>
+<div class="options">
+<label class="option"><input name="q22" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">The review was helpful.</span></label>
+<label class="option"><input name="q22" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">No, they still need proofreading.</span></label>
+<label class="option"><input name="q22" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">On the manager’s desk.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-22">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> Câu hỏi Are...? A có No và giải thích thêm, đúng trọng tâm.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q23">
+<div class="slide-label">Yes / No Questions · Question 23</div>
+<h2>Câu 23</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Can we use the conference room this afternoon?</span></div>
+<div class="options">
+<label class="option"><input name="q23" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Mr. Adams used it yesterday.</span></label>
+<label class="option"><input name="q23" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">The conference lasted two hours.</span></label>
+<label class="option"><input name="q23" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">Yes, it is available after two.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-23">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> Câu hỏi Can we...? A trả lời Yes và thêm thời gian phòng trống.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q24">
+<div class="slide-label">Yes / No Questions · Question 24</div>
+<h2>Câu 24</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Have you checked the inventory list?</span></div>
+<div class="options">
+<label class="option"><input name="q24" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Yes, I checked it this morning.</span></label>
+<label class="option"><input name="q24" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">The list is in the storage room.</span></label>
+<label class="option"><input name="q24" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">Every Monday morning.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-24">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> Have you...? A trả lời Yes trực tiếp.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q25">
+<div class="slide-label">Yes / No Questions · Question 25</div>
+<h2>Câu 25</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Is Ms. Rivera joining the video call?</span></div>
+<div class="options">
+<label class="option"><input name="q25" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">The call is online.</span></label>
+<label class="option"><input name="q25" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">No, she is meeting a client.</span></label>
+<label class="option"><input name="q25" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">At 11 a.m.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-25">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> Is Ms. Rivera...? A trả lời No và nêu lý do.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q26">
+<div class="slide-label">Yes / No Questions · Question 26</div>
+<h2>Câu 26</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Will the repair work be finished today?</span></div>
+<div class="options">
+<label class="option"><input name="q26" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Because the part arrived late.</span></label>
+<label class="option"><input name="q26" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">The repairman is in the lobby.</span></label>
+<label class="option"><input name="q26" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">Yes, by late afternoon.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-26">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> Will...? A có Yes và thời điểm hoàn thành.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q27">
+<div class="slide-label">Yes / No Questions · Question 27</div>
+<h2>Câu 27</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Do you need help carrying those boxes?</span></div>
+<div class="options">
+<label class="option"><input name="q27" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">I can manage them, thanks.</span></label>
+<label class="option"><input name="q27" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">They are in the supply room.</span></label>
+<label class="option"><input name="q27" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">Three boxes were delivered.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-27">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> Đây là trả lời gián tiếp: I can manage them nghĩa là không cần giúp.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q28">
+<div class="slide-label">Yes / No Questions · Question 28</div>
+<h2>Câu 28</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Did the client approve the design?</span></div>
+<div class="options">
+<label class="option"><input name="q28" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">At yesterday’s meeting.</span></label>
+<label class="option"><input name="q28" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">The design is on the website.</span></label>
+<label class="option"><input name="q28" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">She asked for a few changes.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-28">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> Không có Yes/No nhưng A ngụ ý chưa duyệt hoàn toàn vì còn yêu cầu chỉnh sửa.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q29">
+<div class="slide-label">Yes / No Questions · Question 29</div>
+<h2>Câu 29</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Can you submit the form by noon?</span></div>
+<div class="options">
+<label class="option"><input name="q29" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">At the reception desk.</span></label>
+<label class="option"><input name="q29" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">The form is two pages long.</span></label>
+<label class="option"><input name="q29" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">I’ll try to finish it before then.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-29">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> Đáp án gián tiếp: I’ll try... là phản hồi phù hợp cho Can you...?</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q30">
+<div class="slide-label">Yes / No Questions · Question 30</div>
+<h2>Câu 30</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Have the new computers been installed?</span></div>
+<div class="options">
+<label class="option"><input name="q30" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">In the catalog.</span></label>
+<label class="option"><input name="q30" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">They are expensive computers.</span></label>
+<label class="option"><input name="q30" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">The technician is setting them up now.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-30">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> Đáp án gián tiếp: đang cài đặt nghĩa là chưa hoàn tất hoặc đang xử lý.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q31">
+<div class="slide-label">Tag Questions · Question 31</div>
+<h2>Câu 31</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">The training session starts at ten, doesn’t it?</span></div>
+<div class="options">
+<label class="option"><input name="q31" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Yes, that’s correct.</span></label>
+<label class="option"><input name="q31" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">In the training room.</span></label>
+<label class="option"><input name="q31" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">The trainer is experienced.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-31">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> Tag question xác nhận thông tin; Yes, that’s correct là đáp án trực tiếp.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q32">
+<div class="slide-label">Tag Questions · Question 32</div>
+<h2>Câu 32</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">You sent the contract to the client, didn’t you?</span></div>
+<div class="options">
+<label class="option"><input name="q32" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">The client called yesterday.</span></label>
+<label class="option"><input name="q32" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">No, I’m sending it now.</span></label>
+<label class="option"><input name="q32" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">It is a long contract.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-32">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> Câu hỏi đuôi xác nhận; A trả lời No và cập nhật tình hình.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q33">
+<div class="slide-label">Tag Questions · Question 33</div>
+<h2>Câu 33</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">This is the final version, isn’t it?</span></div>
+<div class="options">
+<label class="option"><input name="q33" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">On the shared drive.</span></label>
+<label class="option"><input name="q33" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">It was printed in color.</span></label>
+<label class="option"><input name="q33" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">Yes, no more changes are needed.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-33">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> A xác nhận trực tiếp rằng đây là bản cuối.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q34">
+<div class="slide-label">Tag Questions · Question 34</div>
+<h2>Câu 34</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Mr. Grant works in accounting, doesn’t he?</span></div>
+<div class="options">
+<label class="option"><input name="q34" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Actually, he works in marketing.</span></label>
+<label class="option"><input name="q34" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">He starts at nine.</span></label>
+<label class="option"><input name="q34" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">The accounting office is downstairs.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-34">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> Tag question có thể được trả lời bằng cách sửa lại thông tin: Actually...</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q35">
+<div class="slide-label">Tag Questions · Question 35</div>
+<h2>Câu 35</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">We don’t need to bring laptops, do we?</span></div>
+<div class="options">
+<label class="option"><input name="q35" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">In the meeting room.</span></label>
+<label class="option"><input name="q35" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">The laptop is new.</span></label>
+<label class="option"><input name="q35" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">I don’t think so.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-35">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> I don’t think so là cách trả lời phù hợp cho câu hỏi đuôi phủ định.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q36">
+<div class="slide-label">Choice Questions · Question 36</div>
+<h2>Câu 36</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Would you prefer coffee or tea?</span></div>
+<div class="options">
+<label class="option"><input name="q36" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Tea would be great.</span></label>
+<label class="option"><input name="q36" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">Yes, I prefer it.</span></label>
+<label class="option"><input name="q36" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">At the café.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-36">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> Choice question hỏi chọn A hoặc B; đáp án chọn Tea là rõ nhất.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="B" data-question="q37">
+<div class="slide-label">Choice Questions · Question 37</div>
+<h2>Câu 37</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Should we print the brochures today or tomorrow?</span></div>
+<div class="options">
+<label class="option"><input name="q37" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Yes, we should print them.</span></label>
+<label class="option"><input name="q37" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">Tomorrow would be better.</span></label>
+<label class="option"><input name="q37" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">In the copy room.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-37">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: B.</span> Câu hỏi lựa chọn today or tomorrow; Tomorrow would be better là đáp án đúng.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="C" data-question="q38">
+<div class="slide-label">Choice Questions · Question 38</div>
+<h2>Câu 38</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Do you want the receipt by e-mail or in print?</span></div>
+<div class="options">
+<label class="option"><input name="q38" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">The printer is near the desk.</span></label>
+<label class="option"><input name="q38" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">Yes, I received it.</span></label>
+<label class="option"><input name="q38" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">By e-mail, please.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-38">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: C.</span> Câu hỏi lựa chọn hình thức nhận receipt; By e-mail là đúng.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q39">
+<div class="slide-label">Choice Questions · Question 39</div>
+<h2>Câu 39</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Would you like to meet in the morning or afternoon?</span></div>
+<div class="options">
+<label class="option"><input name="q39" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Either time is fine with me.</span></label>
+<label class="option"><input name="q39" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">Yes, I would like to meet.</span></label>
+<label class="option"><input name="q39" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">In the main lobby.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-39">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> Với Choice Questions, đáp án không nhất thiết chọn một bên; Either time is fine cũng đúng.</p>
+</div>
+</div>
+</section>
+<section class="slide" data-answer="A" data-question="q40">
+<div class="slide-label">Choice Questions · Question 40</div>
+<h2>Câu 40</h2>
+<p class="category-note">Chọn đáp án phù hợp nhất với câu hỏi.</p>
+<div class="content-area">
+<div class="sample-box">
+<div class="sample-title question-title">Question <button class="eye-btn" disabled="" onclick="toggleReveal(this)" title="CHECK trước để xem câu hỏi" type="button">👁</button></div>
+<div class="question"><span class="secret-text">Should I call Mr. Blake or send him an e-mail?</span></div>
+<div class="options">
+<label class="option"><input name="q40" type="radio" value="A"/><span class="option-letter">A.</span><span class="secret-text">Send him an e-mail first.</span></label>
+<label class="option"><input name="q40" type="radio" value="B"/><span class="option-letter">B.</span><span class="secret-text">No, he didn’t call.</span></label>
+<label class="option"><input name="q40" type="radio" value="C"/><span class="option-letter">C.</span><span class="secret-text">Mr. Blake is our supplier.</span></label>
+</div>
+</div>
+<div class="method-box" id="result-40">
+<h3 class="result-title"></h3>
+<p class="explain"><span class="answer-key">Đáp án đúng: A.</span> Câu hỏi lựa chọn call hoặc e-mail; A chọn phương án e-mail.</p>
+</div>
+</div>
+</section>
+<div class="control-bar">
+<button class="nav-btn" onclick="prevSlide()">← Prev</button>
+<div class="control-audio native-audio-wrap" id="controlAudio" aria-label="Audio player">
+  <span class="audio-type" id="audioType">WH</span>
+  <audio id="mainAudio" controlslist="nodownload" oncontextmenu="return false" controls preload="metadata" src="audio/p2_WH.mp3"></audio>
+</div>
+<button class="check-btn" disabled="" id="checkBtn" onclick="checkAnswer()">CHECK</button>
+<button class="nav-btn" onclick="nextSlide()">Next →</button>
+</div>
+</div>
+<script>
+
+    const slides = document.querySelectorAll('.slide');
+    const progressText = document.getElementById('progressText');
+    const topLine = document.getElementById('topLine');
+    const checkBtn = document.getElementById('checkBtn');
+    let currentSlide = 0;
+    let totalCorrect = 0;
+    const checkedMap = new Map();
+
+    function updateProgress(){
+      progressText.textContent = `${currentSlide + 1} / ${slides.length}`;
+      topLine.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
+    }
+
+   function showSlide(index){
+     slides[currentSlide].classList.remove('active');
+     currentSlide = index;
+     slides[currentSlide].classList.add('active');
+     window.scrollTo({top:0, behavior:'smooth'});
+     updateAudioForSlide();
+     updateProgress();
+     updateCheckState();
+   }
+
+    function nextSlide(){
+      if(currentSlide < slides.length - 1){ showSlide(currentSlide + 1); }
+    }
+
+    function prevSlide(){
+      if(currentSlide > 0){ showSlide(currentSlide - 1); }
+    }
+
+
+    function updateCheckState(){
+      const slide = slides[currentSlide];
+      if(!checkBtn) return;
+
+      if(slide.dataset.intro === 'true'){
+        checkBtn.disabled = true;
+        checkBtn.title = 'Trang giới thiệu không có đáp án để CHECK';
+        return;
+      }
+
+      const qName = slide.dataset.question;
+      const selected = slide.querySelector(`input[name="${qName}"]:checked`);
+      checkBtn.disabled = !selected;
+      checkBtn.title = selected ? 'Kiểm tra đáp án' : 'Hãy chọn A, B hoặc C trước';
+    }
+
+    function unlockEye(slide){
+      const eyeBtn = slide.querySelector('.eye-btn');
+      if(eyeBtn){
+        eyeBtn.disabled = false;
+        eyeBtn.classList.add('enabled');
+        eyeBtn.title = 'Hiện / ẩn câu hỏi và 3 options';
+      }
+    }
+
+    function toggleReveal(button){
+      if(button.disabled) return;
+      const slide = button.closest('.slide');
+      slide.classList.toggle('revealed');
+      button.textContent = slide.classList.contains('revealed') ? '🙈' : '👁';
+    }
+
+    function checkAnswer(){
+      if(checkBtn && checkBtn.disabled) return;
+
+      const slide = slides[currentSlide];
+      if(slide.dataset.intro === 'true') return;
+
+      const qName = slide.dataset.question;
+      const answer = slide.dataset.answer;
+      const selected = slide.querySelector(`input[name="${qName}"]:checked`);
+      if(!selected) return;
+
+      const resultBox = slide.querySelector('.method-box');
+      const title = slide.querySelector('.result-title');
+
+      resultBox.classList.remove('wrong-box');
+      resultBox.classList.add('show');
+
+      unlockEye(slide);
+
+      const isCorrect = selected.value === answer;
+      const key = qName;
+      if(!checkedMap.has(key)){
+        checkedMap.set(key, isCorrect);
+        if(isCorrect) totalCorrect++;
+      }
+
+      if(isCorrect){
+        title.innerHTML = '<span class="correct-text">✓ Chính xác!</span>';
+      } else {
+        resultBox.classList.add('wrong-box');
+        title.innerHTML = `<span class="wrong-text">✗ Chưa đúng. Bạn chọn ${selected.value}.</span>`;
+      }
+      resultBox.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
+    document.addEventListener('keydown', function(e){
+      if(e.code === 'Enter') { e.preventDefault(); checkAnswer(); }
+      if(e.code === 'ArrowRight') nextSlide();
+      if(e.code === 'ArrowLeft') prevSlide();
+    });
+    document.querySelectorAll('input[type="radio"]').forEach(input => {
+      input.addEventListener('change', updateCheckState);
+    });
+    // ===== Native control-bar audio player =====
+    const audioMap = {
+      WH: 'audio/p2_WH.mp3',
+      YN: 'audio/p2_YN.mp3',
+      TAG: 'audio/p2_tag.mp3',
+      CHOICE: 'audio/p2_choice.mp3'
+    };
+    const audio = document.getElementById('mainAudio');
+    const audioType = document.getElementById('audioType');
+
+    function getAudioGroupForSlide(index){
+      if(index >= 1 && index <= 20) return 'WH';
+      if(index >= 21 && index <= 30) return 'YN';
+      if(index >= 31 && index <= 35) return 'TAG';
+      if(index >= 36 && index <= 40) return 'CHOICE';
+      return 'WH';
+    }
+
+    function updateAudioForSlide(){
+      if(!audio) return;
+      const group = getAudioGroupForSlide(currentSlide);
+      const src = audioMap[group];
+      if(audioType) audioType.textContent = group === 'YN' ? 'Y/N' : group;
+      const currentSrc = audio.getAttribute('src') || '';
+      if(!currentSrc.endsWith(src)){
+        audio.pause();
+        audio.setAttribute('src', src);
+        audio.load();
+      }
+    }
+
+    function pauseOtherAudio(){
+      if(audio) audio.pause();
+    }
+
+    updateAudioForSlide();
+    updateProgress();
+    updateCheckState();
+
+  </script>
+</body>
+</html>

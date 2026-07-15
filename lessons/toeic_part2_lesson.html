@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOEIC Listening Part 2</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      font-family: Arial, sans-serif;
+      background: #eef4ff;
+      color: #1f2937;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .lesson-wrapper {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      background: #eef4ff;
+    }
+
+    .slide {
+      width: 100%;
+      min-height: 100vh;
+      padding: 56px 72px 120px;
+      display: none;
+      background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.12), transparent 35%),
+        #ffffff;
+    }
+
+    .slide.active {
+      display: flex;
+      flex-direction: column;
+      animation: slideIn 0.35s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .slide-label {
+      display: inline-block;
+      width: fit-content;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      color: #0f172a;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      font-size: 42px;
+      line-height: 1.15;
+      color: #0f172a;
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: 28px;
+      color: #1e3a8a;
+      margin-bottom: 14px;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .content-area {
+      max-width: 1080px;
+      margin-top: 10px;
+      padding-bottom: 40px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(3px);
+      transition: all 0.45s ease;
+      pointer-events: none;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+      pointer-events: auto;
+    }
+
+    .intro-box {
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 22px;
+      padding: 28px 32px;
+      margin-top: 18px;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .warning-box {
+      background: #fff7ed;
+      border: 2px solid #fed7aa;
+      color: #9a3412;
+      border-radius: 18px;
+      padding: 20px 24px;
+      font-size: 24px;
+      line-height: 1.45;
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .question-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(250px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .type-card {
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 22px 24px;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+    }
+
+    .type-card strong {
+      display: block;
+      color: #1d4ed8;
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    .type-card span {
+      font-size: 20px;
+      color: #475569;
+      line-height: 1.4;
+    }
+
+    .sample-box {
+      background: #eff6ff;
+      border-left: 8px solid #2563eb;
+      border-radius: 18px;
+      padding: 26px 30px;
+      margin-top: 16px;
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.12);
+    }
+
+    .sample-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1d4ed8;
+      margin-bottom: 10px;
+    }
+
+    .question {
+      font-size: 32px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+
+    .answer {
+      font-size: 24px;
+      padding: 10px 0;
+      color: #334155;
+    }
+
+    .correct {
+      color: #15803d;
+      font-weight: 800;
+    }
+
+    .method-box {
+      background: #f0fdf4;
+      border: 2px solid #bbf7d0;
+      border-radius: 20px;
+      padding: 24px 28px;
+      margin-top: 20px;
+    }
+
+    .method-box h3 {
+      color: #166534;
+    }
+
+    .danger-box {
+      background: #fff1f2;
+      border: 2px solid #fecdd3;
+      border-radius: 20px;
+      padding: 24px 28px;
+      margin-top: 20px;
+    }
+
+    .danger-box h3 {
+      color: #be123c;
+    }
+
+    .steps {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .steps li {
+      font-size: 23px;
+      line-height: 1.5;
+      padding: 9px 0 9px 38px;
+      position: relative;
+    }
+
+    .steps li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #22c55e;
+      color: white;
+      font-size: 17px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+    }
+
+    .danger-box .steps li::before {
+      content: "!";
+      background: #e11d48;
+    }
+
+    .control-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 16px;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      pointer-events: none;
+    }
+
+    .go-btn,
+    .nav-btn {
+      pointer-events: auto;
+      border: none;
+      cursor: pointer;
+      font-weight: 800;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+    }
+
+    .go-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: white;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .go-btn:hover {
+      transform: scale(1.08);
+      background: #1d4ed8;
+    }
+
+    .nav-btn {
+      border-radius: 999px;
+      padding: 10px 16px;
+      background: #e2e8f0;
+      color: #0f172a;
+      font-size: 14px;
+    }
+
+    .nav-btn:hover {
+      background: #cbd5e1;
+    }
+
+    .progress {
+      position: fixed;
+      top: 24px;
+      right: 36px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #64748b;
+      z-index: 120;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 8px 12px;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+    }
+
+    .top-line {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 7px;
+      background: #2563eb;
+      width: 0%;
+      transition: width 0.35s ease;
+      z-index: 130;
+    }
+
+    .keyword {
+      color: #2563eb;
+      font-weight: 900;
+    }
+
+    .big-word {
+      font-size: 72px;
+      font-weight: 900;
+      color: #1d4ed8;
+      letter-spacing: -2px;
+      margin-bottom: 12px;
+    }
+
+    .mini-note {
+      font-size: 20px;
+      color: #64748b;
+      margin-top: 10px;
+    }
+
+    .formula-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .formula-item {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 2px solid #bfdbfe;
+      padding: 14px 20px;
+      border-radius: 16px;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .arrow {
+      color: #64748b;
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    @media (max-width: 768px) {
+      .slide {
+        padding: 36px 24px 120px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+
+      p,
+      .answer,
+      .steps li {
+        font-size: 19px;
+      }
+
+      .question {
+        font-size: 25px;
+      }
+
+      .big-word {
+        font-size: 46px;
+      }
+
+      .question-list {
+        grid-template-columns: 1fr;
+      }
+
+      .go-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 13px;
+      }
+
+      .nav-btn {
+        padding: 9px 13px;
+        font-size: 13px;
+      }
+
+      .progress {
+        top: 14px;
+        right: 14px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="lesson-wrapper">
+    <div class="top-line" id="topLine"></div>
+    <div class="progress" id="progressText">1 / 14</div>
+
+    <!-- SLIDE 1 -->
+    <section class="slide active">
+      <div class="slide-label reveal">TOEIC Listening Part 2</div>
+
+      <h1 class="reveal">Giới thiệu dạng câu Part 2</h1>
+
+      <div class="content-area">
+        <div class="intro-box reveal">
+          <p>
+            Trong <span class="keyword">Part 2</span>, thí sinh sẽ nghe
+            <b>1 câu hỏi hoặc 1 câu nói</b>, sau đó nghe tiếp
+            <b>3 đáp án A, B, C</b>.
+          </p>
+        </div>
+
+        <div class="intro-box reveal">
+          <p>
+            Nhiệm vụ của thí sinh là chọn
+            <span class="keyword">đáp án phù hợp nhất</span>
+            với câu vừa nghe.
+          </p>
+        </div>
+
+        <div class="warning-box reveal">
+          Lưu ý quan trọng: Trong đề thi sẽ KHÔNG ghi bất kỳ transcript nào.
+          Thí sinh chỉ được nghe và chọn đáp án.
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2 -->
+    <section class="slide">
+      <div class="slide-label reveal">Part 2 Question Types</div>
+
+      <h2 class="reveal">Các dạng câu thường xuất hiện trong Part 2</h2>
+
+      <div class="content-area">
+        <p class="reveal">
+          Các dạng phổ biến nhất nên được luyện trước:
+        </p>
+
+        <div class="question-list">
+          <div class="type-card reveal">
+            <strong>1. WH Questions</strong>
+            <span>When, Where, Why, Who, What, How...</span>
+          </div>
+
+          <div class="type-card reveal">
+            <strong>2. Yes / No Questions</strong>
+            <span>Do, Did, Can, Will, Are, Is, Have...</span>
+          </div>
+
+          <div class="type-card reveal">
+            <strong>3. Tag Questions</strong>
+            <span>isn't it, don't you, haven't they...</span>
+          </div>
+
+          <div class="type-card reveal">
+            <strong>4. Statements</strong>
+            <span>Câu nói thường, lời nhận xét, thông báo, đề nghị...</span>
+          </div>
+
+          <div class="type-card reveal">
+            <strong>5. Choice Questions</strong>
+            <span>Would you like A or B? / Should we do A or B?</span>
+          </div>
+
+          <div class="type-card reveal">
+            <strong>6. Suggestions / Requests</strong>
+            <span>Could you...? / Why don't we...? / Would you mind...?</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3 -->
+    <section class="slide">
+      <div class="slide-label reveal">WH Question 01</div>
+
+      <div class="big-word reveal">WHEN</div>
+      <h2 class="reveal">Hỏi về thời gian</h2>
+
+      <div class="content-area">
+        <div class="sample-box reveal">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">When will the meeting start?</div>
+          <div class="answer">A. In the conference room.</div>
+          <div class="answer correct">B. At 9 o'clock.</div>
+          <div class="answer">C. Mr. Kim will lead it.</div>
+        </div>
+
+        <div class="method-box reveal">
+          <h3>Cách làm</h3>
+          <ul class="steps">
+            <li>Nghe thấy <b>When</b> → lập tức nghĩ đến <b>thời gian</b>.</li>
+            <li>Đáp án đúng thường là giờ, ngày, tháng, thời điểm, deadline.</li>
+            <li>Loại đáp án chỉ địa điểm, người, lý do.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4 -->
+    <section class="slide">
+      <div class="slide-label reveal">WH Question 02</div>
+
+      <div class="big-word reveal">WHERE</div>
+      <h2 class="reveal">Hỏi về địa điểm</h2>
+
+      <div class="content-area">
+        <div class="sample-box reveal">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">Where is the manager's office?</div>
+          <div class="answer">A. At 3 p.m.</div>
+          <div class="answer correct">B. On the second floor.</div>
+          <div class="answer">C. Because she is busy.</div>
+        </div>
+
+        <div class="method-box reveal">
+          <h3>Cách làm</h3>
+          <ul class="steps">
+            <li>Nghe thấy <b>Where</b> → cần tìm <b>địa điểm</b>.</li>
+            <li>Đáp án đúng thường có: room, floor, office, desk, building, address.</li>
+            <li>Cẩn thận đáp án lặp từ nhưng trả lời sai loại thông tin.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5 -->
+    <section class="slide">
+      <div class="slide-label reveal">WH Question 03</div>
+
+      <div class="big-word reveal">WHY</div>
+      <h2 class="reveal">Hỏi về lý do</h2>
+
+      <div class="content-area">
+        <div class="sample-box reveal">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">Why was the meeting canceled?</div>
+          <div class="answer correct">A. Because the manager is sick.</div>
+          <div class="answer">B. In the main office.</div>
+          <div class="answer">C. At 10 o'clock.</div>
+        </div>
+
+        <div class="method-box reveal">
+          <h3>Cách làm</h3>
+          <ul class="steps">
+            <li>Nghe thấy <b>Why</b> → cần tìm <b>lý do</b>.</li>
+            <li>Đáp án đúng có thể bắt đầu bằng because, due to, to + verb.</li>
+            <li>Loại đáp án chỉ thời gian hoặc địa điểm.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6 -->
+    <section class="slide">
+      <div class="slide-label reveal">WH Question 04</div>
+
+      <div class="big-word reveal">WHO</div>
+      <h2 class="reveal">Hỏi về người</h2>
+
+      <div class="content-area">
+        <div class="sample-box reveal">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">Who will give the presentation?</div>
+          <div class="answer">A. In the meeting room.</div>
+          <div class="answer correct">B. Ms. Taylor will.</div>
+          <div class="answer">C. Next Monday.</div>
+        </div>
+
+        <div class="method-box reveal">
+          <h3>Cách làm</h3>
+          <ul class="steps">
+            <li>Nghe thấy <b>Who</b> → cần tìm <b>người hoặc chức vụ</b>.</li>
+            <li>Đáp án đúng thường là tên người, phòng ban, chức danh.</li>
+            <li>Có thể trả lời ngắn: <b>Ms. Taylor will.</b> / <b>The sales manager.</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7 -->
+    <section class="slide">
+      <div class="slide-label reveal">WH Question 05</div>
+
+      <div class="big-word reveal">WHAT TIME</div>
+      <h2 class="reveal">Hỏi giờ cụ thể</h2>
+
+      <div class="content-area">
+        <div class="sample-box reveal">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">What time does the store close?</div>
+          <div class="answer">A. At the shopping mall.</div>
+          <div class="answer">B. The store is new.</div>
+          <div class="answer correct">C. At 8 p.m.</div>
+        </div>
+
+        <div class="method-box reveal">
+          <h3>Cách làm</h3>
+          <ul class="steps">
+            <li><b>What time</b> giống nhóm <b>When</b>, nhưng hỏi giờ cụ thể hơn.</li>
+            <li>Đáp án đúng thường là mốc giờ: 8 a.m., noon, 3:30, after lunch.</li>
+            <li>Không chọn đáp án nói về nơi chốn hoặc người phụ trách.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8 -->
+    <section class="slide">
+      <div class="slide-label reveal">WH Question 06</div>
+
+      <div class="big-word reveal">HOW OFTEN</div>
+      <h2 class="reveal">Hỏi tần suất</h2>
+
+      <div class="content-area">
+        <div class="sample-box reveal">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">How often do you check the inventory?</div>
+          <div class="answer correct">A. Once a week.</div>
+          <div class="answer">B. In the storage room.</div>
+          <div class="answer">C. The new manager does.</div>
+        </div>
+
+        <div class="method-box reveal">
+          <h3>Cách làm</h3>
+          <ul class="steps">
+            <li>Nghe thấy <b>How often</b> → cần tìm <b>tần suất</b>.</li>
+            <li>Đáp án đúng thường là: once a week, twice a month, every day, rarely.</li>
+            <li>Đừng nhầm với <b>How</b> hỏi cách thức hoặc <b>How long</b> hỏi khoảng thời gian.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9 -->
+    <section class="slide">
+      <div class="slide-label reveal">Yes / No Questions</div>
+
+      <div class="big-word reveal">YES / NO</div>
+      <h2 class="reveal">Câu hỏi Yes / No trong Part 2</h2>
+
+      <div class="content-area">
+        <div class="intro-box reveal">
+          <p>
+            Đây là dạng câu hỏi bắt đầu bằng trợ động từ hoặc động từ đặc biệt:
+          </p>
+
+          <div class="formula-row">
+            <div class="formula-item">Do</div>
+            <div class="formula-item">Did</div>
+            <div class="formula-item">Can</div>
+            <div class="formula-item">Will</div>
+            <div class="formula-item">Are</div>
+            <div class="formula-item">Is</div>
+            <div class="formula-item">Have</div>
+          </div>
+        </div>
+
+        <div class="sample-box reveal">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">Did you send the invoice?</div>
+          <div class="answer">A. On the second floor.</div>
+          <div class="answer correct">B. I’ll do it after lunch.</div>
+          <div class="answer">C. Three copies, please.</div>
+        </div>
+
+        <div class="method-box reveal">
+          <h3>Điểm quan trọng</h3>
+          <ul class="steps">
+            <li>Ưu tiên chọn đáp án có <b>Yes</b> hoặc <b>No</b> trong trường hợp bạn không nghe được toàn bộ.</li>
+            <li>Dạng câu này có thể được trả lời bằng <b>đáp án gián tiếp</b>, nghĩa là không có Yes hoặc No.</li>
+            <li>Nếu bạn nghe tốt, hãy cứ nghe toàn câu để đảm bảo đáp án của mình đúng.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10 -->
+    <section class="slide">
+      <div class="slide-label reveal">Yes / No Questions 01</div>
+
+      <h2 class="reveal">Dạng trả lời trực tiếp</h2>
+
+      <div class="content-area">
+        <div class="sample-box reveal">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">Are you attending the training session?</div>
+          <div class="answer correct">A. Yes, I signed up yesterday.</div>
+          <div class="answer">B. In the training room.</div>
+          <div class="answer">C. It starts at 2 p.m.</div>
+        </div>
+
+        <div class="method-box reveal">
+          <h3>Cách làm</h3>
+          <p>
+            Chọn ngay đáp án <b>Yes</b> hoặc <b>No</b> nếu là câu hỏi Yes/No và bạn không chắc đáp án đúng.
+            Khuyến khích thực hành nghe thật nhiều để có thể nghe hiểu toàn bộ ngữ cảnh.
+          </p>
+        </div>
+
+        <div class="danger-box reveal">
+          <h3>Bẫy thường gặp</h3>
+          <ul class="steps">
+            <li>Đáp án có từ liên quan đến câu hỏi nhưng không trả lời câu hỏi.</li>
+            <li>Ví dụ hỏi <b>attending?</b> nhưng đáp án chỉ nói <b>where</b> hoặc <b>when</b>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11 -->
+    <section class="slide">
+      <div class="slide-label reveal">Yes / No Questions 02</div>
+
+      <h2 class="reveal">Dạng trả lời gián tiếp</h2>
+
+      <div class="content-area">
+        <div class="sample-box reveal">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">Can you attend the meeting tomorrow?</div>
+          <div class="answer">A. It’s in the conference room.</div>
+          <div class="answer correct">B. I have another appointment.</div>
+          <div class="answer">C. The meeting lasted two hours.</div>
+        </div>
+
+        <div class="method-box reveal">
+          <h3>Cách hiểu</h3>
+          <ul class="steps">
+            <li>Câu hỏi: <b>Bạn có thể tham dự cuộc họp ngày mai không?</b></li>
+            <li>Đáp án B không nói “No”, nhưng nghĩa là <b>không thể đi</b>.</li>
+            <li>Đây là kiểu đáp án TOEIC rất thích dùng.</li>
+          </ul>
+        </div>
+
+        <div class="intro-box reveal">
+          <p><b>Một số mẫu trả lời gián tiếp hay gặp:</b></p>
+          <p>Have you finished the report? → <span class="keyword">I’m still working on it.</span></p>
+          <p>Did Mr. Lee call? → <span class="keyword">He left a message.</span></p>
+          <p>Is the printer working? → <span class="keyword">The technician is fixing it.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 12 -->
+    <section class="slide">
+      <div class="slide-label reveal">Tag Questions</div>
+
+      <div class="big-word reveal">TAG QUESTIONS</div>
+      <h2 class="reveal">Câu hỏi đuôi trong Part 2</h2>
+
+      <div class="content-area">
+        <div class="intro-box reveal">
+          <p>
+            <b>Tag Question</b> là dạng câu hỏi có phần đuôi ngắn ở cuối câu,
+            thường dùng để xác nhận lại thông tin.
+          </p>
+
+          <div class="formula-row">
+            <div class="formula-item">isn't it?</div>
+            <div class="formula-item">aren't you?</div>
+            <div class="formula-item">didn't he?</div>
+            <div class="formula-item">won't they?</div>
+          </div>
+        </div>
+
+        <div class="sample-box reveal">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The meeting starts at 9, doesn't it?</div>
+          <div class="answer correct">A. Yes, that's right.</div>
+          <div class="answer">B. In the meeting room.</div>
+          <div class="answer">C. Mr. Brown will attend.</div>
+        </div>
+
+        <div class="method-box reveal">
+          <h3>Cách hiểu</h3>
+          <ul class="steps">
+            <li>Câu hỏi đuôi thường dùng để <b>xác nhận thông tin</b>.</li>
+            <li>Đáp án đúng thường là đồng ý, phủ định, hoặc sửa lại thông tin.</li>
+            <li>Không cần quá tập trung vào phần đuôi; hãy nghe ý chính của câu phía trước.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 13 -->
+    <section class="slide">
+      <div class="slide-label reveal">Tag Questions 01</div>
+
+      <h2 class="reveal">Dạng xác nhận đúng / sai</h2>
+
+      <div class="content-area">
+        <div class="sample-box reveal">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">You finished the report, didn't you?</div>
+          <div class="answer">A. It is on my desk.</div>
+          <div class="answer correct">B. Yes, I sent it this morning.</div>
+          <div class="answer">C. The report is quite long.</div>
+        </div>
+
+        <div class="method-box reveal">
+          <h3>Cách làm</h3>
+          <ul class="steps">
+            <li>Nghe câu chính: <b>You finished the report</b>.</li>
+            <li>Người hỏi muốn xác nhận: <b>Bạn đã hoàn thành báo cáo rồi đúng không?</b></li>
+            <li>Đáp án đúng thường xác nhận bằng Yes/No hoặc một câu có cùng ý nghĩa.</li>
+          </ul>
+        </div>
+
+        <div class="danger-box reveal">
+          <h3>Bẫy thường gặp</h3>
+          <ul class="steps">
+            <li>Đáp án có lặp lại từ trong câu hỏi nhưng không trả lời việc đã hoàn thành hay chưa.</li>
+            <li>Ví dụ: <b>The report is quite long</b> nghe có liên quan, nhưng không trả lời câu hỏi.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 14 -->
+    <section class="slide">
+      <div class="slide-label reveal">Tag Questions 02</div>
+
+      <h2 class="reveal">Dạng sửa lại thông tin</h2>
+
+      <div class="content-area">
+        <div class="sample-box reveal">
+          <div class="sample-title">Ví dụ mẫu</div>
+          <div class="question">The client is arriving today, isn't he?</div>
+          <div class="answer">A. At the front desk.</div>
+          <div class="answer">B. He is our new client.</div>
+          <div class="answer correct">C. Actually, he’ll arrive tomorrow.</div>
+        </div>
+
+        <div class="method-box reveal">
+          <h3>Cách hiểu</h3>
+          <ul class="steps">
+            <li>Người hỏi nghĩ rằng khách hàng sẽ đến hôm nay.</li>
+            <li>Đáp án đúng sửa lại thông tin: <b>Actually, he’ll arrive tomorrow.</b></li>
+            <li>Với Tag Questions, đáp án đúng không nhất thiết phải có Yes hoặc No.</li>
+          </ul>
+        </div>
+
+        <div class="intro-box reveal">
+          <p><b>Mẫu đáp án hay gặp trong Tag Questions:</b></p>
+          <p>Yes, that's right.</p>
+          <p>No, I don't think so.</p>
+          <p>Actually, it was changed.</p>
+          <p>I believe so.</p>
+          <p>Let me check.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="control-bar">
+      <button class="nav-btn" onclick="prevSlide()">← Prev</button>
+      <button class="go-btn" onclick="goReveal()">GO</button>
+      <button class="nav-btn" onclick="nextSlide()">Next →</button>
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    const progressText = document.getElementById("progressText");
+    const topLine = document.getElementById("topLine");
+
+    let currentSlide = 0;
+    let revealIndex = 0;
+
+    function updateProgress() {
+      progressText.textContent = `${currentSlide + 1} / ${slides.length}`;
+      topLine.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
+    }
+
+    function resetSlideReveal(slide) {
+      const items = slide.querySelectorAll(".reveal");
+      items.forEach(item => item.classList.remove("show"));
+    }
+
+    function showSlide(index) {
+      slides[currentSlide].classList.remove("active");
+      resetSlideReveal(slides[currentSlide]);
+
+      currentSlide = index;
+      revealIndex = 0;
+
+      slides[currentSlide].classList.add("active");
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+      updateProgress();
+    }
+
+    function goReveal() {
+      const activeSlide = slides[currentSlide];
+      const revealItems = activeSlide.querySelectorAll(".reveal");
+
+      if (revealIndex < revealItems.length) {
+        revealItems[revealIndex].classList.add("show");
+
+        setTimeout(() => {
+          revealItems[revealIndex]?.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }, 80);
+
+        revealIndex++;
+      } else {
+        if (currentSlide < slides.length - 1) {
+          showSlide(currentSlide + 1);
+        }
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        showSlide(currentSlide + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        showSlide(currentSlide - 1);
+      }
+    }
+
+    document.addEventListener("keydown", function(e) {
+      if (e.code === "Space" || e.code === "Enter") {
+        e.preventDefault();
+        goReveal();
+      }
+
+      if (e.code === "ArrowRight") {
+        nextSlide();
+      }
+
+      if (e.code === "ArrowLeft") {
+        prevSlide();
+      }
+    });
+
+    updateProgress();
+  </script>
+</body>
+</html>
