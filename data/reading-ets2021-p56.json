@@ -1,768 +1,495 @@
 {
-  "id": "ets-summer-2021-test1-part5-6",
-  "title": "ETS Summer 2021 Test 1 · Part 5 + 6",
-  "sourceLabel": "ETS Summer 2021 · Reading Test 1",
-  "timerMinutes": 25,
-  "questions": [
+  "id": "ets-summer-2021-part5-6",
+  "title": "ETS Summer 2021 · Part 5 + 6",
+  "sourceLabel": "ETS Summer 2021 · Reading",
+  "version": 2,
+  "tests": [
     {
-      "id": "q101",
-      "no": 101,
-      "part": 5,
-      "stem": "Mr. Sokolov ------- a positive review of his stay at the Olana Hotel.",
-      "options": {
-        "A": "write",
-        "B": "wrote",
-        "C": "writing",
-        "D": "was written"
-      },
-      "answer": "B",
-      "skill": "Past tense",
-      "explanationVi": "Câu kể về việc ông Sokolov đã viết đánh giá sau kỳ nghỉ. Chủ ngữ <b>Mr. Sokolov</b> là người thực hiện hành động nên dùng quá khứ đơn chủ động: <b>wrote</b>.",
-      "explanation": "The sentence describes an action Mr. Sokolov completed after his stay. The subject <b>Mr. Sokolov</b> performs the action, so the simple past active <b>wrote</b> is correct."
-    },
-    {
-      "id": "q102",
-      "no": 102,
-      "part": 5,
-      "stem": "The manager often leads new employees through the safety procedures -------.",
-      "options": {
-        "A": "her",
-        "B": "herself",
-        "C": "hers",
-        "D": "she"
-      },
-      "answer": "B",
-      "skill": "Reflexive pronoun",
-      "explanationVi": "Cụm <b>leads new employees through the safety procedures herself</b> nhấn mạnh chính người quản lý tự mình hướng dẫn nhân viên mới. Cần dùng đại từ phản thân <b>herself</b> để chỉ chính chủ ngữ <b>the manager</b>.",
-      "explanation": "The phrase <b>leads new employees through the safety procedures herself</b> emphasizes that the manager personally guides new employees. The reflexive pronoun <b>herself</b> refers back to the subject <b>the manager</b>."
-    },
-    {
-      "id": "q103",
-      "no": 103,
-      "part": 5,
-      "stem": "The corporate fitness center is equipped ------- fourteen stationary bicycles.",
-      "options": {
-        "A": "at",
-        "B": "on",
-        "C": "with",
-        "D": "about"
-      },
-      "answer": "C",
-      "skill": "Adjective + preposition",
-      "explanationVi": "<b>Be equipped with</b> là cụm cố định, nghĩa là \"được trang bị với\". Chỗ trống sau <b>is equipped</b> cần giới từ <b>with</b> để liên kết với danh từ <b>fourteen stationary bicycles</b>.",
-      "explanation": "<b>Be equipped with</b> is a fixed collocation meaning \"provided with.\" The blank after <b>is equipped</b> requires the preposition <b>with</b> to connect to the noun phrase <b>fourteen stationary bicycles</b>."
-    },
-    {
-      "id": "q104",
-      "no": 104,
-      "part": 5,
-      "stem": "Professor Phuong will go over the use of the laboratory ------- with the interns next week.",
-      "options": {
-        "A": "instruments",
-        "B": "instrumental",
-        "C": "instrumentally",
-        "D": "instrumented"
-      },
-      "answer": "A",
-      "skill": "Word form",
-      "explanationVi": "Sau cụm <b>the use of the laboratory</b> cần một danh từ số nhiều chỉ thiết bị được sử dụng trong phòng thí nghiệm. <b>instruments</b> là danh từ số nhiều phù hợp về nghĩa và ngữ pháp. Các lựa chọn còn lại là tính từ hoặc trạng từ, không đứng sau mạo từ <b>the</b> ở vị trí này.",
-      "explanation": "After the phrase <b>the use of the laboratory</b>, a plural noun referring to equipment used in the lab is required. <b>instruments</b> is the correct plural noun. The other options are adjectives or adverbs and cannot follow the article <b>the</b> in this position."
-    },
-    {
-      "id": "q105",
-      "no": 105,
-      "part": 5,
-      "stem": "Arnby Cable ------- £25.00 to all Internet subscribers after the weeklong service interruption.",
-      "options": {
-        "A": "refunded",
-        "B": "accepted",
-        "C": "divided",
-        "D": "deposited"
-      },
-      "answer": "A",
-      "skill": "Vocabulary",
-      "explanationVi": "Ngữ cảnh nói về việc công ty hoàn trả tiền cho thuê bao sau sự cố gián đoạn dịch vụ kéo dài một tuần. <b>refunded</b> là động từ phù hợp nhất, có nghĩa là \"hoàn tiền\". Cấu trúc <b>refund + money + to someone</b> dùng đúng với ngữ cảnh này. Các lựa chọn còn lại không phù hợp về nghĩa: accepted (chấp nhận), divided (chia), deposited (gửi tiền).",
-      "explanation": "The context describes a company returning money to subscribers after a weeklong service interruption. <b>refunded</b> is the most appropriate verb, meaning \"gave back money.\" The structure <b>refund + money + to someone</b> fits the context perfectly. The other options are unsuitable in meaning: accepted, divided, deposited."
-    },
-    {
-      "id": "q106",
-      "no": 106,
-      "part": 5,
-      "stem": "The board of directors will meet next Monday to examine the current hiring -------.",
-      "options": {
-        "A": "purpose",
-        "B": "intent",
-        "C": "assembly",
-        "D": "policy"
-      },
-      "answer": "D",
-      "skill": "Collocation",
-      "explanationVi": "<b>Hiring policy</b> là cụm danh từ tự nhiên trong môi trường doanh nghiệp, nghĩa là \"chính sách tuyển dụng\". Trong ngữ cảnh hội đồng quản trị họp để xem xét chính sách hiện tại, <b>policy</b> là lựa chọn phù hợp nhất. Các lựa chọn khác không kết hợp tự nhiên với <b>hiring</b> trong ngữ cảnh này.",
-      "explanation": "<b>Hiring policy</b> is a natural noun phrase in a corporate setting, meaning \"recruitment policy.\" In the context of a board meeting to review current practices, <b>policy</b> is the most suitable choice. The other options do not naturally collocate with <b>hiring</b> in this context."
-    },
-    {
-      "id": "q107",
-      "no": 107,
-      "part": 5,
-      "stem": "Passengers should not leave their seats ------- a flight attendant gives them permission to do so.",
-      "options": {
-        "A": "unless",
-        "B": "rather",
-        "C": "instead",
-        "D": "otherwise"
-      },
-      "answer": "A",
-      "skill": "Conjunction",
-      "explanationVi": "Câu diễn tả một điều kiện ngoại lệ: hành khách <b>không được</b> rời ghế <b>trừ khi</b> tiếp viên cho phép. <b>unless</b> mang nghĩa \"trừ khi\", là liên từ điều kiện phù hợp duy nhất trong các lựa chọn. Các lựa chọn còn lại không diễn tả được mối quan hệ điều kiện này.",
-      "explanation": "The sentence expresses an exceptional condition: passengers <b>should not</b> leave their seats <b>except if</b> a flight attendant gives permission. <b>unless</b> means \"except if\" and is the only conjunction that correctly expresses this conditional relationship."
-    },
-    {
-      "id": "q108",
-      "no": 108,
-      "part": 5,
-      "stem": "The goal of the committee was to evaluate the company’s bylaws and offer ------- for improvement.",
-      "options": {
-        "A": "renewals",
-        "B": "registrations",
-        "C": "recommendations",
-        "D": "reimbursements"
-      },
-      "answer": "C",
-      "skill": "Noun choice",
-      "explanationVi": "<b>Offer recommendations for improvement</b> là cụm từ tự nhiên trong tiếng Anh, nghĩa là \"đưa ra các khuyến nghị để cải thiện\". Mục tiêu của ủy ban là đánh giá điều lệ và đề xuất cải tiến, nên <b>recommendations</b> là danh từ phù hợp nhất. Các lựa chọn còn lại không phù hợp về nghĩa: renewals (sự gia hạn), registrations (sự đăng ký), reimbursements (sự hoàn tiền).",
-      "explanation": "<b>Offer recommendations for improvement</b> is a natural English collocation meaning \"give suggestions for making something better.\" The committee's goal was to evaluate bylaws and propose improvements, so <b>recommendations</b> is the most appropriate noun. The other options are unsuitable in meaning: renewals, registrations, reimbursements."
-    },
-    {
-      "id": "q109",
-      "no": 109,
-      "part": 5,
-      "stem": "The building’s new ventilation system circulates heat much ------- than before.",
-      "options": {
-        "A": "even",
-        "B": "most even",
-        "C": "evenly",
-        "D": "more evenly"
-      },
-      "answer": "D",
-      "skill": "Comparative adverb",
-      "explanationVi": "<b>much</b> đứng trước dạng so sánh hơn để nhấn mạnh mức độ. Động từ <b>circulates</b> cần một trạng từ bổ nghĩa, nên dùng <b>more evenly</b> (trạng từ so sánh hơn của <b>evenly</b>). Các lựa chọn khác không đáp ứng được cả hai yếu tố: dạng so sánh hơn và trạng từ.",
-      "explanation": "<b>much</b> precedes a comparative form to emphasize degree. The verb <b>circulates</b> requires an adverb to modify it, so <b>more evenly</b> (the comparative adverb form of <b>evenly</b>) is correct. The other options fail to meet both requirements of being comparative and adverbial."
-    },
-    {
-      "id": "q110",
-      "no": 110,
-      "part": 5,
-      "stem": "Glowood Appliances promises customers their money back ------- they are not satisfied with their purchase.",
-      "options": {
-        "A": "while",
-        "B": "and",
-        "C": "if",
-        "D": "then"
-      },
-      "answer": "C",
-      "skill": "Condition",
-      "explanationVi": "Câu nêu điều kiện hoàn tiền: công ty hứa trả lại tiền <b>nếu</b> khách hàng không hài lòng. <b>if</b> là liên từ điều kiện duy nhất trong các lựa chọn, dùng để giới thiệu mệnh đề điều kiện. Các lựa chọn khác không diễn tả được mối quan hệ điều kiện giữa hai mệnh đề.",
-      "explanation": "The sentence states a condition for a refund: the company promises money back <b>if</b> customers are not satisfied. <b>if</b> is the only conditional conjunction among the choices and correctly introduces the conditional clause."
-    },
-    {
-      "id": "q111",
-      "no": 111,
-      "part": 5,
-      "stem": "The theater doors will close and the show will start at precisely 8:00 p.m., so guests are reminded to be -------.",
-      "options": {
-        "A": "rapid",
-        "B": "sudden",
-        "C": "punctual",
-        "D": "instant"
-      },
-      "answer": "C",
-      "skill": "Vocabulary",
-      "explanationVi": "Vì cửa rạp sẽ đóng và buổi diễn bắt đầu <b>chính xác lúc 8 giờ tối</b>, khách được nhắc nhở phải <b>đúng giờ</b>. <b>punctual</b> là tính từ phù hợp nhất, nghĩa là \"đúng giờ\". Các lựa chọn còn lại không phù hợp về nghĩa trong ngữ cảnh này: rapid (nhanh), sudden (đột ngột), instant (tức thì).",
-      "explanation": "Because the theater doors will close and the show starts <b>precisely at 8:00 p.m.</b>, guests are reminded to be <b>on time</b>. <b>punctual</b> is the most appropriate adjective, meaning \"arriving at the correct time.\" The other options are unsuitable in this context: rapid, sudden, instant."
-    },
-    {
-      "id": "q112",
-      "no": 112,
-      "part": 5,
-      "stem": "All vacation requests must be made to your supervisor ------- the requested date.",
-      "options": {
-        "A": "prior to",
-        "B": "except for",
-        "C": "previously",
-        "D": "because"
-      },
-      "answer": "A",
-      "skill": "Prepositional phrase",
-      "explanationVi": "<b>Prior to</b> là cụm giới từ mang nghĩa \"trước khi\", dùng để chỉ thời gian xảy ra trước một mốc cụ thể. Trong câu này, yêu cầu nghỉ phép phải được gửi <b>trước</b> ngày nghỉ dự kiến, nên <b>prior to</b> là lựa chọn phù hợp. <b>previously</b> là trạng từ không đứng trước danh từ; <b>except for</b> và <b>because</b> không phù hợp về nghĩa.",
-      "explanation": "<b>Prior to</b> is a prepositional phrase meaning \"before,\" used to indicate time preceding a specific point. In this sentence, vacation requests must be submitted <b>before</b> the requested date, so <b>prior to</b> is correct. <b>previously</b> is an adverb and cannot precede a noun directly; <b>except for</b> and <b>because</b> are unsuitable in meaning."
-    },
-    {
-      "id": "q113",
-      "no": 113,
-      "part": 5,
-      "stem": "Most banks now offer clients the option of receiving their statements electronically or ------- mail.",
-      "options": {
-        "A": "from",
-        "B": "of",
-        "C": "in",
-        "D": "by"
-      },
-      "answer": "D",
-      "skill": "Preposition",
-      "explanationVi": "<b>By mail</b> là cụm cố định trong tiếng Anh, nghĩa là \"qua đường bưu điện\". Câu này đưa ra hai lựa chọn nhận sao kê: <b>electronically</b> (điện tử) hoặc <b>by mail</b> (qua bưu điện). Các giới từ còn lại không tạo thành cụm cố định với <b>mail</b> trong ngữ cảnh này.",
-      "explanation": "<b>By mail</b> is a fixed collocation in English meaning \"through the postal service.\" The sentence offers two options for receiving statements: <b>electronically</b> or <b>by mail</b>. The other prepositions do not form a standard collocation with <b>mail</b> in this context."
-    },
-    {
-      "id": "q114",
-      "no": 114,
-      "part": 5,
-      "stem": "Construction at Langhall Plaza is going so well that shops might open before the expected ------- date.",
-      "options": {
-        "A": "completion",
-        "B": "selection",
-        "C": "decision",
-        "D": "option"
-      },
-      "answer": "A",
-      "skill": "Noun collocation",
-      "explanationVi": "<b>Completion date</b> là cụm danh từ phổ biến trong ngữ cảnh xây dựng, nghĩa là \"ngày hoàn thành\". Việc xây dựng tiến triển tốt đến mức các cửa hàng có thể mở cửa <b>trước ngày hoàn thành dự kiến</b>. Các lựa chọn còn lại không phù hợp về nghĩa với ngữ cảnh xây dựng: selection (lựa chọn), decision (quyết định), option (tùy chọn).",
-      "explanation": "<b>Completion date</b> is a common noun phrase in construction contexts, meaning \"the date when something is finished.\" The construction is going so well that shops might open <b>before the expected completion date</b>. The other options are unsuitable in a construction context: selection, decision, option."
-    },
-    {
-      "id": "q115",
-      "no": 115,
-      "part": 5,
-      "stem": "Kohmek, Inc., is seeking a suitable site ------- the construction of its electronics factory.",
-      "options": {
-        "A": "for",
-        "B": "so",
-        "C": "to",
-        "D": "more"
-      },
-      "answer": "A",
-      "skill": "Preposition",
-      "explanationVi": "Cấu trúc <b>a site for + noun</b> dùng để chỉ mục đích sử dụng của địa điểm. Trong câu này, công ty tìm địa điểm <b>cho việc xây dựng</b> nhà máy, nên giới từ <b>for</b> là phù hợp. <b>to</b> có thể đi với động từ nguyên thể nhưng không phù hợp với danh từ <b>the construction</b>; <b>so</b> và <b>more</b> không đúng chức năng ngữ pháp ở vị trí này.",
-      "explanation": "The structure <b>a site for + noun</b> indicates the purpose of the location. In this sentence, the company is looking for a site <b>for the purpose of constructing</b> its factory, so the preposition <b>for</b> is correct. <b>to</b> can precede an infinitive verb but does not fit with the noun <b>the construction</b>; <b>so</b> and <b>more</b> are grammatically incorrect in this position."
-    },
-    {
-      "id": "q116",
-      "no": 116,
-      "part": 5,
-      "stem": "Studies show that the average audience forms its ------- of the speaker within the first few seconds of the presentation.",
-      "options": {
-        "A": "impress",
-        "B": "impressive",
-        "C": "impressively",
-        "D": "impression"
-      },
-      "answer": "D",
-      "skill": "Word form",
-      "explanationVi": "Sau tính từ sở hữu <b>its</b> cần một danh từ để hoàn chỉnh cụm danh từ. <b>impression</b> là danh từ, nghĩa là \"ấn tượng\", phù hợp với ngữ cảnh khán giả hình thành ấn tượng về diễn giả. Các lựa chọn còn lại lần lượt là động từ, tính từ và trạng từ, không thể đứng sau sở hữu cách <b>its</b> ở vị trí này.",
-      "explanation": "After the possessive adjective <b>its</b>, a noun is required to complete the noun phrase. <b>impression</b> is a noun meaning \"opinion or feeling formed about someone,\" which fits the context of an audience forming an impression of a speaker. The other options are a verb, an adjective, and an adverb respectively, none of which can follow <b>its</b> in this position."
-    },
-    {
-      "id": "q117",
-      "no": 117,
-      "part": 5,
-      "stem": "Mr. Cutler has been asked to ------- domestic sales of low-calorie beverages.",
-      "options": {
-        "A": "oversee",
-        "B": "possess",
-        "C": "succeed",
-        "D": "persist"
-      },
-      "answer": "A",
-      "skill": "Vocabulary",
-      "explanationVi": "<b>Oversee</b> nghĩa là \"giám sát, phụ trách\". Trong ngữ cảnh ông Cutler được yêu cầu <b>phụ trách doanh số nội địa</b> của một dòng đồ uống, <b>oversee</b> là lựa chọn phù hợp nhất. Các động từ còn lại không hợp ngữ cảnh: possess (sở hữu), succeed (thành công), persist (kiên trì).",
-      "explanation": "<b>Oversee</b> means \"supervise or be in charge of.\" In the context of Mr. Cutler being asked to <b>supervise domestic sales</b> of beverages, <b>oversee</b> is the most appropriate choice. The other verbs are unsuitable in this context: possess, succeed, persist."
-    },
-    {
-      "id": "q118",
-      "no": 118,
-      "part": 5,
-      "stem": "Cranford Culinary Academy offers 35 different classes for ------- chefs.",
-      "options": {
-        "A": "aspires",
-        "B": "aspirations",
-        "C": "aspiring",
-        "D": "to aspire"
-      },
-      "answer": "C",
-      "skill": "Word form",
-      "explanationVi": "Trước danh từ <b>chefs</b> cần một tính từ để bổ nghĩa. <b>aspiring</b> là tính từ, nghĩa là \"đầy khát vọng, đang mong muốn trở thành\". Cụm <b>aspiring chefs</b> nghĩa là \"những đầu bếp đang theo đuổi nghề\". <b>aspires</b> là động từ chia ngôi thứ ba, <b>aspirations</b> là danh từ số nhiều, <b>to aspire</b> là động từ nguyên thể, không thể đứng trước danh từ ở vị trí này.",
-      "explanation": "Before the noun <b>chefs</b>, an adjective is needed to modify it. <b>aspiring</b> is an adjective meaning \"hoping to become.\" The phrase <b>aspiring chefs</b> means \"people who hope to become chefs.\" <b>aspires</b> is a verb, <b>aspirations</b> is a plural noun, and <b>to aspire</b> is an infinitive; none of these can precede a noun in this position."
-    },
-    {
-      "id": "q119",
-      "no": 119,
-      "part": 5,
-      "stem": "-------, items sold at the Scottville Craft Fair are unique and of very high quality.",
-      "options": {
-        "A": "Fairly",
-        "B": "Typically",
-        "C": "Simply",
-        "D": "Entirely"
-      },
-      "answer": "B",
-      "skill": "Sentence adverb",
-      "explanationVi": "Câu mô tả một đặc điểm chung, thường thấy của các sản phẩm tại hội chợ thủ công. <b>Typically</b> là trạng từ đứng đầu câu, nghĩa là \"thông thường, nhìn chung\", phù hợp để diễn tả tính chất chung này. Các trạng từ còn lại không phù hợp về nghĩa: Fairly (khá), Simply (đơn giản là), Entirely (hoàn toàn).",
-      "explanation": "The sentence describes a general characteristic of items sold at the craft fair. <b>Typically</b> is a sentence adverb meaning \"generally, in most cases,\" which fits the context of describing a common trait. The other adverbs are unsuitable in meaning: Fairly, Simply, Entirely."
-    },
-    {
-      "id": "q120",
-      "no": 120,
-      "part": 5,
-      "stem": "Mamton Home Furnishings ------- customized furniture in Pennsylvania for more than a century.",
-      "options": {
-        "A": "manufactures",
-        "B": "is manufacturing",
-        "C": "has manufactured",
-        "D": "manufacture"
-      },
-      "answer": "C",
-      "skill": "Present perfect",
-      "explanationVi": "Cụm <b>for more than a century</b> cho thấy hành động sản xuất kéo dài từ quá khứ đến hiện tại và vẫn đang tiếp diễn. Thì hiện tại hoàn thành <b>has manufactured</b> là lựa chọn phù hợp để diễn tả hành động bắt đầu trong quá khứ và kéo dài đến hiện tại. Chủ ngữ <b>Mamton Home Furnishings</b> là số ít nên dùng <b>has</b>. Hiện tại đơn <b>manufactures</b> không nhấn mạnh được khoảng thời gian kéo dài.",
-      "explanation": "The phrase <b>for more than a century</b> indicates an action that began in the past and continues to the present. The present perfect <b>has manufactured</b> is the correct tense to express this duration. The subject <b>Mamton Home Furnishings</b> is singular, so <b>has</b> is used. Simple present <b>manufactures</b> does not convey the ongoing duration."
-    },
-    {
-      "id": "q121",
-      "no": 121,
-      "part": 5,
-      "stem": "Please hold any phone calls for Ms. Tanaka ------- she will be in meetings all day.",
-      "options": {
-        "A": "as",
-        "B": "but",
-        "C": "despite",
-        "D": "similarly"
-      },
-      "answer": "A",
-      "skill": "Conjunction",
-      "explanationVi": "Câu cần một liên từ để nối mệnh đề chỉ lý do với mệnh đề chính. <b>as</b> ở đây mang nghĩa <b>because</b> (bởi vì), giải thích lý do nên giữ các cuộc gọi cho cô Tanaka: <b>vì cô ấy sẽ họp cả ngày</b>. Các lựa chọn còn lại không diễn tả được mối quan hệ nguyên nhân - kết quả: but (nhưng - đối lập), despite (mặc dù - nhượng bộ, cần danh từ/V-ing), similarly (tương tự - so sánh).",
-      "explanation": "The sentence needs a conjunction to connect a reason clause to the main clause. <b>as</b> here means <b>because</b>, explaining why calls should be held: <b>she will be in meetings all day</b>. The other options do not express a cause-and-effect relationship: but (contrast), despite (concession, requires a noun/V-ing), similarly (comparison)."
-    },
-    {
-      "id": "q122",
-      "no": 122,
-      "part": 5,
-      "stem": "Dolores Gutierrez excels as an estate planning attorney who helps clients manage their assets -------.",
-      "options": {
-        "A": "effect",
-        "B": "effectively",
-        "C": "effects",
-        "D": "effective"
-      },
-      "answer": "B",
-      "skill": "Adverb",
-      "explanationVi": "Động từ <b>manage</b> cần một trạng từ bổ nghĩa để chỉ cách thức thực hiện hành động. <b>effectively</b> là trạng từ, nghĩa là \"một cách hiệu quả\", phù hợp để bổ nghĩa cho <b>manage</b>. <b>effect</b> và <b>effects</b> là danh từ, <b>effective</b> là tính từ, không thể bổ nghĩa cho động từ ở vị trí này.",
-      "explanation": "The verb <b>manage</b> requires an adverb to describe how the action is performed. <b>effectively</b> is an adverb meaning \"in an effective way,\" correctly modifying <b>manage</b>. <b>effect</b> and <b>effects</b> are nouns, and <b>effective</b> is an adjective; none of these can modify a verb in this position."
-    },
-    {
-      "id": "q123",
-      "no": 123,
-      "part": 5,
-      "stem": "Mr. Singh was ------- about sales of the fragrance after the first round of customer focus groups.",
-      "options": {
-        "A": "extensive",
-        "B": "distinct",
-        "C": "optimistic",
-        "D": "superior"
-      },
-      "answer": "C",
-      "skill": "Adjective + preposition",
-      "explanationVi": "Tính từ đi kèm giới từ <b>about</b> và phù hợp về nghĩa trong ngữ cảnh kinh doanh là <b>optimistic</b>. Cấu trúc <b>be optimistic about something</b> nghĩa là \"lạc quan về điều gì\". Sau vòng thảo luận nhóm khách hàng đầu tiên, ông Singh <b>lạc quan về doanh số</b> của dòng nước hoa. Các tính từ còn lại không đi với <b>about</b> hoặc không phù hợp về nghĩa: extensive (rộng lớn), distinct (riêng biệt), superior (vượt trội - đi với <b>to</b>).",
-      "explanation": "The adjective must collocate with the preposition <b>about</b> and fit the business context. <b>optimistic</b> works in the structure <b>be optimistic about something</b>, meaning \"hopeful that something will be successful.\" After the first focus groups, Mr. Singh was <b>optimistic about sales</b>. The other adjectives either do not collocate with <b>about</b> or are unsuitable in meaning: extensive, distinct, superior (which pairs with <b>to</b>)."
-    },
-    {
-      "id": "q124",
-      "no": 124,
-      "part": 5,
-      "stem": "Data from the finance department was used to ------- predict the company’s future expenses.",
-      "options": {
-        "A": "either",
-        "B": "ever",
-        "C": "yet",
-        "D": "better"
-      },
-      "answer": "D",
-      "skill": "Adverb",
-      "explanationVi": "Động từ <b>predict</b> cần một trạng từ bổ nghĩa. <b>better</b> là dạng so sánh hơn của <b>well</b>, nghĩa là \"tốt hơn\". Cụm <b>to better predict</b> nghĩa là \"để dự đoán tốt hơn\", ngầm so sánh với khả năng dự đoán trước khi có dữ liệu. Các lựa chọn còn lại không phải là trạng từ phù hợp để bổ nghĩa cho <b>predict</b>: either (hoặc), ever (từng), yet (chưa).",
-      "explanation": "The verb <b>predict</b> requires an adverb to modify it. <b>better</b> is the comparative form of <b>well</b>, meaning \"in a more excellent way.\" The phrase <b>to better predict</b> means \"to predict more accurately,\" implying a comparison with the previous ability to forecast. The other options are not suitable adverbs to modify <b>predict</b>: either, ever, yet."
-    },
-    {
-      "id": "q125",
-      "no": 125,
-      "part": 5,
-      "stem": "Immediately after the decrease in production was announced, everyone began discussing how ------- would impact work schedules.",
-      "options": {
-        "A": "us",
-        "B": "it",
-        "C": "theirs",
-        "D": "yours"
-      },
-      "answer": "B",
-      "skill": "Pronoun reference",
-      "explanationVi": "Đại từ cần điền phải thay thế cho <b>the decrease in production</b> được nhắc đến ở mệnh đề trước. <b>it</b> là đại từ số ít phù hợp để chỉ sự kiện này, làm chủ ngữ cho mệnh đề <b>would impact work schedules</b>. Các đại từ còn lại không phù hợp: us (chúng tôi - tân ngữ), theirs (của họ - sở hữu), yours (của bạn - sở hữu).",
-      "explanation": "The pronoun must refer back to <b>the decrease in production</b> mentioned in the preceding clause. <b>it</b> is the correct singular pronoun to replace this event, serving as the subject of the clause <b>would impact work schedules</b>. The other pronouns are unsuitable: us (object pronoun), theirs (possessive pronoun), yours (possessive pronoun)."
-    },
-    {
-      "id": "q126",
-      "no": 126,
-      "part": 5,
-      "stem": "Every year Arrow Mill, Inc., processes a ------- amount of grain.",
-      "options": {
-        "A": "durable",
-        "B": "direct",
-        "C": "resolute",
-        "D": "substantial"
-      },
-      "answer": "D",
-      "skill": "Vocabulary",
-      "explanationVi": "Trước danh từ <b>amount</b> cần một tính từ chỉ mức độ lớn, đáng kể. <b>substantial</b> là tính từ phù hợp nhất, có nghĩa là \"đáng kể, lớn\". Cụm <b>a substantial amount of grain</b> nghĩa là \"một lượng ngũ cốc lớn\", phù hợp với ngữ cảnh nhà máy xử lý ngũ cốc hằng năm. Các tính từ còn lại không phù hợp: durable (bền), direct (trực tiếp), resolute (kiên quyết).",
-      "explanation": "Before the noun <b>amount</b>, an adjective indicating a large quantity is needed. <b>substantial</b> is the most appropriate adjective, meaning \"large in size, value, or importance.\" The phrase <b>a substantial amount of grain</b> means \"a large quantity of grain,\" fitting the context of annual grain processing. The other adjectives are unsuitable: durable, direct, resolute."
-    },
-    {
-      "id": "q127",
-      "no": 127,
-      "part": 5,
-      "stem": "Tomorrow morning, both escalators in the store will be turned off periodically in order to perform ------- maintenance.",
-      "options": {
-        "A": "required",
-        "B": "require",
-        "C": "requiring",
-        "D": "requires"
-      },
-      "answer": "A",
-      "skill": "Past participle adjective",
-      "explanationVi": "Trước danh từ <b>maintenance</b> cần một tính từ bổ nghĩa. <b>required</b> là quá khứ phân từ được dùng như tính từ, nghĩa là \"được yêu cầu, bắt buộc\". Cụm <b>required maintenance</b> nghĩa là \"bảo trì bắt buộc/cần thiết\". <b>require</b> và <b>requires</b> là động từ, <b>requiring</b> là hiện tại phân từ, không thể đứng trước danh từ ở vị trí tính từ trong ngữ cảnh này.",
-      "explanation": "Before the noun <b>maintenance</b>, an adjective is needed to modify it. <b>required</b> is a past participle used as an adjective, meaning \"needed or compulsory.\" The phrase <b>required maintenance</b> means \"necessary maintenance.\" <b>require</b> and <b>requires</b> are verbs, and <b>requiring</b> is a present participle; none of these functions naturally as an adjective before <b>maintenance</b> in this context."
-    },
-    {
-      "id": "q128",
-      "no": 128,
-      "part": 5,
-      "stem": "Those who wish to volunteer at the annual Sebastian Park flower-planting event this Saturday ------- to arrive early.",
-      "options": {
-        "A": "asks",
-        "B": "are asked",
-        "C": "has been asking",
-        "D": "to ask"
-      },
-      "answer": "B",
-      "skill": "Passive voice",
-      "explanationVi": "Chủ ngữ <b>Those who wish to volunteer</b> là số nhiều và chỉ người. Những người này <b>được yêu cầu</b> đến sớm, tức là họ nhận hành động, không phải tự yêu cầu. Vì vậy cần dùng thể bị động <b>are asked</b>. <b>asks</b> là chủ động và sai số; <b>has been asking</b> là chủ động và sai số; <b>to ask</b> là động từ nguyên thể, không thể làm động từ chính trong câu.",
-      "explanation": "The subject <b>Those who wish to volunteer</b> is plural and refers to people. These people <b>are asked</b> to arrive early, meaning they receive the request rather than make it. The passive voice <b>are asked</b> is therefore required. <b>asks</b> is active and singular; <b>has been asking</b> is active and singular; <b>to ask</b> is an infinitive and cannot serve as the main verb of the sentence."
-    },
-    {
-      "id": "q129",
-      "no": 129,
-      "part": 5,
-      "stem": "Although Mr. Yanamura’s theory is ------- controversial, it does help explain the latest changes in the market.",
-      "options": {
-        "A": "neatly",
-        "B": "urgently",
-        "C": "gracefully",
-        "D": "certainly"
-      },
-      "answer": "D",
-      "skill": "Adverb",
-      "explanationVi": "Chỗ trống cần một trạng từ bổ nghĩa cho tính từ <b>controversial</b>. <b>certainly</b> là trạng từ mang nghĩa \"chắc chắn\", phù hợp để nhấn mạnh mức độ gây tranh cãi của lý thuyết. Mệnh đề <b>Although</b> thể hiện sự nhượng bộ: <b>mặc dù</b> lý thuyết chắc chắn gây tranh cãi, nó vẫn giúp giải thích các thay đổi. Các trạng từ còn lại không phù hợp về nghĩa: neatly (gọn gàng), urgently (khẩn cấp), gracefully (duyên dáng).",
-      "explanation": "The blank requires an adverb to modify the adjective <b>controversial</b>. <b>certainly</b> is an adverb meaning \"without doubt,\" which appropriately emphasizes the degree to which the theory is controversial. The <b>Although</b> clause expresses concession: <b>even though</b> the theory is certainly controversial, it still helps explain the changes. The other adverbs are unsuitable in meaning: neatly, urgently, gracefully."
-    },
-    {
-      "id": "q130",
-      "no": 130,
-      "part": 5,
-      "stem": "A recent ------- found that property values in the Agate Valley region had increased by 3 percent between January and June.",
-      "options": {
-        "A": "assessment",
-        "B": "assessed",
-        "C": "assessable",
-        "D": "to assess"
-      },
-      "answer": "A",
-      "skill": "Noun",
-      "explanationVi": "Vị trí sau <b>A recent</b> và trước động từ <b>found</b> cần một danh từ làm chủ ngữ cho câu. <b>assessment</b> là danh từ, nghĩa là \"cuộc đánh giá, thẩm định\". Cụm <b>A recent assessment found that...</b> nghĩa là \"Một cuộc đánh giá gần đây cho thấy...\". <b>assessed</b> là động từ quá khứ, <b>assessable</b> là tính từ, <b>to assess</b> là động từ nguyên thể; không thể đóng vai trò chủ ngữ ở vị trí này.",
-      "explanation": "The position after <b>A recent</b> and before the verb <b>found</b> requires a noun to serve as the subject of the sentence. <b>assessment</b> is a noun meaning \"an evaluation or estimation.\" The phrase <b>A recent assessment found that...</b> means \"A recent evaluation discovered that...\" <b>assessed</b> is a past tense verb, <b>assessable</b> is an adjective, and <b>to assess</b> is an infinitive; none of these can function as the subject in this position."
-    },
-    {
-      "id": "q131",
-      "no": 131,
-      "part": 6,
-      "options": {
-        "A": "attracted",
-        "B": "entered",
-        "C": "awarded",
-        "D": "promoted"
-      },
-      "answer": "A",
-      "passageIndex": 0,
-      "stem": "Questions 131-134 refer to the following information.",
-      "skill": "Vocabulary in context",
-      "explanationVi": "Chỗ trống cần một động từ chỉ khả năng thu hút người tham dự của hội nghị. <b>attracted</b> có nghĩa là \"thu hút\", phù hợp với tân ngữ <b>more than 3,000 attendees</b>. Câu muốn nói hội nghị năm ngoái <b>đã thu hút hơn 3.000 người tham dự</b>. Các động từ còn lại không phù hợp về nghĩa trong ngữ cảnh này: entered (đi vào), awarded (trao tặng), promoted (thăng chức, quảng bá).",
-      "explanation": "The blank requires a verb describing the conference's ability to draw participants. <b>attracted</b> means \"drew or pulled in,\" which fits the object <b>more than 3,000 attendees</b>. The sentence means last year's conference <b>drew more than 3,000 attendees</b>. The other verbs are unsuitable in this context: entered, awarded, promoted."
-    },
-    {
-      "id": "q132",
-      "no": 132,
-      "part": 6,
-      "options": {
-        "A": "they",
-        "B": "them",
-        "C": "themselves",
-        "D": "theirs"
-      },
-      "answer": "C",
-      "passageIndex": 0,
-      "stem": "Questions 131-134 refer to the following information.",
-      "skill": "Reflexive pronoun",
-      "explanationVi": "Động từ <b>market</b> trong ngữ cảnh này cần một tân ngữ chỉ chính chủ ngữ <b>Attendees</b>. Người tham dự sẽ có cơ hội <b>quảng bá chính họ</b> đến các công ty. <b>themselves</b> là đại từ phản thân số nhiều, chỉ chính những người tham dự thực hiện hành động marketing cho bản thân họ. Các lựa chọn khác không diễn tả được nghĩa phản thân này.",
-      "explanation": "The verb <b>market</b> in this context requires an object referring back to the subject <b>Attendees</b>. Attendees will have the chance to <b>promote themselves</b> to companies. <b>themselves</b> is the plural reflexive pronoun, indicating that the attendees perform the marketing action for their own benefit. The other options do not convey this reflexive meaning."
-    },
-    {
-      "id": "q133",
-      "no": 133,
-      "part": 6,
-      "options": {
-        "A": "location",
-        "B": "situation",
-        "C": "machine",
-        "D": "schedule"
-      },
-      "answer": "D",
-      "passageIndex": 0,
-      "stem": "Questions 131-134 refer to the following information.",
-      "skill": "Noun choice",
-      "explanationVi": "Chỗ trống cần một danh từ chỉ nơi các khoảng thời gian kết nối được sắp xếp. <b>schedule</b> có nghĩa là \"lịch trình\", phù hợp với ngữ cảnh các hoạt động kết nối sẽ được đưa vào <b>lịch trình mỗi ngày</b> của hội nghị. Các danh từ còn lại không phù hợp: location (địa điểm), situation (tình huống), machine (máy móc).",
-      "explanation": "The blank requires a noun indicating where networking periods are organized. <b>schedule</b> means \"a plan of events or activities,\" fitting the context that networking periods will be included in the <b>daily schedule</b> of the conference. The other nouns are unsuitable: location, situation, machine."
-    },
-    {
-      "id": "q134",
-      "no": 134,
-      "part": 6,
-      "options": {
-        "A": "Registration begins on 3 February and continues through 18 March.",
-        "B": "This speaker is well-known throughout the industry.",
-        "C": "The conference was held in New Zealand in previous years.",
-        "D": "We’d like to get your feedback on last year’s conference."
-      },
-      "answer": "A",
-      "passageIndex": 0,
-      "stem": "Questions 131-134 refer to the following information.",
-      "skill": "Sentence insertion",
-      "explanationVi": "Câu cần chèn vào cuối đoạn giới thiệu về hội nghị sắp diễn ra. <b>Registration begins on 3 February and continues through 18 March</b> cung cấp thông tin thực tế về thời gian đăng ký, phù hợp làm câu kết kêu gọi hành động sau khi đã mô tả các điểm hấp dẫn của hội nghị. Các lựa chọn còn lại lạc chủ đề: nói về diễn giả không được nhắc đến, địa điểm cũ không liên quan, hoặc phản hồi về hội nghị năm ngoái không phù hợp với bài giới thiệu cho năm nay.",
-      "explanation": "The sentence to be inserted appears at the end of an informational piece about the upcoming conference. <b>Registration begins on 3 February and continues through 18 March</b> provides practical registration information, serving as a natural call to action after describing the conference's attractions. The other options are off-topic: referring to an unmentioned speaker, a previous location, or feedback on last year's event, none of which fit a promotional piece for the current year."
-    },
-    {
-      "id": "q135",
-      "no": 135,
-      "part": 6,
-      "options": {
-        "A": "who",
-        "B": "accordingly",
-        "C": "recently",
-        "D": "where"
-      },
-      "answer": "A",
-      "passageIndex": 1,
-      "stem": "Questions 135-138 refer to the following advertisement.",
-      "skill": "Relative clause",
-      "explanationVi": "Chỗ trống cần một đại từ quan hệ làm chủ ngữ cho mệnh đề quan hệ bổ nghĩa cho danh từ chỉ người <b>individuals</b>. <b>who</b> là đại từ quan hệ dùng cho người, làm chủ ngữ cho động từ <b>will be working</b>. <b>where</b> dùng cho nơi chốn, <b>accordingly</b> và <b>recently</b> là trạng từ, không thể làm đại từ quan hệ.",
-      "explanation": "The blank requires a relative pronoun to serve as the subject of a relative clause modifying the noun <b>individuals</b> (people). <b>who</b> is the relative pronoun used for people, functioning as the subject of the verb <b>will be working</b>. <b>where</b> is for places; <b>accordingly</b> and <b>recently</b> are adverbs and cannot function as relative pronouns."
-    },
-    {
-      "id": "q136",
-      "no": 136,
-      "part": 6,
-      "options": {
-        "A": "provided",
-        "B": "will provide",
-        "C": "will have provided",
-        "D": "is providing"
-      },
-      "answer": "B",
-      "passageIndex": 1,
-      "stem": "Questions 135-138 refer to the following advertisement.",
-      "skill": "Future simple",
-      "explanationVi": "Câu mô tả nhiệm vụ của vị trí đang tuyển dụng, tức là những việc người được tuyển <b>sẽ làm</b> trong tương lai. <b>will provide</b> là thì tương lai đơn, phù hợp để diễn tả trách nhiệm công việc. <b>provided</b> là quá khứ đơn, không phù hợp vì chưa ai được tuyển; <b>will have provided</b> là tương lai hoàn thành, không cần thiết ở đây; <b>is providing</b> là hiện tại tiếp diễn, không phù hợp cho mô tả công việc chung.",
-      "explanation": "The sentence describes the duties of the position being advertised, i.e., what the successful candidate <b>will do</b> in the future. <b>will provide</b> is the simple future, appropriate for outlining job responsibilities. <b>provided</b> is simple past, unsuitable as no one has been hired yet; <b>will have provided</b> is future perfect, unnecessary here; <b>is providing</b> is present continuous, not suitable for a general job description."
-    },
-    {
-      "id": "q137",
-      "no": 137,
-      "part": 6,
-      "options": {
-        "A": "Your travel expenses are covered by Wallace & Prence.",
-        "B": "We place clients in apartments throughout the world.",
-        "C": "Duties also include supporting clients after their arrival.",
-        "D": "Incomplete applications will not be considered."
-      },
-      "answer": "C",
-      "passageIndex": 1,
-      "stem": "Questions 135-138 refer to the following advertisement.",
-      "skill": "Sentence insertion",
-      "explanationVi": "Câu cần chèn nằm giữa phần mô tả nhiệm vụ chính của vị trí và phần yêu cầu ứng viên. <b>Duties also include supporting clients after their arrival</b> bổ sung thêm một nhiệm vụ khác của chuyên viên nhà ở, nối tiếp tự nhiên sau câu mô tả nhiệm vụ chính. Các lựa chọn còn lại lạc chủ đề: nói về chi phí đi lại, mô tả chung về công ty, hoặc cảnh báo về hồ sơ không đầy đủ - không phù hợp với mạch mô tả công việc.",
-      "explanation": "The sentence to be inserted falls between the main duty description and the candidate requirements. <b>Duties also include supporting clients after their arrival</b> adds another responsibility of the housing specialist, continuing naturally from the preceding sentence about the main duty. The other options are off-topic: mentioning travel expenses, a general company description, or a warning about incomplete applications—none of which fit the flow of the job description."
-    },
-    {
-      "id": "q138",
-      "no": 138,
-      "part": 6,
-      "options": {
-        "A": "questions",
-        "B": "documents",
-        "C": "references",
-        "D": "qualifications"
-      },
-      "answer": "D",
-      "passageIndex": 1,
-      "stem": "Questions 135-138 refer to the following advertisement.",
-      "skill": "Noun choice",
-      "explanationVi": "Chỗ trống cần một danh từ chỉ những gì ứng viên cần có để đáp ứng yêu cầu công việc. <b>qualifications</b> có nghĩa là \"trình độ, bằng cấp, năng lực\", phù hợp với ngữ cảnh <b>Individuals with the necessary qualifications</b> (Những cá nhân có năng lực cần thiết). Các danh từ còn lại không phù hợp về nghĩa trong ngữ cảnh tuyển dụng: questions (câu hỏi), documents (tài liệu), references (người tham khảo).",
-      "explanation": "The blank requires a noun referring to what candidates need to possess to meet the job requirements. <b>qualifications</b> means \"skills, achievements, or credentials,\" fitting the context of <b>Individuals with the necessary qualifications</b>. The other nouns are unsuitable in a recruitment context: questions, documents, references."
-    },
-    {
-      "id": "q139",
-      "no": 139,
-      "part": 6,
-      "options": {
-        "A": "doubted",
-        "B": "estimated",
-        "C": "crowded",
-        "D": "organized"
-      },
-      "answer": "C",
-      "passageIndex": 2,
-      "stem": "Questions 139-142 refer to the following newspaper article.",
-      "skill": "Vocabulary",
-      "explanationVi": "Ngữ cảnh mô tả khách hàng quay lại dẫn thêm bạn bè và người thân, vì vậy cửa hàng luôn trong tình trạng đông đúc. <b>crowded</b> là tính từ phù hợp nhất, có nghĩa là \"đông đúc, chật kín người\". Các lựa chọn còn lại không phù hợp về nghĩa: doubted (bị nghi ngờ), estimated (được ước tính), organized (được tổ chức).",
-      "explanation": "The context describes returning customers bringing friends and relatives, so the shop is always full of people. <b>crowded</b> is the most appropriate adjective, meaning \"filled with many people.\" The other options are unsuitable in meaning: doubted, estimated, organized."
-    },
-    {
-      "id": "q140",
-      "no": 140,
-      "part": 6,
-      "options": {
-        "A": "She usually serves them warm.",
-        "B": "She created them when she started the restaurant.",
-        "C": "His family members prefer eating healthy meals.",
-        "D": "His social media campaign has also boosted sales."
-      },
-      "answer": "D",
-      "passageIndex": 2,
-      "stem": "Questions 139-142 refer to the following newspaper article.",
-      "skill": "Sentence insertion",
-      "explanationVi": "Câu cần chèn nằm sau khi ông Magnusson nói về công thức của bà mình và trước khi chuyển sang vấn đề thiếu không gian. <b>His social media campaign has also boosted sales</b> tiếp tục chủ đề về các yếu tố dẫn đến thành công của cửa hàng, bổ sung thêm một lý do ngoài công thức gia truyền, trước khi bài báo chuyển sang khó khăn mới. Các lựa chọn còn lại không phù hợp vì nói về bà (she) không phải chủ ngữ của câu trước, hoặc lạc chủ đề.",
-      "explanation": "The sentence to be inserted comes after Mr. Magnusson discusses his grandmother's recipes and before the article shifts to the space problem. <b>His social media campaign has also boosted sales</b> continues the theme of factors contributing to the shop's success, adding another reason beyond the family recipes, before transitioning to the new challenge. The other options are unsuitable: they refer to \"she\" which is not the subject of the previous sentence, or are off-topic."
-    },
-    {
-      "id": "q141",
-      "no": 141,
-      "part": 6,
-      "options": {
-        "A": "leave",
-        "B": "left",
-        "C": "is leaving",
-        "D": "have left"
-      },
-      "answer": "B",
-      "passageIndex": 2,
-      "stem": "Questions 139-142 refer to the following newspaper article.",
-      "skill": "Verb tense",
-      "explanationVi": "Bài báo đang tường thuật sự việc đã xảy ra trong quá khứ. Sự nổi tiếng của cửa hàng <b>đã khiến</b> ông Magnusson gặp vấn đề về không gian. <b>left</b> là quá khứ đơn của <b>leave</b>, đúng với thì của bài tường thuật. Cấu trúc <b>leave someone with something</b> nghĩa là \"khiến ai gặp phải điều gì\". Các thì khác không phù hợp với mạch quá khứ của bài báo.",
-      "explanation": "The article narrates events that happened in the past. The shop's popularity <b>left</b> Mr. Magnusson with a space problem. <b>left</b> is the simple past form of <b>leave</b>, consistent with the narrative tense of the article. The structure <b>leave someone with something</b> means \"cause someone to have a particular problem.\" The other tenses do not match the past narrative context."
-    },
-    {
-      "id": "q142",
-      "no": 142,
-      "part": 6,
-      "options": {
-        "A": "expansion",
-        "B": "supervision",
-        "C": "submission",
-        "D": "division"
-      },
-      "answer": "A",
-      "passageIndex": 2,
-      "stem": "Questions 139-142 refer to the following newspaper article.",
-      "skill": "Noun choice",
-      "explanationVi": "Ông Magnusson mua mặt bằng bên cạnh để <b>mở rộng</b> cửa hàng của mình. <b>expansion</b> là danh từ phù hợp nhất, có nghĩa là \"sự mở rộng\". Câu trước đã đề cập đến vấn đề <b>lack of store space</b> (thiếu không gian), nên việc mua thêm mặt bằng là để giải quyết vấn đề đó thông qua việc mở rộng. Các danh từ còn lại không phù hợp: supervision (sự giám sát), submission (sự đệ trình), division (sự phân chia).",
-      "explanation": "Mr. Magnusson purchased the adjacent property to <b>expand</b> his shop. <b>expansion</b> is the most appropriate noun, meaning \"the process of increasing in size.\" The previous sentence mentioned <b>lack of store space</b>, so acquiring more property is meant to solve that problem through expansion. The other nouns are unsuitable: supervision, submission, division."
-    },
-    {
-      "id": "q143",
-      "no": 143,
-      "part": 6,
-      "options": {
-        "A": "However",
-        "B": "Therefore",
-        "C": "In addition",
-        "D": "For example"
-      },
-      "answer": "A",
-      "passageIndex": 3,
-      "stem": "Questions 143-146 refer to the following memo.",
-      "skill": "Transition",
-      "explanationVi": "Hai câu liền kề diễn tả hai ý trái ngược: mật khẩu <b>phải thay đổi</b> hằng tháng, <b>nhưng</b> tên đăng nhập <b>vẫn giữ nguyên</b>. <b>However</b> là trạng từ chuyển tiếp chỉ sự tương phản, phù hợp để nối hai ý đối lập này. Các lựa chọn còn lại không phù hợp: Therefore (do đó - kết quả), In addition (ngoài ra - bổ sung), For example (ví dụ - minh họa).",
-      "explanation": "The two consecutive sentences express contrasting ideas: passwords <b>must be changed</b> monthly, <b>but</b> the log-in ID <b>will remain the same</b>. <b>However</b> is a transition adverb indicating contrast, appropriately connecting these two opposing points. The other options are unsuitable: Therefore (result), In addition (addition), For example (illustration)."
-    },
-    {
-      "id": "q144",
-      "no": 144,
-      "part": 6,
-      "options": {
-        "A": "sent",
-        "B": "will be sent",
-        "C": "will have sent",
-        "D": "had been sent"
-      },
-      "answer": "B",
-      "passageIndex": 3,
-      "stem": "Questions 143-146 refer to the following memo.",
-      "skill": "Future passive",
-      "explanationVi": "Chủ ngữ <b>An e-mail</b> là vật nhận hành động \"được gửi\", không phải người thực hiện hành động. Do đó cần dùng thể bị động. Thời gian <b>on the last workday of each month</b> chỉ một sự kiện trong tương lai, nên dùng <b>will be sent</b>. Cấu trúc bị động tương lai <b>will be + V3</b> là phù hợp. <b>sent</b> thiếu trợ động từ; <b>will have sent</b> là chủ động; <b>had been sent</b> là quá khứ hoàn thành bị động, không phù hợp với ngữ cảnh tương lai.",
-      "explanation": "The subject <b>An e-mail</b> is the thing that receives the action of sending, not the doer. The passive voice is therefore required. The time phrase <b>on the last workday of each month</b> indicates a future event, so <b>will be sent</b> is correct. The future passive structure <b>will be + V3</b> is appropriate. <b>sent</b> lacks an auxiliary verb; <b>will have sent</b> is active; <b>had been sent</b> is past perfect passive, unsuitable for a future context."
-    },
-    {
-      "id": "q145",
-      "no": 145,
-      "part": 6,
-      "options": {
-        "A": "Support",
-        "B": "Absence",
-        "C": "Failure",
-        "D": "Approval"
-      },
-      "answer": "C",
-      "passageIndex": 3,
-      "stem": "Questions 143-146 refer to the following memo.",
-      "skill": "Noun phrase",
-      "explanationVi": "Chỗ trống cần một danh từ làm chủ ngữ cho cụm <b>to do so will result in...</b>. <b>Failure</b> kết hợp với <b>to do so</b> tạo thành cụm <b>Failure to do so</b>, nghĩa là \"Việc không làm như vậy\". Đây là một cấu trúc cố định trong tiếng Anh dùng để cảnh báo hậu quả của việc không tuân thủ. Các danh từ còn lại không tạo thành cụm có nghĩa với <b>to do so</b>: Support (sự hỗ trợ), Absence (sự vắng mặt), Approval (sự phê duyệt).",
-      "explanation": "The blank requires a noun to serve as the subject of the phrase <b>to do so will result in...</b>. <b>Failure</b> combines with <b>to do so</b> to form the phrase <b>Failure to do so</b>, meaning \"Not doing this.\" This is a fixed structure in English used to warn of consequences for non-compliance. The other nouns do not form meaningful phrases with <b>to do so</b>: Support, Absence, Approval."
-    },
-    {
-      "id": "q146",
-      "no": 146,
-      "part": 6,
-      "options": {
-        "A": "I will see you at the meeting.",
-        "B": "Write down your new log-in ID.",
-        "C": "Let me know when this is done.",
-        "D": "Thank you for your cooperation."
-      },
-      "answer": "D",
-      "passageIndex": 3,
-      "stem": "Questions 143-146 refer to the following memo.",
-      "skill": "Closing sentence",
-      "explanationVi": "Vị trí cần điền là câu kết của một bản ghi nhớ nội bộ về chính sách mới. <b>Thank you for your cooperation</b> là câu kết lịch sự và trang trọng, phù hợp để khép lại một thông báo yêu cầu nhân viên tuân thủ quy định mới. Các lựa chọn còn lại không phù hợp làm câu kết memo: hẹn gặp ở cuộc họp (không liên quan), nhắc ghi lại ID (không phải câu kết), yêu cầu báo cáo khi hoàn thành (không phù hợp vì đây là thông báo, không phải nhiệm vụ cần báo cáo).",
-      "explanation": "The blank is the closing sentence of an internal memo about a new policy. <b>Thank you for your cooperation</b> is a polite and formal closing, appropriate for ending a message that requires employee compliance with new regulations. The other options are unsuitable as memo closings: mentioning a meeting (unrelated), reminding to write down an ID (not a closing), asking for confirmation when done (inappropriate for an informational memo rather than an assigned task)."
-    }
-  ],
-  "passages": [
-    {
-      "title": "Questions 131-134 refer to the following information.",
-      "label": "Information",
-      "html": "<p>The Design Present Conference is an annual event held in Melbourne for graphic-design professionals. The conference is steadily growing in popularity. Last year, it <span class=\"blank\">131</span> more than 3,000 attendees from Australia and around the world. The next Design Present Conference, which will be held from 20 to 23 March, will offer more than 100 workshops, plus keynote speeches and plenary sessions. This year, several opportunities for professional networking will be added. Attendees will have the chance to market <span class=\"blank\">132</span> to firms in several different industries. Periods for networking will be included in the <span class=\"blank\">133</span> each day. Whether you are a design enthusiast, student, freelance designer, or business owner, Design Present has something for you. <span class=\"blank sentence\">134</span></p>",
+      "id": "ets-summer-2021-test1-part5-6",
+      "title": "ETS Summer 2021 Test 1 · Part 5 + 6",
+      "sourceLabel": "ETS Summer 2021 · Reading Test 1",
+      "timerMinutes": 25,
       "questions": [
+        {
+          "id": "q101",
+          "no": 101,
+          "part": 5,
+          "stem": "Mr. Sokolov ------- a positive review of his stay at the Olana Hotel.",
+          "options": {
+            "A": "write",
+            "B": "wrote",
+            "C": "writing",
+            "D": "was written"
+          },
+          "answer": "B",
+          "skill": "Past tense",
+          "explanationVi": "Câu kể về việc ông Sokolov đã viết đánh giá sau kỳ nghỉ. Chủ ngữ <b>Mr. Sokolov</b> là người thực hiện hành động nên dùng quá khứ đơn chủ động: <b>wrote</b>.",
+          "explanation": "The sentence describes an action Mr. Sokolov completed after his stay. The subject <b>Mr. Sokolov</b> performs the action, so the simple past active <b>wrote</b> is correct."
+        },
+        {
+          "id": "q102",
+          "no": 102,
+          "part": 5,
+          "stem": "The manager often leads new employees through the safety procedures -------.",
+          "options": {
+            "A": "her",
+            "B": "herself",
+            "C": "hers",
+            "D": "she"
+          },
+          "answer": "B",
+          "skill": "Reflexive pronoun",
+          "explanationVi": "Cụm <b>leads new employees through the safety procedures herself</b> nhấn mạnh chính người quản lý tự mình hướng dẫn nhân viên mới. Cần dùng đại từ phản thân <b>herself</b> để chỉ chính chủ ngữ <b>the manager</b>.",
+          "explanation": "The phrase <b>leads new employees through the safety procedures herself</b> emphasizes that the manager personally guides new employees. The reflexive pronoun <b>herself</b> refers back to the subject <b>the manager</b>."
+        },
+        {
+          "id": "q103",
+          "no": 103,
+          "part": 5,
+          "stem": "The corporate fitness center is equipped ------- fourteen stationary bicycles.",
+          "options": {
+            "A": "at",
+            "B": "on",
+            "C": "with",
+            "D": "about"
+          },
+          "answer": "C",
+          "skill": "Adjective + preposition",
+          "explanationVi": "<b>Be equipped with</b> là cụm cố định, nghĩa là \"được trang bị với\". Chỗ trống sau <b>is equipped</b> cần giới từ <b>with</b> để liên kết với danh từ <b>fourteen stationary bicycles</b>.",
+          "explanation": "<b>Be equipped with</b> is a fixed collocation meaning \"provided with.\" The blank after <b>is equipped</b> requires the preposition <b>with</b> to connect to the noun phrase <b>fourteen stationary bicycles</b>."
+        },
+        {
+          "id": "q104",
+          "no": 104,
+          "part": 5,
+          "stem": "Professor Phuong will go over the use of the laboratory ------- with the interns next week.",
+          "options": {
+            "A": "instruments",
+            "B": "instrumental",
+            "C": "instrumentally",
+            "D": "instrumented"
+          },
+          "answer": "A",
+          "skill": "Word form",
+          "explanationVi": "Sau cụm <b>the use of the laboratory</b> cần một danh từ số nhiều chỉ thiết bị được sử dụng trong phòng thí nghiệm. <b>instruments</b> là danh từ số nhiều phù hợp về nghĩa và ngữ pháp. Các lựa chọn còn lại là tính từ hoặc trạng từ, không đứng sau mạo từ <b>the</b> ở vị trí này.",
+          "explanation": "After the phrase <b>the use of the laboratory</b>, a plural noun referring to equipment used in the lab is required. <b>instruments</b> is the correct plural noun. The other options are adjectives or adverbs and cannot follow the article <b>the</b> in this position."
+        },
+        {
+          "id": "q105",
+          "no": 105,
+          "part": 5,
+          "stem": "Arnby Cable ------- £25.00 to all Internet subscribers after the weeklong service interruption.",
+          "options": {
+            "A": "refunded",
+            "B": "accepted",
+            "C": "divided",
+            "D": "deposited"
+          },
+          "answer": "A",
+          "skill": "Vocabulary",
+          "explanationVi": "Ngữ cảnh nói về việc công ty hoàn trả tiền cho thuê bao sau sự cố gián đoạn dịch vụ kéo dài một tuần. <b>refunded</b> là động từ phù hợp nhất, có nghĩa là \"hoàn tiền\". Cấu trúc <b>refund + money + to someone</b> dùng đúng với ngữ cảnh này. Các lựa chọn còn lại không phù hợp về nghĩa: accepted (chấp nhận), divided (chia), deposited (gửi tiền).",
+          "explanation": "The context describes a company returning money to subscribers after a weeklong service interruption. <b>refunded</b> is the most appropriate verb, meaning \"gave back money.\" The structure <b>refund + money + to someone</b> fits the context perfectly. The other options are unsuitable in meaning: accepted, divided, deposited."
+        },
+        {
+          "id": "q106",
+          "no": 106,
+          "part": 5,
+          "stem": "The board of directors will meet next Monday to examine the current hiring -------.",
+          "options": {
+            "A": "purpose",
+            "B": "intent",
+            "C": "assembly",
+            "D": "policy"
+          },
+          "answer": "D",
+          "skill": "Collocation",
+          "explanationVi": "<b>Hiring policy</b> là cụm danh từ tự nhiên trong môi trường doanh nghiệp, nghĩa là \"chính sách tuyển dụng\". Trong ngữ cảnh hội đồng quản trị họp để xem xét chính sách hiện tại, <b>policy</b> là lựa chọn phù hợp nhất. Các lựa chọn khác không kết hợp tự nhiên với <b>hiring</b> trong ngữ cảnh này.",
+          "explanation": "<b>Hiring policy</b> is a natural noun phrase in a corporate setting, meaning \"recruitment policy.\" In the context of a board meeting to review current practices, <b>policy</b> is the most suitable choice. The other options do not naturally collocate with <b>hiring</b> in this context."
+        },
+        {
+          "id": "q107",
+          "no": 107,
+          "part": 5,
+          "stem": "Passengers should not leave their seats ------- a flight attendant gives them permission to do so.",
+          "options": {
+            "A": "unless",
+            "B": "rather",
+            "C": "instead",
+            "D": "otherwise"
+          },
+          "answer": "A",
+          "skill": "Conjunction",
+          "explanationVi": "Câu diễn tả một điều kiện ngoại lệ: hành khách <b>không được</b> rời ghế <b>trừ khi</b> tiếp viên cho phép. <b>unless</b> mang nghĩa \"trừ khi\", là liên từ điều kiện phù hợp duy nhất trong các lựa chọn. Các lựa chọn còn lại không diễn tả được mối quan hệ điều kiện này.",
+          "explanation": "The sentence expresses an exceptional condition: passengers <b>should not</b> leave their seats <b>except if</b> a flight attendant gives permission. <b>unless</b> means \"except if\" and is the only conjunction that correctly expresses this conditional relationship."
+        },
+        {
+          "id": "q108",
+          "no": 108,
+          "part": 5,
+          "stem": "The goal of the committee was to evaluate the company’s bylaws and offer ------- for improvement.",
+          "options": {
+            "A": "renewals",
+            "B": "registrations",
+            "C": "recommendations",
+            "D": "reimbursements"
+          },
+          "answer": "C",
+          "skill": "Noun choice",
+          "explanationVi": "<b>Offer recommendations for improvement</b> là cụm từ tự nhiên trong tiếng Anh, nghĩa là \"đưa ra các khuyến nghị để cải thiện\". Mục tiêu của ủy ban là đánh giá điều lệ và đề xuất cải tiến, nên <b>recommendations</b> là danh từ phù hợp nhất. Các lựa chọn còn lại không phù hợp về nghĩa: renewals (sự gia hạn), registrations (sự đăng ký), reimbursements (sự hoàn tiền).",
+          "explanation": "<b>Offer recommendations for improvement</b> is a natural English collocation meaning \"give suggestions for making something better.\" The committee's goal was to evaluate bylaws and propose improvements, so <b>recommendations</b> is the most appropriate noun. The other options are unsuitable in meaning: renewals, registrations, reimbursements."
+        },
+        {
+          "id": "q109",
+          "no": 109,
+          "part": 5,
+          "stem": "The building’s new ventilation system circulates heat much ------- than before.",
+          "options": {
+            "A": "even",
+            "B": "most even",
+            "C": "evenly",
+            "D": "more evenly"
+          },
+          "answer": "D",
+          "skill": "Comparative adverb",
+          "explanationVi": "<b>much</b> đứng trước dạng so sánh hơn để nhấn mạnh mức độ. Động từ <b>circulates</b> cần một trạng từ bổ nghĩa, nên dùng <b>more evenly</b> (trạng từ so sánh hơn của <b>evenly</b>). Các lựa chọn khác không đáp ứng được cả hai yếu tố: dạng so sánh hơn và trạng từ.",
+          "explanation": "<b>much</b> precedes a comparative form to emphasize degree. The verb <b>circulates</b> requires an adverb to modify it, so <b>more evenly</b> (the comparative adverb form of <b>evenly</b>) is correct. The other options fail to meet both requirements of being comparative and adverbial."
+        },
+        {
+          "id": "q110",
+          "no": 110,
+          "part": 5,
+          "stem": "Glowood Appliances promises customers their money back ------- they are not satisfied with their purchase.",
+          "options": {
+            "A": "while",
+            "B": "and",
+            "C": "if",
+            "D": "then"
+          },
+          "answer": "C",
+          "skill": "Condition",
+          "explanationVi": "Câu nêu điều kiện hoàn tiền: công ty hứa trả lại tiền <b>nếu</b> khách hàng không hài lòng. <b>if</b> là liên từ điều kiện duy nhất trong các lựa chọn, dùng để giới thiệu mệnh đề điều kiện. Các lựa chọn khác không diễn tả được mối quan hệ điều kiện giữa hai mệnh đề.",
+          "explanation": "The sentence states a condition for a refund: the company promises money back <b>if</b> customers are not satisfied. <b>if</b> is the only conditional conjunction among the choices and correctly introduces the conditional clause."
+        },
+        {
+          "id": "q111",
+          "no": 111,
+          "part": 5,
+          "stem": "The theater doors will close and the show will start at precisely 8:00 p.m., so guests are reminded to be -------.",
+          "options": {
+            "A": "rapid",
+            "B": "sudden",
+            "C": "punctual",
+            "D": "instant"
+          },
+          "answer": "C",
+          "skill": "Vocabulary",
+          "explanationVi": "Vì cửa rạp sẽ đóng và buổi diễn bắt đầu <b>chính xác lúc 8 giờ tối</b>, khách được nhắc nhở phải <b>đúng giờ</b>. <b>punctual</b> là tính từ phù hợp nhất, nghĩa là \"đúng giờ\". Các lựa chọn còn lại không phù hợp về nghĩa trong ngữ cảnh này: rapid (nhanh), sudden (đột ngột), instant (tức thì).",
+          "explanation": "Because the theater doors will close and the show starts <b>precisely at 8:00 p.m.</b>, guests are reminded to be <b>on time</b>. <b>punctual</b> is the most appropriate adjective, meaning \"arriving at the correct time.\" The other options are unsuitable in this context: rapid, sudden, instant."
+        },
+        {
+          "id": "q112",
+          "no": 112,
+          "part": 5,
+          "stem": "All vacation requests must be made to your supervisor ------- the requested date.",
+          "options": {
+            "A": "prior to",
+            "B": "except for",
+            "C": "previously",
+            "D": "because"
+          },
+          "answer": "A",
+          "skill": "Prepositional phrase",
+          "explanationVi": "<b>Prior to</b> là cụm giới từ mang nghĩa \"trước khi\", dùng để chỉ thời gian xảy ra trước một mốc cụ thể. Trong câu này, yêu cầu nghỉ phép phải được gửi <b>trước</b> ngày nghỉ dự kiến, nên <b>prior to</b> là lựa chọn phù hợp. <b>previously</b> là trạng từ không đứng trước danh từ; <b>except for</b> và <b>because</b> không phù hợp về nghĩa.",
+          "explanation": "<b>Prior to</b> is a prepositional phrase meaning \"before,\" used to indicate time preceding a specific point. In this sentence, vacation requests must be submitted <b>before</b> the requested date, so <b>prior to</b> is correct. <b>previously</b> is an adverb and cannot precede a noun directly; <b>except for</b> and <b>because</b> are unsuitable in meaning."
+        },
+        {
+          "id": "q113",
+          "no": 113,
+          "part": 5,
+          "stem": "Most banks now offer clients the option of receiving their statements electronically or ------- mail.",
+          "options": {
+            "A": "from",
+            "B": "of",
+            "C": "in",
+            "D": "by"
+          },
+          "answer": "D",
+          "skill": "Preposition",
+          "explanationVi": "<b>By mail</b> là cụm cố định trong tiếng Anh, nghĩa là \"qua đường bưu điện\". Câu này đưa ra hai lựa chọn nhận sao kê: <b>electronically</b> (điện tử) hoặc <b>by mail</b> (qua bưu điện). Các giới từ còn lại không tạo thành cụm cố định với <b>mail</b> trong ngữ cảnh này.",
+          "explanation": "<b>By mail</b> is a fixed collocation in English meaning \"through the postal service.\" The sentence offers two options for receiving statements: <b>electronically</b> or <b>by mail</b>. The other prepositions do not form a standard collocation with <b>mail</b> in this context."
+        },
+        {
+          "id": "q114",
+          "no": 114,
+          "part": 5,
+          "stem": "Construction at Langhall Plaza is going so well that shops might open before the expected ------- date.",
+          "options": {
+            "A": "completion",
+            "B": "selection",
+            "C": "decision",
+            "D": "option"
+          },
+          "answer": "A",
+          "skill": "Noun collocation",
+          "explanationVi": "<b>Completion date</b> là cụm danh từ phổ biến trong ngữ cảnh xây dựng, nghĩa là \"ngày hoàn thành\". Việc xây dựng tiến triển tốt đến mức các cửa hàng có thể mở cửa <b>trước ngày hoàn thành dự kiến</b>. Các lựa chọn còn lại không phù hợp về nghĩa với ngữ cảnh xây dựng: selection (lựa chọn), decision (quyết định), option (tùy chọn).",
+          "explanation": "<b>Completion date</b> is a common noun phrase in construction contexts, meaning \"the date when something is finished.\" The construction is going so well that shops might open <b>before the expected completion date</b>. The other options are unsuitable in a construction context: selection, decision, option."
+        },
+        {
+          "id": "q115",
+          "no": 115,
+          "part": 5,
+          "stem": "Kohmek, Inc., is seeking a suitable site ------- the construction of its electronics factory.",
+          "options": {
+            "A": "for",
+            "B": "so",
+            "C": "to",
+            "D": "more"
+          },
+          "answer": "A",
+          "skill": "Preposition",
+          "explanationVi": "Cấu trúc <b>a site for + noun</b> dùng để chỉ mục đích sử dụng của địa điểm. Trong câu này, công ty tìm địa điểm <b>cho việc xây dựng</b> nhà máy, nên giới từ <b>for</b> là phù hợp. <b>to</b> có thể đi với động từ nguyên thể nhưng không phù hợp với danh từ <b>the construction</b>; <b>so</b> và <b>more</b> không đúng chức năng ngữ pháp ở vị trí này.",
+          "explanation": "The structure <b>a site for + noun</b> indicates the purpose of the location. In this sentence, the company is looking for a site <b>for the purpose of constructing</b> its factory, so the preposition <b>for</b> is correct. <b>to</b> can precede an infinitive verb but does not fit with the noun <b>the construction</b>; <b>so</b> and <b>more</b> are grammatically incorrect in this position."
+        },
+        {
+          "id": "q116",
+          "no": 116,
+          "part": 5,
+          "stem": "Studies show that the average audience forms its ------- of the speaker within the first few seconds of the presentation.",
+          "options": {
+            "A": "impress",
+            "B": "impressive",
+            "C": "impressively",
+            "D": "impression"
+          },
+          "answer": "D",
+          "skill": "Word form",
+          "explanationVi": "Sau tính từ sở hữu <b>its</b> cần một danh từ để hoàn chỉnh cụm danh từ. <b>impression</b> là danh từ, nghĩa là \"ấn tượng\", phù hợp với ngữ cảnh khán giả hình thành ấn tượng về diễn giả. Các lựa chọn còn lại lần lượt là động từ, tính từ và trạng từ, không thể đứng sau sở hữu cách <b>its</b> ở vị trí này.",
+          "explanation": "After the possessive adjective <b>its</b>, a noun is required to complete the noun phrase. <b>impression</b> is a noun meaning \"opinion or feeling formed about someone,\" which fits the context of an audience forming an impression of a speaker. The other options are a verb, an adjective, and an adverb respectively, none of which can follow <b>its</b> in this position."
+        },
+        {
+          "id": "q117",
+          "no": 117,
+          "part": 5,
+          "stem": "Mr. Cutler has been asked to ------- domestic sales of low-calorie beverages.",
+          "options": {
+            "A": "oversee",
+            "B": "possess",
+            "C": "succeed",
+            "D": "persist"
+          },
+          "answer": "A",
+          "skill": "Vocabulary",
+          "explanationVi": "<b>Oversee</b> nghĩa là \"giám sát, phụ trách\". Trong ngữ cảnh ông Cutler được yêu cầu <b>phụ trách doanh số nội địa</b> của một dòng đồ uống, <b>oversee</b> là lựa chọn phù hợp nhất. Các động từ còn lại không hợp ngữ cảnh: possess (sở hữu), succeed (thành công), persist (kiên trì).",
+          "explanation": "<b>Oversee</b> means \"supervise or be in charge of.\" In the context of Mr. Cutler being asked to <b>supervise domestic sales</b> of beverages, <b>oversee</b> is the most appropriate choice. The other verbs are unsuitable in this context: possess, succeed, persist."
+        },
+        {
+          "id": "q118",
+          "no": 118,
+          "part": 5,
+          "stem": "Cranford Culinary Academy offers 35 different classes for ------- chefs.",
+          "options": {
+            "A": "aspires",
+            "B": "aspirations",
+            "C": "aspiring",
+            "D": "to aspire"
+          },
+          "answer": "C",
+          "skill": "Word form",
+          "explanationVi": "Trước danh từ <b>chefs</b> cần một tính từ để bổ nghĩa. <b>aspiring</b> là tính từ, nghĩa là \"đầy khát vọng, đang mong muốn trở thành\". Cụm <b>aspiring chefs</b> nghĩa là \"những đầu bếp đang theo đuổi nghề\". <b>aspires</b> là động từ chia ngôi thứ ba, <b>aspirations</b> là danh từ số nhiều, <b>to aspire</b> là động từ nguyên thể, không thể đứng trước danh từ ở vị trí này.",
+          "explanation": "Before the noun <b>chefs</b>, an adjective is needed to modify it. <b>aspiring</b> is an adjective meaning \"hoping to become.\" The phrase <b>aspiring chefs</b> means \"people who hope to become chefs.\" <b>aspires</b> is a verb, <b>aspirations</b> is a plural noun, and <b>to aspire</b> is an infinitive; none of these can precede a noun in this position."
+        },
+        {
+          "id": "q119",
+          "no": 119,
+          "part": 5,
+          "stem": "-------, items sold at the Scottville Craft Fair are unique and of very high quality.",
+          "options": {
+            "A": "Fairly",
+            "B": "Typically",
+            "C": "Simply",
+            "D": "Entirely"
+          },
+          "answer": "B",
+          "skill": "Sentence adverb",
+          "explanationVi": "Câu mô tả một đặc điểm chung, thường thấy của các sản phẩm tại hội chợ thủ công. <b>Typically</b> là trạng từ đứng đầu câu, nghĩa là \"thông thường, nhìn chung\", phù hợp để diễn tả tính chất chung này. Các trạng từ còn lại không phù hợp về nghĩa: Fairly (khá), Simply (đơn giản là), Entirely (hoàn toàn).",
+          "explanation": "The sentence describes a general characteristic of items sold at the craft fair. <b>Typically</b> is a sentence adverb meaning \"generally, in most cases,\" which fits the context of describing a common trait. The other adverbs are unsuitable in meaning: Fairly, Simply, Entirely."
+        },
+        {
+          "id": "q120",
+          "no": 120,
+          "part": 5,
+          "stem": "Mamton Home Furnishings ------- customized furniture in Pennsylvania for more than a century.",
+          "options": {
+            "A": "manufactures",
+            "B": "is manufacturing",
+            "C": "has manufactured",
+            "D": "manufacture"
+          },
+          "answer": "C",
+          "skill": "Present perfect",
+          "explanationVi": "Cụm <b>for more than a century</b> cho thấy hành động sản xuất kéo dài từ quá khứ đến hiện tại và vẫn đang tiếp diễn. Thì hiện tại hoàn thành <b>has manufactured</b> là lựa chọn phù hợp để diễn tả hành động bắt đầu trong quá khứ và kéo dài đến hiện tại. Chủ ngữ <b>Mamton Home Furnishings</b> là số ít nên dùng <b>has</b>. Hiện tại đơn <b>manufactures</b> không nhấn mạnh được khoảng thời gian kéo dài.",
+          "explanation": "The phrase <b>for more than a century</b> indicates an action that began in the past and continues to the present. The present perfect <b>has manufactured</b> is the correct tense to express this duration. The subject <b>Mamton Home Furnishings</b> is singular, so <b>has</b> is used. Simple present <b>manufactures</b> does not convey the ongoing duration."
+        },
+        {
+          "id": "q121",
+          "no": 121,
+          "part": 5,
+          "stem": "Please hold any phone calls for Ms. Tanaka ------- she will be in meetings all day.",
+          "options": {
+            "A": "as",
+            "B": "but",
+            "C": "despite",
+            "D": "similarly"
+          },
+          "answer": "A",
+          "skill": "Conjunction",
+          "explanationVi": "Câu cần một liên từ để nối mệnh đề chỉ lý do với mệnh đề chính. <b>as</b> ở đây mang nghĩa <b>because</b> (bởi vì), giải thích lý do nên giữ các cuộc gọi cho cô Tanaka: <b>vì cô ấy sẽ họp cả ngày</b>. Các lựa chọn còn lại không diễn tả được mối quan hệ nguyên nhân - kết quả: but (nhưng - đối lập), despite (mặc dù - nhượng bộ, cần danh từ/V-ing), similarly (tương tự - so sánh).",
+          "explanation": "The sentence needs a conjunction to connect a reason clause to the main clause. <b>as</b> here means <b>because</b>, explaining why calls should be held: <b>she will be in meetings all day</b>. The other options do not express a cause-and-effect relationship: but (contrast), despite (concession, requires a noun/V-ing), similarly (comparison)."
+        },
+        {
+          "id": "q122",
+          "no": 122,
+          "part": 5,
+          "stem": "Dolores Gutierrez excels as an estate planning attorney who helps clients manage their assets -------.",
+          "options": {
+            "A": "effect",
+            "B": "effectively",
+            "C": "effects",
+            "D": "effective"
+          },
+          "answer": "B",
+          "skill": "Adverb",
+          "explanationVi": "Động từ <b>manage</b> cần một trạng từ bổ nghĩa để chỉ cách thức thực hiện hành động. <b>effectively</b> là trạng từ, nghĩa là \"một cách hiệu quả\", phù hợp để bổ nghĩa cho <b>manage</b>. <b>effect</b> và <b>effects</b> là danh từ, <b>effective</b> là tính từ, không thể bổ nghĩa cho động từ ở vị trí này.",
+          "explanation": "The verb <b>manage</b> requires an adverb to describe how the action is performed. <b>effectively</b> is an adverb meaning \"in an effective way,\" correctly modifying <b>manage</b>. <b>effect</b> and <b>effects</b> are nouns, and <b>effective</b> is an adjective; none of these can modify a verb in this position."
+        },
+        {
+          "id": "q123",
+          "no": 123,
+          "part": 5,
+          "stem": "Mr. Singh was ------- about sales of the fragrance after the first round of customer focus groups.",
+          "options": {
+            "A": "extensive",
+            "B": "distinct",
+            "C": "optimistic",
+            "D": "superior"
+          },
+          "answer": "C",
+          "skill": "Adjective + preposition",
+          "explanationVi": "Tính từ đi kèm giới từ <b>about</b> và phù hợp về nghĩa trong ngữ cảnh kinh doanh là <b>optimistic</b>. Cấu trúc <b>be optimistic about something</b> nghĩa là \"lạc quan về điều gì\". Sau vòng thảo luận nhóm khách hàng đầu tiên, ông Singh <b>lạc quan về doanh số</b> của dòng nước hoa. Các tính từ còn lại không đi với <b>about</b> hoặc không phù hợp về nghĩa: extensive (rộng lớn), distinct (riêng biệt), superior (vượt trội - đi với <b>to</b>).",
+          "explanation": "The adjective must collocate with the preposition <b>about</b> and fit the business context. <b>optimistic</b> works in the structure <b>be optimistic about something</b>, meaning \"hopeful that something will be successful.\" After the first focus groups, Mr. Singh was <b>optimistic about sales</b>. The other adjectives either do not collocate with <b>about</b> or are unsuitable in meaning: extensive, distinct, superior (which pairs with <b>to</b>)."
+        },
+        {
+          "id": "q124",
+          "no": 124,
+          "part": 5,
+          "stem": "Data from the finance department was used to ------- predict the company’s future expenses.",
+          "options": {
+            "A": "either",
+            "B": "ever",
+            "C": "yet",
+            "D": "better"
+          },
+          "answer": "D",
+          "skill": "Adverb",
+          "explanationVi": "Động từ <b>predict</b> cần một trạng từ bổ nghĩa. <b>better</b> là dạng so sánh hơn của <b>well</b>, nghĩa là \"tốt hơn\". Cụm <b>to better predict</b> nghĩa là \"để dự đoán tốt hơn\", ngầm so sánh với khả năng dự đoán trước khi có dữ liệu. Các lựa chọn còn lại không phải là trạng từ phù hợp để bổ nghĩa cho <b>predict</b>: either (hoặc), ever (từng), yet (chưa).",
+          "explanation": "The verb <b>predict</b> requires an adverb to modify it. <b>better</b> is the comparative form of <b>well</b>, meaning \"in a more excellent way.\" The phrase <b>to better predict</b> means \"to predict more accurately,\" implying a comparison with the previous ability to forecast. The other options are not suitable adverbs to modify <b>predict</b>: either, ever, yet."
+        },
+        {
+          "id": "q125",
+          "no": 125,
+          "part": 5,
+          "stem": "Immediately after the decrease in production was announced, everyone began discussing how ------- would impact work schedules.",
+          "options": {
+            "A": "us",
+            "B": "it",
+            "C": "theirs",
+            "D": "yours"
+          },
+          "answer": "B",
+          "skill": "Pronoun reference",
+          "explanationVi": "Đại từ cần điền phải thay thế cho <b>the decrease in production</b> được nhắc đến ở mệnh đề trước. <b>it</b> là đại từ số ít phù hợp để chỉ sự kiện này, làm chủ ngữ cho mệnh đề <b>would impact work schedules</b>. Các đại từ còn lại không phù hợp: us (chúng tôi - tân ngữ), theirs (của họ - sở hữu), yours (của bạn - sở hữu).",
+          "explanation": "The pronoun must refer back to <b>the decrease in production</b> mentioned in the preceding clause. <b>it</b> is the correct singular pronoun to replace this event, serving as the subject of the clause <b>would impact work schedules</b>. The other pronouns are unsuitable: us (object pronoun), theirs (possessive pronoun), yours (possessive pronoun)."
+        },
+        {
+          "id": "q126",
+          "no": 126,
+          "part": 5,
+          "stem": "Every year Arrow Mill, Inc., processes a ------- amount of grain.",
+          "options": {
+            "A": "durable",
+            "B": "direct",
+            "C": "resolute",
+            "D": "substantial"
+          },
+          "answer": "D",
+          "skill": "Vocabulary",
+          "explanationVi": "Trước danh từ <b>amount</b> cần một tính từ chỉ mức độ lớn, đáng kể. <b>substantial</b> là tính từ phù hợp nhất, có nghĩa là \"đáng kể, lớn\". Cụm <b>a substantial amount of grain</b> nghĩa là \"một lượng ngũ cốc lớn\", phù hợp với ngữ cảnh nhà máy xử lý ngũ cốc hằng năm. Các tính từ còn lại không phù hợp: durable (bền), direct (trực tiếp), resolute (kiên quyết).",
+          "explanation": "Before the noun <b>amount</b>, an adjective indicating a large quantity is needed. <b>substantial</b> is the most appropriate adjective, meaning \"large in size, value, or importance.\" The phrase <b>a substantial amount of grain</b> means \"a large quantity of grain,\" fitting the context of annual grain processing. The other adjectives are unsuitable: durable, direct, resolute."
+        },
+        {
+          "id": "q127",
+          "no": 127,
+          "part": 5,
+          "stem": "Tomorrow morning, both escalators in the store will be turned off periodically in order to perform ------- maintenance.",
+          "options": {
+            "A": "required",
+            "B": "require",
+            "C": "requiring",
+            "D": "requires"
+          },
+          "answer": "A",
+          "skill": "Past participle adjective",
+          "explanationVi": "Trước danh từ <b>maintenance</b> cần một tính từ bổ nghĩa. <b>required</b> là quá khứ phân từ được dùng như tính từ, nghĩa là \"được yêu cầu, bắt buộc\". Cụm <b>required maintenance</b> nghĩa là \"bảo trì bắt buộc/cần thiết\". <b>require</b> và <b>requires</b> là động từ, <b>requiring</b> là hiện tại phân từ, không thể đứng trước danh từ ở vị trí tính từ trong ngữ cảnh này.",
+          "explanation": "Before the noun <b>maintenance</b>, an adjective is needed to modify it. <b>required</b> is a past participle used as an adjective, meaning \"needed or compulsory.\" The phrase <b>required maintenance</b> means \"necessary maintenance.\" <b>require</b> and <b>requires</b> are verbs, and <b>requiring</b> is a present participle; none of these functions naturally as an adjective before <b>maintenance</b> in this context."
+        },
+        {
+          "id": "q128",
+          "no": 128,
+          "part": 5,
+          "stem": "Those who wish to volunteer at the annual Sebastian Park flower-planting event this Saturday ------- to arrive early.",
+          "options": {
+            "A": "asks",
+            "B": "are asked",
+            "C": "has been asking",
+            "D": "to ask"
+          },
+          "answer": "B",
+          "skill": "Passive voice",
+          "explanationVi": "Chủ ngữ <b>Those who wish to volunteer</b> là số nhiều và chỉ người. Những người này <b>được yêu cầu</b> đến sớm, tức là họ nhận hành động, không phải tự yêu cầu. Vì vậy cần dùng thể bị động <b>are asked</b>. <b>asks</b> là chủ động và sai số; <b>has been asking</b> là chủ động và sai số; <b>to ask</b> là động từ nguyên thể, không thể làm động từ chính trong câu.",
+          "explanation": "The subject <b>Those who wish to volunteer</b> is plural and refers to people. These people <b>are asked</b> to arrive early, meaning they receive the request rather than make it. The passive voice <b>are asked</b> is therefore required. <b>asks</b> is active and singular; <b>has been asking</b> is active and singular; <b>to ask</b> is an infinitive and cannot serve as the main verb of the sentence."
+        },
+        {
+          "id": "q129",
+          "no": 129,
+          "part": 5,
+          "stem": "Although Mr. Yanamura’s theory is ------- controversial, it does help explain the latest changes in the market.",
+          "options": {
+            "A": "neatly",
+            "B": "urgently",
+            "C": "gracefully",
+            "D": "certainly"
+          },
+          "answer": "D",
+          "skill": "Adverb",
+          "explanationVi": "Chỗ trống cần một trạng từ bổ nghĩa cho tính từ <b>controversial</b>. <b>certainly</b> là trạng từ mang nghĩa \"chắc chắn\", phù hợp để nhấn mạnh mức độ gây tranh cãi của lý thuyết. Mệnh đề <b>Although</b> thể hiện sự nhượng bộ: <b>mặc dù</b> lý thuyết chắc chắn gây tranh cãi, nó vẫn giúp giải thích các thay đổi. Các trạng từ còn lại không phù hợp về nghĩa: neatly (gọn gàng), urgently (khẩn cấp), gracefully (duyên dáng).",
+          "explanation": "The blank requires an adverb to modify the adjective <b>controversial</b>. <b>certainly</b> is an adverb meaning \"without doubt,\" which appropriately emphasizes the degree to which the theory is controversial. The <b>Although</b> clause expresses concession: <b>even though</b> the theory is certainly controversial, it still helps explain the changes. The other adverbs are unsuitable in meaning: neatly, urgently, gracefully."
+        },
+        {
+          "id": "q130",
+          "no": 130,
+          "part": 5,
+          "stem": "A recent ------- found that property values in the Agate Valley region had increased by 3 percent between January and June.",
+          "options": {
+            "A": "assessment",
+            "B": "assessed",
+            "C": "assessable",
+            "D": "to assess"
+          },
+          "answer": "A",
+          "skill": "Noun",
+          "explanationVi": "Vị trí sau <b>A recent</b> và trước động từ <b>found</b> cần một danh từ làm chủ ngữ cho câu. <b>assessment</b> là danh từ, nghĩa là \"cuộc đánh giá, thẩm định\". Cụm <b>A recent assessment found that...</b> nghĩa là \"Một cuộc đánh giá gần đây cho thấy...\". <b>assessed</b> là động từ quá khứ, <b>assessable</b> là tính từ, <b>to assess</b> là động từ nguyên thể; không thể đóng vai trò chủ ngữ ở vị trí này.",
+          "explanation": "The position after <b>A recent</b> and before the verb <b>found</b> requires a noun to serve as the subject of the sentence. <b>assessment</b> is a noun meaning \"an evaluation or estimation.\" The phrase <b>A recent assessment found that...</b> means \"A recent evaluation discovered that...\" <b>assessed</b> is a past tense verb, <b>assessable</b> is an adjective, and <b>to assess</b> is an infinitive; none of these can function as the subject in this position."
+        },
         {
           "id": "q131",
           "no": 131,
@@ -775,7 +502,10 @@
           },
           "answer": "A",
           "passageIndex": 0,
-          "stem": "Questions 131-134 refer to the following information."
+          "stem": "Questions 131-134 refer to the following information.",
+          "skill": "Vocabulary in context",
+          "explanationVi": "Chỗ trống cần một động từ chỉ khả năng thu hút người tham dự của hội nghị. <b>attracted</b> có nghĩa là \"thu hút\", phù hợp với tân ngữ <b>more than 3,000 attendees</b>. Câu muốn nói hội nghị năm ngoái <b>đã thu hút hơn 3.000 người tham dự</b>. Các động từ còn lại không phù hợp về nghĩa trong ngữ cảnh này: entered (đi vào), awarded (trao tặng), promoted (thăng chức, quảng bá).",
+          "explanation": "The blank requires a verb describing the conference's ability to draw participants. <b>attracted</b> means \"drew or pulled in,\" which fits the object <b>more than 3,000 attendees</b>. The sentence means last year's conference <b>drew more than 3,000 attendees</b>. The other verbs are unsuitable in this context: entered, awarded, promoted."
         },
         {
           "id": "q132",
@@ -789,7 +519,10 @@
           },
           "answer": "C",
           "passageIndex": 0,
-          "stem": "Questions 131-134 refer to the following information."
+          "stem": "Questions 131-134 refer to the following information.",
+          "skill": "Reflexive pronoun",
+          "explanationVi": "Động từ <b>market</b> trong ngữ cảnh này cần một tân ngữ chỉ chính chủ ngữ <b>Attendees</b>. Người tham dự sẽ có cơ hội <b>quảng bá chính họ</b> đến các công ty. <b>themselves</b> là đại từ phản thân số nhiều, chỉ chính những người tham dự thực hiện hành động marketing cho bản thân họ. Các lựa chọn khác không diễn tả được nghĩa phản thân này.",
+          "explanation": "The verb <b>market</b> in this context requires an object referring back to the subject <b>Attendees</b>. Attendees will have the chance to <b>promote themselves</b> to companies. <b>themselves</b> is the plural reflexive pronoun, indicating that the attendees perform the marketing action for their own benefit. The other options do not convey this reflexive meaning."
         },
         {
           "id": "q133",
@@ -803,7 +536,10 @@
           },
           "answer": "D",
           "passageIndex": 0,
-          "stem": "Questions 131-134 refer to the following information."
+          "stem": "Questions 131-134 refer to the following information.",
+          "skill": "Noun choice",
+          "explanationVi": "Chỗ trống cần một danh từ chỉ nơi các khoảng thời gian kết nối được sắp xếp. <b>schedule</b> có nghĩa là \"lịch trình\", phù hợp với ngữ cảnh các hoạt động kết nối sẽ được đưa vào <b>lịch trình mỗi ngày</b> của hội nghị. Các danh từ còn lại không phù hợp: location (địa điểm), situation (tình huống), machine (máy móc).",
+          "explanation": "The blank requires a noun indicating where networking periods are organized. <b>schedule</b> means \"a plan of events or activities,\" fitting the context that networking periods will be included in the <b>daily schedule</b> of the conference. The other nouns are unsuitable: location, situation, machine."
         },
         {
           "id": "q134",
@@ -817,15 +553,11 @@
           },
           "answer": "A",
           "passageIndex": 0,
-          "stem": "Questions 131-134 refer to the following information."
-        }
-      ]
-    },
-    {
-      "title": "Questions 135-138 refer to the following advertisement.",
-      "label": "Advertisement",
-      "html": "<h3>Housing Specialist Needed</h3><p>Wallace &amp; Prence Realty is currently seeking a housing specialist to work with our international clients. We specialize in securing appropriate short-term housing for individuals <span class=\"blank\">135</span> will be working in the Toronto area for only a short time. As part of our client-relations department, the housing specialist <span class=\"blank\">136</span> guidance to clients preparing for temporary relocation. <span class=\"blank sentence\">137</span> The successful candidate must have knowledge of real estate and rental agencies in the Toronto area. Also required are a minimum of two years of customer-service experience. Individuals with the necessary <span class=\"blank\">138</span> are encouraged to contact us at recruitment@wallaceprence.ca.</p>",
-      "questions": [
+          "stem": "Questions 131-134 refer to the following information.",
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu cần chèn vào cuối đoạn giới thiệu về hội nghị sắp diễn ra. <b>Registration begins on 3 February and continues through 18 March</b> cung cấp thông tin thực tế về thời gian đăng ký, phù hợp làm câu kết kêu gọi hành động sau khi đã mô tả các điểm hấp dẫn của hội nghị. Các lựa chọn còn lại lạc chủ đề: nói về diễn giả không được nhắc đến, địa điểm cũ không liên quan, hoặc phản hồi về hội nghị năm ngoái không phù hợp với bài giới thiệu cho năm nay.",
+          "explanation": "The sentence to be inserted appears at the end of an informational piece about the upcoming conference. <b>Registration begins on 3 February and continues through 18 March</b> provides practical registration information, serving as a natural call to action after describing the conference's attractions. The other options are off-topic: referring to an unmentioned speaker, a previous location, or feedback on last year's event, none of which fit a promotional piece for the current year."
+        },
         {
           "id": "q135",
           "no": 135,
@@ -838,7 +570,10 @@
           },
           "answer": "A",
           "passageIndex": 1,
-          "stem": "Questions 135-138 refer to the following advertisement."
+          "stem": "Questions 135-138 refer to the following advertisement.",
+          "skill": "Relative clause",
+          "explanationVi": "Chỗ trống cần một đại từ quan hệ làm chủ ngữ cho mệnh đề quan hệ bổ nghĩa cho danh từ chỉ người <b>individuals</b>. <b>who</b> là đại từ quan hệ dùng cho người, làm chủ ngữ cho động từ <b>will be working</b>. <b>where</b> dùng cho nơi chốn, <b>accordingly</b> và <b>recently</b> là trạng từ, không thể làm đại từ quan hệ.",
+          "explanation": "The blank requires a relative pronoun to serve as the subject of a relative clause modifying the noun <b>individuals</b> (people). <b>who</b> is the relative pronoun used for people, functioning as the subject of the verb <b>will be working</b>. <b>where</b> is for places; <b>accordingly</b> and <b>recently</b> are adverbs and cannot function as relative pronouns."
         },
         {
           "id": "q136",
@@ -852,7 +587,10 @@
           },
           "answer": "B",
           "passageIndex": 1,
-          "stem": "Questions 135-138 refer to the following advertisement."
+          "stem": "Questions 135-138 refer to the following advertisement.",
+          "skill": "Future simple",
+          "explanationVi": "Câu mô tả nhiệm vụ của vị trí đang tuyển dụng, tức là những việc người được tuyển <b>sẽ làm</b> trong tương lai. <b>will provide</b> là thì tương lai đơn, phù hợp để diễn tả trách nhiệm công việc. <b>provided</b> là quá khứ đơn, không phù hợp vì chưa ai được tuyển; <b>will have provided</b> là tương lai hoàn thành, không cần thiết ở đây; <b>is providing</b> là hiện tại tiếp diễn, không phù hợp cho mô tả công việc chung.",
+          "explanation": "The sentence describes the duties of the position being advertised, i.e., what the successful candidate <b>will do</b> in the future. <b>will provide</b> is the simple future, appropriate for outlining job responsibilities. <b>provided</b> is simple past, unsuitable as no one has been hired yet; <b>will have provided</b> is future perfect, unnecessary here; <b>is providing</b> is present continuous, not suitable for a general job description."
         },
         {
           "id": "q137",
@@ -866,7 +604,10 @@
           },
           "answer": "C",
           "passageIndex": 1,
-          "stem": "Questions 135-138 refer to the following advertisement."
+          "stem": "Questions 135-138 refer to the following advertisement.",
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu cần chèn nằm giữa phần mô tả nhiệm vụ chính của vị trí và phần yêu cầu ứng viên. <b>Duties also include supporting clients after their arrival</b> bổ sung thêm một nhiệm vụ khác của chuyên viên nhà ở, nối tiếp tự nhiên sau câu mô tả nhiệm vụ chính. Các lựa chọn còn lại lạc chủ đề: nói về chi phí đi lại, mô tả chung về công ty, hoặc cảnh báo về hồ sơ không đầy đủ - không phù hợp với mạch mô tả công việc.",
+          "explanation": "The sentence to be inserted falls between the main duty description and the candidate requirements. <b>Duties also include supporting clients after their arrival</b> adds another responsibility of the housing specialist, continuing naturally from the preceding sentence about the main duty. The other options are off-topic: mentioning travel expenses, a general company description, or a warning about incomplete applications—none of which fit the flow of the job description."
         },
         {
           "id": "q138",
@@ -880,15 +621,11 @@
           },
           "answer": "D",
           "passageIndex": 1,
-          "stem": "Questions 135-138 refer to the following advertisement."
-        }
-      ]
-    },
-    {
-      "title": "Questions 139-142 refer to the following newspaper article.",
-      "label": "Newspaper article",
-      "html": "<p><b>LOWELL (March 3)</b>—Just one year after opening, Viggo’s Sweet Shop on Park Street has become the place to go for residents wishing to satisfy their sugary cravings. Says owner Viggo Magnusson, “Returning customers bring friends and relatives with them, so the shop is always <span class=\"blank\">139</span>.” Mr. Magnusson credits the success of his business to the recipes he inherited from his grandmother about a decade ago. <span class=\"blank sentence\">140</span></p><p>But the popularity of the pastry shop <span class=\"blank\">141</span> Mr. Magnusson with an unanticipated problem: lack of store space. So when the shoe store next door went out of business recently, he purchased the property to allow for the <span class=\"blank\">142</span> of his shop. Renovations will start in April.</p>",
-      "questions": [
+          "stem": "Questions 135-138 refer to the following advertisement.",
+          "skill": "Noun choice",
+          "explanationVi": "Chỗ trống cần một danh từ chỉ những gì ứng viên cần có để đáp ứng yêu cầu công việc. <b>qualifications</b> có nghĩa là \"trình độ, bằng cấp, năng lực\", phù hợp với ngữ cảnh <b>Individuals with the necessary qualifications</b> (Những cá nhân có năng lực cần thiết). Các danh từ còn lại không phù hợp về nghĩa trong ngữ cảnh tuyển dụng: questions (câu hỏi), documents (tài liệu), references (người tham khảo).",
+          "explanation": "The blank requires a noun referring to what candidates need to possess to meet the job requirements. <b>qualifications</b> means \"skills, achievements, or credentials,\" fitting the context of <b>Individuals with the necessary qualifications</b>. The other nouns are unsuitable in a recruitment context: questions, documents, references."
+        },
         {
           "id": "q139",
           "no": 139,
@@ -901,7 +638,10 @@
           },
           "answer": "C",
           "passageIndex": 2,
-          "stem": "Questions 139-142 refer to the following newspaper article."
+          "stem": "Questions 139-142 refer to the following newspaper article.",
+          "skill": "Vocabulary",
+          "explanationVi": "Ngữ cảnh mô tả khách hàng quay lại dẫn thêm bạn bè và người thân, vì vậy cửa hàng luôn trong tình trạng đông đúc. <b>crowded</b> là tính từ phù hợp nhất, có nghĩa là \"đông đúc, chật kín người\". Các lựa chọn còn lại không phù hợp về nghĩa: doubted (bị nghi ngờ), estimated (được ước tính), organized (được tổ chức).",
+          "explanation": "The context describes returning customers bringing friends and relatives, so the shop is always full of people. <b>crowded</b> is the most appropriate adjective, meaning \"filled with many people.\" The other options are unsuitable in meaning: doubted, estimated, organized."
         },
         {
           "id": "q140",
@@ -915,7 +655,10 @@
           },
           "answer": "D",
           "passageIndex": 2,
-          "stem": "Questions 139-142 refer to the following newspaper article."
+          "stem": "Questions 139-142 refer to the following newspaper article.",
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu cần chèn nằm sau khi ông Magnusson nói về công thức của bà mình và trước khi chuyển sang vấn đề thiếu không gian. <b>His social media campaign has also boosted sales</b> tiếp tục chủ đề về các yếu tố dẫn đến thành công của cửa hàng, bổ sung thêm một lý do ngoài công thức gia truyền, trước khi bài báo chuyển sang khó khăn mới. Các lựa chọn còn lại không phù hợp vì nói về bà (she) không phải chủ ngữ của câu trước, hoặc lạc chủ đề.",
+          "explanation": "The sentence to be inserted comes after Mr. Magnusson discusses his grandmother's recipes and before the article shifts to the space problem. <b>His social media campaign has also boosted sales</b> continues the theme of factors contributing to the shop's success, adding another reason beyond the family recipes, before transitioning to the new challenge. The other options are unsuitable: they refer to \"she\" which is not the subject of the previous sentence, or are off-topic."
         },
         {
           "id": "q141",
@@ -929,7 +672,10 @@
           },
           "answer": "B",
           "passageIndex": 2,
-          "stem": "Questions 139-142 refer to the following newspaper article."
+          "stem": "Questions 139-142 refer to the following newspaper article.",
+          "skill": "Verb tense",
+          "explanationVi": "Bài báo đang tường thuật sự việc đã xảy ra trong quá khứ. Sự nổi tiếng của cửa hàng <b>đã khiến</b> ông Magnusson gặp vấn đề về không gian. <b>left</b> là quá khứ đơn của <b>leave</b>, đúng với thì của bài tường thuật. Cấu trúc <b>leave someone with something</b> nghĩa là \"khiến ai gặp phải điều gì\". Các thì khác không phù hợp với mạch quá khứ của bài báo.",
+          "explanation": "The article narrates events that happened in the past. The shop's popularity <b>left</b> Mr. Magnusson with a space problem. <b>left</b> is the simple past form of <b>leave</b>, consistent with the narrative tense of the article. The structure <b>leave someone with something</b> means \"cause someone to have a particular problem.\" The other tenses do not match the past narrative context."
         },
         {
           "id": "q142",
@@ -943,15 +689,11 @@
           },
           "answer": "A",
           "passageIndex": 2,
-          "stem": "Questions 139-142 refer to the following newspaper article."
-        }
-      ]
-    },
-    {
-      "title": "Questions 143-146 refer to the following memo.",
-      "label": "Memo",
-      "html": "<p><b>To:</b> All Employees<br><b>From:</b> Jennifer Prasad<br><b>Subject:</b> Updated Password Policy<br><b>Date:</b> Tuesday, February 8</p><p>Dear Employees,</p><p>As an enhanced security measure, you will now be required to change the password you use to access the company network on the first workday of each month. <span class=\"blank\">143</span>, your log-in ID will remain the same.</p><p>Each password must be at least twelve characters long and include one capital letter, one lowercase letter, one number, and one special character.</p><p>An e-mail <span class=\"blank\">144</span> on the last workday of each month reminding you to set a new password on the next workday. <span class=\"blank\">145</span> to do so will result in your being locked out of your account, and you will have to contact our platform provider, Securities Services, for assistance.</p><p>We are doing our best to ensure that our employees and our clients have the highest possible level of security. <span class=\"blank sentence\">146</span></p><p>Jennifer Prasad, CEO</p>",
-      "questions": [
+          "stem": "Questions 139-142 refer to the following newspaper article.",
+          "skill": "Noun choice",
+          "explanationVi": "Ông Magnusson mua mặt bằng bên cạnh để <b>mở rộng</b> cửa hàng của mình. <b>expansion</b> là danh từ phù hợp nhất, có nghĩa là \"sự mở rộng\". Câu trước đã đề cập đến vấn đề <b>lack of store space</b> (thiếu không gian), nên việc mua thêm mặt bằng là để giải quyết vấn đề đó thông qua việc mở rộng. Các danh từ còn lại không phù hợp: supervision (sự giám sát), submission (sự đệ trình), division (sự phân chia).",
+          "explanation": "Mr. Magnusson purchased the adjacent property to <b>expand</b> his shop. <b>expansion</b> is the most appropriate noun, meaning \"the process of increasing in size.\" The previous sentence mentioned <b>lack of store space</b>, so acquiring more property is meant to solve that problem through expansion. The other nouns are unsuitable: supervision, submission, division."
+        },
         {
           "id": "q143",
           "no": 143,
@@ -964,7 +706,10 @@
           },
           "answer": "A",
           "passageIndex": 3,
-          "stem": "Questions 143-146 refer to the following memo."
+          "stem": "Questions 143-146 refer to the following memo.",
+          "skill": "Transition",
+          "explanationVi": "Hai câu liền kề diễn tả hai ý trái ngược: mật khẩu <b>phải thay đổi</b> hằng tháng, <b>nhưng</b> tên đăng nhập <b>vẫn giữ nguyên</b>. <b>However</b> là trạng từ chuyển tiếp chỉ sự tương phản, phù hợp để nối hai ý đối lập này. Các lựa chọn còn lại không phù hợp: Therefore (do đó - kết quả), In addition (ngoài ra - bổ sung), For example (ví dụ - minh họa).",
+          "explanation": "The two consecutive sentences express contrasting ideas: passwords <b>must be changed</b> monthly, <b>but</b> the log-in ID <b>will remain the same</b>. <b>However</b> is a transition adverb indicating contrast, appropriately connecting these two opposing points. The other options are unsuitable: Therefore (result), In addition (addition), For example (illustration)."
         },
         {
           "id": "q144",
@@ -978,7 +723,10 @@
           },
           "answer": "B",
           "passageIndex": 3,
-          "stem": "Questions 143-146 refer to the following memo."
+          "stem": "Questions 143-146 refer to the following memo.",
+          "skill": "Future passive",
+          "explanationVi": "Chủ ngữ <b>An e-mail</b> là vật nhận hành động \"được gửi\", không phải người thực hiện hành động. Do đó cần dùng thể bị động. Thời gian <b>on the last workday of each month</b> chỉ một sự kiện trong tương lai, nên dùng <b>will be sent</b>. Cấu trúc bị động tương lai <b>will be + V3</b> là phù hợp. <b>sent</b> thiếu trợ động từ; <b>will have sent</b> là chủ động; <b>had been sent</b> là quá khứ hoàn thành bị động, không phù hợp với ngữ cảnh tương lai.",
+          "explanation": "The subject <b>An e-mail</b> is the thing that receives the action of sending, not the doer. The passive voice is therefore required. The time phrase <b>on the last workday of each month</b> indicates a future event, so <b>will be sent</b> is correct. The future passive structure <b>will be + V3</b> is appropriate. <b>sent</b> lacks an auxiliary verb; <b>will have sent</b> is active; <b>had been sent</b> is past perfect passive, unsuitable for a future context."
         },
         {
           "id": "q145",
@@ -992,7 +740,10 @@
           },
           "answer": "C",
           "passageIndex": 3,
-          "stem": "Questions 143-146 refer to the following memo."
+          "stem": "Questions 143-146 refer to the following memo.",
+          "skill": "Noun phrase",
+          "explanationVi": "Chỗ trống cần một danh từ làm chủ ngữ cho cụm <b>to do so will result in...</b>. <b>Failure</b> kết hợp với <b>to do so</b> tạo thành cụm <b>Failure to do so</b>, nghĩa là \"Việc không làm như vậy\". Đây là một cấu trúc cố định trong tiếng Anh dùng để cảnh báo hậu quả của việc không tuân thủ. Các danh từ còn lại không tạo thành cụm có nghĩa với <b>to do so</b>: Support (sự hỗ trợ), Absence (sự vắng mặt), Approval (sự phê duyệt).",
+          "explanation": "The blank requires a noun to serve as the subject of the phrase <b>to do so will result in...</b>. <b>Failure</b> combines with <b>to do so</b> to form the phrase <b>Failure to do so</b>, meaning \"Not doing this.\" This is a fixed structure in English used to warn of consequences for non-compliance. The other nouns do not form meaningful phrases with <b>to do so</b>: Support, Absence, Approval."
         },
         {
           "id": "q146",
@@ -1006,15 +757,1296 @@
           },
           "answer": "D",
           "passageIndex": 3,
-          "stem": "Questions 143-146 refer to the following memo."
+          "stem": "Questions 143-146 refer to the following memo.",
+          "skill": "Closing sentence",
+          "explanationVi": "Vị trí cần điền là câu kết của một bản ghi nhớ nội bộ về chính sách mới. <b>Thank you for your cooperation</b> là câu kết lịch sự và trang trọng, phù hợp để khép lại một thông báo yêu cầu nhân viên tuân thủ quy định mới. Các lựa chọn còn lại không phù hợp làm câu kết memo: hẹn gặp ở cuộc họp (không liên quan), nhắc ghi lại ID (không phải câu kết), yêu cầu báo cáo khi hoàn thành (không phù hợp vì đây là thông báo, không phải nhiệm vụ cần báo cáo).",
+          "explanation": "The blank is the closing sentence of an internal memo about a new policy. <b>Thank you for your cooperation</b> is a polite and formal closing, appropriate for ending a message that requires employee compliance with new regulations. The other options are unsuitable as memo closings: mentioning a meeting (unrelated), reminding to write down an ID (not a closing), asking for confirmation when done (inappropriate for an informational memo rather than an assigned task)."
         }
-      ]
+      ],
+      "passages": [
+        {
+          "title": "Questions 131-134 refer to the following information.",
+          "label": "Information",
+          "html": "<p>The Design Present Conference is an annual event held in Melbourne for graphic-design professionals. The conference is steadily growing in popularity. Last year, it <span class=\"blank\">131</span> more than 3,000 attendees from Australia and around the world. The next Design Present Conference, which will be held from 20 to 23 March, will offer more than 100 workshops, plus keynote speeches and plenary sessions. This year, several opportunities for professional networking will be added. Attendees will have the chance to market <span class=\"blank\">132</span> to firms in several different industries. Periods for networking will be included in the <span class=\"blank\">133</span> each day. Whether you are a design enthusiast, student, freelance designer, or business owner, Design Present has something for you. <span class=\"blank sentence\">134</span></p>",
+          "questions": [
+            {
+              "id": "q131",
+              "no": 131,
+              "part": 6,
+              "options": {
+                "A": "attracted",
+                "B": "entered",
+                "C": "awarded",
+                "D": "promoted"
+              },
+              "answer": "A",
+              "passageIndex": 0,
+              "stem": "Questions 131-134 refer to the following information."
+            },
+            {
+              "id": "q132",
+              "no": 132,
+              "part": 6,
+              "options": {
+                "A": "they",
+                "B": "them",
+                "C": "themselves",
+                "D": "theirs"
+              },
+              "answer": "C",
+              "passageIndex": 0,
+              "stem": "Questions 131-134 refer to the following information."
+            },
+            {
+              "id": "q133",
+              "no": 133,
+              "part": 6,
+              "options": {
+                "A": "location",
+                "B": "situation",
+                "C": "machine",
+                "D": "schedule"
+              },
+              "answer": "D",
+              "passageIndex": 0,
+              "stem": "Questions 131-134 refer to the following information."
+            },
+            {
+              "id": "q134",
+              "no": 134,
+              "part": 6,
+              "options": {
+                "A": "Registration begins on 3 February and continues through 18 March.",
+                "B": "This speaker is well-known throughout the industry.",
+                "C": "The conference was held in New Zealand in previous years.",
+                "D": "We’d like to get your feedback on last year’s conference."
+              },
+              "answer": "A",
+              "passageIndex": 0,
+              "stem": "Questions 131-134 refer to the following information."
+            }
+          ]
+        },
+        {
+          "title": "Questions 135-138 refer to the following advertisement.",
+          "label": "Advertisement",
+          "html": "<h3>Housing Specialist Needed</h3><p>Wallace &amp; Prence Realty is currently seeking a housing specialist to work with our international clients. We specialize in securing appropriate short-term housing for individuals <span class=\"blank\">135</span> will be working in the Toronto area for only a short time. As part of our client-relations department, the housing specialist <span class=\"blank\">136</span> guidance to clients preparing for temporary relocation. <span class=\"blank sentence\">137</span> The successful candidate must have knowledge of real estate and rental agencies in the Toronto area. Also required are a minimum of two years of customer-service experience. Individuals with the necessary <span class=\"blank\">138</span> are encouraged to contact us at recruitment@wallaceprence.ca.</p>",
+          "questions": [
+            {
+              "id": "q135",
+              "no": 135,
+              "part": 6,
+              "options": {
+                "A": "who",
+                "B": "accordingly",
+                "C": "recently",
+                "D": "where"
+              },
+              "answer": "A",
+              "passageIndex": 1,
+              "stem": "Questions 135-138 refer to the following advertisement."
+            },
+            {
+              "id": "q136",
+              "no": 136,
+              "part": 6,
+              "options": {
+                "A": "provided",
+                "B": "will provide",
+                "C": "will have provided",
+                "D": "is providing"
+              },
+              "answer": "B",
+              "passageIndex": 1,
+              "stem": "Questions 135-138 refer to the following advertisement."
+            },
+            {
+              "id": "q137",
+              "no": 137,
+              "part": 6,
+              "options": {
+                "A": "Your travel expenses are covered by Wallace & Prence.",
+                "B": "We place clients in apartments throughout the world.",
+                "C": "Duties also include supporting clients after their arrival.",
+                "D": "Incomplete applications will not be considered."
+              },
+              "answer": "C",
+              "passageIndex": 1,
+              "stem": "Questions 135-138 refer to the following advertisement."
+            },
+            {
+              "id": "q138",
+              "no": 138,
+              "part": 6,
+              "options": {
+                "A": "questions",
+                "B": "documents",
+                "C": "references",
+                "D": "qualifications"
+              },
+              "answer": "D",
+              "passageIndex": 1,
+              "stem": "Questions 135-138 refer to the following advertisement."
+            }
+          ]
+        },
+        {
+          "title": "Questions 139-142 refer to the following newspaper article.",
+          "label": "Newspaper article",
+          "html": "<p><b>LOWELL (March 3)</b>—Just one year after opening, Viggo’s Sweet Shop on Park Street has become the place to go for residents wishing to satisfy their sugary cravings. Says owner Viggo Magnusson, “Returning customers bring friends and relatives with them, so the shop is always <span class=\"blank\">139</span>.” Mr. Magnusson credits the success of his business to the recipes he inherited from his grandmother about a decade ago. <span class=\"blank sentence\">140</span></p><p>But the popularity of the pastry shop <span class=\"blank\">141</span> Mr. Magnusson with an unanticipated problem: lack of store space. So when the shoe store next door went out of business recently, he purchased the property to allow for the <span class=\"blank\">142</span> of his shop. Renovations will start in April.</p>",
+          "questions": [
+            {
+              "id": "q139",
+              "no": 139,
+              "part": 6,
+              "options": {
+                "A": "doubted",
+                "B": "estimated",
+                "C": "crowded",
+                "D": "organized"
+              },
+              "answer": "C",
+              "passageIndex": 2,
+              "stem": "Questions 139-142 refer to the following newspaper article."
+            },
+            {
+              "id": "q140",
+              "no": 140,
+              "part": 6,
+              "options": {
+                "A": "She usually serves them warm.",
+                "B": "She created them when she started the restaurant.",
+                "C": "His family members prefer eating healthy meals.",
+                "D": "His social media campaign has also boosted sales."
+              },
+              "answer": "D",
+              "passageIndex": 2,
+              "stem": "Questions 139-142 refer to the following newspaper article."
+            },
+            {
+              "id": "q141",
+              "no": 141,
+              "part": 6,
+              "options": {
+                "A": "leave",
+                "B": "left",
+                "C": "is leaving",
+                "D": "have left"
+              },
+              "answer": "B",
+              "passageIndex": 2,
+              "stem": "Questions 139-142 refer to the following newspaper article."
+            },
+            {
+              "id": "q142",
+              "no": 142,
+              "part": 6,
+              "options": {
+                "A": "expansion",
+                "B": "supervision",
+                "C": "submission",
+                "D": "division"
+              },
+              "answer": "A",
+              "passageIndex": 2,
+              "stem": "Questions 139-142 refer to the following newspaper article."
+            }
+          ]
+        },
+        {
+          "title": "Questions 143-146 refer to the following memo.",
+          "label": "Memo",
+          "html": "<p><b>To:</b> All Employees<br><b>From:</b> Jennifer Prasad<br><b>Subject:</b> Updated Password Policy<br><b>Date:</b> Tuesday, February 8</p><p>Dear Employees,</p><p>As an enhanced security measure, you will now be required to change the password you use to access the company network on the first workday of each month. <span class=\"blank\">143</span>, your log-in ID will remain the same.</p><p>Each password must be at least twelve characters long and include one capital letter, one lowercase letter, one number, and one special character.</p><p>An e-mail <span class=\"blank\">144</span> on the last workday of each month reminding you to set a new password on the next workday. <span class=\"blank\">145</span> to do so will result in your being locked out of your account, and you will have to contact our platform provider, Securities Services, for assistance.</p><p>We are doing our best to ensure that our employees and our clients have the highest possible level of security. <span class=\"blank sentence\">146</span></p><p>Jennifer Prasad, CEO</p>",
+          "questions": [
+            {
+              "id": "q143",
+              "no": 143,
+              "part": 6,
+              "options": {
+                "A": "However",
+                "B": "Therefore",
+                "C": "In addition",
+                "D": "For example"
+              },
+              "answer": "A",
+              "passageIndex": 3,
+              "stem": "Questions 143-146 refer to the following memo."
+            },
+            {
+              "id": "q144",
+              "no": 144,
+              "part": 6,
+              "options": {
+                "A": "sent",
+                "B": "will be sent",
+                "C": "will have sent",
+                "D": "had been sent"
+              },
+              "answer": "B",
+              "passageIndex": 3,
+              "stem": "Questions 143-146 refer to the following memo."
+            },
+            {
+              "id": "q145",
+              "no": 145,
+              "part": 6,
+              "options": {
+                "A": "Support",
+                "B": "Absence",
+                "C": "Failure",
+                "D": "Approval"
+              },
+              "answer": "C",
+              "passageIndex": 3,
+              "stem": "Questions 143-146 refer to the following memo."
+            },
+            {
+              "id": "q146",
+              "no": 146,
+              "part": 6,
+              "options": {
+                "A": "I will see you at the meeting.",
+                "B": "Write down your new log-in ID.",
+                "C": "Let me know when this is done.",
+                "D": "Thank you for your cooperation."
+              },
+              "answer": "D",
+              "passageIndex": 3,
+              "stem": "Questions 143-146 refer to the following memo."
+            }
+          ]
+        }
+      ],
+      "practice": {
+        "id": "ets-summer-2021-test1-part5-6-practice",
+        "title": "Luyện đề ETS 2021 - Part 5 + 6",
+        "description": "Làm từng câu, kiểm tra đáp án và xem sửa chi tiết ngay.",
+        "mode": "practice"
+      },
+      "testNo": 1,
+      "selectorLabel": "ETS Summer 2021 · Test 1"
+    },
+    {
+      "id": "ets-summer-2021-test2-part5-6",
+      "title": "ETS Summer 2021 Test 2 · Part 5 + 6",
+      "sourceLabel": "ETS Summer 2021 · Reading Test 2",
+      "timerMinutes": 25,
+      "questions": [
+        {
+          "id": "q101",
+          "no": 101,
+          "part": 5,
+          "stem": "The Pangea Company will send ------- an e-mail confirming receipt of the application.",
+          "options": {
+            "A": "your",
+            "B": "yourselves",
+            "C": "yourself",
+            "D": "you"
+          },
+          "answer": "D",
+          "skill": "Object pronoun",
+          "explanationVi": "Sau động từ <b>send</b> cần tân ngữ chỉ người nhận. Cấu trúc <b>send someone an e-mail</b> mang nghĩa \"gửi cho ai một e-mail\", nên dùng đại từ tân ngữ <b>you</b>. Các lựa chọn khác là tính từ sở hữu <b>your</b> (\"của bạn\") hoặc đại từ phản thân <b>yourself/yourselves</b> (\"chính bạn/các bạn\").",
+          "explanation": "The verb <b>send</b> needs an indirect object referring to the recipient. In <b>send someone an e-mail</b>, the object pronoun <b>you</b> is correct."
+        },
+        {
+          "id": "q102",
+          "no": 102,
+          "part": 5,
+          "stem": "Mr. Yamamoto’s farewell party was ------- in the cafeteria on Tuesday.",
+          "options": {
+            "A": "meant",
+            "B": "held",
+            "C": "taken",
+            "D": "built"
+          },
+          "answer": "B",
+          "skill": "Passive collocation",
+          "explanationVi": "Chủ ngữ <b>farewell party</b> nhận hành động tổ chức, nên dùng cụm bị động <b>was held</b>, nghĩa là \"được tổ chức\". Các động từ còn lại không kết hợp tự nhiên với <b>party</b> trong ngữ cảnh này.",
+          "explanation": "A party is naturally described with the passive collocation <b>was held</b>, meaning that it took place in the cafeteria."
+        },
+        {
+          "id": "q103",
+          "no": 103,
+          "part": 5,
+          "stem": "Tours run every day, but there may be ------- availability on weekends.",
+          "options": {
+            "A": "limit",
+            "B": "limits",
+            "C": "limited",
+            "D": "limitation"
+          },
+          "answer": "C",
+          "skill": "Word form",
+          "explanationVi": "Trước danh từ <b>availability</b> cần tính từ bổ nghĩa. <b>limited availability</b> nghĩa là \"số chỗ/khả năng phục vụ có hạn\". <b>limit</b>, <b>limits</b> và <b>limitation</b> đều là danh từ hoặc động từ, không phù hợp ở vị trí này.",
+          "explanation": "The noun <b>availability</b> requires an adjective. <b>Limited availability</b> is the natural phrase for restricted capacity on weekends."
+        },
+        {
+          "id": "q104",
+          "no": 104,
+          "part": 5,
+          "stem": "Bentoc Shoes has a loyal customer base ------- it provides high-quality service.",
+          "options": {
+            "A": "because",
+            "B": "rather",
+            "C": "not only",
+            "D": "as well"
+          },
+          "answer": "A",
+          "skill": "Cause conjunction",
+          "explanationVi": "Sau chỗ trống là một mệnh đề nêu nguyên nhân. <b>because</b> mang nghĩa \"bởi vì\", giải thích công ty có lượng khách hàng trung thành do cung cấp dịch vụ chất lượng cao.",
+          "explanation": "The second clause gives the reason for the loyal customer base, so the causal conjunction <b>because</b> is correct."
+        },
+        {
+          "id": "q105",
+          "no": 105,
+          "part": 5,
+          "stem": "Building management ------- asks employees to avoid socializing in the lobby.",
+          "options": {
+            "A": "respects",
+            "B": "respected",
+            "C": "respectful",
+            "D": "respectfully"
+          },
+          "answer": "D",
+          "skill": "Adverb",
+          "explanationVi": "Chỗ trống bổ nghĩa cho động từ <b>asks</b>, nên cần trạng từ <b>respectfully</b>, nghĩa là \"một cách lịch sự/trân trọng\". <b>respectful</b> là tính từ; <b>respects</b> và <b>respected</b> là động từ.",
+          "explanation": "The blank modifies the verb <b>asks</b>, so the adverb <b>respectfully</b> is required."
+        },
+        {
+          "id": "q106",
+          "no": 106,
+          "part": 5,
+          "stem": "The theater district is located ------- walking distance of the Yafeh Hotel.",
+          "options": {
+            "A": "within",
+            "B": "along",
+            "C": "below",
+            "D": "down"
+          },
+          "answer": "A",
+          "skill": "Prepositional phrase",
+          "explanationVi": "Cụm cố định <b>within walking distance of</b> nghĩa là \"trong khoảng cách có thể đi bộ từ\". Vì vậy giới từ đúng là <b>within</b>.",
+          "explanation": "<b>Within walking distance of</b> is the fixed expression meaning close enough to reach on foot."
+        },
+        {
+          "id": "q107",
+          "no": 107,
+          "part": 5,
+          "stem": "As consumers buy more products online, retailers are finding ways ------- orders more quickly.",
+          "options": {
+            "A": "have delivered",
+            "B": "are delivering",
+            "C": "to deliver",
+            "D": "delivers"
+          },
+          "answer": "C",
+          "skill": "Noun + infinitive",
+          "explanationVi": "Sau danh từ <b>ways</b> thường dùng động từ nguyên thể có <b>to</b>: <b>ways to deliver orders</b>, nghĩa là \"những cách giao đơn hàng\". Các dạng động từ còn lại không bổ nghĩa đúng cho <b>ways</b>.",
+          "explanation": "The noun <b>ways</b> is followed by an infinitive describing their purpose: <b>ways to deliver orders</b>."
+        },
+        {
+          "id": "q108",
+          "no": 108,
+          "part": 5,
+          "stem": "Please ------- that environmental inspectors must renew their certification yearly.",
+          "options": {
+            "A": "proceed",
+            "B": "secure",
+            "C": "note",
+            "D": "keep"
+          },
+          "answer": "C",
+          "skill": "Verb choice",
+          "explanationVi": "Cụm <b>Please note that</b> dùng để yêu cầu người đọc lưu ý thông tin, mang nghĩa \"Xin lưu ý rằng\". Các động từ khác không tạo được cấu trúc tự nhiên trước mệnh đề <b>that</b>.",
+          "explanation": "<b>Please note that</b> is the standard expression used to draw attention to important information."
+        },
+        {
+          "id": "q109",
+          "no": 109,
+          "part": 5,
+          "stem": "Mr. Yi’s calendar is ------- open for interviews from 3:00 P.M. to 5:00 P.M. on Tuesdays.",
+          "options": {
+            "A": "usually",
+            "B": "during",
+            "C": "several",
+            "D": "longer"
+          },
+          "answer": "A",
+          "skill": "Adverb of frequency",
+          "explanationVi": "Chỗ trống bổ nghĩa cho tính từ <b>open</b> và diễn tả lịch thường lệ vào các ngày thứ Ba. Trạng từ tần suất <b>usually</b> nghĩa là \"thường\" phù hợp nhất.",
+          "explanation": "The sentence describes a regular Tuesday schedule, so the frequency adverb <b>usually</b> correctly modifies <b>open</b>."
+        },
+        {
+          "id": "q110",
+          "no": 110,
+          "part": 5,
+          "stem": "The lead role ------- the film Sunpocket was created especially for Ms. Abebe.",
+          "options": {
+            "A": "by",
+            "B": "at",
+            "C": "in",
+            "D": "as"
+          },
+          "answer": "C",
+          "skill": "Preposition",
+          "explanationVi": "Cụm <b>the lead role in the film</b> nghĩa là \"vai chính trong bộ phim\". Giới từ dùng để chỉ vai diễn thuộc một bộ phim là <b>in</b>.",
+          "explanation": "A role is described as being <b>in</b> a film, so <b>the lead role in the film</b> is correct."
+        },
+        {
+          "id": "q111",
+          "no": 111,
+          "part": 5,
+          "stem": "Your current online banking session -------, so please log on to your account again.",
+          "options": {
+            "A": "has expired",
+            "B": "expiring",
+            "C": "expiration",
+            "D": "to expire"
+          },
+          "answer": "A",
+          "skill": "Present perfect",
+          "explanationVi": "Câu cần một động từ chính hoàn chỉnh. <b>has expired</b> nghĩa là \"đã hết hạn\" và giải thích vì sao người dùng phải đăng nhập lại. Các lựa chọn khác không thể làm vị ngữ hoàn chỉnh.",
+          "explanation": "The sentence needs a complete predicate indicating a completed event with a present result. <b>Has expired</b> is correct."
+        },
+        {
+          "id": "q112",
+          "no": 112,
+          "part": 5,
+          "stem": "XAG Motors recommends checking your vehicle’s oil at ------- intervals.",
+          "options": {
+            "A": "heavy",
+            "B": "genuine",
+            "C": "regular",
+            "D": "immediate"
+          },
+          "answer": "C",
+          "skill": "Collocation",
+          "explanationVi": "Cụm phổ biến <b>at regular intervals</b> nghĩa là \"theo những khoảng thời gian đều đặn\". Đây là cách diễn đạt tự nhiên khi nói về việc kiểm tra dầu xe định kỳ.",
+          "explanation": "<b>At regular intervals</b> is the standard collocation for something done periodically."
+        },
+        {
+          "id": "q113",
+          "no": 113,
+          "part": 5,
+          "stem": "Mr. Wu was responsible for the latest design ------- at Shu Faucet Company.",
+          "options": {
+            "A": "innovative",
+            "B": "innovatively",
+            "C": "innovate",
+            "D": "innovation"
+          },
+          "answer": "D",
+          "skill": "Word form",
+          "explanationVi": "Sau tính từ <b>latest</b> cần danh từ. <b>design innovation</b> nghĩa là \"đổi mới trong thiết kế\", nên danh từ <b>innovation</b> là đáp án đúng.",
+          "explanation": "The adjective <b>latest</b> must modify a noun. <b>Design innovation</b> is the correct noun phrase."
+        },
+        {
+          "id": "q114",
+          "no": 114,
+          "part": 5,
+          "stem": "Rincon Data has just opened a new facility that is ------- larger than its previous one.",
+          "options": {
+            "A": "expertly",
+            "B": "significantly",
+            "C": "prominently",
+            "D": "historically"
+          },
+          "answer": "B",
+          "skill": "Degree adverb",
+          "explanationVi": "Trạng từ đứng trước dạng so sánh hơn <b>larger</b> phải diễn tả mức độ. <b>significantly larger</b> nghĩa là \"lớn hơn đáng kể\". Các trạng từ còn lại không phù hợp về nghĩa.",
+          "explanation": "The comparative adjective <b>larger</b> is naturally intensified by <b>significantly</b>."
+        },
+        {
+          "id": "q115",
+          "no": 115,
+          "part": 5,
+          "stem": "Each year, the relationship between what people eat and the state of ------- health is more fully understood.",
+          "options": {
+            "A": "they",
+            "B": "their",
+            "C": "theirs",
+            "D": "them"
+          },
+          "answer": "B",
+          "skill": "Possessive adjective",
+          "explanationVi": "Trước danh từ <b>health</b> cần tính từ sở hữu. <b>their health</b> nghĩa là \"sức khỏe của họ\", quy chiếu về <b>people</b>. <b>they</b> là chủ ngữ, <b>theirs</b> là đại từ sở hữu và <b>them</b> là tân ngữ.",
+          "explanation": "The noun <b>health</b> requires the possessive adjective <b>their</b>, referring back to <b>people</b>."
+        },
+        {
+          "id": "q116",
+          "no": 116,
+          "part": 5,
+          "stem": "------- from customers is valuable in determining where we need to improve.",
+          "options": {
+            "A": "Inventory",
+            "B": "Feedback",
+            "C": "Possibility",
+            "D": "Distribution"
+          },
+          "answer": "B",
+          "skill": "Vocabulary",
+          "explanationVi": "Thông tin từ khách hàng giúp doanh nghiệp xác định điểm cần cải thiện. <b>Feedback from customers</b> nghĩa là \"phản hồi từ khách hàng\", phù hợp cả nghĩa lẫn cách kết hợp từ.",
+          "explanation": "<b>Feedback from customers</b> is information used to identify areas needing improvement."
+        },
+        {
+          "id": "q117",
+          "no": 117,
+          "part": 5,
+          "stem": "Poet Yoshino Nagao will read from her latest ------- collection at Argyle Library on Friday.",
+          "options": {
+            "A": "publisher",
+            "B": "publish",
+            "C": "published",
+            "D": "publishes"
+          },
+          "answer": "C",
+          "skill": "Past participle adjective",
+          "explanationVi": "Trước danh từ <b>collection</b> cần từ bổ nghĩa. <b>published</b> là quá khứ phân từ dùng như tính từ, tạo cụm <b>latest published collection</b>, nghĩa là \"tuyển tập mới nhất đã được xuất bản\".",
+          "explanation": "The noun <b>collection</b> needs an adjective. <b>Published</b> functions as a participial adjective here."
+        },
+        {
+          "id": "q118",
+          "no": 118,
+          "part": 5,
+          "stem": "An inspection of the Cotlier Building identified several ------- defects.",
+          "options": {
+            "A": "private",
+            "B": "instructional",
+            "C": "complimentary",
+            "D": "structural"
+          },
+          "answer": "D",
+          "skill": "Collocation",
+          "explanationVi": "Trong ngữ cảnh kiểm tra tòa nhà, <b>structural defects</b> nghĩa là \"các khiếm khuyết về kết cấu\". Các tính từ khác không phù hợp với loại lỗi của công trình.",
+          "explanation": "An inspection of a building may identify <b>structural defects</b>, problems affecting its physical structure."
+        },
+        {
+          "id": "q119",
+          "no": 119,
+          "part": 5,
+          "stem": "Retailers have been reporting ------- strong sales of swimwear for this time of year.",
+          "options": {
+            "A": "surprised",
+            "B": "surprises",
+            "C": "to surprise",
+            "D": "surprisingly"
+          },
+          "answer": "D",
+          "skill": "Adverb",
+          "explanationVi": "Trước tính từ <b>strong</b> cần trạng từ bổ nghĩa. <b>surprisingly strong sales</b> nghĩa là \"doanh số cao một cách đáng ngạc nhiên\". Vì vậy dùng <b>surprisingly</b>.",
+          "explanation": "The adjective <b>strong</b> is modified by the adverb <b>surprisingly</b>."
+        },
+        {
+          "id": "q120",
+          "no": 120,
+          "part": 5,
+          "stem": "Curitour Travel offers ------- throughout Asia that vary in length, cost, and group size.",
+          "options": {
+            "A": "excursions",
+            "B": "refreshments",
+            "C": "improvements",
+            "D": "institutions"
+          },
+          "answer": "A",
+          "skill": "Vocabulary",
+          "explanationVi": "Một công ty du lịch cung cấp các chuyến đi có độ dài, chi phí và quy mô nhóm khác nhau. <b>excursions</b> nghĩa là \"các chuyến tham quan\", phù hợp nhất với ngữ cảnh.",
+          "explanation": "A travel company offers <b>excursions</b>, trips that can vary in duration, price, and group size."
+        },
+        {
+          "id": "q121",
+          "no": 121,
+          "part": 5,
+          "stem": "As the city’s largest -------, Bailin Hospital provides more than 1,000 jobs at its west campus alone.",
+          "options": {
+            "A": "employment",
+            "B": "employable",
+            "C": "employing",
+            "D": "employer"
+          },
+          "answer": "D",
+          "skill": "Word form",
+          "explanationVi": "Sau <b>the city’s largest</b> cần danh từ chỉ tổ chức tạo việc làm. <b>employer</b> nghĩa là \"nhà tuyển dụng\", phù hợp với thông tin bệnh viện cung cấp hơn 1.000 việc làm.",
+          "explanation": "The hospital provides jobs, so it is the city's largest <b>employer</b>."
+        },
+        {
+          "id": "q122",
+          "no": 122,
+          "part": 5,
+          "stem": "The venue is small, so not ------- who requests a ticket to the play will be able to attend.",
+          "options": {
+            "A": "the other",
+            "B": "one another",
+            "C": "everyone",
+            "D": "someone"
+          },
+          "answer": "C",
+          "skill": "Indefinite pronoun",
+          "explanationVi": "Cụm <b>not everyone who requests a ticket</b> nghĩa là \"không phải tất cả những người yêu cầu vé\". Hội trường nhỏ nên một số người sẽ không thể tham dự.",
+          "explanation": "Because capacity is limited, <b>not everyone</b> who requests a ticket can attend."
+        },
+        {
+          "id": "q123",
+          "no": 123,
+          "part": 5,
+          "stem": "Both the Atkinson Times and the MacMillan Record have sizable readerships, ------- each targets a different demographic.",
+          "options": {
+            "A": "unless",
+            "B": "although",
+            "C": "once",
+            "D": "whether"
+          },
+          "answer": "B",
+          "skill": "Concession conjunction",
+          "explanationVi": "Hai vế thể hiện sự tương phản: cả hai báo đều có lượng độc giả lớn, <b>mặc dù</b> mỗi báo hướng đến nhóm đối tượng khác nhau. Liên từ <b>although</b> phù hợp nhất.",
+          "explanation": "The clauses contrast large readerships with different target demographics, so <b>although</b> is correct."
+        },
+        {
+          "id": "q124",
+          "no": 124,
+          "part": 5,
+          "stem": "------- the acquisition of a competitor, Plautner Electric has become the biggest appliance retailer in the city.",
+          "options": {
+            "A": "With",
+            "B": "Wherever",
+            "C": "Together",
+            "D": "Above"
+          },
+          "answer": "A",
+          "skill": "Preposition",
+          "explanationVi": "Cụm <b>With the acquisition of a competitor</b> mang nghĩa \"với/nhờ việc mua lại một đối thủ\" và nêu nguyên nhân dẫn đến vị thế mới của công ty. Các lựa chọn khác không phù hợp về ngữ pháp.",
+          "explanation": "<b>With the acquisition of a competitor</b> introduces the circumstance that enabled the company to become the largest retailer."
+        },
+        {
+          "id": "q125",
+          "no": 125,
+          "part": 5,
+          "stem": "The shipment delay was ------- caused by miscommunication within our department.",
+          "options": {
+            "A": "primarily",
+            "B": "eventually",
+            "C": "hastily",
+            "D": "reluctantly"
+          },
+          "answer": "A",
+          "skill": "Adverb choice",
+          "explanationVi": "Chỗ trống bổ nghĩa cho <b>caused</b> và chỉ nguyên nhân chính. <b>primarily caused by</b> nghĩa là \"chủ yếu do... gây ra\". Các trạng từ khác không phù hợp về nghĩa.",
+          "explanation": "<b>Primarily caused by</b> means that miscommunication was the main reason for the delay."
+        },
+        {
+          "id": "q126",
+          "no": 126,
+          "part": 5,
+          "stem": "Because of an ordering error, Vival Market received an ------- of 200 bags of rice.",
+          "options": {
+            "A": "exceeding",
+            "B": "exceedingly",
+            "C": "excess",
+            "D": "excessive"
+          },
+          "answer": "C",
+          "skill": "Noun phrase",
+          "explanationVi": "Sau mạo từ <b>an</b> và trước giới từ <b>of</b> cần danh từ. Cụm <b>an excess of 200 bags</b> nghĩa là \"một lượng dư 200 bao\". <b>excessive</b> là tính từ, còn <b>exceeding/exceedingly</b> không phù hợp cấu trúc.",
+          "explanation": "The structure is <b>an excess of + quantity</b>, so the noun <b>excess</b> is required."
+        },
+        {
+          "id": "q127",
+          "no": 127,
+          "part": 5,
+          "stem": "Ms. Choi reports that the new accounting software works well, ------- the computer’s operating system has been updated.",
+          "options": {
+            "A": "provided that",
+            "B": "no sooner",
+            "C": "so as to",
+            "D": "in view of"
+          },
+          "answer": "A",
+          "skill": "Conditional conjunction",
+          "explanationVi": "Câu nêu điều kiện để phần mềm hoạt động tốt. <b>provided that</b> nghĩa là \"miễn là/với điều kiện là\" và nối với mệnh đề <b>the computer’s operating system has been updated</b>.",
+          "explanation": "<b>Provided that</b> introduces the condition under which the software works well."
+        },
+        {
+          "id": "q128",
+          "no": 128,
+          "part": 5,
+          "stem": "Researchers must sign in at the visitor registration table upon ------- the Briston Literary Archive.",
+          "options": {
+            "A": "entered",
+            "B": "entering",
+            "C": "entry",
+            "D": "enter"
+          },
+          "answer": "B",
+          "skill": "Preposition + gerund",
+          "explanationVi": "Sau giới từ <b>upon</b> cần danh từ hoặc V-ing. <b>upon entering the Briston Literary Archive</b> nghĩa là \"ngay khi vào Kho lưu trữ Văn học Briston\", nên dùng <b>entering</b>.",
+          "explanation": "The preposition <b>upon</b> is followed by a gerund, giving <b>upon entering</b>."
+        },
+        {
+          "id": "q129",
+          "no": 129,
+          "part": 5,
+          "stem": "Over the years, Garnet Advertising has ------- supported its employees’ volunteer work for charitable organizations.",
+          "options": {
+            "A": "currently",
+            "B": "upwardly",
+            "C": "severely",
+            "D": "actively"
+          },
+          "answer": "D",
+          "skill": "Adverb choice",
+          "explanationVi": "Động từ <b>supported</b> cần trạng từ diễn tả sự hỗ trợ tích cực. <b>actively supported</b> nghĩa là \"tích cực hỗ trợ\". Các trạng từ còn lại không phù hợp về nghĩa.",
+          "explanation": "<b>Actively supported</b> is the natural phrase for providing deliberate, ongoing support."
+        },
+        {
+          "id": "q130",
+          "no": 130,
+          "part": 5,
+          "stem": "Ms. Rakel’s new Stockholm office tower is sure to be recognized as a highlight of ------- architecture.",
+          "options": {
+            "A": "instant",
+            "B": "associated",
+            "C": "contemporary",
+            "D": "simultaneous"
+          },
+          "answer": "C",
+          "skill": "Vocabulary",
+          "explanationVi": "Cụm <b>contemporary architecture</b> nghĩa là \"kiến trúc đương đại\" và phù hợp với một tòa tháp văn phòng mới. Các tính từ khác không kết hợp tự nhiên với <b>architecture</b> trong câu này.",
+          "explanation": "A new office tower may be a highlight of <b>contemporary architecture</b>, meaning modern architectural design."
+        },
+        {
+          "id": "q131",
+          "no": 131,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following job advertisement.",
+          "options": {
+            "A": "seeks",
+            "B": "hires",
+            "C": "offers",
+            "D": "trains"
+          },
+          "answer": "A",
+          "passageIndex": 0,
+          "skill": "Vocabulary in context",
+          "explanationVi": "Công ty đang đăng tuyển một nhân viên thu mua chuyên nghiệp. Cấu trúc <b>seek a professional procurement officer</b> nghĩa là \"tìm kiếm/tuyển một chuyên viên thu mua\". <b>hires</b> diễn tả đã tuyển, còn <b>offers</b> và <b>trains</b> không phù hợp.",
+          "explanation": "The advertisement states that the company is looking for a procurement officer, so <b>seeks</b> is correct."
+        },
+        {
+          "id": "q132",
+          "no": 132,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following job advertisement.",
+          "options": {
+            "A": "so",
+            "B": "while",
+            "C": "nor",
+            "D": "and"
+          },
+          "answer": "D",
+          "passageIndex": 0,
+          "skill": "Parallel coordination",
+          "explanationVi": "Các nhiệm vụ <b>draft advertisements</b>, <b>prepare contract documents</b>, <b>process bids</b> và <b>provide training</b> được liệt kê song song. Liên từ bổ sung <b>and</b> nối nhiệm vụ cuối cùng với danh sách.",
+          "explanation": "The sentence lists parallel job duties, so the final item is joined with <b>and</b>."
+        },
+        {
+          "id": "q133",
+          "no": 133,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following job advertisement.",
+          "options": {
+            "A": "application",
+            "B": "applicant",
+            "C": "applying",
+            "D": "apply"
+          },
+          "answer": "B",
+          "passageIndex": 0,
+          "skill": "Word form",
+          "explanationVi": "Sau mạo từ <b>The</b> cần danh từ chỉ người phải có kinh nghiệm. <b>applicant</b> nghĩa là \"ứng viên\". <b>application</b> là \"đơn ứng tuyển\", còn <b>applying/apply</b> là dạng động từ.",
+          "explanation": "The person seeking the job must have the required experience, so the noun <b>applicant</b> is correct."
+        },
+        {
+          "id": "q134",
+          "no": 134,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following job advertisement.",
+          "options": {
+            "A": "Likewise, company-owned cars are a major expense for firms such as ours.",
+            "B": "Moreover, excellent organizational skills are essential.",
+            "C": "The top candidate for the position has been offered a one-year contract.",
+            "D": "All employees have been notified of the policy change."
+          },
+          "answer": "B",
+          "passageIndex": 0,
+          "skill": "Sentence insertion",
+          "explanationVi": "Đoạn cuối đang liệt kê các yêu cầu của vị trí: bằng cấp và kinh nghiệm. Câu <b>Moreover, excellent organizational skills are essential</b> bổ sung thêm một yêu cầu nghề nghiệp, nghĩa là \"Hơn nữa, kỹ năng tổ chức xuất sắc là điều thiết yếu\". Các câu còn lại không liên quan đến tiêu chuẩn ứng viên.",
+          "explanation": "The paragraph lists job qualifications. <b>Moreover, excellent organizational skills are essential</b> naturally adds another requirement."
+        },
+        {
+          "id": "q135",
+          "no": 135,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following e-mail.",
+          "options": {
+            "A": "information",
+            "B": "informed",
+            "C": "informs",
+            "D": "to inform"
+          },
+          "answer": "D",
+          "passageIndex": 1,
+          "skill": "Verb complementation",
+          "explanationVi": "Cấu trúc <b>write to inform someone that...</b> nghĩa là \"viết thư để thông báo cho ai rằng...\". Sau <b>am writing</b> cần động từ nguyên thể chỉ mục đích, nên dùng <b>to inform</b>.",
+          "explanation": "The infinitive <b>to inform</b> expresses the purpose of writing the e-mail."
+        },
+        {
+          "id": "q136",
+          "no": 136,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following e-mail.",
+          "options": {
+            "A": "cautiously",
+            "B": "patiently",
+            "C": "largely",
+            "D": "quietly"
+          },
+          "answer": "C",
+          "passageIndex": 1,
+          "skill": "Adverb choice",
+          "explanationVi": "Cụm <b>will largely consist of</b> nghĩa là \"sẽ chủ yếu bao gồm\". <b>largely</b> phù hợp để chỉ phần lớn nhiệm vụ của các thực tập sinh; các trạng từ khác không phù hợp về nghĩa.",
+          "explanation": "<b>Largely consist of</b> means that helping the team will make up most of the interns' duties."
+        },
+        {
+          "id": "q137",
+          "no": 137,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following e-mail.",
+          "options": {
+            "A": "roles",
+            "B": "donations",
+            "C": "articles",
+            "D": "locations"
+          },
+          "answer": "A",
+          "passageIndex": 1,
+          "skill": "Noun choice",
+          "explanationVi": "Hai thực tập sinh có nền tảng phù hợp nên sẽ thích hợp với <b>their roles</b>, nghĩa là \"vai trò/nhiệm vụ của họ\". Các danh từ <b>donations</b>, <b>articles</b> và <b>locations</b> không phù hợp ngữ cảnh.",
+          "explanation": "Their backgrounds make them well suited to their assigned <b>roles</b>."
+        },
+        {
+          "id": "q138",
+          "no": 138,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following e-mail.",
+          "options": {
+            "A": "They were far away from our office.",
+            "B": "That time is usually critical to our work.",
+            "C": "The room will be theirs for six weeks.",
+            "D": "It will be for sale in the new cafeteria."
+          },
+          "answer": "C",
+          "passageIndex": 1,
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu trước cho biết các thực tập sinh sẽ sử dụng văn phòng trống ở cánh đông. <b>The room will be theirs for six weeks</b> tiếp nối trực tiếp thông tin này và khớp với thời hạn thực tập sáu tuần. Các lựa chọn khác không liên kết với <b>the vacant office</b>.",
+          "explanation": "After mentioning the vacant office, <b>The room will be theirs for six weeks</b> logically explains how long the interns will use it."
+        },
+        {
+          "id": "q139",
+          "no": 139,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following memo.",
+          "options": {
+            "A": "Itineraries",
+            "B": "Proposals",
+            "C": "Materials",
+            "D": "Licenses"
+          },
+          "answer": "C",
+          "passageIndex": 2,
+          "skill": "Vocabulary in context",
+          "explanationVi": "Câu sau liệt kê <b>boxes, tape, and markers</b>, đều là vật dụng phục vụ việc chuyển văn phòng. Vì vậy <b>Materials for this</b> nghĩa là \"các vật liệu/dụng cụ cho việc này\" phù hợp nhất.",
+          "explanation": "Boxes, tape, and markers are moving <b>materials</b>, so <b>Materials</b> is correct."
+        },
+        {
+          "id": "q140",
+          "no": 140,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following memo.",
+          "options": {
+            "A": "were providing",
+            "B": "will be provided",
+            "C": "will provide",
+            "D": "are providing"
+          },
+          "answer": "B",
+          "passageIndex": 2,
+          "skill": "Future passive",
+          "explanationVi": "Chủ ngữ <b>Boxes, tape, and markers</b> là những vật được cung cấp, nên cần thể bị động. Thời điểm <b>on Wednesday afternoon</b> ở tương lai, vì vậy dùng <b>will be provided</b>.",
+          "explanation": "The supplies receive the action, and the event is future, so the future passive <b>will be provided</b> is required."
+        },
+        {
+          "id": "q141",
+          "no": 141,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following memo.",
+          "options": {
+            "A": "Make a note of your total count.",
+            "B": "He will want to know how many of each you have.",
+            "C": "Boxes will be shipped at the company’s expense.",
+            "D": "Extra boxes and tape can be found in the front lobby."
+          },
+          "answer": "A",
+          "passageIndex": 2,
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu sau nói nhân viên nhân sự sẽ ghi lại <b>this number</b> để bảo đảm trả đủ số hộp. <b>Make a note of your total count</b> tạo ra đại từ quy chiếu rõ ràng: <b>this number</b> chính là tổng số hộp của mỗi nhân viên.",
+          "explanation": "The next sentence refers to <b>this number</b>. <b>Make a note of your total count</b> provides the required numerical reference."
+        },
+        {
+          "id": "q142",
+          "no": 142,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following memo.",
+          "options": {
+            "A": "Moreover",
+            "B": "However",
+            "C": "Similarly",
+            "D": "Previously"
+          },
+          "answer": "B",
+          "passageIndex": 2,
+          "skill": "Transition",
+          "explanationVi": "Hai câu thể hiện ngoại lệ: thực phẩm đã mở không được đóng gói, <b>tuy nhiên</b> thực phẩm đóng gói chưa mở thì được phép. Trạng từ chuyển tiếp <b>However</b> diễn tả sự tương phản này.",
+          "explanation": "The second sentence gives an exception to the ban on open food, so the contrast marker <b>However</b> is correct."
+        },
+        {
+          "id": "q143",
+          "no": 143,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following e-mail.",
+          "options": {
+            "A": "receiver",
+            "B": "receiving",
+            "C": "had received",
+            "D": "should receive"
+          },
+          "answer": "D",
+          "passageIndex": 3,
+          "skill": "Modal expectation",
+          "explanationVi": "Sau chủ ngữ <b>You</b> cần vị ngữ diễn tả điều dự kiến xảy ra trong tuần này. <b>should receive</b> nghĩa là \"sẽ/có thể sẽ nhận được\" một thư phê duyệt chính thức. Các lựa chọn khác không tạo thành vị ngữ phù hợp.",
+          "explanation": "<b>Should receive</b> expresses the expected delivery of the formal approval letter during the week."
+        },
+        {
+          "id": "q144",
+          "no": 144,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following e-mail.",
+          "options": {
+            "A": "The city council elections are quickly approaching.",
+            "B": "Indisputably, Dickinson Street is one of the loveliest streets in the city.",
+            "C": "As you know, there were some objections from the people in the neighborhood.",
+            "D": "Many small hotels offer complimentary breakfasts to their guests."
+          },
+          "answer": "C",
+          "passageIndex": 3,
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu sau bắt đầu bằng <b>Specifically, they were concerned...</b>; đại từ <b>they</b> phải chỉ một nhóm người đã phản đối. Câu <b>As you know, there were some objections from the people in the neighborhood</b> giới thiệu đúng nhóm này và dẫn tự nhiên đến các lo ngại về tiếng ồn, đỗ xe.",
+          "explanation": "The following sentence uses <b>they</b> for the objectors and specifies their concerns. Therefore the sentence about neighborhood objections fits best."
+        },
+        {
+          "id": "q145",
+          "no": 145,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following e-mail.",
+          "options": {
+            "A": "assure",
+            "B": "assures",
+            "C": "assured",
+            "D": "assurance"
+          },
+          "answer": "D",
+          "passageIndex": 3,
+          "skill": "Word form",
+          "explanationVi": "Sau tính từ sở hữu <b>your</b> cần danh từ. <b>your assurance that...</b> nghĩa là \"sự cam đoan của ông rằng...\". <b>assure</b>, <b>assures</b> và <b>assured</b> là các dạng động từ hoặc tính từ, không phù hợp vị trí.",
+          "explanation": "The possessive adjective <b>your</b> must be followed by the noun <b>assurance</b>."
+        },
+        {
+          "id": "q146",
+          "no": 146,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following e-mail.",
+          "options": {
+            "A": "In addition",
+            "B": "In contrast",
+            "C": "Unfortunately",
+            "D": "Normally"
+          },
+          "answer": "A",
+          "passageIndex": 3,
+          "skill": "Transition",
+          "explanationVi": "Câu trước nêu một lý do khiến hội đồng đồng ý; câu sau bổ sung thêm lợi điểm về khu đỗ xe phía sau. <b>In addition</b> nghĩa là \"Ngoài ra\", phù hợp với quan hệ bổ sung.",
+          "explanation": "The sentence adds another positive consideration, so the additive transition <b>In addition</b> is correct."
+        }
+      ],
+      "passages": [
+        {
+          "title": "Questions 131-134 refer to the following job advertisement.",
+          "label": "Job advertisement",
+          "html": "<p>Berestoff Ltd. <span class=\"blank\">131</span> a professional procurement officer to oversee bidding and procurement processes in all company departments. This employee will draft advertisements, prepare contract documents, process bids, <span class=\"blank\">132</span> provide training on policy and procedures to company personnel.</p><p>The position requires a two-year degree in business administration or a related field. The <span class=\"blank\">133</span> must have a minimum of three years experience as an office manager in a corporate environment, including recent experience in procurement. <span class=\"blank sentence\">134</span></p>",
+          "questions": [
+            {
+              "id": "q131",
+              "no": 131,
+              "part": 6,
+              "options": {
+                "A": "seeks",
+                "B": "hires",
+                "C": "offers",
+                "D": "trains"
+              },
+              "answer": "A",
+              "passageIndex": 0,
+              "stem": "Questions 131-134 refer to the following job advertisement."
+            },
+            {
+              "id": "q132",
+              "no": 132,
+              "part": 6,
+              "options": {
+                "A": "so",
+                "B": "while",
+                "C": "nor",
+                "D": "and"
+              },
+              "answer": "D",
+              "passageIndex": 0,
+              "stem": "Questions 131-134 refer to the following job advertisement."
+            },
+            {
+              "id": "q133",
+              "no": 133,
+              "part": 6,
+              "options": {
+                "A": "application",
+                "B": "applicant",
+                "C": "applying",
+                "D": "apply"
+              },
+              "answer": "B",
+              "passageIndex": 0,
+              "stem": "Questions 131-134 refer to the following job advertisement."
+            },
+            {
+              "id": "q134",
+              "no": 134,
+              "part": 6,
+              "options": {
+                "A": "Likewise, company-owned cars are a major expense for firms such as ours.",
+                "B": "Moreover, excellent organizational skills are essential.",
+                "C": "The top candidate for the position has been offered a one-year contract.",
+                "D": "All employees have been notified of the policy change."
+              },
+              "answer": "B",
+              "passageIndex": 0,
+              "stem": "Questions 131-134 refer to the following job advertisement."
+            }
+          ]
+        },
+        {
+          "title": "Questions 135-138 refer to the following e-mail.",
+          "label": "E-mail",
+          "html": "<p><b>To:</b> Hong Kong Office Staff<br><b>From:</b> Wai-Lun Yeung<br><b>Date:</b> Monday, 4 January<br><b>Subject:</b> Interns</p><p>Dear Colleagues,</p><p>I am writing <span class=\"blank\">135</span> you that two university students will be arriving next week and beginning their six-week internships in the Hong Kong office. Their duties will <span class=\"blank\">136</span> consist of helping the Corporate Social Responsibility team organise their plans for the coming year. Both interns have strong backgrounds in responsible business practices. As such, they will be well suited to their <span class=\"blank\">137</span>.</p><p>The interns will be using the vacant office in the east wing. <span class=\"blank sentence\">138</span></p><p>Please let me know if you have any questions or concerns.</p><p>All best,</p><p>Wai-Lun Yeung</p>",
+          "questions": [
+            {
+              "id": "q135",
+              "no": 135,
+              "part": 6,
+              "options": {
+                "A": "information",
+                "B": "informed",
+                "C": "informs",
+                "D": "to inform"
+              },
+              "answer": "D",
+              "passageIndex": 1,
+              "stem": "Questions 135-138 refer to the following e-mail."
+            },
+            {
+              "id": "q136",
+              "no": 136,
+              "part": 6,
+              "options": {
+                "A": "cautiously",
+                "B": "patiently",
+                "C": "largely",
+                "D": "quietly"
+              },
+              "answer": "C",
+              "passageIndex": 1,
+              "stem": "Questions 135-138 refer to the following e-mail."
+            },
+            {
+              "id": "q137",
+              "no": 137,
+              "part": 6,
+              "options": {
+                "A": "roles",
+                "B": "donations",
+                "C": "articles",
+                "D": "locations"
+              },
+              "answer": "A",
+              "passageIndex": 1,
+              "stem": "Questions 135-138 refer to the following e-mail."
+            },
+            {
+              "id": "q138",
+              "no": 138,
+              "part": 6,
+              "options": {
+                "A": "They were far away from our office.",
+                "B": "That time is usually critical to our work.",
+                "C": "The room will be theirs for six weeks.",
+                "D": "It will be for sale in the new cafeteria."
+              },
+              "answer": "C",
+              "passageIndex": 1,
+              "stem": "Questions 135-138 refer to the following e-mail."
+            }
+          ]
+        },
+        {
+          "title": "Questions 139-142 refer to the following memo.",
+          "label": "Memo",
+          "html": "<p><b>To:</b> All staff<br><b>From:</b> Management<br><b>Date:</b> October 10<br><b>Re:</b> Move to new office</p><p>Preparations for the move to our new office are scheduled to take place on Thursday and Friday of next week. <span class=\"blank\">139</span> for this are going to be distributed to each employee’s cubicle in advance.</p><p>Boxes, tape, and markers <span class=\"blank\">140</span> on Wednesday afternoon. As you pack your belongings, please write your name and employee number on the top and sides of each box. <span class=\"blank sentence\">141</span> A human resources employee will come around and record this number to ensure that all of your boxes are returned to you.</p><p>Please take any valuables home with you by Wednesday. The company will not be responsible for the loss of any items during the move. No open food items may be packed. <span class=\"blank\">142</span>, unopened packaged food, such as candy and crackers, may be boxed.</p><p>Thank you for your cooperation.</p>",
+          "questions": [
+            {
+              "id": "q139",
+              "no": 139,
+              "part": 6,
+              "options": {
+                "A": "Itineraries",
+                "B": "Proposals",
+                "C": "Materials",
+                "D": "Licenses"
+              },
+              "answer": "C",
+              "passageIndex": 2,
+              "stem": "Questions 139-142 refer to the following memo."
+            },
+            {
+              "id": "q140",
+              "no": 140,
+              "part": 6,
+              "options": {
+                "A": "were providing",
+                "B": "will be provided",
+                "C": "will provide",
+                "D": "are providing"
+              },
+              "answer": "B",
+              "passageIndex": 2,
+              "stem": "Questions 139-142 refer to the following memo."
+            },
+            {
+              "id": "q141",
+              "no": 141,
+              "part": 6,
+              "options": {
+                "A": "Make a note of your total count.",
+                "B": "He will want to know how many of each you have.",
+                "C": "Boxes will be shipped at the company’s expense.",
+                "D": "Extra boxes and tape can be found in the front lobby."
+              },
+              "answer": "A",
+              "passageIndex": 2,
+              "stem": "Questions 139-142 refer to the following memo."
+            },
+            {
+              "id": "q142",
+              "no": 142,
+              "part": 6,
+              "options": {
+                "A": "Moreover",
+                "B": "However",
+                "C": "Similarly",
+                "D": "Previously"
+              },
+              "answer": "B",
+              "passageIndex": 2,
+              "stem": "Questions 139-142 refer to the following memo."
+            }
+          ]
+        },
+        {
+          "title": "Questions 143-146 refer to the following e-mail.",
+          "label": "E-mail",
+          "html": "<p><b>To:</b> Rudolf Crowley &lt;rcrowley@crowley.com.au&gt;<br><b>From:</b> Dafina Ndashe &lt;dndashe@millview-australia.com.au&gt;<br><b>Subject:</b> Decision on proposal<br><b>Date:</b> 12 August</p><p>Dear Mr. Crowley:</p><p>I am pleased to inform you that at the Tuesday night meeting the city council approved your proposal to build an inn at 17 Dickinson Street. You <span class=\"blank\">143</span> a formal letter of approval this week.</p><p><span class=\"blank sentence\">144</span> Specifically, they were concerned about noise and on-street parking. However, your <span class=\"blank\">145</span> that the inn would only serve breakfast to guests and would not have a restaurant open to the general public helped to persuade them. <span class=\"blank\">146</span>, they were pleased that the small parking area is tucked into the back of the property, so curbside parking along the street should not be affected.</p><p>Please let me know if you have any questions.</p><p>Sincerely,</p><p>Dafina Ndashe<br>Clerk, Millview City Council</p>",
+          "questions": [
+            {
+              "id": "q143",
+              "no": 143,
+              "part": 6,
+              "options": {
+                "A": "receiver",
+                "B": "receiving",
+                "C": "had received",
+                "D": "should receive"
+              },
+              "answer": "D",
+              "passageIndex": 3,
+              "stem": "Questions 143-146 refer to the following e-mail."
+            },
+            {
+              "id": "q144",
+              "no": 144,
+              "part": 6,
+              "options": {
+                "A": "The city council elections are quickly approaching.",
+                "B": "Indisputably, Dickinson Street is one of the loveliest streets in the city.",
+                "C": "As you know, there were some objections from the people in the neighborhood.",
+                "D": "Many small hotels offer complimentary breakfasts to their guests."
+              },
+              "answer": "C",
+              "passageIndex": 3,
+              "stem": "Questions 143-146 refer to the following e-mail."
+            },
+            {
+              "id": "q145",
+              "no": 145,
+              "part": 6,
+              "options": {
+                "A": "assure",
+                "B": "assures",
+                "C": "assured",
+                "D": "assurance"
+              },
+              "answer": "D",
+              "passageIndex": 3,
+              "stem": "Questions 143-146 refer to the following e-mail."
+            },
+            {
+              "id": "q146",
+              "no": 146,
+              "part": 6,
+              "options": {
+                "A": "In addition",
+                "B": "In contrast",
+                "C": "Unfortunately",
+                "D": "Normally"
+              },
+              "answer": "A",
+              "passageIndex": 3,
+              "stem": "Questions 143-146 refer to the following e-mail."
+            }
+          ]
+        }
+      ],
+      "practice": {
+        "id": "ets-summer-2021-test2-part5-6-practice",
+        "title": "Luyện đề ETS 2021 - Part 5 + 6",
+        "description": "Làm từng câu, kiểm tra đáp án và xem sửa chi tiết ngay.",
+        "mode": "practice"
+      },
+      "testNo": 2,
+      "selectorLabel": "ETS Summer 2021 · Test 2"
     }
-  ],
-  "practice": {
-    "id": "ets-summer-2021-test1-part5-6-practice",
-    "title": "Luyện đề ETS 2021 - Part 5 + 6",
-    "description": "Làm từng câu, kiểm tra đáp án và xem sửa chi tiết ngay.",
-    "mode": "practice"
-  }
+  ]
 }
