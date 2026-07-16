@@ -24,7 +24,8 @@ h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size
 .score-box{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}.score-pill{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;padding:12px 18px;border-radius:999px;font-size:20px;font-weight:700}.submit-status{margin-top:14px;border-radius:16px;padding:13px 16px;font-size:18px;font-weight:700;display:none}.submit-status.ok{display:block;background:#f0fdf4;border:2px solid #bbf7d0;color:#166534}.submit-status.err{display:block;background:#fff1f2;border:2px solid #fecdd3;color:#be123c}
 .page-picker-overlay{position:fixed;inset:0;background:rgba(15,23,42,.52);z-index:300;display:none;align-items:center;justify-content:center;padding:20px}.page-picker-overlay.show{display:flex}.page-picker-panel{width:min(980px,96vw);max-height:88vh;overflow:auto;background:#fff;border-radius:28px;border:2px solid #dbeafe;box-shadow:0 30px 80px rgba(15,23,42,.32);padding:24px}.page-picker-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:16px}.page-picker-head h3{font-size:28px;margin-bottom:4px}.page-picker-head p{font-size:17px;color:#64748b;margin:0}.page-picker-close{width:42px;height:42px;border:none;border-radius:50%;background:#e2e8f0;color:#0f172a;font-size:28px;cursor:pointer}.page-picker-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.page-jump-btn{border:2px solid #cbd5e1;background:#fff;border-radius:16px;padding:12px 8px;cursor:pointer;text-align:left;transition:.18s ease;min-height:58px}.page-jump-btn:hover{border-color:#93c5fd;background:#eff6ff}.page-jump-btn.active{border-color:#2563eb;background:#dbeafe}.page-jump-btn .page-no{display:block;font-size:20px;font-weight:700;color:#1d4ed8;line-height:1}.page-jump-btn .page-title{display:block;font-size:12px;font-weight:700;color:#64748b;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.page-jump-btn.answered{background:#dbeafe;border-color:#60a5fa}.page-jump-btn.correct-answer{background:#f0fdf4;border-color:#22c55e}.page-jump-btn.correct-answer .page-no{color:#15803d!important}.page-jump-btn.wrong-answer{background:#fff1f2;border-color:#fb7185}.page-jump-btn.wrong-answer .page-no{color:#be123c!important}
 .loading-screen{min-height:100vh;display:grid;place-items:center;background:#eef4ff;color:#1d4ed8;font-size:24px;font-weight:700}.auth-pending .loading-screen{display:grid}body:not(.auth-pending) .loading-screen{display:none}@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:980px){.slide{padding:44px 28px 130px}.passage-layout{grid-template-columns:1fr}.page-picker-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.student-chip{position:static;margin:14px 16px 0;width:fit-content;max-width:calc(100vw - 32px)}}
+.test-picker{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:125;display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.94);border:2px solid #dbeafe;border-radius:999px;padding:7px 10px 7px 14px;box-shadow:0 8px 20px rgba(15,23,42,.10);backdrop-filter:blur(8px)}.test-picker label{font-size:14px;font-weight:700;color:#475569;white-space:nowrap}.test-picker select{min-width:250px;border:2px solid #bfdbfe;border-radius:999px;background:#eff6ff;color:#1d4ed8;font-size:14px;font-weight:700;padding:8px 34px 8px 12px;outline:none;cursor:pointer}.test-picker select:focus{border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.12)}
+@media(max-width:980px){.slide{padding:44px 28px 130px}.passage-layout{grid-template-columns:1fr}.page-picker-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.student-chip{position:static;margin:14px 16px 0;width:fit-content;max-width:calc(100vw - 32px)}.test-picker{position:static;transform:none;margin:10px 16px 0;width:fit-content;max-width:calc(100vw - 32px)}.test-picker select{min-width:0;max-width:62vw}}
 @media(max-width:768px){.slide{padding:36px 24px 130px}h1{font-size:34px}h2{font-size:31px}p,.option,.explain,.passage-box{font-size:19px}.question{font-size:24px}.check-btn{padding:11px 16px;font-size:13px}.nav-btn{padding:9px 13px;font-size:13px}.progress{top:14px!important;right:14px!important;font-size:13px}.page-picker-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.passage-box{padding:20px}.score-pill{font-size:17px}}
 </style>
 </head>
@@ -33,6 +34,7 @@ h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size
 <div class="lesson-wrapper">
   <div class="top-line" id="topLine"></div>
   <div class="student-chip" id="studentChip">Đang kiểm tra đăng nhập...</div>
+  <div class="test-picker"><label for="testSelect">Chọn đề</label><select id="testSelect" aria-label="Chọn đề ETS Summer 2021"></select></div>
   <button class="progress progress-btn" id="progressText" onclick="openPagePicker()" type="button" title="Chọn câu">1 / 1</button>
   <div id="quizMount"></div>
 
@@ -61,7 +63,10 @@ const STUDENT_KEY='toeic_student_session';
 const DATA_URL='data/reading-ets2021-p56.json';
 const LESSON_ID='ets-summer-2021-test1-part5-6-practice';
 const LOCK_BYPASS_EMAIL='sunprice@sp.ik';
+let EXAM_LIBRARY=null;
+let EXAM_TESTS=[];
 let EXAM_DATA=null;
+let selectedExamKey='';
 let quizData=[];
 let quizDataMap={};
 let passageByQuestionNo={};
@@ -90,7 +95,65 @@ async function requireLessonUnlocked(student){
     location.href='index.html';return false;
   }
 }
-async function loadData(){const res=await fetch(DATA_URL,{cache:'no-store'});if(!res.ok)throw new Error('Không tải được data đề.');EXAM_DATA=await res.json();if(!EXAM_DATA||!Array.isArray(EXAM_DATA.questions))throw new Error('Data đề không đúng định dạng.');}
+function getExamKey(test){return String(test?.id||(test?.testNo?`test${test.testNo}`:''));}
+function getExamLabel(test){if(!test)return 'Đề thi';return test.selectorLabel||test.menuLabel||test.title||(`ETS Summer 2021 · Test ${test.testNo||''}`).trim();}
+function normalizeExamLibrary(data){
+  if(data&&Array.isArray(data.tests)&&data.tests.length){return data.tests.filter(test=>test&&Array.isArray(test.questions)&&Array.isArray(test.passages));}
+  if(data&&Array.isArray(data.questions)&&Array.isArray(data.passages)){return [data];}
+  return [];
+}
+function findExamByKey(key){
+  const requested=String(key||'').trim().toLowerCase();
+  if(!requested)return null;
+  return EXAM_TESTS.find(test=>{
+    const id=getExamKey(test).toLowerCase();
+    const testNo=String(test.testNo||'').toLowerCase();
+    return requested===id||requested===testNo||requested===`test${testNo}`||requested===`test-${testNo}`;
+  })||null;
+}
+function populateTestSelect(){
+  const select=document.getElementById('testSelect');
+  if(!select)return;
+  select.innerHTML=EXAM_TESTS.map((test,index)=>'<option value="'+escapeHtml(getExamKey(test)||('test-'+(index+1)))+'">'+escapeHtml(getExamLabel(test))+'</option>').join('');
+}
+function updateTestQuery(test){
+  try{
+    const url=new URL(location.href);
+    url.searchParams.set('test',String(test?.testNo||getExamKey(test)||''));
+    history.replaceState(null,'',url);
+  }catch(e){}
+}
+function clearPracticeState(){
+  Object.keys(checkedAnswers).forEach(key=>delete checkedAnswers[key]);
+  quizData=[];quizDataMap={};passageByQuestionNo={};slides=[];currentSlide=0;
+  const picker=document.getElementById('pagePickerGrid');
+  if(picker){picker.innerHTML='';delete picker.dataset.ready;}
+}
+function activateExam(test){
+  if(!test)throw new Error('Không tìm thấy đề đã chọn trong JSON.');
+  clearPracticeState();
+  EXAM_DATA=test;
+  selectedExamKey=getExamKey(test);
+  const select=document.getElementById('testSelect');
+  if(select)select.value=selectedExamKey;
+  document.title='Luyện '+(EXAM_DATA.title||'ETS 2021 Part 5 + 6');
+  updateTestQuery(test);
+  renderSlides();
+}
+async function loadData(){
+  const res=await fetch(DATA_URL,{cache:'no-store'});
+  if(!res.ok)throw new Error('Không tải được data đề: '+DATA_URL);
+  const data=await res.json();
+  EXAM_LIBRARY=data;
+  EXAM_TESTS=normalizeExamLibrary(data);
+  if(!EXAM_TESTS.length)throw new Error('JSON không có đề hợp lệ trong mảng tests.');
+  populateTestSelect();
+  const requested=new URLSearchParams(location.search).get('test');
+  EXAM_DATA=findExamByKey(requested)||EXAM_TESTS[0];
+  selectedExamKey=getExamKey(EXAM_DATA);
+  const select=document.getElementById('testSelect');
+  if(select)select.value=selectedExamKey;
+}
 function buildPassageMap(){passageByQuestionNo={};(EXAM_DATA.passages||[]).forEach(p=>{(p.questions||[]).forEach(q=>{passageByQuestionNo[Number(q.no)]=p;});});}
 function optionHtml(item,optKey,optText){return '<label class="option"><input name="'+escapeHtml(item.id)+'" type="radio" value="'+escapeHtml(optKey)+'"><span class="option-letter">'+escapeHtml(optKey)+'.</span><span>'+renderJsonHtml(optText)+'</span></label>';}
 function questionPanelHtml(item){
@@ -110,13 +173,15 @@ function quizSlideHtml(item,index){
   }
   return '<section class="slide quiz-slide'+(index===0?' active':'')+'" data-question="'+escapeHtml(item.id)+'" data-no="'+escapeHtml(item.no)+'"><div class="slide-label">Practice · '+partLabel+'</div><h2>'+escapeHtml(title)+'</h2><div class="content-area">'+questionPanelHtml(item)+'</div></section>';
 }
-function finalResultSlide(){return '<section class="slide result-slide"><div class="slide-label">Hoàn thành</div><h2>Kết quả luyện đề ETS 2021</h2><div class="content-area"><div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><div class="score-box"><div class="score-pill" id="answeredPill">Đã chọn: 0</div><div class="score-pill" id="checkedPill">Đã sửa: 0</div></div><button class="nav-btn home-btn" type="button" onclick="goHome()" style="display:inline-block;margin-top:16px">Về trang chủ</button></div></div></section>';}
+function finalResultSlide(){const testName=EXAM_DATA?.testNo?'Test '+EXAM_DATA.testNo:(EXAM_DATA?.title||'ETS 2021');return '<section class="slide result-slide"><div class="slide-label">Hoàn thành</div><h2>Kết quả luyện đề '+escapeHtml(testName)+'</h2><div class="content-area"><div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><div class="score-box"><div class="score-pill" id="answeredPill">Đã chọn: 0</div><div class="score-pill" id="checkedPill">Đã sửa: 0</div></div><button class="nav-btn home-btn" type="button" onclick="goHome()" style="display:inline-block;margin-top:16px">Về trang chủ</button></div></div></section>';}
 function renderSlides(){
   buildPassageMap();
   quizData=[...EXAM_DATA.questions].sort((a,b)=>Number(a.no)-Number(b.no));
   quizDataMap=Object.fromEntries(quizData.map(item=>[item.id,item]));
-  document.getElementById('quizMount').outerHTML=quizData.map(quizSlideHtml).join('\n')+'\n'+finalResultSlide();
-  slides=[...document.querySelectorAll('.slide')];
+  const mount=document.getElementById('quizMount');
+  if(!mount)throw new Error('Không tìm thấy vùng hiển thị bài luyện.');
+  mount.innerHTML=quizData.map(quizSlideHtml).join('\n')+'\n'+finalResultSlide();
+  slides=[...mount.querySelectorAll('.slide')];
   slides.forEach(slide=>{
     slide.querySelectorAll('input[type="radio"]').forEach(input=>input.addEventListener('change',()=>{delete checkedAnswers[slide.dataset.question];slide.classList.remove('answer-locked');slide.querySelectorAll('.option').forEach(o=>o.classList.remove('correct-option','wrong-selected'));const resultBox=slide.querySelector('.result-box');if(resultBox){resultBox.className='method-box result-box';}updateProgress();syncPagePickerActive();}));
   });
@@ -165,7 +230,10 @@ function closePagePicker(event){if(event&&event.target&&event.target.id!=='pageP
 function collectPayload(){
   const student=getStudentSession()||{};let score=0,blankCount=0,checkedCount=0,answeredCount=0;
   const answers=quizData.map((q,index)=>{const selected=selectedFor(q);if(selected)answeredCount++;else blankCount++;if(checkedAnswers[q.id])checkedCount++;if(selected===q.answer)score++;return {no:q.no,id:q.id,part:q.part,prompt:q.stem||'',selected,selectedText:selected?q.options[selected]:null,correctAnswer:q.answer,correctText:q.options[q.answer],isCorrect:selected===q.answer,isBlank:!selected,checkedStatus:checkedAnswers[q.id]||''};});
-  return {student:{email:student.email||'',loginAt:student.loginAt||''},quiz:{id:LESSON_ID,title:'Luyện đề ETS 2021 - Part 5 + 6',total:quizData.length,source:EXAM_DATA?.sourceLabel||'ETS Summer 2021 Test 1'},submittedAt:new Date().toISOString(),score,total:quizData.length,wrong:quizData.length-score,blankCount,answeredCount,checkedCount,percent:Math.round(score/quizData.length*100),answers};
+  const testNo=EXAM_DATA?.testNo||'';
+  const resultId=(EXAM_DATA?.id?EXAM_DATA.id+'-practice':LESSON_ID);
+  const resultTitle='Luyện đề ETS 2021'+(testNo?' Test '+testNo:'')+' - Part 5 + 6';
+  return {student:{email:student.email||'',loginAt:student.loginAt||''},quiz:{id:resultId,lessonId:LESSON_ID,testNo,title:resultTitle,total:quizData.length,source:EXAM_DATA?.sourceLabel||'ETS Summer 2021'},submittedAt:new Date().toISOString(),score,total:quizData.length,wrong:quizData.length-score,blankCount,answeredCount,checkedCount,percent:Math.round(score/quizData.length*100),answers};
 }
 function showFinalResultPreview(){
   const payload=collectPayload();
@@ -183,7 +251,16 @@ document.addEventListener('keydown',function(e){if(e.code==='ArrowRight')nextSli
   const student=requireStudentSession();if(!student)return;
   const unlocked=await requireLessonUnlocked(student);if(!unlocked)return;
   document.getElementById('studentChip').textContent=student.email;
-  try{await loadData();renderSlides();document.body.classList.remove('auth-pending');}
+  try{
+    await loadData();
+    renderSlides();
+    const testSelect=document.getElementById('testSelect');
+    if(testSelect)testSelect.addEventListener('change',function(){
+      const test=findExamByKey(this.value);
+      if(test)activateExam(test);
+    });
+    document.body.classList.remove('auth-pending');
+  }
   catch(err){document.body.classList.remove('auth-pending');if(window.Swal)Swal.fire({icon:'error',title:'Không tải được bài',text:err.message||'Kiểm tra file JSON.',confirmButtonColor:'#2563eb'});else alert(err.message||'Không tải được bài.');}
 })();
 </script>
