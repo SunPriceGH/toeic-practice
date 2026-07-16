@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETS Summer 2021 - Part 5 + 6</title>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}
+body{overflow-x:hidden}
+body.auth-pending .exam-app{display:none}
+body.submitted input, body.submitted label.option{cursor:not-allowed!important}
+html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}
+
+body.exam-not-started #examContent{filter:blur(6px);pointer-events:none;user-select:none;transition:filter .22s ease}
+body.exam-not-started .navigator,body.exam-not-started .action-stack{opacity:.45;pointer-events:none}
+body.exam-not-started .timer-box{background:#475569}
+.start-gate{display:none;position:fixed;inset:78px 0 0 0;z-index:140;align-items:center;justify-content:center;padding:24px;background:rgba(239,246,255,.38);backdrop-filter:blur(2px)}
+body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
+.start-card{width:min(560px,94vw);background:#fff;border:2px solid #bfdbfe;border-radius:28px;padding:28px;text-align:center;box-shadow:0 28px 80px rgba(15,23,42,.28)}
+.start-card .start-icon{width:68px;height:68px;margin:0 auto 14px;border-radius:22px;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;display:grid;place-items:center;font-size:22px;font-weight:700;box-shadow:0 12px 26px rgba(37,99,235,.28)}
+.start-card h2{font-size:28px;color:#0f172a;margin-bottom:10px}
+.start-card p{font-size:17px;line-height:1.55;color:#475569;margin-bottom:18px}
+.start-meta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.start-meta span{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;border-radius:999px;padding:8px 12px;font-size:14px;font-weight:700}
+.test-picker{max-width:430px;margin:0 auto 18px;text-align:left}
+.test-picker label{display:block;margin-bottom:7px;color:#334155;font-size:14px;font-weight:700}
+.test-select{width:100%;min-height:48px;border:2px solid #93c5fd;border-radius:16px;background:#fff;color:#0f172a;padding:10px 42px 10px 14px;font:inherit;font-size:16px;font-weight:700;cursor:pointer;outline:none;box-shadow:0 8px 18px rgba(37,99,235,.08)}
+.test-select:hover,.test-select:focus{border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.12)}
+.test-select:disabled{cursor:not-allowed;opacity:.65;background:#e2e8f0}
+.test-loading{display:none;margin-top:8px;color:#64748b;font-size:13px;font-weight:700;text-align:center}
+.test-loading.show{display:block}
+.result-mini.percent b{color:#1d4ed8}
+.exam-app{min-height:100vh;background:radial-gradient(circle at top left,rgba(59,130,246,.13),transparent 34%),radial-gradient(circle at bottom right,rgba(14,165,233,.13),transparent 34%),#fff}
+.top-line{position:fixed;top:0;left:0;height:7px;width:100%;background:#2563eb;z-index:200}
+.exam-header{position:sticky;top:0;z-index:150;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:2px solid #dbeafe;box-shadow:0 10px 24px rgba(15,23,42,.08)}
+.header-inner{max-width:1280px;margin:0 auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:14px;min-width:0}
+.cbt-badge{width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;display:grid;place-items:center;font-size:18px;font-weight:700;box-shadow:0 10px 22px rgba(37,99,235,.24)}
+.exam-title{min-width:0}
+.exam-title h1{font-size:22px;line-height:1.2;color:#0f172a;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.exam-title p{font-size:14px;color:#64748b;font-weight:700}
+.timer-box{display:flex;align-items:center;gap:12px;background:#0f172a;color:#fff;border-radius:20px;padding:10px 14px;box-shadow:0 10px 22px rgba(15,23,42,.18);white-space:nowrap}
+.timer-label{font-size:12px;color:#cbd5e1;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.timer-value{font-size:25px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.timer-box.warning{background:#fff7ed;color:#9a3412;border:2px solid #fed7aa}
+.timer-box.danger{background:#fff1f2;color:#be123c;border:2px solid #fecdd3;animation:pulse 1s infinite}
+@keyframes pulse{50%{transform:scale(1.015)}}
+.exam-main{max-width:1280px;margin:0 auto;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px}
+.exam-panel{background:#f8fafc;border:2px solid #e2e8f0;border-radius:26px;box-shadow:0 18px 40px rgba(15,23,42,.08);overflow:hidden}
+.section-head{background:linear-gradient(135deg,#1d4ed8,#0ea5e9);color:#fff;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.section-head h2{font-size:23px;font-weight:700}
+.section-head span{font-size:14px;font-weight:700;background:rgba(255,255,255,.18);padding:7px 12px;border-radius:999px}
+.instructions{padding:18px 22px;background:#eff6ff;border-bottom:2px solid #dbeafe;color:#334155;font-size:16px;line-height:1.5}
+.question-grid{padding:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.question-card{background:#fff;border:2px solid #dbeafe;border-radius:22px;padding:18px;box-shadow:0 12px 26px rgba(37,99,235,.07);scroll-margin-top:108px}
+.question-card.active{outline:4px solid rgba(37,99,235,.16);border-color:#60a5fa}
+.question-no{display:inline-flex;align-items:center;gap:8px;background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;border-radius:999px;padding:7px 12px;font-size:15px;font-weight:700;margin-bottom:12px}
+.stem{font-size:18px;line-height:1.55;color:#0f172a;margin-bottom:14px;font-weight:600}
+.options{display:grid;gap:8px}
+.option{display:flex;align-items:flex-start;gap:11px;border:2px solid #e2e8f0;background:#fff;border-radius:16px;padding:12px;cursor:pointer;transition:.18s ease;color:#334155;font-size:16px;line-height:1.35}
+.option:hover{border-color:#93c5fd;background:#eff6ff;transform:translateY(-1px)}
+.option input{margin-top:2px;width:18px;height:18px;accent-color:#2563eb;flex:0 0 auto}
+.option .letter{font-weight:700;color:#1d4ed8;min-width:22px}
+.option:has(input:checked){border-color:#2563eb;background:#eff6ff;box-shadow:0 8px 16px rgba(37,99,235,.12)}
+.passage-block{padding:22px;border-top:2px solid #dbeafe}
+.passage-shell{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);gap:18px;align-items:start}
+.passage-text{background:#fff;border:2px solid #dbeafe;border-radius:22px;padding:22px;box-shadow:0 12px 26px rgba(37,99,235,.07);font-size:18px;line-height:1.85;color:#0f172a}
+.passage-text h3{font-size:21px;color:#0f172a;margin-bottom:14px}
+.passage-text p+p{margin-top:14px}
+.blank{display:inline-grid;place-items:center;min-width:42px;height:26px;border-bottom:3px solid #0f172a;color:#1d4ed8;font-weight:700;line-height:1;margin:0 3px}
+.blank.sentence{min-width:56px}
+.passage-questions{display:grid;gap:14px}
+.sidebar{position:sticky;top:98px;display:grid;gap:16px;align-self:start}
+.status-card{background:#f8fafc;border:2px solid #e2e8f0;border-radius:24px;padding:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}
+.status-card h3{font-size:20px;color:#0f172a;margin-bottom:10px}
+.student-line{font-size:14px;line-height:1.5;color:#64748b;font-weight:700;word-break:break-word}
+.progress-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.metric{background:#fff;border:2px solid #dbeafe;border-radius:17px;padding:12px;text-align:center}
+.metric b{display:block;font-size:24px;color:#1d4ed8;font-weight:700}
+.metric span{font-size:13px;color:#64748b;font-weight:700}
+.navigator{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px}
+.nav-q{border:2px solid #cbd5e1;background:#fff;border-radius:10px;padding:6px 0;font-size:13px;font-weight:700;color:#334155;cursor:pointer;transition:.16s ease;min-height:31px}
+.nav-q:hover{border-color:#93c5fd;background:#eff6ff}
+.nav-q.answered{background:#dbeafe;border-color:#60a5fa;color:#1d4ed8}
+.nav-q.current{outline:3px solid rgba(37,99,235,.22)}
+.nav-q.blank-after{background:#fff1f2;border-color:#fb7185;color:#be123c}
+.nav-q.correct-after{background:#f0fdf4;border-color:#22c55e;color:#166534}
+.nav-q.wrong-after{background:#fff1f2;border-color:#fb7185;color:#be123c}
+.nav-q.blank-after{background:#fff7ed;border-color:#fb923c;color:#9a3412}
+.question-card.result-correct{border-color:#22c55e;background:#f7fee7}
+.question-card.result-wrong{border-color:#fb7185;background:#fff1f2}
+.question-card.result-blank{border-color:#fb923c;background:#fff7ed}
+.option.student-correct{border-color:#22c55e!important;background:#f0fdf4!important;box-shadow:0 8px 16px rgba(34,197,94,.14)!important}
+.option.student-wrong{border-color:#e11d48!important;background:#fff1f2!important;box-shadow:0 8px 16px rgba(225,29,72,.12)!important}
+.action-stack{display:grid;gap:10px;margin-top:14px}
+.btn{border:none;cursor:pointer;border-radius:999px;font-weight:700;font-size:15px;padding:13px 18px;box-shadow:0 10px 20px rgba(15,23,42,.15);transition:.18s ease;text-decoration:none;text-align:center;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:#2563eb;color:#fff}
+.btn.primary:hover{background:#1d4ed8}
+.btn.dark{background:#0f172a;color:#fff}
+.btn.light{background:#e2e8f0;color:#0f172a}
+.btn.light:hover{background:#cbd5e1}
+.btn.danger{background:#e11d48;color:#fff}
+.submit-status{display:none;margin-top:12px;border-radius:16px;padding:12px;font-size:14px;line-height:1.45;font-weight:700}
+.submit-status.show{display:block}
+.submit-status.ok{display:block;background:#f0fdf4;border:2px solid #bbf7d0;color:#166534}
+.submit-status.err{display:block;background:#fff1f2;border:2px solid #fecdd3;color:#be123c}
+.result-panel{display:none;background:#fff;border:2px solid #bbf7d0;border-radius:22px;padding:18px;margin-top:14px}
+.result-panel.show{display:block}
+.result-panel h3{font-size:20px;color:#166534;margin-bottom:10px}
+.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.result-mini{background:#f8fafc;border:2px solid #e2e8f0;border-radius:16px;padding:10px;text-align:center}
+.result-mini b{display:block;font-size:22px;color:#0f172a}
+.result-mini span{font-size:12px;color:#64748b;font-weight:700}
+.lock-note{font-size:13px;color:#64748b;line-height:1.45;margin-top:10px}
+.footer-space{height:34px}
+@media(max-width:980px){.exam-main{grid-template-columns:1fr;padding:16px}.sidebar{position:static;order:-1}.question-grid{grid-template-columns:1fr;padding:16px}.passage-shell{grid-template-columns:1fr}.navigator{grid-template-columns:repeat(10,1fr)}.header-inner{padding:12px 14px}.exam-title h1{font-size:18px}.timer-value{font-size:22px}}
+@media(max-width:620px){.brand{gap:9px}.cbt-badge{width:44px;height:44px;border-radius:15px;font-size:15px}.timer-box{padding:8px 10px}.timer-label{display:none}.navigator{grid-template-columns:repeat(6,1fr)}.answer-sheet-grid{grid-template-columns:repeat(4,1fr)}.section-head{display:block}.section-head h2{font-size:20px;margin-bottom:8px}.question-card,.passage-text{padding:15px}.stem,.passage-text{font-size:16px}.option{font-size:15px}.result-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="auth-pending exam-not-started">
+<div class="top-line"></div>
+<div class="exam-app">
+  <header class="exam-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="cbt-badge">CBT</div>
+        <div class="exam-title">
+          <h1>ETS Summer 2021 · Part 5 + 6</h1>
+          <p>Computer-based TOEIC Reading mini test · 46 questions</p>
+        </div>
+      </div>
+      <div class="timer-box" id="timerBox"><div><div class="timer-label">Time left</div><div class="timer-value" id="timerValue">25:00</div></div></div>
+    </div>
+  </header>
+  <div class="start-gate" id="startGate" aria-live="polite">
+    <div class="start-card">
+      <div class="start-icon">CBT</div>
+      <h2>Sẵn sàng vào phòng thi?</h2>
+      <p>Nội dung đề đang được làm mờ. Hãy chọn đề, sau đó bấm <b>Bắt đầu</b> để mở đề và bắt đầu đếm ngược.</p>
+      <div class="test-picker">
+        <label for="testSelect">Chọn đề thi</label>
+        <select id="testSelect" class="test-select" aria-label="Chọn đề ETS Summer 2021">
+          <option value="">Đang tải danh sách đề...</option>
+        </select>
+        <div class="test-loading" id="testLoading">Đang tải dữ liệu đề...</div>
+      </div>
+      <div class="start-meta"><span>Part 5 + 6</span><span>46 câu</span><span>25 phút</span></div>
+      <button class="btn primary" type="button" id="startBtn">Bắt đầu</button>
+      <button class="btn light" type="button" onclick="goHome()" style="margin-left:8px">Về trang chủ</button>
+    </div>
+  </div>
+  <main class="exam-main">
+    <section class="exam-panel" id="examContent">
+      <div class="section-head"><h2>PART 5</h2><span>Questions 101-130</span></div>
+      <div class="instructions"><b>Directions:</b> A word or phrase is missing in each sentence. Choose the best answer.</div>
+      <div class="question-grid" id="part5Grid"></div>
+      <div class="section-head"><h2>PART 6</h2><span>Questions 131-146</span></div>
+      <div class="instructions"><b>Directions:</b> Read each text and choose the best answer for each blank.</div>
+      <div id="part6Wrap"></div>
+      <div class="footer-space"></div>
+    </section>
+    <aside class="sidebar">
+      <div class="status-card">
+        <h3>Phòng thi</h3>
+        <div class="student-line" id="studentLine">Đang kiểm tra đăng nhập...</div>
+        <div class="progress-row">
+          <div class="metric"><b id="answeredCount">0</b><span>Đã chọn</span></div>
+          <div class="metric"><b id="remainingCount">46</b><span>Còn lại</span></div>
+        </div>
+        <div class="navigator" id="navigator"></div>
+        <div class="action-stack">
+          <button class="btn primary" type="button" id="submitBtn">Nộp bài</button>
+          <button class="btn light" type="button" onclick="scrollToFirstBlank()">Tới câu trống</button>
+          <button class="btn dark" type="button" onclick="goHome()">Về trang chủ</button>
+        </div>
+        <div class="submit-status" id="submitStatus"></div>
+        <div class="result-panel" id="resultPanel">
+          <h3>Kết quả</h3>
+          <div class="result-grid">
+            <div class="result-mini"><b id="scoreText">0/46</b><span>Đúng</span></div>
+            <div class="result-mini percent"><b id="percentText">0%</b><span>Tỷ lệ</span></div>
+            <div class="result-mini"><b id="wrongText">0</b><span>Sai</span></div>
+            <div class="result-mini"><b id="blankText">0</b><span>Trống</span></div>
+          </div>
+          <p class="lock-note" id="resultNote"></p>
+        </div>
+      </div>
+    </aside>
+  </main>
+</div>
+<script>
+const EXAM_DATA_URL = 'data/reading-ets2021-p56.json';
+let EXAM_LIBRARY = null;
+let EXAM_TESTS = [];
+let EXAM_DATA = null;
+let selectedExamKey = '';
+
+const STUDENT_KEY = 'toeic_student_session';
+const LESSON_ID = 'ets-summer-2021-test1-part5-6';
+const LOCK_BYPASS_EMAIL = 'sunprice@sp.ik';
+let studentSession = null;
+let timeLeft = 0;
+let timerId = null;
+let resultSubmitted = false;
+let examStarted = false;
+let currentQuestionNo = 101;
+
+function getExamKey(test){
+  return String(test?.id || (test?.testNo ? `test${test.testNo}` : ''));
+}
+function getExamLabel(test=EXAM_DATA){
+  if(!test) return 'Đề thi';
+  return test.selectorLabel || test.menuLabel || test.title || `Test ${test.testNo || ''}`.trim();
+}
+function findExamByKey(key){
+  const requested = String(key || '').trim().toLowerCase();
+  if(!requested) return null;
+  return EXAM_TESTS.find(test => {
+    const id = getExamKey(test).toLowerCase();
+    const testNo = String(test.testNo ?? '').toLowerCase();
+    return id === requested || testNo === requested || `test${testNo}` === requested;
+  }) || null;
+}
+function updateExamQueryParam(test){
+  try{
+    const url = new URL(location.href);
+    const value = test?.testNo ? `test${test.testNo}` : getExamKey(test);
+    if(value) url.searchParams.set('test', value);
+    history.replaceState(null, '', url);
+  }catch(e){}
+}
+function normalizeExamLibrary(data){
+  if(data && Array.isArray(data.tests) && data.tests.length){
+    return data.tests.filter(test => test && Array.isArray(test.questions) && Array.isArray(test.passages));
+  }
+  // Tương thích ngược với JSON cũ chỉ chứa một đề.
+  if(data && Array.isArray(data.questions) && Array.isArray(data.passages)){
+    return [data];
+  }
+  return [];
+}
+function populateTestSelect(){
+  const select = document.getElementById('testSelect');
+  if(!select) return;
+  select.innerHTML = EXAM_TESTS.map((test, index) => {
+    const key = getExamKey(test) || `test-${index + 1}`;
+    return `<option value="${escapeText(key)}">${escapeText(getExamLabel(test))}</option>`;
+  }).join('');
+}
+function activateExam(test){
+  if(!test) throw new Error('Không tìm thấy đề đã chọn trong JSON.');
+  EXAM_DATA = test;
+  selectedExamKey = getExamKey(test);
+  timeLeft = Number(EXAM_DATA.timerMinutes || 25) * 60;
+  currentQuestionNo = EXAM_DATA.questions[0]?.no || 101;
+  const select = document.getElementById('testSelect');
+  if(select) select.value = selectedExamKey;
+  updateExamQueryParam(test);
+}
+async function loadExamLibrary(){
+  const res = await fetch(EXAM_DATA_URL, {cache:'no-store'});
+  if(!res.ok) throw new Error('Không tải được data đề: ' + EXAM_DATA_URL);
+  const data = await res.json();
+  const tests = normalizeExamLibrary(data);
+  if(!tests.length) throw new Error('JSON không có đề hợp lệ trong mảng tests.');
+
+  EXAM_LIBRARY = data;
+  EXAM_TESTS = tests;
+  populateTestSelect();
+
+  const requested = new URLSearchParams(location.search).get('test');
+  activateExam(findExamByKey(requested) || EXAM_TESTS[0]);
+}
+function syncExamMeta(){
+  const testSelect = document.getElementById('testSelect');
+  if(testSelect) testSelect.value = selectedExamKey;
+  const total = EXAM_DATA.questions.length;
+  const minutes = Number(EXAM_DATA.timerMinutes || 25);
+  document.title = (EXAM_DATA.title || 'TOEIC CBT Test').replace('·','-');
+  const titleEl = document.querySelector('.exam-title h1');
+  if(titleEl) titleEl.textContent = EXAM_DATA.title || 'TOEIC CBT Test';
+  const subEl = document.querySelector('.exam-title p');
+  if(subEl) subEl.textContent = `Computer-based TOEIC Reading mini test · ${total} questions`;
+  const startP = document.querySelector('.start-card p');
+  if(startP) startP.innerHTML = `Nội dung đề đang được làm mờ. Khi bấm <b>Bắt đầu</b>, hệ thống mới mở đề và bắt đầu đếm ngược ${minutes} phút.`;
+  const startMeta = document.querySelector('.start-meta');
+  if(startMeta) startMeta.innerHTML = `<span>Part 5 + 6</span><span>${total} câu</span><span>${minutes} phút</span>`;
+  const remain = document.getElementById('remainingCount');
+  if(remain) remain.textContent = total;
+  const score = document.getElementById('scoreText');
+  if(score) score.textContent = `0/${total}`;
+  const part5 = EXAM_DATA.questions.filter(q => q.part === 5);
+  const part6 = EXAM_DATA.questions.filter(q => q.part === 6);
+  const sectionSpans = document.querySelectorAll('.section-head span');
+  if(sectionSpans[0] && part5.length) sectionSpans[0].textContent = `Questions ${part5[0].no}-${part5[part5.length-1].no}`;
+  if(sectionSpans[1] && part6.length) sectionSpans[1].textContent = `Questions ${part6[0].no}-${part6[part6.length-1].no}`;
+}
+function setNotStartedStudentLine(){
+  const line = document.getElementById('studentLine');
+  if(!line || !EXAM_DATA) return;
+  line.innerHTML = 'Học viên: <b>' + escapeText(studentSession?.email || '') + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b><br>Thời lượng: <b>' + Number(EXAM_DATA.timerMinutes || 25) + ' phút</b><br>Trạng thái: <b>chưa bắt đầu</b>';
+}
+function switchExam(nextKey){
+  const nextExam = findExamByKey(nextKey);
+  if(!nextExam || getExamKey(nextExam) === selectedExamKey) return;
+  if(examStarted || resultSubmitted){
+    const select = document.getElementById('testSelect');
+    if(select) select.value = selectedExamKey;
+    toast('Không thể đổi đề sau khi đã bắt đầu.', 'warning');
+    return;
+  }
+
+  const select = document.getElementById('testSelect');
+  const loading = document.getElementById('testLoading');
+  const startBtn = document.getElementById('startBtn');
+  if(select) select.disabled = true;
+  if(startBtn) startBtn.disabled = true;
+  if(loading) loading.classList.add('show');
+  try{
+    activateExam(nextExam);
+    syncExamMeta();
+    renderExam();
+    updateProgress();
+    updateTimer();
+    setNotStartedStudentLine();
+    toast('Đã chuyển sang ' + getExamLabel() + '.', 'success');
+  }catch(err){
+    if(window.Swal){
+      Swal.fire({icon:'error',title:'Không đổi được đề',text:err.message || 'Dữ liệu đề không hợp lệ.',confirmButtonColor:'#2563eb'});
+    }else{
+      alert(err.message || 'Không đổi được đề.');
+    }
+  }finally{
+    if(select) select.disabled = false;
+    if(startBtn) startBtn.disabled = false;
+    if(loading) loading.classList.remove('show');
+  }
+}
+function getStudentSession(){
+  try{return JSON.parse(localStorage.getItem(STUDENT_KEY)||'null');}catch(e){return null;}
+}
+function requireStudentSession(){
+  const student = getStudentSession();
+  if(!student || !student.email){
+    alert('Bạn cần đăng nhập bằng email đã được cấp quyền trước khi làm bài.');
+    location.href = 'index.html';
+    return null;
+  }
+  return student;
+}
+async function requireLessonUnlocked(){
+  const email = String(studentSession?.email || '').trim().toLowerCase();
+  if(email === LOCK_BYPASS_EMAIL) return true;
+  try{
+    const res = await fetch('/api/lesson-locks', {cache:'no-store'});
+    const data = await res.json().catch(() => ({}));
+    if(!res.ok || !data.ok) throw new Error(data.error || 'Không kiểm tra được trạng thái khóa bài.');
+    if(Array.isArray(data.lockedLessonIds) && data.lockedLessonIds.includes(LESSON_ID)){
+      if(window.Swal){
+        await Swal.fire({icon:'warning',title:'Bài đang khóa',text:'Bài này hiện chưa mở cho học viên.',confirmButtonColor:'#2563eb'});
+      }else{
+        alert('Bài này hiện chưa mở cho học viên.');
+      }
+      location.href = 'index.html';
+      return false;
+    }
+    return true;
+  }catch(err){
+    if(window.Swal){
+      await Swal.fire({icon:'error',title:'Không kiểm tra được khóa bài',text:err.message || 'Vui lòng vào lại từ trang chủ.',confirmButtonColor:'#2563eb'});
+    }else{
+      alert(err.message || 'Không kiểm tra được trạng thái khóa bài.');
+    }
+    location.href = 'index.html';
+    return false;
+  }
+}
+function escapeText(text){
+  return String(text ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+function optionHtml(q, key, text){
+  return `<label class="option"><input type="radio" name="${q.id}" value="${key}"><span class="letter">(${key})</span><span>${escapeText(text)}</span></label>`;
+}
+function questionHtml(q, compact=false){
+  const opts = Object.entries(q.options).map(([key,text]) => optionHtml(q,key,text)).join('');
+  const stem = q.part === 5 ? `<div class="stem">${escapeText(q.stem)}</div>` : '';
+  return `<article class="question-card" id="question-${q.no}" data-question="${q.no}"><div class="question-no">Question ${q.no}</div>${stem}<div class="options">${opts}</div></article>`;
+}
+function renderExam(){
+  const part5 = EXAM_DATA.questions.filter(q => q.part === 5);
+  const part5Grid = document.getElementById('part5Grid');
+  part5Grid.innerHTML = part5.map(q => questionHtml(q)).join('');
+
+  const part6Wrap = document.getElementById('part6Wrap');
+  part6Wrap.innerHTML = EXAM_DATA.passages.map((p,idx) => {
+    const qs = p.questions.map(q => questionHtml(q,true)).join('');
+    return `<div class="passage-block"><div class="passage-shell"><div class="passage-text"><div class="question-no">${escapeText(p.title)}</div>${p.html}</div><div class="passage-questions">${qs}</div></div></div>`;
+  }).join('');
+
+  const nav = document.getElementById('navigator');
+  nav.innerHTML = EXAM_DATA.questions.map(q => `<button type="button" class="nav-q" data-nav="${q.no}">${q.no}</button>`).join('');
+
+  document.querySelectorAll('input[type="radio"]').forEach(input => input.addEventListener('change', () => {
+    currentQuestionNo = Number(input.closest('.question-card')?.dataset.question || currentQuestionNo);
+    updateProgress();
+  }));
+  document.querySelectorAll('.nav-q').forEach(btn => btn.addEventListener('click', () => scrollToQuestion(Number(btn.dataset.nav))));
+  document.querySelectorAll('.question-card').forEach(card => card.addEventListener('click', () => {
+    currentQuestionNo = Number(card.dataset.question || currentQuestionNo);
+    updateProgress();
+  }));
+}
+function selectedFor(q){
+  const el = document.querySelector(`input[name="${CSS.escape(q.id)}"]:checked`);
+  return el ? el.value : null;
+}
+function updateProgress(){
+  const answered = EXAM_DATA.questions.filter(q => selectedFor(q)).length;
+  document.getElementById('answeredCount').textContent = answered;
+  document.getElementById('remainingCount').textContent = EXAM_DATA.questions.length - answered;
+  document.querySelectorAll('.nav-q').forEach(btn => {
+    const no = Number(btn.dataset.nav);
+    const q = EXAM_DATA.questions.find(item => item.no === no);
+    btn.classList.toggle('answered', !!selectedFor(q));
+    btn.classList.toggle('current', no === currentQuestionNo);
+  });
+  document.querySelectorAll('.question-card').forEach(card => card.classList.toggle('active', Number(card.dataset.question) === currentQuestionNo));
+}
+function scrollToQuestion(no){
+  currentQuestionNo = no;
+  updateProgress();
+  document.getElementById('question-'+no)?.scrollIntoView({behavior:'smooth', block:'center'});
+}
+function scrollToFirstBlank(){
+  if(!examStarted){ toast('Bấm Bắt đầu để mở đề và tính giờ.', 'info'); return; }
+  const q = EXAM_DATA.questions.find(item => !selectedFor(item));
+  if(q) scrollToQuestion(q.no);
+  else toast('Bạn đã chọn đủ ' + EXAM_DATA.questions.length + ' câu.', 'success');
+}
+function formatTime(sec){
+  const m = Math.floor(sec/60);
+  const s = sec%60;
+  return String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+}
+function updateTimer(){
+  const timerValue = document.getElementById('timerValue');
+  const timerBox = document.getElementById('timerBox');
+  timerValue.textContent = formatTime(Math.max(0,timeLeft));
+  timerBox.classList.toggle('warning', timeLeft <= 300 && timeLeft > 60);
+  timerBox.classList.toggle('danger', timeLeft <= 60);
+}
+function startTimer(){
+  clearInterval(timerId);
+  updateTimer();
+  timerId = setInterval(() => {
+    if(resultSubmitted) return;
+    timeLeft -= 1;
+    updateTimer();
+    if(timeLeft <= 0){
+      clearInterval(timerId);
+      submitExam('timeup');
+    }
+  }, 1000);
+}
+function startExam(){
+  if(examStarted || resultSubmitted) return;
+  examStarted = true;
+  timeLeft = EXAM_DATA.timerMinutes * 60;
+  document.body.classList.remove('exam-not-started');
+  const btn=document.getElementById('submitBtn');
+  if(btn) btn.disabled=false;
+  const startBtn=document.getElementById('startBtn');
+  if(startBtn) startBtn.disabled=true;
+  const testSelect=document.getElementById('testSelect');
+  if(testSelect) testSelect.disabled=true;
+  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b><br>Thời lượng: <b>' + EXAM_DATA.timerMinutes + ' phút</b><br>Trạng thái: <b>đang làm bài</b>';
+  startTimer();
+  setTimeout(()=>scrollToQuestion(EXAM_DATA.questions[0]?.no || 101),80);
+}
+function collectPayload(reason='manual'){
+  const submittedAt = new Date().toISOString();
+  let score = 0;
+  let blankCount = 0;
+  const answers = EXAM_DATA.questions.map(q => {
+    const selected = selectedFor(q);
+    if(!selected) blankCount++;
+    const selectedText = selected ? q.options[selected] : null;
+    const correctText = q.options[q.answer];
+    const isCorrect = selected === q.answer;
+    if(isCorrect) score++;
+    return {
+      no:q.no,
+      id:q.id,
+      part:q.part,
+      selected,
+      selectedText,
+      correctAnswer:q.answer,
+      correctText,
+      isCorrect,
+      isBlank:!selected,
+      prompt:q.part===5 ? q.stem : q.stem
+    };
+  });
+  return {
+    student:{email:studentSession?.email||'', loginAt:studentSession?.loginAt||''},
+    quiz:{id:EXAM_DATA.id,title:EXAM_DATA.title,total:EXAM_DATA.questions.length,timerMinutes:EXAM_DATA.timerMinutes,source:EXAM_DATA.sourceLabel},
+    submittedAt,
+    submitReason:reason,
+    timeSpentSeconds:EXAM_DATA.timerMinutes*60 - Math.max(0,timeLeft),
+    score,
+    total:EXAM_DATA.questions.length,
+    wrong:EXAM_DATA.questions.length - score,
+    blankCount,
+    percent:Math.round(score/EXAM_DATA.questions.length*100),
+    answers
+  };
+}
+async function confirmSubmit(payload){
+  const unanswered = payload.blankCount;
+  const html = unanswered
+    ? `Bạn còn <b>${unanswered}</b> câu chưa chọn. Các câu trống sẽ tính sai.<br>Bạn chắc chắn muốn nộp bài?`
+    : `Bạn đã chọn đủ <b>${payload.total}</b> câu.<br>Bạn chắc chắn muốn nộp bài?`;
+  if(window.Swal){
+    const res = await Swal.fire({icon:'warning',title:'Xác nhận nộp bài',html,showCancelButton:true,confirmButtonText:'Nộp bài',cancelButtonText:'Kiểm tra lại',reverseButtons:true,focusCancel:true,confirmButtonColor:'#2563eb',cancelButtonColor:'#64748b'});
+    return !!res.isConfirmed;
+  }
+  return confirm(unanswered ? `Bạn còn ${unanswered} câu trống. Nộp bài?` : 'Bạn chắc chắn muốn nộp bài?');
+}
+async function submitExam(reason='manual'){
+  if(resultSubmitted) return;
+  if(!examStarted){ toast('Bạn cần bấm Bắt đầu trước khi nộp bài.', 'info'); return; }
+  const payload = collectPayload(reason);
+  if(reason === 'manual'){
+    const ok = await confirmSubmit(payload);
+    if(!ok) return;
+  } else if(window.Swal){
+    await Swal.fire({icon:'info',title:'Hết giờ',text:'Hệ thống sẽ tự động nộp bài. Câu trống được tính sai.',confirmButtonText:'Đã hiểu',confirmButtonColor:'#2563eb'});
+  } else {
+    alert('Hết giờ. Hệ thống sẽ tự động nộp bài.');
+  }
+
+  resultSubmitted = true;
+  document.body.classList.add('submitted');
+  clearInterval(timerId);
+  document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('submitBtn').textContent = 'Hoàn thành';
+  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b><br>Thời lượng: <b>' + EXAM_DATA.timerMinutes + ' phút</b><br>Trạng thái: <b>hoàn thành</b>';
+  document.querySelectorAll('.nav-q').forEach(btn => {
+    const no = Number(btn.dataset.nav);
+    const q = EXAM_DATA.questions.find(item => item.no === no);
+    if(q && !selectedFor(q)) btn.classList.add('blank-after');
+  });
+
+  document.getElementById('scoreText').textContent = payload.score + '/' + payload.total;
+  document.getElementById('wrongText').textContent = payload.wrong;
+  document.getElementById('percentText').textContent = payload.percent + '%';
+  document.getElementById('blankText').textContent = payload.blankCount;
+  document.getElementById('resultNote').textContent = 'Thời gian: ' + formatTime(payload.timeSpentSeconds);
+  renderSubmissionReview(payload);
+  document.getElementById('resultPanel').classList.add('show');
+  const status = document.getElementById('submitStatus');
+  status.className = 'submit-status';
+  status.textContent = '';
+  try{
+    const res = await fetch('/api/results', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data = await res.json().catch(() => ({}));
+    if(!res.ok || !data.ok) throw new Error(data.error || 'Không lưu được kết quả.');
+  }catch(err){
+    status.className = 'submit-status err';
+    status.textContent = 'Không gửi được kết quả về admin. Tải JSON dự phòng bên dưới.';
+    const blob = new Blob([JSON.stringify(payload,null,2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'student_result_' + String(payload.student.email||'student').replace(/[^a-z0-9._-]/gi,'_') + '_' + Date.now() + '.json';
+    a.textContent = 'Tải JSON kết quả dự phòng';
+    a.className = 'btn light';
+    a.style.marginTop = '12px';
+    status.insertAdjacentElement('afterend', a);
+  }
+}
+
+function renderSubmissionReview(payload){
+  const byNo = new Map(payload.answers.map(item => [item.no, item]));
+  document.querySelectorAll('.nav-q').forEach(btn => {
+    const no = Number(btn.dataset.nav);
+    const item = byNo.get(no);
+    if(!item) return;
+    const status = item.isBlank ? 'blank' : (item.isCorrect ? 'correct' : 'wrong');
+    btn.classList.remove('answered','correct-after','wrong-after','blank-after');
+    btn.classList.add(status + '-after');
+    btn.title = `Câu ${no}`;
+  });
+  document.querySelectorAll('.question-card').forEach(card => {
+    const no = Number(card.dataset.question);
+    const item = byNo.get(no);
+    if(!item) return;
+    const status = item.isBlank ? 'blank' : (item.isCorrect ? 'correct' : 'wrong');
+    card.classList.remove('result-correct','result-wrong','result-blank');
+    card.classList.add('result-' + status);
+    card.querySelectorAll('.option').forEach(label => {
+      label.classList.remove('student-correct','student-wrong');
+      const input = label.querySelector('input[type="radio"]');
+      if(input && item.selected && input.value === item.selected){
+        label.classList.add(item.isCorrect ? 'student-correct' : 'student-wrong');
+      }
+    });
+  });
+}
+function toast(message, icon='info'){
+  if(window.Swal){
+    Swal.fire({toast:true,position:'top',icon,title:message,showConfirmButton:false,timer:2200,timerProgressBar:true});
+  }
+}
+async function goHome(){
+  if(resultSubmitted || !examStarted){ location.href='index.html'; return; }
+  if(window.Swal){
+    const res = await Swal.fire({icon:'question',title:'Rời phòng thi?',text:'Bài chưa nộp sẽ không được lưu.',showCancelButton:true,confirmButtonText:'Về trang chủ',cancelButtonText:'Ở lại',reverseButtons:true,confirmButtonColor:'#0f172a'});
+    if(res.isConfirmed) location.href='index.html';
+  } else if(confirm('Bài chưa nộp sẽ không được lưu. Về trang chủ?')) location.href='index.html';
+}
+function setupAntiCopy(){
+  document.documentElement.classList.add('anti-download-lock');
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('dragstart', e => e.preventDefault());
+  document.addEventListener('selectstart', e => e.preventDefault());
+  document.addEventListener('copy', e => e.preventDefault());
+  document.addEventListener('cut', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    const key = String(e.key || '').toLowerCase();
+    if(e.key === 'F12' ||
+       (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(key)) ||
+       (e.ctrlKey && ['u','s','p','c','a','x'].includes(key)) ||
+       (e.metaKey && ['u','s','p','c','a','x'].includes(key))){
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+  }, true);
+}
+window.addEventListener('beforeunload', e => {
+  if(examStarted && !resultSubmitted){ e.preventDefault(); e.returnValue=''; }
+});
+document.getElementById('submitBtn').addEventListener('click', () => submitExam('manual'));
+document.getElementById('startBtn').addEventListener('click', startExam);
+document.getElementById('testSelect').addEventListener('change', e => switchExam(e.target.value));
+(async function init(){
+  setupAntiCopy();
+  studentSession = requireStudentSession();
+  if(!studentSession) return;
+  const unlocked = await requireLessonUnlocked();
+  if(!unlocked) return;
+  try{
+    await loadExamLibrary();
+  }catch(err){
+    document.body.classList.remove('auth-pending');
+    document.body.classList.add('exam-not-started');
+    const line = document.getElementById('studentLine');
+    if(line) line.textContent = err.message || 'Không tải được data đề.';
+    if(window.Swal){
+      Swal.fire({icon:'error',title:'Không tải được đề',text:err.message || 'Kiểm tra file data/reading-ets2021-p56.json',confirmButtonColor:'#2563eb'});
+    }else{
+      alert(err.message || 'Không tải được data đề.');
+    }
+    return;
+  }
+  syncExamMeta();
+  document.body.classList.remove('auth-pending');
+  document.body.classList.add('exam-not-started');
+  setNotStartedStudentLine();
+  renderExam();
+  updateProgress();
+  updateTimer();
+  document.getElementById('submitBtn').disabled = true;
+})();
+</script>
+</body>
+</html>
