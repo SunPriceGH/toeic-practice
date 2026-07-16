@@ -491,11 +491,11 @@ body.show-practice .lesson-section-card{display:none!important}
         <div class="pill-row"><span class="pill">Part 5 + 6</span><span class="pill">46 câu</span><span class="pill">25 phút</span></div>
         <button class="btn" type="button" onclick="openLogin('ets-summer-2021-part5-6.html')">Vào phòng thi</button>
       </article>
-      <article class="card lesson-card practice-section-card practice-test-card" data-lesson-id="ets-summer-2021-test1-part5-6-practice">
+      <article class="card lesson-card practice-section-card practice-test-card" data-lesson-id="ets-summer-2021-part5-6-practice">
         <h2>Luyện đề ETS 2021 - part 5 + 6</h2>
         <p>Làm từng câu, kiểm tra đáp án và xem sửa chi tiết ngay.</p>
         <div class="pill-row"><span class="pill">Part 5 + 6</span><span class="pill">46 câu</span><span class="pill">Practice</span></div>
-        <button class="btn" type="button" onclick="openLogin('ets-summer-2021-test1-part5-6-practice.html')">Vào bài luyện</button>
+        <button class="btn" type="button" onclick="openLogin('ets-summer-2021-part5-6-practice.html')">Vào bài luyện</button>
       </article>
 
       <article class="card lesson-card practice-section-card practice-test-card" data-lesson-id="ets2024-p56-practice">
@@ -600,7 +600,7 @@ function lessonIdsForResult(result){
   if(id.includes('noun-prep-collocation-1') || title.includes('Collocation 1')) return ['noun-prep-collocation-1'];
   if(id.includes('noun-prep-collocation-2') || title.includes('Collocation 2')) return ['noun-prep-collocation-2'];
   if(id.includes('vocabulary-box') || title.toLowerCase().includes('hòm từ vựng')) return ['vocabulary-box'];
-  if(id.includes('ets-summer-2021-test1-part5-6-practice') || title.includes('Luyện đề ETS 2021')) return ['ets-summer-2021-test1-part5-6-practice'];
+  if(id.includes('ets-summer-2021-test1-part5-6-practice') || title.includes('Luyện đề ETS 2021')) return ['ets-summer-2021-part5-6-practice'];
   if(id.includes('ets2024-p56-practice') || title.includes('Luyện đề ETS 2024')) return ['ets2024-p56-practice'];
   if(/^ets-summer-2021-test\d+-part5-6$/.test(id) || /ETS Summer 2021 Test \d+/i.test(title)) return ['ets-summer-2021-part5-6'];
   return [id].filter(Boolean);
