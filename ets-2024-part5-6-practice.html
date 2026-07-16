@@ -66,6 +66,7 @@ h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size
   </div>
 
   <div class="control-bar">
+    <button class="nav-btn home-btn" onclick="goHome()" type="button">HOME</button>
     <button class="nav-btn" onclick="prevSlide()" type="button">← PREV</button>
     <button class="check-btn" id="checkBtn" onclick="checkAnswer()" type="button">CHECK</button>
     <button class="nav-btn" onclick="nextSlide()" type="button">NEXT →</button>
@@ -224,7 +225,7 @@ function showFinalResultPreview(){
   if(answeredPill)answeredPill.textContent='Đã chọn: '+payload.answeredCount;
   if(checkedPill)checkedPill.textContent='Đã sửa: '+payload.checkedCount;
 }
-function goHome(){location.href='index.html';}
+function goHome(){location.href='index.html#practices';}
 function setupAntiCopy(){document.documentElement.classList.add('anti-download-lock');const block=e=>{e.preventDefault();e.stopPropagation();return false;};['contextmenu','dragstart','drop','copy','cut','paste','selectstart'].forEach(evt=>document.addEventListener(evt,block,true));document.addEventListener('keydown',e=>{const key=String(e.key||'').toLowerCase();const ctrl=e.ctrlKey||e.metaKey;if(e.key==='F12'||(ctrl&&['s','u','p','o','a','c','x','v'].includes(key))||(ctrl&&e.shiftKey&&['i','j','c','s'].includes(key)))return block(e);},true);}
 document.addEventListener('keydown',function(e){if(e.code==='ArrowRight')nextSlide();if(e.code==='ArrowLeft')prevSlide();if(e.code==='Escape'){closePagePicker();closeTestPicker();}});
 (async function init(){
