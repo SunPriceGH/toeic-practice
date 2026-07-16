@@ -485,11 +485,11 @@ body.show-practice .lesson-section-card{display:none!important}
         <div class="pill-row"><span class="pill">100 câu</span><span class="pill">Chọn đề trong bài</span><span class="pill">Test mode</span></div>
         <button class="btn" type="button" onclick="openLogin('toeic-listening.html')">Vào bài nghe</button>
       </article>
-      <article class="card lesson-card practice-section-card exam-index-card" data-lesson-id="ets-summer-2021-test1-part5-6">
+      <article class="card lesson-card practice-section-card exam-index-card" data-lesson-id="ets-summer-2021-part5-6">
         <h2>Thi thử ETS 2021 - part 5 + 6</h2>
         <p>Thi thử part 5 + 6 trong thời gian giới hạn.</p>
         <div class="pill-row"><span class="pill">Part 5 + 6</span><span class="pill">46 câu</span><span class="pill">25 phút</span></div>
-        <button class="btn" type="button" onclick="openLogin('ets-summer-2021-test1-part5-6.html')">Vào phòng thi</button>
+        <button class="btn" type="button" onclick="openLogin('ets-summer-2021-part5-6.html')">Vào phòng thi</button>
       </article>
       <article class="card lesson-card practice-section-card practice-test-card" data-lesson-id="ets-summer-2021-test1-part5-6-practice">
         <h2>Luyện đề ETS 2021 - part 5 + 6</h2>
@@ -602,7 +602,7 @@ function lessonIdsForResult(result){
   if(id.includes('vocabulary-box') || title.toLowerCase().includes('hòm từ vựng')) return ['vocabulary-box'];
   if(id.includes('ets-summer-2021-test1-part5-6-practice') || title.includes('Luyện đề ETS 2021')) return ['ets-summer-2021-test1-part5-6-practice'];
   if(id.includes('ets2024-p56-practice') || title.includes('Luyện đề ETS 2024')) return ['ets2024-p56-practice'];
-  if(id.includes('ets-summer-2021-test1-part5-6') || title.includes('ETS Summer 2021 Test 1')) return ['ets-summer-2021-test1-part5-6'];
+  if(/^ets-summer-2021-test\d+-part5-6$/.test(id) || /ETS Summer 2021 Test \d+/i.test(title)) return ['ets-summer-2021-part5-6'];
   return [id].filter(Boolean);
 }
 function resultTone(percent){
