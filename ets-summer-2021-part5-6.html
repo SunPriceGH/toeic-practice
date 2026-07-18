@@ -332,7 +332,7 @@ function syncExamMeta(){
 function setNotStartedStudentLine(){
   const line = document.getElementById('studentLine');
   if(!line || !EXAM_DATA) return;
-  line.innerHTML = 'Học viên: <b>' + escapeText(studentSession?.email || '') + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b><br>Chế độ: <b>' + getModeLabel() + '</b><br>Thời lượng: <b>' + getDurationLabel() + '</b><br>Trạng thái: <b>chưa bắt đầu</b>';
+  line.innerHTML = 'Học viên: <b>' + escapeText(studentSession?.email || '') + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b>';
 }
 function switchMode(nextMode){
   if(examStarted || resultSubmitted){
@@ -532,7 +532,7 @@ function startExam(){
   if(testSelect) testSelect.disabled=true;
   const modeSelect=document.getElementById('modeSelect');
   if(modeSelect) modeSelect.disabled=true;
-  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b><br>Chế độ: <b>' + getModeLabel() + '</b><br>Thời lượng: <b>' + getDurationLabel() + '</b><br>Trạng thái: <b>' + (isViewMode() ? 'đang xem đề' : 'đang làm bài') + '</b>';
+  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b>';
   startTimer();
   setTimeout(()=>scrollToQuestion(EXAM_DATA.questions[0]?.no || 101),80);
 }
@@ -604,7 +604,7 @@ async function submitExam(reason='manual'){
   document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
   document.getElementById('submitBtn').disabled = true;
   document.getElementById('submitBtn').textContent = 'Hoàn thành';
-  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b><br>Chế độ: <b>' + getModeLabel() + '</b><br>Thời lượng: <b>' + getDurationLabel() + '</b><br>Trạng thái: <b>hoàn thành</b>';
+  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b>';
   document.querySelectorAll('.nav-q').forEach(btn => {
     const no = Number(btn.dataset.nav);
     const q = EXAM_DATA.questions.find(item => item.no === no);
