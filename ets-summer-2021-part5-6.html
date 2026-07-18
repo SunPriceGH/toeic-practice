@@ -24,11 +24,12 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
 .start-card p{font-size:17px;line-height:1.55;color:#475569;margin-bottom:18px}
 .start-meta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
 .start-meta span{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;border-radius:999px;padding:8px 12px;font-size:14px;font-weight:700}
-.test-picker{max-width:430px;margin:0 auto 18px;text-align:left}
+.test-picker{max-width:430px;margin:0 auto 14px;text-align:left}
 .test-picker label{display:block;margin-bottom:7px;color:#334155;font-size:14px;font-weight:700}
 .test-select{width:100%;min-height:48px;border:2px solid #93c5fd;border-radius:16px;background:#fff;color:#0f172a;padding:10px 42px 10px 14px;font:inherit;font-size:16px;font-weight:700;cursor:pointer;outline:none;box-shadow:0 8px 18px rgba(37,99,235,.08)}
 .test-select:hover,.test-select:focus{border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.12)}
 .test-select:disabled{cursor:not-allowed;opacity:.65;background:#e2e8f0}
+.mode-help{margin-top:7px;color:#64748b;font-size:13px;line-height:1.45;font-weight:600}
 .test-loading{display:none;margin-top:8px;color:#64748b;font-size:13px;font-weight:700;text-align:center}
 .test-loading.show{display:block}
 .result-mini.percent b{color:#1d4ed8}
@@ -46,6 +47,8 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
 .timer-value{font-size:25px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.02em}
 .timer-box.warning{background:#fff7ed;color:#9a3412;border:2px solid #fed7aa}
 .timer-box.danger{background:#fff1f2;color:#be123c;border:2px solid #fecdd3;animation:pulse 1s infinite}
+.timer-box.view-mode{background:#0f766e;color:#fff;border:0;animation:none}
+.timer-box.view-mode .timer-label{color:#ccfbf1}
 @keyframes pulse{50%{transform:scale(1.015)}}
 .exam-main{max-width:1280px;margin:0 auto;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px}
 .exam-panel{background:#f8fafc;border:2px solid #e2e8f0;border-radius:26px;box-shadow:0 18px 40px rgba(15,23,42,.08);overflow:hidden}
@@ -132,20 +135,28 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
           <p>Computer-based TOEIC Reading mini test · 46 questions</p>
         </div>
       </div>
-      <div class="timer-box" id="timerBox"><div><div class="timer-label">Time left</div><div class="timer-value" id="timerValue">25:00</div></div></div>
+      <div class="timer-box" id="timerBox"><div><div class="timer-label" id="timerLabel">Time left</div><div class="timer-value" id="timerValue">25:00</div></div></div>
     </div>
   </header>
   <div class="start-gate" id="startGate" aria-live="polite">
     <div class="start-card">
       <div class="start-icon">CBT</div>
-      <h2>Sẵn sàng vào phòng thi?</h2>
-      <p>Nội dung đề đang được làm mờ. Hãy chọn đề, sau đó bấm <b>Bắt đầu</b> để mở đề và bắt đầu đếm ngược.</p>
+      <h2>Chọn đề và chế độ</h2>
+      <p>Nội dung đề đang được làm mờ. Hãy chọn đề, chọn chế độ rồi bấm nút bên dưới để mở đề.</p>
       <div class="test-picker">
         <label for="testSelect">Chọn đề thi</label>
         <select id="testSelect" class="test-select" aria-label="Chọn đề ETS Summer 2021">
           <option value="">Đang tải danh sách đề...</option>
         </select>
         <div class="test-loading" id="testLoading">Đang tải dữ liệu đề...</div>
+      </div>
+      <div class="test-picker">
+        <label for="modeSelect">Chọn chế độ</label>
+        <select id="modeSelect" class="test-select" aria-label="Chọn chế độ làm bài">
+          <option value="exam">Chế độ thi thử</option>
+          <option value="view">Chế độ xem đề</option>
+        </select>
+        <div class="mode-help" id="modeHelp">Có đồng hồ 25 phút và tự động nộp bài khi hết giờ.</div>
       </div>
       <div class="start-meta"><span>Part 5 + 6</span><span>46 câu</span><span>25 phút</span></div>
       <button class="btn primary" type="button" id="startBtn">Bắt đầu</button>
@@ -197,6 +208,7 @@ let EXAM_LIBRARY = null;
 let EXAM_TESTS = [];
 let EXAM_DATA = null;
 let selectedExamKey = '';
+let examMode = 'exam';
 
 const STUDENT_KEY = 'toeic_student_session';
 const LESSON_ID = 'ets-summer-2021-part5-6';
@@ -214,6 +226,15 @@ function getExamKey(test){
 function getExamLabel(test=EXAM_DATA){
   if(!test) return 'Đề thi';
   return test.selectorLabel || test.menuLabel || test.title || `Test ${test.testNo || ''}`.trim();
+}
+function isViewMode(){
+  return examMode === 'view';
+}
+function getModeLabel(){
+  return isViewMode() ? 'Chế độ xem đề' : 'Chế độ thi thử';
+}
+function getDurationLabel(){
+  return isViewMode() ? 'Không giới hạn thời gian' : Number(EXAM_DATA?.timerMinutes || 25) + ' phút';
 }
 function findExamByKey(key){
   const requested = String(key || '').trim().toLowerCase();
@@ -279,15 +300,25 @@ function syncExamMeta(){
   if(testSelect) testSelect.value = selectedExamKey;
   const total = EXAM_DATA.questions.length;
   const minutes = Number(EXAM_DATA.timerMinutes || 25);
+  const modeSelect = document.getElementById('modeSelect');
+  if(modeSelect) modeSelect.value = examMode;
   document.title = (EXAM_DATA.title || 'TOEIC CBT Test').replace('·','-');
   const titleEl = document.querySelector('.exam-title h1');
   if(titleEl) titleEl.textContent = EXAM_DATA.title || 'TOEIC CBT Test';
   const subEl = document.querySelector('.exam-title p');
-  if(subEl) subEl.textContent = `Computer-based TOEIC Reading mini test · ${total} questions`;
+  if(subEl) subEl.textContent = `TOEIC Reading · ${total} câu · ${getModeLabel()}`;
   const startP = document.querySelector('.start-card p');
-  if(startP) startP.innerHTML = `Nội dung đề đang được làm mờ. Khi bấm <b>Bắt đầu</b>, hệ thống mới mở đề và bắt đầu đếm ngược ${minutes} phút.`;
+  if(startP) startP.innerHTML = isViewMode()
+    ? 'Nội dung đề đang được làm mờ. Khi bấm <b>Mở đề</b>, hệ thống sẽ hiển thị đề và không tính giờ.'
+    : `Nội dung đề đang được làm mờ. Khi bấm <b>Bắt đầu thi</b>, hệ thống sẽ mở đề và đếm ngược ${minutes} phút.`;
   const startMeta = document.querySelector('.start-meta');
-  if(startMeta) startMeta.innerHTML = `<span>Part 5 + 6</span><span>${total} câu</span><span>${minutes} phút</span>`;
+  if(startMeta) startMeta.innerHTML = `<span>Part 5 + 6</span><span>${total} câu</span><span>${isViewMode() ? 'Không tính giờ' : minutes + ' phút'}</span>`;
+  const startBtn = document.getElementById('startBtn');
+  if(startBtn) startBtn.textContent = isViewMode() ? 'Mở đề' : 'Bắt đầu thi';
+  const modeHelp = document.getElementById('modeHelp');
+  if(modeHelp) modeHelp.textContent = isViewMode()
+    ? 'Không có đồng hồ đếm ngược và không tự động nộp bài.'
+    : `Có đồng hồ ${minutes} phút và tự động nộp bài khi hết giờ.`;
   const remain = document.getElementById('remainingCount');
   if(remain) remain.textContent = total;
   const score = document.getElementById('scoreText');
@@ -301,7 +332,19 @@ function syncExamMeta(){
 function setNotStartedStudentLine(){
   const line = document.getElementById('studentLine');
   if(!line || !EXAM_DATA) return;
-  line.innerHTML = 'Học viên: <b>' + escapeText(studentSession?.email || '') + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b><br>Thời lượng: <b>' + Number(EXAM_DATA.timerMinutes || 25) + ' phút</b><br>Trạng thái: <b>chưa bắt đầu</b>';
+  line.innerHTML = 'Học viên: <b>' + escapeText(studentSession?.email || '') + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b><br>Chế độ: <b>' + getModeLabel() + '</b><br>Thời lượng: <b>' + getDurationLabel() + '</b><br>Trạng thái: <b>chưa bắt đầu</b>';
+}
+function switchMode(nextMode){
+  if(examStarted || resultSubmitted){
+    const select = document.getElementById('modeSelect');
+    if(select) select.value = examMode;
+    toast('Không thể đổi chế độ sau khi đã bắt đầu.', 'warning');
+    return;
+  }
+  examMode = nextMode === 'view' ? 'view' : 'exam';
+  syncExamMeta();
+  updateTimer();
+  setNotStartedStudentLine();
 }
 function switchExam(nextKey){
   const nextExam = findExamByKey(nextKey);
@@ -448,6 +491,16 @@ function formatTime(sec){
 function updateTimer(){
   const timerValue = document.getElementById('timerValue');
   const timerBox = document.getElementById('timerBox');
+  const timerLabel = document.getElementById('timerLabel');
+  if(isViewMode()){
+    if(timerLabel) timerLabel.textContent = 'Chế độ';
+    timerValue.textContent = 'Xem đề';
+    timerBox.classList.remove('warning','danger');
+    timerBox.classList.add('view-mode');
+    return;
+  }
+  if(timerLabel) timerLabel.textContent = 'Time left';
+  timerBox.classList.remove('view-mode');
   timerValue.textContent = formatTime(Math.max(0,timeLeft));
   timerBox.classList.toggle('warning', timeLeft <= 300 && timeLeft > 60);
   timerBox.classList.toggle('danger', timeLeft <= 60);
@@ -455,6 +508,7 @@ function updateTimer(){
 function startTimer(){
   clearInterval(timerId);
   updateTimer();
+  if(isViewMode()) return;
   timerId = setInterval(() => {
     if(resultSubmitted) return;
     timeLeft -= 1;
@@ -476,7 +530,9 @@ function startExam(){
   if(startBtn) startBtn.disabled=true;
   const testSelect=document.getElementById('testSelect');
   if(testSelect) testSelect.disabled=true;
-  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b><br>Thời lượng: <b>' + EXAM_DATA.timerMinutes + ' phút</b><br>Trạng thái: <b>đang làm bài</b>';
+  const modeSelect=document.getElementById('modeSelect');
+  if(modeSelect) modeSelect.disabled=true;
+  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b><br>Chế độ: <b>' + getModeLabel() + '</b><br>Thời lượng: <b>' + getDurationLabel() + '</b><br>Trạng thái: <b>' + (isViewMode() ? 'đang xem đề' : 'đang làm bài') + '</b>';
   startTimer();
   setTimeout(()=>scrollToQuestion(EXAM_DATA.questions[0]?.no || 101),80);
 }
@@ -506,10 +562,10 @@ function collectPayload(reason='manual'){
   });
   return {
     student:{email:studentSession?.email||'', loginAt:studentSession?.loginAt||''},
-    quiz:{id:EXAM_DATA.id,title:EXAM_DATA.title,total:EXAM_DATA.questions.length,timerMinutes:EXAM_DATA.timerMinutes,source:EXAM_DATA.sourceLabel},
+    quiz:{id:EXAM_DATA.id,title:EXAM_DATA.title,total:EXAM_DATA.questions.length,timerMinutes:isViewMode() ? null : EXAM_DATA.timerMinutes,mode:examMode,modeLabel:getModeLabel(),source:EXAM_DATA.sourceLabel},
     submittedAt,
     submitReason:reason,
-    timeSpentSeconds:EXAM_DATA.timerMinutes*60 - Math.max(0,timeLeft),
+    timeSpentSeconds:isViewMode() ? 0 : EXAM_DATA.timerMinutes*60 - Math.max(0,timeLeft),
     score,
     total:EXAM_DATA.questions.length,
     wrong:EXAM_DATA.questions.length - score,
@@ -536,9 +592,9 @@ async function submitExam(reason='manual'){
   if(reason === 'manual'){
     const ok = await confirmSubmit(payload);
     if(!ok) return;
-  } else if(window.Swal){
+  } else if(!isViewMode() && window.Swal){
     await Swal.fire({icon:'info',title:'Hết giờ',text:'Hệ thống sẽ tự động nộp bài. Câu trống được tính sai.',confirmButtonText:'Đã hiểu',confirmButtonColor:'#2563eb'});
-  } else {
+  } else if(!isViewMode()) {
     alert('Hết giờ. Hệ thống sẽ tự động nộp bài.');
   }
 
@@ -548,7 +604,7 @@ async function submitExam(reason='manual'){
   document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
   document.getElementById('submitBtn').disabled = true;
   document.getElementById('submitBtn').textContent = 'Hoàn thành';
-  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b><br>Thời lượng: <b>' + EXAM_DATA.timerMinutes + ' phút</b><br>Trạng thái: <b>hoàn thành</b>';
+  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b><br>Chế độ: <b>' + getModeLabel() + '</b><br>Thời lượng: <b>' + getDurationLabel() + '</b><br>Trạng thái: <b>hoàn thành</b>';
   document.querySelectorAll('.nav-q').forEach(btn => {
     const no = Number(btn.dataset.nav);
     const q = EXAM_DATA.questions.find(item => item.no === no);
@@ -559,7 +615,7 @@ async function submitExam(reason='manual'){
   document.getElementById('wrongText').textContent = payload.wrong;
   document.getElementById('percentText').textContent = payload.percent + '%';
   document.getElementById('blankText').textContent = payload.blankCount;
-  document.getElementById('resultNote').textContent = 'Thời gian: ' + formatTime(payload.timeSpentSeconds);
+  document.getElementById('resultNote').textContent = isViewMode() ? 'Chế độ xem đề · Không tính giờ' : 'Thời gian: ' + formatTime(payload.timeSpentSeconds);
   renderSubmissionReview(payload);
   document.getElementById('resultPanel').classList.add('show');
   const status = document.getElementById('submitStatus');
@@ -648,6 +704,7 @@ window.addEventListener('beforeunload', e => {
 document.getElementById('submitBtn').addEventListener('click', () => submitExam('manual'));
 document.getElementById('startBtn').addEventListener('click', startExam);
 document.getElementById('testSelect').addEventListener('change', e => switchExam(e.target.value));
+document.getElementById('modeSelect').addEventListener('change', e => switchMode(e.target.value));
 (async function init(){
   setupAntiCopy();
   studentSession = requireStudentSession();
