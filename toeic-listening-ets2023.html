@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETS TOEIC 2023 Listening</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;height:100%;font-family:Arial,Helvetica,sans-serif;background:#d9dde5;color:#172033;overflow:hidden}button,input{font:inherit}.app{height:100vh;display:grid;grid-template-rows:52px 1fr 56px;background:#eef1f6}.topbar{display:flex;align-items:center;justify-content:space-between;background:#26384f;color:#fff;padding:0 18px;border-bottom:1px solid #172337}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}.brand-badge{width:32px;height:32px;border-radius:5px;background:#f6b332;color:#1d2939;display:grid;place-items:center;font-weight:900}.candidate{font-size:14px;color:#dce6f2}.timer{display:flex;align-items:center;gap:12px;font-weight:800}.timer span{min-width:86px;text-align:center;background:#152238;border:1px solid #4d6380;border-radius:4px;padding:7px 10px}.main{display:grid;grid-template-columns:260px 1fr 290px;min-height:0}.left{background:#f5f7fb;border-right:1px solid #c7cfdb;padding:14px;display:flex;flex-direction:column;gap:12px;min-height:0}.section-title{font-size:13px;color:#526173;text-transform:uppercase;font-weight:900;letter-spacing:.5px}.part-tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px}.part-tab{border:1px solid #b9c4d4;background:#fff;color:#1f2a3b;border-radius:4px;padding:9px 6px;font-size:13px;font-weight:800;cursor:pointer}.part-tab.active{background:#1d4ed8;color:#fff;border-color:#1d4ed8}.question-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;overflow:auto;padding:3px}.qbtn{height:34px;border:1px solid #b7c1d0;background:#fff;border-radius:4px;color:#1f2a3b;font-size:13px;font-weight:800;cursor:pointer}.qbtn.current{outline:3px solid #f6b332;border-color:#152238}.qbtn.answered{background:#dbeafe;border-color:#2563eb;color:#1d4ed8}.qbtn.flagged{box-shadow:inset 0 -4px 0 #f59e0b}.legend{display:grid;gap:6px;font-size:12px;color:#526173;margin-top:auto}.legend-row{display:flex;align-items:center;gap:8px}.swatch{width:18px;height:18px;border-radius:3px;border:1px solid #aab5c4;background:#fff}.swatch.answered{background:#dbeafe;border-color:#2563eb}.swatch.current{outline:3px solid #f6b332}.work{min-width:0;display:grid;grid-template-rows:auto 1fr;background:#fff}.instruction{border-bottom:1px solid #c7cfdb;background:#fff;padding:16px 22px;display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.instruction h1{font-size:22px;color:#172033;margin-bottom:7px}.instruction p{font-size:14px;line-height:1.4;color:#465568}.audio-state{min-width:190px;text-align:right}.audio-pill{display:inline-flex;align-items:center;gap:8px;background:#e8eef7;border:1px solid #c7d2e1;border-radius:999px;padding:7px 11px;color:#1f3658;font-size:13px;font-weight:900}.pulse{width:9px;height:9px;border-radius:50%;background:#94a3b8}.pulse.playing{background:#22c55e;box-shadow:0 0 0 5px rgba(34,197,94,.14)}.content{min-height:0;overflow:auto;padding:24px 30px}.question-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d6dde8;padding-bottom:14px;margin-bottom:20px}.qno{font-size:28px;font-weight:900;color:#172033}.part-label{font-size:14px;color:#526173;font-weight:900}.prompt{font-size:18px;line-height:1.5;color:#1f2a3b;margin-bottom:18px}.photo-box{height:310px;border:2px solid #cbd5e1;background:linear-gradient(135deg,#f8fafc,#e2e8f0);display:grid;place-items:center;color:#64748b;font-size:18px;font-weight:800;margin-bottom:20px}.set-box{border:1px solid #cbd5e1;border-radius:5px;margin-bottom:16px;background:#f8fafc}.set-box h3{font-size:15px;background:#e8eef7;border-bottom:1px solid #cbd5e1;padding:10px 12px;color:#1f3658}.set-box p{font-size:15px;line-height:1.45;color:#334155;padding:12px}.answers{display:grid;gap:10px;max-width:840px}.choice{display:grid;grid-template-columns:42px 1fr;align-items:center;border:1px solid #b9c4d4;background:#fff;border-radius:4px;min-height:46px;cursor:pointer;transition:background .12s,border-color .12s}.choice:hover{background:#f2f7ff}.choice input{position:absolute;opacity:0;pointer-events:none}.choice-letter{height:100%;display:grid;place-items:center;background:#eef2f7;border-right:1px solid #b9c4d4;font-weight:900;color:#1f3658}.choice-text{padding:10px 13px;font-size:16px;line-height:1.35;color:#172033}.choice.selected{border-color:#1d4ed8;background:#eff6ff}.choice.selected .choice-letter{background:#1d4ed8;color:#fff;border-color:#1d4ed8}.right{background:#f5f7fb;border-left:1px solid #c7cfdb;padding:14px;display:flex;flex-direction:column;gap:12px;min-height:0}.panel{background:#fff;border:1px solid #c7cfdb;border-radius:5px}.panel-head{padding:11px 12px;background:#e8eef7;border-bottom:1px solid #c7cfdb;font-size:13px;text-transform:uppercase;font-weight:900;color:#526173}.panel-body{padding:12px}.mini-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #edf1f6;font-size:14px}.mini-row:last-child{border-bottom:0}.mini-row b{color:#172033}.nav-stack{display:grid;grid-template-columns:1fr 1fr;gap:8px}.nav-btn{border:1px solid #aeb9c8;background:#fff;color:#172033;border-radius:4px;padding:11px 10px;font-weight:900;cursor:pointer}.nav-btn:hover{background:#eef4ff}.nav-btn.primary{background:#1d4ed8;color:#fff;border-color:#1d4ed8}.nav-btn.warn{background:#fff7ed;color:#9a3412;border-color:#fdba74}.nav-btn.danger{background:#fee2e2;color:#991b1b;border-color:#fecaca}.footer{display:flex;align-items:center;justify-content:space-between;background:#26384f;color:#dce6f2;padding:0 18px;border-top:1px solid #172337}.footer-actions{display:flex;gap:9px}.footer button{border:1px solid #6f839e;background:#344964;color:#fff;border-radius:4px;padding:9px 16px;font-weight:900;cursor:pointer}.footer button:hover{background:#405a7b}.footer .submit{background:#b91c1c;border-color:#b91c1c}.start-overlay,.modal{position:fixed;inset:0;background:rgba(15,23,42,.62);display:flex;align-items:center;justify-content:center;padding:22px;z-index:500}.modal{display:none}.modal.show{display:flex}.start-card,.modal-card{width:min(620px,94vw);background:#fff;border-radius:6px;border:1px solid #c7cfdb;box-shadow:0 24px 80px rgba(15,23,42,.38)}.start-head,.modal-head{background:#26384f;color:#fff;padding:16px 18px;font-size:18px;font-weight:900}.start-body,.modal-body{padding:20px}.start-body p,.modal-body p{font-size:16px;line-height:1.55;color:#334155;margin-bottom:12px}.start-actions,.modal-actions{display:flex;justify-content:flex-end;gap:10px;padding:0 20px 20px}.big-btn{border:0;background:#1d4ed8;color:#fff;border-radius:4px;padding:12px 18px;font-weight:900;cursor:pointer}.big-btn.gray{background:#e2e8f0;color:#172033}.big-btn.red{background:#b91c1c}.submit-status{font-size:15px;font-weight:800;margin-top:10px;color:#526173}.submit-status.ok{color:#15803d}.submit-status.err{color:#be123c}@media(max-width:980px){body{overflow:auto}.app{height:auto;min-height:100vh;grid-template-rows:auto auto auto}.main{grid-template-columns:1fr}.left,.right{border:0}.question-grid{grid-template-columns:repeat(10,1fr);max-height:220px}.instruction{display:block}.audio-state{text-align:left;margin-top:10px}.content{padding:18px}.photo-box{height:220px}.footer{position:sticky;bottom:0;z-index:50;gap:12px;flex-wrap:wrap;padding:10px 14px}}
+.test-select-box{margin:16px 0;padding:14px;border:1px solid #cbd5e1;background:#f8fafc;border-radius:6px}.test-select-box label{display:block;font-size:14px;font-weight:900;color:#334155;margin-bottom:8px}.test-select-box select{width:100%;border:1px solid #94a3b8;border-radius:4px;background:#fff;color:#172033;font-size:17px;font-weight:800;padding:11px 12px;outline:none}.test-select-box select:focus{border-color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,.14)}
+html,body{height:auto;min-height:100%;overflow:auto}.app{min-height:100vh;height:auto}.main{min-height:calc(100vh - 108px)}.work{min-height:0}.content{max-height:none}.side-select{margin:0;padding:0;border:0;background:transparent}.side-select select{font-size:14px;padding:9px 10px}.home-footer-btn{background:#e2e8f0!important;color:#172033!important;border-color:#cbd5e1!important}.home-footer-btn:hover{background:#cbd5e1!important}.switch-warning{color:#991b1b;font-weight:900}
+.work{min-width:0;display:flex;flex-direction:column;background:#fff}.content{flex:1;min-height:0;overflow:auto;padding:24px 30px}
+.result-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}.result-stat{border:1px solid #cbd5e1;background:#f8fafc;border-radius:5px;padding:10px;text-align:center}.result-stat b{display:block;font-size:20px;color:#172033}.result-stat span{font-size:12px;font-weight:900;color:#526173;text-transform:uppercase}.result-list{max-height:46vh;overflow:auto;border:1px solid #cbd5e1;border-radius:5px;background:#fff;margin-top:12px}.result-row{display:grid;grid-template-columns:58px 1fr 1fr 86px;gap:10px;align-items:center;padding:9px 11px;border-bottom:1px solid #edf1f6;font-size:14px}.result-row:last-child{border-bottom:0}.result-row .q{font-weight:900;color:#172033}.result-row .ans,.result-row .correct{color:#475569}.result-badge{justify-self:end;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:900}.result-badge.ok{background:#dcfce7;color:#166534}.result-badge.wrong{background:#fee2e2;color:#991b1b}.result-badge.missing{background:#fef3c7;color:#92400e}@media(max-width:760px){.result-stats{grid-template-columns:1fr 1fr}.result-row{grid-template-columns:48px 1fr;gap:6px}.result-row .correct,.result-row .result-badge{justify-self:start}}
+.qbtn.result-ok{background:#dcfce7!important;border-color:#22c55e!important;color:#166534!important}.qbtn.result-wrong{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important}.qbtn.result-missing{background:#fef3c7!important;border-color:#f59e0b!important;color:#92400e!important}.transcript-toggle{margin:0 0 12px;border:1px solid #94a3b8;background:#fff;color:#1f3658;border-radius:4px;padding:9px 12px;font-size:14px;font-weight:900;cursor:pointer}.transcript-toggle:hover{background:#eef4ff}.question-transcript{display:none;margin:-2px 0 14px;border:1px dashed #94a3b8;border-radius:5px;background:#f8fafc;padding:12px 14px;color:#334155;font-size:14px;line-height:1.5}.question-transcript.show{display:block}.question-transcript b{color:#1f3658}.question-transcript .vi{display:block;margin-top:7px;color:#64748b}.footer{position:fixed!important;left:0;right:0;bottom:0;z-index:80;min-height:56px;box-shadow:0 -8px 24px rgba(15,23,42,.18)}@media(max-width:760px){body{padding-bottom:118px}.topbar{display:grid;grid-template-columns:1fr;gap:5px;align-items:start;padding:8px 12px}.brand{gap:7px;font-size:13px;line-height:1.2}.brand-badge{width:25px;height:25px;font-size:12px}.candidate{font-size:12px;line-height:1.2}.timer{justify-content:space-between;font-size:12px;line-height:1.2}.timer span{min-width:68px;padding:5px 8px}.footer{gap:8px;min-height:0;padding:10px 14px}.footer-actions{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:7px}.footer button{padding:8px 9px;font-size:12px}}
+
+.photo-box{height:auto;min-height:310px;padding:12px;background:#f8fafc}.photo-box img{max-width:100%;max-height:520px;object-fit:contain;display:block;margin:auto;border:1px solid #cbd5e1;background:#fff}.set-questions{display:grid;gap:10px;padding:12px}.set-question{background:#fff;border:1px solid #d6dde8;border-radius:4px;padding:10px 12px}.set-question b{color:#1d4ed8}.set-question .vi{display:block;margin-top:4px;color:#64748b;font-size:13px}.transcript-box{margin-top:10px;border:1px dashed #cbd5e1;border-radius:4px;background:#fff;padding:10px 12px;color:#64748b;font-size:13px;line-height:1.45}.choice-text .vi{display:block;margin-top:3px;color:#64748b;font-size:13px}.prompt .vi{display:block;margin-top:5px;color:#64748b;font-size:14px}.graphic-box{padding:12px;border-bottom:1px solid #d6dde8;background:#fff}.graphic-box img{max-width:100%;max-height:360px;object-fit:contain;display:block;margin:0 auto;border:1px solid #cbd5e1;background:#fff}.graphic-caption{font-size:13px;font-weight:900;color:#526173;margin-bottom:7px;text-transform:uppercase;letter-spacing:.3px}
+.practice-audio-wrap{display:none;border-bottom:1px solid #c7cfdb;background:#f8fafc;padding:12px 22px}.practice-audio-wrap.show{display:block}.practice-audio-wrap audio{width:100%;display:block;accent-color:#1d4ed8}.mode-note{font-size:13px;line-height:1.45;color:#64748b;margin-top:8px;font-weight:800}.mode-pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#eef2ff;color:#3730a3;padding:7px 10px;font-size:13px;font-weight:900}.mode-pill.practice{background:#ecfdf5;color:#166534}.mode-select-box{margin:12px 0;padding:14px;border:1px solid #cbd5e1;background:#f8fafc;border-radius:6px}.mode-select-box label{display:block;font-size:14px;font-weight:900;color:#334155;margin-bottom:8px}.mode-select-box select{width:100%;border:1px solid #94a3b8;border-radius:4px;background:#fff;color:#172033;font-size:17px;font-weight:800;padding:11px 12px;outline:none}
+.practice-audio-wrap.show{padding:6px 22px 5px}.practice-audio-wrap.show + .content{padding-top:8px}.practice-audio-wrap.show + .content .question-head{padding-bottom:8px;margin-bottom:10px}.practice-audio-wrap.show + .content .set-box{margin-bottom:10px}.practice-audio-wrap.show + .content .prompt{margin-bottom:10px}.practice-audio-wrap.show + .content.part-2,.practice-audio-wrap.show + .content.part-3,.practice-audio-wrap.show + .content.part-4{padding-top:4px}.practice-audio-wrap.show + .content.part-2 .question-head,.practice-audio-wrap.show + .content.part-3 .question-head,.practice-audio-wrap.show + .content.part-4 .question-head{min-height:0;padding:4px 0 5px;margin-bottom:7px}.practice-audio-wrap.show + .content.part-2 .qno,.practice-audio-wrap.show + .content.part-3 .qno,.practice-audio-wrap.show + .content.part-4 .qno{font-size:20px;line-height:1}.practice-audio-wrap.show + .content.part-2 .part-label,.practice-audio-wrap.show + .content.part-3 .part-label,.practice-audio-wrap.show + .content.part-4 .part-label{font-size:12px}.practice-audio-wrap.show + .content.part-2 .prompt{margin-bottom:8px}.practice-audio-wrap.show + .content.part-3 .set-box,.practice-audio-wrap.show + .content.part-4 .set-box{margin-bottom:8px}
+html.anti-download-lock,html.anti-download-lock body{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}html.anti-download-lock img,html.anti-download-lock video,html.anti-download-lock canvas,html.anti-download-lock svg{-webkit-user-drag:none!important;user-drag:none!important}.practice-audio-wrap,.practice-audio-wrap *{-webkit-user-select:auto!important;-moz-user-select:auto!important;-ms-user-select:auto!important;user-select:auto!important;-webkit-touch-callout:default!important;-webkit-user-drag:auto!important;user-drag:auto!important;pointer-events:auto!important}
+.transcript-options{line-height:1.7}.transcript-options .answer-label{color:#1f3658}.transcript-dialogue{display:grid;gap:7px;margin-top:8px}.transcript-line{display:grid;grid-template-columns:65px minmax(0,1fr);gap:10px;align-items:start}.transcript-speaker{font-weight:700;color:#1f3658;background:#e8eef7;border:1px solid #cbd5e1;border-radius:4px;padding:5px 0px;text-align:center}.transcript-speech{min-width:0;color:#334155;padding:5px 0;line-height:1.55}.transcript-speech .answer-label{font-weight:900;color:#1f3658}@media(max-width:560px){.transcript-line{grid-template-columns:58px minmax(0,1fr);gap:8px}.transcript-speaker{font-size:12px;padding:5px 4px}.transcript-speech{font-size:13px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><div class="brand-badge">ETS</div><div>TOEIC Listening and Reading Test</div></div>
+    <div class="candidate" id="candidateEmail">Candidate: checking...</div>
+    <div class="timer">Time Remaining <span id="timerText">45:00</span></div>
+  </header>
+
+  <main class="main">
+    <aside class="left">
+      <div class="section-title">Listening Section</div>
+      <div class="part-tabs" id="partTabs"></div>
+      <div class="section-title">Question Navigator</div>
+      <div class="question-grid" id="questionGrid"></div>
+      <div class="legend">
+        <div class="legend-row"><span class="swatch current"></span>Current question</div>
+        <div class="legend-row"><span class="swatch answered"></span>Answered question</div>
+        <div class="legend-row"><span class="swatch"></span>Not answered</div>
+      </div>
+    </aside>
+
+    <section class="work">
+      <div class="instruction">
+        <div>
+          <h1 id="partTitle">Part 1: Photographs</h1>
+          <p id="partInstruction">You will hear four statements about a picture. Select the statement that best describes what you see.</p>
+        </div>
+        <div class="audio-state">
+          <div class="audio-pill"><span class="pulse" id="audioPulse"></span><span id="audioStatus">Audio not started</span></div>
+        </div>
+      </div>
+      <div class="practice-audio-wrap" id="practiceAudioWrap">
+        <audio id="testAudio" preload="auto" controlsList="nodownload" disablePictureInPicture></audio>
+      </div>
+      <div class="content" id="content"></div>
+    </section>
+
+    <aside class="right">
+      <div class="panel">
+        <div class="panel-head">Test Status</div>
+      <div class="panel-body">
+          <div class="mini-row"><span>Answered</span><b id="answeredCount">0 / 100</b></div>
+          <div class="mini-row"><span>Current Part</span><b id="currentPart">Part 1</b></div>
+          <div class="mini-row"><span>Test</span><b id="testName">Test 6</b></div>
+          <div class="mini-row"><span>Mode</span><b id="modeName">Thi thật</b></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head">Change Mode / Test</div>
+        <div class="panel-body">
+          <button class="nav-btn primary" type="button" style="width:100%" onclick="openModeTestPanel()">Choose Mode / Test</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head">Listening Rule</div>
+        <div class="panel-body">
+          <p style="font-size:14px;line-height:1.45;color:#465568">The audio is played once. There is no replay button in test mode. Answer directly on screen.</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div id="footerHint">Click Start Test to begin the Listening audio.</div>
+    <div class="footer-actions">
+      <button type="button" onclick="previousQuestion()">Back</button>
+      <button type="button" onclick="nextQuestion()">Next</button>
+      <button class="home-footer-btn" type="button" onclick="requestGoHome()">Về trang chủ</button>
+      <button class="submit" type="button" onclick="openSubmitModal()">Submit Test</button>
+    </div>
+  </footer>
+</div>
+
+<div class="start-overlay" id="startOverlay">
+  <div class="start-card">
+    <div class="start-head">ETS TOEIC 2023 Listening</div>
+    <div class="start-body">
+      <p><b>Listening Section:</b> 100 questions, approximately 45 minutes.</p>
+      <p>The audio will start after you press <b>Start Test</b>. In test mode, the audio is played once and cannot be replayed.</p>
+      <div class="test-select-box">
+        <label for="testSelect">Chọn đề nghe</label>
+        <select id="testSelect" onchange="changeListeningTest(this.value)">
+          <option value="1">ETS TOEIC 2023 Test 1</option>
+          <option value="2">ETS TOEIC 2023 Test 2</option>
+          <option value="3">ETS TOEIC 2023 Test 3</option>
+          <option value="4">ETS TOEIC 2023 Test 4</option>
+          <option value="5">ETS TOEIC 2023 Test 5</option>
+          <option value="6">ETS TOEIC 2023 Test 6</option>
+          <option value="7">ETS TOEIC 2023 Test 7</option>
+          <option value="8">ETS TOEIC 2023 Test 8</option>
+          <option value="9">ETS TOEIC 2023 Test 9</option>
+          <option value="10">ETS TOEIC 2023 Test 10</option>
+        </select>
+      </div>
+      <div class="mode-select-box">
+        <label for="modeSelect">Chọn chế độ</label>
+        <select id="modeSelect" onchange="setListeningMode(this.value)">
+          <option value="test">Thi thật - audio phát 1 lần, không tua lại</option>
+          <option value="practice">Luyện tập - hiện thanh audio, được pause/tua</option>
+        </select>
+        <div class="mode-note">Chế độ luyện tập dùng thanh audio HTML mặc định, chỉ chặn nút download để ưu tiên tua ổn định.</div>
+      </div>
+      <p>Make sure your headset volume is ready before starting.</p>
+      <div class="submit-status" id="startStatus"></div>
+    </div>
+    <div class="start-actions">
+      <button class="big-btn gray" type="button" onclick="location.href='index.html'">Back to Home</button>
+      <button class="big-btn" type="button" onclick="startTest()">Start Test</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="submitModal">
+  <div class="modal-card">
+    <div class="modal-head">Submit Listening Test</div>
+    <div class="modal-body">
+      <p id="submitSummary">You have answered 0 / 100 questions.</p>
+      <p id="submitModeNote">After submitting, your result will be saved and the test will end.</p>
+      <div id="resultStats" class="result-stats"></div>
+      <div id="resultList" class="result-list"></div>
+      <div class="submit-status" id="submitStatus"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="big-btn gray" type="button" onclick="closeSubmitModal()">Continue Test</button>
+      <button class="big-btn red" id="finalSubmitBtn" type="button" onclick="submitFinalResult()">Submit</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="homeModal">
+  <div class="modal-card">
+    <div class="modal-head">Leave Listening Test?</div>
+    <div class="modal-body">
+      <p>If you leave now before submitting, your current answers may not be saved.</p>
+      <p>Choose <b>Continue Test</b> to return and submit your result first.</p>
+    </div>
+    <div class="modal-actions">
+      <button class="big-btn gray" type="button" onclick="closeHomeModal()">Continue Test</button>
+      <button class="big-btn red" type="button" onclick="location.href='index.html'">Leave Test</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="switchModal">
+  <div class="modal-card">
+    <div class="modal-head">Đổi đề nghe?</div>
+    <div class="modal-body">
+      <p class="switch-warning">Nếu đổi đề bây giờ, audio và các đáp án đang chọn của đề hiện tại sẽ được reset.</p>
+      <p id="switchSummary">Bạn có chắc muốn đổi đề?</p>
+    </div>
+    <div class="modal-actions">
+      <button class="big-btn gray" type="button" onclick="cancelSwitchTest()">Ở lại đề hiện tại</button>
+      <button class="big-btn red" type="button" onclick="confirmSwitchTest()">Đổi đề</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var TESTS = {
+  1: {id:'ets-toeic-2023-test-1', title:'ETS TOEIC 2023 Test 1', audioSrc:'audio/ets-toeic-2023-test-1.mp3'},
+  2: {id:'ets-toeic-2023-test-2', title:'ETS TOEIC 2023 Test 2', audioSrc:'audio/ets-toeic-2023-test-2.mp3'},
+  3: {id:'ets-toeic-2023-test-3', title:'ETS TOEIC 2023 Test 3', audioSrc:'audio/ets-toeic-2023-test-3.mp3'},
+  4: {id:'ets-toeic-2023-test-4', title:'ETS TOEIC 2023 Test 4', audioSrc:'audio/ets-toeic-2023-test-4.mp3'},
+  5: {id:'ets-toeic-2023-test-5', title:'ETS TOEIC 2023 Test 5', audioSrc:'audio/ets-toeic-2023-test-5.mp3'},
+  6: {id:'ets-toeic-2023-test-6', title:'ETS TOEIC 2023 Test 6', audioSrc:'audio/ets-toeic-2023-test-6.mp3'},
+  7: {id:'ets-toeic-2023-test-7', title:'ETS TOEIC 2023 Test 7', audioSrc:'audio/ets-toeic-2023-test-7.mp3'},
+  8: {id:'ets-toeic-2023-test-8', title:'ETS TOEIC 2023 Test 8', audioSrc:'audio/ets-toeic-2023-test-8.mp3'},
+  9: {id:'ets-toeic-2023-test-9', title:'ETS TOEIC 2023 Test 9', audioSrc:'audio/ets-toeic-2023-test-9.mp3'},
+  10:{id:'ets-toeic-2023-test-10',title:'ETS TOEIC 2023 Test 10',audioSrc:'audio/ets-toeic-2023-test-10.mp3'}
+};
+var ANSWER_KEYS = {};
+var answerKeysLoaded = false;
+var testParam = new URLSearchParams(location.search).get('test') || '6';
+var selectedTest = TESTS[testParam] || TESTS[6];
+var listeningMode='test';
+var LISTENING_CONFIG = {
+  id:selectedTest.id,
+  title:selectedTest.title,
+  audioSrc:selectedTest.audioSrc,
+  durationSeconds: 45 * 60,
+  answerKey: []
+};
+
+function setCurrentAnswerKey(testNo){
+  LISTENING_CONFIG.answerKey = ANSWER_KEYS[String(testNo)] || [];
+}
+function loadAnswerKeys(){
+  if(window.__answerKeysPromise) return window.__answerKeysPromise;
+  window.__answerKeysPromise = fetch('data/listening-answer-keys-ets2023.json')
+    .then(function(res){
+      if(!res.ok) throw new Error('answer key json not found');
+      return res.json();
+    })
+    .then(function(data){
+      ANSWER_KEYS = data || {};
+      answerKeysLoaded = true;
+      setCurrentAnswerKey(getCurrentTestNo ? getCurrentTestNo() : testParam);
+      return ANSWER_KEYS;
+    })
+    .catch(function(err){
+      answerKeysLoaded = false;
+      console.error('Cannot load answer keys:', err);
+      var status = document.getElementById('submitStatus') || document.getElementById('startStatus');
+      if(status){
+        status.className = 'submit-status err';
+        status.textContent = 'Không tải được file đáp án data/listening-answer-keys-ets2023.json.';
+      }
+      throw err;
+    });
+  return window.__answerKeysPromise;
+}
+
+function applyListeningTest(testNo){
+  selectedTest=TESTS[testNo]||TESTS[6];
+  LISTENING_CONFIG.id=selectedTest.id;
+  LISTENING_CONFIG.title=selectedTest.title;
+  LISTENING_CONFIG.audioSrc=selectedTest.audioSrc;
+  setCurrentAnswerKey(testNo);
+  document.title=LISTENING_CONFIG.title;
+  var startHead=document.querySelector('.start-head');
+  if(startHead) startHead.textContent=LISTENING_CONFIG.title;
+
+  var fileName=document.getElementById('audioFileName');
+  if(fileName) fileName.textContent=LISTENING_CONFIG.audioSrc.split('/').pop();
+  var testName=document.getElementById('testName');
+  if(testName) testName.textContent=LISTENING_CONFIG.title;
+  
+  updateAudioMode();
+
+  var audio=document.getElementById('testAudio');
+  // Cập nhật mới: Xử lý dứt điểm lỗi tua (HTTP 206) bằng cách fetch Blob
+  if(audio && audio.dataset.rawSrc !== LISTENING_CONFIG.audioSrc){
+    audio.dataset.rawSrc = LISTENING_CONFIG.audioSrc;
+    
+    var statusEl = document.getElementById('startStatus');
+    var startBtn = document.querySelector('.start-actions .big-btn:not(.gray)');
+    
+    if(statusEl) statusEl.textContent = 'Đang tải dữ liệu Audio...';
+    if(startBtn) startBtn.disabled = true;
+
+    fetch(LISTENING_CONFIG.audioSrc)
+      .then(function(res) { return res.blob(); })
+      .then(function(blob) {
+        // Kiểm tra xem thí sinh có đổi đề khác trong lúc đang tải không
+        if (audio.dataset.rawSrc !== LISTENING_CONFIG.audioSrc) return; 
+        
+        var url = URL.createObjectURL(blob);
+        audio.src = url;
+        audio.load();
+        
+        if(statusEl) {
+          statusEl.textContent = 'Audio đã sẵn sàng!';
+          statusEl.className = 'submit-status ok';
+        }
+        if(startBtn) startBtn.disabled = false;
+      })
+      .catch(function(err) {
+        // Fallback: Nếu fetch lỗi (chạy local file:// hoặc rớt mạng), quay về dùng link src gốc
+        audio.src = LISTENING_CONFIG.audioSrc;
+        audio.load();
+        
+        if(statusEl) {
+          statusEl.textContent = 'Dùng link audio gốc (tua có thể bị lỗi do server).';
+          statusEl.className = 'submit-status err';
+        }
+        if(startBtn) startBtn.disabled = false;
+      });
+  }
+}
+function setListeningMode(mode){
+  listeningMode=mode==='practice'?'practice':'test';
+  updateAudioMode();
+  if(document.getElementById('content') && document.getElementById('partTabs').innerHTML){
+    renderQuestion();
+  }
+}
+function updateAudioMode(){
+  var audio=document.getElementById('testAudio');
+  var wrap=document.getElementById('practiceAudioWrap');
+  var modeName=document.getElementById('modeName');
+  if(!audio||!wrap) return;
+  if(listeningMode==='practice'){
+    audio.setAttribute('controls','controls');
+    audio.setAttribute('controlsList','nodownload');
+    audio.disablePictureInPicture=true;
+    wrap.classList.add('show');
+    loadTranscriptJsonData();
+    if(modeName) modeName.innerHTML='<span class="mode-pill practice">Luyện tập</span>';
+  }else{
+    audio.removeAttribute('controls');
+    wrap.classList.remove('show');
+    if(modeName) modeName.innerHTML='<span class="mode-pill">Thi thật</span>';
+  }
+}
+function changeListeningTest(testNo){
+  requestSwitchTest(testNo);
+}
+function openModeTestPanel(){
+  syncTestSelects(getCurrentTestNo());
+  var modeSelect=document.getElementById('modeSelect');
+  if(modeSelect) modeSelect.value=listeningMode;
+  var status=document.getElementById('startStatus');
+  if(status){
+    status.textContent='';
+    status.className='submit-status';
+  }
+  document.getElementById('startOverlay').style.display='flex';
+}
+function requestSwitchTest(testNo){
+  if(!TESTS[testNo]) testNo='6';
+  var currentValue=getCurrentTestNo();
+  if(testNo===currentValue) return;
+  if(state.started&&!state.submitted){
+    state.pendingTest=testNo;
+    document.getElementById('switchSummary').textContent='Đổi sang '+TESTS[testNo].title+'?';
+    document.getElementById('switchModal').classList.add('show');
+    syncTestSelects(currentValue);
+    return;
+  }
+  switchToTest(testNo);
+}
+function cancelSwitchTest(){
+  state.pendingTest=null;
+  document.getElementById('switchModal').classList.remove('show');
+  syncTestSelects(getCurrentTestNo());
+}
+function confirmSwitchTest(){
+  var testNo=state.pendingTest||'6';
+  document.getElementById('switchModal').classList.remove('show');
+  switchToTest(testNo);
+}
+function getCurrentTestNo(){
+  for(var key in TESTS){
+    if(TESTS[key].id===LISTENING_CONFIG.id) return String(key);
+  }
+  return '6';
+}
+function syncTestSelects(testNo){
+  var topSelect=document.getElementById('testSelect');
+  var sideSelect=document.getElementById('sideTestSelect');
+  if(topSelect) topSelect.value=String(testNo);
+  if(sideSelect) sideSelect.value=String(testNo);
+}
+function switchToTest(testNo){
+  if(state.timerId) clearInterval(state.timerId);
+  var audio=document.getElementById('testAudio');
+  if(audio){
+    audio.pause();
+    try{audio.currentTime=0;}catch(e){}
+  }
+  applyListeningTest(testNo);
+  syncTestSelects(testNo);
+  state.current=1;
+  state.started=false;
+  state.submitted=false;
+  state.pendingTest=null;
+  state.remaining=LISTENING_CONFIG.durationSeconds;
+  state.answers={};
+  state.flags={};
+  state.timerId=null;
+  document.getElementById('audioStatus').textContent='Audio not started';
+  document.getElementById('audioPulse').classList.remove('playing');
+  document.getElementById('startStatus').textContent='';
+  document.getElementById('startStatus').className='submit-status';
+  clearNavigatorResultColors();
+  setListeningMode(document.getElementById('modeSelect')?document.getElementById('modeSelect').value:listeningMode);
+  document.getElementById('startOverlay').style.display='flex';
+  renderQuestion();
+  updateTimer();
+}
+
+var STUDENT_KEY='toeic_student_session';
+var state={current:1,started:false,submitted:false,remaining:LISTENING_CONFIG.durationSeconds,answers:{},flags:{},timerId:null,pendingTest:null};
+var parts=[
+  {no:1,start:1,end:6,title:'Part 1: Photographs',instruction:'You will hear four statements about a picture. Select the statement that best describes what you see.'},
+  {no:2,start:7,end:31,title:'Part 2: Question-Response',instruction:'You will hear a question or statement and three responses. Select the best response.'},
+  {no:3,start:32,end:70,title:'Part 3: Conversations',instruction:'You will hear conversations. Each conversation has three questions. Select the best answer.'},
+  {no:4,start:71,end:100,title:'Part 4: Talks',instruction:'You will hear talks. Each talk has three questions. Select the best answer.'}
+];
+
+function getStudentSession(){
+  try{return JSON.parse(localStorage.getItem(STUDENT_KEY)||'null');}catch(e){return null;}
+}
+function requireStudentSession(){
+  var student=getStudentSession();
+  if(!student||!student.email){
+    alert('Bạn cần đăng nhập bằng email đã được cấp quyền trước khi làm bài.');
+    location.href='index.html?next='+encodeURIComponent(location.pathname.split('/').pop()+location.search);
+    return null;
+  }
+  return student;
+}
+function escapeHtml(s){return String(s).replace(/[&<>'"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c];});}
+function getPart(q){
+  for(var i=0;i<parts.length;i++){
+    if(q>=parts[i].start&&q<=parts[i].end) return parts[i];
+  }
+  return parts[0];
+}
+function getChoices(q){
+  if(q>=7&&q<=31) return ['A','B','C'];
+  return ['A','B','C','D'];
+}
+function getCurrentTestData(){
+  var testNo=getCurrentTestNo ? getCurrentTestNo() : String(testParam||'6');
+  return (window.LISTENING_DATA && window.LISTENING_DATA[testNo]) ? window.LISTENING_DATA[testNo] : null;
+}
+function loadListeningJsonData(){
+  if(window.__listeningJsonRequested) return;
+  window.__listeningJsonRequested=true;
+  fetch('data/listening-ets2023-p34.json')
+    .then(function(res){if(!res.ok) throw new Error('json not found'); return res.json();})
+    .then(function(data){
+      var normalized=data.LISTENING_DATA||data.listeningData||data.data||data;
+      if(normalized && typeof normalized==='object'){
+        window.LISTENING_DATA=normalized;
+        renderQuestion();
+      }
+    })
+    .catch(function(){});
+}
+function getCurrentTranscriptTestKey(){
+  var testNo=getCurrentTestNo ? getCurrentTestNo() : String(testParam||'6');
+  var test=TESTS[testNo]||null;
+  return test && test.id ? test.id : 'ets-toeic-2023-test-'+testNo;
+}
+function mergeTranscriptStore(target, source){
+  if(!source || typeof source!=='object') return target;
+  var normalized=source.transcripts||source.LISTENING_TRANSCRIPTS||source.LISTENING_TRANSCRIPTS_P12||source.LISTENING_TRANSCRIPTS_P34||source;
+  for(var testKey in normalized){
+    if(!Object.prototype.hasOwnProperty.call(normalized,testKey)) continue;
+    if(!target[testKey]) target[testKey]={};
+    var questions=normalized[testKey]||{};
+    for(var q in questions){
+      if(Object.prototype.hasOwnProperty.call(questions,q)) target[testKey][q]=questions[q];
+    }
+  }
+  return target;
+}
+function loadTranscriptJsonData(){
+  if(window.__transcriptJsonRequested) return;
+  window.__transcriptJsonRequested=true;
+  var files=[
+    'data/listening-transcripts-ets2023-p12.json',
+    'data/listening-transcripts-ets2023-p34.json'
+  ];
+  Promise.all(files.map(function(file){
+    return fetch(file)
+      .then(function(res){if(!res.ok) throw new Error(file+' not found'); return res.json();})
+      .catch(function(){return null;});
+  }))
+    .then(function(results){
+      var merged={};
+      for(var i=0;i<results.length;i++) mergeTranscriptStore(merged,results[i]);
+      window.LISTENING_TRANSCRIPTS=merged;
+      renderQuestion();
+    })
+    .catch(function(){});
+}
+function getTranscriptData(q){
+  var store=window.LISTENING_TRANSCRIPTS||window.LISTENING_TRANSCRIPTS_P12||window.LISTENING_TRANSCRIPTS_P34||null;
+  if(!store) return null;
+  var testKey=getCurrentTranscriptTestKey();
+  var testNo=getCurrentTestNo ? getCurrentTestNo() : String(testParam||'6');
+  var testData=store[testKey]||store[testNo]||null;
+  if(!testData) return null;
+  return testData[String(q)]||testData[q]||null;
+}
+function getQuestionData(q){
+  var data=getCurrentTestData();
+  if(!data) return null;
+  var arr=[];
+  if(q<=6) arr=data.part1||data.part1_photos||data.photos||[];
+  else if(q<=31) arr=data.part2||data.part2_questions||[];
+  else arr=q<=70 ? (data.part3||[]) : (data.part4||[]);
+  for(var i=0;i<arr.length;i++){
+    if(Number(arr[i].no)===Number(q) || Number(arr[i].question_no)===Number(q) || Number(arr[i].number)===Number(q)) return arr[i];
+  }
+  return null;
+}
+function getSetQuestions(q){
+  var data=getCurrentTestData();
+  if(!data || q<32) return [];
+  var arr=q<=70 ? data.part3 : data.part4;
+  var start=q<=70?32+Math.floor((q-32)/3)*3:71+Math.floor((q-71)/3)*3;
+  var end=Math.min(start+2,q<=70?70:100);
+  var out=[];
+  for(var i=0;i<arr.length;i++){
+    if(arr[i].no>=start && arr[i].no<=end) out.push(arr[i]);
+  }
+  return out;
+}
+function getSetGraphic(setItems){
+  for(var i=0;i<setItems.length;i++){
+    if(setItems[i].graphic) return setItems[i].graphic;
+  }
+  return '';
+}
+function getQuestionTranscript(q){
+  var transcript=getTranscriptData(q);
+  if(transcript){
+    return {
+      en:transcript.transcript_en||transcript.transcript||transcript.script||transcript.prompt_en||'',
+      vi:transcript.transcript_vi||transcript.script_vi||transcript.prompt_vi||''
+    };
+  }
+  var item=getQuestionData(q);
+  if(!item) return {en:'',vi:''};
+  return {
+    en:item.transcript_en||item.transcript||item.audio_script||item.script||item.statement||item.text_en||'',
+    vi:item.transcript_vi||item.script_vi||item.statement_vi||item.text_vi||''
+  };
+}
+function emphasizeAnswerLabels(html){
+  return html.replace(/\(([A-D])\)/g,'<strong class="answer-label">($1)</strong>');
+}
+function transcriptHtmlText(text,q){
+  var raw=String(text||'').replace(/\r\n/g,'\n').replace(/\r/g,'\n').trim();
+  if(!raw) return '';
+  if(q>=32){
+    var lines=raw.split(/\n+/);
+    var html='<div class="transcript-dialogue">';
+    for(var i=0;i<lines.length;i++){
+      var line=lines[i].trim();
+      if(!line) continue;
+      var match=line.match(/^([MW]-[A-Za-z]{2}):\s*(.*)$/);
+      if(match){
+        html+='<div class="transcript-line"><div class="transcript-speaker">'+escapeHtml(match[1])+'</div><div class="transcript-speech">'+emphasizeAnswerLabels(escapeHtml(match[2]))+'</div></div>';
+      }else{
+        html+='<div class="transcript-line"><div></div><div class="transcript-speech">'+emphasizeAnswerLabels(escapeHtml(line))+'</div></div>';
+      }
+    }
+    html+='</div>';
+    return html;
+  }
+  return '<div class="transcript-options">'+emphasizeAnswerLabels(escapeHtml(raw)).replace(/\n/g,'<br>')+'</div>';
+}
+function toggleQuestionTranscript(q){
+  var box=document.getElementById('questionTranscript'+q);
+  if(box) box.classList.toggle('show');
+}
+function questionText(q){
+  if(q<=6) return 'Look at the picture marked No. '+q+' in your test screen.';
+  if(q<=31) return 'Mark your answer after listening to the question and responses.';
+  var item=getQuestionData(q);
+  return item && item.question_en ? item.question_en : 'Question '+q+'. Select the best answer based on what you hear.';
+}
+function questionTextVi(q){
+  var item=getQuestionData(q);
+  return item && item.question_vi ? item.question_vi : '';
+}
+function choiceText(q,key){
+  if(q<=31) return key;
+  var item=getQuestionData(q);
+  if(item && item.options){
+    for(var i=0;i<item.options.length;i++){
+      if(item.options[i].letter===key) return item.options[i].text_en || key;
+    }
+  }
+  return key+'. Answer choice '+key+' for question '+q;
+}
+function choiceTextVi(q,key){
+  var item=getQuestionData(q);
+  if(item && item.options){
+    for(var i=0;i<item.options.length;i++){
+      if(item.options[i].letter===key) return item.options[i].text_vi || '';
+    }
+  }
+  return '';
+}
+function part1PhotoPath(q){
+  return 'images/part1/'+LISTENING_CONFIG.id+'-q'+q+'.jpg';
+}
+function buildShell(){
+  var student=requireStudentSession();
+  if(!student) return;
+  var select=document.getElementById('testSelect');
+  if(select) select.value=String(TESTS[testParam]?testParam:'6');
+  syncTestSelects(select?select.value:testParam);
+  applyListeningTest(select?select.value:testParam);
+  loadAnswerKeys();
+  document.getElementById('candidateEmail').textContent='Candidate: '+student.email;
+  var tabsHtml='';
+  for(var t=0;t<parts.length;t++){
+    tabsHtml+='<button class="part-tab" type="button" onclick="goQuestion('+parts[t].start+')" id="partTab'+parts[t].no+'">Part '+parts[t].no+'</button>';
+  }
+  document.getElementById('partTabs').innerHTML=tabsHtml;
+  var gridHtml='';
+  for(var i=1;i<=100;i++){
+    gridHtml+='<button class="qbtn" type="button" id="qbtn'+i+'" onclick="goQuestion('+i+')">'+i+'</button>';
+  }
+  document.getElementById('questionGrid').innerHTML=gridHtml;
+  renderQuestion();
+  updateTimer();
+  loadListeningJsonData();
+}
+function renderQuestion(){
+  var q=state.current;
+  var part=getPart(q);
+  document.getElementById('partTitle').textContent=part.title;
+  document.getElementById('partInstruction').textContent=part.instruction;
+  document.getElementById('currentPart').textContent='Part '+part.no;
+  for(var p=0;p<parts.length;p++){
+    document.getElementById('partTab'+parts[p].no).classList.toggle('active',parts[p].no===part.no);
+  }
+  var choices=getChoices(q);
+  var media='';
+  if(q<=6){
+    media='<div class="photo-box"><img src="'+part1PhotoPath(q)+'" alt="Part 1 photo question '+q+'" onerror="this.parentNode.innerHTML=\'Photo '+q+' not found: '+part1PhotoPath(q)+'\';"></div>';
+  }else if(q>=32){
+    var setStart=q<=70?32+Math.floor((q-32)/3)*3:71+Math.floor((q-71)/3)*3;
+    var setEnd=Math.min(setStart+2,q<=70?70:100);
+    var setItems=getSetQuestions(q);
+    var setHtml='';
+    for(var si=0;si<setItems.length;si++){
+      var vi=setItems[si].question_vi ? '<span class="vi">'+escapeHtml(setItems[si].question_vi)+'</span>' : '';
+      setHtml+='<div class="set-question"><b>Q'+setItems[si].no+'.</b> '+escapeHtml(setItems[si].question_en||'')+vi+'</div>';
+    }
+    var graphicPath=getSetGraphic(setItems);
+    var graphicHtml=graphicPath ? '<div class="graphic-box"><div class="graphic-caption">Graphic</div><img src="'+graphicPath+'" alt="Graphic for questions '+setStart+'-'+setEnd+'" onerror="this.parentNode.innerHTML=\'Graphic not found: '+graphicPath+'\';"></div>' : '';
+    media='<div class="set-box"><h3>Questions '+setStart+'-'+setEnd+'</h3>'+graphicHtml+'<div class="set-questions">'+setHtml+'</div></div>';
+  }
+  var answersHtml='';
+  for(var c=0;c<choices.length;c++){
+    var key=choices[c];
+    var selected=state.answers[q]===key?' selected':'';
+    var viChoice=choiceTextVi(q,key);
+    var choiceBody=escapeHtml(choiceText(q,key))+(viChoice?'<span class="vi">'+escapeHtml(viChoice)+'</span>':'');
+    answersHtml+='<label class="choice'+selected+'"><input type="radio" name="q'+q+'" value="'+key+'" data-question="'+q+'" data-answer="'+key+'" '+(state.answers[q]===key?'checked':'')+'><span class="choice-letter">'+key+'</span><span class="choice-text">'+choiceBody+'</span></label>';
+  }
+  var qVi=questionTextVi(q);
+  var promptHtml=escapeHtml(questionText(q))+(qVi?'<span class="vi">'+escapeHtml(qVi)+'</span>':'');
+  var transcriptHtml='';
+  if(listeningMode==='practice'){
+    var transcriptData=getQuestionTranscript(q);
+    var transcriptBody=transcriptData.en || transcriptData.vi
+      ? '<b>Transcript</b><br>'+transcriptHtmlText(transcriptData.en||'',q)+(transcriptData.vi?'<span class="vi">'+transcriptHtmlText(transcriptData.vi,q)+'</span>':'')
+      : '<b>Transcript</b><br>Chưa có transcript cho câu này.';
+    transcriptHtml='<button class="transcript-toggle" type="button" onclick="toggleQuestionTranscript('+q+')">Transcript</button><div class="question-transcript" id="questionTranscript'+q+'">'+transcriptBody+'</div>';
+  }
+  var afterHead=q<=6 ? media+transcriptHtml : transcriptHtml+media;
+  document.getElementById('content').className='content part-'+part.no;
+  document.getElementById('content').innerHTML=
+    '<div class="question-head"><div><div class="part-label">Question</div><div class="qno">'+q+'</div></div><div class="part-label">'+part.title+'</div></div>'+
+    afterHead+
+    '<div class="prompt">'+promptHtml+'</div>'+
+    '<div class="answers">'+answersHtml+'</div>';
+  syncNavigator();
+}
+function syncNavigator(){
+  var answered=0;
+  for(var i=1;i<=100;i++){
+    var btn=document.getElementById('qbtn'+i);
+    var has=!!state.answers[i];
+    if(has) answered++;
+    btn.classList.toggle('answered',has);
+    btn.classList.toggle('current',i===state.current);
+    btn.classList.toggle('flagged',!!state.flags[i]);
+  }
+  document.getElementById('answeredCount').textContent=answered+' / 100';
+  document.getElementById('footerHint').textContent='Question '+state.current+' of 100 · Answered '+answered+' / 100';
+}
+function clearNavigatorResultColors(){
+  for(var i=1;i<=100;i++){
+    var btn=document.getElementById('qbtn'+i);
+    if(btn) btn.classList.remove('result-ok','result-wrong','result-missing');
+  }
+}
+function applyPracticeNavigatorResults(result){
+  clearNavigatorResultColors();
+  for(var i=0;i<result.rows.length;i++){
+    var row=result.rows[i];
+    var btn=document.getElementById('qbtn'+row.no);
+    if(btn) btn.classList.add(row.status==='ok'?'result-ok':(row.status==='wrong'?'result-wrong':'result-missing'));
+  }
+}
+function selectAnswer(q,key){
+  state.answers[q]=key;
+  if(listeningMode==='practice') clearNavigatorResultColors();
+  var labels=document.querySelectorAll('.choice');
+  for(var i=0;i<labels.length;i++){
+    labels[i].classList.remove('selected');
+    var input=labels[i].querySelector('input[type="radio"]');
+    if(input&&input.dataset.answer===key){
+      input.checked=true;
+      labels[i].classList.add('selected');
+    }
+  }
+  syncNavigator();
+}
+function goQuestion(q){state.current=Math.max(1,Math.min(100,q));renderQuestion();}
+function nextQuestion(){goQuestion(state.current+1);}
+function previousQuestion(){goQuestion(state.current-1);}
+function toggleFlag(){state.flags[state.current]=!state.flags[state.current];syncNavigator();}
+function startTest(){
+  var audio=document.getElementById('testAudio');
+  var status=document.getElementById('startStatus');
+  setListeningMode(document.getElementById('modeSelect')?document.getElementById('modeSelect').value:listeningMode);
+  if(listeningMode==='practice'){
+    state.started=true;
+    document.getElementById('startOverlay').style.display='none';
+    document.getElementById('audioStatus').textContent='Practice audio ready';
+    document.getElementById('audioPulse').classList.remove('playing');
+    status.textContent='';
+    status.className='submit-status';
+    if(audio){
+      audio.setAttribute('controls','controls');
+      audio.setAttribute('controlsList','nodownload');
+      audio.pause();
+      if(audio.readyState===0) audio.load();
+    }
+    return;
+  }
+  status.textContent='Starting audio...';
+  audio.play().then(function(){
+    state.started=true;
+    document.getElementById('startOverlay').style.display='none';
+    document.getElementById('audioStatus').textContent='Audio playing';
+    document.getElementById('audioPulse').classList.add('playing');
+    state.timerId=setInterval(tick,1000);
+  }).catch(function(){
+    status.textContent='Không phát được audio. Kiểm tra file '+LISTENING_CONFIG.audioSrc+' hoặc quyền autoplay của trình duyệt.';
+    status.className='submit-status err';
+  });
+}
+function tick(){
+  if(state.remaining>0) state.remaining--;
+  updateTimer();
+  if(state.remaining<=0){
+    clearInterval(state.timerId);
+    openSubmitModal();
+  }
+}
+function updateTimer(){
+  var m=Math.floor(state.remaining/60);
+  var s=state.remaining%60;
+  document.getElementById('timerText').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+}
+function buildResultSummary(){
+  var rows=[];
+  var correct=0;
+  var wrong=0;
+  var missing=0;
+  for(var i=1;i<=100;i++){
+    var selected=state.answers[i]||null;
+    var correctAnswer=LISTENING_CONFIG.answerKey[i-1]||null;
+    var status='missing';
+    if(!selected){
+      missing++;
+    }else if(correctAnswer&&selected===correctAnswer){
+      status='ok';
+      correct++;
+    }else{
+      status='wrong';
+      wrong++;
+    }
+    rows.push({no:i,selected:selected,correctAnswer:correctAnswer,status:status});
+  }
+  return {correct:correct,wrong:wrong,missing:missing,total:100,rows:rows};
+}
+function renderResultSummary(result){
+  var stats=document.getElementById('resultStats');
+  var list=document.getElementById('resultList');
+  if(!stats||!list) return;
+  stats.innerHTML=
+    '<div class="result-stat"><b>'+result.correct+'</b><span>Đúng</span></div>'+
+    '<div class="result-stat"><b>'+result.wrong+'</b><span>Sai</span></div>'+
+    '<div class="result-stat"><b>'+result.missing+'</b><span>Chưa chọn</span></div>'+
+    '<div class="result-stat"><b>'+result.correct+' / '+result.total+'</b><span>Điểm</span></div>';
+  var html='';
+  for(var i=0;i<result.rows.length;i++){
+    var row=result.rows[i];
+    var label=row.status==='ok'?'Đúng':(row.status==='wrong'?'Sai':'Chưa chọn');
+    var selected=row.selected||'-';
+    var correctAnswer=row.correctAnswer||'-';
+    html+='<div class="result-row">'+
+      '<div class="q">Câu '+row.no+'</div>'+
+      '<div class="ans">Chọn: <b>'+selected+'</b></div>'+
+      '<div class="correct">Đáp án: <b>'+correctAnswer+'</b></div>'+
+      '<div class="result-badge '+row.status+'">'+label+'</div>'+
+    '</div>';
+  }
+  list.innerHTML=html;
+}
+function openSubmitModal(){
+  if(!answerKeysLoaded || !LISTENING_CONFIG.answerKey || LISTENING_CONFIG.answerKey.length<100){
+    var status=document.getElementById('submitStatus')||document.getElementById('startStatus');
+    if(status){
+      status.className='submit-status err';
+      status.textContent='Đáp án chưa tải xong. Vui lòng thử lại sau vài giây.';
+    }
+    loadAnswerKeys();
+    return;
+  }
+  var answered=Object.keys(state.answers).length;
+  var result=buildResultSummary();
+  document.getElementById('submitSummary').textContent='Bạn đã chọn '+answered+' / 100 câu. Kết quả: '+result.correct+' đúng, '+result.wrong+' sai, '+result.missing+' chưa chọn.';
+  renderResultSummary(result);
+  var note=document.getElementById('submitModeNote');
+  var btn=document.getElementById('finalSubmitBtn');
+  var status=document.getElementById('submitStatus');
+  status.className='submit-status';
+  status.textContent='';
+  if(listeningMode==='practice'){
+    applyPracticeNavigatorResults(result);
+    if(note) note.textContent='Chế độ luyện tập chỉ xem kết quả, không nộp/lưu bài.';
+    if(btn) btn.style.display='none';
+  }else{
+    clearNavigatorResultColors();
+    if(note) note.textContent='Chế độ thi thử: bấm Submit để nộp và lưu kết quả.';
+    if(btn){btn.style.display='inline-block';btn.disabled=false;btn.textContent='Submit';}
+  }
+  document.getElementById('submitModal').classList.add('show');
+}
+function closeSubmitModal(){document.getElementById('submitModal').classList.remove('show');}
+function requestGoHome(){
+  if(state.submitted){location.href='index.html';return;}
+  document.getElementById('homeModal').classList.add('show');
+}
+function closeHomeModal(){document.getElementById('homeModal').classList.remove('show');}
+function collectResultPayload(){
+  var student=getStudentSession()||{};
+  var result=buildResultSummary();
+  var score=result.correct;
+  var answers=[];
+  for(var i=0;i<result.rows.length;i++){
+    var row=result.rows[i];
+    var no=row.no;
+    var selected=row.selected;
+    var correctAnswer=row.correctAnswer;
+    var isCorrect=row.status==='ok';
+    answers.push({no:no,id:'q'+no,part:getPart(no).no,selected:selected,correctAnswer:correctAnswer,isCorrect:isCorrect,flagged:!!state.flags[no]});
+  }
+  return {
+    student:{email:student.email||'',loginAt:student.loginAt||''},
+    quiz:{id:LISTENING_CONFIG.id,title:LISTENING_CONFIG.title,total:100,audioSrc:LISTENING_CONFIG.audioSrc,mode:listeningMode},
+    submittedAt:new Date().toISOString(),
+    score,total:100,percent:Math.round(score),answers
+  };
+}
+function submitFinalResult(){
+  if(listeningMode==='practice'){
+    document.getElementById('submitStatus').className='submit-status ok';
+    document.getElementById('submitStatus').textContent='Chế độ luyện tập không nộp bài. Kết quả chỉ hiển thị tại chỗ.';
+    return;
+  }
+  if(state.submitted) return;
+  var student=requireStudentSession();
+  if(!student) return;
+  var statusEl=document.getElementById('submitStatus');
+  var btn=document.getElementById('finalSubmitBtn');
+  var payload=collectResultPayload();
+  statusEl.className='submit-status';
+  statusEl.textContent='Đang lưu kết quả...';
+  if(btn) btn.disabled=true;
+  fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+  .then(function(res){
+    return res.json().catch(function(){return {};}).then(function(data){
+      if(!res.ok||!data.ok) throw new Error(data.error||'Không lưu được kết quả');
+      return data;
+    });
+  })
+  .then(function(data){
+    state.submitted=true;
+    clearInterval(state.timerId);
+    document.getElementById('testAudio').pause();
+    statusEl.className='submit-status ok';
+    statusEl.textContent='Đã lưu kết quả thành công. Mã bài nộp: '+data.id;
+    setTimeout(function(){location.href='index.html';},1200);
+  })
+  .catch(function(err){
+    if(btn) btn.disabled=false;
+    statusEl.className='submit-status err';
+    statusEl.textContent='Không thể lưu lên. Kiểm tra KV binding / mạng rồi thử lại.';
+    var blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement('a');
+    a.href=url;
+    a.download='student_result_'+(payload.student.email||'student').replace(/[^a-z0-9._-]/gi,'_')+'_'+Date.now()+'.json';
+    a.textContent='Tải JSON kết quả dự phòng';
+    a.className='big-btn gray';
+    a.style.display='inline-block';
+    a.style.marginTop='10px';
+    statusEl.insertAdjacentElement('afterend',a);
+  });
+}
+document.getElementById('testAudio').addEventListener('ended',function(){
+  document.getElementById('audioStatus').textContent='Audio ended';
+  document.getElementById('audioPulse').classList.remove('playing');
+});
+document.getElementById('testAudio').addEventListener('play',function(){
+  if(state.started){
+    document.getElementById('audioStatus').textContent=listeningMode==='practice'?'Practice audio playing':'Audio playing';
+    document.getElementById('audioPulse').classList.add('playing');
+  }
+});
+document.getElementById('testAudio').addEventListener('pause',function(){
+  if(state.started&&!document.getElementById('testAudio').ended){
+    document.getElementById('audioStatus').textContent=listeningMode==='practice'?'Practice audio paused':'Audio paused';
+    document.getElementById('audioPulse').classList.remove('playing');
+  }
+});
+document.addEventListener('change',function(e){
+  if(e.target&&e.target.matches('input[type="radio"][data-question][data-answer]')){
+    selectAnswer(Number(e.target.dataset.question),e.target.dataset.answer);
+  }
+});
+function installAntiSourceLock(){
+  document.documentElement.classList.add('anti-download-lock');
+  var block=function(e){
+    if(e.target&&e.target.closest&&e.target.closest('.practice-audio-wrap')){
+      return true;
+    }
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  };
+  ['contextmenu','dragstart','drop','copy','cut','paste','selectstart'].forEach(function(evt){
+    document.addEventListener(evt,block,true);
+  });
+  document.addEventListener('keydown',function(e){
+    var key=String(e.key||'').toLowerCase();
+    var ctrlOrCmd=e.ctrlKey||e.metaKey;
+    if(e.key==='F12') return block(e);
+    if(ctrlOrCmd&&['s','u','p','o','a','c','x','v'].indexOf(key)!==-1) return block(e);
+    if(ctrlOrCmd&&e.shiftKey&&['i','j','c','s'].indexOf(key)!==-1) return block(e);
+  },true);
+  document.addEventListener('mousedown',function(e){
+    if(e.button===2) return block(e);
+  },true);
+}
+window.addEventListener('beforeunload',function(e){
+  if(state.started&&!state.submitted){e.preventDefault();e.returnValue='';}
+});
+installAntiSourceLock();
+buildShell();
+</script>
+</body>
+</html>
