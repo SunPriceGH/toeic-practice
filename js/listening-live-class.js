@@ -54,7 +54,7 @@
     loadingPromises: {},
     teacherRows: [],
     teacherTimer: null,
-    openDetailEmail: ''
+    openDetailEmails: {}
   };
 
   var els = {};
@@ -90,7 +90,6 @@
     els.checkBtn = document.getElementById('checkBtn');
     els.prevBtn = document.getElementById('prevBtn');
     els.nextBtn = document.getElementById('nextBtn');
-    els.revealBtn = document.getElementById('revealBtn');
     els.slideIndexText = document.getElementById('slideIndexText');
     els.slidePickerBtn = document.getElementById('slidePickerBtn');
     els.slidePickerOverlay = document.getElementById('slidePickerOverlay');
@@ -330,14 +329,12 @@
     });
     closeOverlay(els.slidePickerOverlay);
     renderCurrent();
-    window.scrollTo({top:0, behavior:'smooth'});
   }
 
   function renderLoading(){
     els.practiceCard.className = 'practice-card';
     els.practiceCard.innerHTML = '<div class="loading-box">Đang tải dữ liệu ' + escapeHtml(state.year) + '…</div>';
     els.checkBtn.disabled = true;
-    els.revealBtn.classList.remove('show');
   }
 
   function renderPendingPart(){
@@ -347,7 +344,6 @@
       '<h2>Part ' + state.part + ' đang để trống</h2>' +
       '<p>Khung đã được giữ sẵn để nối dữ liệu sau. Phiên bản này chỉ triển khai Part 1 và Part 2.</p></div></div>';
     els.checkBtn.disabled = true;
-    els.revealBtn.classList.remove('show');
     els.slideIndexText.textContent = 'Part ' + state.part;
     updateNavButtons();
   }
@@ -361,7 +357,6 @@
       '<p style="margin-top:9px;font-size:15px">URL options: <b>' + escapeHtml(data.transcriptUrl || '') + '</b><br>URL đáp án: <b>' + escapeHtml(data.answerUrl || '') + '</b></p>' +
       '</div></div>';
     els.checkBtn.disabled = true;
-    els.revealBtn.classList.remove('show');
     updateNavButtons();
   }
 
@@ -443,8 +438,6 @@
 
     els.checkBtn.disabled = !selected || !correct;
     els.checkBtn.title = !correct ? 'Chưa có đáp án cho câu này trong file JSON.' : (!selected ? 'Hãy chọn một option trước.' : 'Kiểm tra đáp án');
-    els.revealBtn.classList.toggle('show', !!checked);
-    els.revealBtn.textContent = els.practiceCard.classList.contains('revealed') ? '🙈 Ẩn options' : '👁 Hiện options';
     els.slideIndexText.textContent = question + ' / 31';
     updateNavButtons();
     buildSlidePicker();
@@ -642,10 +635,6 @@
     });
     els.nextBtn.addEventListener('click', function(){setQuestion(state.question + 1);});
 
-    els.revealBtn.addEventListener('click', function(){
-      els.practiceCard.classList.toggle('revealed');
-      this.textContent = els.practiceCard.classList.contains('revealed') ? '🙈 Ẩn options' : '👁 Hiện options';
-    });
 
     els.slidePickerBtn.addEventListener('click', function(){
       buildSlidePicker();
@@ -783,7 +772,8 @@
       var latest = row.latest || {};
       var status = statusFor(record.updatedAt);
       var detailId = 'studentDetail' + index;
-      var latestText = latest.question ? ('Q' + latest.question + ' · ' + (latest.isCorrect ? 'Đúng' : 'Sai')) : '—';
+      var detailKey = String(record.email || '');
+      var detailOpen = !!state.openDetailEmails[detailKey];
       var detailHtml = row.checks.slice().sort(function(a,b){return new Date(b.checkedAt) - new Date(a.checkedAt);}).map(function(item){
         return '<div class="check-item ' + (item.isCorrect ? 'ok' : 'bad') + '">' +
           '<b>ETS ' + escapeHtml(item.year) + ' · Test ' + escapeHtml(item.test) + ' · Part ' + escapeHtml(item.part) + ' · Q' + escapeHtml(item.question) + '</b><br>' +
@@ -793,26 +783,28 @@
 
       body += '<tr>' +
         '<td class="live-email">' + escapeHtml(record.email) + '</td>' +
-        '<td>ETS ' + escapeHtml(current.year || '—') + ' · Test ' + escapeHtml(current.test || '—') + '</td>' +
-        '<td>Part ' + escapeHtml(current.part || '—') + ' · Q' + escapeHtml(current.question || '—') + '</td>' +
         '<td class="score-ok">' + row.correct + '</td>' +
         '<td class="score-wrong">' + row.wrong + '</td>' +
         '<td>' + row.total + '</td>' +
-        '<td>' + escapeHtml(latestText) + '</td>' +
         '<td><span class="status-chip ' + status.className + '">● ' + status.label + '</span></td>' +
-        '<td><button class="detail-btn" type="button" data-detail="' + detailId + '">Chi tiết</button></td>' +
+        '<td><button class="detail-btn" type="button" data-detail="' + detailId + '" data-detail-key="' + escapeHtml(detailKey) + '">Chi tiết</button></td>' +
       '</tr>' +
-      '<tr class="student-details" id="' + detailId + '"><td colspan="9"><div class="check-list">' + (detailHtml || 'Chưa có chi tiết.') + '</div></td></tr>';
+      '<tr class="student-details' + (detailOpen ? ' show' : '') + '" id="' + detailId + '"><td colspan="6"><div class="check-list">' + (detailHtml || 'Chưa có chi tiết.') + '</div></td></tr>';
     });
 
     els.teacherTableHost.innerHTML = '<div class="live-table-wrap"><table class="live-table"><thead><tr>' +
-      '<th>Học viên</th><th>Đề hiện tại</th><th>Slide hiện tại</th><th>Đúng</th><th>Sai</th><th>Đã CHECK</th><th>Lần cuối</th><th>Trạng thái</th><th></th>' +
+      '<th>Học viên</th><th>Đúng</th><th>Sai</th><th>Đã CHECK</th><th>Trạng thái</th><th></th>' +
       '</tr></thead><tbody>' + body + '</tbody></table></div>';
 
     els.teacherTableHost.querySelectorAll('[data-detail]').forEach(function(btn){
       btn.addEventListener('click', function(){
         var row = document.getElementById(this.dataset.detail);
-        if(row) row.classList.toggle('show');
+        var detailKey = String(this.dataset.detailKey || '');
+        if(!row || !detailKey) return;
+        var shouldOpen = !row.classList.contains('show');
+        row.classList.toggle('show', shouldOpen);
+        if(shouldOpen) state.openDetailEmails[detailKey] = true;
+        else delete state.openDetailEmails[detailKey];
       });
     });
   }
@@ -833,6 +825,7 @@
       var data = await response.json().catch(function(){return {};});
       if(!response.ok || !data.ok) throw new Error(data.error || 'Không xóa được phiên lớp.');
       state.teacherRows = [];
+      state.openDetailEmails = {};
       renderTeacherRows();
     }catch(err){
       alert(err.message || 'Không xóa được phiên lớp.');
