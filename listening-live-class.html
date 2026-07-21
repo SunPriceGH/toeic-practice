@@ -24,7 +24,9 @@
 html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:var(--text)}
 button,select{font:inherit}
 button{font-weight:700}
-body{overflow-x:hidden}
+body{overflow-x:hidden;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+img,audio{-webkit-user-drag:none;user-drag:none}
+@media print{html,body{display:none!important}}
 .top-line{position:fixed;left:0;top:0;height:7px;width:100%;z-index:100;background:linear-gradient(90deg,#7c3aed,#a855f7,#2563eb)}
 .page{
   min-height:100vh;
@@ -47,8 +49,10 @@ body{overflow-x:hidden}
   text-decoration:none;cursor:pointer;box-shadow:0 10px 24px rgba(15,23,42,.14);
   font-size:14px;line-height:1;transition:.16s ease
 }
-.top-btn:hover,.home-btn:hover,.teacher-btn:hover{transform:translateY(-2px);background:var(--purple-soft)}
-.teacher-btn:hover{background:linear-gradient(135deg,#6d28d9,#1d4ed8);color:#fff;border-color:#5b21b6}
+.top-btn:hover,.home-btn:hover{transform:translateY(-2px);background:var(--purple-soft)}
+.teacher-btn.show:hover,.teacher-btn.show:focus-visible{transform:translateY(-2px);background:#4c1d95!important;color:#fff!important;border-color:#2e1065!important;box-shadow:0 12px 28px rgba(76,29,149,.32)}
+.teacher-btn.show:hover .top-text,.teacher-btn.show:focus-visible .top-text{color:#fff!important}
+.teacher-btn.show:hover .teacher-count,.teacher-btn.show:focus-visible .teacher-count{background:#fff;color:#4c1d95}
 .home-btn{color:#166534;border-color:#bbf7d0}
 .home-btn:hover{background:#dcfce7}
 .teacher-btn{display:none;color:#fff;border-color:#6d28d9;background:linear-gradient(135deg,#7c3aed,#2563eb)}
@@ -106,6 +110,10 @@ h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e10
   padding:16px 18px;cursor:pointer;transition:.16s ease;min-height:62px
 }
 .option:hover{border-color:#c4b5fd;transform:translateY(-1px);box-shadow:0 8px 18px rgba(124,58,237,.08)}
+.option.locked{cursor:not-allowed;opacity:.96}
+.option.locked:hover{border-color:#e9d5ff;transform:none;box-shadow:none}
+.option.locked.correct:hover{border-color:#22c55e}
+.option.locked.wrong:hover{border-color:#fb7185}
 .option.selected{border-color:var(--purple);background:var(--purple-soft)}
 .option.correct{border-color:#22c55e;background:var(--green-soft)}
 .option.wrong{border-color:#fb7185;background:var(--red-soft)}
@@ -359,6 +367,6 @@ h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e10
   </div>
 </div>
 
-<script src="./js/listening-live-class.js?v=20260721-7" onerror="document.getElementById('practiceCard').innerHTML='<div class=&quot;empty-part&quot;><div><div class=&quot;empty-icon&quot;>⚠️</div><h2>Không tải được file JavaScript</h2><p>Kiểm tra file js/listening-live-class.js có tồn tại trong project hay không.</p></div></div>'"></script>
+<script src="./js/listening-live-class.js?v=20260721-8" onerror="document.getElementById('practiceCard').innerHTML='<div class=&quot;empty-part&quot;><div><div class=&quot;empty-icon&quot;>⚠️</div><h2>Không tải được file JavaScript</h2><p>Kiểm tra file js/listening-live-class.js có tồn tại trong project hay không.</p></div></div>'"></script>
 </body>
 </html>
