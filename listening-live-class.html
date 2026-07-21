@@ -259,7 +259,18 @@ h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e10
         </div>
         <div class="selector-box">
           <label for="testSelect">Chọn đề</label>
-          <select id="testSelect"></select>
+          <select id="testSelect">
+            <option value="1">Test 1</option>
+            <option value="2">Test 2</option>
+            <option value="3">Test 3</option>
+            <option value="4">Test 4</option>
+            <option value="5">Test 5</option>
+            <option value="6">Test 6</option>
+            <option value="7">Test 7</option>
+            <option value="8">Test 8</option>
+            <option value="9">Test 9</option>
+            <option value="10">Test 10</option>
+          </select>
         </div>
         <div class="selector-box audio-selector">
           <label>Audio của đề</label>
@@ -278,9 +289,7 @@ h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e10
       </div>
     </section>
 
-    <section class="practice-card" id="practiceCard" aria-live="polite">
-      <div class="loading-box">Đang tải dữ liệu Part 1 + 2…</div>
-    </section>
+    <section class="practice-card" id="practiceCard" aria-live="polite"></section>
   </div>
 </main>
 
@@ -353,6 +362,6 @@ h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e10
   </div>
 </div>
 
-<script src="listening-live-class.js"></script>
+<script src="listening-live-class.js?v=20260721-5" onerror="document.getElementById('practiceCard').innerHTML='<div class=&quot;empty-part&quot;><div><div class=&quot;empty-icon&quot;>⚠️</div><h2>Không tải được file JavaScript</h2><p>Kiểm tra file listening-live-class.js có nằm ngang hàng với trang HTML hay không.</p></div></div>'"></script>
 </body>
 </html>
