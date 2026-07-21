@@ -326,6 +326,37 @@ body.show-practice .lesson-section-card{display:none!important}
 .lesson-index-card.lesson-grammar .pill{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe}
 .lesson-index-card.lesson-grammar .btn{background:linear-gradient(135deg,#7c3aed,#2563eb)}
 
+
+/* ===== Listening live-class practice card ===== */
+.live-listening-card{
+  overflow:hidden;
+  border-color:#a78bfa;
+  background:
+    radial-gradient(circle at top right,rgba(168,85,247,.32),transparent 35%),
+    linear-gradient(145deg,#faf5ff 0%,#f5f3ff 48%,#eff6ff 100%);
+  box-shadow:0 24px 54px rgba(124,58,237,.18),0 12px 30px rgba(37,99,235,.10);
+}
+.live-listening-card:before{
+  content:"TƯƠNG TÁC";
+  position:absolute;
+  top:18px;
+  right:18px;
+  z-index:1;
+  padding:8px 13px;
+  border-radius:999px;
+  background:#6d28d9;
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.06em;
+  box-shadow:0 10px 22px rgba(109,40,217,.22);
+}
+.live-listening-card h2{padding-right:112px;color:#4c1d95}
+.live-listening-card .pill{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe}
+.live-listening-card .btn{background:linear-gradient(135deg,#7c3aed,#2563eb);box-shadow:0 12px 24px rgba(124,58,237,.22)}
+.live-listening-card .btn:hover{background:linear-gradient(135deg,#6d28d9,#1d4ed8)}
+.live-listening-card:hover{transform:translateY(-3px);border-color:#8b5cf6}
+
 </style>
 </head>
 <body>
@@ -478,6 +509,13 @@ body.show-practice .lesson-section-card{display:none!important}
         <p>Luyện 60 câu collocation danh từ đi với giới từ trong TOEIC, nhóm 2.</p>
         <div class="pill-row"><span class="pill">60 câu</span><span class="pill">Nhóm 2</span><span class="pill">Noun + Prep</span></div>
         <button class="btn" type="button" onclick="openLogin('noun-prep-collocation-2.html')">Vào bài luyện</button>
+      </article>
+
+      <article class="card lesson-card practice-section-card live-listening-card" data-lesson-id="listening-live-class">
+        <h2>Listening tương tác trên lớp</h2>
+        <p>Luyện từng câu ETS TOEIC 2023–2024. CHECK câu nào biết đúng/sai câu đó; giáo viên theo dõi kết quả lớp trực tiếp.</p>
+        <div class="pill-row"><span class="pill">20 đề</span><span class="pill">Part 1 + 2</span><span class="pill">Live class</span></div>
+        <button class="btn" type="button" onclick="openLogin('listening-live-class.html')">Vào lớp luyện nghe</button>
       </article>
       <article class="card lesson-card practice-section-card" data-lesson-id="toeic-listening-ets2023">
         <h2>TOEIC Listening ETS 2023</h2>
