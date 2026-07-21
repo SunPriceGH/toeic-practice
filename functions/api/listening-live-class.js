@@ -10,8 +10,8 @@
    */
   var LISTENING_SOURCES = {
     '2023': {
-      questions: 'data/listening-transcripts-ets2023-p12.json',
-      answers: 'data/listening-answer-keys-ets2023.json',
+      answerUrl: 'data/listening-answer-keys-ets2023.json',
+      transcriptUrl: 'data/listening-transcripts-ets2023-p12.json',
       tests: {
         1:{id:'ets-toeic-2023-test-1',audioSrc:'audio/ets-toeic-2023-test-1.mp3'},
         2:{id:'ets-toeic-2023-test-2',audioSrc:'audio/ets-toeic-2023-test-2.mp3'},
@@ -26,8 +26,8 @@
       }
     },
     '2024': {
-      questions: 'data/listening-transcripts-ets2024-p12.json',
-      answers: 'data/listening-answer-keys.json',
+      answerUrl: 'data/listening-answer-keys.json',
+      transcriptUrl: 'data/listening-transcripts-ets2024-p12.json',
       tests: {
         1:{id:'ets-toeic-2024-test-1',audioSrc:'audio/ets-toeic-2024-test-1.mp3'},
         2:{id:'ets-toeic-2024-test-2',audioSrc:'audio/ets-toeic-2024-test-2.mp3'},
@@ -51,7 +51,7 @@
     selection: {},
     checked: {},
     dataCache: {},
-    loadingYear: null,
+    loadingPromises: {},
     teacherRows: [],
     teacherTimer: null,
     openDetailEmail: ''
@@ -147,91 +147,103 @@
     return 'images/part1/' + currentTestId() + '-q' + question + '.jpg';
   }
 
-  function normalizeQuestionRoot(raw){
-    if(!raw || typeof raw !== 'object') return {};
-    return raw.LISTENING_TRANSCRIPTS_P12 || raw.transcripts || raw.questions || raw;
-  }
-
   function normalizeAnswerRoot(raw){
     if(!raw || typeof raw !== 'object') return {};
     return raw.answerKeys || raw.answers || raw;
   }
 
-  async function fetchJson(url){
-    var response = await fetch(url, {cache:'no-store'});
-    if(!response.ok) throw new Error('Không tải được ' + url + ' (' + response.status + ')');
-    return response.json();
+  function fetchJsonWithTimeout(url, timeoutMs){
+    var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timer = controller ? setTimeout(function(){controller.abort();}, timeoutMs || 8000) : null;
+    return fetch(url, {
+      cache:'no-store',
+      signal:controller ? controller.signal : undefined
+    }).then(function(response){
+      if(!response.ok) throw new Error(url + ' (' + response.status + ')');
+      return response.json();
+    }).finally(function(){
+      if(timer) clearTimeout(timer);
+    });
   }
 
-  async function ensureYearData(year, forceReload){
-    if(state.dataCache[year] && !forceReload) return state.dataCache[year];
-    if(state.loadingYear === year) return state.loadingPromise;
+  function normalizeTranscriptRoot(raw){
+    if(!raw || typeof raw !== 'object') return {};
+    return raw.transcripts || raw.LISTENING_TRANSCRIPTS || raw.LISTENING_TRANSCRIPTS_P12 || raw;
+  }
+
+  function ensureYearData(year, forceReload){
+    if(state.dataCache[year] && !forceReload) return Promise.resolve(state.dataCache[year]);
+    if(state.loadingPromises[year] && !forceReload) return state.loadingPromises[year];
 
     var source = LISTENING_SOURCES[year] || LISTENING_SOURCES['2024'];
-    var urls = {questions:source.questions, answers:source.answers};
-    state.loadingYear = year;
+    var record = {
+      answerStore:{},
+      transcriptStore:{},
+      answerUrl:source.answerUrl,
+      transcriptUrl:source.transcriptUrl,
+      answerError:'',
+      transcriptError:''
+    };
 
-    /*
-     * Tải hai file độc lập. Một file thiếu không được phép chặn ảnh, audio,
-     * bộ chọn đề hoặc toàn bộ giao diện câu hỏi.
-     */
-    state.loadingPromise = Promise.allSettled([
-      fetchJson(urls.questions),
-      fetchJson(urls.answers)
-    ]).then(function(results){
-      var questionResult = results[0];
-      var answerResult = results[1];
-      var warnings = [];
+    /* Gắn record vào cache ngay để giao diện không bao giờ bị khóa ở trạng thái loading. */
+    state.dataCache[year] = record;
+    setSyncState('sending', 'Đang tải dữ liệu ETS ' + year + '…');
 
-      if(questionResult.status !== 'fulfilled'){
-        warnings.push(questionResult.reason && questionResult.reason.message ? questionResult.reason.message : 'Không tải được file câu hỏi.');
-      }
-      if(answerResult.status !== 'fulfilled'){
-        warnings.push(answerResult.reason && answerResult.reason.message ? answerResult.reason.message : 'Không tải được file đáp án.');
-      }
+    var answerPromise = fetchJsonWithTimeout(source.answerUrl, 10000)
+      .then(function(data){record.answerStore = normalizeAnswerRoot(data);})
+      .catch(function(err){record.answerError = err && err.message ? err.message : 'Không tải được file đáp án.';});
 
-      var record = {
-        questionStore: questionResult.status === 'fulfilled' ? normalizeQuestionRoot(questionResult.value) : {},
-        answerStore: answerResult.status === 'fulfilled' ? normalizeAnswerRoot(answerResult.value) : {},
-        urls: urls,
-        warning: warnings.join(' '),
-        error: ''
-      };
-      state.dataCache[year] = record;
-      return record;
-    }).finally(function(){
-      state.loadingYear = null;
-      state.loadingPromise = null;
-    });
+    var transcriptPromise = fetchJsonWithTimeout(source.transcriptUrl, 10000)
+      .then(function(data){record.transcriptStore = normalizeTranscriptRoot(data);})
+      .catch(function(err){record.transcriptError = err && err.message ? err.message : 'Không tải được file transcript Part 1 + 2.';});
 
-    return state.loadingPromise;
+    state.loadingPromises[year] = Promise.all([answerPromise, transcriptPromise])
+      .then(function(){
+        if(student && student.email === TEACHER_EMAIL){
+          setSyncState('ok', 'Tài khoản giáo viên');
+        }else if(record.answerError){
+          setSyncState('err', 'Không tải được đáp án');
+        }else if(record.transcriptError){
+          setSyncState('err', 'Không tải được options');
+        }else{
+          setSyncState('ok', 'Đã tải dữ liệu');
+        }
+        return record;
+      })
+      .finally(function(){delete state.loadingPromises[year];});
+
+    return state.loadingPromises[year];
   }
 
   function getYearData(){
     var source = currentSource();
     return state.dataCache[state.year] || {
-      questionStore:{},
       answerStore:{},
-      urls:{questions:source.questions,answers:source.answers},
-      warning:'',
-      error:''
+      transcriptStore:{},
+      answerUrl:source.answerUrl,
+      transcriptUrl:source.transcriptUrl,
+      answerError:'',
+      transcriptError:''
     };
   }
 
-  function getTestData(){
-    var data = getYearData();
-    var id = currentTestId();
-    return data.questionStore[id] || data.questionStore[String(state.test)] || {};
-  }
-
   function getQuestionEntry(question){
-    var testData = getTestData();
-    return testData[String(question)] || testData[question] || null;
+    var store = getYearData().transcriptStore || {};
+    var testId = currentTestId();
+    var testData = store[testId] || store[String(state.test)] || store[state.test] || null;
+
+    if(!testData && store.tests){
+      testData = store.tests[testId] || store.tests[String(state.test)] || store.tests[state.test] || null;
+    }
+    if(!testData || typeof testData !== 'object') return null;
+
+    return testData[String(question)] || testData[question] ||
+      (Array.isArray(testData) ? testData[Number(question) - 1] : null) || null;
   }
 
   function normalizeOptions(entry, part){
-    if(!entry) return [];
     var output = [];
+    entry = entry && typeof entry === 'object' ? entry : {};
 
     if(Array.isArray(entry.options)){
       entry.options.forEach(function(item, index){
@@ -286,35 +298,15 @@
 
   function updateAudio(){
     var src = currentAudioUrl();
-    var requestId = state.year + '-' + state.test + '-' + Date.now();
-
     els.audioLabel.textContent = 'ETS ' + state.year + ' · Test ' + state.test;
-    if(els.testAudio.dataset.rawSrc === src) return;
 
-    els.testAudio.pause();
-    els.testAudio.dataset.rawSrc = src;
-    els.testAudio.dataset.requestId = requestId;
-
-    if(els.testAudio.dataset.objectUrl){
-      try{URL.revokeObjectURL(els.testAudio.dataset.objectUrl);}catch(err){}
-      delete els.testAudio.dataset.objectUrl;
+    /* Luôn dùng chính xác URL giống hai trang Listening gốc. */
+    if(els.testAudio.getAttribute('src') !== src){
+      els.testAudio.pause();
+      els.testAudio.setAttribute('src', src);
+      els.testAudio.dataset.rawSrc = src;
+      els.testAudio.load();
     }
-
-    /* Cùng cách tải audio đang dùng trong hai trang Listening gốc. */
-    fetch(src).then(function(response){
-      if(!response.ok) throw new Error('Audio HTTP ' + response.status);
-      return response.blob();
-    }).then(function(blob){
-      if(els.testAudio.dataset.requestId !== requestId) return;
-      var objectUrl = URL.createObjectURL(blob);
-      els.testAudio.dataset.objectUrl = objectUrl;
-      els.testAudio.src = objectUrl;
-      els.testAudio.load();
-    }).catch(function(){
-      if(els.testAudio.dataset.requestId !== requestId) return;
-      els.testAudio.src = src;
-      els.testAudio.load();
-    });
   }
 
   function setPart(part){
@@ -366,7 +358,7 @@
       '<div class="empty-part"><div><div class="empty-icon">⚠️</div>' +
       '<h2>Chưa tải được dữ liệu ' + escapeHtml(state.year) + '</h2>' +
       '<p>' + escapeHtml(data.error || 'Không tìm thấy file dữ liệu.') + '</p>' +
-      '<p style="margin-top:9px;font-size:15px">URL câu hỏi: <b>' + escapeHtml(data.urls.questions) + '</b><br>URL đáp án: <b>' + escapeHtml(data.urls.answers) + '</b></p>' +
+      '<p style="margin-top:9px;font-size:15px">URL options: <b>' + escapeHtml(data.transcriptUrl || '') + '</b><br>URL đáp án: <b>' + escapeHtml(data.answerUrl || '') + '</b></p>' +
       '</div></div>';
     els.checkBtn.disabled = true;
     els.revealBtn.classList.remove('show');
@@ -458,19 +450,22 @@
     buildSlidePicker();
   }
 
-  async function renderCurrent(){
+  function renderCurrent(){
     if(state.part === 3 || state.part === 4){
       renderPendingPart();
       buildSlidePicker();
       return;
     }
 
-    if(!state.dataCache[state.year]){
-      renderLoading();
-      await ensureYearData(state.year);
-    }
     updateAudio();
     renderQuestion();
+
+    /* Không khóa giao diện trong lúc tải JSON. Ảnh, audio, chọn đề và chọn slide hoạt động ngay. */
+    if(!state.dataCache[state.year] && !state.loadingPromises[state.year]){
+      ensureYearData(state.year).then(function(){
+        if(state.part === 1 || state.part === 2) renderQuestion();
+      });
+    }
   }
 
   function updateNavButtons(){
@@ -613,7 +608,7 @@
   }
 
   function setupEvents(){
-    els.yearSelect.addEventListener('change', async function(){
+    els.yearSelect.addEventListener('change', function(){
       state.year = String(this.value);
       state.test = Number(els.testSelect.value || 1);
       state.part = 1;
@@ -621,19 +616,19 @@
       els.testSelect.value = String(state.test);
       updatePageQuery();
       updateAudio();
-      renderLoading();
-      await ensureYearData(state.year);
-      renderCurrent();
+      renderQuestion();
+      ensureYearData(state.year).then(function(){renderQuestion();});
     });
 
-    els.testSelect.addEventListener('change', async function(){
+    els.testSelect.addEventListener('change', function(){
       state.test = Number(this.value || 1);
       state.part = 1;
       state.question = 1;
       this.value = String(state.test);
       updatePageQuery();
       updateAudio();
-      renderCurrent();
+      renderQuestion();
+      if(!state.dataCache[state.year]) ensureYearData(state.year).then(function(){renderQuestion();});
     });
 
     document.querySelectorAll('.part-tab').forEach(function(btn){
@@ -847,20 +842,29 @@
     }
   }
 
-  async function init(){
-    if(!requireStudentSession()) return;
-    cacheElements();
-    restoreLocalState();
-    applyInitialQuery();
-    buildTestSelect();
-    els.yearSelect.value = state.year;
-    els.testSelect.value = String(state.test);
-    setupEvents();
-    updatePageQuery();
-    updateAudio();
-    if(student.email === TEACHER_EMAIL) setSyncState('ok', 'Tài khoản giáo viên');
-    await ensureYearData(state.year);
-    renderCurrent();
+  function init(){
+    try{
+      if(!requireStudentSession()) return;
+      cacheElements();
+      restoreLocalState();
+      applyInitialQuery();
+      buildTestSelect();
+      els.yearSelect.value = state.year;
+      els.testSelect.value = String(state.test);
+      setupEvents();
+      updatePageQuery();
+      updateAudio();
+      renderQuestion();
+      buildSlidePicker();
+      if(student.email === TEACHER_EMAIL) setSyncState('ok', 'Tài khoản giáo viên');
+      ensureYearData(state.year).then(function(){renderQuestion();});
+    }catch(err){
+      console.error('Listening live class init failed:', err);
+      var host = document.getElementById('practiceCard');
+      if(host){
+        host.innerHTML = '<div class="empty-part"><div><div class="empty-icon">⚠️</div><h2>Không khởi tạo được trang</h2><p>' + escapeHtml(err && err.message ? err.message : String(err)) + '</p></div></div>';
+      }
+    }
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
