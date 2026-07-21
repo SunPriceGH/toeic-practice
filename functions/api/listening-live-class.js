@@ -4,14 +4,42 @@
   var STUDENT_KEY = 'toeic_student_session';
   var TEACHER_EMAIL = 'sunprice@sp.ik';
   var LIVE_API = '/api/listening-live';
-  var DATA_URLS = {
+  /*
+   * Các URL dưới đây được giữ đúng y hệt hai trang gốc:
+   * toeic-listening-ets2023.html và toeic-listening-ets2024.html.
+   */
+  var LISTENING_SOURCES = {
     '2023': {
       questions: 'data/listening-transcripts-ets2023-p12.json',
-      answers: 'data/listening-answer-keys-ets2023.json'
+      answers: 'data/listening-answer-keys-ets2023.json',
+      tests: {
+        1:{id:'ets-toeic-2023-test-1',audioSrc:'audio/ets-toeic-2023-test-1.mp3'},
+        2:{id:'ets-toeic-2023-test-2',audioSrc:'audio/ets-toeic-2023-test-2.mp3'},
+        3:{id:'ets-toeic-2023-test-3',audioSrc:'audio/ets-toeic-2023-test-3.mp3'},
+        4:{id:'ets-toeic-2023-test-4',audioSrc:'audio/ets-toeic-2023-test-4.mp3'},
+        5:{id:'ets-toeic-2023-test-5',audioSrc:'audio/ets-toeic-2023-test-5.mp3'},
+        6:{id:'ets-toeic-2023-test-6',audioSrc:'audio/ets-toeic-2023-test-6.mp3'},
+        7:{id:'ets-toeic-2023-test-7',audioSrc:'audio/ets-toeic-2023-test-7.mp3'},
+        8:{id:'ets-toeic-2023-test-8',audioSrc:'audio/ets-toeic-2023-test-8.mp3'},
+        9:{id:'ets-toeic-2023-test-9',audioSrc:'audio/ets-toeic-2023-test-9.mp3'},
+        10:{id:'ets-toeic-2023-test-10',audioSrc:'audio/ets-toeic-2023-test-10.mp3'}
+      }
     },
     '2024': {
       questions: 'data/listening-transcripts-ets2024-p12.json',
-      answers: 'data/listening-answer-keys.json'
+      answers: 'data/listening-answer-keys.json',
+      tests: {
+        1:{id:'ets-toeic-2024-test-1',audioSrc:'audio/ets-toeic-2024-test-1.mp3'},
+        2:{id:'ets-toeic-2024-test-2',audioSrc:'audio/ets-toeic-2024-test-2.mp3'},
+        3:{id:'ets-toeic-2024-test-3',audioSrc:'audio/ets-toeic-2024-test-3.mp3'},
+        4:{id:'ets-toeic-2024-test-4',audioSrc:'audio/ets-toeic-2024-test-4.mp3'},
+        5:{id:'ets-toeic-2024-test-5',audioSrc:'audio/ets-toeic-2024-test-5.mp3'},
+        6:{id:'ets-toeic-2024-test-6',audioSrc:'audio/ets-toeic-2024-test-6.mp3'},
+        7:{id:'ets-toeic-2024-test-7',audioSrc:'audio/ets-toeic-2024-test-7.mp3'},
+        8:{id:'ets-toeic-2024-test-8',audioSrc:'audio/ets-toeic-2024-test-8.mp3'},
+        9:{id:'ets-toeic-2024-test-9',audioSrc:'audio/ets-toeic-2024-test-9.mp3'},
+        10:{id:'ets-toeic-2024-test-10',audioSrc:'audio/ets-toeic-2024-test-10.mp3'}
+      }
     }
   };
 
@@ -98,12 +126,21 @@
     return questionKey(state.year, state.test, state.question);
   }
 
+  function currentSource(){
+    return LISTENING_SOURCES[state.year] || LISTENING_SOURCES['2024'];
+  }
+
+  function currentTestConfig(){
+    var source = currentSource();
+    return source.tests[state.test] || source.tests[1];
+  }
+
   function currentTestId(){
-    return 'ets-toeic-' + state.year + '-test-' + state.test;
+    return currentTestConfig().id;
   }
 
   function currentAudioUrl(){
-    return 'audio/' + currentTestId() + '.mp3';
+    return currentTestConfig().audioSrc;
   }
 
   function currentImageUrl(question){
@@ -126,30 +163,39 @@
     return response.json();
   }
 
-  async function ensureYearData(year){
-    if(state.dataCache[year]) return state.dataCache[year];
+  async function ensureYearData(year, forceReload){
+    if(state.dataCache[year] && !forceReload) return state.dataCache[year];
     if(state.loadingYear === year) return state.loadingPromise;
 
-    var urls = DATA_URLS[year];
+    var source = LISTENING_SOURCES[year] || LISTENING_SOURCES['2024'];
+    var urls = {questions:source.questions, answers:source.answers};
     state.loadingYear = year;
-    state.loadingPromise = Promise.all([
+
+    /*
+     * Tải hai file độc lập. Một file thiếu không được phép chặn ảnh, audio,
+     * bộ chọn đề hoặc toàn bộ giao diện câu hỏi.
+     */
+    state.loadingPromise = Promise.allSettled([
       fetchJson(urls.questions),
       fetchJson(urls.answers)
     ]).then(function(results){
+      var questionResult = results[0];
+      var answerResult = results[1];
+      var warnings = [];
+
+      if(questionResult.status !== 'fulfilled'){
+        warnings.push(questionResult.reason && questionResult.reason.message ? questionResult.reason.message : 'Không tải được file câu hỏi.');
+      }
+      if(answerResult.status !== 'fulfilled'){
+        warnings.push(answerResult.reason && answerResult.reason.message ? answerResult.reason.message : 'Không tải được file đáp án.');
+      }
+
       var record = {
-        questionStore: normalizeQuestionRoot(results[0]),
-        answerStore: normalizeAnswerRoot(results[1]),
+        questionStore: questionResult.status === 'fulfilled' ? normalizeQuestionRoot(questionResult.value) : {},
+        answerStore: answerResult.status === 'fulfilled' ? normalizeAnswerRoot(answerResult.value) : {},
         urls: urls,
+        warning: warnings.join(' '),
         error: ''
-      };
-      state.dataCache[year] = record;
-      return record;
-    }).catch(function(err){
-      var record = {
-        questionStore: {},
-        answerStore: {},
-        urls: urls,
-        error: err && err.message ? err.message : 'Không tải được dữ liệu.'
       };
       state.dataCache[year] = record;
       return record;
@@ -162,7 +208,14 @@
   }
 
   function getYearData(){
-    return state.dataCache[state.year] || {questionStore:{}, answerStore:{}, urls:DATA_URLS[state.year], error:''};
+    var source = currentSource();
+    return state.dataCache[state.year] || {
+      questionStore:{},
+      answerStore:{},
+      urls:{questions:source.questions,answers:source.answers},
+      warning:'',
+      error:''
+    };
   }
 
   function getTestData(){
@@ -233,13 +286,35 @@
 
   function updateAudio(){
     var src = currentAudioUrl();
-    if(els.testAudio.dataset.src !== src){
-      els.testAudio.pause();
-      els.testAudio.dataset.src = src;
+    var requestId = state.year + '-' + state.test + '-' + Date.now();
+
+    els.audioLabel.textContent = 'ETS ' + state.year + ' · Test ' + state.test;
+    if(els.testAudio.dataset.rawSrc === src) return;
+
+    els.testAudio.pause();
+    els.testAudio.dataset.rawSrc = src;
+    els.testAudio.dataset.requestId = requestId;
+
+    if(els.testAudio.dataset.objectUrl){
+      try{URL.revokeObjectURL(els.testAudio.dataset.objectUrl);}catch(err){}
+      delete els.testAudio.dataset.objectUrl;
+    }
+
+    /* Cùng cách tải audio đang dùng trong hai trang Listening gốc. */
+    fetch(src).then(function(response){
+      if(!response.ok) throw new Error('Audio HTTP ' + response.status);
+      return response.blob();
+    }).then(function(blob){
+      if(els.testAudio.dataset.requestId !== requestId) return;
+      var objectUrl = URL.createObjectURL(blob);
+      els.testAudio.dataset.objectUrl = objectUrl;
+      els.testAudio.src = objectUrl;
+      els.testAudio.load();
+    }).catch(function(){
+      if(els.testAudio.dataset.requestId !== requestId) return;
       els.testAudio.src = src;
       els.testAudio.load();
-    }
-    els.audioLabel.textContent = state.year + ' · Test ' + state.test;
+    });
   }
 
   function setPart(part){
@@ -300,11 +375,6 @@
 
   function renderQuestion(){
     var data = getYearData();
-    if(data.error){
-      renderDataError(data);
-      return;
-    }
-
     var question = state.question;
     var part = question <= 6 ? 1 : 2;
     var entry = getQuestionEntry(question);
@@ -523,22 +593,45 @@
     document.querySelectorAll('.overlay.show').forEach(function(overlay){closeOverlay(overlay);});
   }
 
+  function updatePageQuery(){
+    try{
+      var url = new URL(location.href);
+      url.searchParams.set('year', state.year);
+      url.searchParams.set('test', String(state.test));
+      history.replaceState(null, '', url.pathname + url.search + url.hash);
+    }catch(err){}
+  }
+
+  function applyInitialQuery(){
+    try{
+      var params = new URLSearchParams(location.search);
+      var year = params.get('year');
+      var test = Number(params.get('test'));
+      if(year === '2023' || year === '2024') state.year = year;
+      if(test >= 1 && test <= 10) state.test = test;
+    }catch(err){}
+  }
+
   function setupEvents(){
     els.yearSelect.addEventListener('change', async function(){
-      state.year = this.value;
+      state.year = String(this.value);
       state.test = Number(els.testSelect.value || 1);
       state.part = 1;
       state.question = 1;
-      renderLoading();
+      els.testSelect.value = String(state.test);
+      updatePageQuery();
       updateAudio();
+      renderLoading();
       await ensureYearData(state.year);
       renderCurrent();
     });
 
-    els.testSelect.addEventListener('change', function(){
+    els.testSelect.addEventListener('change', async function(){
       state.test = Number(this.value || 1);
       state.part = 1;
       state.question = 1;
+      this.value = String(state.test);
+      updatePageQuery();
       updateAudio();
       renderCurrent();
     });
@@ -758,8 +851,12 @@
     if(!requireStudentSession()) return;
     cacheElements();
     restoreLocalState();
+    applyInitialQuery();
     buildTestSelect();
+    els.yearSelect.value = state.year;
+    els.testSelect.value = String(state.test);
     setupEvents();
+    updatePageQuery();
     updateAudio();
     if(student.email === TEACHER_EMAIL) setSyncState('ok', 'Tài khoản giáo viên');
     await ensureYearData(state.year);
