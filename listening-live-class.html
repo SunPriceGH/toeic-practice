@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listening tương tác trên lớp · ETS 2023–2024</title>
+<style>
+:root{
+  --purple:#7c3aed;
+  --purple-dark:#5b21b6;
+  --purple-soft:#f5f3ff;
+  --purple-line:#ddd6fe;
+  --blue:#2563eb;
+  --green:#15803d;
+  --green-soft:#f0fdf4;
+  --red:#be123c;
+  --red-soft:#fff1f2;
+  --text:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --card:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:var(--text)}
+button,select{font:inherit}
+button{font-weight:700}
+body{overflow-x:hidden}
+.top-line{position:fixed;left:0;top:0;height:7px;width:100%;z-index:100;background:linear-gradient(90deg,#7c3aed,#a855f7,#2563eb)}
+.page{
+  min-height:100vh;
+  padding:82px 28px 132px;
+  background:
+    radial-gradient(circle at top left,rgba(124,58,237,.15),transparent 34%),
+    radial-gradient(circle at bottom right,rgba(37,99,235,.13),transparent 36%),
+    #fff;
+}
+.shell{width:min(1160px,100%);margin:0 auto}
+.top-nav{
+  position:fixed;top:18px;right:22px;z-index:90;
+  display:flex;align-items:center;gap:9px;pointer-events:none
+}
+.top-nav>*{pointer-events:auto}
+.top-btn,.home-btn,.teacher-btn{
+  min-height:42px;border-radius:999px;border:2px solid var(--purple-line);
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:10px 15px;background:rgba(255,255,255,.95);color:var(--purple-dark);
+  text-decoration:none;cursor:pointer;box-shadow:0 10px 24px rgba(15,23,42,.14);
+  font-size:14px;line-height:1;transition:.16s ease
+}
+.top-btn:hover,.home-btn:hover,.teacher-btn:hover{transform:translateY(-2px);background:var(--purple-soft)}
+.home-btn{color:#166534;border-color:#bbf7d0}
+.home-btn:hover{background:#dcfce7}
+.teacher-btn{display:none;color:#fff;border-color:#6d28d9;background:linear-gradient(135deg,#7c3aed,#2563eb)}
+.teacher-btn.show{display:inline-flex}
+.teacher-count{min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:#fff;color:#6d28d9;display:grid;place-items:center;font-size:12px}
+.hero-card{
+  border:2px solid var(--purple-line);border-radius:26px;background:rgba(255,255,255,.96);
+  box-shadow:0 24px 58px rgba(91,33,182,.14),0 12px 28px rgba(15,23,42,.08);
+  padding:24px;margin-bottom:18px
+}
+.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.badge{display:inline-flex;width:fit-content;padding:8px 14px;border-radius:999px;background:var(--purple-soft);color:var(--purple-dark);font-size:14px;font-weight:700;margin-bottom:12px}
+h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e1065}
+.hero-note{font-size:17px;line-height:1.5;color:#475569;max-width:730px}
+.sync-state{display:flex;align-items:center;gap:8px;padding:10px 13px;border-radius:999px;background:#f8fafc;border:2px solid var(--line);font-size:13px;font-weight:700;color:#475569;white-space:nowrap}
+.sync-dot{width:9px;height:9px;border-radius:50%;background:#94a3b8}
+.sync-state.sending .sync-dot{background:#f59e0b;box-shadow:0 0 0 5px rgba(245,158,11,.12)}
+.sync-state.ok .sync-dot{background:#22c55e;box-shadow:0 0 0 5px rgba(34,197,94,.12)}
+.sync-state.err .sync-dot{background:#ef4444;box-shadow:0 0 0 5px rgba(239,68,68,.12)}
+.selector-row{display:grid;grid-template-columns:160px 190px minmax(270px,1fr);gap:12px;margin-top:21px}
+.selector-box{display:flex;flex-direction:column;gap:7px}
+.selector-box label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.selector-box select{
+  width:100%;min-height:46px;border:2px solid var(--purple-line);border-radius:14px;background:#fff;color:#2e1065;
+  padding:9px 12px;outline:none;font-weight:700;cursor:pointer
+}
+.selector-box select:focus{border-color:var(--purple);box-shadow:0 0 0 4px rgba(124,58,237,.12)}
+.audio-wrap{display:flex;align-items:center;gap:10px;min-height:46px;padding:5px 8px 5px 12px;border:2px solid var(--purple-line);border-radius:14px;background:#fff}
+.audio-label{font-size:12px;color:var(--purple-dark);font-weight:700;white-space:nowrap}
+.audio-wrap audio{width:100%;height:34px;accent-color:var(--purple)}
+.part-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.part-tab{
+  border:2px solid var(--purple-line);background:#fff;color:var(--purple-dark);border-radius:999px;
+  min-height:42px;padding:9px 16px;cursor:pointer;transition:.16s ease
+}
+.part-tab:hover{background:var(--purple-soft);transform:translateY(-1px)}
+.part-tab.active{background:var(--purple);border-color:var(--purple);color:#fff;box-shadow:0 10px 22px rgba(124,58,237,.22)}
+.part-tab.pending{color:#7c2d12;border-color:#fed7aa;background:#fff7ed}
+.practice-card{
+  min-height:560px;border:2px solid var(--purple-line);border-radius:26px;background:var(--card);
+  box-shadow:0 24px 58px rgba(15,23,42,.11);padding:clamp(22px,4vw,42px)
+}
+.question-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:22px}
+.question-kicker{color:var(--purple-dark);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px}
+.question-title{font-size:clamp(28px,4vw,42px);line-height:1.12;color:var(--text)}
+.question-sub{margin-top:8px;color:var(--muted);font-size:16px;line-height:1.45}
+.question-progress{padding:9px 13px;border-radius:999px;background:var(--purple-soft);color:var(--purple-dark);font-size:14px;font-weight:700;white-space:nowrap}
+.photo-box{width:min(760px,100%);margin:0 auto 24px;border:2px solid var(--line);border-radius:22px;background:#f8fafc;overflow:hidden;min-height:300px;display:grid;place-items:center}
+.photo-box img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff}
+.photo-missing{padding:28px;text-align:center;color:#7c2d12;font-size:16px;line-height:1.5}
+.listen-prompt{margin:0 0 18px;padding:18px 20px;border-radius:18px;background:var(--purple-soft);border-left:7px solid var(--purple);font-size:20px;line-height:1.45;color:#3b0764}
+.options{display:grid;gap:12px;margin-top:18px}
+.option{
+  display:flex;align-items:center;gap:14px;border:2px solid #e9d5ff;background:#fff;border-radius:17px;
+  padding:16px 18px;cursor:pointer;transition:.16s ease;min-height:62px
+}
+.option:hover{border-color:#c4b5fd;transform:translateY(-1px);box-shadow:0 8px 18px rgba(124,58,237,.08)}
+.option.selected{border-color:var(--purple);background:var(--purple-soft)}
+.option.correct{border-color:#22c55e;background:var(--green-soft)}
+.option.wrong{border-color:#fb7185;background:var(--red-soft)}
+.option input{width:21px;height:21px;accent-color:var(--purple);flex:0 0 auto}
+.option-letter{width:36px;height:36px;border-radius:12px;background:#ede9fe;color:var(--purple-dark);display:grid;place-items:center;flex:0 0 36px;font-size:17px;font-weight:700}
+.option.correct .option-letter{background:#dcfce7;color:#166534}
+.option.wrong .option-letter{background:#ffe4e6;color:#be123c}
+.option-text{font-size:19px;line-height:1.4;color:#334155}
+.option-text.hidden-text{filter:blur(7px);user-select:none;opacity:.88}
+.practice-card.revealed .option-text.hidden-text{filter:none;user-select:text;opacity:1}
+.result-box{display:none;margin-top:20px;padding:18px 20px;border-radius:18px;border:2px solid #bbf7d0;background:var(--green-soft);font-size:18px;line-height:1.5;color:#166534}
+.result-box.show{display:block;animation:fadeUp .2s ease}
+.result-box.wrong-result{border-color:#fecdd3;background:var(--red-soft);color:var(--red)}
+.result-title{font-size:21px;font-weight:700;margin-bottom:6px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.empty-part{min-height:420px;display:grid;place-items:center;text-align:center;color:var(--muted)}
+.empty-icon{width:82px;height:82px;border-radius:26px;background:#fff7ed;border:2px solid #fed7aa;display:grid;place-items:center;margin:0 auto 16px;font-size:36px}
+.empty-part h2{font-size:30px;color:#7c2d12;margin-bottom:9px}
+.empty-part p{font-size:18px;line-height:1.5;max-width:580px}
+.loading-box{min-height:420px;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:18px}
+.control-bar{
+  position:fixed;left:0;right:0;bottom:14px;z-index:80;display:flex;justify-content:center;align-items:center;gap:12px;
+  padding:0 12px;pointer-events:none
+}
+.control-bar>*{pointer-events:auto}
+.nav-btn,.check-btn,.reveal-btn{
+  border:0;border-radius:999px;min-height:44px;padding:11px 18px;cursor:pointer;box-shadow:0 9px 20px rgba(15,23,42,.18);transition:.16s ease
+}
+.nav-btn{background:#e2e8f0;color:#0f172a}
+.nav-btn:hover{background:#cbd5e1;transform:translateY(-1px)}
+.check-btn{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;min-width:118px}
+.check-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 12px 24px rgba(124,58,237,.28)}
+.check-btn:disabled{background:#94a3b8;cursor:not-allowed;box-shadow:none;opacity:.72}
+.reveal-btn{background:#fff;color:var(--purple-dark);border:2px solid var(--purple-line);display:none}
+.reveal-btn.show{display:inline-flex;align-items:center;justify-content:center}
+
+/* Slide picker */
+.overlay{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(15,23,42,.48);backdrop-filter:blur(4px)}
+.overlay.show{display:flex}
+.picker-panel{width:min(970px,96vw);max-height:84vh;overflow:auto;background:#fff;border:2px solid var(--purple-line);border-radius:26px;padding:22px;box-shadow:0 30px 90px rgba(15,23,42,.32)}
+.panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;padding-bottom:15px;border-bottom:2px solid var(--purple-soft);margin-bottom:17px}
+.panel-head h2{font-size:28px;color:#2e1065;margin-bottom:5px}
+.panel-head p{font-size:15px;line-height:1.4;color:var(--muted)}
+.close-btn{width:40px;height:40px;border:0;border-radius:999px;background:#e2e8f0;color:#0f172a;cursor:pointer;font-size:25px;line-height:1}
+.close-btn:hover{background:#cbd5e1}
+.slide-section{margin-bottom:19px}
+.slide-section h3{font-size:18px;color:var(--purple-dark);margin-bottom:10px}
+.slide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(126px,1fr));gap:9px}
+.slide-btn{min-height:58px;border:2px solid var(--purple-line);border-radius:15px;background:#f8fafc;color:#334155;cursor:pointer;padding:9px;text-align:left;transition:.14s ease}
+.slide-btn:hover{background:var(--purple-soft);border-color:#c4b5fd;transform:translateY(-1px)}
+.slide-btn.active{background:#ede9fe;border-color:var(--purple);color:#4c1d95}
+.slide-btn.checked-ok{box-shadow:inset 0 0 0 2px #22c55e}
+.slide-btn.checked-wrong{box-shadow:inset 0 0 0 2px #fb7185}
+.slide-btn b{display:block;font-size:16px;margin-bottom:4px}
+.slide-btn span{font-size:12px;color:var(--muted)}
+.slide-btn:disabled{cursor:not-allowed;opacity:.62;background:#fff7ed;border-color:#fed7aa}
+
+/* Teacher live panel */
+.teacher-panel{width:min(1180px,97vw);max-height:90vh;overflow:hidden;background:#fff;border:2px solid var(--purple-line);border-radius:26px;box-shadow:0 30px 100px rgba(15,23,42,.36);display:flex;flex-direction:column}
+.teacher-panel .panel-head{padding:20px 22px;margin:0}
+.teacher-panel-body{padding:18px 22px 22px;overflow:auto}
+.monitor-controls{display:flex;align-items:end;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.monitor-field{display:flex;flex-direction:column;gap:6px}
+.monitor-field label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.monitor-field select{min-height:40px;border:2px solid var(--purple-line);border-radius:12px;background:#fff;padding:7px 10px;color:#4c1d95;font-weight:700}
+.monitor-refresh,.monitor-clear{min-height:40px;border:0;border-radius:12px;padding:9px 13px;cursor:pointer}
+.monitor-refresh{background:var(--purple);color:#fff}
+.monitor-clear{background:#fff1f2;color:#be123c;border:2px solid #fecdd3}
+.live-summary{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0 14px}
+.summary-pill{padding:8px 11px;border-radius:999px;background:var(--purple-soft);color:var(--purple-dark);font-size:13px;font-weight:700}
+.live-table-wrap{overflow:auto;border:2px solid var(--line);border-radius:17px}
+.live-table{width:100%;border-collapse:collapse;min-width:880px}
+.live-table th,.live-table td{padding:12px 13px;border-bottom:1px solid var(--line);text-align:left;font-size:14px;vertical-align:middle}
+.live-table th{position:sticky;top:0;background:#f8fafc;color:#475569;font-size:12px;text-transform:uppercase;letter-spacing:.05em;z-index:1}
+.live-table tr:last-child td{border-bottom:0}
+.live-email{font-weight:700;color:#2e1065}
+.score-ok{font-weight:700;color:#15803d}
+.score-wrong{font-weight:700;color:#be123c}
+.status-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border-radius:999px;background:#f1f5f9;color:#475569;font-size:12px;font-weight:700}
+.status-chip.online{background:#dcfce7;color:#166534}
+.status-chip.recent{background:#fef3c7;color:#92400e}
+.detail-btn{border:0;border-radius:10px;background:#ede9fe;color:#5b21b6;padding:7px 10px;cursor:pointer;font-size:12px}
+.student-details{display:none;background:#fafafa}
+.student-details.show{display:table-row}
+.student-details td{padding:14px 16px}
+.check-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.check-item{border:1px solid var(--line);border-radius:12px;background:#fff;padding:9px 10px;font-size:13px;line-height:1.4}
+.check-item.ok{border-color:#bbf7d0;background:#f0fdf4}
+.check-item.bad{border-color:#fecdd3;background:#fff1f2}
+.monitor-empty{padding:38px 20px;text-align:center;color:var(--muted);font-size:16px}
+
+@media(max-width:820px){
+  .page{padding:72px 14px 146px}
+  .top-nav{top:12px;right:10px;gap:6px}
+  .top-btn,.home-btn,.teacher-btn{min-height:38px;padding:8px 10px;font-size:12px}
+  .top-text{display:none}
+  .selector-row{grid-template-columns:1fr 1fr}
+  .selector-box.audio-selector{grid-column:1/-1}
+  .hero-card,.practice-card{border-radius:20px;padding:18px}
+  .question-head{flex-direction:column}
+  .question-progress{align-self:flex-start}
+  .photo-box{min-height:230px;border-radius:17px}
+  .option{padding:13px 14px}
+  .option-text{font-size:17px}
+  .control-bar{gap:7px;flex-wrap:wrap;bottom:8px}
+  .nav-btn,.check-btn,.reveal-btn{min-height:40px;padding:9px 13px;font-size:13px}
+  .picker-panel{padding:16px;border-radius:20px}
+  .slide-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:520px){
+  .selector-row{grid-template-columns:1fr}
+  .selector-box.audio-selector{grid-column:auto}
+  .part-tab{padding:8px 12px;font-size:13px}
+  .slide-grid{grid-template-columns:repeat(2,1fr)}
+  .question-title{font-size:29px}
+  .control-bar .reveal-btn{order:-1;width:100%;max-width:180px}
+}
+</style>
+</head>
+<body>
+<div class="top-line"></div>
+<nav class="top-nav" aria-label="Điều hướng bài luyện">
+  <button class="teacher-btn" id="teacherMonitorBtn" type="button" title="Theo dõi kết quả trực tiếp của lớp">
+    <span>📡</span><span class="top-text">Theo dõi lớp</span><span class="teacher-count" id="teacherLiveCount">0</span>
+  </button>
+  <button class="top-btn" id="slidePickerBtn" type="button" title="Chọn slide">
+    <span>●</span><span id="slideIndexText">1 / 31</span>
+  </button>
+  <a class="home-btn" href="index.html#practices" title="Về trang chủ">
+    <span>🏠</span><span class="top-text">Trang chủ</span>
+  </a>
+</nav>
+
+<main class="page">
+  <div class="shell">
+    <section class="hero-card">
+      <div class="hero-top">
+        <div>
+          <div class="badge">PRACTICE · LISTENING TRỰC TIẾP</div>
+          <h1>Listening tương tác trên lớp</h1>
+          <p class="hero-note">Chọn rõ năm, đề và slide. Mỗi câu được CHECK riêng; kết quả được gửi ngay để giáo viên theo dõi.</p>
+        </div>
+        <div class="sync-state" id="syncState"><span class="sync-dot"></span><span id="syncStateText">Sẵn sàng đồng bộ</span></div>
+      </div>
+
+      <div class="selector-row">
+        <div class="selector-box">
+          <label for="yearSelect">Bộ đề</label>
+          <select id="yearSelect">
+            <option value="2023">ETS TOEIC 2023</option>
+            <option value="2024">ETS TOEIC 2024</option>
+          </select>
+        </div>
+        <div class="selector-box">
+          <label for="testSelect">Chọn đề</label>
+          <select id="testSelect"></select>
+        </div>
+        <div class="selector-box audio-selector">
+          <label>Audio của đề</label>
+          <div class="audio-wrap">
+            <span class="audio-label" id="audioLabel">Test 1</span>
+            <audio id="testAudio" controls controlslist="nodownload" preload="metadata"></audio>
+          </div>
+        </div>
+      </div>
+
+      <div class="part-tabs" aria-label="Chọn Part">
+        <button class="part-tab active" type="button" data-part="1">Part 1 · Câu 1–6</button>
+        <button class="part-tab" type="button" data-part="2">Part 2 · Câu 7–31</button>
+        <button class="part-tab pending" type="button" data-part="3">Part 3 · Để trống</button>
+        <button class="part-tab pending" type="button" data-part="4">Part 4 · Để trống</button>
+      </div>
+    </section>
+
+    <section class="practice-card" id="practiceCard" aria-live="polite">
+      <div class="loading-box">Đang tải dữ liệu Part 1 + 2…</div>
+    </section>
+  </div>
+</main>
+
+<div class="control-bar">
+  <button class="nav-btn" id="prevBtn" type="button">← Prev</button>
+  <button class="reveal-btn" id="revealBtn" type="button">👁 Hiện options</button>
+  <button class="check-btn" id="checkBtn" type="button" disabled>CHECK</button>
+  <button class="nav-btn" id="nextBtn" type="button">Next →</button>
+</div>
+
+<div class="overlay" id="slidePickerOverlay">
+  <div class="picker-panel" role="dialog" aria-modal="true" aria-labelledby="slidePickerTitle">
+    <div class="panel-head">
+      <div>
+        <h2 id="slidePickerTitle">Chọn slide</h2>
+        <p>Click trực tiếp vào câu muốn mở. Part 3 và Part 4 được giữ trống theo yêu cầu.</p>
+      </div>
+      <button class="close-btn" type="button" data-close-overlay="slidePickerOverlay" aria-label="Đóng">×</button>
+    </div>
+    <div id="slidePickerContent"></div>
+  </div>
+</div>
+
+<div class="overlay" id="teacherOverlay">
+  <div class="teacher-panel" role="dialog" aria-modal="true" aria-labelledby="teacherPanelTitle">
+    <div class="panel-head">
+      <div>
+        <h2 id="teacherPanelTitle">📡 Theo dõi lớp trực tiếp</h2>
+        <p>Dữ liệu cập nhật tự động khi học viên nhấn CHECK.</p>
+      </div>
+      <button class="close-btn" type="button" data-close-overlay="teacherOverlay" aria-label="Đóng">×</button>
+    </div>
+    <div class="teacher-panel-body">
+      <div class="monitor-controls">
+        <div class="monitor-field">
+          <label for="monitorSort">Sắp xếp</label>
+          <select id="monitorSort">
+            <option value="recent">Mới hoạt động trước</option>
+            <option value="correct-desc">Đúng nhiều → ít</option>
+            <option value="correct-asc">Đúng ít → nhiều</option>
+            <option value="wrong-desc">Sai nhiều → ít</option>
+            <option value="wrong-asc">Sai ít → nhiều</option>
+            <option value="test">Theo đề</option>
+            <option value="part">Theo Part</option>
+            <option value="email">Theo học viên</option>
+          </select>
+        </div>
+        <div class="monitor-field">
+          <label for="monitorYear">Bộ đề</label>
+          <select id="monitorYear">
+            <option value="all">Tất cả</option>
+            <option value="2023">ETS 2023</option>
+            <option value="2024">ETS 2024</option>
+          </select>
+        </div>
+        <div class="monitor-field">
+          <label for="monitorPart">Part</label>
+          <select id="monitorPart">
+            <option value="all">Tất cả</option>
+            <option value="1">Part 1</option>
+            <option value="2">Part 2</option>
+          </select>
+        </div>
+        <button class="monitor-refresh" id="monitorRefreshBtn" type="button">↻ Cập nhật</button>
+        <button class="monitor-clear" id="monitorClearBtn" type="button">Xóa phiên lớp</button>
+      </div>
+      <div class="live-summary" id="liveSummary"></div>
+      <div id="teacherTableHost"><div class="monitor-empty">Chưa có học viên CHECK câu nào trong phiên lớp.</div></div>
+    </div>
+  </div>
+</div>
+
+<script src="listening-live-class.js"></script>
+</body>
+</html>
