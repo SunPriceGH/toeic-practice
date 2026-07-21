@@ -48,6 +48,7 @@ body{overflow-x:hidden}
   font-size:14px;line-height:1;transition:.16s ease
 }
 .top-btn:hover,.home-btn:hover,.teacher-btn:hover{transform:translateY(-2px);background:var(--purple-soft)}
+.teacher-btn:hover{background:linear-gradient(135deg,#6d28d9,#1d4ed8);color:#fff;border-color:#5b21b6}
 .home-btn{color:#166534;border-color:#bbf7d0}
 .home-btn:hover{background:#dcfce7}
 .teacher-btn{display:none;color:#fff;border-color:#6d28d9;background:linear-gradient(135deg,#7c3aed,#2563eb)}
@@ -130,7 +131,7 @@ h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e10
   padding:0 12px;pointer-events:none
 }
 .control-bar>*{pointer-events:auto}
-.nav-btn,.check-btn,.reveal-btn{
+.nav-btn,.check-btn{
   border:0;border-radius:999px;min-height:44px;padding:11px 18px;cursor:pointer;box-shadow:0 9px 20px rgba(15,23,42,.18);transition:.16s ease
 }
 .nav-btn{background:#e2e8f0;color:#0f172a}
@@ -138,8 +139,6 @@ h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e10
 .check-btn{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;min-width:118px}
 .check-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 12px 24px rgba(124,58,237,.28)}
 .check-btn:disabled{background:#94a3b8;cursor:not-allowed;box-shadow:none;opacity:.72}
-.reveal-btn{background:#fff;color:var(--purple-dark);border:2px solid var(--purple-line);display:none}
-.reveal-btn.show{display:inline-flex;align-items:center;justify-content:center}
 
 /* Slide picker */
 .overlay{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(15,23,42,.48);backdrop-filter:blur(4px)}
@@ -176,7 +175,7 @@ h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e10
 .live-summary{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0 14px}
 .summary-pill{padding:8px 11px;border-radius:999px;background:var(--purple-soft);color:var(--purple-dark);font-size:13px;font-weight:700}
 .live-table-wrap{overflow:auto;border:2px solid var(--line);border-radius:17px}
-.live-table{width:100%;border-collapse:collapse;min-width:880px}
+.live-table{width:100%;border-collapse:collapse;min-width:620px}
 .live-table th,.live-table td{padding:12px 13px;border-bottom:1px solid var(--line);text-align:left;font-size:14px;vertical-align:middle}
 .live-table th{position:sticky;top:0;background:#f8fafc;color:#475569;font-size:12px;text-transform:uppercase;letter-spacing:.05em;z-index:1}
 .live-table tr:last-child td{border-bottom:0}
@@ -210,7 +209,7 @@ h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e10
   .option{padding:13px 14px}
   .option-text{font-size:17px}
   .control-bar{gap:7px;flex-wrap:wrap;bottom:8px}
-  .nav-btn,.check-btn,.reveal-btn{min-height:40px;padding:9px 13px;font-size:13px}
+  .nav-btn,.check-btn{min-height:40px;padding:9px 13px;font-size:13px}
   .picker-panel{padding:16px;border-radius:20px}
   .slide-grid{grid-template-columns:repeat(3,1fr)}
 }
@@ -220,7 +219,6 @@ h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e10
   .part-tab{padding:8px 12px;font-size:13px}
   .slide-grid{grid-template-columns:repeat(2,1fr)}
   .question-title{font-size:29px}
-  .control-bar .reveal-btn{order:-1;width:100%;max-width:180px}
 }
 </style>
 </head>
@@ -295,7 +293,6 @@ h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e10
 
 <div class="control-bar">
   <button class="nav-btn" id="prevBtn" type="button">← Prev</button>
-  <button class="reveal-btn" id="revealBtn" type="button">👁 Hiện options</button>
   <button class="check-btn" id="checkBtn" type="button" disabled>CHECK</button>
   <button class="nav-btn" id="nextBtn" type="button">Next →</button>
 </div>
@@ -362,6 +359,6 @@ h1{font-size:clamp(30px,4vw,47px);line-height:1.12;margin-bottom:8px;color:#2e10
   </div>
 </div>
 
-<script src="./js/listening-live-class.js?v=20260721-6" onerror="document.getElementById('practiceCard').innerHTML='<div class=&quot;empty-part&quot;><div><div class=&quot;empty-icon&quot;>⚠️</div><h2>Không tải được file JavaScript</h2><p>Kiểm tra file js/listening-live-class.js có tồn tại trong project hay không.</p></div></div>'"></script>
+<script src="./js/listening-live-class.js?v=20260721-7" onerror="document.getElementById('practiceCard').innerHTML='<div class=&quot;empty-part&quot;><div><div class=&quot;empty-icon&quot;>⚠️</div><h2>Không tải được file JavaScript</h2><p>Kiểm tra file js/listening-live-class.js có tồn tại trong project hay không.</p></div></div>'"></script>
 </body>
 </html>
