@@ -60,6 +60,10 @@
   var els = {};
   var student = null;
 
+  function isTeacherAccount(){
+    return !!(student && student.email === TEACHER_EMAIL);
+  }
+
   function escapeHtml(value){
     return String(value == null ? '' : value).replace(/[&<>"']/g, function(char){
       return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char];
@@ -341,8 +345,7 @@
     els.practiceCard.className = 'practice-card';
     els.practiceCard.innerHTML =
       '<div class="empty-part"><div><div class="empty-icon">🧩</div>' +
-      '<h2>Part ' + state.part + ' đang để trống</h2>' +
-      '<p>Khung đã được giữ sẵn để nối dữ liệu sau. Phiên bản này chỉ triển khai Part 1 và Part 2.</p></div></div>';
+      '<h2>Part ' + state.part + ' đang để trống</h2></div></div>';
     els.checkBtn.disabled = true;
     els.slideIndexText.textContent = 'Part ' + state.part;
     updateNavButtons();
@@ -370,6 +373,7 @@
     var key = currentKey();
     var selected = state.selection[key] || '';
     var checked = state.checked[key] || null;
+    var answerLocked = !!checked && !isTeacherAccount();
     var imageUrl = currentImageUrl(question);
 
     var media = '';
@@ -386,8 +390,9 @@
         if(option.label === checked.correctAnswer) classes.push('correct');
         if(option.label === checked.selected && !checked.isCorrect) classes.push('wrong');
       }
+      if(answerLocked) classes.push('locked');
       return '<label class="' + classes.join(' ') + '">' +
-        '<input type="radio" name="currentAnswer" value="' + escapeHtml(option.label) + '" ' + (selected === option.label ? 'checked' : '') + '>' +
+        '<input type="radio" name="currentAnswer" value="' + escapeHtml(option.label) + '" ' + (selected === option.label ? 'checked' : '') + (answerLocked ? ' disabled' : '') + '>' +
         '<span class="option-letter">' + escapeHtml(option.label) + '</span>' +
         '<span class="option-text hidden-text">' + escapeHtml(option.text) + '</span>' +
       '</label>';
@@ -422,8 +427,13 @@
 
     els.practiceCard.querySelectorAll('input[name="currentAnswer"]').forEach(function(input){
       input.addEventListener('change', function(){
+        if(state.checked[key] && !isTeacherAccount()){
+          this.checked = state.selection[key] === this.value;
+          return;
+        }
+
         state.selection[key] = this.value;
-        if(state.checked[key]){
+        if(state.checked[key] && isTeacherAccount()){
           delete state.checked[key];
           persistLocalState();
           renderQuestion();
@@ -436,8 +446,10 @@
       });
     });
 
-    els.checkBtn.disabled = !selected || !correct;
-    els.checkBtn.title = !correct ? 'Chưa có đáp án cho câu này trong file JSON.' : (!selected ? 'Hãy chọn một option trước.' : 'Kiểm tra đáp án');
+    els.checkBtn.disabled = answerLocked || !selected || !correct;
+    els.checkBtn.title = answerLocked
+      ? 'Học viên đã CHECK câu này và không thể chọn lại.'
+      : (!correct ? 'Chưa có đáp án cho câu này trong file JSON.' : (!selected ? 'Hãy chọn một option trước.' : 'Kiểm tra đáp án'));
     els.slideIndexText.textContent = question + ' / 31';
     updateNavButtons();
     buildSlidePicker();
@@ -474,6 +486,7 @@
   function checkCurrentAnswer(){
     if(state.part !== 1 && state.part !== 2) return;
     var key = currentKey();
+    if(state.checked[key] && !isTeacherAccount()) return;
     var entry = getQuestionEntry(state.question);
     var correct = getCorrectAnswer(state.question, entry);
     var selected = state.selection[key];
@@ -598,6 +611,32 @@
       if(year === '2023' || year === '2024') state.year = year;
       if(test >= 1 && test <= 10) state.test = test;
     }catch(err){}
+  }
+
+  function installContentProtection(){
+    function blockEvent(event){
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+    }
+
+    ['contextmenu','copy','cut','dragstart','selectstart'].forEach(function(type){
+      document.addEventListener(type, blockEvent, true);
+    });
+
+    document.addEventListener('keydown', function(event){
+      var key = String(event.key || '').toLowerCase();
+      var ctrlOrMeta = event.ctrlKey || event.metaKey;
+      var blocked = event.key === 'F12' ||
+        (ctrlOrMeta && ['u','s','p','c','x','a'].indexOf(key) !== -1) ||
+        (ctrlOrMeta && event.shiftKey && ['i','j','c','k','p'].indexOf(key) !== -1);
+
+      if(blocked) blockEvent(event);
+    }, true);
+
+    document.addEventListener('keyup', function(event){
+      if(event.key === 'F12') blockEvent(event);
+    }, true);
   }
 
   function setupEvents(){
@@ -844,6 +883,7 @@
       buildTestSelect();
       els.yearSelect.value = state.year;
       els.testSelect.value = String(state.test);
+      installContentProtection();
       setupEvents();
       updatePageQuery();
       updateAudio();
