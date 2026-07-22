@@ -207,20 +207,6 @@ body.vocabulary-lookup-active .option{transform:none}
         </div>
       </div>
       <div class="header-actions">
-        <div class="exam-lock-header-wrap" id="examLockHeaderWrap">
-          <button type="button" class="exam-lock-toggle" id="examLockToggle" aria-expanded="false" aria-controls="examLockAdmin" hidden>
-            <span class="exam-lock-toggle-icon">🔐</span><span>Quản lý đề</span>
-          </button>
-          <div class="exam-lock-admin" id="examLockAdmin" hidden>
-            <div class="exam-lock-admin-head"><b>Khóa / mở khóa đề</b><span class="exam-lock-badge" id="examLockBadge">Đang tải</span></div>
-            <select class="exam-lock-target" id="examLockTargetSelect" aria-label="Chọn đề cần khóa hoặc mở khóa"></select>
-            <div class="exam-lock-actions">
-              <button type="button" class="exam-lock-btn lock" id="lockCurrentExamBtn">Khóa đề</button>
-              <button type="button" class="exam-lock-btn unlock" id="unlockCurrentExamBtn">Mở khóa đề</button>
-            </div>
-            <div class="exam-lock-status" id="examLockStatus">Chọn một đề để cập nhật trạng thái.</div>
-          </div>
-        </div>
         <div class="timer-box" id="timerBox"><div><div class="timer-label" id="timerLabel">Time left</div><div class="timer-value" id="timerValue">25:00</div></div></div>
       </div>
     </div>
@@ -302,7 +288,6 @@ const LESSON_ID = 'ets-summer-2021-part5-6';
 const LOCK_BYPASS_EMAIL = 'sunprice@sp.ik';
 let studentSession = null;
 let lockedLessonIds = [];
-let adminPasswordCache = '';
 let examLockUpdating = false;
 let examLockTargetKey = '';
 let timeLeft = 0;
@@ -357,6 +342,48 @@ function normalizeExamLibrary(data){
 
 function isExamLockAdmin(){
   return String(studentSession?.email || '').trim().toLowerCase() === LOCK_BYPASS_EMAIL;
+}
+function mountExamLockAdminControls(){
+  const headerActions=document.querySelector('.header-actions');
+  const existing=document.getElementById('examLockHeaderWrap');
+
+  // Tài khoản khác không được có DOM quản lý đề trong trang.
+  if(!isExamLockAdmin()){
+    existing?.remove();
+    return;
+  }
+  if(!headerActions || existing) return;
+
+  const wrap=document.createElement('div');
+  wrap.className='exam-lock-header-wrap';
+  wrap.id='examLockHeaderWrap';
+  wrap.innerHTML=`
+    <button type="button" class="exam-lock-toggle" id="examLockToggle" aria-expanded="false" aria-controls="examLockAdmin">
+      <span class="exam-lock-toggle-icon">🔐</span><span>Quản lý đề</span>
+    </button>
+    <div class="exam-lock-admin" id="examLockAdmin" hidden>
+      <div class="exam-lock-admin-head"><b>Khóa / mở khóa đề</b><span class="exam-lock-badge" id="examLockBadge">Đang tải</span></div>
+      <select class="exam-lock-target" id="examLockTargetSelect" aria-label="Chọn đề cần khóa hoặc mở khóa"></select>
+      <div class="exam-lock-actions">
+        <button type="button" class="exam-lock-btn lock" id="lockCurrentExamBtn">Khóa đề</button>
+        <button type="button" class="exam-lock-btn unlock" id="unlockCurrentExamBtn">Mở khóa đề</button>
+      </div>
+      <div class="exam-lock-status" id="examLockStatus">Chọn một đề để cập nhật trạng thái.</div>
+    </div>`;
+  headerActions.prepend(wrap);
+
+  document.getElementById('lockCurrentExamBtn').addEventListener('click',()=>updateCurrentExamLock('lock'));
+  document.getElementById('unlockCurrentExamBtn').addEventListener('click',()=>updateCurrentExamLock('unlock'));
+  document.getElementById('examLockTargetSelect').addEventListener('change',event=>{
+    examLockTargetKey=event.target.value;
+    updateExamLockAdminUi(true);
+  });
+  document.getElementById('examLockToggle').addEventListener('click',event=>{
+    event.stopPropagation();
+    const panel=document.getElementById('examLockAdmin');
+    setExamLockPanelOpen(!!panel?.hidden);
+  });
+  document.getElementById('examLockAdmin').addEventListener('click',event=>event.stopPropagation());
 }
 function getExamLockId(test){
   return `${LESSON_ID}::${getExamKey(test)}`;
@@ -433,37 +460,21 @@ function setExamLockPanelOpen(open){
     requestAnimationFrame(()=>document.getElementById('examLockTargetSelect')?.focus());
   }
 }
-async function requestAdminPasswordForExamLock(){
-  if(adminPasswordCache) return adminPasswordCache;
-  if(window.Swal){
-    const result=await Swal.fire({
-      icon:'question',title:'Xác nhận quyền admin',
-      text:'Nhập mật khẩu admin để cập nhật trạng thái đề.',
-      input:'password',inputAttributes:{autocomplete:'current-password'},
-      showCancelButton:true,confirmButtonText:'Xác nhận',cancelButtonText:'Hủy',
-      confirmButtonColor:'#2563eb',reverseButtons:true,inputValidator:value=>!value?'Vui lòng nhập mật khẩu admin.':undefined
-    });
-    return result.isConfirmed ? String(result.value || '') : '';
-  }
-  return String(prompt('Nhập mật khẩu admin:') || '');
-}
 async function updateCurrentExamLock(action){
   const target=getExamLockTarget();
   if(!isExamLockAdmin() || !target || examLockUpdating) return;
-  const password=await requestAdminPasswordForExamLock();
-  if(!password) return;
   examLockUpdating=true;
   setExamLockStatus('Đang cập nhật...', 'ok');
   updateExamLockAdminUi();
   try{
     const res=await fetch('/api/lesson-locks',{
       method:'POST',
-      headers:{'Content-Type':'application/json','x-admin-password':password},
+      headers:{'Content-Type':'application/json'},
+      credentials:'same-origin',
       body:JSON.stringify({lessonId:getExamLockId(target),action})
     });
     const data=await res.json().catch(()=>({}));
-    if(!res.ok || !data.ok) throw new Error(data.error || 'Không cập nhật được trạng thái đề.');
-    adminPasswordCache=password;
+    if(!res.ok || !data.ok) throw new Error(data.error || ((res.status===401 || res.status===403) ? 'Phiên đăng nhập không có quyền quản lý đề.' : 'Không cập nhật được trạng thái đề.'));
     lockedLessonIds=Array.isArray(data.lockedLessonIds)?data.lockedLessonIds:lockedLessonIds;
     populateTestSelect();
     populateExamLockTargetSelect();
@@ -472,7 +483,6 @@ async function updateCurrentExamLock(action){
     setExamLockStatus(action==='lock'?'Đã khóa đề với học viên.':'Đã mở đề cho học viên.', 'ok');
     toast(action==='lock'?'Đã khóa '+getExamLabel(target)+'.':'Đã mở khóa '+getExamLabel(target)+'.','success');
   }catch(err){
-    adminPasswordCache='';
     setExamLockStatus(err.message || 'Không cập nhật được trạng thái đề.', 'err');
     if(window.Swal) Swal.fire({icon:'error',title:'Cập nhật thất bại',text:err.message || 'Không cập nhật được trạng thái đề.',confirmButtonColor:'#2563eb'});
   }finally{
@@ -1162,15 +1172,6 @@ document.getElementById('submitBtn').addEventListener('click', () => submitExam(
 document.getElementById('startBtn').addEventListener('click', startExam);
 document.getElementById('testSelect').addEventListener('change', e => switchExam(e.target.value));
 document.getElementById('modeSelect').addEventListener('change', e => switchMode(e.target.value));
-document.getElementById('lockCurrentExamBtn')?.addEventListener('click',()=>updateCurrentExamLock('lock'));
-document.getElementById('unlockCurrentExamBtn')?.addEventListener('click',()=>updateCurrentExamLock('unlock'));
-document.getElementById('examLockTargetSelect')?.addEventListener('change',event=>{examLockTargetKey=event.target.value;updateExamLockAdminUi(true);});
-document.getElementById('examLockToggle')?.addEventListener('click',event=>{
-  event.stopPropagation();
-  const panel=document.getElementById('examLockAdmin');
-  setExamLockPanelOpen(!!panel?.hidden);
-});
-document.getElementById('examLockAdmin')?.addEventListener('click',event=>event.stopPropagation());
 document.addEventListener('click',event=>{
   const wrap=document.getElementById('examLockHeaderWrap');
   const panel=document.getElementById('examLockAdmin');
@@ -1184,6 +1185,7 @@ document.addEventListener('keydown',event=>{
   initializeVocabularyLookup();
   studentSession = requireStudentSession();
   if(!studentSession) return;
+  mountExamLockAdminControls();
   const unlocked = await requireLessonUnlocked();
   if(!unlocked) return;
   try{
