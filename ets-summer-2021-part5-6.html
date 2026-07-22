@@ -121,10 +121,81 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
 .footer-space{height:34px}
 @media(max-width:980px){.exam-main{grid-template-columns:1fr;padding:16px}.sidebar{position:static;order:-1}.question-grid{grid-template-columns:1fr;padding:16px}.passage-shell{grid-template-columns:1fr}.navigator{grid-template-columns:repeat(10,1fr)}.header-inner{padding:12px 14px}.exam-title h1{font-size:18px}.timer-value{font-size:22px}}
 @media(max-width:620px){.brand{gap:9px}.cbt-badge{width:44px;height:44px;border-radius:15px;font-size:15px}.timer-box{padding:8px 10px}.timer-label{display:none}.navigator{grid-template-columns:repeat(6,1fr)}.answer-sheet-grid{grid-template-columns:repeat(4,1fr)}.section-head{display:block}.section-head h2{font-size:20px;margin-bottom:8px}.question-card,.passage-text{padding:15px}.stem,.passage-text{font-size:16px}.option{font-size:15px}.result-grid{grid-template-columns:1fr}}
+
+/* ===== JSON VOCABULARY LOOKUP ===== */
+.vocabulary-lookup-fab{position:fixed;top:88px;right:18px;z-index:190;display:inline-flex;align-items:center;gap:8px;border:2px solid #bfdbfe;border-radius:999px;background:#fff;color:#1d4ed8;padding:11px 15px;font-size:14px;font-weight:700;box-shadow:0 14px 30px rgba(15,23,42,.16);cursor:pointer;transition:.18s ease}
+.vocabulary-lookup-fab:hover{transform:translateY(-1px);border-color:#60a5fa;background:#eff6ff}
+.vocabulary-lookup-fab[aria-pressed="true"]{background:#1d4ed8;color:#fff;border-color:#1d4ed8}
+.vocabulary-lookup-fab:disabled{cursor:not-allowed;opacity:.48;transform:none;background:#e2e8f0;color:#64748b;border-color:#cbd5e1}
+.vocabulary-lookup-fab .lookup-icon{font-size:17px;line-height:1}
+.vocabulary-lookup-panel{position:fixed;top:142px;right:18px;z-index:195;width:min(390px,calc(100vw - 28px));max-height:calc(100vh - 160px);overflow:auto;background:#fff;border:2px solid #bfdbfe;border-radius:22px;box-shadow:0 24px 70px rgba(15,23,42,.26)}
+.vocabulary-lookup-panel[hidden]{display:none!important}
+.vocabulary-lookup-panel-head{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;background:linear-gradient(135deg,#1d4ed8,#0ea5e9);color:#fff}
+.vocabulary-lookup-panel-head b{font-size:16px}
+.vocabulary-lookup-close{width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+.vocabulary-lookup-body{padding:16px}
+.vocabulary-lookup-hint{font-size:14px;line-height:1.5;color:#475569;background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:12px}
+.vocabulary-lookup-word{font-size:28px;line-height:1.15;color:#0f172a;margin-bottom:4px;word-break:break-word}
+.vocabulary-lookup-entry{border-top:1px solid #e2e8f0;padding:13px 0}
+.vocabulary-lookup-entry:first-of-type{border-top:0;padding-top:0}
+.vocabulary-lookup-pos{display:inline-flex;border-radius:999px;background:#dbeafe;color:#1d4ed8;padding:5px 9px;font-size:12px;font-weight:700;margin-bottom:8px}
+.vocabulary-lookup-entry-form{font-size:13px;color:#475569;font-weight:700;margin-left:6px}
+.vocabulary-lookup-meanings{margin:0;padding-left:20px;color:#1f2937;font-size:15px;line-height:1.55}
+.vocabulary-lookup-phrases{margin-top:12px;display:grid;gap:8px}
+.vocabulary-lookup-phrase{border:1px solid #dbeafe;background:#f8fafc;border-radius:12px;padding:10px}
+.vocabulary-lookup-phrase b{display:block;color:#0f172a;font-size:14px;margin-bottom:3px}
+.vocabulary-lookup-phrase span{display:block;color:#475569;font-size:13px;line-height:1.4}
+.vocabulary-lookup-irregular{margin-top:10px;border-radius:12px;background:#fff7ed;border:1px solid #fed7aa;padding:10px;color:#9a3412;font-size:13px;line-height:1.45}
+.vocabulary-token{border-radius:5px;transition:.12s ease}
+body.vocabulary-lookup-active .vocabulary-token{cursor:zoom-in;background:rgba(250,204,21,.22);box-shadow:inset 0 -2px 0 rgba(202,138,4,.42)}
+body.vocabulary-lookup-active .vocabulary-token:hover{background:rgba(250,204,21,.48)}
+body.vocabulary-lookup-active .vocabulary-token.is-vocabulary-selected{background:#fde68a;outline:2px solid #f59e0b}
+body.vocabulary-lookup-active .option{transform:none}
+@media(max-width:620px){.vocabulary-lookup-fab{top:74px;right:10px;padding:9px 12px}.vocabulary-lookup-panel{top:122px;right:10px;max-height:calc(100vh - 136px)}}
+
+/* ===== HEADER PER-TEST LOCK ADMIN ===== */
+.header-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex:0 0 auto}
+.exam-lock-header-wrap{position:relative;flex:0 0 auto}
+.exam-lock-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;border:2px solid #c7d2fe;border-radius:15px;background:#eef2ff;color:#3730a3;padding:9px 13px;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 8px 18px rgba(79,70,229,.12);transition:.16s ease;white-space:nowrap}
+.exam-lock-toggle:hover{background:#e0e7ff;border-color:#818cf8;transform:translateY(-1px)}
+.exam-lock-toggle[aria-expanded="true"]{background:#4338ca;border-color:#4338ca;color:#fff;box-shadow:0 10px 24px rgba(67,56,202,.25)}
+.exam-lock-toggle[hidden]{display:none!important}
+.exam-lock-toggle-icon{font-size:16px;line-height:1}
+.exam-lock-admin{position:absolute;top:calc(100% + 12px);right:0;z-index:280;width:min(360px,calc(100vw - 28px));border:2px solid #c7d2fe;border-radius:20px;background:#fff;padding:14px;box-shadow:0 24px 70px rgba(15,23,42,.28)}
+.exam-lock-admin[hidden]{display:none!important}
+.exam-lock-admin:before{content:"";position:absolute;top:-8px;right:26px;width:14px;height:14px;background:#fff;border-left:2px solid #c7d2fe;border-top:2px solid #c7d2fe;transform:rotate(45deg)}
+.exam-lock-admin-head{position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.exam-lock-admin-head b{font-size:15px;color:#1e1b4b}
+.exam-lock-badge{display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:700;white-space:nowrap}
+.exam-lock-badge.locked{background:#fee2e2;color:#991b1b}
+.exam-lock-badge.unlocked{background:#dcfce7;color:#166534}
+.exam-lock-target{position:relative;width:100%;margin:0 0 9px;border:1px solid #a5b4fc;border-radius:12px;background:#fff;color:#1e1b4b;padding:10px 11px;font-size:13px;font-weight:700;outline:none}
+.exam-lock-target:focus{border-color:#4f46e5;box-shadow:0 0 0 3px rgba(79,70,229,.13)}
+.exam-lock-actions{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.exam-lock-btn{border:0;border-radius:13px;padding:10px 8px;font-size:13px;font-weight:700;cursor:pointer;transition:.16s ease}
+.exam-lock-btn:hover:not(:disabled){transform:translateY(-1px)}
+.exam-lock-btn:disabled{cursor:not-allowed;opacity:.45}
+.exam-lock-btn.lock{background:#e11d48;color:#fff}
+.exam-lock-btn.unlock{background:#16a34a;color:#fff}
+.exam-lock-status{position:relative;min-height:18px;margin-top:8px;color:#475569;font-size:12px;line-height:1.45;font-weight:700}
+.exam-lock-status.ok{color:#166534}.exam-lock-status.err{color:#be123c}
+@media(max-width:760px){
+  .header-inner{flex-wrap:wrap}
+  .header-actions{width:100%;justify-content:space-between}
+  .exam-lock-toggle{min-height:40px;padding:8px 11px}
+  .exam-lock-admin{right:auto;left:0;width:min(360px,calc(100vw - 28px))}
+  .exam-lock-admin:before{right:auto;left:26px}
+}
 </style>
 </head>
 <body class="auth-pending exam-not-started">
 <div class="top-line"></div>
+<button type="button" class="vocabulary-lookup-fab" id="vocabularyLookupToggle" aria-pressed="false" disabled title="Tra từ vựng từ dữ liệu JSON dùng chung"><span class="lookup-icon">⌕</span><span>Tra từ</span></button>
+<aside class="vocabulary-lookup-panel" id="vocabularyLookupPanel" hidden aria-live="polite">
+  <div class="vocabulary-lookup-panel-head"><b>Tra từ vựng</b><button type="button" class="vocabulary-lookup-close" id="vocabularyLookupClose" aria-label="Đóng">×</button></div>
+  <div class="vocabulary-lookup-body" id="vocabularyLookupBody"><div class="vocabulary-lookup-hint">Bật Tra từ rồi chạm vào một từ được đánh dấu trong đề.</div></div>
+</aside>
+
 <div class="exam-app">
   <header class="exam-header">
     <div class="header-inner">
@@ -135,7 +206,23 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
           <p>Computer-based TOEIC Reading mini test · 46 questions</p>
         </div>
       </div>
-      <div class="timer-box" id="timerBox"><div><div class="timer-label" id="timerLabel">Time left</div><div class="timer-value" id="timerValue">25:00</div></div></div>
+      <div class="header-actions">
+        <div class="exam-lock-header-wrap" id="examLockHeaderWrap">
+          <button type="button" class="exam-lock-toggle" id="examLockToggle" aria-expanded="false" aria-controls="examLockAdmin" hidden>
+            <span class="exam-lock-toggle-icon">🔐</span><span>Quản lý đề</span>
+          </button>
+          <div class="exam-lock-admin" id="examLockAdmin" hidden>
+            <div class="exam-lock-admin-head"><b>Khóa / mở khóa đề</b><span class="exam-lock-badge" id="examLockBadge">Đang tải</span></div>
+            <select class="exam-lock-target" id="examLockTargetSelect" aria-label="Chọn đề cần khóa hoặc mở khóa"></select>
+            <div class="exam-lock-actions">
+              <button type="button" class="exam-lock-btn lock" id="lockCurrentExamBtn">Khóa đề</button>
+              <button type="button" class="exam-lock-btn unlock" id="unlockCurrentExamBtn">Mở khóa đề</button>
+            </div>
+            <div class="exam-lock-status" id="examLockStatus">Chọn một đề để cập nhật trạng thái.</div>
+          </div>
+        </div>
+        <div class="timer-box" id="timerBox"><div><div class="timer-label" id="timerLabel">Time left</div><div class="timer-value" id="timerValue">25:00</div></div></div>
+      </div>
     </div>
   </header>
   <div class="start-gate" id="startGate" aria-live="polite">
@@ -214,6 +301,10 @@ const STUDENT_KEY = 'toeic_student_session';
 const LESSON_ID = 'ets-summer-2021-part5-6';
 const LOCK_BYPASS_EMAIL = 'sunprice@sp.ik';
 let studentSession = null;
+let lockedLessonIds = [];
+let adminPasswordCache = '';
+let examLockUpdating = false;
+let examLockTargetKey = '';
 let timeLeft = 0;
 let timerId = null;
 let resultSubmitted = false;
@@ -263,18 +354,150 @@ function normalizeExamLibrary(data){
   }
   return [];
 }
+
+function isExamLockAdmin(){
+  return String(studentSession?.email || '').trim().toLowerCase() === LOCK_BYPASS_EMAIL;
+}
+function getExamLockId(test){
+  return `${LESSON_ID}::${getExamKey(test)}`;
+}
+function isExamLocked(test){
+  return !!test && lockedLessonIds.includes(getExamLockId(test));
+}
+function firstUnlockedExam(){
+  return EXAM_TESTS.find(test => !isExamLocked(test)) || null;
+}
+async function loadExamLockState(){
+  const res = await fetch('/api/lesson-locks', {cache:'no-store'});
+  const data = await res.json().catch(() => ({}));
+  if(!res.ok || !data.ok) throw new Error(data.error || 'Không tải được trạng thái khóa của các đề.');
+  lockedLessonIds = Array.isArray(data.lockedLessonIds) ? data.lockedLessonIds : [];
+  return lockedLessonIds;
+}
+function getExamLockTarget(){
+  return findExamByKey(examLockTargetKey) || EXAM_DATA || EXAM_TESTS[0] || null;
+}
+function populateExamLockTargetSelect(){
+  const select=document.getElementById('examLockTargetSelect');
+  if(!select || !EXAM_TESTS.length) return;
+  if(!findExamByKey(examLockTargetKey)) examLockTargetKey=selectedExamKey || getExamKey(EXAM_TESTS[0]);
+  select.innerHTML=EXAM_TESTS.map(test=>{
+    const key=getExamKey(test);
+    const state=isExamLocked(test)?' · ĐANG KHÓA':' · ĐÃ MỞ';
+    return `<option value="${escapeText(key)}">${escapeText(getExamLabel(test))}${state}</option>`;
+  }).join('');
+  select.value=examLockTargetKey;
+}
+function setExamLockStatus(message='', type=''){
+  const el=document.getElementById('examLockStatus');
+  if(!el) return;
+  el.textContent=message;
+  el.className='exam-lock-status'+(type?' '+type:'');
+}
+function updateExamLockAdminUi(resetStatus=false){
+  const panel=document.getElementById('examLockAdmin');
+  const toggle=document.getElementById('examLockToggle');
+  if(!panel || !toggle) return;
+  const admin=isExamLockAdmin();
+  toggle.hidden=!admin;
+  if(!admin){
+    panel.hidden=true;
+    toggle.setAttribute('aria-expanded','false');
+    return;
+  }
+  if(!EXAM_DATA) return;
+  populateExamLockTargetSelect();
+  const target=getExamLockTarget();
+  if(!target) return;
+  const locked=isExamLocked(target);
+  const badge=document.getElementById('examLockBadge');
+  if(badge){
+    badge.textContent=locked?'ĐANG KHÓA':'ĐÃ MỞ';
+    badge.className='exam-lock-badge '+(locked?'locked':'unlocked');
+  }
+  const lockBtn=document.getElementById('lockCurrentExamBtn');
+  const unlockBtn=document.getElementById('unlockCurrentExamBtn');
+  if(lockBtn) lockBtn.disabled=locked || examLockUpdating;
+  if(unlockBtn) unlockBtn.disabled=!locked || examLockUpdating;
+  if(resetStatus && !examLockUpdating) setExamLockStatus((locked?'Học viên chưa thể chọn: ':'Học viên có thể chọn: ')+getExamLabel(target)+'.');
+}
+function setExamLockPanelOpen(open){
+  const panel=document.getElementById('examLockAdmin');
+  const toggle=document.getElementById('examLockToggle');
+  if(!panel || !toggle || !isExamLockAdmin()) return;
+  const shouldOpen=!!open;
+  panel.hidden=!shouldOpen;
+  toggle.setAttribute('aria-expanded', shouldOpen?'true':'false');
+  if(shouldOpen){
+    updateExamLockAdminUi(true);
+    requestAnimationFrame(()=>document.getElementById('examLockTargetSelect')?.focus());
+  }
+}
+async function requestAdminPasswordForExamLock(){
+  if(adminPasswordCache) return adminPasswordCache;
+  if(window.Swal){
+    const result=await Swal.fire({
+      icon:'question',title:'Xác nhận quyền admin',
+      text:'Nhập mật khẩu admin để cập nhật trạng thái đề.',
+      input:'password',inputAttributes:{autocomplete:'current-password'},
+      showCancelButton:true,confirmButtonText:'Xác nhận',cancelButtonText:'Hủy',
+      confirmButtonColor:'#2563eb',reverseButtons:true,inputValidator:value=>!value?'Vui lòng nhập mật khẩu admin.':undefined
+    });
+    return result.isConfirmed ? String(result.value || '') : '';
+  }
+  return String(prompt('Nhập mật khẩu admin:') || '');
+}
+async function updateCurrentExamLock(action){
+  const target=getExamLockTarget();
+  if(!isExamLockAdmin() || !target || examLockUpdating) return;
+  const password=await requestAdminPasswordForExamLock();
+  if(!password) return;
+  examLockUpdating=true;
+  setExamLockStatus('Đang cập nhật...', 'ok');
+  updateExamLockAdminUi();
+  try{
+    const res=await fetch('/api/lesson-locks',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-admin-password':password},
+      body:JSON.stringify({lessonId:getExamLockId(target),action})
+    });
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok || !data.ok) throw new Error(data.error || 'Không cập nhật được trạng thái đề.');
+    adminPasswordCache=password;
+    lockedLessonIds=Array.isArray(data.lockedLessonIds)?data.lockedLessonIds:lockedLessonIds;
+    populateTestSelect();
+    populateExamLockTargetSelect();
+    const select=document.getElementById('testSelect');
+    if(select) select.value=selectedExamKey;
+    setExamLockStatus(action==='lock'?'Đã khóa đề với học viên.':'Đã mở đề cho học viên.', 'ok');
+    toast(action==='lock'?'Đã khóa '+getExamLabel(target)+'.':'Đã mở khóa '+getExamLabel(target)+'.','success');
+  }catch(err){
+    adminPasswordCache='';
+    setExamLockStatus(err.message || 'Không cập nhật được trạng thái đề.', 'err');
+    if(window.Swal) Swal.fire({icon:'error',title:'Cập nhật thất bại',text:err.message || 'Không cập nhật được trạng thái đề.',confirmButtonColor:'#2563eb'});
+  }finally{
+    examLockUpdating=false;
+    updateExamLockAdminUi();
+  }
+}
 function populateTestSelect(){
   const select = document.getElementById('testSelect');
   if(!select) return;
+  const admin=isExamLockAdmin();
   select.innerHTML = EXAM_TESTS.map((test, index) => {
     const key = getExamKey(test) || `test-${index + 1}`;
-    return `<option value="${escapeText(key)}">${escapeText(getExamLabel(test))}</option>`;
+    const locked=isExamLocked(test);
+    const prefix=locked?'🔒 ':'';
+    const state=admin?(locked?' · ĐANG KHÓA':' · ĐÃ MỞ'):'';
+    return `<option value="${escapeText(key)}"${locked&&!admin?' disabled':''}>${prefix}${escapeText(getExamLabel(test))}${state}</option>`;
   }).join('');
+  if(selectedExamKey) select.value=selectedExamKey;
 }
 function activateExam(test){
   if(!test) throw new Error('Không tìm thấy đề đã chọn trong JSON.');
   EXAM_DATA = test;
   selectedExamKey = getExamKey(test);
+  examLockTargetKey = selectedExamKey;
   timeLeft = Number(EXAM_DATA.timerMinutes || 25) * 60;
   currentQuestionNo = EXAM_DATA.questions[0]?.no || 101;
   const select = document.getElementById('testSelect');
@@ -290,10 +513,15 @@ async function loadExamLibrary(){
 
   EXAM_LIBRARY = data;
   EXAM_TESTS = tests;
+  await loadExamLockState();
   populateTestSelect();
 
-  const requested = new URLSearchParams(location.search).get('test');
-  activateExam(findExamByKey(requested) || EXAM_TESTS[0]);
+  const requested = findExamByKey(new URLSearchParams(location.search).get('test'));
+  const chosen = isExamLockAdmin()
+    ? (requested || EXAM_TESTS[0])
+    : (requested && !isExamLocked(requested) ? requested : firstUnlockedExam());
+  if(!chosen) throw new Error('Hiện chưa có đề nào được giáo viên mở khóa.');
+  activateExam(chosen);
 }
 function syncExamMeta(){
   const testSelect = document.getElementById('testSelect');
@@ -328,7 +556,10 @@ function syncExamMeta(){
   const sectionSpans = document.querySelectorAll('.section-head span');
   if(sectionSpans[0] && part5.length) sectionSpans[0].textContent = `Questions ${part5[0].no}-${part5[part5.length-1].no}`;
   if(sectionSpans[1] && part6.length) sectionSpans[1].textContent = `Questions ${part6[0].no}-${part6[part6.length-1].no}`;
+  updateVocabularyToggleAvailability();
+  updateExamLockAdminUi(true);
 }
+
 function setNotStartedStudentLine(){
   const line = document.getElementById('studentLine');
   if(!line || !EXAM_DATA) return;
@@ -346,9 +577,15 @@ function switchMode(nextMode){
   updateTimer();
   setNotStartedStudentLine();
 }
-function switchExam(nextKey){
+async function switchExam(nextKey){
   const nextExam = findExamByKey(nextKey);
   if(!nextExam || getExamKey(nextExam) === selectedExamKey) return;
+  if(isExamLocked(nextExam) && !isExamLockAdmin()){
+    const select=document.getElementById('testSelect');
+    if(select) select.value=selectedExamKey;
+    toast('Đề này đang khóa. Giáo viên phải mở khóa trước.', 'warning');
+    return;
+  }
   if(examStarted || resultSubmitted){
     const select = document.getElementById('testSelect');
     if(select) select.value = selectedExamKey;
@@ -366,9 +603,11 @@ function switchExam(nextKey){
     activateExam(nextExam);
     syncExamMeta();
     renderExam();
+    await syncVocabularyForExam();
     updateProgress();
     updateTimer();
     setNotStartedStudentLine();
+    updateExamLockAdminUi();
     toast('Đã chuyển sang ' + getExamLabel() + '.', 'success');
   }catch(err){
     if(window.Swal){
@@ -401,6 +640,7 @@ async function requireLessonUnlocked(){
     const res = await fetch('/api/lesson-locks', {cache:'no-store'});
     const data = await res.json().catch(() => ({}));
     if(!res.ok || !data.ok) throw new Error(data.error || 'Không kiểm tra được trạng thái khóa bài.');
+    lockedLessonIds = Array.isArray(data.lockedLessonIds) ? data.lockedLessonIds : [];
     if(Array.isArray(data.lockedLessonIds) && data.lockedLessonIds.includes(LESSON_ID)){
       if(window.Swal){
         await Swal.fire({icon:'warning',title:'Bài đang khóa',text:'Bài này hiện chưa mở cho học viên.',confirmButtonColor:'#2563eb'});
@@ -421,9 +661,222 @@ async function requireLessonUnlocked(){
     return false;
   }
 }
+
+async function guardSelectedExamUnlocked(){
+  if(isExamLockAdmin()) return true;
+  try{
+    await loadExamLockState();
+    populateTestSelect();
+    const select=document.getElementById('testSelect');
+    if(select) select.value=selectedExamKey;
+  }catch(err){
+    toast(err.message || 'Không kiểm tra được trạng thái đề.', 'error');
+    return false;
+  }
+  if(!isExamLocked(EXAM_DATA)) return true;
+  const next=firstUnlockedExam();
+  if(next && getExamKey(next)!==selectedExamKey) await switchExam(getExamKey(next));
+  toast('Đề này đang khóa. Hãy chọn một đề đã được giáo viên mở.', 'warning');
+  return false;
+}
 function escapeText(text){
   return String(text ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 }
+
+
+/* ===== JSON VOCABULARY LOOKUP ===== */
+const VOCABULARY_DATA_URL = 'data/voca/vocabulary.json';
+let vocabularyLookupEnabled = false;
+let vocabularyData = null;
+let vocabularyEntryMap = new Map();
+let vocabularySurfaceMap = new Map();
+let vocabularyLoaded = false;
+
+function normalizeLookupToken(value){
+  return String(value || '').trim().toLowerCase().replace(/[’]/g,"'").replace(/^[^a-z]+|[^a-z'-]+$/g,'');
+}
+function flattenIrregularForms(forms){
+  const result=[];
+  Object.values(forms || {}).forEach(value => {
+    if(Array.isArray(value)) result.push(...value);
+    else if(value) result.push(value);
+  });
+  return result.map(normalizeLookupToken).filter(Boolean);
+}
+function regularLemmaCandidates(surface){
+  const word=normalizeLookupToken(surface);
+  const out=[word];
+  if(word.endsWith("'s")) out.push(word.slice(0,-2));
+  if(word.endsWith('ies') && word.length>4) out.push(word.slice(0,-3)+'y');
+  if(word.endsWith('ves') && word.length>4) out.push(word.slice(0,-3)+'f',word.slice(0,-3)+'fe');
+  if(/(ches|shes|sses|xes|zes|oes)$/.test(word) && word.length>4) out.push(word.slice(0,-2));
+  if(word.endsWith('s') && word.length>3 && !/(ss|us|is)$/.test(word)) out.push(word.slice(0,-1));
+  if(word.endsWith('ied') && word.length>4) out.push(word.slice(0,-3)+'y');
+  if(word.endsWith('ed') && word.length>4){
+    const base=word.slice(0,-2); out.push(base,base+'e');
+    if(base.length>2 && base.at(-1)===base.at(-2)) out.push(base.slice(0,-1));
+  }
+  if(word.endsWith('ing') && word.length>5){
+    const base=word.slice(0,-3); out.push(base,base+'e');
+    if(base.length>2 && base.at(-1)===base.at(-2)) out.push(base.slice(0,-1));
+  }
+  return [...new Set(out)];
+}
+function buildVocabularyIndexes(data){
+  vocabularyEntryMap=new Map();
+  vocabularySurfaceMap=new Map();
+  (data?.entries || []).forEach(entry => {
+    const root=normalizeLookupToken(entry.word);
+    vocabularyEntryMap.set(root,entry);
+    (entry.sourceForms || []).forEach(form => vocabularySurfaceMap.set(normalizeLookupToken(form),root));
+    flattenIrregularForms(entry.irregularForms).forEach(form => vocabularySurfaceMap.set(form,root));
+    vocabularySurfaceMap.set(root,root);
+  });
+}
+async function syncVocabularyForExam(){
+  const toggle=document.getElementById('vocabularyLookupToggle');
+  closeVocabularyPanel();
+  setVocabularyLookupEnabled(false);
+  vocabularyData=null;
+  vocabularyLoaded=false;
+  vocabularyEntryMap=new Map();
+  vocabularySurfaceMap=new Map();
+  if(!toggle) return;
+  toggle.disabled=true;
+  toggle.title='Đang tải dữ liệu từ vựng dùng chung...';
+  try{
+    const res=await fetch(VOCABULARY_DATA_URL,{cache:'no-store'});
+    if(!res.ok) throw new Error('Không tải được '+VOCABULARY_DATA_URL);
+    vocabularyData=await res.json();
+    buildVocabularyIndexes(vocabularyData);
+    vocabularyLoaded=true;
+    decorateVocabularyWords();
+    updateVocabularyToggleAvailability();
+  }catch(err){
+    vocabularyLoaded=false;
+    toggle.disabled=true;
+    toggle.title=err.message || 'Không tải được dữ liệu từ vựng';
+  }
+}
+function resolveVocabularyEntry(surface){
+  const token=normalizeLookupToken(surface);
+  const mapped=vocabularySurfaceMap.get(token);
+  if(mapped && vocabularyEntryMap.has(mapped)) return {entry:vocabularyEntryMap.get(mapped),surface:token};
+  for(const candidate of regularLemmaCandidates(token)){
+    const root=vocabularySurfaceMap.get(candidate) || candidate;
+    if(vocabularyEntryMap.has(root)) return {entry:vocabularyEntryMap.get(root),surface:token};
+  }
+  return null;
+}
+function shouldSkipVocabularyNode(node){
+  const p=node.parentElement;
+  if(!p) return true;
+  return !!p.closest('script,style,button,input,select,option,.question-no,.letter,.blank,.vocabulary-lookup-panel');
+}
+function decorateVocabularyWords(){
+  const root=document.getElementById('examContent');
+  if(!root || !vocabularyData) return;
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){
+    if(!node.nodeValue || !/[A-Za-z]/.test(node.nodeValue) || shouldSkipVocabularyNode(node)) return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+  const wordPattern=/[A-Za-z]+(?:[’'][A-Za-z]+)*/g;
+  nodes.forEach(node => {
+    if(node.parentElement?.classList.contains('vocabulary-token')) return;
+    const text=node.nodeValue; let last=0; let matched=false; const frag=document.createDocumentFragment();
+    text.replace(wordPattern,(raw,offset)=>{
+      matched=true;
+      if(offset>last) frag.append(text.slice(last,offset));
+      const span=document.createElement('span');
+      span.className='vocabulary-token';
+      span.dataset.vocabularyToken=raw;
+      span.textContent=raw;
+      frag.append(span);
+      last=offset+raw.length;
+      return raw;
+    });
+    if(matched){ if(last<text.length) frag.append(text.slice(last)); node.replaceWith(frag); }
+  });
+}
+function canUseVocabularyLookup(){
+  return !!vocabularyData && vocabularyLoaded && examStarted && isViewMode();
+}
+function updateVocabularyToggleAvailability(){
+  const toggle=document.getElementById('vocabularyLookupToggle');
+  if(!toggle) return;
+  const available=canUseVocabularyLookup();
+  toggle.disabled=!available;
+  if(!isViewMode()) toggle.title='Tra từ chỉ khả dụng ở chế độ xem đề';
+  else if(!examStarted) toggle.title='Mở đề trước khi tra từ';
+  else if(!vocabularyLoaded) toggle.title='Đang tải dữ liệu từ vựng dùng chung...';
+  else toggle.title='Bật Tra từ vựng';
+  if(!available && vocabularyLookupEnabled) setVocabularyLookupEnabled(false);
+}
+function setVocabularyLookupEnabled(enabled){
+  vocabularyLookupEnabled=!!enabled && canUseVocabularyLookup();
+  document.body.classList.toggle('vocabulary-lookup-active',vocabularyLookupEnabled);
+  const toggle=document.getElementById('vocabularyLookupToggle');
+  if(toggle) toggle.setAttribute('aria-pressed',vocabularyLookupEnabled?'true':'false');
+  if(!vocabularyLookupEnabled){
+    document.querySelectorAll('.vocabulary-token.is-vocabulary-selected').forEach(el=>el.classList.remove('is-vocabulary-selected'));
+    closeVocabularyPanel();
+  }
+}
+function escapeVocabularyHtml(value){ return escapeText(value); }
+function renderVocabularyEntry(entry,surface){
+  const body=document.getElementById('vocabularyLookupBody');
+  if(!body) return;
+  const entryRows=(entry.entries || []).map(item => {
+    const meanings=(item.meaningsVi || []).map(m=>`<li>${escapeVocabularyHtml(m)}</li>`).join('');
+    const form=item.form ? `<span class="vocabulary-lookup-entry-form">dạng: ${escapeVocabularyHtml(item.form)}</span>` : '';
+    return `<section class="vocabulary-lookup-entry"><div><span class="vocabulary-lookup-pos">${escapeVocabularyHtml(item.partOfSpeech || 'word')}</span>${form}</div><ul class="vocabulary-lookup-meanings">${meanings}</ul></section>`;
+  }).join('');
+  const phrases=(entry.phrases || []).length ? `<div class="vocabulary-lookup-phrases">${entry.phrases.map(p=>`<div class="vocabulary-lookup-phrase"><b>${escapeVocabularyHtml(p.text)}</b><span>${escapeVocabularyHtml(p.type)} · ${escapeVocabularyHtml(p.meaningVi)}</span></div>`).join('')}</div>` : '';
+  const irregular=entry.irregularForms ? `<div class="vocabulary-lookup-irregular"><b>Dạng bất quy tắc:</b> ${escapeVocabularyHtml(Object.entries(entry.irregularForms).map(([k,v])=>`${k}: ${Array.isArray(v)?v.join(', '):v}`).join(' · '))}</div>` : '';
+  body.innerHTML=`<h3 class="vocabulary-lookup-word">${escapeVocabularyHtml(entry.word)}</h3>${entryRows}${irregular}${phrases}`;
+  document.getElementById('vocabularyLookupPanel').hidden=false;
+}
+function closeVocabularyPanel(){
+  const panel=document.getElementById('vocabularyLookupPanel');
+  if(panel) panel.hidden=true;
+  document.querySelectorAll('.vocabulary-token.is-vocabulary-selected').forEach(el=>el.classList.remove('is-vocabulary-selected'));
+}
+function renderVocabularyNotFound(surface){
+  const body=document.getElementById('vocabularyLookupBody');
+  if(!body) return;
+  body.innerHTML=`<h3 class="vocabulary-lookup-word">${escapeVocabularyHtml(surface)}</h3><div class="vocabulary-lookup-hint">Không tìm thấy từ.</div>`;
+  document.getElementById('vocabularyLookupPanel').hidden=false;
+}
+function handleVocabularyWordClick(event){
+  if(!vocabularyLookupEnabled) return;
+  const token=event.target.closest('.vocabulary-token');
+  if(!token || !document.getElementById('examContent')?.contains(token)) return;
+  event.preventDefault(); event.stopPropagation();
+  const surface=token.textContent.trim();
+  const found=resolveVocabularyEntry(token.dataset.vocabularyToken || surface);
+  document.querySelectorAll('.vocabulary-token.is-vocabulary-selected').forEach(el=>el.classList.remove('is-vocabulary-selected'));
+  token.classList.add('is-vocabulary-selected');
+  if(!found){
+    renderVocabularyNotFound(surface);
+    return;
+  }
+  renderVocabularyEntry(found.entry,surface);
+}
+function initializeVocabularyLookup(){
+  const toggle=document.getElementById('vocabularyLookupToggle');
+  const close=document.getElementById('vocabularyLookupClose');
+  const panel=document.getElementById('vocabularyLookupPanel');
+  toggle?.addEventListener('click',()=>setVocabularyLookupEnabled(!vocabularyLookupEnabled));
+  close?.addEventListener('click',closeVocabularyPanel);
+  document.getElementById('examContent')?.addEventListener('click',handleVocabularyWordClick,true);
+  document.addEventListener('click',event=>{
+    if(!panel || panel.hidden) return;
+    if(panel.contains(event.target) || toggle?.contains(event.target)) return;
+    closeVocabularyPanel();
+  });
+}
+
 function optionHtml(q, key, text){
   return `<label class="option"><input type="radio" name="${q.id}" value="${key}"><span class="letter">(${key})</span><span>${escapeText(text)}</span></label>`;
 }
@@ -451,6 +904,7 @@ function renderExam(){
     updateProgress();
   }));
   document.querySelectorAll('.nav-q').forEach(btn => btn.addEventListener('click', () => scrollToQuestion(Number(btn.dataset.nav))));
+  decorateVocabularyWords();
   document.querySelectorAll('.question-card').forEach(card => card.addEventListener('click', () => {
     currentQuestionNo = Number(card.dataset.question || currentQuestionNo);
     updateProgress();
@@ -519,8 +973,9 @@ function startTimer(){
     }
   }, 1000);
 }
-function startExam(){
+async function startExam(){
   if(examStarted || resultSubmitted) return;
+  if(!(await guardSelectedExamUnlocked())) return;
   examStarted = true;
   timeLeft = EXAM_DATA.timerMinutes * 60;
   document.body.classList.remove('exam-not-started');
@@ -533,6 +988,8 @@ function startExam(){
   const modeSelect=document.getElementById('modeSelect');
   if(modeSelect) modeSelect.disabled=true;
   document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b>';
+  updateVocabularyToggleAvailability();
+  updateExamLockAdminUi();
   startTimer();
   setTimeout(()=>scrollToQuestion(EXAM_DATA.questions[0]?.no || 101),80);
 }
@@ -705,8 +1162,26 @@ document.getElementById('submitBtn').addEventListener('click', () => submitExam(
 document.getElementById('startBtn').addEventListener('click', startExam);
 document.getElementById('testSelect').addEventListener('change', e => switchExam(e.target.value));
 document.getElementById('modeSelect').addEventListener('change', e => switchMode(e.target.value));
+document.getElementById('lockCurrentExamBtn')?.addEventListener('click',()=>updateCurrentExamLock('lock'));
+document.getElementById('unlockCurrentExamBtn')?.addEventListener('click',()=>updateCurrentExamLock('unlock'));
+document.getElementById('examLockTargetSelect')?.addEventListener('change',event=>{examLockTargetKey=event.target.value;updateExamLockAdminUi(true);});
+document.getElementById('examLockToggle')?.addEventListener('click',event=>{
+  event.stopPropagation();
+  const panel=document.getElementById('examLockAdmin');
+  setExamLockPanelOpen(!!panel?.hidden);
+});
+document.getElementById('examLockAdmin')?.addEventListener('click',event=>event.stopPropagation());
+document.addEventListener('click',event=>{
+  const wrap=document.getElementById('examLockHeaderWrap');
+  const panel=document.getElementById('examLockAdmin');
+  if(wrap && panel && !panel.hidden && !wrap.contains(event.target)) setExamLockPanelOpen(false);
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape') setExamLockPanelOpen(false);
+});
 (async function init(){
   setupAntiCopy();
+  initializeVocabularyLookup();
   studentSession = requireStudentSession();
   if(!studentSession) return;
   const unlocked = await requireLessonUnlocked();
@@ -730,6 +1205,7 @@ document.getElementById('modeSelect').addEventListener('change', e => switchMode
   document.body.classList.add('exam-not-started');
   setNotStartedStudentLine();
   renderExam();
+  await syncVocabularyForExam();
   updateProgress();
   updateTimer();
   document.getElementById('submitBtn').disabled = true;
