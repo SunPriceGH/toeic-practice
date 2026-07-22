@@ -343,6 +343,13 @@ function normalizeExamLibrary(data){
 function isExamLockAdmin(){
   return String(studentSession?.email || '').trim().toLowerCase() === LOCK_BYPASS_EMAIL;
 }
+function getExamLockAuthHeaders(){
+  return {
+    'Content-Type':'application/json',
+    'x-student-email':String(studentSession?.email || '').trim().toLowerCase(),
+    'x-student-token':String(studentSession?.token || '')
+  };
+}
 function mountExamLockAdminControls(){
   const headerActions=document.querySelector('.header-actions');
   const existing=document.getElementById('examLockHeaderWrap');
@@ -469,12 +476,12 @@ async function updateCurrentExamLock(action){
   try{
     const res=await fetch('/api/lesson-locks',{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
+      headers:getExamLockAuthHeaders(),
       credentials:'same-origin',
       body:JSON.stringify({lessonId:getExamLockId(target),action})
     });
     const data=await res.json().catch(()=>({}));
-    if(!res.ok || !data.ok) throw new Error(data.error || ((res.status===401 || res.status===403) ? 'Phiên đăng nhập không có quyền quản lý đề.' : 'Không cập nhật được trạng thái đề.'));
+    if(!res.ok || !data.ok) throw new Error(data.error || ((res.status===401 || res.status===403) ? 'Tài khoản này không có quyền quản lý đề.' : 'Không cập nhật được trạng thái đề.'));
     lockedLessonIds=Array.isArray(data.lockedLessonIds)?data.lockedLessonIds:lockedLessonIds;
     populateTestSelect();
     populateExamLockTargetSelect();
