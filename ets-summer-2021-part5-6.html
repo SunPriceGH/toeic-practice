@@ -186,36 +186,89 @@ body.vocabulary-lookup-active .option{transform:none}
   .exam-lock-admin{right:auto;left:0;width:min(360px,calc(100vw - 28px))}
   .exam-lock-admin:before{right:auto;left:26px}
 }
+
+/* ===== COMPACT LAYOUT: NO HEADER ===== */
+.top-line,.exam-header,.header-inner,.brand,.cbt-badge,.exam-title,.header-actions{display:none!important}
+.exam-app{padding-top:0}
+.start-gate{inset:0!important}
+.exam-main{padding-top:14px}
+.question-card{scroll-margin-top:18px}
+.sidebar{top:14px}
+.status-card{padding:12px;border-radius:20px}
+.status-top-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.status-tools{display:flex;align-items:center;min-width:0}
+.timer-box{min-height:38px;border-radius:13px;padding:6px 10px;box-shadow:none;gap:0}
+.timer-label{font-size:9px;line-height:1;margin-bottom:2px}
+.timer-value{font-size:19px;line-height:1.05}
+.progress-compact{margin-left:auto;display:inline-flex;align-items:baseline;justify-content:center;min-width:62px;min-height:38px;padding:6px 10px;border:2px solid #bfdbfe;border-radius:13px;background:#fff;color:#1d4ed8;font-variant-numeric:tabular-nums;line-height:1}
+.progress-compact b{font-size:18px;font-weight:700}
+.progress-compact span{font-size:13px;font-weight:700;color:#64748b;margin:0 2px}
+.student-line{font-size:12px;line-height:1.35;color:#64748b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 1px 8px}
+.student-line b{color:#334155}
+.student-line .student-dot{padding:0 5px;color:#94a3b8}
+.navigator{margin-top:0;gap:5px}
+.nav-q{min-height:29px;padding:4px 0;font-size:12px;border-radius:9px}
+.action-stack{grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:9px}
+.action-stack .btn{min-height:38px;padding:8px 9px;font-size:12px;box-shadow:none}
+.exam-lock-header-wrap{position:relative}
+.exam-lock-toggle{min-height:38px;padding:6px 10px;border-radius:13px;box-shadow:none}
+.exam-lock-admin{top:calc(100% + 8px);left:0;right:auto;width:min(350px,calc(100vw - 28px))}
+.exam-lock-admin:before{left:22px;right:auto}
+.vocabulary-lookup-fab{top:auto!important;right:16px!important;bottom:16px!important;min-height:44px;padding:9px 13px;z-index:230}
+.vocabulary-lookup-panel{top:auto!important;right:16px!important;bottom:70px!important;max-height:calc(100vh - 88px)!important}
+.start-card>p,.mode-help,.start-meta{display:none!important}
+.start-card h2{margin-bottom:16px}
+.start-card{padding:24px}
+.demo-sandbox-badge{top:8px!important;left:8px!important;font-size:10px!important;padding:5px 8px!important}
+@media(max-width:980px){
+  .exam-main{padding:10px;gap:10px}
+  .sidebar{position:static;order:-1}
+  .status-card{padding:10px;border-radius:17px}
+  .navigator{grid-template-columns:repeat(10,1fr)}
+}
+@media(max-width:620px){
+  .exam-main{padding:8px}
+  .status-top-row{gap:6px;margin-bottom:6px}
+  .timer-box{min-height:34px;padding:5px 8px;border-radius:11px}
+  .timer-value{font-size:17px}
+  .timer-label{display:none}
+  .progress-compact{min-height:34px;min-width:56px;padding:5px 8px;border-radius:11px}
+  .progress-compact b{font-size:17px}
+  .student-line{font-size:11px;margin-bottom:6px}
+  .navigator{grid-template-columns:repeat(10,1fr);gap:4px}
+  .nav-q{min-height:27px;font-size:10px;padding:3px 0}
+  .action-stack{gap:5px;margin-top:7px}
+  .action-stack .btn{min-height:35px;padding:7px 5px;font-size:11px}
+  .exam-lock-toggle{width:36px;min-width:36px;min-height:34px;padding:5px;border-radius:11px}
+  .exam-lock-toggle span:last-child{display:none}
+  .exam-lock-toggle-icon{font-size:15px}
+  .exam-lock-admin{position:fixed;top:52px;left:10px;right:10px;width:auto;max-width:none}
+  .exam-lock-admin:before{display:none}
+  .vocabulary-lookup-fab{right:10px!important;bottom:10px!important;width:44px;height:44px;min-height:44px;padding:0;border-radius:50%;justify-content:center}
+  .vocabulary-lookup-fab span:last-child{display:none}
+  .vocabulary-lookup-fab .lookup-icon{font-size:20px}
+  .vocabulary-lookup-panel{left:10px!important;right:10px!important;bottom:62px!important;width:auto!important;max-height:calc(100vh - 76px)!important;border-radius:17px}
+  .vocabulary-lookup-panel-head{padding:10px 12px}
+  .vocabulary-lookup-body{padding:12px}
+  .question-grid{padding:10px;gap:10px}
+  .question-card,.passage-text{padding:13px}
+}
+
 </style>
 </head>
 <body class="auth-pending exam-not-started">
-<div class="top-line"></div>
-<button type="button" class="vocabulary-lookup-fab" id="vocabularyLookupToggle" aria-pressed="false" disabled title="Tra từ vựng từ dữ liệu JSON dùng chung"><span class="lookup-icon">⌕</span><span>Tra từ</span></button>
+
+<button type="button" class="vocabulary-lookup-fab" id="vocabularyLookupToggle" aria-pressed="false" disabled title="Tra từ"><span class="lookup-icon">⌕</span><span>Tra từ</span></button>
 <aside class="vocabulary-lookup-panel" id="vocabularyLookupPanel" hidden aria-live="polite">
   <div class="vocabulary-lookup-panel-head"><b>Tra từ vựng</b><button type="button" class="vocabulary-lookup-close" id="vocabularyLookupClose" aria-label="Đóng">×</button></div>
-  <div class="vocabulary-lookup-body" id="vocabularyLookupBody"><div class="vocabulary-lookup-hint">Bật Tra từ rồi chạm vào một từ được đánh dấu trong đề.</div></div>
+  <div class="vocabulary-lookup-body" id="vocabularyLookupBody"></div>
 </aside>
 
 <div class="exam-app">
-  <header class="exam-header">
-    <div class="header-inner">
-      <div class="brand">
-        <div class="cbt-badge">CBT</div>
-        <div class="exam-title">
-          <h1>ETS Summer 2021 · Part 5 + 6</h1>
-          <p>Computer-based TOEIC Reading mini test · 46 questions</p>
-        </div>
-      </div>
-      <div class="header-actions">
-        <div class="timer-box" id="timerBox"><div><div class="timer-label" id="timerLabel">Time left</div><div class="timer-value" id="timerValue">25:00</div></div></div>
-      </div>
-    </div>
-  </header>
-  <div class="start-gate" id="startGate" aria-live="polite">
+<div class="start-gate" id="startGate" aria-live="polite">
     <div class="start-card">
       <div class="start-icon">CBT</div>
       <h2>Chọn đề và chế độ</h2>
-      <p>Nội dung đề đang được làm mờ. Hãy chọn đề, chọn chế độ rồi bấm nút bên dưới để mở đề.</p>
       <div class="test-picker">
         <label for="testSelect">Chọn đề thi</label>
         <select id="testSelect" class="test-select" aria-label="Chọn đề ETS Summer 2021">
@@ -229,11 +282,9 @@ body.vocabulary-lookup-active .option{transform:none}
           <option value="exam">Chế độ thi thử</option>
           <option value="view">Chế độ xem đề</option>
         </select>
-        <div class="mode-help" id="modeHelp">Có đồng hồ 25 phút và tự động nộp bài khi hết giờ.</div>
       </div>
-      <div class="start-meta"><span>Part 5 + 6</span><span>46 câu</span><span>25 phút</span></div>
       <button class="btn primary" type="button" id="startBtn">Bắt đầu</button>
-      <button class="btn light" type="button" onclick="goHome()" style="margin-left:8px">Về trang chủ</button>
+      <button class="btn light" type="button" onclick="goHome()" style="margin-left:8px">Trang chủ</button>
     </div>
   </div>
   <main class="exam-main">
@@ -248,17 +299,18 @@ body.vocabulary-lookup-active .option{transform:none}
     </section>
     <aside class="sidebar">
       <div class="status-card">
-        <h3>Phòng thi</h3>
-        <div class="student-line" id="studentLine">Đang kiểm tra đăng nhập...</div>
-        <div class="progress-row">
-          <div class="metric"><b id="answeredCount">0</b><span>Đã chọn</span></div>
-          <div class="metric"><b id="remainingCount">46</b><span>Còn lại</span></div>
+        <div class="status-top-row">
+          <div class="status-tools"></div>
+          <div class="timer-box" id="timerBox"><div><div class="timer-label" id="timerLabel">Time left</div><div class="timer-value" id="timerValue">25:00</div></div></div>
+          <div class="progress-compact"><b id="answeredCount">0</b><span>/</span><b id="totalQuestionCount">46</b></div>
+          <span id="remainingCount" hidden>46</span>
         </div>
+        <div class="student-line" id="studentLine">...</div>
         <div class="navigator" id="navigator"></div>
         <div class="action-stack">
           <button class="btn primary" type="button" id="submitBtn">Nộp bài</button>
-          <button class="btn light" type="button" onclick="scrollToFirstBlank()">Tới câu trống</button>
-          <button class="btn dark" type="button" onclick="goHome()">Về trang chủ</button>
+          <button class="btn light" type="button" onclick="scrollToFirstBlank()">Câu trống</button>
+          <button class="btn dark" type="button" onclick="goHome()">Trang chủ</button>
         </div>
         <div class="submit-status" id="submitStatus"></div>
         <div class="result-panel" id="resultPanel">
@@ -351,7 +403,7 @@ function getExamLockAuthHeaders(){
   };
 }
 function mountExamLockAdminControls(){
-  const headerActions=document.querySelector('.header-actions');
+  const headerActions=document.querySelector('.status-tools');
   const existing=document.getElementById('examLockHeaderWrap');
 
   // Tài khoản khác không được có DOM quản lý đề trong trang.
@@ -375,7 +427,7 @@ function mountExamLockAdminControls(){
         <button type="button" class="exam-lock-btn lock" id="lockCurrentExamBtn">Khóa đề</button>
         <button type="button" class="exam-lock-btn unlock" id="unlockCurrentExamBtn">Mở khóa đề</button>
       </div>
-      <div class="exam-lock-status" id="examLockStatus">Chọn một đề để cập nhật trạng thái.</div>
+      <div class="exam-lock-status" id="examLockStatus"></div>
     </div>`;
   headerActions.prepend(wrap);
 
@@ -552,20 +604,14 @@ function syncExamMeta(){
   if(titleEl) titleEl.textContent = EXAM_DATA.title || 'TOEIC CBT Test';
   const subEl = document.querySelector('.exam-title p');
   if(subEl) subEl.textContent = `TOEIC Reading · ${total} câu · ${getModeLabel()}`;
-  const startP = document.querySelector('.start-card p');
-  if(startP) startP.innerHTML = isViewMode()
-    ? 'Nội dung đề đang được làm mờ. Khi bấm <b>Mở đề</b>, hệ thống sẽ hiển thị đề và không tính giờ.'
-    : `Nội dung đề đang được làm mờ. Khi bấm <b>Bắt đầu thi</b>, hệ thống sẽ mở đề và đếm ngược ${minutes} phút.`;
   const startMeta = document.querySelector('.start-meta');
   if(startMeta) startMeta.innerHTML = `<span>Part 5 + 6</span><span>${total} câu</span><span>${isViewMode() ? 'Không tính giờ' : minutes + ' phút'}</span>`;
   const startBtn = document.getElementById('startBtn');
   if(startBtn) startBtn.textContent = isViewMode() ? 'Mở đề' : 'Bắt đầu thi';
-  const modeHelp = document.getElementById('modeHelp');
-  if(modeHelp) modeHelp.textContent = isViewMode()
-    ? 'Không có đồng hồ đếm ngược và không tự động nộp bài.'
-    : `Có đồng hồ ${minutes} phút và tự động nộp bài khi hết giờ.`;
   const remain = document.getElementById('remainingCount');
   if(remain) remain.textContent = total;
+  const totalCount = document.getElementById('totalQuestionCount');
+  if(totalCount) totalCount.textContent = total;
   const score = document.getElementById('scoreText');
   if(score) score.textContent = `0/${total}`;
   const part5 = EXAM_DATA.questions.filter(q => q.part === 5);
@@ -580,7 +626,7 @@ function syncExamMeta(){
 function setNotStartedStudentLine(){
   const line = document.getElementById('studentLine');
   if(!line || !EXAM_DATA) return;
-  line.innerHTML = 'Học viên: <b>' + escapeText(studentSession?.email || '') + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b>';
+  line.innerHTML = '<b>' + escapeText(studentSession?.email || '') + '</b><span class="student-dot">·</span>' + escapeText(getExamLabel());
 }
 function switchMode(nextMode){
   if(examStarted || resultSubmitted){
@@ -1004,7 +1050,7 @@ async function startExam(){
   if(testSelect) testSelect.disabled=true;
   const modeSelect=document.getElementById('modeSelect');
   if(modeSelect) modeSelect.disabled=true;
-  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b>';
+  document.getElementById('studentLine').innerHTML = '<b>' + escapeText(studentSession.email) + '</b><span class="student-dot">·</span>' + escapeText(getExamLabel());
   updateVocabularyToggleAvailability();
   updateExamLockAdminUi();
   startTimer();
@@ -1078,7 +1124,7 @@ async function submitExam(reason='manual'){
   document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
   document.getElementById('submitBtn').disabled = true;
   document.getElementById('submitBtn').textContent = 'Hoàn thành';
-  document.getElementById('studentLine').innerHTML = 'Học viên: <b>' + escapeText(studentSession.email) + '</b><br>Đề: <b>' + escapeText(getExamLabel()) + '</b>';
+  document.getElementById('studentLine').innerHTML = '<b>' + escapeText(studentSession.email) + '</b><span class="student-dot">·</span>' + escapeText(getExamLabel());
   document.querySelectorAll('.nav-q').forEach(btn => {
     const no = Number(btn.dataset.nav);
     const q = EXAM_DATA.questions.find(item => item.no === no);
