@@ -54,7 +54,7 @@ body.exam-not-started:not(.auth-pending) .start-gate{display:flex}
 .exam-panel{background:#f8fafc;border:2px solid #e2e8f0;border-radius:26px;box-shadow:0 18px 40px rgba(15,23,42,.08);overflow:hidden}
 .section-head{background:linear-gradient(135deg,#1d4ed8,#0ea5e9);color:#fff;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .section-head h2{font-size:23px;font-weight:700}
-.section-head span{font-size:14px;font-weight:700;background:rgba(255,255,255,.18);padding:7px 12px;border-radius:999px}
+.section-head span{font-size:14px;font-weight:700;background:none;padding:0;border-radius:0}
 .instructions{padding:18px 22px;background:#eff6ff;border-bottom:2px solid #dbeafe;color:#334155;font-size:16px;line-height:1.5}
 .question-grid{padding:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .question-card{background:#fff;border:2px solid #dbeafe;border-radius:22px;padding:18px;box-shadow:0 12px 26px rgba(37,99,235,.07);scroll-margin-top:108px}
@@ -254,6 +254,78 @@ body.vocabulary-lookup-active .option{transform:none}
   .question-card,.passage-text{padding:13px}
 }
 
+
+
+/* ===== PLAIN SECTION HEADER + CENTERED VOCABULARY PANEL ===== */
+.section-head{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+}
+.section-head .section-title{
+  margin:0!important;
+  font-size:23px!important;
+  line-height:1.1!important;
+  font-weight:700!important;
+  white-space:nowrap!important;
+  background:none!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.section-head .section-range{
+  display:block!important;
+  margin:0!important;
+  font-size:14px!important;
+  line-height:1.2!important;
+  font-weight:700!important;
+  white-space:nowrap!important;
+  background:none!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.vocabulary-lookup-panel{
+  top:50%!important;
+  left:50%!important;
+  right:auto!important;
+  bottom:auto!important;
+  transform:translate(-50%,-50%)!important;
+  width:min(430px,calc(100vw - 28px))!important;
+  max-height:min(72vh,620px)!important;
+}
+@media(max-width:620px){
+  .section-head{padding:14px 16px!important}
+  .section-head .section-title{font-size:19px!important}
+  .section-head .section-range{font-size:12px!important}
+  .vocabulary-lookup-fab{
+    right:10px!important;
+    bottom:10px!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:42px!important;
+    padding:9px 13px!important;
+    border-radius:999px!important;
+    justify-content:center!important;
+  }
+  .vocabulary-lookup-fab span:last-child{display:inline!important}
+  .vocabulary-lookup-fab .lookup-icon{font-size:17px!important}
+  .vocabulary-lookup-panel{
+    top:50%!important;
+    left:50%!important;
+    right:auto!important;
+    bottom:auto!important;
+    transform:translate(-50%,-50%)!important;
+    width:calc(100vw - 20px)!important;
+    max-height:78vh!important;
+    border-radius:18px!important;
+  }
+}
+
 </style>
 </head>
 <body class="auth-pending exam-not-started">
@@ -289,10 +361,10 @@ body.vocabulary-lookup-active .option{transform:none}
   </div>
   <main class="exam-main">
     <section class="exam-panel" id="examContent">
-      <div class="section-head"><h2>PART 5</h2><span>Questions 101-130</span></div>
+      <div class="section-head"><h2 class="section-title">PART 5</h2><span class="section-range">Questions 101-130</span></div>
       <div class="instructions"><b>Directions:</b> A word or phrase is missing in each sentence. Choose the best answer.</div>
       <div class="question-grid" id="part5Grid"></div>
-      <div class="section-head"><h2>PART 6</h2><span>Questions 131-146</span></div>
+      <div class="section-head"><h2 class="section-title">PART 6</h2><span class="section-range">Questions 131-146</span></div>
       <div class="instructions"><b>Directions:</b> Read each text and choose the best answer for each blank.</div>
       <div id="part6Wrap"></div>
       <div class="footer-space"></div>
@@ -616,7 +688,7 @@ function syncExamMeta(){
   if(score) score.textContent = `0/${total}`;
   const part5 = EXAM_DATA.questions.filter(q => q.part === 5);
   const part6 = EXAM_DATA.questions.filter(q => q.part === 6);
-  const sectionSpans = document.querySelectorAll('.section-head span');
+  const sectionSpans = document.querySelectorAll('.section-head .section-range');
   if(sectionSpans[0] && part5.length) sectionSpans[0].textContent = `Questions ${part5[0].no}-${part5[part5.length-1].no}`;
   if(sectionSpans[1] && part6.length) sectionSpans[1].textContent = `Questions ${part6[0].no}-${part6[part6.length-1].no}`;
   updateVocabularyToggleAvailability();
