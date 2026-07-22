@@ -1,11 +1,12 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 3,
   "id": "shared-vocabulary",
   "title": "Shared Vocabulary",
   "normalization": {
     "headwordRule": "Động từ lưu ở dạng nguyên mẫu; danh từ lưu ở dạng số ít; chỉ lưu riêng các dạng bất quy tắc cần thiết.",
     "regularInflections": "Không lưu thành mục từ riêng; giao diện tự quy về từ gốc khi tra.",
-    "irregularInflections": "Lưu trong trường irregularForms của mục từ gốc."
+    "irregularInflections": "Lưu trong trường irregularForms của mục từ gốc.",
+    "multiPartOfSpeech": "Mỗi từ loại được lưu thành một phần tử riêng trong entries; không ghép nhiều từ loại bằng dấu gạch chéo."
   },
   "coverage": {
     "surfaceTokenCount": 672,
@@ -96,11 +97,16 @@
       "word": "about",
       "entries": [
         {
-          "partOfSpeech": "preposition/adverb",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
             "về",
-            "khoảng",
             "xung quanh"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "khoảng"
           ]
         }
       ],
@@ -266,10 +272,20 @@
       "word": "advance",
       "entries": [
         {
-          "partOfSpeech": "noun/verb/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "sự tiến bộ",
-            "tiến lên",
+            "sự tiến bộ"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tiến lên"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "trước"
           ]
         }
@@ -334,10 +350,21 @@
       "word": "after",
       "entries": [
         {
-          "partOfSpeech": "preposition/conjunction/adverb",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
-            "sau",
+            "sau"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
             "sau khi"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "sau đó"
           ]
         }
       ],
@@ -378,9 +405,20 @@
       "word": "all",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun/adverb",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
-            "tất cả",
+            "tất cả"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "tất cả mọi người hoặc mọi vật"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
             "hoàn toàn"
           ]
         }
@@ -423,11 +461,23 @@
       "word": "alternate",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun/verb",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
             "thay thế",
-            "xen kẽ",
+            "xen kẽ"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "phương án thay thế"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "xen kẽ",
+            "luân phiên"
           ]
         }
       ],
@@ -468,9 +518,14 @@
       "word": "american",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "thuộc châu Mỹ hoặc Hoa Kỳ",
+            "thuộc châu Mỹ hoặc Hoa Kỳ"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "người Mỹ"
           ]
         }
@@ -613,9 +668,20 @@
       "word": "any",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
-            "bất kỳ",
+            "bất kỳ"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "bất kỳ người hoặc vật nào"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
             "một chút nào"
           ]
         }
@@ -837,12 +903,24 @@
       "word": "as",
       "entries": [
         {
-          "partOfSpeech": "preposition/conjunction/adverb",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
             "với tư cách là",
-            "như",
+            "như"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
             "khi",
-            "vì"
+            "vì",
+            "như"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "như vậy"
           ]
         }
       ],
@@ -854,9 +932,14 @@
       "word": "assistant",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "trợ lý",
+            "trợ lý"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "phụ tá"
           ]
         }
@@ -1000,9 +1083,14 @@
       "word": "award",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "giải thưởng",
+            "giải thưởng"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "trao thưởng"
           ]
         }
@@ -1031,9 +1119,14 @@
       "word": "bag",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "túi",
+            "túi"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "bỏ vào túi"
           ]
         }
@@ -1061,12 +1154,17 @@
       "word": "be",
       "entries": [
         {
-          "partOfSpeech": "verb/linking verb",
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tồn tại",
+            "ở"
+          ]
+        },
+        {
+          "partOfSpeech": "linking verb",
           "meaningsVi": [
             "là",
-            "thì",
-            "ở",
-            "tồn tại"
+            "thì"
           ]
         }
       ],
@@ -1110,10 +1208,21 @@
       "word": "before",
       "entries": [
         {
-          "partOfSpeech": "preposition/conjunction/adverb",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
-            "trước",
+            "trước"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
             "trước khi"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "trước đó"
           ]
         }
       ],
@@ -1143,9 +1252,14 @@
       "word": "besides",
       "entries": [
         {
-          "partOfSpeech": "preposition/adverb",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
-            "ngoài",
+            "ngoài"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
             "ngoài ra"
           ]
         }
@@ -1158,10 +1272,15 @@
       "word": "bite",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "miếng nhỏ",
-            "vết cắn",
+            "vết cắn"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "cắn"
           ]
         }
@@ -1174,9 +1293,14 @@
       "word": "box",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "hộp",
+            "hộp"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "đóng hộp"
           ]
         }
@@ -1205,9 +1329,14 @@
       "word": "breakfast",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "bữa sáng",
+            "bữa sáng"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "ăn sáng"
           ]
         }
@@ -1220,9 +1349,14 @@
       "word": "bridge",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "cây cầu",
+            "cây cầu"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "nối liền"
           ]
         }
@@ -1235,10 +1369,20 @@
       "word": "brief",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun/verb",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "ngắn",
-            "bản tóm tắt",
+            "ngắn"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "bản tóm tắt"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "báo cáo ngắn gọn"
           ]
         }
@@ -1251,9 +1395,14 @@
       "word": "build",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "xây dựng",
+            "xây dựng"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "vóc dáng"
           ]
         }
@@ -1298,12 +1447,19 @@
       "word": "by",
       "entries": [
         {
-          "partOfSpeech": "preposition/adverb",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
             "bởi",
             "bằng",
             "cạnh",
             "trước một thời hạn"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "đi qua",
+            "ở gần"
           ]
         }
       ],
@@ -1390,9 +1546,14 @@
       "word": "center",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "trung tâm",
+            "trung tâm"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "tập trung"
           ]
         }
@@ -1405,7 +1566,13 @@
       "word": "ceo",
       "entries": [
         {
-          "partOfSpeech": "abbreviation/noun",
+          "partOfSpeech": "abbreviation",
+          "meaningsVi": [
+            "CEO"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "giám đốc điều hành"
           ]
@@ -1419,10 +1586,15 @@
       "word": "check",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "việc kiểm tra",
-            "tấm séc",
+            "tấm séc"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "kiểm tra"
           ]
         }
@@ -1436,10 +1608,17 @@
       "word": "chicken",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "thịt gà",
             "con gà"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc về gà",
+            "có vị gà"
           ]
         }
       ],
@@ -1588,9 +1767,14 @@
       "word": "complete",
       "entries": [
         {
-          "partOfSpeech": "verb/adjective",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "hoàn thành",
+            "hoàn thành"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "đầy đủ"
           ]
         }
@@ -1626,9 +1810,14 @@
       "word": "complex",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "khu phức hợp",
+            "khu phức hợp"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "phức tạp"
           ]
         }
@@ -1641,11 +1830,17 @@
       "word": "concern",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "mối quan ngại",
-            "sự liên quan",
-            "làm lo lắng"
+            "sự liên quan"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "làm lo lắng",
+            "liên quan đến"
           ]
         }
       ],
@@ -1699,9 +1894,14 @@
       "word": "considering",
       "entries": [
         {
-          "partOfSpeech": "preposition/conjunction",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
-            "xét đến",
+            "xét đến"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
             "vì rằng"
           ]
         }
@@ -1774,10 +1974,15 @@
       "word": "contact",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "sự liên hệ",
-            "người liên hệ",
+            "người liên hệ"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "liên hệ"
           ]
         }
@@ -1811,9 +2016,14 @@
       "word": "contract",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "hợp đồng",
+            "hợp đồng"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "ký hợp đồng",
             "co lại"
           ]
@@ -1841,9 +2051,14 @@
       "word": "contrary",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "điều ngược lại",
+            "điều ngược lại"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "trái ngược"
           ]
         }
@@ -1856,9 +2071,14 @@
       "word": "contrast",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "sự tương phản",
+            "sự tương phản"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "đối chiếu"
           ]
         }
@@ -2023,10 +2243,15 @@
       "word": "date",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "ngày tháng",
-            "cuộc hẹn",
+            "cuộc hẹn"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "ghi ngày",
             "hẹn hò"
           ]
@@ -2056,9 +2281,14 @@
       "word": "deal",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "giải quyết",
+            "giải quyết"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "giao dịch",
             "thỏa thuận"
           ]
@@ -2079,9 +2309,14 @@
       "word": "dear",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "thân mến",
+            "thân mến"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "người thân yêu"
           ]
         }
@@ -2108,10 +2343,15 @@
       "word": "defect",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "lỗi",
-            "khuyết tật",
+            "khuyết tật"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "đào ngũ"
           ]
         }
@@ -2125,9 +2365,14 @@
       "word": "delay",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "sự trì hoãn",
+            "sự trì hoãn"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "trì hoãn"
           ]
         }
@@ -2277,9 +2522,14 @@
       "word": "dining",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "việc ăn uống",
+            "việc ăn uống"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "dùng cho ăn uống"
           ]
         }
@@ -2307,9 +2557,14 @@
       "word": "discount",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "khoản giảm giá",
+            "khoản giảm giá"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "giảm giá",
             "không tính đến"
           ]
@@ -2338,11 +2593,17 @@
       "word": "display",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "trưng bày",
-            "hiển thị",
-            "phần trưng bày"
+            "hiển thị"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phần trưng bày",
+            "màn hình hiển thị"
           ]
         }
       ],
@@ -2375,11 +2636,16 @@
       "word": "do",
       "entries": [
         {
-          "partOfSpeech": "verb/auxiliary verb",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "làm",
-            "thực hiện",
-            "trợ động từ"
+            "thực hiện"
+          ]
+        },
+        {
+          "partOfSpeech": "auxiliary verb",
+          "meaningsVi": [
+            "trợ động từ dùng để tạo câu hỏi, phủ định hoặc nhấn mạnh"
           ]
         }
       ],
@@ -2439,9 +2705,14 @@
       "word": "drink",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "đồ uống",
+            "đồ uống"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "uống"
           ]
         }
@@ -2484,10 +2755,15 @@
       "word": "each",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
-            "mỗi",
-            "từng"
+            "mỗi"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "từng người hoặc từng vật"
           ]
         }
       ],
@@ -2513,9 +2789,20 @@
       "word": "either",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun/conjunction",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
-            "một trong hai",
+            "một trong hai"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "một trong hai người hoặc vật"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
             "hoặc...hoặc"
           ]
         }
@@ -2556,9 +2843,14 @@
       "word": "empty",
       "entries": [
         {
-          "partOfSpeech": "adjective/verb",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "trống",
+            "trống"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "làm trống"
           ]
         }
@@ -2571,9 +2863,14 @@
       "word": "end",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "phần cuối",
+            "phần cuối"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "kết thúc"
           ]
         }
@@ -2615,9 +2912,20 @@
       "word": "enough",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun/adverb",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
-            "đủ",
+            "đủ"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "số lượng đủ"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
             "đủ mức"
           ]
         }
@@ -2696,9 +3004,14 @@
       "word": "even",
       "entries": [
         {
-          "partOfSpeech": "adverb/adjective",
+          "partOfSpeech": "adverb",
           "meaningsVi": [
-            "thậm chí",
+            "thậm chí"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "bằng phẳng",
             "chẵn"
           ]
@@ -2788,9 +3101,14 @@
       "word": "executive",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "lãnh đạo cấp cao",
+            "lãnh đạo cấp cao"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "thuộc điều hành"
           ]
         }
@@ -2803,9 +3121,14 @@
       "word": "exhibit",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "trưng bày",
+            "trưng bày"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "vật trưng bày"
           ]
         }
@@ -2849,19 +3172,17 @@
       "word": "experience",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "kinh nghiệm",
-            "trải nghiệm",
-            "trải qua"
+            "trải nghiệm"
           ]
         },
         {
-          "partOfSpeech": "adjective",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "có kinh nghiệm"
-          ],
-          "form": "experienced"
+            "trải qua"
+          ]
         }
       ],
       "phrases": [
@@ -2952,10 +3273,15 @@
       "word": "feature",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "có đặc điểm",
-            "giới thiệu nổi bật",
+            "giới thiệu nổi bật"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "đặc điểm"
           ]
         }
@@ -3025,10 +3351,22 @@
       "word": "few",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun/adjective",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
             "ít",
             "một vài"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "một số ít người hoặc vật"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "không nhiều"
           ]
         }
       ],
@@ -3040,10 +3378,15 @@
       "word": "file",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "hồ sơ",
-            "tệp",
+            "tệp"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "nộp",
             "lưu hồ sơ"
           ]
@@ -3104,10 +3447,21 @@
       "word": "first",
       "entries": [
         {
-          "partOfSpeech": "ordinal/adjective/adverb",
+          "partOfSpeech": "ordinal",
           "meaningsVi": [
-            "thứ nhất",
+            "thứ nhất"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "đầu tiên"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "trước tiên"
           ]
         }
       ],
@@ -3192,11 +3546,17 @@
       "word": "for",
       "entries": [
         {
-          "partOfSpeech": "preposition/conjunction",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
             "cho",
             "để",
             "trong khoảng thời gian",
+            "vì"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
             "vì"
           ]
         }
@@ -3209,10 +3569,15 @@
       "word": "form",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "mẫu đơn",
-            "hình thức",
+            "hình thức"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "hình thành"
           ]
         }
@@ -3225,10 +3590,15 @@
       "word": "former",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "trước đây",
-            "người/vật thứ nhất trong hai"
+            "trước đây"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người hoặc vật thứ nhất trong hai"
           ]
         }
       ],
@@ -3254,9 +3624,15 @@
       "word": "fourth",
       "entries": [
         {
-          "partOfSpeech": "ordinal/adjective",
+          "partOfSpeech": "ordinal",
           "meaningsVi": [
             "thứ tư"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "đứng thứ tư"
           ]
         }
       ],
@@ -3268,10 +3644,21 @@
       "word": "free",
       "entries": [
         {
-          "partOfSpeech": "adjective/adverb/verb",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
             "miễn phí",
-            "tự do",
+            "tự do"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "miễn phí"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "giải phóng"
           ]
         }
@@ -3335,10 +3722,15 @@
       "word": "general",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
             "chung",
-            "tổng quát",
+            "tổng quát"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "tướng lĩnh"
           ]
         }
@@ -3460,10 +3852,16 @@
       "word": "grocery",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "cửa hàng tạp hóa",
             "hàng tạp hóa"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc hàng tạp hóa"
           ]
         }
       ],
@@ -3555,9 +3953,14 @@
       "word": "help",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "giúp đỡ",
+            "giúp đỡ"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "sự giúp đỡ"
           ]
         }
@@ -3570,9 +3973,14 @@
       "word": "her",
       "entries": [
         {
-          "partOfSpeech": "pronoun/possessive determiner",
+          "partOfSpeech": "pronoun",
           "meaningsVi": [
-            "cô ấy",
+            "cô ấy"
+          ]
+        },
+        {
+          "partOfSpeech": "possessive determiner",
+          "meaningsVi": [
             "của cô ấy"
           ]
         }
@@ -3628,9 +4036,14 @@
       "word": "hiking",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "việc đi bộ đường dài",
+            "việc đi bộ đường dài"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "dùng cho đi bộ đường dài"
           ]
         }
@@ -3643,11 +4056,16 @@
       "word": "hire",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "thuê",
-            "tuyển dụng",
-            "người/vật được thuê"
+            "tuyển dụng"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người hoặc vật được thuê"
           ]
         }
       ],
@@ -3659,10 +4077,17 @@
       "word": "his",
       "entries": [
         {
-          "partOfSpeech": "possessive determiner/pronoun",
+          "partOfSpeech": "possessive determiner",
           "meaningsVi": [
             "của anh ấy",
             "của ông ấy"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "cái của anh ấy",
+            "cái của ông ấy"
           ]
         }
       ],
@@ -3674,10 +4099,16 @@
       "word": "holiday",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "ngày nghỉ",
             "kỳ nghỉ"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc kỳ nghỉ"
           ]
         }
       ],
@@ -3689,9 +4120,14 @@
       "word": "host",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "tổ chức",
+            "tổ chức"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "chủ nhà",
             "máy chủ"
           ]
@@ -3793,11 +4229,17 @@
       "word": "in",
       "entries": [
         {
-          "partOfSpeech": "preposition/adverb",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
             "trong",
             "ở trong",
             "vào"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "ở bên trong"
           ]
         }
       ],
@@ -3838,9 +4280,14 @@
       "word": "increase",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "tăng",
+            "tăng"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "sự gia tăng"
           ]
         }
@@ -3898,10 +4345,27 @@
       "word": "inside",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective/adverb/preposition",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "bên trong",
+            "phần bên trong"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "ở phía trong"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "ở bên trong"
+          ]
+        },
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "bên trong"
           ]
         }
       ],
@@ -3956,9 +4420,14 @@
       "word": "intern",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "thực tập sinh",
+            "thực tập sinh"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "thực tập"
           ]
         }
@@ -4000,9 +4469,14 @@
       "word": "interview",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "cuộc phỏng vấn",
+            "cuộc phỏng vấn"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "phỏng vấn"
           ]
         }
@@ -4165,9 +4639,14 @@
       "word": "kick",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "đá",
+            "đá"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "cú đá",
             "cảm giác hứng thú"
           ]
@@ -4244,10 +4723,21 @@
       "word": "last",
       "entries": [
         {
-          "partOfSpeech": "adjective/adverb/verb",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
             "cuối cùng",
-            "trước đó",
+            "trước đó"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "lần cuối"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "kéo dài"
           ]
         }
@@ -4261,7 +4751,14 @@
       "word": "late",
       "entries": [
         {
-          "partOfSpeech": "adjective/adverb",
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "muộn",
+            "trễ"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
           "meaningsVi": [
             "muộn",
             "trễ"
@@ -4283,9 +4780,14 @@
       "word": "later",
       "entries": [
         {
-          "partOfSpeech": "adverb/adjective",
+          "partOfSpeech": "adverb",
           "meaningsVi": [
-            "sau đó",
+            "sau đó"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "muộn hơn"
           ]
         }
@@ -4298,9 +4800,16 @@
       "word": "latin",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
             "thuộc Mỹ Latinh hoặc tiếng Latinh"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "tiếng Latinh",
+            "người Mỹ Latinh"
           ]
         }
       ],
@@ -4327,9 +4836,14 @@
       "word": "leather",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "da thuộc",
+            "da thuộc"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "làm bằng da"
           ]
         }
@@ -4357,10 +4871,20 @@
       "word": "like",
       "entries": [
         {
-          "partOfSpeech": "verb/preposition/adjective",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "thích",
-            "giống như",
+            "thích"
+          ]
+        },
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "giống như"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "tương tự"
           ]
         }
@@ -4374,13 +4898,19 @@
       "word": "line",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "dòng",
             "hàng",
             "tuyến",
-            "dòng sản phẩm",
-            "lót"
+            "dòng sản phẩm"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "lót",
+            "xếp thành hàng"
           ]
         }
       ],
@@ -4392,9 +4922,14 @@
       "word": "list",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "danh sách",
+            "danh sách"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "liệt kê"
           ]
         }
@@ -4407,9 +4942,14 @@
       "word": "lobby",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "sảnh",
+            "sảnh"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "vận động hành lang"
           ]
         }
@@ -4422,9 +4962,14 @@
       "word": "local",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "địa phương",
+            "địa phương"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "người dân địa phương"
           ]
         }
@@ -4468,9 +5013,14 @@
       "word": "long",
       "entries": [
         {
-          "partOfSpeech": "adjective/adverb",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "dài",
+            "dài"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
             "lâu"
           ]
         }
@@ -4517,9 +5067,14 @@
       "word": "lumber",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "gỗ xẻ",
+            "gỗ xẻ"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "di chuyển nặng nề"
           ]
         }
@@ -4574,9 +5129,14 @@
       "word": "main",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "chính",
+            "chính"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "phần chính"
           ]
         }
@@ -4604,11 +5164,21 @@
       "word": "major",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun/verb",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
             "chính",
-            "lớn",
-            "chuyên ngành",
+            "lớn"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "chuyên ngành"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "học chuyên ngành"
           ]
         }
@@ -4621,10 +5191,15 @@
       "word": "make",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "làm",
-            "tạo ra",
+            "tạo ra"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "nhãn hiệu"
           ]
         }
@@ -4671,9 +5246,15 @@
       "word": "many",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
             "nhiều"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "nhiều người hoặc vật"
           ]
         }
       ],
@@ -4685,10 +5266,15 @@
       "word": "mark",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "đánh dấu",
-            "ghi điểm",
+            "ghi điểm"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "dấu hiệu"
           ]
         }
@@ -4767,9 +5353,14 @@
       "word": "mentor",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "người cố vấn",
+            "người cố vấn"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "cố vấn"
           ]
         }
@@ -4782,9 +5373,15 @@
       "word": "million",
       "entries": [
         {
-          "partOfSpeech": "number/noun",
+          "partOfSpeech": "number",
           "meaningsVi": [
             "một triệu"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "con số một triệu"
           ]
         }
       ],
@@ -4853,9 +5450,15 @@
       "word": "monthly",
       "entries": [
         {
-          "partOfSpeech": "adjective/adverb",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
             "hằng tháng"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "mỗi tháng"
           ]
         }
       ],
@@ -4867,10 +5470,22 @@
       "word": "more",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun/adverb",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
             "nhiều hơn",
             "thêm"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "phần nhiều hơn"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "hơn"
           ]
         }
       ],
@@ -4896,11 +5511,17 @@
       "word": "move",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "di chuyển",
-            "chuyển chỗ",
-            "sự chuyển nhà"
+            "chuyển chỗ"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự chuyển nhà",
+            "nước đi"
           ]
         }
       ],
@@ -4970,9 +5591,15 @@
       "word": "nearby",
       "entries": [
         {
-          "partOfSpeech": "adjective/adverb",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
             "gần đó"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "ở gần"
           ]
         }
       ],
@@ -4998,9 +5625,14 @@
       "word": "need",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "cần",
+            "cần"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "nhu cầu"
           ]
         }
@@ -5041,10 +5673,22 @@
       "word": "next",
       "entries": [
         {
-          "partOfSpeech": "adjective/adverb/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
             "tiếp theo",
             "kế tiếp"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "tiếp theo"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người hoặc vật tiếp theo"
           ]
         }
       ],
@@ -5056,10 +5700,20 @@
       "word": "no",
       "entries": [
         {
-          "partOfSpeech": "determiner/adverb/noun",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
-            "không",
-            "không có",
+            "không có"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "không"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "lời từ chối"
           ]
         }
@@ -5114,9 +5768,14 @@
       "word": "note",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "ghi chú",
+            "ghi chú"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "lưu ý",
             "nhận thấy"
           ]
@@ -5166,10 +5825,16 @@
       "word": "now",
       "entries": [
         {
-          "partOfSpeech": "adverb/noun",
+          "partOfSpeech": "adverb",
           "meaningsVi": [
             "bây giờ",
             "hiện nay"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thời điểm hiện tại"
           ]
         }
       ],
@@ -5181,10 +5846,15 @@
       "word": "number",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "số",
-            "số lượng",
+            "số lượng"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "đánh số"
           ]
         }
@@ -5255,12 +5925,24 @@
       "word": "off",
       "entries": [
         {
-          "partOfSpeech": "adverb/preposition/adjective",
+          "partOfSpeech": "adverb",
           "meaningsVi": [
             "tắt",
             "rời khỏi",
-            "nghỉ",
             "giảm"
+          ]
+        },
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "ra khỏi"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "nghỉ",
+            "không hoạt động"
           ]
         }
       ],
@@ -5272,9 +5954,15 @@
       "word": "off-site",
       "entries": [
         {
-          "partOfSpeech": "adjective/adverb",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
             "ở ngoài địa điểm chính"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "tại một địa điểm khác"
           ]
         }
       ],
@@ -5286,10 +5974,15 @@
       "word": "offer",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "cung cấp",
-            "đề nghị",
+            "đề nghị"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "lời đề nghị"
           ]
         }
@@ -5346,10 +6039,15 @@
       "word": "on",
       "entries": [
         {
-          "partOfSpeech": "preposition/adverb",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
             "trên",
-            "vào",
+            "vào"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
             "đang hoạt động"
           ]
         }
@@ -5362,9 +6060,14 @@
       "word": "one",
       "entries": [
         {
-          "partOfSpeech": "number/pronoun",
+          "partOfSpeech": "number",
           "meaningsVi": [
-            "một",
+            "một"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
             "một người hoặc vật"
           ]
         }
@@ -5392,9 +6095,14 @@
       "word": "only",
       "entries": [
         {
-          "partOfSpeech": "adverb/adjective",
+          "partOfSpeech": "adverb",
           "meaningsVi": [
-            "chỉ",
+            "chỉ"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "duy nhất"
           ]
         }
@@ -5407,12 +6115,18 @@
       "word": "open",
       "entries": [
         {
-          "partOfSpeech": "verb/adjective",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "mở",
-            "mở cửa",
+            "mở cửa"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "trống",
-            "công khai"
+            "công khai",
+            "đang mở"
           ]
         }
       ],
@@ -5441,10 +6155,22 @@
       "word": "opposite",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective/preposition",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "điều đối lập",
-            "đối diện"
+            "điều đối lập"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "đối diện",
+            "trái ngược"
+          ]
+        },
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "đối diện với"
           ]
         }
       ],
@@ -5470,12 +6196,18 @@
       "word": "order",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "đơn hàng",
             "thứ tự",
-            "mệnh lệnh",
-            "đặt hàng"
+            "mệnh lệnh"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đặt hàng",
+            "ra lệnh"
           ]
         }
       ],
@@ -5501,9 +6233,14 @@
       "word": "other",
       "entries": [
         {
-          "partOfSpeech": "adjective/pronoun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "khác",
+            "khác"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
             "người hoặc vật còn lại"
           ]
         }
@@ -5546,11 +6283,24 @@
       "word": "out",
       "entries": [
         {
-          "partOfSpeech": "adverb/preposition/adjective",
+          "partOfSpeech": "adverb",
           "meaningsVi": [
             "ra ngoài",
             "hết",
             "không còn"
+          ]
+        },
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "ra khỏi"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "vắng mặt",
+            "không hoạt động"
           ]
         }
       ],
@@ -5562,10 +6312,27 @@
       "word": "outside",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective/adverb/preposition",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "bên ngoài",
+            "phần bên ngoài"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "ở phía ngoài"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "ở bên ngoài"
+          ]
+        },
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "bên ngoài"
           ]
         }
       ],
@@ -5577,10 +6344,22 @@
       "word": "over",
       "entries": [
         {
-          "partOfSpeech": "preposition/adverb/adjective",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
             "trên",
+            "qua"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
             "qua",
+            "hết"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "kết thúc"
           ]
         }
@@ -5640,9 +6419,14 @@
       "word": "pack",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "đóng gói",
+            "đóng gói"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "gói",
             "nhóm"
           ]
@@ -5656,10 +6440,15 @@
       "word": "park",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "công viên",
-            "bãi đỗ",
+            "bãi đỗ"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "đỗ xe"
           ]
         }
@@ -5708,9 +6497,14 @@
       "word": "pay",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "trả tiền",
+            "trả tiền"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "tiền lương"
           ]
         }
@@ -5771,10 +6565,15 @@
       "word": "place",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "địa điểm",
-            "vị trí",
+            "vị trí"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "đặt",
             "diễn ra"
           ]
@@ -5788,9 +6587,14 @@
       "word": "play",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "vở kịch",
+            "vở kịch"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "chơi",
             "diễn"
           ]
@@ -5905,10 +6709,15 @@
       "word": "position",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "vị trí",
-            "chức vụ",
+            "chức vụ"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "đặt vào vị trí"
           ]
         }
@@ -5921,10 +6730,15 @@
       "word": "positive",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
             "tích cực",
-            "chắc chắn",
+            "chắc chắn"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "mặt tích cực"
           ]
         }
@@ -5966,10 +6780,15 @@
       "word": "pound",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "bảng Anh",
-            "pao",
+            "pao"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "đập mạnh"
           ]
         }
@@ -5982,9 +6801,14 @@
       "word": "praise",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "khen ngợi",
+            "khen ngợi"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "lời khen"
           ]
         }
@@ -6069,9 +6893,14 @@
       "word": "price",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "giá",
+            "giá"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "định giá"
           ]
         }
@@ -6099,9 +6928,14 @@
       "word": "produce",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "nông sản",
+            "nông sản"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "sản xuất",
             "tạo ra"
           ]
@@ -6129,9 +6963,14 @@
       "word": "project",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "dự án",
+            "dự án"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "dự đoán",
             "chiếu"
           ]
@@ -6223,9 +7062,14 @@
       "word": "question",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "câu hỏi",
+            "câu hỏi"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "chất vấn"
           ]
         }
@@ -6267,11 +7111,16 @@
       "word": "raise",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "nâng",
             "tăng",
-            "nuôi",
+            "nuôi"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "khoản tăng lương"
           ]
         }
@@ -6390,11 +7239,16 @@
       "word": "register",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "sổ đăng ký",
-            "đăng ký",
             "máy tính tiền"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đăng ký"
           ]
         }
       ],
@@ -6406,10 +7260,15 @@
       "word": "regular",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
             "đều đặn",
-            "thông thường",
+            "thông thường"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "khách quen"
           ]
         }
@@ -6510,9 +7369,14 @@
       "word": "repair",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "việc sửa chữa",
+            "việc sửa chữa"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "sửa chữa"
           ]
         }
@@ -6532,9 +7396,14 @@
       "word": "report",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "báo cáo",
+            "báo cáo"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "báo cáo",
             "trình báo"
           ]
@@ -6550,7 +7419,13 @@
       "word": "request",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "yêu cầu"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "yêu cầu",
             "đề nghị"
@@ -6595,9 +7470,14 @@
       "word": "resident",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "cư dân",
+            "cư dân"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "cư trú"
           ]
         }
@@ -6675,9 +7555,14 @@
       "word": "result",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "kết quả",
+            "kết quả"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "dẫn đến"
           ]
         }
@@ -6758,10 +7643,15 @@
       "word": "review",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "bài đánh giá",
-            "sự xem xét",
+            "sự xem xét"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "xem xét"
           ]
         }
@@ -6783,10 +7673,21 @@
       "word": "right",
       "entries": [
         {
-          "partOfSpeech": "adjective/adverb/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "đúng",
+            "đúng"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
             "ngay",
+            "đúng cách"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "bên phải",
             "quyền lợi"
           ]
@@ -6800,9 +7701,14 @@
       "word": "route",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "tuyến đường",
+            "tuyến đường"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "định tuyến"
           ]
         }
@@ -6815,12 +7721,18 @@
       "word": "run",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "chạy",
             "vận hành",
-            "kéo dài",
-            "lượt"
+            "kéo dài"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "lượt",
+            "đợt"
           ]
         }
       ],
@@ -6879,10 +7791,15 @@
       "word": "save",
       "entries": [
         {
-          "partOfSpeech": "verb/preposition",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "tiết kiệm",
-            "cứu",
+            "cứu"
+          ]
+        },
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
             "ngoại trừ"
           ]
         }
@@ -6909,10 +7826,15 @@
       "word": "season",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "mùa",
-            "mùa cao điểm",
+            "mùa cao điểm"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "nêm gia vị"
           ]
         }
@@ -7011,10 +7933,16 @@
       "word": "several",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
             "một vài",
             "một số"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "một vài người hoặc vật"
           ]
         }
       ],
@@ -7103,9 +8031,14 @@
       "word": "sign",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "ký",
+            "ký"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "dấu hiệu",
             "biển báo"
           ]
@@ -7160,9 +8093,20 @@
       "word": "slow",
       "entries": [
         {
-          "partOfSpeech": "adjective/adverb/verb",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "chậm",
+            "chậm"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách chậm chạp"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "làm chậm"
           ]
         }
@@ -7239,11 +8183,17 @@
       "word": "so",
       "entries": [
         {
-          "partOfSpeech": "conjunction/adverb",
+          "partOfSpeech": "conjunction",
           "meaningsVi": [
             "vì vậy",
-            "rất",
             "để mà"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "rất",
+            "như vậy"
           ]
         }
       ],
@@ -7285,10 +8235,16 @@
       "word": "some",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
             "một số",
             "một ít"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "một số người hoặc vật"
           ]
         }
       ],
@@ -7315,10 +8271,15 @@
       "word": "space",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "không gian",
-            "khoảng trống",
+            "khoảng trống"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "bố trí cách nhau"
           ]
         }
@@ -7357,9 +8318,14 @@
       "word": "special",
       "entries": [
         {
-          "partOfSpeech": "adjective/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "đặc biệt",
+            "đặc biệt"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "món đặc biệt"
           ]
         }
@@ -7466,10 +8432,15 @@
       "word": "spring",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "mùa xuân",
-            "lò xo",
+            "lò xo"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "bật lên"
           ]
         }
@@ -7482,9 +8453,14 @@
       "word": "staff",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "nhân viên",
+            "nhân viên"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "bố trí nhân sự"
           ]
         }
@@ -7511,10 +8487,15 @@
       "word": "state",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "nêu",
-            "tuyên bố",
+            "tuyên bố"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "trạng thái",
             "bang"
           ]
@@ -7557,10 +8538,15 @@
       "word": "store",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "cửa hàng",
-            "kho",
+            "kho"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "lưu trữ"
           ]
         }
@@ -7574,11 +8560,17 @@
       "word": "study",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "nghiên cứu",
-            "học",
             "công trình nghiên cứu"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "học",
+            "nghiên cứu"
           ]
         }
       ],
@@ -7590,11 +8582,23 @@
       "word": "subject",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "chủ đề",
             "môn học",
-            "đối tượng",
+            "đối tượng"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "phụ thuộc vào",
+            "có khả năng chịu"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "khiến phải chịu"
           ]
         }
@@ -7621,9 +8625,14 @@
       "word": "supply",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "cung cấp",
+            "cung cấp"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "nguồn cung"
           ]
         }
@@ -7648,9 +8657,14 @@
       "word": "survey",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "khảo sát",
+            "cuộc khảo sát"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "khảo sát"
           ]
         }
@@ -7663,9 +8677,14 @@
       "word": "switch",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "chuyển đổi",
+            "chuyển đổi"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "công tắc"
           ]
         }
@@ -7699,12 +8718,18 @@
       "word": "take",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "lấy",
             "mang",
-            "cần",
-            "cảnh quay"
+            "cần"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "cảnh quay",
+            "lần thực hiện"
           ]
         }
       ],
@@ -7751,11 +8776,17 @@
       "word": "taste",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "nếm",
-            "có vị",
-            "vị giác"
+            "có vị"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "vị giác",
+            "mùi vị"
           ]
         }
       ],
@@ -7838,9 +8869,14 @@
       "word": "than",
       "entries": [
         {
-          "partOfSpeech": "conjunction/preposition",
+          "partOfSpeech": "conjunction",
           "meaningsVi": [
-            "hơn",
+            "hơn"
+          ]
+        },
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
             "so với"
           ]
         }
@@ -7853,9 +8889,14 @@
       "word": "thank",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "cảm ơn",
+            "cảm ơn"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "lời cảm ơn"
           ]
         }
@@ -7881,9 +8922,20 @@
       "word": "that",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun/conjunction",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
-            "đó",
+            "đó"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "điều đó"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
             "rằng",
             "mà"
           ]
@@ -7957,10 +9009,15 @@
       "word": "there",
       "entries": [
         {
-          "partOfSpeech": "adverb/pronoun",
+          "partOfSpeech": "adverb",
           "meaningsVi": [
-            "ở đó",
-            "có"
+            "ở đó"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "có; dùng trong cấu trúc there is/are"
           ]
         }
       ],
@@ -7987,7 +9044,13 @@
       "word": "these",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun",
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "những ... này"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
           "meaningsVi": [
             "những cái này"
           ]
@@ -8031,7 +9094,13 @@
       "word": "this",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun",
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "... này"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
           "meaningsVi": [
             "cái này",
             "điều này"
@@ -8060,7 +9129,13 @@
       "word": "those",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun",
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "những ... đó"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
           "meaningsVi": [
             "những cái đó"
           ]
@@ -8088,11 +9163,18 @@
       "word": "through",
       "entries": [
         {
-          "partOfSpeech": "preposition/adverb",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
             "xuyên qua",
             "thông qua",
             "suốt"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "xuyên suốt",
+            "từ đầu đến cuối"
           ]
         }
       ],
@@ -8118,10 +9200,15 @@
       "word": "ticket",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "vé",
-            "phiếu",
+            "phiếu"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "ghi vé phạt"
           ]
         }
@@ -8134,10 +9221,15 @@
       "word": "time",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "thời gian",
-            "lần",
+            "lần"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "tính giờ"
           ]
         }
@@ -8151,10 +9243,15 @@
       "word": "to",
       "entries": [
         {
-          "partOfSpeech": "preposition/infinitive marker",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
             "đến",
-            "cho",
+            "cho"
+          ]
+        },
+        {
+          "partOfSpeech": "infinitive marker",
+          "meaningsVi": [
             "để tạo động từ nguyên thể"
           ]
         }
@@ -8167,9 +9264,14 @@
       "word": "today",
       "entries": [
         {
-          "partOfSpeech": "adverb/noun",
+          "partOfSpeech": "adverb",
           "meaningsVi": [
-            "hôm nay",
+            "hôm nay"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "ngày hôm nay"
           ]
         }
@@ -8182,10 +9284,15 @@
       "word": "token",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "biểu hiện",
-            "vật tượng trưng",
+            "vật tượng trưng"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
             "mang tính tượng trưng"
           ]
         }
@@ -8205,10 +9312,20 @@
       "word": "total",
       "entries": [
         {
-          "partOfSpeech": "noun/adjective/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "tổng",
-            "toàn bộ",
+            "tổng"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "toàn bộ"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "đạt tổng cộng"
           ]
         }
@@ -8224,9 +9341,14 @@
       "word": "tote",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "túi xách lớn",
+            "túi xách lớn"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "mang theo"
           ]
         }
@@ -8239,11 +9361,17 @@
       "word": "trade",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "thương mại",
-            "giao dịch",
-            "trao đổi"
+            "giao dịch"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "trao đổi",
+            "giao dịch"
           ]
         }
       ],
@@ -8255,9 +9383,14 @@
       "word": "transition",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "sự chuyển đổi",
+            "sự chuyển đổi"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "chuyển sang"
           ]
         }
@@ -8277,10 +9410,17 @@
       "word": "travel",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "đi lại",
             "du lịch"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "việc đi lại",
+            "chuyến du lịch"
           ]
         }
       ],
@@ -8292,20 +9432,18 @@
       "word": "treat",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
             "món ngon",
             "sự chiêu đãi",
-            "đối xử",
-            "điều trị"
+            "món chiêu đãi"
           ]
         },
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "đối xử",
-            "điều trị",
-            "món chiêu đãi"
+            "điều trị"
           ]
         }
       ],
@@ -8317,10 +9455,15 @@
       "word": "try",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "thử",
-            "cố gắng",
+            "cố gắng"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "lần thử"
           ]
         }
@@ -8404,11 +9547,24 @@
       "word": "up",
       "entries": [
         {
-          "partOfSpeech": "adverb/preposition/adjective",
+          "partOfSpeech": "adverb",
           "meaningsVi": [
             "lên",
             "hoàn tất",
             "tăng"
+          ]
+        },
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "lên phía trên"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "đang hoạt động",
+            "đã thức"
           ]
         }
       ],
@@ -8420,10 +9576,16 @@
       "word": "use",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "sử dụng",
-            "công dụng"
+            "sử dụng"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "công dụng",
+            "việc sử dụng"
           ]
         }
       ],
@@ -8479,9 +9641,14 @@
       "word": "visit",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "thăm",
+            "thăm"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "chuyến thăm"
           ]
         }
@@ -8494,9 +9661,14 @@
       "word": "warm",
       "entries": [
         {
-          "partOfSpeech": "adjective/verb",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "ấm áp",
+            "ấm áp"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
             "làm ấm"
           ]
         }
@@ -8524,10 +9696,16 @@
       "word": "weather",
       "entries": [
         {
-          "partOfSpeech": "noun/verb",
+          "partOfSpeech": "noun",
           "meaningsVi": [
-            "thời tiết",
-            "chịu đựng"
+            "thời tiết"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "chịu đựng",
+            "vượt qua"
           ]
         }
       ],
@@ -8611,9 +9789,14 @@
       "word": "weld",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
-            "hàn",
+            "hàn"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "mối hàn"
           ]
         }
@@ -8626,10 +9809,20 @@
       "word": "well",
       "entries": [
         {
-          "partOfSpeech": "adverb/adjective/noun",
+          "partOfSpeech": "adverb",
           "meaningsVi": [
-            "tốt",
-            "khỏe",
+            "tốt"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "khỏe"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "giếng"
           ]
         }
@@ -8654,10 +9847,16 @@
       "word": "what",
       "entries": [
         {
-          "partOfSpeech": "pronoun/determiner",
+          "partOfSpeech": "pronoun",
           "meaningsVi": [
             "cái gì",
             "điều gì"
+          ]
+        },
+        {
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "... gì"
           ]
         }
       ],
@@ -8669,9 +9868,14 @@
       "word": "when",
       "entries": [
         {
-          "partOfSpeech": "adverb/conjunction",
+          "partOfSpeech": "adverb",
           "meaningsVi": [
-            "khi nào",
+            "khi nào"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
             "khi"
           ]
         }
@@ -8684,9 +9888,15 @@
       "word": "whenever",
       "entries": [
         {
-          "partOfSpeech": "conjunction/adverb",
+          "partOfSpeech": "conjunction",
           "meaningsVi": [
             "bất cứ khi nào"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "bất cứ lúc nào"
           ]
         }
       ],
@@ -8713,7 +9923,13 @@
       "word": "which",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun",
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "... nào"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
           "meaningsVi": [
             "cái nào",
             "mà"
@@ -8728,9 +9944,14 @@
       "word": "while",
       "entries": [
         {
-          "partOfSpeech": "conjunction/noun",
+          "partOfSpeech": "conjunction",
           "meaningsVi": [
-            "trong khi",
+            "trong khi"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "một khoảng thời gian"
           ]
         }
@@ -8743,10 +9964,21 @@
       "word": "wholesale",
       "entries": [
         {
-          "partOfSpeech": "adjective/adverb/noun",
+          "partOfSpeech": "adjective",
           "meaningsVi": [
-            "bán buôn",
+            "thuộc bán buôn"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
             "với số lượng lớn"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "việc bán buôn"
           ]
         }
       ],
@@ -8758,10 +9990,16 @@
       "word": "whose",
       "entries": [
         {
-          "partOfSpeech": "determiner/pronoun",
+          "partOfSpeech": "determiner",
           "meaningsVi": [
-            "của ai",
+            "của ... nào",
             "mà ... của"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "của ai"
           ]
         }
       ],
@@ -8787,9 +10025,14 @@
       "word": "will",
       "entries": [
         {
-          "partOfSpeech": "modal verb/noun",
+          "partOfSpeech": "modal verb",
           "meaningsVi": [
-            "sẽ",
+            "sẽ"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "ý chí",
             "di chúc"
           ]
@@ -8803,10 +10046,15 @@
       "word": "win",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "thắng",
-            "giành được",
+            "giành được"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "chiến thắng"
           ]
         }
@@ -8835,10 +10083,16 @@
       "word": "within",
       "entries": [
         {
-          "partOfSpeech": "preposition/adverb",
+          "partOfSpeech": "preposition",
           "meaningsVi": [
             "trong phạm vi",
             "trong vòng"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "ở bên trong"
           ]
         }
       ],
@@ -8850,10 +10104,15 @@
       "word": "work",
       "entries": [
         {
-          "partOfSpeech": "verb/noun",
+          "partOfSpeech": "verb",
           "meaningsVi": [
             "làm việc",
-            "hoạt động",
+            "hoạt động"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
             "công việc"
           ]
         }
@@ -8915,9 +10174,15 @@
       "word": "x",
       "entries": [
         {
-          "partOfSpeech": "letter/model marker",
+          "partOfSpeech": "letter",
           "meaningsVi": [
-            "chữ X; ký hiệu trong tên mẫu sản phẩm"
+            "chữ X"
+          ]
+        },
+        {
+          "partOfSpeech": "model marker",
+          "meaningsVi": [
+            "ký hiệu trong tên mẫu sản phẩm"
           ]
         }
       ],
@@ -8944,9 +10209,14 @@
       "word": "yet",
       "entries": [
         {
-          "partOfSpeech": "adverb/conjunction",
+          "partOfSpeech": "adverb",
           "meaningsVi": [
-            "vẫn chưa",
+            "vẫn chưa"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
             "tuy nhiên"
           ]
         }
