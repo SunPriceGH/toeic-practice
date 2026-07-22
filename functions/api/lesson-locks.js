@@ -1,125 +1,166 @@
-import { isAdminPassword } from '../_shared/admin-auth.js';
-
-const LOCK_KEY = '__lesson_locks__';
-const DEFAULT_LESSON_IDS = [
-  'word-form-100',
-  'be-adj-v3-v-ed-prep-1',
-  'be-adj-v3-v-ed-prep-2',
-  'noun-prep-collocation-1',
-  'noun-prep-collocation-2',
-  'toeic-listening',
-  'ets-summer-2021-test1-part5-6',
-  'ets-summer-2021-test1-part5-6-practice',
-  'ets2024-p56-practice',
-  'vocabulary-box',
-  'results'
-];
-
-const DEFAULT_LOCK_WHEN_MISSING_IDS = [
-  'ets-summer-2021-test1-part5-6-practice',
-  'ets2024-p56-practice'
+const ADMIN_EMAIL = 'sunprice@sp.ik';
+const CANONICAL_KEY = '__lesson_locks__';
+const LEGACY_KEYS = [
+  CANONICAL_KEY,
+  'lesson-locks',
+  'lesson_locks',
+  'lessonLocks',
+  'lockedLessonIds'
 ];
 
 export async function onRequestGet(context) {
   try {
-    const store = getStore(context);
-    const state = await readLockState(store);
-    if (state.changed) await saveLockState(store, state.lockedLessonIds, state.knownLessonIds);
-    return json({ ok: true, lockedLessonIds: state.lockedLessonIds, knownLessonIds: state.knownLessonIds });
+    const store = getStore(context.env);
+    const lockedLessonIds = await readLocks(store);
+    return json({ ok: true, lockedLessonIds });
   } catch (err) {
-    return json({ ok: false, error: err.message || 'Không tải được trạng thái khóa bài.' }, 500);
+    return json({ ok: false, error: err?.message || 'Không tải được trạng thái khóa bài.' }, 500);
   }
 }
 
 export async function onRequestPost(context) {
   try {
-    const store = getStore(context);
-    const adminPassword = context.request.headers.get('x-admin-password') || '';
-    if (!isAdminPassword(context.env, adminPassword)) {
-      return json({ ok: false, error: 'Sai mật khẩu admin.' }, 401);
+    const store = getStore(context.env);
+    const auth = getStudentAuth(context.request);
+
+    if (!auth.ok) {
+      return json({ ok: false, error: auth.error }, 401);
+    }
+    if (auth.email !== ADMIN_EMAIL) {
+      return json({ ok: false, error: 'Tài khoản này không có quyền quản lý đề.' }, 403);
     }
 
-    const body = await context.request.json();
+    const body = await context.request.json().catch(() => ({}));
     const lessonId = String(body.lessonId || '').trim();
-    const action = String(body.action || '').trim();
-    if (!DEFAULT_LESSON_IDS.includes(lessonId)) {
-      return json({ ok: false, error: 'Bài học không hợp lệ.' }, 400);
+    const action = String(body.action || '').trim().toLowerCase();
+
+    if (!lessonId) {
+      return json({ ok: false, error: 'Thiếu mã đề cần cập nhật.' }, 400);
     }
-    if (!['lock', 'unlock'].includes(action)) {
-      return json({ ok: false, error: 'Thao tác không hợp lệ.' }, 400);
+    if (action !== 'lock' && action !== 'unlock') {
+      return json({ ok: false, error: 'Thao tác khóa/mở khóa không hợp lệ.' }, 400);
     }
 
-    const state = await readLockState(store);
-    let lockedLessonIds = state.lockedLessonIds;
-    if (action === 'lock' && !lockedLessonIds.includes(lessonId)) {
-      lockedLessonIds.push(lessonId);
-    }
-    if (action === 'unlock') {
-      lockedLessonIds = lockedLessonIds.filter(id => id !== lessonId);
-    }
+    const current = await readLocks(store);
+    const nextSet = new Set(current);
+    if (action === 'lock') nextSet.add(lessonId);
+    else nextSet.delete(lessonId);
 
-    const knownLessonIds = [...DEFAULT_LESSON_IDS];
-    await saveLockState(store, lockedLessonIds, knownLessonIds);
-    return json({ ok: true, lockedLessonIds, knownLessonIds });
+    const lockedLessonIds = [...nextSet].sort();
+    await writeLocks(store, lockedLessonIds);
+
+    return json({ ok: true, lockedLessonIds });
   } catch (err) {
-    return json({ ok: false, error: err.message || 'Không cập nhật được trạng thái khóa bài.' }, 500);
+    return json({ ok: false, error: publicError(err, 'Không cập nhật được trạng thái đề.') }, isKvLimit(err) ? 429 : 500);
   }
 }
 
-function getStore(context) {
-  if (!context.env.STUDENT_RESULTS) throw new Error('Thiếu KV binding STUDENT_RESULTS.');
-  return context.env.STUDENT_RESULTS;
+function getStore(env) {
+  const store = env.STUDENT_RESULTS || env.LESSON_LOCKS || null;
+  if (!store) throw new Error('Thiếu KV binding STUDENT_RESULTS.');
+  return store;
 }
 
-async function readLockState(store) {
-  const text = await store.get(LOCK_KEY);
-  if (!text) {
-    return { lockedLessonIds: [...DEFAULT_LESSON_IDS], knownLessonIds: [...DEFAULT_LESSON_IDS], changed: false };
-  }
+function normalizeEmail(value) {
+  return String(value || '').trim().toLowerCase();
+}
 
-  let raw = {};
+function getStudentAuth(request) {
+  const email = normalizeEmail(request.headers.get('x-student-email') || '');
+  const token = request.headers.get('x-student-token') || '';
+  if (!email || !isStudentTokenForEmail(token, email)) {
+    return { ok: false, email, error: 'Phiên đăng nhập học viên không hợp lệ.' };
+  }
+  return { ok: true, email };
+}
+
+function isStudentTokenForEmail(token, email) {
   try {
-    raw = JSON.parse(text) || {};
+    const decoded = atob(String(token || ''));
+    const parts = decoded.split('|');
+    const role = String(parts[0] || '').trim().toLowerCase();
+    const tokenEmail = normalizeEmail(parts[1]);
+    return (role === 'student' || role === 'admin') && tokenEmail === normalizeEmail(email);
   } catch (err) {
-    return { lockedLessonIds: [...DEFAULT_LESSON_IDS], knownLessonIds: [...DEFAULT_LESSON_IDS], changed: true };
+    return false;
   }
+}
 
-  const lockedLessonIds = uniqueIds(Array.isArray(raw.lockedLessonIds) ? raw.lockedLessonIds : DEFAULT_LESSON_IDS);
-  const knownLessonIds = uniqueIds(Array.isArray(raw.knownLessonIds) ? raw.knownLessonIds : []);
-  let changed = false;
+async function readLocks(store) {
+  for (const key of LEGACY_KEYS) {
+    const raw = await store.get(key);
+    if (!raw) continue;
+    const parsed = parseLocks(raw);
+    if (parsed) return parsed;
+  }
+  return [];
+}
 
-  DEFAULT_LOCK_WHEN_MISSING_IDS.forEach(id => {
-    if (!knownLessonIds.includes(id) && !lockedLessonIds.includes(id)) {
-      lockedLessonIds.push(id);
-      changed = true;
-    }
+function parseLocks(raw) {
+  try {
+    const data = JSON.parse(raw);
+    if (Array.isArray(data)) return uniqueStrings(data);
+    if (Array.isArray(data.lockedLessonIds)) return uniqueStrings(data.lockedLessonIds);
+    if (Array.isArray(data.items)) return uniqueStrings(data.items);
+  } catch (err) {
+    return null;
+  }
+  return null;
+}
+
+function uniqueStrings(values) {
+  return [...new Set(values.map(value => String(value || '').trim()).filter(Boolean))];
+}
+
+async function writeLocks(store, lockedLessonIds) {
+  const payload = JSON.stringify({
+    lockedLessonIds,
+    updatedAt: new Date().toISOString(),
+    updatedBy: ADMIN_EMAIL
   });
 
-  const finalKnownLessonIds = [...DEFAULT_LESSON_IDS];
-  if (knownLessonIds.length !== finalKnownLessonIds.length || knownLessonIds.some(id => !finalKnownLessonIds.includes(id))) changed = true;
-
-  return {
-    lockedLessonIds: uniqueIds(lockedLessonIds),
-    knownLessonIds: finalKnownLessonIds,
-    changed
-  };
+  // Ghi khóa chuẩn và các khóa cũ thường gặp để không làm hỏng trang cũ.
+  for (const key of LEGACY_KEYS) {
+    await putWithRetry(store, key, payload);
+  }
 }
 
-function uniqueIds(ids) {
-  return [...new Set(ids.map(id => String(id || '').trim()).filter(id => DEFAULT_LESSON_IDS.includes(id)))];
+async function putWithRetry(store, key, value) {
+  let lastError;
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    try {
+      await store.put(key, value);
+      return;
+    } catch (err) {
+      lastError = err;
+      if (!isKvLimit(err) || attempt === 3) break;
+      await new Promise(resolve => setTimeout(resolve, 1200 + attempt * 500));
+    }
+  }
+  throw lastError;
 }
 
-async function saveLockState(store, lockedLessonIds, knownLessonIds) {
-  await store.put(LOCK_KEY, JSON.stringify({
-    lockedLessonIds: uniqueIds(lockedLessonIds),
-    knownLessonIds: uniqueIds(knownLessonIds),
-    updatedAt: new Date().toISOString()
-  }));
+function isKvLimit(err) {
+  const message = String(err?.message || err || '').toLowerCase();
+  return message.includes('kv') && (
+    message.includes('limit') ||
+    message.includes('rate') ||
+    message.includes('quota') ||
+    message.includes('exceed')
+  );
+}
+
+function publicError(err, fallback) {
+  if (isKvLimit(err)) return 'Bạn thao tác hơi nhanh. Vui lòng thử lại sau 1-2 giây.';
+  return err?.message || fallback;
 }
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
-    headers: { 'content-type': 'application/json; charset=utf-8' }
+    headers: {
+      'content-type': 'application/json; charset=utf-8',
+      'cache-control': 'no-store'
+    }
   });
 }
