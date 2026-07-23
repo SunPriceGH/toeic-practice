@@ -18971,7 +18971,7 @@ window.SENTENCE_ANALYSIS_DATA = {
                     { "label": "S", "type": "Chủ ngữ", "text": "there", "tone": "subject", "children": [ { "label": "Pron", "type": "Đại từ", "text": "there", "tone": "neutral", "children": [] } ] },
                     { "label": "V", "type": "Động từ", "text": "are now", "tone": "verb", "children": [ { "label": "Aux", "type": "Trợ động từ", "text": "are", "tone": "neutral", "children": [] }, { "label": "Adv", "type": "Trạng từ", "text": "now", "tone": "neutral", "children": [] } ] },
                     { "label": "C", "type": "Bổ ngữ", "text": "452 employees altogether", "tone": "complement", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "452 employees altogether", "tone": "complement", "children": [ { "label": "Num", "type": "Số", "text": "452", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "employees", "tone": "neutral", "children": [] }, { "label": "Adv", "type": "Trạng từ", "text": "altogether", "tone": "neutral", "children": [] } ] } ]
-                  ]
+                  }]
                 }
               ]
             }
@@ -19264,7 +19264,7 @@ window.SENTENCE_ANALYSIS_DATA = {
                     { "label": "S", "type": "Chủ ngữ", "text": "the play itself", "tone": "subject", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "the play itself", "tone": "subject", "children": [ { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "play", "tone": "neutral", "children": [] }, { "label": "Pron", "type": "Đại từ phản thân", "text": "itself", "tone": "neutral", "children": [] } ] } ] },
                     { "label": "V", "type": "Động từ", "text": "ran", "tone": "verb", "children": [ { "label": "V", "type": "Động từ chính", "text": "ran", "tone": "neutral", "children": [] } ] },
                     { "label": "Adv", "type": "Trạng ngữ", "text": "for only three", "tone": "adverb", "children": [ { "label": "PP", "type": "Cụm giới từ", "text": "for only three", "tone": "adverb", "children": [ { "label": "Prep", "type": "Giới từ", "text": "for", "tone": "neutral", "children": [] }, { "label": "Adv", "type": "Trạng từ", "text": "only", "tone": "neutral", "children": [] }, { "label": "Num", "type": "Số", "text": "three", "tone": "neutral", "children": [] } ] } ]
-                  ]
+                  }]
                 }
               ]
             }
@@ -19329,7 +19329,7 @@ window.SENTENCE_ANALYSIS_DATA = {
                         { "label": "V", "type": "Động từ", "text": "have prevented", "tone": "verb", "children": [ { "label": "Aux", "type": "Trợ động từ", "text": "have", "tone": "neutral", "children": [] }, { "label": "V-ing", "type": "Động từ chính", "text": "prevented", "tone": "neutral", "children": [] } ] },
                         { "label": "O", "type": "Tân ngữ", "text": "Hentig Industries", "tone": "object", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "Hentig Industries", "tone": "object", "children": [ { "label": "N", "type": "Danh từ riêng", "text": "Hentig", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "Industries", "tone": "neutral", "children": [] } ] } ] },
                         { "label": "Adv", "type": "Trạng ngữ", "text": "from expanding globally", "tone": "adverb", "children": [ { "label": "PP", "type": "Cụm giới từ", "text": "from expanding globally", "tone": "adverb", "children": [ { "label": "Prep", "type": "Giới từ", "text": "from", "tone": "neutral", "children": [] }, { "label": "V-ing", "type": "Danh động từ", "text": "expanding", "tone": "neutral", "children": [] }, { "label": "Adv", "type": "Trạng từ", "text": "globally", "tone": "neutral", "children": [] } ] } ]
-                      ]
+                      }]
                     }
                   ]
                 }
