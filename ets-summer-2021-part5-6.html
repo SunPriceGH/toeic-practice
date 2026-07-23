@@ -326,6 +326,63 @@ body.vocabulary-lookup-active .option{transform:none}
   }
 }
 
+
+/* ===== TEACHER SENTENCE ANALYSIS ===== */
+.sentence-analysis-fab{position:fixed;right:16px;bottom:68px;z-index:231;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 14px;border:2px solid #c4b5fd;border-radius:999px;background:#fff;color:#6d28d9;font-size:14px;font-weight:700;box-shadow:0 14px 30px rgba(15,23,42,.16);cursor:pointer;transition:.18s ease}
+.sentence-analysis-fab:hover{transform:translateY(-1px);background:#f5f3ff;border-color:#8b5cf6}
+.sentence-analysis-fab[aria-expanded="true"]{background:#6d28d9;color:#fff;border-color:#6d28d9}
+.sentence-analysis-fab .sentence-analysis-icon{font-size:16px;line-height:1}
+.sentence-analysis-panel{position:fixed;top:10%;left:50%;z-index:245;transform:translateX(-50%);width:min(790px,calc(100vw - 28px));max-height:82vh;overflow:auto;background:#fff;border:2px solid #c4b5fd;border-radius:22px;box-shadow:0 28px 80px rgba(15,23,42,.3)}
+.sentence-analysis-panel[hidden]{display:none!important}
+.sentence-analysis-head{position:sticky;top:0;z-index:4;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;background:linear-gradient(135deg,#6d28d9,#8b5cf6);color:#fff}
+.sentence-analysis-head b{font-size:16px}
+.sentence-analysis-close{width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+.sentence-analysis-body{padding:15px}
+.sentence-analysis-select{width:100%;min-height:42px;margin-bottom:13px;padding:8px 12px;border:2px solid #ddd6fe;border-radius:12px;background:#fff;color:#1f2937;font:inherit;font-size:14px;font-weight:700;outline:none}
+.sentence-analysis-select:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.12)}
+.sentence-analysis-sentence{display:flex;flex-wrap:wrap;gap:9px;align-items:stretch;margin-bottom:13px;padding:14px;border:1px solid #ddd6fe;border-radius:16px;background:#faf5ff}
+.sentence-analysis-component{position:relative;min-width:84px;max-width:100%;padding:27px 12px 10px;border:2px solid transparent;border-radius:13px;text-align:left;font:inherit;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.sentence-analysis-component:hover{transform:translateY(-1px);box-shadow:0 9px 18px rgba(15,23,42,.11)}
+.sentence-analysis-component.active{outline:3px solid rgba(15,23,42,.14);outline-offset:2px}
+.sentence-component-badge{position:absolute;top:5px;left:7px;display:inline-flex;align-items:center;justify-content:center;min-width:27px;height:19px;padding:0 6px;border-radius:999px;font-size:10px;font-weight:700;line-height:1;background:rgba(255,255,255,.82);border:1px solid currentColor}
+.sentence-component-text{display:block;color:#0f172a;font-size:15px;line-height:1.4;font-weight:700;word-break:break-word}
+.tone-subject{background:#eff6ff;border-color:#60a5fa;color:#1d4ed8}
+.tone-verb{background:#fff1f2;border-color:#fb7185;color:#be123c}
+.tone-object{background:#f0fdf4;border-color:#4ade80;color:#15803d}
+.tone-complement{background:#faf5ff;border-color:#c084fc;color:#7e22ce}
+.tone-adverb{background:#fffbeb;border-color:#fbbf24;color:#a16207}
+.tone-clause{background:#ecfeff;border-color:#22d3ee;color:#0e7490}
+.tone-neutral{background:#f8fafc;border-color:#cbd5e1;color:#475569}
+.sentence-analysis-deep{display:grid;gap:11px}
+.analysis-depth-block{border:1px solid #e2e8f0;border-radius:15px;background:#fff;overflow:hidden}
+.analysis-depth-head{display:flex;align-items:flex-start;gap:9px;padding:10px 12px;background:#f8fafc;border-bottom:1px solid #e2e8f0}
+.analysis-depth-head .analysis-depth-badge{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-width:35px;min-height:25px;padding:4px 7px;border-radius:8px;font-size:11px;font-weight:700;border:1px solid currentColor;background:#fff}
+.analysis-depth-head strong{display:block;color:#0f172a;font-size:15px;line-height:1.45}
+.analysis-depth-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px}
+.analysis-node{display:grid;grid-template-columns:auto minmax(0,1fr);gap:9px;align-items:start;padding:10px;border:1px solid #dbe3ee;border-radius:12px;background:#fff;text-align:left;font:inherit;cursor:pointer;transition:.15s ease}
+.analysis-node:hover{border-color:#a78bfa;background:#faf5ff;transform:translateY(-1px)}
+.analysis-node.active{border-color:#7c3aed;background:#f5f3ff;box-shadow:0 0 0 2px rgba(124,58,237,.1)}
+.analysis-node-badge{display:inline-flex;align-items:center;justify-content:center;min-width:38px;min-height:25px;padding:4px 6px;border-radius:7px;background:#ede9fe;color:#6d28d9;font-size:10px;font-weight:700;line-height:1.1}
+.analysis-node-copy{min-width:0}
+.analysis-node-text{display:block;color:#0f172a;font-size:14px;font-weight:700;line-height:1.35;word-break:break-word}
+.analysis-node-type{display:block;margin-top:3px;color:#64748b;font-size:12px;font-weight:600;line-height:1.3}
+.analysis-word-grid{display:flex;flex-wrap:wrap;gap:7px;padding:10px}
+.analysis-word{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:7px 9px;border:1px solid #dbe3ee;border-radius:10px;background:#fff;color:#0f172a;font-size:14px;font-weight:700}
+.analysis-word b{display:inline-flex;align-items:center;justify-content:center;min-width:31px;min-height:21px;padding:3px 6px;border-radius:7px;background:#ede9fe;color:#6d28d9;font-size:10px;font-weight:700}
+.sentence-analysis-empty{padding:16px;text-align:center;color:#64748b;font-size:14px}
+body.sentence-analysis-open .stem{cursor:pointer;outline:2px dashed rgba(109,40,217,.32);outline-offset:5px;border-radius:6px}
+body.sentence-analysis-open .stem:hover{background:#faf5ff}
+@media(max-width:620px){
+  .sentence-analysis-fab{right:10px;bottom:62px;min-height:42px;padding:9px 13px;font-size:13px}
+  .sentence-analysis-panel{top:6%;width:calc(100vw - 16px);max-height:88vh;border-radius:18px}
+  .sentence-analysis-head{padding:10px 12px}
+  .sentence-analysis-body{padding:10px}
+  .sentence-analysis-sentence{gap:7px;padding:10px}
+  .sentence-analysis-component{min-width:72px;padding:26px 9px 9px}
+  .sentence-component-text{font-size:14px}
+  .analysis-depth-items{grid-template-columns:1fr;padding:8px}
+  .analysis-depth-head{padding:9px 10px}
+}
 </style>
 </head>
 <body class="auth-pending exam-not-started">
@@ -399,6 +456,7 @@ body.vocabulary-lookup-active .option{transform:none}
     </aside>
   </main>
 </div>
+<script src="data/sentence-analysis.js"></script>
 <script>
 const EXAM_DATA_URL = 'data/reading-ets2021-p56.json';
 let EXAM_LIBRARY = null;
@@ -410,6 +468,145 @@ let examMode = 'exam';
 const STUDENT_KEY = 'toeic_student_session';
 const LESSON_ID = 'ets-summer-2021-part5-6';
 const LOCK_BYPASS_EMAIL = 'sunprice@sp.ik';
+
+const SENTENCE_ANALYSIS_ADMIN_EMAIL = 'sunprice@sp.tk';
+let sentenceAnalysisMounted = false;
+
+function isSentenceAnalysisAdmin(){
+  if(typeof SENTENCE_ANALYSIS_DEMO !== 'undefined' && SENTENCE_ANALYSIS_DEMO) return true;
+  return String(studentSession?.email || '').trim().toLowerCase() === SENTENCE_ANALYSIS_ADMIN_EMAIL;
+}
+function sentenceAnalysisQuestions(){
+  return Array.isArray(EXAM_DATA?.questions) ? EXAM_DATA.questions.filter(q => q.part === 5 && q.stem) : [];
+}
+function sentenceAnalysisDataKeys(test=EXAM_DATA){
+  const identity=String(test?.id || test?.sourceLabel || test?.title || '').toLowerCase();
+  const publisher=(identity.match(/\bets\b/)?.[0] || 'ets').toLowerCase();
+  const year=Number(identity.match(/20\d{2}/)?.[0] || 2021);
+  const testNo=Number(test?.testNo || identity.match(/test\s*-?\s*(\d+)/)?.[1] || 0);
+  return {
+    collectionKey:`${publisher}-${year}`,
+    testKey:`test-${testNo}`,
+    partKey:'5'
+  };
+}
+function sentenceAnalysisQuestionRecord(questionNo,test=EXAM_DATA){
+  const keys=sentenceAnalysisDataKeys(test);
+  return window.SENTENCE_ANALYSIS_DATA
+    ?.collections?.[keys.collectionKey]
+    ?.tests?.[keys.testKey]
+    ?.parts?.[keys.partKey]
+    ?.questions?.[String(questionNo)] || null;
+}
+function cleanAnalysisText(value){
+  return String(value || '').replace(/\s+/g,' ').replace(/\s+([,.;:!?])/g,'$1').trim();
+}
+let sentenceAnalysisTree=null;
+let sentenceAnalysisSelectedComponent=-1;
+let sentenceAnalysisSelectedChild=-1;
+function analysisToneClass(tone){
+  return `tone-${['subject','verb','object','complement','adverb','clause'].includes(tone)?tone:'neutral'}`;
+}
+function renderSentenceAnalysisDetail(){
+  const detail=document.getElementById('sentenceAnalysisDeep');
+  if(!detail || !sentenceAnalysisTree) return;
+  const component=sentenceAnalysisTree.components[sentenceAnalysisSelectedComponent];
+  if(!component){ detail.innerHTML=''; return; }
+  const children=Array.isArray(component.children)?component.children:[];
+  const childHtml=children.length?children.map((child,index)=>`<button type="button" class="analysis-node ${index===sentenceAnalysisSelectedChild?'active':''}" data-analysis-depth="2" data-analysis-index="${index}"><span class="analysis-node-badge">${escapeText(child.label)}</span><span class="analysis-node-copy"><span class="analysis-node-text">${escapeText(child.text)}</span><span class="analysis-node-type">${escapeText(child.type)}</span></span></button>`).join(''):'<div class="sentence-analysis-empty">Không có lớp phân tích sâu hơn.</div>';
+  let wordHtml='';
+  const selected=children[sentenceAnalysisSelectedChild];
+  if(selected){
+    const words=Array.isArray(selected.children)?selected.children:[];
+    wordHtml=`<div class="analysis-depth-block"><div class="analysis-depth-head"><span class="analysis-depth-badge ${analysisToneClass(selected.tone)}">${escapeText(selected.label)}</span><strong>${escapeText(selected.text)}</strong></div><div class="analysis-word-grid">${words.map(word=>`<span class="analysis-word"><span>${escapeText(word.text)}</span><b>${escapeText(word.label)}</b></span>`).join('')}</div></div>`;
+  }
+  detail.innerHTML=`<div class="analysis-depth-block"><div class="analysis-depth-head"><span class="analysis-depth-badge ${analysisToneClass(component.tone)}">${escapeText(component.label)}</span><strong>${escapeText(component.text)}</strong></div><div class="analysis-depth-items">${childHtml}</div></div>${wordHtml}`;
+}
+function renderSentenceAnalysis(questionNo){
+  const output=document.getElementById('sentenceAnalysisOutput');
+  const select=document.getElementById('sentenceAnalysisSelect');
+  if(!output || !select) return;
+  const questions=sentenceAnalysisQuestions();
+  const q=questions.find(item=>Number(item.no)===Number(questionNo)) || questions[0];
+  if(!q){ output.innerHTML='<div class="sentence-analysis-empty">Không có câu để phân tích.</div>'; return; }
+  select.value=String(q.no);
+  const stored=sentenceAnalysisQuestionRecord(q.no);
+  if(!stored?.analysis){
+    sentenceAnalysisTree=null;
+    output.innerHTML='<div class="sentence-analysis-empty">Chưa có dữ liệu phân tích cho câu này.</div>';
+    return;
+  }
+  sentenceAnalysisTree=stored.analysis;
+  sentenceAnalysisSelectedComponent=-1;
+  sentenceAnalysisSelectedChild=-1;
+  const components=sentenceAnalysisTree.components || [];
+  output.innerHTML=`<div class="sentence-analysis-sentence">${components.map((component,index)=>`<button type="button" class="sentence-analysis-component ${analysisToneClass(component.tone)}" data-analysis-depth="1" data-analysis-index="${index}"><span class="sentence-component-badge">${escapeText(component.label)}</span><span class="sentence-component-text">${escapeText(component.text)}</span></button>`).join('')}</div><div class="sentence-analysis-deep" id="sentenceAnalysisDeep"></div>`;
+}
+function handleSentenceAnalysisClick(event){
+  const button=event.target.closest('[data-analysis-depth]');
+  if(!button || !sentenceAnalysisTree) return;
+  const depth=Number(button.dataset.analysisDepth);
+  const index=Number(button.dataset.analysisIndex);
+  if(depth===1){
+    sentenceAnalysisSelectedComponent=index;
+    sentenceAnalysisSelectedChild=-1;
+    document.querySelectorAll('#sentenceAnalysisOutput [data-analysis-depth="1"]').forEach((item,itemIndex)=>item.classList.toggle('active',itemIndex===index));
+    renderSentenceAnalysisDetail();
+    return;
+  }
+  if(depth===2){
+    sentenceAnalysisSelectedChild=index;
+    renderSentenceAnalysisDetail();
+  }
+}
+function refreshSentenceAnalysisOptions(){
+  const select=document.getElementById('sentenceAnalysisSelect');
+  if(!select) return;
+  const questions=sentenceAnalysisQuestions();
+  select.innerHTML=questions.map(q=>`<option value="${q.no}">Question ${q.no}</option>`).join('');
+  const current=questions.find(q=>Number(q.no)===Number(currentQuestionNo)) || questions[0];
+  renderSentenceAnalysis(current?.no);
+}
+function setSentenceAnalysisOpen(open){
+  const panel=document.getElementById('sentenceAnalysisPanel');
+  const button=document.getElementById('sentenceAnalysisToggle');
+  if(!panel || !button) return;
+  panel.hidden=!open;
+  button.setAttribute('aria-expanded',open?'true':'false');
+  document.body.classList.toggle('sentence-analysis-open',open);
+  if(open) refreshSentenceAnalysisOptions();
+}
+function mountSentenceAnalysisControls(){
+  document.getElementById('sentenceAnalysisToggle')?.remove();
+  document.getElementById('sentenceAnalysisPanel')?.remove();
+  sentenceAnalysisMounted=false;
+  if(!isSentenceAnalysisAdmin()) return;
+  const button=document.createElement('button');
+  button.type='button';
+  button.id='sentenceAnalysisToggle';
+  button.className='sentence-analysis-fab';
+  button.setAttribute('aria-expanded','false');
+  button.innerHTML='<span class="sentence-analysis-icon">◫</span><span>Phân tích câu</span>';
+  const panel=document.createElement('aside');
+  panel.id='sentenceAnalysisPanel';
+  panel.className='sentence-analysis-panel';
+  panel.hidden=true;
+  panel.innerHTML=`<div class="sentence-analysis-head"><b>Phân tích câu</b><button type="button" class="sentence-analysis-close" id="sentenceAnalysisClose" aria-label="Đóng">×</button></div><div class="sentence-analysis-body"><select class="sentence-analysis-select" id="sentenceAnalysisSelect" aria-label="Chọn câu"></select><div id="sentenceAnalysisOutput"></div></div>`;
+  document.body.append(button,panel);
+  button.addEventListener('click',event=>{event.stopPropagation();setSentenceAnalysisOpen(panel.hidden);});
+  panel.addEventListener('click',event=>event.stopPropagation());
+  document.getElementById('sentenceAnalysisClose').addEventListener('click',()=>setSentenceAnalysisOpen(false));
+  document.getElementById('sentenceAnalysisSelect').addEventListener('change',event=>renderSentenceAnalysis(event.target.value));
+  document.getElementById('sentenceAnalysisOutput').addEventListener('click',handleSentenceAnalysisClick);
+  sentenceAnalysisMounted=true;
+  refreshSentenceAnalysisOptions();
+}
+function selectSentenceForAnalysis(questionNo){
+  const panel=document.getElementById('sentenceAnalysisPanel');
+  if(!panel || panel.hidden) return;
+  renderSentenceAnalysis(questionNo);
+}
+
 let studentSession = null;
 let lockedLessonIds = [];
 let examLockUpdating = false;
@@ -1043,7 +1240,9 @@ function renderExam(){
   document.querySelectorAll('.question-card').forEach(card => card.addEventListener('click', () => {
     currentQuestionNo = Number(card.dataset.question || currentQuestionNo);
     updateProgress();
+    selectSentenceForAnalysis(currentQuestionNo);
   }));
+  if(sentenceAnalysisMounted) refreshSentenceAnalysisOptions();
 }
 function selectedFor(q){
   const el = document.querySelector(`input[name="${CSS.escape(q.id)}"]:checked`);
@@ -1303,7 +1502,15 @@ document.addEventListener('click',event=>{
   if(wrap && panel && !panel.hidden && !wrap.contains(event.target)) setExamLockPanelOpen(false);
 });
 document.addEventListener('keydown',event=>{
-  if(event.key==='Escape') setExamLockPanelOpen(false);
+  if(event.key==='Escape'){
+    setExamLockPanelOpen(false);
+    setSentenceAnalysisOpen(false);
+  }
+});
+document.addEventListener('click',event=>{
+  const panel=document.getElementById('sentenceAnalysisPanel');
+  const button=document.getElementById('sentenceAnalysisToggle');
+  if(panel && !panel.hidden && !panel.contains(event.target) && !button?.contains(event.target)) setSentenceAnalysisOpen(false);
 });
 (async function init(){
   setupAntiCopy();
@@ -1332,6 +1539,7 @@ document.addEventListener('keydown',event=>{
   document.body.classList.add('exam-not-started');
   setNotStartedStudentLine();
   renderExam();
+  mountSentenceAnalysisControls();
   await syncVocabularyForExam();
   updateProgress();
   updateTimer();
