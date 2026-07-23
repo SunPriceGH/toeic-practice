@@ -17276,6133 +17276,2070 @@ window.SENTENCE_ANALYSIS_DATA = {
             }
           }
         },
-        "test-4": {
-          "key": "ets-2021-test-4",
-          "testNo": 4,
-          "testId": "ets-summer-2021-test4-part5-6",
-          "title": "ETS Summer 2021 Test 4 · Part 5 + 6",
-          "parts": {
-            "5": {
-              "questions": {
-                "101": {
-                  "questionNo": 101,
-                  "sentence": "This is currently Ms. Wonderle’s first year working as our office’s administrative assistant.",
-                  "analysis": {
-                    "sentence": "This is currently Ms. Wonderle’s first year working as our office’s administrative assistant.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "This",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "This",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "This",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "is currently",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "is",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "is",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Adv",
-                            "type": "Trạng từ",
-                            "text": "currently",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "currently",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "C",
-                        "type": "Bổ ngữ",
-                        "text": "Ms. Wonderle’s first year working as our office’s administrative assistant",
-                        "tone": "complement",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Ms Wonderle’s first year working as our office’s administrative assistant",
-                            "tone": "complement",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Ms",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Wonderle’s",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "first",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "year",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "working",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "as",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "our",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "office’s",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "administrative",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "assistant",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
+  "test-4": {
+    "key": "ets-2021-test-4",
+    "testNo": 4,
+    "testId": "ets-summer-2021-test4-part5-6",
+    "title": "ETS Summer 2021 Test 4 · Part 5 + 6",
+    "parts": {
+      "5": {
+        "questions": {
+          "101": {
+            "questionNo": 101,
+            "sentence": "This is currently Ms. Wonderle’s first year working as our office’s administrative assistant.",
+            "analysis": {
+              "sentence": "This is currently Ms. Wonderle’s first year working as our office’s administrative assistant.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "This",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "This",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "Pron", "type": "Đại từ chỉ định", "text": "This", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
                 },
-                "102": {
-                  "questionNo": 102,
-                  "sentence": "Riversedge City is pleased to announce new monthly parking discounts for its residents.",
-                  "analysis": {
-                    "sentence": "Riversedge City is pleased to announce new monthly parking discounts for its residents.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Riversedge City",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Riversedge City",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Riversedge",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "City",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "is",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "is",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "is",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "C",
-                        "type": "Bổ ngữ",
-                        "text": "pleased to announce new monthly parking discounts for its residents",
-                        "tone": "complement",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "pleased",
-                            "tone": "complement",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "pleased",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "to announce new monthly parking discounts",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "to",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "announce",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "new",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "monthly",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "parking",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "discounts",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "for its residents",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "for",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "its",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "residents",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "is",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "V", "type": "Động từ liên kết", "text": "is", "tone": "neutral", "children": [] }
+                  ]
                 },
-                "103": {
-                  "questionNo": 103,
-                  "sentence": "Sang-Joon Park is retiring after 25 years of service with Dahl Legal Consultants.",
-                  "analysis": {
-                    "sentence": "Sang-Joon Park is retiring after 25 years of service with Dahl Legal Consultants.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Sang-Joon Park",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Sang-Joon Park",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Sang-Joon",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "Park",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "is retiring",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "is",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "is",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "retiring",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "retiring",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Adv",
-                        "type": "Trạng ngữ",
-                        "text": "after 25 years of service with Dahl Legal Consultants",
-                        "tone": "adverb",
-                        "children": [
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "after 25 years of service with Dahl Legal Consultants",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "after",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Punc",
-                                "type": "Từ",
-                                "text": "25",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "years",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "of",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "service",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "with",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Dahl",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "Legal",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Consultants",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
+                {
+                  "label": "Adv",
+                  "type": "Trạng từ",
+                  "text": "currently",
+                  "tone": "adverb",
+                  "children": [
+                    { "label": "Adv", "type": "Trạng từ thời gian", "text": "currently", "tone": "neutral", "children": [] }
+                  ]
                 },
-                "104": {
-                  "questionNo": 104,
-                  "sentence": "The Trails Store will eventually add a section for hiking equipment.",
-                  "analysis": {
-                    "sentence": "The Trails Store will eventually add a section for hiking equipment.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "The Trails Store",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "The Trails Store",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "The",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Trails",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "Store",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "will eventually add",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "will",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "will",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Adv",
-                            "type": "Trạng từ",
-                            "text": "eventually",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "eventually",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "add",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "add",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "a section for hiking equipment",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "a section",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "a",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "section",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "for hiking equipment",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "for",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "hiking",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "equipment",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "105": {
-                  "questionNo": 105,
-                  "sentence": "Puraforce Staffing can provide your business with temporary employees during the busy holiday season.",
-                  "analysis": {
-                    "sentence": "Puraforce Staffing can provide your business with temporary employees during the busy holiday season.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Puraforce Staffing",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Puraforce Staffing",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Puraforce",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Staffing",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "can provide",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "can",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "can",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "provide",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "provide",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "your business with temporary employees",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "your business",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "your",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "business",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "with temporary employees",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "with",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "temporary",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "employees",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Adv",
-                        "type": "Trạng ngữ",
-                        "text": "during the busy holiday season",
-                        "tone": "adverb",
-                        "children": [
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "during the busy holiday season",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "during",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "the",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "busy",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "holiday",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "season",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "106": {
-                  "questionNo": 106,
-                  "sentence": "In contrast to the weather outside, the inside of Taft’s Bakery was warm and welcoming.",
-                  "analysis": {
-                    "sentence": "In contrast to the weather outside, the inside of Taft’s Bakery was warm and welcoming.",
-                    "components": [
-                      {
-                        "label": "Adv",
-                        "type": "Trạng ngữ đầu câu",
-                        "text": "In contrast to the weather outside",
-                        "tone": "adverb",
-                        "children": [
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "In contrast to the weather outside",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "In",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "contrast",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "to",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "the",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "weather",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "outside",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "the inside of Taft’s Bakery",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "the",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "the",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "inside",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "inside",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "of Taft’s Bakery",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "of",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Taft’s",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Bakery",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "was",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "was",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "was",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "C",
-                        "type": "Bổ ngữ",
-                        "text": "warm and welcoming",
-                        "tone": "complement",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "warm and welcoming",
-                            "tone": "complement",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "warm",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Conj",
-                                "type": "Từ",
-                                "text": "and",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "welcoming",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "107": {
-                  "questionNo": 107,
-                  "sentence": "Berrell Foods, a wholesale distributor of fresh produce, supplies more than 100 grocery stores in northern Scotland.",
-                  "analysis": {
-                    "sentence": "Berrell Foods, a wholesale distributor of fresh produce, supplies more than 100 grocery stores in northern Scotland.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Berrell Foods, a wholesale distributor of fresh produce,",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Berrell Foods",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Berrell",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Foods",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "App",
-                            "type": "Cụm đồng vị",
-                            "text": "a wholesale distributor of fresh produce",
-                            "tone": "complement",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "a",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "wholesale",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "distributor",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "of",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "fresh",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "produce",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "supplies",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "supplies",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "supplies",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "more than 100 grocery stores",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "more than 100 grocery stores",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "more",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "than",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Punc",
-                                "type": "Từ",
-                                "text": "100",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "grocery",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "stores",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Adv",
-                        "type": "Trạng ngữ",
-                        "text": "in northern Scotland",
-                        "tone": "adverb",
-                        "children": [
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "in northern Scotland",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "in",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "northern",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Scotland",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "108": {
-                  "questionNo": 108,
-                  "sentence": "Payments to the Wendell Lake Association will be considered late if they are received after January 1.",
-                  "analysis": {
-                    "sentence": "Payments to the Wendell Lake Association will be considered late if they are received after January 1.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Payments to the Wendell Lake Association",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Payments",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Payments",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "to the Wendell Lake Association",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "to",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "the",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Wendell",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Lake",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Association",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "will be considered",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "will",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "will",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "be",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "be",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "considered",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "considered",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "late",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "late",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "late",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Clause",
-                        "type": "Mệnh đề",
-                        "text": "if they are received after January 1",
-                        "tone": "clause",
-                        "children": [
-                          {
-                            "label": "Conj",
-                            "type": "Liên từ",
-                            "text": "if",
-                            "tone": "clause",
-                            "children": [
-                              {
-                                "label": "Conj",
-                                "type": "Từ",
-                                "text": "if",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "S",
-                            "type": "Chủ ngữ",
-                            "text": "they",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "NP",
-                                "type": "Cụm danh từ",
-                                "text": "they",
-                                "tone": "subject",
-                                "children": [
-                                  {
-                                    "label": "Pron",
-                                    "type": "Từ",
-                                    "text": "they",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "V",
-                            "type": "Cụm động từ",
-                            "text": "are received",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Trợ động từ",
-                                "text": "are",
-                                "tone": "verb",
-                                "children": [
-                                  {
-                                    "label": "Aux",
-                                    "type": "Từ",
-                                    "text": "are",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Động từ chính",
-                                "text": "received",
-                                "tone": "verb",
-                                "children": [
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "received",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Adv",
-                            "type": "Trạng ngữ",
-                            "text": "after January 1",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep + O",
-                                "type": "Cụm giới từ",
-                                "text": "after January 1",
-                                "tone": "adverb",
-                                "children": [
-                                  {
-                                    "label": "Prep",
-                                    "type": "Từ",
-                                    "text": "after",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Adj",
-                                    "type": "Từ",
-                                    "text": "January",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Punc",
-                                    "type": "Từ",
-                                    "text": "1",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "109": {
-                  "questionNo": 109,
-                  "sentence": "Although the alternate route was clearly marked, many drivers ended up getting lost.",
-                  "analysis": {
-                    "sentence": "Although the alternate route was clearly marked, many drivers ended up getting lost.",
-                    "components": [
-                      {
-                        "label": "Clause",
-                        "type": "Mệnh đề phụ",
-                        "text": "Although the alternate route was clearly marked",
-                        "tone": "clause",
-                        "children": [
-                          {
-                            "label": "Conj",
-                            "type": "Liên từ",
-                            "text": "Although",
-                            "tone": "clause",
-                            "children": [
-                              {
-                                "label": "Conj",
-                                "type": "Từ",
-                                "text": "Although",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "S",
-                            "type": "Chủ ngữ",
-                            "text": "the alternate route",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "NP",
-                                "type": "Cụm danh từ",
-                                "text": "the alternate route",
-                                "tone": "subject",
-                                "children": [
-                                  {
-                                    "label": "Det",
-                                    "type": "Từ",
-                                    "text": "the",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "alternate",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "route",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "V",
-                            "type": "Cụm động từ",
-                            "text": "was",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Trợ động từ",
-                                "text": "was",
-                                "tone": "verb",
-                                "children": [
-                                  {
-                                    "label": "Aux",
-                                    "type": "Từ",
-                                    "text": "was",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "C",
-                            "type": "Bổ ngữ",
-                            "text": "clearly marked",
-                            "tone": "complement",
-                            "children": [
-                              {
-                                "label": "NP",
-                                "type": "Cụm danh từ",
-                                "text": "clearly marked",
-                                "tone": "complement",
-                                "children": [
-                                  {
-                                    "label": "Adv",
-                                    "type": "Từ",
-                                    "text": "clearly",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "marked",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "many drivers",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "many drivers",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "many",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "drivers",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "ended up",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "ended",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "ended",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Part",
-                            "type": "Tiểu từ",
-                            "text": "up",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "up",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "getting lost",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "getting lost",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "getting",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "lost",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "110": {
-                  "questionNo": 110,
-                  "sentence": "Later today, Mr. Warken will be arranging interview times for the job applicant finalists.",
-                  "analysis": {
-                    "sentence": "Later today, Mr. Warken will be arranging interview times for the job applicant finalists.",
-                    "components": [
-                      {
-                        "label": "Adv",
-                        "type": "Trạng ngữ đầu câu",
-                        "text": "Later today",
-                        "tone": "adverb",
-                        "children": [
-                          {
-                            "label": "AdvP",
-                            "type": "Cụm trạng từ",
-                            "text": "Later today",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "Later",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "today",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Mr. Warken",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Mr Warken",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Mr",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Warken",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "will be arranging",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "will",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "will",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "be",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "be",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "arranging",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "arranging",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "interview times for the job applicant finalists",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "interview times",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "interview",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "times",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "for the job applicant finalists",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "for",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "the",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "job",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "applicant",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "finalists",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "111": {
-                  "questionNo": 111,
-                  "sentence": "For one week only, Penny’s Grocery is giving away a free tote bag with every order of 50 dollars or more.",
-                  "analysis": {
-                    "sentence": "For one week only, Penny’s Grocery is giving away a free tote bag with every order of 50 dollars or more.",
-                    "components": [
-                      {
-                        "label": "Adv",
-                        "type": "Trạng ngữ đầu câu",
-                        "text": "For one week only",
-                        "tone": "adverb",
-                        "children": [
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "For one week only",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "For",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "one",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "week",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "only",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Penny’s Grocery",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Penny’s Grocery",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Penny’s",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "Grocery",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "is giving away",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "is",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "is",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "giving",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "giving",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Part",
-                            "type": "Tiểu từ",
-                            "text": "away",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "away",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "a free tote bag with every order of 50 dollars or more",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "a free tote bag",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "a",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "free",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "tote",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "bag",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "with every order",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "with",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "every",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "order",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "of 50 dollars or more",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "of",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Punc",
-                                "type": "Từ",
-                                "text": "50",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "dollars",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Conj",
-                                "type": "Từ",
-                                "text": "or",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "more",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "112": {
-                  "questionNo": 112,
-                  "sentence": "Because of a recent artwork donation, the Libsing Art Museum will soon be displaying a new exhibition.",
-                  "analysis": {
-                    "sentence": "Because of a recent artwork donation, the Libsing Art Museum will soon be displaying a new exhibition.",
-                    "components": [
-                      {
-                        "label": "Clause",
-                        "type": "Mệnh đề phụ",
-                        "text": "Because of a recent artwork donation",
-                        "tone": "clause",
-                        "children": [
-                          {
-                            "label": "Conj",
-                            "type": "Liên từ",
-                            "text": "Because",
-                            "tone": "clause",
-                            "children": [
-                              {
-                                "label": "Conj",
-                                "type": "Từ",
-                                "text": "Because",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Câu",
-                            "type": "Câu chưa phân tách",
-                            "text": "of a recent artwork donation",
-                            "tone": "neutral",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "of",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "a",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "recent",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "artwork",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "donation",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "the Libsing Art Museum",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "the Libsing Art Museum",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "the",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Libsing",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Art",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Museum",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "will soon be displaying",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "will",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "will",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Adv",
-                            "type": "Trạng từ",
-                            "text": "soon",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "soon",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "be",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "be",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "displaying",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "displaying",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "a new exhibition",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "a new exhibition",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "a",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "new",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "exhibition",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "113": {
-                  "questionNo": 113,
-                  "sentence": "Albert Doime oversaw smelting operations in Lydenburg for a brief time before being reassigned to Johannesburg.",
-                  "analysis": {
-                    "sentence": "Albert Doime oversaw smelting operations in Lydenburg for a brief time before being reassigned to Johannesburg.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Albert Doime",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Albert Doime",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Albert",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Doime",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "oversaw",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "oversaw",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "oversaw",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "smelting operations",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "smelting operations",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "smelting",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "operations",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Adv",
-                        "type": "Trạng ngữ",
-                        "text": "in Lydenburg for a brief time before being reassigned to Johannesburg",
-                        "tone": "adverb",
-                        "children": [
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "in Lydenburg for a brief time before being reassigned to Johannesburg",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "in",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Lydenburg",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "for",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "a",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "brief",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "time",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "before",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "being",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "reassigned",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "to",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Johannesburg",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "114": {
-                  "questionNo": 114,
-                  "sentence": "The agreement specifically states that Amy Dyer will be the general contractor for the Hibley project.",
-                  "analysis": {
-                    "sentence": "The agreement specifically states that Amy Dyer will be the general contractor for the Hibley project.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "The agreement",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "The agreement",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "The",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "agreement",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "specifically",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Adv",
-                            "type": "Trạng từ",
-                            "text": "specifically",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "specifically",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "states that Amy Dyer will be the general contractor for the Hibley project",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "states",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "states",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Rel",
-                            "type": "Mệnh đề quan hệ",
-                            "text": "that Amy Dyer will be the general contractor",
-                            "tone": "clause",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "that",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Amy",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Dyer",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "will",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "be",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "the",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "general",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "contractor",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "for the Hibley project",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "for",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "the",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Hibley",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "project",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "115": {
-                  "questionNo": 115,
-                  "sentence": "Executives at Wess Lumber were praised for addressing employees’ concerns in a constructive manner.",
-                  "analysis": {
-                    "sentence": "Executives at Wess Lumber were praised for addressing employees’ concerns in a constructive manner.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Executives at Wess Lumber",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Executives",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "Executives",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "at Wess Lumber",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "at",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Wess",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "Lumber",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "were praised",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "were",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "were",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "praised",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "praised",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "for addressing employees ’ concerns",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "for addressing employees ’ concerns",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "for",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "addressing",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "employees",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Punc",
-                                "type": "Từ",
-                                "text": "’",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "concerns",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Adv",
-                        "type": "Trạng ngữ",
-                        "text": "in a constructive manner",
-                        "tone": "adverb",
-                        "children": [
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "in a constructive manner",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "in",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "a",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "constructive",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "manner",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "116": {
-                  "questionNo": 116,
-                  "sentence": "Flu season is here, so take advantage of the free flu shots being offered in the lobby.",
-                  "analysis": {
-                    "sentence": "Flu season is here, so take advantage of the free flu shots being offered in the lobby.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Flu season",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Flu season",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Flu",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "season",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "is",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "is",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "is",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "C",
-                        "type": "Bổ ngữ",
-                        "text": "here",
-                        "tone": "complement",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "here",
-                            "tone": "complement",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "here",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Clause",
-                        "type": "Mệnh đề",
-                        "text": "so take advantage of the free flu shots being offered in the lobby.",
-                        "tone": "clause",
-                        "children": [
-                          {
-                            "label": "Conj",
-                            "type": "Liên từ",
-                            "text": "so",
-                            "tone": "clause",
-                            "children": [
-                              {
-                                "label": "Conj",
-                                "type": "Từ",
-                                "text": "so",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "S",
-                            "type": "Chủ ngữ",
-                            "text": "take advantage of the free flu shots",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "NP",
-                                "type": "Cụm danh từ",
-                                "text": "take advantage",
-                                "tone": "subject",
-                                "children": [
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "take",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nc",
-                                    "type": "Từ",
-                                    "text": "advantage",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "label": "Prep + O",
-                                "type": "Cụm giới từ",
-                                "text": "of the free flu shots",
-                                "tone": "adverb",
-                                "children": [
-                                  {
-                                    "label": "Prep",
-                                    "type": "Từ",
-                                    "text": "of",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Det",
-                                    "type": "Từ",
-                                    "text": "the",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Adv",
-                                    "type": "Từ",
-                                    "text": "free",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nmod",
-                                    "type": "Từ",
-                                    "text": "flu",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nc",
-                                    "type": "Từ",
-                                    "text": "shots",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "V",
-                            "type": "Cụm động từ",
-                            "text": "being offered",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Trợ động từ",
-                                "text": "being",
-                                "tone": "verb",
-                                "children": [
-                                  {
-                                    "label": "Aux",
-                                    "type": "Từ",
-                                    "text": "being",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Động từ chính",
-                                "text": "offered",
-                                "tone": "verb",
-                                "children": [
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "offered",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Adv",
-                            "type": "Trạng ngữ",
-                            "text": "in the lobby",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep + O",
-                                "type": "Cụm giới từ",
-                                "text": "in the lobby",
-                                "tone": "adverb",
-                                "children": [
-                                  {
-                                    "label": "Prep",
-                                    "type": "Từ",
-                                    "text": "in",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Det",
-                                    "type": "Từ",
-                                    "text": "the",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "lobby",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "117": {
-                  "questionNo": 117,
-                  "sentence": "Clarkson Smith Legal Services requires that inactive client files be kept in off-site storage for seven years.",
-                  "analysis": {
-                    "sentence": "Clarkson Smith Legal Services requires that inactive client files be kept in off-site storage for seven years.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Clarkson Smith Legal Services",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Clarkson Smith Legal Services",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Clarkson",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Smith",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "Legal",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Services",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "requires",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "requires",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "requires",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "that inactive client files be kept",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "that inactive client files be kept",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "that",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "inactive",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "client",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "files",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "be",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "kept",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Adv",
-                        "type": "Trạng ngữ",
-                        "text": "in off-site storage for seven years",
-                        "tone": "adverb",
-                        "children": [
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "in off-site storage for seven years",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "in",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "off-site",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "storage",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "for",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "seven",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "years",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "118": {
-                  "questionNo": 118,
-                  "sentence": "By switching to digital accounting, your business can save time, space, and money.",
-                  "analysis": {
-                    "sentence": "By switching to digital accounting, your business can save time, space, and money.",
-                    "components": [
-                      {
-                        "label": "Adv",
-                        "type": "Trạng ngữ đầu câu",
-                        "text": "By switching to digital accounting",
-                        "tone": "adverb",
-                        "children": [
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "By switching to digital accounting",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "By",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "switching",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "to",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "digital",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "accounting",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "your business",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "your business",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "your",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "business",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "can save",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "can",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "can",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "save",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "save",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "time, space, and money",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "time",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "time",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "App",
-                            "type": "Cụm đồng vị",
-                            "text": "space",
-                            "tone": "complement",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "space",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "and money",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Conj",
-                                "type": "Từ",
-                                "text": "and",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "money",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "119": {
-                  "questionNo": 119,
-                  "sentence": "Mr. Liu’s long list of awards can be attributed to his skills as a designer.",
-                  "analysis": {
-                    "sentence": "Mr. Liu’s long list of awards can be attributed to his skills as a designer.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Mr. Liu’s long list of awards",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Mr Liu’s long list",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Mr",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Liu’s",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "long",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "list",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "of awards",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "of",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "awards",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "can be attributed",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "can",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "can",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "be",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "be",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "attributed",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "attributed",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "to his skills as a designer",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "to his skills as a designer",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "to",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "his",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "skills",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "as",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "a",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "designer",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "120": {
-                  "questionNo": 120,
-                  "sentence": "MBR Global Marketing has signed several new client contracts totaling 12 million pounds in annual revenue.",
-                  "analysis": {
-                    "sentence": "MBR Global Marketing has signed several new client contracts totaling 12 million pounds in annual revenue.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "MBR Global Marketing",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "MBR Global Marketing",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "MBR",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "Global",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "Marketing",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "has signed",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "has",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "has",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "signed",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "signed",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "several new client contracts totaling 12 million pounds",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "several new client contracts totaling 12 million pounds",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "several",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "new",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "client",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "contracts",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "totaling",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Punc",
-                                "type": "Từ",
-                                "text": "12",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "million",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "pounds",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Adv",
-                        "type": "Trạng ngữ",
-                        "text": "in annual revenue",
-                        "tone": "adverb",
-                        "children": [
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "in annual revenue",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "in",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "annual",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "revenue",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "121": {
-                  "questionNo": 121,
-                  "sentence": "Besides teaching economics at the local university, Ms. Ito also writes a monthly column for a financial magazine.",
-                  "analysis": {
-                    "sentence": "Besides teaching economics at the local university, Ms. Ito also writes a monthly column for a financial magazine.",
-                    "components": [
-                      {
-                        "label": "Adv",
-                        "type": "Trạng ngữ đầu câu",
-                        "text": "Besides teaching economics at the local university",
-                        "tone": "adverb",
-                        "children": [
-                          {
-                            "label": "AdvP",
-                            "type": "Cụm trạng từ",
-                            "text": "Besides teaching economics at the local university",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "Besides",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "teaching",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "economics",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "at",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "the",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "local",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "university",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Ms. Ito",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Ms Ito",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Ms",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Ito",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "also",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Adv",
-                            "type": "Trạng từ",
-                            "text": "also",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "also",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "writes a monthly column for a financial magazine",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "writes a monthly column",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "writes",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "a",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "monthly",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "column",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "for a financial magazine",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "for",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "a",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "financial",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "magazine",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "122": {
-                  "questionNo": 122,
-                  "sentence": "The feasibility study for building a new bridge was quite complex and included several annotations.",
-                  "analysis": {
-                    "sentence": "The feasibility study for building a new bridge was quite complex and included several annotations.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "The feasibility study for building a new bridge",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "The feasibility study",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "The",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "feasibility",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "study",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "for building a new bridge",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "for",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "building",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "a",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "new",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "bridge",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "was",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "was",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "was",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "C",
-                        "type": "Bổ ngữ",
-                        "text": "quite complex and included several annotations",
-                        "tone": "complement",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "quite complex and included several annotations",
-                            "tone": "complement",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "quite",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "complex",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Conj",
-                                "type": "Từ",
-                                "text": "and",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "included",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "several",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "annotations",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "123": {
-                  "questionNo": 123,
-                  "sentence": "The department mentor instructed the interns to contact her first whenever they had any questions.",
-                  "analysis": {
-                    "sentence": "The department mentor instructed the interns to contact her first whenever they had any questions.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "The department mentor",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "The department mentor",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "The",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "department",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "mentor",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "instructed",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "instructed",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "instructed",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "the interns to contact her first whenever they had any questions",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "the interns",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "the",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "interns",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "to contact her first whenever they had any questions",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "to",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "contact",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "her",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "first",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "whenever",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Pron",
-                                "type": "Từ",
-                                "text": "they",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "had",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "any",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "questions",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "124": {
-                  "questionNo": 124,
-                  "sentence": "The number of people working at Yolen Laboratory’s two locations keeps increasing, and there are now 452 employees altogether.",
-                  "analysis": {
-                    "sentence": "The number of people working at Yolen Laboratory’s two locations keeps increasing, and there are now 452 employees altogether.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "The number of people working at Yolen Laboratory’s two locations",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "The number",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "The",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "number",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "of people working",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "of",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "people",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "working",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "at Yolen Laboratory’s two locations",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "at",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Yolen",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Laboratory’s",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "two",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "locations",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "keeps",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "keeps",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "keeps",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "increasing",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "increasing",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "increasing",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Clause",
-                        "type": "Mệnh đề",
-                        "text": "and there are now 452 employees altogether.",
-                        "tone": "clause",
-                        "children": [
-                          {
-                            "label": "Conj",
-                            "type": "Liên từ",
-                            "text": "and",
-                            "tone": "clause",
-                            "children": [
-                              {
-                                "label": "Conj",
-                                "type": "Từ",
-                                "text": "and",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "S",
-                            "type": "Chủ ngữ",
-                            "text": "there",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "NP",
-                                "type": "Cụm danh từ",
-                                "text": "there",
-                                "tone": "subject",
-                                "children": [
-                                  {
-                                    "label": "Adv",
-                                    "type": "Từ",
-                                    "text": "there",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "V",
-                            "type": "Cụm động từ",
-                            "text": "are now",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Trợ động từ",
-                                "text": "are",
-                                "tone": "verb",
-                                "children": [
-                                  {
-                                    "label": "Aux",
-                                    "type": "Từ",
-                                    "text": "are",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Trạng từ",
-                                "text": "now",
-                                "tone": "verb",
-                                "children": [
-                                  {
-                                    "label": "Adv",
-                                    "type": "Từ",
-                                    "text": "now",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "C",
-                            "type": "Bổ ngữ",
-                            "text": "452 employees altogether",
-                            "tone": "complement",
-                            "children": [
-                              {
-                                "label": "NP",
-                                "type": "Cụm danh từ",
-                                "text": "452 employees altogether",
-                                "tone": "complement",
-                                "children": [
-                                  {
-                                    "label": "Punc",
-                                    "type": "Từ",
-                                    "text": "452",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nmod",
-                                    "type": "Từ",
-                                    "text": "employees",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Adv",
-                                    "type": "Từ",
-                                    "text": "altogether",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "125": {
-                  "questionNo": 125,
-                  "sentence": "Highlee Sportswear, whose popularity is widespread among athletes, will add a line of children’s clothes soon.",
-                  "analysis": {
-                    "sentence": "Highlee Sportswear, whose popularity is widespread among athletes, will add a line of children’s clothes soon.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Highlee Sportswear, whose popularity is widespread among athletes,",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Highlee Sportswear",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Highlee",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Sportswear",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "App",
-                            "type": "Cụm đồng vị",
-                            "text": "whose popularity is widespread among athletes",
-                            "tone": "complement",
-                            "children": [
-                              {
-                                "label": "Pron",
-                                "type": "Từ",
-                                "text": "whose",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "popularity",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "is",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "widespread",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "among",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "athletes",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "will add",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "will",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "will",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "add",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "add",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "a line of children’s clothes soon",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "a line",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "a",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "line",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "of children’s clothes soon",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "of",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "children’s",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "clothes",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "soon",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "126": {
-                  "questionNo": 126,
-                  "sentence": "Employees spoke fondly of former CEO Olga Sombroek, emphasizing how well liked she was.",
-                  "analysis": {
-                    "sentence": "Employees spoke fondly of former CEO Olga Sombroek, emphasizing how well liked she was.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Employees",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Employees",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Employees",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "spoke",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "spoke",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "spoke",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "fondly of former CEO Olga Sombroek, emphasizing how well liked she was",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "fondly",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "fondly",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "of former CEO Olga Sombroek emphasizing how well liked she was",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "of",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "former",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "CEO",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Olga",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Sombroek",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "emphasizing",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "how",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "well",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "liked",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Pron",
-                                "type": "Từ",
-                                "text": "she",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "was",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "127": {
-                  "questionNo": 127,
-                  "sentence": "Although the owners made extensive renovations to their hair salon, they did not raise any of their prices.",
-                  "analysis": {
-                    "sentence": "Although the owners made extensive renovations to their hair salon, they did not raise any of their prices.",
-                    "components": [
-                      {
-                        "label": "Clause",
-                        "type": "Mệnh đề phụ",
-                        "text": "Although the owners made extensive renovations to their hair salon",
-                        "tone": "clause",
-                        "children": [
-                          {
-                            "label": "Conj",
-                            "type": "Liên từ",
-                            "text": "Although",
-                            "tone": "clause",
-                            "children": [
-                              {
-                                "label": "Conj",
-                                "type": "Từ",
-                                "text": "Although",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "S",
-                            "type": "Chủ ngữ",
-                            "text": "the owners",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "NP",
-                                "type": "Cụm danh từ",
-                                "text": "the owners",
-                                "tone": "subject",
-                                "children": [
-                                  {
-                                    "label": "Det",
-                                    "type": "Từ",
-                                    "text": "the",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nc",
-                                    "type": "Từ",
-                                    "text": "owners",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "V",
-                            "type": "Cụm động từ",
-                            "text": "made",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Động từ chính",
-                                "text": "made",
-                                "tone": "verb",
-                                "children": [
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "made",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "O",
-                            "type": "Tân ngữ",
-                            "text": "extensive renovations to their hair salon",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "NP",
-                                "type": "Cụm danh từ",
-                                "text": "extensive renovations",
-                                "tone": "object",
-                                "children": [
-                                  {
-                                    "label": "Adj",
-                                    "type": "Từ",
-                                    "text": "extensive",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nc",
-                                    "type": "Từ",
-                                    "text": "renovations",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "label": "Prep + O",
-                                "type": "Cụm giới từ",
-                                "text": "to their hair salon",
-                                "tone": "adverb",
-                                "children": [
-                                  {
-                                    "label": "Prep",
-                                    "type": "Từ",
-                                    "text": "to",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Det",
-                                    "type": "Từ",
-                                    "text": "their",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nmod",
-                                    "type": "Từ",
-                                    "text": "hair",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nc",
-                                    "type": "Từ",
-                                    "text": "salon",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "they",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "they",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Pron",
-                                "type": "Từ",
-                                "text": "they",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "did not raise",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "did",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "did",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Adv",
-                            "type": "Trạng từ",
-                            "text": "not",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "not",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "raise",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "raise",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "any of their prices",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "any",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "any",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "of their prices",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "of",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "their",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "prices",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "128": {
-                  "questionNo": 128,
-                  "sentence": "Considering that Mr. Rey has completed the welding course, he is free to apply for an internal position with increased responsibility.",
-                  "analysis": {
-                    "sentence": "Considering that Mr. Rey has completed the welding course, he is free to apply for an internal position with increased responsibility.",
-                    "components": [
-                      {
-                        "label": "Clause",
-                        "type": "Mệnh đề phụ",
-                        "text": "Considering that Mr. Rey has completed the welding course",
-                        "tone": "clause",
-                        "children": [
-                          {
-                            "label": "S",
-                            "type": "Chủ ngữ",
-                            "text": "Considering that Mr Rey",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "NP",
-                                "type": "Cụm danh từ",
-                                "text": "Considering",
-                                "tone": "subject",
-                                "children": [
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "Considering",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "label": "Rel",
-                                "type": "Mệnh đề quan hệ",
-                                "text": "that Mr Rey",
-                                "tone": "clause",
-                                "children": [
-                                  {
-                                    "label": "Det",
-                                    "type": "Từ",
-                                    "text": "that",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nmod",
-                                    "type": "Từ",
-                                    "text": "Mr",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nc",
-                                    "type": "Từ",
-                                    "text": "Rey",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "V",
-                            "type": "Cụm động từ",
-                            "text": "has completed",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Trợ động từ",
-                                "text": "has",
-                                "tone": "verb",
-                                "children": [
-                                  {
-                                    "label": "Aux",
-                                    "type": "Từ",
-                                    "text": "has",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Động từ chính",
-                                "text": "completed",
-                                "tone": "verb",
-                                "children": [
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "completed",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "O",
-                            "type": "Tân ngữ",
-                            "text": "the welding course",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "NP",
-                                "type": "Cụm danh từ",
-                                "text": "the welding course",
-                                "tone": "object",
-                                "children": [
-                                  {
-                                    "label": "Det",
-                                    "type": "Từ",
-                                    "text": "the",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "welding",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nc",
-                                    "type": "Từ",
-                                    "text": "course",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "he",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "he",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Pron",
-                                "type": "Từ",
-                                "text": "he",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "is",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "is",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "is",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "C",
-                        "type": "Bổ ngữ",
-                        "text": "free to apply for an internal position with increased responsibility",
-                        "tone": "complement",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "free",
-                            "tone": "complement",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "free",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "to apply",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "to",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "apply",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "for an internal position",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "for",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "an",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "internal",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "position",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "with increased responsibility",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "with",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "increased",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "responsibility",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "129": {
-                  "questionNo": 129,
-                  "sentence": "The play’s rehearsal lasted four hours, while the play itself ran for only three.",
-                  "analysis": {
-                    "sentence": "The play’s rehearsal lasted four hours, while the play itself ran for only three.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "The play’s rehearsal",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "The play’s rehearsal",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "The",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "play’s",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adj",
-                                "type": "Từ",
-                                "text": "rehearsal",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "lasted",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "lasted",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "lasted",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "four hours",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "four hours",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "four",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "hours",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "Clause",
-                        "type": "Mệnh đề",
-                        "text": "while the play itself ran for only three.",
-                        "tone": "clause",
-                        "children": [
-                          {
-                            "label": "Conj",
-                            "type": "Liên từ",
-                            "text": "while",
-                            "tone": "clause",
-                            "children": [
-                              {
-                                "label": "Conj",
-                                "type": "Từ",
-                                "text": "while",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "S",
-                            "type": "Chủ ngữ",
-                            "text": "the play itself",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "NP",
-                                "type": "Cụm danh từ",
-                                "text": "the play itself",
-                                "tone": "subject",
-                                "children": [
-                                  {
-                                    "label": "Det",
-                                    "type": "Từ",
-                                    "text": "the",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "play",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nc",
-                                    "type": "Từ",
-                                    "text": "itself",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "V",
-                            "type": "Cụm động từ",
-                            "text": "ran",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Động từ chính",
-                                "text": "ran",
-                                "tone": "verb",
-                                "children": [
-                                  {
-                                    "label": "Vc",
-                                    "type": "Từ",
-                                    "text": "ran",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "label": "O",
-                            "type": "Tân ngữ",
-                            "text": "for only three",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "NP",
-                                "type": "Cụm danh từ",
-                                "text": "for only three",
-                                "tone": "object",
-                                "children": [
-                                  {
-                                    "label": "Prep",
-                                    "type": "Từ",
-                                    "text": "for",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Adv",
-                                    "type": "Từ",
-                                    "text": "only",
-                                    "tone": "neutral",
-                                    "children": []
-                                  },
-                                  {
-                                    "label": "Nc",
-                                    "type": "Từ",
-                                    "text": "three",
-                                    "tone": "neutral",
-                                    "children": []
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                "130": {
-                  "questionNo": 130,
-                  "sentence": "Ms. Sheth has identified the obstacles that have prevented Hentig Industries from expanding globally.",
-                  "analysis": {
-                    "sentence": "Ms. Sheth has identified the obstacles that have prevented Hentig Industries from expanding globally.",
-                    "components": [
-                      {
-                        "label": "S",
-                        "type": "Chủ ngữ",
-                        "text": "Ms. Sheth",
-                        "tone": "subject",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "Ms Sheth",
-                            "tone": "subject",
-                            "children": [
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Ms",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Sheth",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "V",
-                        "type": "Cụm động từ",
-                        "text": "has identified",
-                        "tone": "verb",
-                        "children": [
-                          {
-                            "label": "Aux",
-                            "type": "Trợ động từ",
-                            "text": "has",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "has",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Vc",
-                            "type": "Động từ chính",
-                            "text": "identified",
-                            "tone": "verb",
-                            "children": [
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "identified",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "label": "O",
-                        "type": "Tân ngữ",
-                        "text": "the obstacles that have prevented Hentig Industries from expanding globally",
-                        "tone": "object",
-                        "children": [
-                          {
-                            "label": "NP",
-                            "type": "Cụm danh từ",
-                            "text": "the obstacles",
-                            "tone": "object",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "the",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "obstacles",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Rel",
-                            "type": "Mệnh đề quan hệ",
-                            "text": "that have prevented Hentig Industries",
-                            "tone": "clause",
-                            "children": [
-                              {
-                                "label": "Det",
-                                "type": "Từ",
-                                "text": "that",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Aux",
-                                "type": "Từ",
-                                "text": "have",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "prevented",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nmod",
-                                "type": "Từ",
-                                "text": "Hentig",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Nc",
-                                "type": "Từ",
-                                "text": "Industries",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          },
-                          {
-                            "label": "Prep + O",
-                            "type": "Cụm giới từ",
-                            "text": "from expanding globally",
-                            "tone": "adverb",
-                            "children": [
-                              {
-                                "label": "Prep",
-                                "type": "Từ",
-                                "text": "from",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Vc",
-                                "type": "Từ",
-                                "text": "expanding",
-                                "tone": "neutral",
-                                "children": []
-                              },
-                              {
-                                "label": "Adv",
-                                "type": "Từ",
-                                "text": "globally",
-                                "tone": "neutral",
-                                "children": []
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
+                {
+                  "label": "C",
+                  "type": "Bổ ngữ",
+                  "text": "Ms. Wonderle’s first year working as our office’s administrative assistant",
+                  "tone": "complement",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Ms. Wonderle’s first year working as our office’s administrative assistant",
+                      "tone": "complement",
+                      "children": [
+                        { "label": "N", "type": "Danh từ riêng", "text": "Ms.", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ sở hữu", "text": "Wonderle’s", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "first", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "year", "tone": "neutral", "children": [] },
+                        { "label": "V-ing", "type": "Hiện tại phân từ", "text": "working", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "as", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Sở hữu cách", "text": "our", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ sở hữu", "text": "office’s", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "administrative", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "assistant", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
                 }
-              }
+              ]
+            }
+          },
+          "102": {
+            "questionNo": 102,
+            "sentence": "Riversedge City is pleased to announce new monthly parking discounts for its residents.",
+            "analysis": {
+              "sentence": "Riversedge City is pleased to announce new monthly parking discounts for its residents.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Riversedge City",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Riversedge City",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ riêng", "text": "Riversedge", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "City", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "is",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "V", "type": "Động từ liên kết", "text": "is", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "C",
+                  "type": "Bổ ngữ",
+                  "text": "pleased",
+                  "tone": "complement",
+                  "children": [
+                    { "label": "Adj", "type": "Tính từ", "text": "pleased", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ",
+                  "text": "to announce new monthly parking discounts for its residents",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "InfP",
+                      "type": "Cụm động từ nguyên mẫu",
+                      "text": "to announce new monthly parking discounts for its residents",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "to", "type": "Nguyên mẫu", "text": "to", "tone": "neutral", "children": [] },
+                        { "label": "V", "type": "Động từ", "text": "announce", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "new", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "monthly", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "parking", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "discounts", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "for", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Sở hữu cách", "text": "its", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "residents", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "103": {
+            "questionNo": 103,
+            "sentence": "Sang-Joon Park is retiring after 25 years of service with Dahl Legal Consultants.",
+            "analysis": {
+              "sentence": "Sang-Joon Park is retiring after 25 years of service with Dahl Legal Consultants.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Sang-Joon Park",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Sang-Joon Park",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ riêng", "text": "Sang-Joon", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Park", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "is retiring",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "is", "tone": "neutral", "children": [] },
+                    { "label": "V-ing", "type": "Động từ chính (hiện tại tiếp diễn)", "text": "retiring", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ",
+                  "text": "after 25 years of service with Dahl Legal Consultants",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "after 25 years of service with Dahl Legal Consultants",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "after", "tone": "neutral", "children": [] },
+                        { "label": "Num", "type": "Số", "text": "25", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "years", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "of", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "service", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "with", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Dahl", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "Legal", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Consultants", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "104": {
+            "questionNo": 104,
+            "sentence": "The Trails Store will eventually add a section for hiking equipment.",
+            "analysis": {
+              "sentence": "The Trails Store will eventually add a section for hiking equipment.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "The Trails Store",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "The Trails Store",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "The", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Trails", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Store", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "will eventually add",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "will", "tone": "neutral", "children": [] },
+                    { "label": "Adv", "type": "Trạng từ", "text": "eventually", "tone": "neutral", "children": [] },
+                    { "label": "V", "type": "Động từ chính", "text": "add", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "a section for hiking equipment",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "a section for hiking equipment",
+                      "tone": "object",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "a", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "section", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "for", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "hiking", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "equipment", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "105": {
+            "questionNo": 105,
+            "sentence": "Puraforce Staffing can provide your business with temporary employees during the busy holiday season.",
+            "analysis": {
+              "sentence": "Puraforce Staffing can provide your business with temporary employees during the busy holiday season.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Puraforce Staffing",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Puraforce Staffing",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ riêng", "text": "Puraforce", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Staffing", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "can provide",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "can", "tone": "neutral", "children": [] },
+                    { "label": "V", "type": "Động từ chính", "text": "provide", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O (gián tiếp)",
+                  "type": "Tân ngữ gián tiếp",
+                  "text": "your business",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "your business",
+                      "tone": "object",
+                      "children": [
+                        { "label": "Det", "type": "Sở hữu cách", "text": "your", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "business", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "O (trực tiếp)",
+                  "type": "Tân ngữ trực tiếp",
+                  "text": "with temporary employees",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "with temporary employees",
+                      "tone": "object",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "with", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "temporary", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "employees", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ",
+                  "text": "during the busy holiday season",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "during the busy holiday season",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "during", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "busy", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "holiday", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "season", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "106": {
+            "questionNo": 106,
+            "sentence": "In contrast to the weather outside, the inside of Taft’s Bakery was warm and welcoming.",
+            "analysis": {
+              "sentence": "In contrast to the weather outside, the inside of Taft’s Bakery was warm and welcoming.",
+              "components": [
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ đầu câu",
+                  "text": "In contrast to the weather outside",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "In contrast to the weather outside",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "In", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "contrast", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "to", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "weather", "tone": "neutral", "children": [] },
+                        { "label": "Adv", "type": "Trạng từ nơi chốn", "text": "outside", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "the inside of Taft’s Bakery",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "the inside of Taft’s Bakery",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "inside", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "of", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ sở hữu", "text": "Taft’s", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Bakery", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "was",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "V", "type": "Động từ liên kết", "text": "was", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "C",
+                  "type": "Bổ ngữ",
+                  "text": "warm and welcoming",
+                  "tone": "complement",
+                  "children": [
+                    { "label": "Adj", "type": "Tính từ", "text": "warm", "tone": "neutral", "children": [] },
+                    { "label": "Conj", "type": "Liên từ", "text": "and", "tone": "neutral", "children": [] },
+                    { "label": "Adj", "type": "Tính từ", "text": "welcoming", "tone": "neutral", "children": [] }
+                  ]
+                }
+              ]
+            }
+          },
+          "107": {
+            "questionNo": 107,
+            "sentence": "Berrell Foods, a wholesale distributor of fresh produce, supplies more than 100 grocery stores in northern Scotland.",
+            "analysis": {
+              "sentence": "Berrell Foods, a wholesale distributor of fresh produce, supplies more than 100 grocery stores in northern Scotland.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Berrell Foods, a wholesale distributor of fresh produce",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Berrell Foods",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ riêng", "text": "Berrell", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Foods", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "App",
+                      "type": "Cụm đồng vị",
+                      "text": "a wholesale distributor of fresh produce",
+                      "tone": "complement",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "a", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "wholesale", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "distributor", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "of", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "fresh", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "produce", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "supplies",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "V", "type": "Động từ chính", "text": "supplies", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "more than 100 grocery stores",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "more than 100 grocery stores",
+                      "tone": "object",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "more", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "than", "tone": "neutral", "children": [] },
+                        { "label": "Num", "type": "Số", "text": "100", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "grocery", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "stores", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ",
+                  "text": "in northern Scotland",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "in northern Scotland",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "in", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "northern", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Scotland", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "108": {
+            "questionNo": 108,
+            "sentence": "Payments to the Wendell Lake Association will be considered late if they are received after January 1.",
+            "analysis": {
+              "sentence": "Payments to the Wendell Lake Association will be considered late if they are received after January 1.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Payments to the Wendell Lake Association",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Payments",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ", "text": "Payments", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "to the Wendell Lake Association",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "to", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Wendell", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Lake", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Association", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "will be considered",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "will", "tone": "neutral", "children": [] },
+                    { "label": "Aux", "type": "Trợ động từ", "text": "be", "tone": "neutral", "children": [] },
+                    { "label": "V-ing", "type": "Động từ chính (bị động)", "text": "considered", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "C",
+                  "type": "Bổ ngữ",
+                  "text": "late",
+                  "tone": "complement",
+                  "children": [
+                    { "label": "Adj", "type": "Tính từ", "text": "late", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "Clause",
+                  "type": "Mệnh đề phụ",
+                  "text": "if they are received after January 1",
+                  "tone": "clause",
+                  "children": [
+                    { "label": "Conj", "type": "Liên từ", "text": "if", "tone": "neutral", "children": [] },
+                    { "label": "S", "type": "Chủ ngữ", "text": "they", "tone": "subject", "children": [ { "label": "Pron", "type": "Đại từ", "text": "they", "tone": "neutral", "children": [] } ] },
+                    { "label": "V", "type": "Động từ", "text": "are received", "tone": "verb", "children": [ { "label": "Aux", "type": "Trợ động từ", "text": "are", "tone": "neutral", "children": [] }, { "label": "V-ing", "type": "Động từ chính", "text": "received", "tone": "neutral", "children": [] } ] },
+                    { "label": "Adv", "type": "Trạng ngữ", "text": "after January 1", "tone": "adverb", "children": [ { "label": "PP", "type": "Cụm giới từ", "text": "after January 1", "tone": "adverb", "children": [ { "label": "Prep", "type": "Giới từ", "text": "after", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ riêng", "text": "January", "tone": "neutral", "children": [] }, { "label": "Num", "type": "Số", "text": "1", "tone": "neutral", "children": [] } ] } ] }
+                  ]
+                }
+              ]
+            }
+          },
+          "109": {
+            "questionNo": 109,
+            "sentence": "Although the alternate route was clearly marked, many drivers ended up getting lost.",
+            "analysis": {
+              "sentence": "Although the alternate route was clearly marked, many drivers ended up getting lost.",
+              "components": [
+                {
+                  "label": "Clause",
+                  "type": "Mệnh đề phụ",
+                  "text": "Although the alternate route was clearly marked",
+                  "tone": "clause",
+                  "children": [
+                    { "label": "Conj", "type": "Liên từ", "text": "Although", "tone": "neutral", "children": [] },
+                    { "label": "S", "type": "Chủ ngữ", "text": "the alternate route", "tone": "subject", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "the alternate route", "tone": "subject", "children": [ { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] }, { "label": "Adj", "type": "Tính từ", "text": "alternate", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "route", "tone": "neutral", "children": [] } ] } ] },
+                    { "label": "V", "type": "Động từ", "text": "was", "tone": "verb", "children": [ { "label": "V", "type": "Động từ liên kết", "text": "was", "tone": "neutral", "children": [] } ] },
+                    { "label": "C", "type": "Bổ ngữ", "text": "clearly marked", "tone": "complement", "children": [ { "label": "Adv", "type": "Trạng từ", "text": "clearly", "tone": "neutral", "children": [] }, { "label": "Adj", "type": "Tính từ", "text": "marked", "tone": "neutral", "children": [] } ] }
+                  ]
+                },
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "many drivers",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "many drivers",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "many", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "drivers", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "ended up",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "V", "type": "Động từ chính", "text": "ended", "tone": "neutral", "children": [] },
+                    { "label": "Part", "type": "Tiểu từ", "text": "up", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "getting lost",
+                  "tone": "object",
+                  "children": [
+                    { "label": "V-ing", "type": "Hiện tại phân từ", "text": "getting", "tone": "neutral", "children": [] },
+                    { "label": "Adj", "type": "Tính từ", "text": "lost", "tone": "neutral", "children": [] }
+                  ]
+                }
+              ]
+            }
+          },
+          "110": {
+            "questionNo": 110,
+            "sentence": "Later today, Mr. Warken will be arranging interview times for the job applicant finalists.",
+            "analysis": {
+              "sentence": "Later today, Mr. Warken will be arranging interview times for the job applicant finalists.",
+              "components": [
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ đầu câu",
+                  "text": "Later today",
+                  "tone": "adverb",
+                  "children": [
+                    { "label": "Adv", "type": "Trạng từ", "text": "Later", "tone": "neutral", "children": [] },
+                    { "label": "Adv", "type": "Trạng từ", "text": "today", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Mr. Warken",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Mr. Warken",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ", "text": "Mr.", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Warken", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "will be arranging",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "will", "tone": "neutral", "children": [] },
+                    { "label": "Aux", "type": "Trợ động từ", "text": "be", "tone": "neutral", "children": [] },
+                    { "label": "V-ing", "type": "Động từ chính", "text": "arranging", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "interview times for the job applicant finalists",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "interview times for the job applicant finalists",
+                      "tone": "object",
+                      "children": [
+                        { "label": "N", "type": "Danh từ", "text": "interview", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "times", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "for", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "job", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "applicant", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "finalists", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "111": {
+            "questionNo": 111,
+            "sentence": "For one week only, Penny’s Grocery is giving away a free tote bag with every order of 50 dollars or more.",
+            "analysis": {
+              "sentence": "For one week only, Penny’s Grocery is giving away a free tote bag with every order of 50 dollars or more.",
+              "components": [
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ đầu câu",
+                  "text": "For one week only",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "For one week only",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "For", "tone": "neutral", "children": [] },
+                        { "label": "Num", "type": "Số", "text": "one", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "week", "tone": "neutral", "children": [] },
+                        { "label": "Adv", "type": "Trạng từ", "text": "only", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Penny’s Grocery",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Penny’s Grocery",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ sở hữu", "text": "Penny’s", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Grocery", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "is giving away",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "is", "tone": "neutral", "children": [] },
+                    { "label": "V-ing", "type": "Động từ chính", "text": "giving", "tone": "neutral", "children": [] },
+                    { "label": "Part", "type": "Tiểu từ", "text": "away", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "a free tote bag with every order of 50 dollars or more",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "a free tote bag with every order of 50 dollars or more",
+                      "tone": "object",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "a", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "free", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "tote", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "bag", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "with", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "every", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "order", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "of", "tone": "neutral", "children": [] },
+                        { "label": "Num", "type": "Số", "text": "50", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "dollars", "tone": "neutral", "children": [] },
+                        { "label": "Conj", "type": "Liên từ", "text": "or", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "more", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "112": {
+            "questionNo": 112,
+            "sentence": "Because of a recent artwork donation, the Libsing Art Museum will soon be displaying a new exhibition.",
+            "analysis": {
+              "sentence": "Because of a recent artwork donation, the Libsing Art Museum will soon be displaying a new exhibition.",
+              "components": [
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ đầu câu",
+                  "text": "Because of a recent artwork donation",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "Because of a recent artwork donation",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "Because", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "of", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "a", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "recent", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "artwork", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "donation", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "the Libsing Art Museum",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "the Libsing Art Museum",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Libsing", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Art", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Museum", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "will soon be displaying",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "will", "tone": "neutral", "children": [] },
+                    { "label": "Adv", "type": "Trạng từ", "text": "soon", "tone": "neutral", "children": [] },
+                    { "label": "Aux", "type": "Trợ động từ", "text": "be", "tone": "neutral", "children": [] },
+                    { "label": "V-ing", "type": "Động từ chính", "text": "displaying", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "a new exhibition",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "a new exhibition",
+                      "tone": "object",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "a", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "new", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "exhibition", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "113": {
+            "questionNo": 113,
+            "sentence": "Albert Doime oversaw smelting operations in Lydenburg for a brief time before being reassigned to Johannesburg.",
+            "analysis": {
+              "sentence": "Albert Doime oversaw smelting operations in Lydenburg for a brief time before being reassigned to Johannesburg.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Albert Doime",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Albert Doime",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ riêng", "text": "Albert", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Doime", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "oversaw",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "V", "type": "Động từ chính", "text": "oversaw", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "smelting operations",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "smelting operations",
+                      "tone": "object",
+                      "children": [
+                        { "label": "Adj", "type": "Tính từ", "text": "smelting", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "operations", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ",
+                  "text": "in Lydenburg for a brief time before being reassigned to Johannesburg",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "in Lydenburg",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "in", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Lydenburg", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "for a brief time",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "for", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "a", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "brief", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "time", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "before being reassigned to Johannesburg",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "before", "tone": "neutral", "children": [] },
+                        { "label": "V-ing", "type": "Hiện tại phân từ", "text": "being", "tone": "neutral", "children": [] },
+                        { "label": "V-ing", "type": "Quá khứ phân từ", "text": "reassigned", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "to", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Johannesburg", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "114": {
+            "questionNo": 114,
+            "sentence": "The agreement specifically states that Amy Dyer will be the general contractor for the Hibley project.",
+            "analysis": {
+              "sentence": "The agreement specifically states that Amy Dyer will be the general contractor for the Hibley project.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "The agreement",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "The agreement",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "The", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "agreement", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "specifically states",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Adv", "type": "Trạng từ", "text": "specifically", "tone": "neutral", "children": [] },
+                    { "label": "V", "type": "Động từ chính", "text": "states", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "Clause",
+                  "type": "Mệnh đề tân ngữ",
+                  "text": "that Amy Dyer will be the general contractor for the Hibley project",
+                  "tone": "clause",
+                  "children": [
+                    { "label": "Conj", "type": "Liên từ", "text": "that", "tone": "neutral", "children": [] },
+                    { "label": "S", "type": "Chủ ngữ", "text": "Amy Dyer", "tone": "subject", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "Amy Dyer", "tone": "subject", "children": [ { "label": "N", "type": "Danh từ riêng", "text": "Amy", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ riêng", "text": "Dyer", "tone": "neutral", "children": [] } ] } ] },
+                    { "label": "V", "type": "Động từ", "text": "will be", "tone": "verb", "children": [ { "label": "Aux", "type": "Trợ động từ", "text": "will", "tone": "neutral", "children": [] }, { "label": "V", "type": "Động từ", "text": "be", "tone": "neutral", "children": [] } ] },
+                    { "label": "C", "type": "Bổ ngữ", "text": "the general contractor", "tone": "complement", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "the general contractor", "tone": "complement", "children": [ { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] }, { "label": "Adj", "type": "Tính từ", "text": "general", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "contractor", "tone": "neutral", "children": [] } ] } ] },
+                    { "label": "Adv", "type": "Trạng ngữ", "text": "for the Hibley project", "tone": "adverb", "children": [ { "label": "PP", "type": "Cụm giới từ", "text": "for the Hibley project", "tone": "adverb", "children": [ { "label": "Prep", "type": "Giới từ", "text": "for", "tone": "neutral", "children": [] }, { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ riêng", "text": "Hibley", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "project", "tone": "neutral", "children": [] } ] } ] }
+                  ]
+                }
+              ]
+            }
+          },
+          "115": {
+            "questionNo": 115,
+            "sentence": "Executives at Wess Lumber were praised for addressing employees’ concerns in a constructive manner.",
+            "analysis": {
+              "sentence": "Executives at Wess Lumber were praised for addressing employees’ concerns in a constructive manner.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Executives at Wess Lumber",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Executives",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ", "text": "Executives", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "at Wess Lumber",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "at", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Wess", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Lumber", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "were praised",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "were", "tone": "neutral", "children": [] },
+                    { "label": "V-ing", "type": "Động từ chính (bị động)", "text": "praised", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ",
+                  "text": "for addressing employees’ concerns in a constructive manner",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "for addressing employees’ concerns",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "for", "tone": "neutral", "children": [] },
+                        { "label": "V-ing", "type": "Danh động từ", "text": "addressing", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ sở hữu", "text": "employees’", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "concerns", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "in a constructive manner",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "in", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "a", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "constructive", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "manner", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "116": {
+            "questionNo": 116,
+            "sentence": "Flu season is here, so take advantage of the free flu shots being offered in the lobby.",
+            "analysis": {
+              "sentence": "Flu season is here, so take advantage of the free flu shots being offered in the lobby.",
+              "components": [
+                {
+                  "label": "Clause 1",
+                  "type": "Mệnh đề chính",
+                  "text": "Flu season is here",
+                  "tone": "clause",
+                  "children": [
+                    { "label": "S", "type": "Chủ ngữ", "text": "Flu season", "tone": "subject", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "Flu season", "tone": "subject", "children": [ { "label": "N", "type": "Danh từ", "text": "Flu", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "season", "tone": "neutral", "children": [] } ] } ] },
+                    { "label": "V", "type": "Động từ", "text": "is", "tone": "verb", "children": [ { "label": "V", "type": "Động từ liên kết", "text": "is", "tone": "neutral", "children": [] } ] },
+                    { "label": "C", "type": "Bổ ngữ", "text": "here", "tone": "complement", "children": [ { "label": "Adv", "type": "Trạng từ nơi chốn", "text": "here", "tone": "neutral", "children": [] } ] }
+                  ]
+                },
+                {
+                  "label": "Clause 2",
+                  "type": "Mệnh đề chính",
+                  "text": "so take advantage of the free flu shots being offered in the lobby",
+                  "tone": "clause",
+                  "children": [
+                    { "label": "Conj", "type": "Liên từ", "text": "so", "tone": "neutral", "children": [] },
+                    { "label": "V", "type": "Động từ", "text": "take", "tone": "verb", "children": [ { "label": "V", "type": "Động từ chính (mệnh lệnh)", "text": "take", "tone": "neutral", "children": [] } ] },
+                    { "label": "O", "type": "Tân ngữ", "text": "advantage of the free flu shots being offered in the lobby", "tone": "object", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "advantage of the free flu shots", "tone": "object", "children": [ { "label": "N", "type": "Danh từ", "text": "advantage", "tone": "neutral", "children": [] }, { "label": "Prep", "type": "Giới từ", "text": "of", "tone": "neutral", "children": [] }, { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] }, { "label": "Adj", "type": "Tính từ", "text": "free", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "flu", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "shots", "tone": "neutral", "children": [] }, { "label": "V-ing", "type": "Hiện tại phân từ", "text": "being", "tone": "neutral", "children": [] }, { "label": "V-ing", "type": "Quá khứ phân từ", "text": "offered", "tone": "neutral", "children": [] }, { "label": "Prep", "type": "Giới từ", "text": "in", "tone": "neutral", "children": [] }, { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "lobby", "tone": "neutral", "children": [] } ] } ] }
+                  ]
+                }
+              ]
+            }
+          },
+          "117": {
+            "questionNo": 117,
+            "sentence": "Clarkson Smith Legal Services requires that inactive client files be kept in off-site storage for seven years.",
+            "analysis": {
+              "sentence": "Clarkson Smith Legal Services requires that inactive client files be kept in off-site storage for seven years.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Clarkson Smith Legal Services",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Clarkson Smith Legal Services",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ riêng", "text": "Clarkson", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Smith", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "Legal", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Services", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "requires",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "V", "type": "Động từ chính", "text": "requires", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "Clause",
+                  "type": "Mệnh đề tân ngữ",
+                  "text": "that inactive client files be kept in off-site storage for seven years",
+                  "tone": "clause",
+                  "children": [
+                    { "label": "Conj", "type": "Liên từ", "text": "that", "tone": "neutral", "children": [] },
+                    { "label": "S", "type": "Chủ ngữ", "text": "inactive client files", "tone": "subject", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "inactive client files", "tone": "subject", "children": [ { "label": "Adj", "type": "Tính từ", "text": "inactive", "tone": "neutral", "children": [] }, { "label": "Adj", "type": "Tính từ", "text": "client", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "files", "tone": "neutral", "children": [] } ] } ] },
+                    { "label": "V", "type": "Động từ", "text": "be kept", "tone": "verb", "children": [ { "label": "Aux", "type": "Trợ động từ", "text": "be", "tone": "neutral", "children": [] }, { "label": "V-ing", "type": "Động từ chính", "text": "kept", "tone": "neutral", "children": [] } ] },
+                    { "label": "Adv", "type": "Trạng ngữ", "text": "in off-site storage for seven years", "tone": "adverb", "children": [ { "label": "PP", "type": "Cụm giới từ", "text": "in off-site storage", "tone": "adverb", "children": [ { "label": "Prep", "type": "Giới từ", "text": "in", "tone": "neutral", "children": [] }, { "label": "Adj", "type": "Tính từ", "text": "off-site", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "storage", "tone": "neutral", "children": [] } ] }, { "label": "PP", "type": "Cụm giới từ", "text": "for seven years", "tone": "adverb", "children": [ { "label": "Prep", "type": "Giới từ", "text": "for", "tone": "neutral", "children": [] }, { "label": "Num", "type": "Số", "text": "seven", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "years", "tone": "neutral", "children": [] } ] } ] }
+                  ]
+                }
+              ]
+            }
+          },
+          "118": {
+            "questionNo": 118,
+            "sentence": "By switching to digital accounting, your business can save time, space, and money.",
+            "analysis": {
+              "sentence": "By switching to digital accounting, your business can save time, space, and money.",
+              "components": [
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ đầu câu",
+                  "text": "By switching to digital accounting",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "By switching to digital accounting",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "By", "tone": "neutral", "children": [] },
+                        { "label": "V-ing", "type": "Danh động từ", "text": "switching", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "to", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "digital", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "accounting", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "your business",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "your business",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "Det", "type": "Sở hữu cách", "text": "your", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "business", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "can save",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "can", "tone": "neutral", "children": [] },
+                    { "label": "V", "type": "Động từ chính", "text": "save", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "time, space, and money",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "time, space, and money",
+                      "tone": "object",
+                      "children": [
+                        { "label": "N", "type": "Danh từ", "text": "time", "tone": "neutral", "children": [] },
+                        { "label": "Punc", "type": "Dấu câu", "text": ",", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "space", "tone": "neutral", "children": [] },
+                        { "label": "Conj", "type": "Liên từ", "text": "and", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "money", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "119": {
+            "questionNo": 119,
+            "sentence": "Mr. Liu’s long list of awards can be attributed to his skills as a designer.",
+            "analysis": {
+              "sentence": "Mr. Liu’s long list of awards can be attributed to his skills as a designer.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Mr. Liu’s long list of awards",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Mr. Liu’s long list",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ", "text": "Mr.", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ sở hữu", "text": "Liu’s", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "long", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "list", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "of awards",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "of", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "awards", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "can be attributed",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "can", "tone": "neutral", "children": [] },
+                    { "label": "Aux", "type": "Trợ động từ", "text": "be", "tone": "neutral", "children": [] },
+                    { "label": "V-ing", "type": "Động từ chính (bị động)", "text": "attributed", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ",
+                  "text": "to his skills as a designer",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "to his skills",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "to", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Sở hữu cách", "text": "his", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "skills", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "as a designer",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "as", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "a", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "designer", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "120": {
+            "questionNo": 120,
+            "sentence": "MBR Global Marketing has signed several new client contracts totaling 12 million pounds in annual revenue.",
+            "analysis": {
+              "sentence": "MBR Global Marketing has signed several new client contracts totaling 12 million pounds in annual revenue.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "MBR Global Marketing",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "MBR Global Marketing",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ riêng", "text": "MBR", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "Global", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Marketing", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "has signed",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "has", "tone": "neutral", "children": [] },
+                    { "label": "V-ing", "type": "Động từ chính", "text": "signed", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "several new client contracts totaling 12 million pounds",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "several new client contracts totaling 12 million pounds",
+                      "tone": "object",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "several", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "new", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "client", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "contracts", "tone": "neutral", "children": [] },
+                        { "label": "V-ing", "type": "Hiện tại phân từ", "text": "totaling", "tone": "neutral", "children": [] },
+                        { "label": "Num", "type": "Số", "text": "12", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "million", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "pounds", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ",
+                  "text": "in annual revenue",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "in annual revenue",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "in", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "annual", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "revenue", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "121": {
+            "questionNo": 121,
+            "sentence": "Besides teaching economics at the local university, Ms. Ito also writes a monthly column for a financial magazine.",
+            "analysis": {
+              "sentence": "Besides teaching economics at the local university, Ms. Ito also writes a monthly column for a financial magazine.",
+              "components": [
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ đầu câu",
+                  "text": "Besides teaching economics at the local university",
+                  "tone": "adverb",
+                  "children": [
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "Besides teaching economics at the local university",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "Besides", "tone": "neutral", "children": [] },
+                        { "label": "V-ing", "type": "Danh động từ", "text": "teaching", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "economics", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "at", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "local", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "university", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Ms. Ito",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Ms. Ito",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ", "text": "Ms.", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Ito", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "also writes",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Adv", "type": "Trạng từ", "text": "also", "tone": "neutral", "children": [] },
+                    { "label": "V", "type": "Động từ chính", "text": "writes", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "a monthly column for a financial magazine",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "a monthly column",
+                      "tone": "object",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "a", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "monthly", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "column", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "for a financial magazine",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "for", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "a", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "financial", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "magazine", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "122": {
+            "questionNo": 122,
+            "sentence": "The feasibility study for building a new bridge was quite complex and included several annotations.",
+            "analysis": {
+              "sentence": "The feasibility study for building a new bridge was quite complex and included several annotations.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "The feasibility study for building a new bridge",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "The feasibility study",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "The", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "feasibility", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "study", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "for building a new bridge",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "for", "tone": "neutral", "children": [] },
+                        { "label": "V-ing", "type": "Danh động từ", "text": "building", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "a", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "new", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "bridge", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "was",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "V", "type": "Động từ liên kết", "text": "was", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "C",
+                  "type": "Bổ ngữ",
+                  "text": "quite complex and included several annotations",
+                  "tone": "complement",
+                  "children": [
+                    { "label": "Adv", "type": "Trạng từ", "text": "quite", "tone": "neutral", "children": [] },
+                    { "label": "Adj", "type": "Tính từ", "text": "complex", "tone": "neutral", "children": [] },
+                    { "label": "Conj", "type": "Liên từ", "text": "and", "tone": "neutral", "children": [] },
+                    { "label": "V", "type": "Động từ", "text": "included", "tone": "neutral", "children": [] },
+                    { "label": "Det", "type": "Mạo từ", "text": "several", "tone": "neutral", "children": [] },
+                    { "label": "N", "type": "Danh từ", "text": "annotations", "tone": "neutral", "children": [] }
+                  ]
+                }
+              ]
+            }
+          },
+          "123": {
+            "questionNo": 123,
+            "sentence": "The department mentor instructed the interns to contact her first whenever they had any questions.",
+            "analysis": {
+              "sentence": "The department mentor instructed the interns to contact her first whenever they had any questions.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "The department mentor",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "The department mentor",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "The", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "department", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "mentor", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "instructed",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "V", "type": "Động từ chính", "text": "instructed", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "the interns to contact her first whenever they had any questions",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "the interns",
+                      "tone": "object",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "interns", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "InfP",
+                      "type": "Cụm nguyên mẫu",
+                      "text": "to contact her first whenever they had any questions",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "to", "type": "Nguyên mẫu", "text": "to", "tone": "neutral", "children": [] },
+                        { "label": "V", "type": "Động từ", "text": "contact", "tone": "neutral", "children": [] },
+                        { "label": "Pron", "type": "Đại từ", "text": "her", "tone": "neutral", "children": [] },
+                        { "label": "Adv", "type": "Trạng từ", "text": "first", "tone": "neutral", "children": [] },
+                        { "label": "Conj", "type": "Liên từ", "text": "whenever", "tone": "neutral", "children": [] },
+                        { "label": "S", "type": "Chủ ngữ", "text": "they", "tone": "subject", "children": [ { "label": "Pron", "type": "Đại từ", "text": "they", "tone": "neutral", "children": [] } ] },
+                        { "label": "V", "type": "Động từ", "text": "had", "tone": "verb", "children": [ { "label": "V", "type": "Động từ", "text": "had", "tone": "neutral", "children": [] } ] },
+                        { "label": "O", "type": "Tân ngữ", "text": "any questions", "tone": "object", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "any questions", "tone": "object", "children": [ { "label": "Det", "type": "Mạo từ", "text": "any", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "questions", "tone": "neutral", "children": [] } ] } ] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "124": {
+            "questionNo": 124,
+            "sentence": "The number of people working at Yolen Laboratory’s two locations keeps increasing, and there are now 452 employees altogether.",
+            "analysis": {
+              "sentence": "The number of people working at Yolen Laboratory’s two locations keeps increasing, and there are now 452 employees altogether.",
+              "components": [
+                {
+                  "label": "Clause 1",
+                  "type": "Mệnh đề chính",
+                  "text": "The number of people working at Yolen Laboratory’s two locations keeps increasing",
+                  "tone": "clause",
+                  "children": [
+                    { "label": "S", "type": "Chủ ngữ", "text": "The number of people working at Yolen Laboratory’s two locations", "tone": "subject", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "The number", "tone": "subject", "children": [ { "label": "Det", "type": "Mạo từ", "text": "The", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "number", "tone": "neutral", "children": [] } ] }, { "label": "PP", "type": "Cụm giới từ", "text": "of people working", "tone": "adverb", "children": [ { "label": "Prep", "type": "Giới từ", "text": "of", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "people", "tone": "neutral", "children": [] }, { "label": "V-ing", "type": "Hiện tại phân từ", "text": "working", "tone": "neutral", "children": [] } ] }, { "label": "PP", "type": "Cụm giới từ", "text": "at Yolen Laboratory’s two locations", "tone": "adverb", "children": [ { "label": "Prep", "type": "Giới từ", "text": "at", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ riêng", "text": "Yolen", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ sở hữu", "text": "Laboratory’s", "tone": "neutral", "children": [] }, { "label": "Num", "type": "Số", "text": "two", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "locations", "tone": "neutral", "children": [] } ] } ] },
+                    { "label": "V", "type": "Động từ", "text": "keeps increasing", "tone": "verb", "children": [ { "label": "V", "type": "Động từ chính", "text": "keeps", "tone": "neutral", "children": [] }, { "label": "V-ing", "type": "Động từ chính", "text": "increasing", "tone": "neutral", "children": [] } ] }
+                  ]
+                },
+                {
+                  "label": "Clause 2",
+                  "type": "Mệnh đề chính",
+                  "text": "and there are now 452 employees altogether",
+                  "tone": "clause",
+                  "children": [
+                    { "label": "Conj", "type": "Liên từ", "text": "and", "tone": "neutral", "children": [] },
+                    { "label": "S", "type": "Chủ ngữ", "text": "there", "tone": "subject", "children": [ { "label": "Pron", "type": "Đại từ", "text": "there", "tone": "neutral", "children": [] } ] },
+                    { "label": "V", "type": "Động từ", "text": "are now", "tone": "verb", "children": [ { "label": "Aux", "type": "Trợ động từ", "text": "are", "tone": "neutral", "children": [] }, { "label": "Adv", "type": "Trạng từ", "text": "now", "tone": "neutral", "children": [] } ] },
+                    { "label": "C", "type": "Bổ ngữ", "text": "452 employees altogether", "tone": "complement", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "452 employees altogether", "tone": "complement", "children": [ { "label": "Num", "type": "Số", "text": "452", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "employees", "tone": "neutral", "children": [] }, { "label": "Adv", "type": "Trạng từ", "text": "altogether", "tone": "neutral", "children": [] } ] } ]
+                  ]
+                }
+              ]
+            }
+          },
+          "125": {
+            "questionNo": 125,
+            "sentence": "Highlee Sportswear, whose popularity is widespread among athletes, will add a line of children’s clothes soon.",
+            "analysis": {
+              "sentence": "Highlee Sportswear, whose popularity is widespread among athletes, will add a line of children’s clothes soon.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Highlee Sportswear, whose popularity is widespread among athletes",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Highlee Sportswear",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ riêng", "text": "Highlee", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "Sportswear", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "RelClause",
+                      "type": "Mệnh đề quan hệ",
+                      "text": "whose popularity is widespread among athletes",
+                      "tone": "clause",
+                      "children": [
+                        { "label": "Pron", "type": "Đại từ quan hệ", "text": "whose", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "popularity", "tone": "neutral", "children": [] },
+                        { "label": "V", "type": "Động từ", "text": "is", "tone": "verb", "children": [ { "label": "V", "type": "Động từ liên kết", "text": "is", "tone": "neutral", "children": [] } ] },
+                        { "label": "C", "type": "Bổ ngữ", "text": "widespread among athletes", "tone": "complement", "children": [ { "label": "Adj", "type": "Tính từ", "text": "widespread", "tone": "neutral", "children": [] }, { "label": "Prep", "type": "Giới từ", "text": "among", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "athletes", "tone": "neutral", "children": [] } ] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "will add",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "will", "tone": "neutral", "children": [] },
+                    { "label": "V", "type": "Động từ chính", "text": "add", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "a line of children’s clothes soon",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "a line of children’s clothes soon",
+                      "tone": "object",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "a", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "line", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "of", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ sở hữu", "text": "children’s", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "clothes", "tone": "neutral", "children": [] },
+                        { "label": "Adv", "type": "Trạng từ", "text": "soon", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "126": {
+            "questionNo": 126,
+            "sentence": "Employees spoke fondly of former CEO Olga Sombroek, emphasizing how well liked she was.",
+            "analysis": {
+              "sentence": "Employees spoke fondly of former CEO Olga Sombroek, emphasizing how well liked she was.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Employees",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Employees",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ", "text": "Employees", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "spoke",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "V", "type": "Động từ chính", "text": "spoke", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "Adv",
+                  "type": "Trạng ngữ",
+                  "text": "fondly of former CEO Olga Sombroek, emphasizing how well liked she was",
+                  "tone": "adverb",
+                  "children": [
+                    { "label": "Adv", "type": "Trạng từ", "text": "fondly", "tone": "neutral", "children": [] },
+                    {
+                      "label": "PP",
+                      "type": "Cụm giới từ",
+                      "text": "of former CEO Olga Sombroek",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "Prep", "type": "Giới từ", "text": "of", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "former", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "CEO", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Olga", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Sombroek", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "V-ing",
+                      "type": "Hiện tại phân từ",
+                      "text": "emphasizing how well liked she was",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "V-ing", "type": "Hiện tại phân từ", "text": "emphasizing", "tone": "neutral", "children": [] },
+                        { "label": "Adv", "type": "Trạng từ", "text": "how", "tone": "neutral", "children": [] },
+                        { "label": "Adv", "type": "Trạng từ", "text": "well", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "liked", "tone": "neutral", "children": [] },
+                        { "label": "Pron", "type": "Đại từ", "text": "she", "tone": "neutral", "children": [] },
+                        { "label": "V", "type": "Động từ", "text": "was", "tone": "verb", "children": [ { "label": "V", "type": "Động từ liên kết", "text": "was", "tone": "neutral", "children": [] } ] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "127": {
+            "questionNo": 127,
+            "sentence": "Although the owners made extensive renovations to their hair salon, they did not raise any of their prices.",
+            "analysis": {
+              "sentence": "Although the owners made extensive renovations to their hair salon, they did not raise any of their prices.",
+              "components": [
+                {
+                  "label": "Clause",
+                  "type": "Mệnh đề phụ",
+                  "text": "Although the owners made extensive renovations to their hair salon",
+                  "tone": "clause",
+                  "children": [
+                    { "label": "Conj", "type": "Liên từ", "text": "Although", "tone": "neutral", "children": [] },
+                    { "label": "S", "type": "Chủ ngữ", "text": "the owners", "tone": "subject", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "the owners", "tone": "subject", "children": [ { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "owners", "tone": "neutral", "children": [] } ] } ] },
+                    { "label": "V", "type": "Động từ", "text": "made", "tone": "verb", "children": [ { "label": "V", "type": "Động từ chính", "text": "made", "tone": "neutral", "children": [] } ] },
+                    { "label": "O", "type": "Tân ngữ", "text": "extensive renovations to their hair salon", "tone": "object", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "extensive renovations", "tone": "object", "children": [ { "label": "Adj", "type": "Tính từ", "text": "extensive", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "renovations", "tone": "neutral", "children": [] } ] }, { "label": "PP", "type": "Cụm giới từ", "text": "to their hair salon", "tone": "adverb", "children": [ { "label": "Prep", "type": "Giới từ", "text": "to", "tone": "neutral", "children": [] }, { "label": "Det", "type": "Sở hữu cách", "text": "their", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "hair", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "salon", "tone": "neutral", "children": [] } ] } ] }
+                  ]
+                },
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "they",
+                  "tone": "subject",
+                  "children": [
+                    { "label": "Pron", "type": "Đại từ", "text": "they", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "did not raise",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "did", "tone": "neutral", "children": [] },
+                    { "label": "Adv", "type": "Trạng từ phủ định", "text": "not", "tone": "neutral", "children": [] },
+                    { "label": "V", "type": "Động từ chính", "text": "raise", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "any of their prices",
+                  "tone": "object",
+                  "children": [
+                    { "label": "Det", "type": "Mạo từ", "text": "any", "tone": "neutral", "children": [] },
+                    { "label": "Prep", "type": "Giới từ", "text": "of", "tone": "neutral", "children": [] },
+                    { "label": "Det", "type": "Sở hữu cách", "text": "their", "tone": "neutral", "children": [] },
+                    { "label": "N", "type": "Danh từ", "text": "prices", "tone": "neutral", "children": [] }
+                  ]
+                }
+              ]
+            }
+          },
+          "128": {
+            "questionNo": 128,
+            "sentence": "Considering that Mr. Rey has completed the welding course, he is free to apply for an internal position with increased responsibility.",
+            "analysis": {
+              "sentence": "Considering that Mr. Rey has completed the welding course, he is free to apply for an internal position with increased responsibility.",
+              "components": [
+                {
+                  "label": "Clause",
+                  "type": "Mệnh đề phụ",
+                  "text": "Considering that Mr. Rey has completed the welding course",
+                  "tone": "clause",
+                  "children": [
+                    { "label": "Conj", "type": "Liên từ", "text": "Considering", "tone": "neutral", "children": [] },
+                    { "label": "Conj", "type": "Liên từ", "text": "that", "tone": "neutral", "children": [] },
+                    { "label": "S", "type": "Chủ ngữ", "text": "Mr. Rey", "tone": "subject", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "Mr. Rey", "tone": "subject", "children": [ { "label": "N", "type": "Danh từ", "text": "Mr.", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ riêng", "text": "Rey", "tone": "neutral", "children": [] } ] } ] },
+                    { "label": "V", "type": "Động từ", "text": "has completed", "tone": "verb", "children": [ { "label": "Aux", "type": "Trợ động từ", "text": "has", "tone": "neutral", "children": [] }, { "label": "V-ing", "type": "Động từ chính", "text": "completed", "tone": "neutral", "children": [] } ] },
+                    { "label": "O", "type": "Tân ngữ", "text": "the welding course", "tone": "object", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "the welding course", "tone": "object", "children": [ { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] }, { "label": "Adj", "type": "Tính từ", "text": "welding", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "course", "tone": "neutral", "children": [] } ] } ] }
+                  ]
+                },
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "he",
+                  "tone": "subject",
+                  "children": [
+                    { "label": "Pron", "type": "Đại từ", "text": "he", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "is",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "V", "type": "Động từ liên kết", "text": "is", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "C",
+                  "type": "Bổ ngữ",
+                  "text": "free to apply for an internal position with increased responsibility",
+                  "tone": "complement",
+                  "children": [
+                    { "label": "Adj", "type": "Tính từ", "text": "free", "tone": "neutral", "children": [] },
+                    {
+                      "label": "InfP",
+                      "type": "Cụm nguyên mẫu",
+                      "text": "to apply for an internal position with increased responsibility",
+                      "tone": "adverb",
+                      "children": [
+                        { "label": "to", "type": "Nguyên mẫu", "text": "to", "tone": "neutral", "children": [] },
+                        { "label": "V", "type": "Động từ", "text": "apply", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "for", "tone": "neutral", "children": [] },
+                        { "label": "Det", "type": "Mạo từ", "text": "an", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "internal", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "position", "tone": "neutral", "children": [] },
+                        { "label": "Prep", "type": "Giới từ", "text": "with", "tone": "neutral", "children": [] },
+                        { "label": "Adj", "type": "Tính từ", "text": "increased", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "responsibility", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "129": {
+            "questionNo": 129,
+            "sentence": "The play’s rehearsal lasted four hours, while the play itself ran for only three.",
+            "analysis": {
+              "sentence": "The play’s rehearsal lasted four hours, while the play itself ran for only three.",
+              "components": [
+                {
+                  "label": "Clause 1",
+                  "type": "Mệnh đề chính",
+                  "text": "The play’s rehearsal lasted four hours",
+                  "tone": "clause",
+                  "children": [
+                    { "label": "S", "type": "Chủ ngữ", "text": "The play’s rehearsal", "tone": "subject", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "The play’s rehearsal", "tone": "subject", "children": [ { "label": "Det", "type": "Mạo từ", "text": "The", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ sở hữu", "text": "play’s", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "rehearsal", "tone": "neutral", "children": [] } ] } ] },
+                    { "label": "V", "type": "Động từ", "text": "lasted", "tone": "verb", "children": [ { "label": "V", "type": "Động từ chính", "text": "lasted", "tone": "neutral", "children": [] } ] },
+                    { "label": "O", "type": "Tân ngữ", "text": "four hours", "tone": "object", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "four hours", "tone": "object", "children": [ { "label": "Num", "type": "Số", "text": "four", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "hours", "tone": "neutral", "children": [] } ] } ] }
+                  ]
+                },
+                {
+                  "label": "Clause 2",
+                  "type": "Mệnh đề chính",
+                  "text": "while the play itself ran for only three",
+                  "tone": "clause",
+                  "children": [
+                    { "label": "Conj", "type": "Liên từ", "text": "while", "tone": "neutral", "children": [] },
+                    { "label": "S", "type": "Chủ ngữ", "text": "the play itself", "tone": "subject", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "the play itself", "tone": "subject", "children": [ { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "play", "tone": "neutral", "children": [] }, { "label": "Pron", "type": "Đại từ phản thân", "text": "itself", "tone": "neutral", "children": [] } ] } ] },
+                    { "label": "V", "type": "Động từ", "text": "ran", "tone": "verb", "children": [ { "label": "V", "type": "Động từ chính", "text": "ran", "tone": "neutral", "children": [] } ] },
+                    { "label": "Adv", "type": "Trạng ngữ", "text": "for only three", "tone": "adverb", "children": [ { "label": "PP", "type": "Cụm giới từ", "text": "for only three", "tone": "adverb", "children": [ { "label": "Prep", "type": "Giới từ", "text": "for", "tone": "neutral", "children": [] }, { "label": "Adv", "type": "Trạng từ", "text": "only", "tone": "neutral", "children": [] }, { "label": "Num", "type": "Số", "text": "three", "tone": "neutral", "children": [] } ] } ]
+                  ]
+                }
+              ]
+            }
+          },
+          "130": {
+            "questionNo": 130,
+            "sentence": "Ms. Sheth has identified the obstacles that have prevented Hentig Industries from expanding globally.",
+            "analysis": {
+              "sentence": "Ms. Sheth has identified the obstacles that have prevented Hentig Industries from expanding globally.",
+              "components": [
+                {
+                  "label": "S",
+                  "type": "Chủ ngữ",
+                  "text": "Ms. Sheth",
+                  "tone": "subject",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "Ms. Sheth",
+                      "tone": "subject",
+                      "children": [
+                        { "label": "N", "type": "Danh từ", "text": "Ms.", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ riêng", "text": "Sheth", "tone": "neutral", "children": [] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "V",
+                  "type": "Động từ",
+                  "text": "has identified",
+                  "tone": "verb",
+                  "children": [
+                    { "label": "Aux", "type": "Trợ động từ", "text": "has", "tone": "neutral", "children": [] },
+                    { "label": "V-ing", "type": "Động từ chính", "text": "identified", "tone": "neutral", "children": [] }
+                  ]
+                },
+                {
+                  "label": "O",
+                  "type": "Tân ngữ",
+                  "text": "the obstacles that have prevented Hentig Industries from expanding globally",
+                  "tone": "object",
+                  "children": [
+                    {
+                      "label": "NP",
+                      "type": "Cụm danh từ",
+                      "text": "the obstacles",
+                      "tone": "object",
+                      "children": [
+                        { "label": "Det", "type": "Mạo từ", "text": "the", "tone": "neutral", "children": [] },
+                        { "label": "N", "type": "Danh từ", "text": "obstacles", "tone": "neutral", "children": [] }
+                      ]
+                    },
+                    {
+                      "label": "RelClause",
+                      "type": "Mệnh đề quan hệ",
+                      "text": "that have prevented Hentig Industries from expanding globally",
+                      "tone": "clause",
+                      "children": [
+                        { "label": "Pron", "type": "Đại từ quan hệ", "text": "that", "tone": "neutral", "children": [] },
+                        { "label": "V", "type": "Động từ", "text": "have prevented", "tone": "verb", "children": [ { "label": "Aux", "type": "Trợ động từ", "text": "have", "tone": "neutral", "children": [] }, { "label": "V-ing", "type": "Động từ chính", "text": "prevented", "tone": "neutral", "children": [] } ] },
+                        { "label": "O", "type": "Tân ngữ", "text": "Hentig Industries", "tone": "object", "children": [ { "label": "NP", "type": "Cụm danh từ", "text": "Hentig Industries", "tone": "object", "children": [ { "label": "N", "type": "Danh từ riêng", "text": "Hentig", "tone": "neutral", "children": [] }, { "label": "N", "type": "Danh từ", "text": "Industries", "tone": "neutral", "children": [] } ] } ] },
+                        { "label": "Adv", "type": "Trạng ngữ", "text": "from expanding globally", "tone": "adverb", "children": [ { "label": "PP", "type": "Cụm giới từ", "text": "from expanding globally", "tone": "adverb", "children": [ { "label": "Prep", "type": "Giới từ", "text": "from", "tone": "neutral", "children": [] }, { "label": "V-ing", "type": "Danh động từ", "text": "expanding", "tone": "neutral", "children": [] }, { "label": "Adv", "type": "Trạng từ", "text": "globally", "tone": "neutral", "children": [] } ] } ]
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           }
         }
+      }
+    }
+  }
       }
     }
   }
