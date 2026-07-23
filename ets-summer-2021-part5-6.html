@@ -290,13 +290,13 @@ body.vocabulary-lookup-active .option{transform:none}
   box-shadow:none!important;
 }
 .vocabulary-lookup-panel{
-  top:50%!important;
+  top:30%!important;
   left:50%!important;
   right:auto!important;
   bottom:auto!important;
-  transform:translate(-50%,-50%)!important;
+  transform:translateX(-50%)!important;
   width:min(430px,calc(100vw - 28px))!important;
-  max-height:min(72vh,620px)!important;
+  max-height:calc(70vh - 16px)!important;
 }
 @media(max-width:620px){
   .section-head{padding:14px 16px!important}
@@ -319,9 +319,9 @@ body.vocabulary-lookup-active .option{transform:none}
     left:50%!important;
     right:auto!important;
     bottom:auto!important;
-    transform:translate(-50%,-50%)!important;
+    transform:translateX(-50%)!important;
     width:calc(100vw - 20px)!important;
-    max-height:78vh!important;
+    max-height:calc(68vh - 10px)!important;
     border-radius:18px!important;
   }
 }
