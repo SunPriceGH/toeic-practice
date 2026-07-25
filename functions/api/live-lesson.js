@@ -3,6 +3,10 @@ const TEACHER_EMAIL = 'sunprice@sp.ik';
 const RECORD_TTL_SECONDS = 8 * 60 * 60;
 const TEACHER_ONLINE_SECONDS = 45;
 const MAX_ANSWERS_PER_STUDENT = 200;
+const MAX_ANNOTATION_STROKES = 500;
+const MAX_POINTS_PER_STROKE = 5000;
+const MAX_ANNOTATION_POINTS = 50000;
+const MAX_POS_TAGS = 300;
 
 export async function onRequestGet(context) {
   try {
@@ -14,6 +18,12 @@ export async function onRequestGet(context) {
     const mode = String(url.searchParams.get('mode') || 'state').trim().toLowerCase();
     const lessonId = normalizeLessonId(url.searchParams.get('lessonId'));
     if (!lessonId) return json({ ok:false, error:'Thiếu mã bài học.' }, 400);
+
+    if (mode === 'annotations') {
+      const slideId = safeId(url.searchParams.get('slideId'), 80);
+      if (!slideId) return json({ ok:false, error:'Thiếu mã slide.' }, 400);
+      return getAnnotations(store, lessonId, slideId);
+    }
 
     if (mode === 'students') {
       if (!isTeacher(session.email)) return json({ ok:false, error:'Chỉ giáo viên được xem kết quả lớp.' }, 403);
@@ -30,7 +40,9 @@ export async function onRequestGet(context) {
       slideCount:Number.isInteger(state?.slideCount) ? state.slideCount : 0,
       updatedAt:state?.updatedAt || null,
       teacherLastSeen:state?.teacherLastSeen || null,
-      sessionId:state?.sessionId || null
+      sessionId:state?.sessionId || null,
+      annotationSlideId:getActiveSlideId(state),
+      annotationRevision:getActiveAnnotationRevision(state)
     });
   } catch (err) {
     return json({ ok:false, error:err.message || 'Không tải được trạng thái lớp.' }, 500);
@@ -51,6 +63,11 @@ export async function onRequestPost(context) {
     if (action === 'teacher-sync' || action === 'teacher-heartbeat') {
       if (!isTeacher(session.email)) return json({ ok:false, error:'Chỉ giáo viên được điều khiển slide.' }, 403);
       return updateTeacherState(store, lessonId, body, action);
+    }
+
+    if (action === 'annotation-save' || action === 'annotation-clear') {
+      if (!isTeacher(session.email)) return json({ ok:false, error:'Chỉ giáo viên được ghi chú lên slide.' }, 403);
+      return saveAnnotations(store, lessonId, body, action === 'annotation-clear');
     }
 
     if (action === 'student-heartbeat') {
@@ -113,10 +130,115 @@ async function updateTeacherState(store, lessonId, body, action) {
     teacherLastSeen:now,
     updatedAt:action === 'teacher-sync' ? now : (current.updatedAt || now),
     openedAt:current.openedAt || now,
-    sessionId:current.sessionId || createSessionId()
+    sessionId:current.sessionId || createSessionId(),
+    slideIds:Array.isArray(body?.slideIds) ? body.slideIds.map(value => safeId(value,80)).filter(Boolean).slice(0,300) : (Array.isArray(current.slideIds) ? current.slideIds : []),
+    annotationRevisions:current.annotationRevisions && typeof current.annotationRevisions === 'object' ? current.annotationRevisions : {}
   };
   await store.put(stateKey(lessonId), JSON.stringify(state), { expirationTtl:RECORD_TTL_SECONDS });
   return json({ ok:true, state, teacherOnline:true });
+}
+
+
+async function getAnnotations(store, lessonId, slideId) {
+  const record = safeParse(await store.get(annotationKey(lessonId, slideId))) || {};
+  return json({
+    ok:true,
+    lessonId,
+    slideId,
+    revision:String(record.revision || ''),
+    updatedAt:record.updatedAt || null,
+    strokes:Array.isArray(record.strokes) ? record.strokes : [],
+    posTags:Array.isArray(record.posTags) ? record.posTags : []
+  });
+}
+
+async function saveAnnotations(store, lessonId, body, clear) {
+  const slideId = safeId(body?.slideId, 80);
+  if (!slideId) return json({ ok:false, error:'Thiếu mã slide.' }, 400);
+  const strokes = clear ? [] : normalizeAnnotationStrokes(body?.strokes);
+  const posTags = normalizePosTags(body?.posTags);
+  const revision = createRevision();
+  const updatedAt = new Date().toISOString();
+  const state = await readClassState(store, lessonId) || {};
+  const record = {
+    lessonId,
+    slideId,
+    strokes,
+    posTags,
+    revision,
+    updatedAt,
+    sessionId:state.sessionId || null
+  };
+  await store.put(annotationKey(lessonId, slideId), JSON.stringify(record), { expirationTtl:RECORD_TTL_SECONDS });
+  const revisions = state.annotationRevisions && typeof state.annotationRevisions === 'object' ? state.annotationRevisions : {};
+  revisions[slideId] = revision;
+  state.annotationRevisions = trimRevisionMap(revisions, 300);
+  state.annotationUpdatedAt = updatedAt;
+  await store.put(stateKey(lessonId), JSON.stringify(state), { expirationTtl:RECORD_TTL_SECONDS });
+  return json({ ok:true, slideId, revision, updatedAt, strokeCount:strokes.length, posTagCount:posTags.length });
+}
+
+function normalizeAnnotationStrokes(value) {
+  if (!Array.isArray(value)) return [];
+  let totalPoints = 0;
+  const strokes = [];
+  for (const item of value.slice(-MAX_ANNOTATION_STROKES)) {
+    if (!item || !Array.isArray(item.points)) continue;
+    const points = [];
+    for (const point of item.points.slice(0, MAX_POINTS_PER_STROKE)) {
+      if (totalPoints >= MAX_ANNOTATION_POINTS) break;
+      const x = clampNumber(point?.x, 0, 1000, 0);
+      const y = clampNumber(point?.y, 0, 1000, 0);
+      points.push({ x, y });
+      totalPoints++;
+    }
+    if (!points.length) continue;
+    strokes.push({
+      id:safeId(item.id, 80) || `stroke-${strokes.length + 1}`,
+      color:normalizeColor(item.color),
+      width:clampNumber(item.width, 1, 20, 4),
+      points
+    });
+    if (totalPoints >= MAX_ANNOTATION_POINTS) break;
+  }
+  return strokes;
+}
+
+function normalizePosTags(value) {
+  if (!Array.isArray(value)) return [];
+  return value.slice(-MAX_POS_TAGS).map((item,index) => ({
+    id:safeId(item?.id,80) || `pos-${index + 1}`,
+    type:String(item?.type || '').toLowerCase().replace(/[^a-z]/g,'').slice(0,12),
+    label:String(item?.label || '').trim().slice(0,20),
+    x:clampNumber(item?.x,0,1,0),
+    y:clampNumber(item?.y,0,1,0)
+  })).filter(item => item.type && item.label);
+}
+
+function normalizeColor(value) {
+  const color = String(value || '').trim().toLowerCase();
+  return /^#[0-9a-f]{6}$/.test(color) ? color : '#e11d48';
+}
+
+function trimRevisionMap(map, limit) {
+  const entries = Object.entries(map || {}).slice(-limit);
+  return Object.fromEntries(entries);
+}
+
+function getActiveSlideId(state) {
+  if (!state || !Array.isArray(state.slideIds)) return '';
+  const index = Number.isInteger(state.activeSlide) ? state.activeSlide : 0;
+  return state.slideIds[index] || '';
+}
+
+function getActiveAnnotationRevision(state) {
+  const slideId = getActiveSlideId(state);
+  if (!slideId || !state?.annotationRevisions) return '';
+  return String(state.annotationRevisions[slideId] || '');
+}
+
+function createRevision() {
+  return `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 }
 
 async function updateStudentHeartbeat(store, lessonId, email, body) {
@@ -315,6 +437,10 @@ function studentKey(lessonId, email) {
   return `${lessonPrefix(lessonId)}student:${safeEmail(email)}`;
 }
 
+function annotationKey(lessonId, slideId) {
+  return `${lessonPrefix(lessonId)}annotation:${safeId(slideId,80)}`;
+}
+
 function normalizeLessonId(value) {
   return safeId(value, 80);
 }
@@ -343,6 +469,12 @@ function isSessionTokenForEmail(token, email) {
   } catch (err) {
     return false;
   }
+}
+
+function clampNumber(value, min, max, fallback) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return fallback;
+  return Math.min(max, Math.max(min, number));
 }
 
 function clampInteger(value, min, max, fallback) {
