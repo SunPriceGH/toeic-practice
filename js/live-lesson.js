@@ -8,6 +8,8 @@
   var POLL_MS = 2500;
   var TEACHER_HEARTBEAT_MS = 15000;
   var STUDENT_HEARTBEAT_MS = 10000;
+  var MAX_STROKES_PER_SLIDE = 500;
+  var MAX_POINTS_PER_STROKE = 5000;
 
   var state = {
     lesson:null,
@@ -24,7 +26,20 @@
     pollTimer:null,
     heartbeatTimer:null,
     monitorTimer:null,
-    syncing:false
+    syncing:false,
+    annotations:{},
+    annotationLoading:{},
+    penEnabled:false,
+    penPanelOpen:true,
+    posPanelOpen:false,
+    dragPos:null,
+    penColor:'#e11d48',
+    penWidth:4,
+    activeStroke:null,
+    activePointerId:null,
+    activePath:null,
+    annotationSaveTimer:null,
+    annotationSaveChains:{}
   };
 
   var els = {};
@@ -70,6 +85,19 @@
     els.topProgress = document.getElementById('topProgress');
     els.liveStatus = document.getElementById('liveStatus');
     els.liveStatusText = document.getElementById('liveStatusText');
+    els.penToggleBtn = document.getElementById('penToggleBtn');
+    els.penToolbar = document.getElementById('penToolbar');
+    els.penPanelToggle = document.getElementById('penPanelToggle');
+    els.penPanelToggleText = document.getElementById('penPanelToggleText');
+    els.posToggle = document.getElementById('posToggle');
+    els.posToggleIcon = document.getElementById('posToggleIcon');
+    els.posList = document.getElementById('posList');
+    els.undoPosBtn = document.getElementById('undoPosBtn');
+    els.clearPosBtn = document.getElementById('clearPosBtn');
+    els.penUndoBtn = document.getElementById('penUndoBtn');
+    els.penClearBtn = document.getElementById('penClearBtn');
+    els.penCloseBtn = document.getElementById('penCloseBtn');
+    els.penSyncStatus = document.getElementById('penSyncStatus');
     els.teacherMonitorBtn = document.getElementById('teacherMonitorBtn');
     els.teacherLiveCount = document.getElementById('teacherLiveCount');
     els.slidePickerBtn = document.getElementById('slidePickerBtn');
@@ -148,6 +176,325 @@
     return slide && slide.exercise ? String(slide.id) + '::' + String(slide.exercise.id) : '';
   }
 
+
+  function annotationRecord(slideId){
+    var id = String(slideId || '');
+    if(!state.annotations[id]) state.annotations[id] = {revision:'',strokes:[],posTags:[],updatedAt:null};
+    if(!Array.isArray(state.annotations[id].posTags)) state.annotations[id].posTags = [];
+    return state.annotations[id];
+  }
+
+  function currentSlideData(){
+    return state.slides[state.currentSlide] || null;
+  }
+
+  function pathData(points){
+    if(!Array.isArray(points) || !points.length) return '';
+    var first = points[0];
+    var path = 'M ' + Number(first.x).toFixed(2) + ' ' + Number(first.y).toFixed(2);
+    if(points.length === 1) return path + ' L ' + (Number(first.x) + 0.1).toFixed(2) + ' ' + (Number(first.y) + 0.1).toFixed(2);
+    for(var i = 1;i < points.length;i++) path += ' L ' + Number(points[i].x).toFixed(2) + ' ' + Number(points[i].y).toFixed(2);
+    return path;
+  }
+
+  function renderAnnotationPaths(slideId){
+    var record = annotationRecord(slideId);
+    return (record.strokes || []).map(function(stroke){
+      return '<path data-stroke-id="' + escapeHtml(stroke.id || '') + '" d="' + escapeHtml(pathData(stroke.points)) + '" fill="none" stroke="' + escapeHtml(stroke.color || '#e11d48') + '" stroke-width="' + Number(stroke.width || 4) + '" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>';
+    }).join('');
+  }
+
+  function renderAnnotationLayer(slide,index){
+    return '<svg class="annotation-layer" data-annotation-slide="' + escapeHtml(slide.id) + '" data-slide-index="' + index + '" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">' + renderAnnotationPaths(slide.id) + '</svg>';
+  }
+
+  function redrawAnnotationLayer(slideId){
+    var layer = els.slideStage && els.slideStage.querySelector('.annotation-layer[data-annotation-slide="' + cssEscape(slideId) + '"]');
+    if(layer) layer.innerHTML = renderAnnotationPaths(slideId);
+  }
+
+  function renderPosTags(slideId){
+    return (annotationRecord(slideId).posTags || []).map(function(tag){
+      return '<button class="pos-tag ' + escapeHtml(tag.type || '') + '" type="button" data-pos-id="' + escapeHtml(tag.id || '') + '" style="left:' + Math.max(0,Math.min(1,Number(tag.x)||0))*100 + '%;top:' + Math.max(0,Math.min(1,Number(tag.y)||0))*100 + '%">' + escapeHtml(tag.label || '') + '</button>';
+    }).join('');
+  }
+
+  function renderPosLayer(slide,index){
+    return '<div class="pos-layer" data-pos-slide="' + escapeHtml(slide.id) + '" data-slide-index="' + index + '">' + renderPosTags(slide.id) + '</div>';
+  }
+
+  function redrawPosLayer(slideId){
+    var layer = els.slideStage && els.slideStage.querySelector('.pos-layer[data-pos-slide="' + cssEscape(slideId) + '"]');
+    if(layer){layer.innerHTML = renderPosTags(slideId);wirePosTagEvents(layer);}
+    applyAnnotationMode();
+  }
+
+  function cssEscape(value){
+    if(window.CSS && typeof window.CSS.escape === 'function') return window.CSS.escape(String(value || ''));
+    return String(value || '').replace(/["\\]/g,'\\$&');
+  }
+
+  function setPenSyncStatus(text,mode){
+    if(!els.penSyncStatus) return;
+    els.penSyncStatus.textContent = text || '';
+    els.penSyncStatus.classList.remove('saving','saved','error');
+    if(mode) els.penSyncStatus.classList.add(mode);
+  }
+
+  function applyAnnotationMode(){
+    if(!els.slideStage) return;
+    els.slideStage.querySelectorAll('.annotation-layer').forEach(function(layer){
+      var isCurrent = Number(layer.dataset.slideIndex) === state.currentSlide;
+      layer.classList.toggle('drawing-enabled',!!(isTeacher() && state.penEnabled && isCurrent));
+    });
+    els.slideStage.querySelectorAll('.slide').forEach(function(slide){
+      slide.classList.toggle('annotation-mode',!!(isTeacher() && state.penEnabled && Number(slide.dataset.slideIndex) === state.currentSlide));
+    });
+    els.slideStage.querySelectorAll('.pos-layer').forEach(function(layer){
+      var isCurrent = Number(layer.dataset.slideIndex) === state.currentSlide;
+      layer.classList.toggle('editable',!!(isTeacher() && state.penEnabled && isCurrent));
+    });
+    if(els.penToggleBtn){
+      els.penToggleBtn.classList.toggle('active',!!state.penEnabled);
+      els.penToggleBtn.setAttribute('aria-pressed',String(!!state.penEnabled));
+      els.penToggleBtn.title = state.penEnabled ? 'Cây viết ACTIVE · Nhấn để DEACTIVE' : 'Cây viết DEACTIVE · Nhấn để ACTIVE';
+    }
+    if(els.penPanelToggle){
+      els.penPanelToggle.classList.toggle('show',!!(isTeacher() && state.penEnabled));
+      els.penPanelToggle.setAttribute('aria-expanded',String(!!state.penPanelOpen));
+    }
+    if(els.penPanelToggleText) els.penPanelToggleText.textContent = state.penPanelOpen ? 'Ẩn công cụ' : 'Mở công cụ';
+    if(els.penToolbar) els.penToolbar.classList.toggle('show',!!(isTeacher() && state.penEnabled && state.penPanelOpen));
+    if(els.posToggle){els.posToggle.setAttribute('aria-expanded',String(!!state.posPanelOpen));}
+    if(els.posToggleIcon) els.posToggleIcon.textContent = state.posPanelOpen ? '▴' : '▾';
+    if(els.posList) els.posList.classList.toggle('show',!!(isTeacher() && state.penEnabled && state.penPanelOpen && state.posPanelOpen));
+  }
+
+  function setPenEnabled(enabled){
+    if(!isTeacher()) return;
+    state.penEnabled = !!enabled;
+    if(state.penEnabled) state.penPanelOpen = true;
+    if(!state.penEnabled){finishActiveStroke(true);state.posPanelOpen=false;cancelPosDrag();}
+    applyAnnotationMode();
+    showControlMessage(state.penEnabled ? 'Cây viết đã bật · Kéo chuột để ghi lên slide' : 'Đã tắt cây viết');
+  }
+
+  function pointFromEvent(layer,event){
+    var rect = layer.getBoundingClientRect();
+    if(!rect.width || !rect.height) return null;
+    return {
+      x:Math.max(0,Math.min(1000,((event.clientX - rect.left) / rect.width) * 1000)),
+      y:Math.max(0,Math.min(1000,((event.clientY - rect.top) / rect.height) * 1000))
+    };
+  }
+
+  function makeStrokePath(layer,stroke){
+    var path = document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('data-stroke-id',stroke.id);
+    path.setAttribute('fill','none');
+    path.setAttribute('stroke',stroke.color);
+    path.setAttribute('stroke-width',String(stroke.width));
+    path.setAttribute('stroke-linecap','round');
+    path.setAttribute('stroke-linejoin','round');
+    path.setAttribute('vector-effect','non-scaling-stroke');
+    path.setAttribute('d',pathData(stroke.points));
+    layer.appendChild(path);
+    return path;
+  }
+
+  function startStroke(layer,event){
+    if(!isTeacher() || !state.penEnabled || state.dragPos || (event.pointerType === 'mouse' && event.button !== 0)) return;
+    var slide = state.slides[Number(layer.dataset.slideIndex)];
+    var point = pointFromEvent(layer,event);
+    if(!slide || !point) return;
+    event.preventDefault();
+    try{layer.setPointerCapture(event.pointerId);}catch(err){}
+    var record = annotationRecord(slide.id);
+    if(record.strokes.length >= MAX_STROKES_PER_SLIDE) record.strokes.shift();
+    var stroke = {id:'stroke-' + Date.now() + '-' + Math.random().toString(36).slice(2,8),color:state.penColor,width:state.penWidth,points:[point]};
+    record.strokes.push(stroke);
+    state.activeStroke = stroke;
+    state.activePointerId = event.pointerId;
+    state.activePath = makeStrokePath(layer,stroke);
+    setPenSyncStatus('Đang viết…','saving');
+  }
+
+  function extendStroke(layer,event){
+    if(!state.activeStroke || state.activePointerId !== event.pointerId) return;
+    var point = pointFromEvent(layer,event);
+    if(!point) return;
+    event.preventDefault();
+    var points = state.activeStroke.points;
+    var last = points[points.length - 1];
+    var dx = point.x - last.x, dy = point.y - last.y;
+    if(dx * dx + dy * dy < 2.25) return;
+    if(points.length < MAX_POINTS_PER_STROKE) points.push(point);
+    if(state.activePath) state.activePath.setAttribute('d',pathData(points));
+  }
+
+  function finishActiveStroke(shouldSave){
+    if(!state.activeStroke) return;
+    var slide = currentSlideData();
+    state.activeStroke = null;
+    state.activePointerId = null;
+    state.activePath = null;
+    if(shouldSave !== false && slide) saveAnnotations(slide.id);
+  }
+
+  function wireAnnotationEvents(){
+    if(!els.slideStage) return;
+    els.slideStage.querySelectorAll('.annotation-layer').forEach(function(layer){
+      layer.addEventListener('pointerdown',function(event){startStroke(layer,event);});
+      layer.addEventListener('pointermove',function(event){extendStroke(layer,event);});
+      layer.addEventListener('pointerup',function(event){if(state.activePointerId === event.pointerId){event.preventDefault();finishActiveStroke(true);}});
+      layer.addEventListener('pointercancel',function(event){if(state.activePointerId === event.pointerId) finishActiveStroke(true);});
+      layer.addEventListener('lostpointercapture',function(event){if(state.activePointerId === event.pointerId) finishActiveStroke(true);});
+    });
+  }
+
+  function posTagId(){return 'pos-' + Date.now() + '-' + Math.random().toString(36).slice(2,8);}
+
+  function createPosGhost(type,label,x,y){
+    var ghost=document.createElement('div');ghost.className='pos-drag-ghost ' + type;ghost.textContent=label;ghost.style.left=x+'px';ghost.style.top=y+'px';document.body.appendChild(ghost);return ghost;
+  }
+
+  function beginPosDrag(config){
+    cancelPosDrag();state.dragPos=config;document.body.classList.add('dragging-pos-tag');
+    window.addEventListener('pointermove',movePosDrag,true);window.addEventListener('pointerup',endPosDrag,true);window.addEventListener('pointercancel',cancelPosDrag,true);
+  }
+
+  function movePosDrag(event){if(!state.dragPos||state.dragPos.pointerId!==event.pointerId)return;event.preventDefault();state.dragPos.ghost.style.left=event.clientX+'px';state.dragPos.ghost.style.top=event.clientY+'px';}
+
+  function endPosDrag(event){
+    var drag=state.dragPos;if(!drag||drag.pointerId!==event.pointerId)return;event.preventDefault();
+    var slide=els.slideStage.querySelector('.slide.active');var layer=slide&&slide.querySelector('.pos-layer');
+    if(layer){var rect=layer.getBoundingClientRect();if(event.clientX>=rect.left&&event.clientX<=rect.right&&event.clientY>=rect.top&&event.clientY<=rect.bottom){
+      var slideData=currentSlideData(),record=annotationRecord(slideData.id),x=(event.clientX-rect.left)/rect.width,y=(event.clientY-rect.top)/rect.height;
+      if(drag.mode==='new') record.posTags.push({id:posTagId(),type:drag.type,label:drag.label,x:x,y:y});
+      else {var tag=record.posTags.find(function(item){return item.id===drag.id;});if(tag){tag.x=x;tag.y=y;}}
+      redrawPosLayer(slideData.id);saveAnnotations(slideData.id);
+    }}
+    cancelPosDrag();
+  }
+
+  function cancelPosDrag(){
+    var drag=state.dragPos;if(drag){if(drag.ghost&&drag.ghost.remove)drag.ghost.remove();if(drag.sourceEl)drag.sourceEl.classList.remove('drag-source');}
+    state.dragPos=null;document.body.classList.remove('dragging-pos-tag');window.removeEventListener('pointermove',movePosDrag,true);window.removeEventListener('pointerup',endPosDrag,true);window.removeEventListener('pointercancel',cancelPosDrag,true);
+  }
+
+  function startNewPosDrag(event){if(!isTeacher()||!state.penEnabled)return;event.preventDefault();event.stopPropagation();var source=event.currentTarget;beginPosDrag({mode:'new',type:source.dataset.posType,label:source.dataset.posLabel,pointerId:event.pointerId,ghost:createPosGhost(source.dataset.posType,source.dataset.posLabel,event.clientX,event.clientY)});}
+
+  function startMovePosDrag(event){
+    if(!isTeacher()||!state.penEnabled)return;event.preventDefault();event.stopPropagation();var el=event.currentTarget,slide=currentSlideData(),record=annotationRecord(slide.id),tag=record.posTags.find(function(item){return item.id===el.dataset.posId;});if(!tag)return;el.classList.add('drag-source');beginPosDrag({mode:'move',id:tag.id,type:tag.type,label:tag.label,pointerId:event.pointerId,sourceEl:el,ghost:createPosGhost(tag.type,tag.label,event.clientX,event.clientY)});
+  }
+
+  function wirePosTagEvents(layer){(layer||document).querySelectorAll('.pos-tag').forEach(function(tag){tag.addEventListener('pointerdown',startMovePosDrag);});}
+  function wireAllPosTagEvents(){els.slideStage.querySelectorAll('.pos-layer').forEach(wirePosTagEvents);}
+  function undoCurrentPos(){var slide=currentSlideData();if(!isTeacher()||!slide)return;var record=annotationRecord(slide.id);if(!record.posTags.length){showControlMessage('Slide này chưa có nhãn để hoàn tác');return;}record.posTags.pop();redrawPosLayer(slide.id);saveAnnotations(slide.id);}
+  function clearCurrentPos(){var slide=currentSlideData();if(!isTeacher()||!slide)return;var record=annotationRecord(slide.id);if(!record.posTags.length){showControlMessage('Slide này chưa có nhãn từ loại');return;}if(!confirm('Xóa toàn bộ nhãn từ loại trên Slide '+(state.currentSlide+1)+'?'))return;record.posTags=[];redrawPosLayer(slide.id);saveAnnotations(slide.id);}
+
+  function normalizeClientStrokes(strokes){
+    return (strokes || []).slice(-MAX_STROKES_PER_SLIDE).map(function(stroke){
+      return {
+        id:String(stroke.id || '').slice(0,80),
+        color:String(stroke.color || '#e11d48').slice(0,20),
+        width:Math.max(1,Math.min(20,Number(stroke.width) || 4)),
+        points:(stroke.points || []).slice(0,MAX_POINTS_PER_STROKE).map(function(point){
+          return {x:Math.max(0,Math.min(1000,Number(point.x) || 0)),y:Math.max(0,Math.min(1000,Number(point.y) || 0))};
+        })
+      };
+    }).filter(function(stroke){return stroke.points.length;});
+  }
+
+  function normalizeClientPosTags(tags){
+    return (tags || []).slice(-300).map(function(tag){return {
+      id:String(tag.id || '').slice(0,80),type:String(tag.type || '').toLowerCase().replace(/[^a-z]/g,'').slice(0,12),label:String(tag.label || '').slice(0,20),
+      x:Math.max(0,Math.min(1,Number(tag.x)||0)),y:Math.max(0,Math.min(1,Number(tag.y)||0))
+    };}).filter(function(tag){return tag.id && tag.type && tag.label;});
+  }
+
+  function saveAnnotations(slideId){
+    if(!isTeacher() || !state.lesson || !slideId) return Promise.resolve();
+    var previous = state.annotationSaveChains[slideId] || Promise.resolve();
+    var task = previous.catch(function(){}).then(async function(){
+      var record = annotationRecord(slideId);
+      var strokes = normalizeClientStrokes(record.strokes);
+      setPenSyncStatus('Đang đồng bộ…','saving');
+      try{
+        var data = await fetchJson(LIVE_API,{
+          method:'POST',headers:Object.assign({'Content-Type':'application/json'},authHeaders()),body:JSON.stringify({
+            action:'annotation-save',lessonId:state.lesson.lessonId,slideId:slideId,strokes:strokes,posTags:normalizeClientPosTags(record.posTags)
+          }),keepalive:true
+        });
+        record.revision = data.revision || record.revision;
+        record.updatedAt = data.updatedAt || new Date().toISOString();
+        setPenSyncStatus('Đã đồng bộ','saved');
+      }catch(err){
+        setPenSyncStatus('Lỗi đồng bộ','error');
+        setLiveStatus('error','Không đồng bộ được nét viết');
+        throw err;
+      }
+    });
+    state.annotationSaveChains[slideId] = task;
+    task.finally(function(){if(state.annotationSaveChains[slideId] === task) delete state.annotationSaveChains[slideId];}).catch(function(){});
+    return task;
+  }
+
+  async function fetchAnnotations(slideIndex,expectedRevision,force){
+    if(!state.lesson) return;
+    var slide = state.slides[Number(slideIndex)];
+    if(!slide || state.annotationLoading[slide.id]) return;
+    var record = annotationRecord(slide.id);
+    if(!force && expectedRevision != null && String(record.revision || '') === String(expectedRevision || '')) return;
+    state.annotationLoading[slide.id] = true;
+    try{
+      var url = LIVE_API + '?mode=annotations&lessonId=' + encodeURIComponent(state.lesson.lessonId) + '&slideId=' + encodeURIComponent(slide.id) + '&_=' + Date.now();
+      var data = await fetchJson(url,{headers:authHeaders(),cache:'no-store'});
+      record.revision = data.revision || '';
+      record.updatedAt = data.updatedAt || null;
+      record.strokes = normalizeClientStrokes(data.strokes || []);
+      record.posTags = normalizeClientPosTags(data.posTags || []);
+      redrawAnnotationLayer(slide.id);
+      redrawPosLayer(slide.id);
+    }catch(err){
+      if(isTeacher()) setPenSyncStatus('Không tải được nét','error');
+    }finally{delete state.annotationLoading[slide.id];}
+  }
+
+  function undoCurrentAnnotation(){
+    if(!isTeacher()) return;
+    var slide = currentSlideData();
+    if(!slide) return;
+    var record = annotationRecord(slide.id);
+    if(!record.strokes.length){showControlMessage('Slide này chưa có nét để hoàn tác');return;}
+    record.strokes.pop();
+    redrawAnnotationLayer(slide.id);
+    saveAnnotations(slide.id);
+  }
+
+  async function clearCurrentAnnotations(){
+    if(!isTeacher()) return;
+    var slide = currentSlideData();
+    if(!slide) return;
+    var record = annotationRecord(slide.id);
+    if(!record.strokes.length){showControlMessage('Slide này chưa có nét viết');return;}
+    if(!confirm('Xóa toàn bộ nét viết trên Slide ' + (state.currentSlide + 1) + '?')) return;
+    record.strokes = [];
+    redrawAnnotationLayer(slide.id);
+    await (state.annotationSaveChains[slide.id] || Promise.resolve()).catch(function(){});
+    setPenSyncStatus('Đang xóa…','saving');
+    try{
+      var data = await fetchJson(LIVE_API,{
+        method:'POST',headers:Object.assign({'Content-Type':'application/json'},authHeaders()),body:JSON.stringify({
+          action:'annotation-clear',lessonId:state.lesson.lessonId,slideId:slide.id,posTags:normalizeClientPosTags(record.posTags)
+        }),keepalive:true
+      });
+      record.revision = data.revision || '';
+      record.updatedAt = data.updatedAt || new Date().toISOString();
+      setPenSyncStatus('Đã xóa','saved');
+    }catch(err){setPenSyncStatus('Lỗi xóa nét','error');}
+  }
+
   function renderSlides(){
     var html = '';
     state.slides.forEach(function(slide,index){
@@ -155,10 +502,13 @@
         '<div class="slide-header"><div><div class="slide-label reveal">' + escapeHtml(slide.label || ('Slide ' + (index + 1))) + '</div>' +
         '<h1 class="slide-title reveal">' + escapeHtml(slide.title || ('Slide ' + (index + 1))) + '</h1></div>' +
         '<div class="slide-no">' + String(index + 1).padStart(2,'0') + '</div></div>' +
-        '<div class="slide-content">' + (slide.contentHtml || '') + renderExercise(slide,index) + '</div></section>';
+        '<div class="slide-content">' + (slide.contentHtml || '') + renderExercise(slide,index) + '</div>' + renderAnnotationLayer(slide,index) + renderPosLayer(slide,index) + '</section>';
     });
     els.slideStage.innerHTML = html;
     wireExerciseEvents();
+    wireAnnotationEvents();
+    wireAllPosTagEvents();
+    applyAnnotationMode();
     revealInitialItems();
     updateNavigation();
     buildSlidePicker();
@@ -376,6 +726,10 @@
     window.scrollTo({top:0,behavior:options.silent ? 'auto' : 'smooth'});
     updateNavigation();
     buildSlidePicker();
+    applyAnnotationMode();
+    var annotationSlide = state.slides[index];
+    var localAnnotation = annotationSlide ? annotationRecord(annotationSlide.id) : null;
+    fetchAnnotations(index,null,!isTeacher() || !(localAnnotation && (localAnnotation.revision || localAnnotation.strokes.length)));
     if(isTeacher() && options.publish !== false) publishTeacherSlide();
     if(!isTeacher()) sendStudentHeartbeat();
   }
@@ -426,7 +780,7 @@
     try{
       var data = await fetchJson(LIVE_API,{
         method:'POST',headers:Object.assign({'Content-Type':'application/json'},authHeaders()),body:JSON.stringify({
-          action:'teacher-sync',lessonId:state.lesson.lessonId,activeSlide:state.currentSlide,slideCount:state.slides.length
+          action:'teacher-sync',lessonId:state.lesson.lessonId,activeSlide:state.currentSlide,slideCount:state.slides.length,slideIds:state.slides.map(function(slide){return slide.id;})
         }),keepalive:true
       });
       state.activeTeacherSlide = state.currentSlide;
@@ -444,7 +798,7 @@
     try{
       await fetchJson(LIVE_API,{
         method:'POST',headers:Object.assign({'Content-Type':'application/json'},authHeaders()),body:JSON.stringify({
-          action:'teacher-heartbeat',lessonId:state.lesson.lessonId,slideCount:state.slides.length
+          action:'teacher-heartbeat',lessonId:state.lesson.lessonId,slideCount:state.slides.length,slideIds:state.slides.map(function(slide){return slide.id;})
         }),keepalive:true
       });
       state.teacherOnline = true;
@@ -463,6 +817,7 @@
       if(data.sessionId && state.sessionId && data.sessionId !== state.sessionId){
         state.checked = {};
         state.selections = {};
+        state.annotations = {};
         state.sessionId = data.sessionId;
         persistLocalState();
         renderSlides();
@@ -474,6 +829,7 @@
       if(state.teacherOnline){
         setLiveStatus('ok','Đang học LIVE · Slide ' + (state.activeTeacherSlide + 1));
         if(state.currentSlide !== state.activeTeacherSlide) showSlide(state.activeTeacherSlide,{publish:false,force:true});
+        await fetchAnnotations(state.activeTeacherSlide,null,true);
       }else{
         setLiveStatus('sending','Đang chờ giáo viên mở lớp');
       }
@@ -587,12 +943,33 @@
     try{
       var url = LIVE_API + '?lessonId=' + encodeURIComponent(state.lesson.lessonId);
       await fetchJson(url,{method:'DELETE',headers:authHeaders()});
-      state.teacherRows = [];state.openDetails = {};state.checked = {};state.selections = {};state.sessionId = '';persistLocalState();renderSlides();renderTeacherRows();await publishTeacherSlide();
+      state.teacherRows = [];state.openDetails = {};state.checked = {};state.selections = {};state.annotations = {};state.sessionId = '';persistLocalState();renderSlides();renderTeacherRows();await publishTeacherSlide();
     }catch(err){alert(err.message || 'Không xóa được phiên lớp.');}
     finally{els.monitorClearBtn.disabled = false;els.monitorClearBtn.textContent = 'Xóa phiên lớp';}
   }
 
   function setupEvents(){
+    els.penToggleBtn.addEventListener('click',function(){setPenEnabled(!state.penEnabled);});
+    els.penCloseBtn.addEventListener('click',function(){state.penPanelOpen=false;applyAnnotationMode();});
+    els.penPanelToggle.addEventListener('click',function(){if(!state.penEnabled)return;state.penPanelOpen=!state.penPanelOpen;applyAnnotationMode();});
+    els.posToggle.addEventListener('click',function(){state.posPanelOpen=!state.posPanelOpen;applyAnnotationMode();});
+    els.undoPosBtn.addEventListener('click',undoCurrentPos);
+    els.clearPosBtn.addEventListener('click',clearCurrentPos);
+    document.querySelectorAll('.pos-source').forEach(function(btn){btn.addEventListener('pointerdown',startNewPosDrag);});
+    els.penUndoBtn.addEventListener('click',undoCurrentAnnotation);
+    els.penClearBtn.addEventListener('click',clearCurrentAnnotations);
+    document.querySelectorAll('[data-pen-color]').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        state.penColor = this.dataset.penColor || '#e11d48';
+        document.querySelectorAll('[data-pen-color]').forEach(function(item){item.classList.toggle('active',item === btn);});
+      });
+    });
+    document.querySelectorAll('[data-pen-width]').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        state.penWidth = Math.max(1,Math.min(20,Number(this.dataset.penWidth) || 4));
+        document.querySelectorAll('[data-pen-width]').forEach(function(item){item.classList.toggle('active',item === btn);});
+      });
+    });
     els.prevBtn.addEventListener('click',function(){if(isTeacher()) showSlide(state.currentSlide - 1,{publish:true});else showControlMessage('Chờ giáo viên chuyển slide');});
     els.nextBtn.addEventListener('click',function(){if(isTeacher()) showSlide(state.currentSlide + 1,{publish:true});else showControlMessage('Chờ giáo viên chuyển slide');});
     els.goBtn.addEventListener('click',goReveal);
@@ -608,8 +985,9 @@
     document.querySelectorAll('[data-close]').forEach(function(btn){btn.addEventListener('click',function(){closeOverlay(document.getElementById(this.dataset.close));});});
     document.querySelectorAll('.overlay').forEach(function(overlay){overlay.addEventListener('click',function(event){if(event.target === overlay) closeOverlay(overlay);});});
     document.addEventListener('keydown',function(event){
-      if(event.key === 'Escape'){document.querySelectorAll('.overlay.show').forEach(closeOverlay);return;}
+      if(event.key === 'Escape'){if(state.dragPos){cancelPosDrag();return;}if(state.penEnabled && state.penPanelOpen){state.penPanelOpen=false;applyAnnotationMode();return;}if(state.penEnabled){setPenEnabled(false);return;}document.querySelectorAll('.overlay.show').forEach(closeOverlay);return;}
       if(event.target && /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
+      if(state.penEnabled) return;
       if(event.code === 'Space' || event.code === 'Enter'){event.preventDefault();goReveal();}
       if(event.code === 'ArrowRight'){event.preventDefault();if(isTeacher()) showSlide(state.currentSlide + 1,{publish:true});else showControlMessage('Chờ giáo viên chuyển slide');}
       if(event.code === 'ArrowLeft'){event.preventDefault();if(isTeacher()) showSlide(state.currentSlide - 1,{publish:true});else showControlMessage('Chờ giáo viên chuyển slide');}
@@ -624,10 +1002,12 @@
       await loadLessonData();
       restoreLocalState();
       if(isTeacher()){
+        els.penToggleBtn.classList.add('show');
         els.teacherMonitorBtn.classList.add('show');
         els.waitingOverlay.classList.remove('show');
         setLiveStatus('ok','Giáo viên · Toàn quyền slide');
       }else{
+        els.penToggleBtn.classList.remove('show');
         els.teacherMonitorBtn.classList.remove('show');
         els.waitingOverlay.classList.add('show');
       }
