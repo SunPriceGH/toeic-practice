@@ -7,6 +7,8 @@ const MAX_ANNOTATION_STROKES = 500;
 const MAX_POINTS_PER_STROKE = 5000;
 const MAX_ANNOTATION_POINTS = 50000;
 const MAX_POS_TAGS = 300;
+const LOCK_LESSON_ID = 'live-lesson';
+const LOCK_KEYS = ['__lesson_locks__', 'lesson-locks', 'lesson_locks', 'lessonLocks', 'lockedLessonIds'];
 
 export async function onRequestGet(context) {
   try {
@@ -18,6 +20,9 @@ export async function onRequestGet(context) {
     const mode = String(url.searchParams.get('mode') || 'state').trim().toLowerCase();
     const lessonId = normalizeLessonId(url.searchParams.get('lessonId'));
     if (!lessonId) return json({ ok:false, error:'Thiếu mã bài học.' }, 400);
+    if (!isTeacher(session.email) && await isLiveLessonLocked(context, lessonId)) {
+      return json({ ok:false, error:'Bài học đang được khóa cho học viên.', code:'lesson_locked' }, 423);
+    }
 
     if (mode === 'annotations') {
       const slideId = safeId(url.searchParams.get('slideId'), 80);
@@ -59,6 +64,9 @@ export async function onRequestPost(context) {
     const action = String(body?.action || '').trim().toLowerCase();
     const lessonId = normalizeLessonId(body?.lessonId);
     if (!lessonId) return json({ ok:false, error:'Thiếu mã bài học.' }, 400);
+    if (!isTeacher(session.email) && await isLiveLessonLocked(context, lessonId)) {
+      return json({ ok:false, error:'Bài học đang được khóa cho học viên.', code:'lesson_locked' }, 423);
+    }
 
     if (action === 'teacher-sync' || action === 'teacher-heartbeat') {
       if (!isTeacher(session.email)) return json({ ok:false, error:'Chỉ giáo viên được điều khiển slide.' }, 403);
@@ -423,6 +431,40 @@ function requireSession(request) {
 function getStore(context) {
   if (!context.env.STUDENT_RESULTS) throw new Error('Thiếu KV binding STUDENT_RESULTS.');
   return context.env.STUDENT_RESULTS;
+}
+
+function getLockStore(context) {
+  return context.env.LESSON_LOCKS || context.env.STUDENT_RESULTS || null;
+}
+
+async function isLiveLessonLocked(context, lessonId) {
+  const store = getLockStore(context);
+  if (!store) return true;
+  const lockedIds = await readLockedLessonIds(store);
+  return lockedIds.includes(LOCK_LESSON_ID) || lockedIds.includes(normalizeLessonId(lessonId));
+}
+
+async function readLockedLessonIds(store) {
+  for (const key of LOCK_KEYS) {
+    const raw = await store.get(key);
+    if (!raw) continue;
+    const parsed = parseLockedLessonIds(raw);
+    if (parsed) return parsed;
+  }
+  return [];
+}
+
+function parseLockedLessonIds(raw) {
+  try {
+    const data = JSON.parse(raw);
+    const values = Array.isArray(data)
+      ? data
+      : (Array.isArray(data?.lockedLessonIds) ? data.lockedLessonIds : (Array.isArray(data?.items) ? data.items : null));
+    if (!values) return null;
+    return [...new Set(values.map(value => String(value || '').trim()).filter(Boolean))];
+  } catch (err) {
+    return null;
+  }
 }
 
 function lessonPrefix(lessonId) {
