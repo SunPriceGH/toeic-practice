@@ -220,16 +220,104 @@ code{padding:2px 6px;border-radius:7px;background:#e2e8f0;color:#334155;font-fam
 .memory-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.memory-card{border:2px solid #e2e8f0;border-radius:25px;padding:25px;background:#fff;text-align:center}.memory-card .memory-icon{width:62px;height:62px;border-radius:20px;margin:0 auto 13px;display:grid;place-items:center;font-size:19px;font-weight:700}.memory-card h3{font-size:24px;margin-bottom:9px}.memory-card p{font-size:18px;line-height:1.55;color:#475569}.memory-example{margin-top:15px;border-radius:15px;padding:13px;background:#fff;font-size:16px;font-weight:700}.english-memory{background:#eff6ff;border-color:#bfdbfe}.english-memory .memory-icon{background:#dbeafe;color:#1d4ed8}.vietnamese-memory{background:#f5f3ff;border-color:#ddd6fe}.vietnamese-memory .memory-icon{background:#ede9fe;color:#6d28d9}
 @media(max-width:860px){.analysis-list,.point-grid,.memory-grid{grid-template-columns:1fr}.lesson-objective{align-items:flex-start}.comparison-table th,.comparison-table td{padding:15px 14px}.position-token{font-size:18px}}
 
+
+/* Teacher annotation layer: anchored to each slide, so strokes scroll with content. */
+.slide{position:relative;isolation:isolate}
+.slide-header,.slide-content{position:relative;z-index:1}
+.annotation-layer{
+  position:absolute;inset:0;width:100%;height:100%;z-index:6;overflow:visible;
+  pointer-events:none;touch-action:none;user-select:none;-webkit-user-select:none
+}
+.annotation-layer.drawing-enabled{pointer-events:auto;cursor:crosshair}
+.annotation-layer path{pointer-events:none}
+.slide.annotation-mode{outline:4px solid rgba(225,29,72,.18);outline-offset:3px}
+.pen-toggle-btn.active{background:linear-gradient(135deg,#e11d48,#be123c);box-shadow:0 13px 30px rgba(190,18,60,.28)}
+.pen-toolbar{
+  position:fixed;right:22px;top:72px;z-index:110;display:none;align-items:center;gap:8px;flex-wrap:wrap;
+  max-width:min(620px,calc(100vw - 28px));padding:10px 12px;border:2px solid #fecdd3;border-radius:20px;
+  background:rgba(255,255,255,.98);box-shadow:0 18px 45px rgba(15,23,42,.18)
+}
+.pen-toolbar.show{display:flex}
+.pen-tool-label{font-size:12px;font-weight:700;color:#64748b;margin-right:1px}
+.pen-color,.pen-size,.pen-action{
+  min-width:36px;height:36px;border:2px solid #e2e8f0;border-radius:12px;background:#fff;color:#334155;
+  display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0 10px;font-size:12px;font-weight:700
+}
+.pen-color{width:36px;padding:0;border-radius:50%;position:relative}
+.pen-color::after{content:'';width:18px;height:18px;border-radius:50%;background:var(--pen-color);box-shadow:inset 0 0 0 1px rgba(15,23,42,.12)}
+.pen-color.active,.pen-size.active{border-color:#7c3aed;box-shadow:0 0 0 3px #ede9fe}
+.pen-size span{display:block;width:25px;border-radius:999px;background:#0f172a;height:var(--pen-size)}
+.pen-action:hover,.pen-size:hover,.pen-color:hover{background:#f8fafc;border-color:#c4b5fd}
+.pen-action.danger{color:#be123c;border-color:#fecdd3;background:#fff1f2}
+.pen-sync-status{font-size:12px;font-weight:700;color:#64748b;min-width:88px;text-align:center}
+.pen-sync-status.saving{color:#b45309}.pen-sync-status.saved{color:#15803d}.pen-sync-status.error{color:#be123c}
+@media(max-width:860px){
+  .pen-toolbar{top:58px;right:10px;left:10px;max-width:none;justify-content:center;padding:9px}
+  .pen-tool-label{display:none}.pen-action{padding:0 8px}.pen-sync-status{width:100%;min-width:0}
+}
+
+
+/* ===== Live pen V4: ACTIVE / DEACTIVE + panel từ loại ===== */
+.pen-toggle-btn{position:relative;overflow:visible;transition:background .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+.pen-toggle-btn::after{content:"DEACTIVE";display:inline-flex;align-items:center;justify-content:center;min-height:18px;padding:2px 7px;border-radius:999px;background:#e2e8f0;color:#475569;font-size:9px;font-weight:700;letter-spacing:.04em}
+.pen-toggle-btn.active{background:#fff7d6!important;color:#7c2d12!important;border-color:#f59e0b!important;box-shadow:0 0 0 3px rgba(245,158,11,.18),0 13px 30px rgba(190,18,60,.18)!important}
+.pen-toggle-btn.active::after{content:"ACTIVE";background:#dcfce7;color:#166534;box-shadow:0 0 0 3px rgba(34,197,94,.14)}
+.pen-toggle-btn.active::before{content:"";position:absolute;inset:-5px;border-radius:999px;border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,conic-gradient(#ef4444,#f59e0b,#22c55e,#2563eb,#7c3aed,#ec4899,#ef4444) border-box;z-index:-1;animation:penActivePulse 1.6s ease-in-out infinite}
+@keyframes penActivePulse{0%,100%{opacity:.55;transform:scale(.99)}50%{opacity:1;transform:scale(1.025)}}
+.pen-panel-toggle{position:fixed;right:16px;top:72px;z-index:10005;display:none;align-items:center;gap:8px;min-height:40px;padding:8px 12px;border:2px solid #c4b5fd;border-radius:999px;background:#fff;color:#5b21b6;box-shadow:0 12px 32px rgba(76,29,149,.18);cursor:pointer;font-weight:700}
+.pen-panel-toggle.show{display:flex}.pen-panel-toggle .status-dot{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.5);animation:penStatusPulse 1.4s ease-out infinite}
+@keyframes penStatusPulse{70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.pen-toolbar{right:16px;left:auto;top:122px;width:230px;max-width:calc(100vw - 32px);display:none;flex-direction:column;align-items:stretch;gap:9px;padding:13px;border-radius:20px}
+.pen-toolbar.show{display:flex}.pen-title{display:flex;align-items:center;justify-content:space-between;gap:8px}.pen-title b{color:#2e1065}.pen-title-close{width:30px;height:30px;padding:0;border:0;border-radius:9px;background:#f1f5f9;color:#475569;cursor:pointer}
+.pen-tool-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.pen-tool-row .pen-tool-label{width:100%;margin:0}.pen-color{width:31px;height:31px;min-height:31px}.pen-size{flex:1;min-width:58px;height:34px}.pen-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.pen-actions .pen-action{height:auto;min-height:36px;padding:7px 8px;font-size:12px}
+.pos-section{padding-top:9px;border-top:1px solid #e2e8f0}.pos-toggle{width:100%;min-height:38px;display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border:1px solid #cbd5e1;border-radius:10px;background:#f8fafc;color:#334155;cursor:pointer;font-weight:700}.pos-toggle[aria-expanded="true"]{background:#eef2ff;color:#3730a3;border-color:#c7d2fe}.pos-list{display:none;flex-direction:column;gap:7px;margin-top:8px}.pos-list.show{display:flex}.pos-source{width:100%;border:0;border-radius:9px;color:#fff;padding:9px 11px;text-align:left;cursor:grab;touch-action:none;font-weight:700}.pos-source:active{cursor:grabbing}.pos-source.det,.pos-tag.det,.pos-drag-ghost.det{background:#7c3aed}.pos-source.adv,.pos-tag.adv,.pos-drag-ghost.adv{background:#ea580c}.pos-source.adj,.pos-tag.adj,.pos-drag-ghost.adj{background:#16a34a}.pos-source.np,.pos-tag.np,.pos-drag-ghost.np{background:#2563eb}.pos-source.nc,.pos-tag.nc,.pos-drag-ghost.nc{background:#dc2626}.pos-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.pos-actions .pen-action{height:auto;min-height:34px;padding:6px 7px;font-size:12px}
+.pos-layer{position:absolute;inset:0;z-index:32;pointer-events:none;overflow:visible}.pos-tag{position:absolute;transform:translate(-50%,-50%);min-width:48px;padding:8px 11px;border:0;border-radius:9px;color:#fff;font-size:14px;font-weight:700;line-height:1;text-align:center;user-select:none;touch-action:none;pointer-events:none;box-shadow:0 3px 9px rgba(15,23,42,.18)}.pos-layer.editable .pos-tag{pointer-events:auto;cursor:grab}.pos-tag:active{cursor:grabbing}.pos-tag.drag-source{opacity:.25}.pos-drag-ghost{position:fixed;z-index:10020;transform:translate(-50%,-50%);min-width:48px;padding:8px 11px;border-radius:9px;color:#fff;font-size:14px;font-weight:700;line-height:1;text-align:center;pointer-events:none;box-shadow:0 8px 22px rgba(15,23,42,.25);opacity:.94}body.dragging-pos-tag{cursor:grabbing!important;user-select:none}
+.pen-hint{color:#64748b;font-size:12px;line-height:1.4}.slide.annotation-mode .slide-content{pointer-events:none}.slide.annotation-mode .pos-layer{pointer-events:none}.slide.annotation-mode .pos-layer.editable{pointer-events:none}
+@media(max-width:700px){.pen-panel-toggle{top:62px;right:8px}.pen-toolbar{left:8px;right:8px;top:auto;bottom:78px;width:auto;max-height:70vh;overflow:auto}.pen-toggle-btn::after{display:none}}
+@media(prefers-reduced-motion:reduce){.pen-toggle-btn.active::before,.pen-panel-toggle .status-dot{animation:none}}
 </style>
 </head>
 <body>
 <div class="top-progress-track"><div class="top-progress" id="topProgress"></div></div>
 <div class="live-status" id="liveStatus"><span class="live-dot"></span><span id="liveStatusText">Đang kết nối lớp…</span></div>
 <nav class="lesson-top-nav" aria-label="Điều hướng bài học">
+  <button class="teacher-btn pen-toggle-btn" id="penToggleBtn" type="button" title="Bật hoặc tắt cây viết"><span>✍️</span><span class="top-text">Cây viết</span></button>
   <button class="teacher-btn" id="teacherMonitorBtn" type="button" title="Theo dõi lớp trực tiếp"><span>📡</span><span class="top-text">Theo dõi lớp</span><span class="teacher-count" id="teacherLiveCount">0</span></button>
   <button class="top-btn" id="slidePickerBtn" type="button" title="Danh sách slide"><span>●</span><span id="slideIndexText">0 / 0</span></button>
   <a class="home-btn" href="../index.html#lessons" title="Về trang chủ"><span>🏠</span><span class="top-text">Trang chủ</span></a>
 </nav>
+
+<button class="pen-panel-toggle" id="penPanelToggle" type="button" aria-controls="penToolbar" aria-expanded="true"><span class="status-dot"></span><span id="penPanelToggleText">Ẩn công cụ</span></button>
+<div class="pen-toolbar" id="penToolbar" aria-label="Công cụ viết và nhãn từ loại">
+  <div class="pen-title"><b>✍️ Công cụ LIVE</b><button class="pen-title-close" id="penCloseBtn" type="button" title="Ẩn panel">×</button></div>
+  <div class="pen-tool-row" aria-label="Màu bút">
+    <span class="pen-tool-label">Màu bút</span>
+    <button class="pen-color active" type="button" data-pen-color="#e11d48" style="--pen-color:#e11d48" title="Đỏ"></button>
+    <button class="pen-color" type="button" data-pen-color="#2563eb" style="--pen-color:#2563eb" title="Xanh dương"></button>
+    <button class="pen-color" type="button" data-pen-color="#111827" style="--pen-color:#111827" title="Đen"></button>
+    <button class="pen-color" type="button" data-pen-color="#16a34a" style="--pen-color:#16a34a" title="Xanh lá"></button>
+  </div>
+  <div class="pen-tool-row" aria-label="Độ dày nét">
+    <span class="pen-tool-label">Độ dày</span>
+    <button class="pen-size active" type="button" data-pen-width="4" title="Nét mảnh"><span style="--pen-size:3px"></span></button>
+    <button class="pen-size" type="button" data-pen-width="7" title="Nét vừa"><span style="--pen-size:6px"></span></button>
+    <button class="pen-size" type="button" data-pen-width="12" title="Nét đậm"><span style="--pen-size:9px"></span></button>
+  </div>
+  <div class="pos-section">
+    <button class="pos-toggle" id="posToggle" type="button" aria-expanded="false"><span>Panel chọn loại từ</span><span id="posToggleIcon">▾</span></button>
+    <div class="pos-list" id="posList" aria-label="Nhãn từ loại">
+      <button class="pos-source det" data-pos-type="det" data-pos-label="Det" type="button">Det · Từ hạn định</button>
+      <button class="pos-source adv" data-pos-type="adv" data-pos-label="Adv" type="button">Adv · Trạng từ</button>
+      <button class="pos-source adj" data-pos-type="adj" data-pos-label="Adj" type="button">Adj · Tính từ</button>
+      <button class="pos-source np" data-pos-type="np" data-pos-label="NP" type="button">NP · Cụm danh từ</button>
+      <button class="pos-source nc" data-pos-type="nc" data-pos-label="Nc" type="button">Nc · Danh từ phân loại</button>
+      <div class="pos-actions"><button class="pen-action" id="undoPosBtn" type="button">↶ Nhãn cuối</button><button class="pen-action danger" id="clearPosBtn" type="button">Xóa nhãn</button></div>
+    </div>
+  </div>
+  <div class="pen-actions"><button class="pen-action" id="penUndoBtn" type="button">↶ Hoàn tác nét</button><button class="pen-action danger" id="penClearBtn" type="button">🗑 Xóa nét</button></div>
+  <div class="pen-hint">Vẽ trực tiếp hoặc mở “Panel chọn loại từ”, nhấn giữ nhãn rồi kéo vào slide. Nét và nhãn đều được đồng bộ LIVE.</div>
+  <span class="pen-sync-status" id="penSyncStatus">Sẵn sàng</span>
+</div>
 <main class="lesson-page">
   <div class="lesson-shell">
     <div class="slide-stage" id="slideStage">
@@ -264,6 +352,6 @@ code{padding:2px 6px;border-radius:7px;background:#e2e8f0;color:#334155;font-fam
 <div class="waiting-overlay" id="waitingOverlay">
   <div class="waiting-card"><div class="waiting-icon">⌛</div><h2>Đang chờ giáo viên mở lớp</h2><p>Giáo viên cần đăng nhập bằng tài khoản <b>sunprice@sp.ik</b> và mở một slide. Khi lớp hoạt động, trang sẽ tự động chuyển đến slide giáo viên đang dạy.</p><a class="waiting-home" href="../index.html#lessons">🏠 Về trang chủ</a></div>
 </div>
-<script src="../js/live-lesson.js?v=20260725-4"></script>
+<script src="../js/live-lesson.js?v=20260725-5"></script>
 </body>
 </html>
