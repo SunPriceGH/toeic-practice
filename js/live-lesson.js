@@ -5,6 +5,8 @@
   var TEACHER_EMAIL = 'sunprice@sp.ik';
   var DATA_URL = '../data/live-lesson.json';
   var LIVE_API = '/api/live-lesson';
+  var LOCK_API = '/api/lesson-locks';
+  var LOCK_LESSON_ID = 'live-lesson';
   var POLL_MS = 2500;
   var TEACHER_HEARTBEAT_MS = 15000;
   var STUDENT_HEARTBEAT_MS = 10000;
@@ -72,6 +74,43 @@
 
   function isTeacher(){
     return !!(student && student.email === TEACHER_EMAIL);
+  }
+
+  function showLessonLocked(message){
+    var text = message || 'Bài học này đang được khóa cho học viên.';
+    if(els.waitingOverlay){
+      els.waitingOverlay.innerHTML = '<div class="waiting-card"><div class="waiting-icon">🔒</div><h2>Bài học đang khóa</h2><p>' + escapeHtml(text) + '</p><a class="waiting-home" href="../index.html#lessons">🏠 Về trang chủ</a></div>';
+      els.waitingOverlay.classList.add('show');
+    }
+    var controlBar = document.querySelector('.control-bar');
+    if(controlBar) controlBar.style.display = 'none';
+    if(els.slidePickerBtn) els.slidePickerBtn.style.display = 'none';
+    if(els.penToggleBtn) els.penToggleBtn.classList.remove('show');
+    if(els.teacherMonitorBtn) els.teacherMonitorBtn.classList.remove('show');
+    if(els.slideStage){
+      els.slideStage.setAttribute('aria-hidden','true');
+      els.slideStage.style.pointerEvents = 'none';
+    }
+    if(els.liveStatus) setLiveStatus('error','Đang khóa học viên');
+  }
+
+  async function verifyLessonAccess(){
+    if(isTeacher()) return true;
+    try{
+      var response = await fetch(LOCK_API,{cache:'no-store'});
+      var data = await response.json().catch(function(){return {};});
+      if(!response.ok || !data.ok) throw new Error(data.error || 'Không tải được trạng thái khóa bài.');
+      var lockedIds = Array.isArray(data.lockedLessonIds) ? data.lockedLessonIds.map(String) : [];
+      if(lockedIds.indexOf(LOCK_LESSON_ID) >= 0){
+        showLessonLocked('Giáo viên chưa mở quyền truy cập Live Lesson.');
+        return false;
+      }
+      return true;
+    }catch(err){
+      console.error(err);
+      showLessonLocked('Không xác minh được trạng thái mở khóa. Hệ thống tạm chặn để bảo vệ nội dung bài học.');
+      return false;
+    }
   }
 
   function authHeaders(){
@@ -998,6 +1037,7 @@
     try{
       if(!requireStudentSession()) return;
       cacheElements();
+      if(!(await verifyLessonAccess())) return;
       setupEvents();
       await loadLessonData();
       restoreLocalState();
