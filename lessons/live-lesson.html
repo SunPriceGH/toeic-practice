@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cụm danh từ LIVE · Việt sang Anh</title>
+<title>Khám phá cụm danh từ · Live Lesson</title>
 <style>
 :root{
   --blue:#2563eb;
@@ -205,6 +205,21 @@ code{padding:2px 6px;border-radius:7px;background:#e2e8f0;color:#334155;font-fam
   .slide-title{font-size:31px}.slide-header{gap:10px}.slide-no{min-width:52px;width:52px;height:52px}.content-placeholder,.media-placeholder{align-items:flex-start;flex-direction:column}
   .placeholder-no,.media-icon{width:70px;height:70px;flex-basis:70px}.control-bar{gap:7px}.nav-btn{padding:10px 13px;font-size:13px}.go-btn{width:52px;height:52px}
 }
+
+.lesson-objective{display:flex;align-items:center;gap:18px;border:2px solid #bbf7d0;border-radius:22px;padding:20px 24px;background:#f0fdf4;color:#334155}
+.lesson-objective .objective-icon{flex:0 0 58px;width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:#dcfce7;font-size:28px}
+.lesson-objective b{display:block;font-size:20px;color:#166534;margin-bottom:5px}.lesson-objective p{font-size:18px;line-height:1.5;color:#475569}
+.comparison-table-wrap{overflow:auto;border:2px solid #dbeafe;border-radius:24px;background:#fff;box-shadow:0 13px 28px rgba(15,23,42,.07)}
+.comparison-table{width:100%;border-collapse:collapse;min-width:620px}.comparison-table th,.comparison-table td{padding:18px 20px;border-right:1px solid #dbeafe;border-bottom:1px solid #dbeafe;text-align:center;vertical-align:middle}
+.comparison-table th:last-child,.comparison-table td:last-child{border-right:0}.comparison-table tbody tr:last-child td{border-bottom:0}.comparison-table th{background:linear-gradient(135deg,#eff6ff,#f5f3ff);color:#312e81;font-size:16px}.comparison-table td{font-size:18px;line-height:1.5;color:#334155}
+.comparison-table.order-table td:first-child{width:80px;font-weight:700;color:#5b21b6}.comparison-table.summary-table td{text-align:left}.comparison-table.summary-table td:first-child{font-weight:700;color:#1e3a8a}
+.analysis-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}.analysis-item{border:2px solid #e2e8f0;border-radius:21px;padding:21px 23px;background:#fff}.analysis-item b{font-size:19px}.analysis-item p{font-size:18px;line-height:1.55;color:#475569;margin-top:8px}.analysis-item.english{border-color:#bfdbfe;background:#eff6ff}.analysis-item.english>b{color:#1d4ed8}.analysis-item.vietnamese{border-color:#ddd6fe;background:#f5f3ff}.analysis-item.vietnamese>b{color:#6d28d9}
+.point-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.point-card{border:2px solid #e2e8f0;border-radius:20px;padding:19px 21px;background:#fff}.point-card b{display:block;font-size:18px;margin-bottom:7px}.point-card p{font-size:17px;line-height:1.5;color:#475569}.point-card.same{border-color:#bbf7d0;background:#f0fdf4}.point-card.same b{color:#166534}.point-card.different{border-color:#fecdd3;background:#fff1f2}.point-card.different b{color:#9f1239}
+.position-chain{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;border:2px solid #e2e8f0;border-radius:22px;padding:20px;background:#fff}.position-token{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 16px;border-radius:15px;font-size:20px;font-weight:700}.noun-token{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe}.adjective-token{background:#f5f3ff;color:#6d28d9;border:2px solid #ddd6fe}.modifier-token{background:#ecfeff;color:#0e7490;border:2px solid #a5f3fc}.chain-arrow{font-size:28px;color:#7c3aed;font-weight:700}.chain-equal{font-size:28px;color:#64748b;font-weight:700}.chain-versus{display:inline-flex;padding:7px 10px;border-radius:999px;background:#fff1f2;color:#be123c;font-size:12px;font-weight:700}
+.word-chip.noun-modifier{background:#ecfeff;border-color:#a5f3fc;color:#0e7490}
+.memory-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.memory-card{border:2px solid #e2e8f0;border-radius:25px;padding:25px;background:#fff;text-align:center}.memory-card .memory-icon{width:62px;height:62px;border-radius:20px;margin:0 auto 13px;display:grid;place-items:center;font-size:19px;font-weight:700}.memory-card h3{font-size:24px;margin-bottom:9px}.memory-card p{font-size:18px;line-height:1.55;color:#475569}.memory-example{margin-top:15px;border-radius:15px;padding:13px;background:#fff;font-size:16px;font-weight:700}.english-memory{background:#eff6ff;border-color:#bfdbfe}.english-memory .memory-icon{background:#dbeafe;color:#1d4ed8}.vietnamese-memory{background:#f5f3ff;border-color:#ddd6fe}.vietnamese-memory .memory-icon{background:#ede9fe;color:#6d28d9}
+@media(max-width:860px){.analysis-list,.point-grid,.memory-grid{grid-template-columns:1fr}.lesson-objective{align-items:flex-start}.comparison-table th,.comparison-table td{padding:15px 14px}.position-token{font-size:18px}}
+
 </style>
 </head>
 <body>
@@ -249,6 +264,6 @@ code{padding:2px 6px;border-radius:7px;background:#e2e8f0;color:#334155;font-fam
 <div class="waiting-overlay" id="waitingOverlay">
   <div class="waiting-card"><div class="waiting-icon">⌛</div><h2>Đang chờ giáo viên mở lớp</h2><p>Giáo viên cần đăng nhập bằng tài khoản <b>sunprice@sp.ik</b> và mở một slide. Khi lớp hoạt động, trang sẽ tự động chuyển đến slide giáo viên đang dạy.</p><a class="waiting-home" href="../index.html#lessons">🏠 Về trang chủ</a></div>
 </div>
-<script src="../js/live-lesson.js?v=20260725-3"></script>
+<script src="../js/live-lesson.js?v=20260725-4"></script>
 </body>
 </html>
