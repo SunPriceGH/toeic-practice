@@ -1,170 +1,361 @@
 {
   "schemaVersion": 1,
-  "lessonId": "noun-phrase-vietnamese-to-english-live",
-  "title": "Cụm danh từ: từ tiếng Việt sang tiếng Anh",
-  "subtitle": "Bài học LIVE siêu vỡ lòng · Xây từng mảnh rồi luyện tập trực tiếp",
+  "lessonId": "noun-phrase-discovery-v2",
+  "title": "Khám phá cụm danh từ",
+  "subtitle": "So sánh vị trí từ trong tiếng Anh và tiếng Việt",
   "slides": [
     {
       "id": "opening",
       "label": "Mở đầu",
-      "title": "Xây cụm danh từ từ tiếng Việt",
-      "contentHtml": "<div class=\"hero-placeholder reveal\"><span class=\"hero-icon\">NP</span><h3>Học từ điều quen thuộc trước</h3><p>Ta chưa cần nhớ thuật ngữ khó. Chỉ cần bắt đầu bằng một từ tiếng Việt, thêm từng mảnh nhỏ, rồi quan sát tiếng Anh đổi thứ tự như thế nào.</p></div><div class=\"feature-grid reveal\"><div class=\"feature-card\"><b>Bước 1</b><span>Tìm từ chính: người hoặc vật đang được nói tới.</span></div><div class=\"feature-card\"><b>Bước 2</b><span>Thêm từ mô tả: đẹp, cao, mới, lớn...</span></div><div class=\"feature-card\"><b>Bước 3</b><span>Đưa các mảnh sang đúng vị trí trong tiếng Anh.</span></div></div>"
+      "title": "BÀI HỌC: KHÁM PHÁ CỤM DANH TỪ",
+      "contentHtml": "<div class=\"hero-placeholder reveal\">\n  <span class=\"hero-icon\">NP</span>\n  <h3>So sánh vị trí từ trong tiếng Anh và tiếng Việt</h3>\n  <p>Ta bắt đầu từ một danh từ duy nhất, sau đó thêm từng thành phần để nhìn rõ trật tự của cả cụm.</p>\n</div>\n<div class=\"lesson-objective reveal\">\n  <div class=\"objective-icon\">🎯</div>\n  <div><b>Mục tiêu</b><p>Học viên hiểu thứ tự sắp xếp các từ trong cụm danh từ tiếng Anh, nhận ra điểm giống và khác với tiếng Việt, rồi tự tạo được cụm đúng.</p></div>\n</div>\n<div class=\"feature-grid reveal\">\n  <div class=\"feature-card\"><b>Quan sát</b><span>Nhìn từng từ được thêm vào cụm.</span></div>\n  <div class=\"feature-card\"><b>So sánh</b><span>Đặt tiếng Anh và tiếng Việt cạnh nhau.</span></div>\n  <div class=\"feature-card\"><b>Áp dụng</b><span>Làm bài và gửi kết quả trực tiếp cho giáo viên.</span></div>\n</div>"
     },
     {
-      "id": "noun-boy",
-      "label": "Bước 01",
-      "title": "Bắt đầu bằng từ chính",
-      "contentHtml": "<div class=\"lesson-lead reveal\">Trong cụm danh từ, trước tiên hãy tìm <b>người hoặc vật chính</b>.</div><div class=\"phrase-ladder\"><div class=\"phrase-step reveal\"><div class=\"phrase-vn\"><span class=\"lang-tag\">VI</span><span class=\"word-chip noun\">trai</span></div><div class=\"phrase-arrow\">→</div><div class=\"phrase-en\"><span class=\"lang-tag\">EN</span><span class=\"word-chip noun\">boy</span></div></div></div><div class=\"note-box reveal\"><b>Từ chính:</b> <b>trai</b> trong ví dụ rất đơn giản này được liên hệ với <b>boy</b>. Trong ngữ cảnh tự nhiên, “chàng trai” cũng có thể là <b>young man</b>.</div>"
+      "id": "noun-only",
+      "label": "Phần 01",
+      "title": "KHỞI ĐỘNG: CHỈ CÓ DANH TỪ",
+      "contentHtml": "<div class=\"comparison-table-wrap reveal\"><table class=\"comparison-table\">\n<thead><tr><th>Tiếng Anh</th><th>Tiếng Việt</th></tr></thead>\n<tbody><tr><td><span class=\"word-chip noun\">boy</span></td><td><span class=\"word-chip noun\">chàng trai</span></td></tr></tbody>\n</table></div>\n<div class=\"intro-box reveal\"><p>👉 Đây là <b>danh từ chính</b>, tức “nhân vật chính” của cụm từ. Cả hai ngôn ngữ hiện chỉ có một từ chính, chưa có thành phần bổ nghĩa.</p></div>\n<div class=\"position-chain reveal\"><span class=\"position-token noun-token\">boy</span><span class=\"chain-equal\">=</span><span class=\"position-token noun-token\">chàng trai</span></div>"
+    },
+    {
+      "id": "exercise-noun",
+      "label": "Bài tập 01",
+      "title": "NHẬN DIỆN DANH TỪ CHÍNH",
+      "contentHtml": "<div class=\"blank-pair stacked reveal\">\n  <div><span class=\"lang-tag\">VI</span><span class=\"blank-slot long\">cụm tiếng Việt</span></div>\n  <div class=\"phrase-arrow\">↕</div>\n  <div><span class=\"lang-tag\">EN</span><span class=\"blank-slot long\">cụm tiếng Anh</span></div>\n</div>\n<div class=\"note-box reveal\">Nhập theo thứ tự: <b>cụm tiếng Việt | cụm tiếng Anh</b>.</div>",
+      "exercise": {
+        "id": "noun-basics-01",
+        "type": "text",
+        "question": "Viết cặp cụm tương ứng cho “boy”.",
+        "placeholder": "chàng trai | boy",
+        "maxLength": 220,
+        "acceptedAnswers": [
+          "chàng trai | boy",
+          "chàng trai|boy"
+        ],
+        "explanation": "Đáp án: chàng trai | boy. Cả hai bên mới chỉ có danh từ chính."
+      }
     },
     {
       "id": "add-adjective",
-      "label": "Bước 02",
-      "title": "Thêm từ mô tả “đẹp”",
-      "contentHtml": "<div class=\"two-column\"><div class=\"example-panel reveal\"><span>TIẾNG VIỆT</span><h3>trai + đẹp</h3><p>Trong tiếng Việt, từ mô tả thường đứng <b>sau</b> danh từ.</p></div><div class=\"analysis-panel reveal\"><span>TIẾNG ANH</span><h3>handsome + boy</h3><p>Trong tiếng Anh, tính từ thường đứng <b>trước</b> danh từ.</p></div></div><div class=\"phrase-ladder\"><div class=\"phrase-step reveal\"><div class=\"phrase-vn\"><span class=\"lang-tag\">VI</span><span class=\"word-chip noun\">trai</span><span class=\"word-chip adjective\">đẹp</span></div><div class=\"phrase-arrow\">→</div><div class=\"phrase-en\"><span class=\"lang-tag\">EN</span><span class=\"word-chip adjective\">handsome</span><span class=\"word-chip noun\">boy</span></div></div></div><div class=\"rule-strip reveal\"><b>Việt:</b> DANH TỪ + TỪ MÔ TẢ <span>↔</span> <b>Anh:</b> TÍNH TỪ + DANH TỪ</div>"
+      "label": "Phần 02",
+      "title": "THÊM TÍNH TỪ MIÊU TẢ",
+      "contentHtml": "<div class=\"comparison-table-wrap reveal\"><table class=\"comparison-table\">\n<thead><tr><th>Tiếng Anh</th><th>Tiếng Việt</th></tr></thead>\n<tbody><tr><td><span class=\"word-chip adjective\">handsome</span> <span class=\"word-chip noun\">boy</span></td><td><span class=\"word-chip noun\">chàng trai</span> <span class=\"word-chip adjective\">đẹp</span></td></tr></tbody>\n</table></div>\n<div class=\"position-chain reveal\">\n  <span class=\"position-token adjective-token\">handsome</span><span class=\"chain-arrow\">→</span><span class=\"position-token noun-token\">boy</span>\n  <span class=\"chain-versus\">NHƯNG</span>\n  <span class=\"position-token noun-token\">chàng trai</span><span class=\"chain-arrow\">→</span><span class=\"position-token adjective-token\">đẹp</span>\n</div>"
     },
     {
-      "id": "add-article",
-      "label": "Bước 03",
-      "title": "Thêm ý “một”",
-      "contentHtml": "<div class=\"lesson-lead reveal\">Khi nói đến <b>một người hoặc một vật chưa xác định</b>, tiếng Anh thường cần <b>a</b> hoặc <b>an</b>.</div><div class=\"phrase-ladder\"><div class=\"phrase-step reveal\"><div class=\"phrase-vn\"><span class=\"lang-tag\">VI</span><span class=\"word-chip determiner\">một</span><span class=\"word-chip noun\">chàng trai</span><span class=\"word-chip adjective\">đẹp</span></div><div class=\"phrase-arrow\">→</div><div class=\"phrase-en\"><span class=\"lang-tag\">EN</span><span class=\"word-chip determiner\">a</span><span class=\"word-chip adjective\">handsome</span><span class=\"word-chip noun\">boy</span></div></div></div><div class=\"note-box reveal\"><b>Tiếng Việt tự nhiên:</b> nên nói <b>một chàng trai</b>, không nói <b>một trai</b>.<br><b>Trật tự tiếng Anh:</b> <b>a</b> đứng đầu, tiếp theo là <b>handsome</b>, cuối cùng mới đến danh từ chính <b>boy</b>.</div>"
-    },
-    {
-      "id": "add-very",
-      "label": "Bước 04",
-      "title": "Thêm mức độ “rất”",
-      "contentHtml": "<div class=\"lesson-lead reveal\"><b>Rất</b> không mô tả trực tiếp chàng trai. Nó làm cho từ <b>đẹp</b> mạnh hơn. Tiếng Anh dùng <b>very</b> ngay trước tính từ.</div><div class=\"phrase-ladder\"><div class=\"phrase-step reveal\"><div class=\"phrase-vn\"><span class=\"lang-tag\">VI</span><span class=\"word-chip determiner\">một</span><span class=\"word-chip noun\">chàng trai</span><span class=\"word-chip degree\">rất</span><span class=\"word-chip adjective\">đẹp trai</span></div><div class=\"phrase-arrow\">→</div><div class=\"phrase-en\"><span class=\"lang-tag\">EN</span><span class=\"word-chip determiner\">a</span><span class=\"word-chip degree\">very</span><span class=\"word-chip adjective\">handsome</span><span class=\"word-chip noun\">boy</span></div></div></div><div class=\"rule-strip reveal\"><b>a</b> + <b>very</b> + <b>handsome</b> + <b>boy</b></div>"
-    },
-    {
-      "id": "student-head-noun",
-      "label": "Bước 05",
-      "title": "Khi từ chính đổi thành “sinh viên”",
-      "contentHtml": "<div class=\"two-column\"><div class=\"example-panel reveal\"><span>Ý MUỐN NÓI</span><h3>một sinh viên nam rất đẹp trai</h3><p>Người chính bây giờ là <b>sinh viên</b>, không còn cần dùng <b>boy</b> làm danh từ chính.</p></div><div class=\"analysis-panel reveal\"><span>TIẾNG ANH TỰ NHIÊN</span><h3>a very handsome male student</h3><p><b>student</b> là danh từ chính. <b>male</b> và <b>handsome</b> đứng trước để bổ nghĩa.</p></div></div><div class=\"warning-box reveal\"><b>Không nên dùng:</b> <s>a very handsome student boy</s><br><b>Nên dùng:</b> <b>a very handsome student</b> hoặc <b>a very handsome male student</b>.</div>"
-    },
-    {
-      "id": "compare-order",
-      "label": "So sánh",
-      "title": "Nhìn toàn bộ thứ tự",
-      "contentHtml": "<div class=\"phrase-ladder\"><div class=\"phrase-step reveal\"><div class=\"phrase-vn phrase-wide\"><span class=\"lang-tag\">VI</span><span class=\"word-chip determiner\">một</span><span class=\"word-chip noun\">chàng trai</span><span class=\"word-chip degree\">rất</span><span class=\"word-chip adjective\">đẹp trai</span></div></div><div class=\"phrase-step reveal\"><div class=\"phrase-en phrase-wide\"><span class=\"lang-tag\">EN</span><span class=\"word-chip determiner\">a</span><span class=\"word-chip degree\">very</span><span class=\"word-chip adjective\">handsome</span><span class=\"word-chip noun\">boy</span></div></div></div><div class=\"feature-grid reveal\"><div class=\"feature-card\"><b>a</b><span>Cho biết đây là một người chưa xác định.</span></div><div class=\"feature-card\"><b>very handsome</b><span>Cụm mô tả mức độ và đặc điểm.</span></div><div class=\"feature-card\"><b>boy</b><span>Danh từ chính, người đang được nói tới.</span></div></div>"
-    },
-    {
-      "id": "simple-formula",
-      "label": "Công thức",
-      "title": "Công thức siêu vỡ lòng",
-      "contentHtml": "<div class=\"formula-card reveal\"><span class=\"formula-label\">TIẾNG ANH</span><div class=\"formula-line\"><span class=\"word-chip determiner\">a / an</span><span>+</span><span class=\"word-chip degree\">very</span><span>+</span><span class=\"word-chip adjective\">tính từ</span><span>+</span><span class=\"word-chip noun\">danh từ</span></div></div><div class=\"note-box reveal\"><b>Không phải lúc nào cũng cần đủ bốn phần.</b> Ta có thể nói <b>a boy</b>, <b>a handsome boy</b>, hoặc <b>a very handsome boy</b> tùy lượng thông tin muốn thêm.</div><div class=\"summary-box reveal\"><h3>Ba câu hỏi để tự kiểm tra</h3><ul><li>Người hoặc vật chính là từ nào?</li><li>Từ nào đang mô tả danh từ đó?</li><li>Từ chỉ mức độ như “rất” có đứng ngay trước tính từ không?</li></ul></div>"
+      "id": "adjective-analysis",
+      "label": "Phân tích",
+      "title": "VỊ TRÍ TÍNH TỪ: ANH TRƯỚC – VIỆT SAU",
+      "contentHtml": "<div class=\"analysis-list reveal\">\n  <div class=\"analysis-item english\"><b>Tiếng Anh</b><p>Tính từ đứng <b>TRƯỚC</b> danh từ: <b>handsome → boy</b>.</p></div>\n  <div class=\"analysis-item vietnamese\"><b>Tiếng Việt</b><p>Tính từ đứng <b>SAU</b> danh từ: <b>chàng trai → đẹp</b>.</p></div>\n</div>\n<div class=\"point-grid reveal\">\n  <div class=\"point-card same\"><b>✅ Điểm chung</b><p>Đều dùng một tính từ để miêu tả danh từ.</p></div>\n  <div class=\"point-card different\"><b>❌ Điểm khác</b><p>Vị trí của tính từ và danh từ đảo ngược hoàn toàn.</p></div>\n</div>\n<div class=\"rule-strip reveal\"><span>EN: ADJ + NOUN</span><span>VI: DANH TỪ + TÍNH TỪ</span></div>"
     },
     {
       "id": "exercise-adjective",
-      "label": "Bài tập 01",
-      "title": "Điền từ mô tả",
-      "contentHtml": "<div class=\"blank-pair reveal\"><div><span class=\"lang-tag\">VI</span><b>trai</b> <span class=\"blank-slot\">_____</span></div><div class=\"phrase-arrow\">→</div><div><span class=\"lang-tag\">EN</span><span class=\"blank-slot\">_____</span> <b>boy</b></div></div><div class=\"note-box reveal\">Nhập hai phần theo mẫu: <b>từ tiếng Việt | từ tiếng Anh</b>.</div>",
+      "label": "Bài tập 02",
+      "title": "THÊM TỪ MIÊU TẢ",
+      "contentHtml": "<div class=\"blank-pair stacked reveal\">\n  <div><span class=\"lang-tag\">VI</span>một <span class=\"blank-slot\">cụm Việt</span></div>\n  <div><span class=\"lang-tag\">EN</span>a <span class=\"blank-slot\">English phrase</span></div>\n</div>\n<div class=\"note-box reveal\">Gợi ý: <b>beautiful</b> phải chạy lên trước <b>girl</b>, còn <b>đẹp</b> chạy theo sau <b>cô gái</b>.</div>",
       "exercise": {
-        "id": "noun-phrase-fill-01",
+        "id": "adjective-order-01",
         "type": "text",
-        "question": "Điền hai chỗ trống: trai _____ → _____ boy",
-        "placeholder": "Ví dụ cách nhập: đẹp | handsome",
-        "maxLength": 80,
+        "question": "Viết đầy đủ hai cụm cho “một cô gái đẹp”.",
+        "placeholder": "một cô gái đẹp | a beautiful girl",
+        "maxLength": 220,
         "acceptedAnswers": [
-          "đẹp | handsome",
-          "đẹp|handsome"
+          "một cô gái đẹp | a beautiful girl",
+          "một cô gái đẹp|a beautiful girl"
         ],
-        "explanation": "Đáp án: đẹp | handsome. Tiếng Việt đặt từ mô tả sau danh từ; tiếng Anh đặt handsome trước boy."
+        "explanation": "Đáp án: một cô gái đẹp | a beautiful girl. Tiếng Anh đặt beautiful trước girl."
       }
+    },
+    {
+      "id": "add-article",
+      "label": "Phần 03",
+      "title": "THÊM MẠO TỪ / SỐ TỪ: A → MỘT",
+      "contentHtml": "<div class=\"comparison-table-wrap reveal\"><table class=\"comparison-table\">\n<thead><tr><th>Tiếng Anh</th><th>Tiếng Việt</th></tr></thead>\n<tbody><tr><td><span class=\"word-chip determiner\">a</span> <span class=\"word-chip adjective\">handsome</span> <span class=\"word-chip noun\">boy</span></td><td><span class=\"word-chip determiner\">một</span> <span class=\"word-chip noun\">chàng trai</span> <span class=\"word-chip adjective\">đẹp</span></td></tr></tbody>\n</table></div>\n<div class=\"analysis-list reveal\">\n  <div class=\"analysis-item english\"><b>Tiếng Anh</b><p>Mạo từ <b>a</b> đứng đầu cụm: <b>a → handsome → boy</b>.</p></div>\n  <div class=\"analysis-item vietnamese\"><b>Tiếng Việt</b><p>Số từ <b>một</b> cũng đứng đầu cụm: <b>một → chàng trai → đẹp</b>.</p></div>\n</div>\n<div class=\"point-grid reveal\">\n  <div class=\"point-card same\"><b>✅ Điểm chung</b><p><b>a / một</b> đều đứng đầu cụm.</p></div>\n  <div class=\"point-card same\"><b>✅ Về vị trí</b><p>Yếu tố này không bị đảo như tính từ.</p></div>\n</div>"
     },
     {
       "id": "exercise-article",
-      "label": "Bài tập 02",
-      "title": "Điền từ chỉ “một”",
-      "contentHtml": "<div class=\"blank-pair reveal\"><div><span class=\"lang-tag\">VI</span><span class=\"blank-slot\">_____</span> <b>chàng trai đẹp</b></div><div class=\"phrase-arrow\">→</div><div><span class=\"lang-tag\">EN</span><span class=\"blank-slot\">_____</span> <b>handsome boy</b></div></div><div class=\"note-box reveal\">Nhập hai phần theo mẫu: <b>từ tiếng Việt | từ tiếng Anh</b>.</div>",
+      "label": "Bài tập 03",
+      "title": "ĐẶT “A / MỘT” VÀO ĐÚNG CHỖ",
+      "contentHtml": "<div class=\"blank-pair stacked reveal\">\n  <div><span class=\"lang-tag\">VI</span><span class=\"blank-slot\">_____</span> ngôi nhà lớn</div>\n  <div><span class=\"lang-tag\">EN</span><span class=\"blank-slot\">_____</span> big house</div>\n</div>",
       "exercise": {
-        "id": "noun-phrase-fill-02",
+        "id": "article-order-01",
         "type": "text",
-        "question": "Điền hai chỗ trống: _____ chàng trai đẹp → _____ handsome boy",
-        "placeholder": "Nhập: từ Việt | từ Anh",
-        "maxLength": 80,
+        "question": "Điền trọn hai cụm tương ứng.",
+        "placeholder": "một ngôi nhà lớn | a big house",
+        "maxLength": 220,
         "acceptedAnswers": [
-          "một | a",
-          "một|a"
+          "một ngôi nhà lớn | a big house",
+          "một ngôi nhà lớn|a big house"
         ],
-        "explanation": "Đáp án: một | a. Với một danh từ số ít chưa xác định, tiếng Anh thường cần a hoặc an."
+        "explanation": "Đáp án: một ngôi nhà lớn | a big house. Một và a đều đứng đầu cụm."
       }
+    },
+    {
+      "id": "add-degree",
+      "label": "Phần 04",
+      "title": "THÊM TRẠNG TỪ MỨC ĐỘ: VERY → RẤT",
+      "contentHtml": "<div class=\"comparison-table-wrap reveal\"><table class=\"comparison-table\">\n<thead><tr><th>Tiếng Anh</th><th>Tiếng Việt</th></tr></thead>\n<tbody><tr><td><span class=\"word-chip determiner\">a</span> <span class=\"word-chip degree\">very</span> <span class=\"word-chip adjective\">handsome</span> <span class=\"word-chip noun\">boy</span></td><td><span class=\"word-chip determiner\">một</span> <span class=\"word-chip noun\">chàng trai</span> <span class=\"word-chip degree\">rất</span> <span class=\"word-chip adjective\">đẹp</span></td></tr></tbody>\n</table></div>\n<div class=\"analysis-list reveal\">\n  <div class=\"analysis-item english\"><b>Tiếng Anh</b><p><b>very</b> đứng trước <b>handsome</b>; cả khối <b>very handsome</b> đứng trước <b>boy</b>.</p></div>\n  <div class=\"analysis-item vietnamese\"><b>Tiếng Việt</b><p><b>rất</b> đứng trước <b>đẹp</b>; cả khối <b>rất đẹp</b> đứng sau <b>chàng trai</b>.</p></div>\n</div>\n<div class=\"point-grid reveal\">\n  <div class=\"point-card same\"><b>✅ Điểm chung</b><p><b>very / rất</b> đều bám sát và đứng trước tính từ.</p></div>\n  <div class=\"point-card different\"><b>❌ Điểm khác</b><p>Khối <b>very + adjective</b> đứng trước danh từ; khối <b>rất + tính từ</b> đứng sau danh từ.</p></div>\n</div>"
     },
     {
       "id": "exercise-degree",
-      "label": "Bài tập 03",
-      "title": "Điền từ chỉ mức độ",
-      "contentHtml": "<div class=\"blank-pair reveal\"><div><span class=\"lang-tag\">VI</span><b>một chàng trai</b> <span class=\"blank-slot\">_____</span> <b>đẹp trai</b></div><div class=\"phrase-arrow\">→</div><div><span class=\"lang-tag\">EN</span><b>a</b> <span class=\"blank-slot\">_____</span> <b>handsome boy</b></div></div><div class=\"note-box reveal\">Từ cần điền làm cho ý “đẹp trai” mạnh hơn.</div>",
-      "exercise": {
-        "id": "noun-phrase-fill-03",
-        "type": "text",
-        "question": "Điền hai chỗ trống: một chàng trai _____ đẹp trai → a _____ handsome boy",
-        "placeholder": "Nhập: từ Việt | từ Anh",
-        "maxLength": 80,
-        "acceptedAnswers": [
-          "rất | very",
-          "rất|very"
-        ],
-        "explanation": "Đáp án: rất | very. Very đứng ngay trước tính từ handsome."
-      }
-    },
-    {
-      "id": "exercise-student",
       "label": "Bài tập 04",
-      "title": "Chọn đúng danh từ chính",
-      "contentHtml": "<div class=\"blank-pair reveal\"><div><span class=\"lang-tag\">VI</span><b>một</b> <span class=\"blank-slot\">_____</span> <b>nam rất đẹp trai</b></div><div class=\"phrase-arrow\">→</div><div><span class=\"lang-tag\">EN</span><b>a very handsome male</b> <span class=\"blank-slot\">_____</span></div></div><div class=\"warning-box reveal\">Danh từ chính phải là <b>student</b>; không ghép thành <b>student boy</b>.</div>",
+      "title": "THÊM “VERY / RẤT”",
+      "contentHtml": "<div class=\"blank-pair stacked reveal\">\n  <div><span class=\"lang-tag\">VI</span>một ngôi nhà <span class=\"blank-slot\">rất lớn</span></div>\n  <div><span class=\"lang-tag\">EN</span>a <span class=\"blank-slot\">very big</span> house</div>\n</div>\n<div class=\"note-box reveal\">Hãy viết lại <b>toàn bộ cụm</b>, không chỉ điền hai từ.</div>",
       "exercise": {
-        "id": "noun-phrase-fill-04",
+        "id": "degree-order-01",
         "type": "text",
-        "question": "Điền hai chỗ trống: một _____ nam rất đẹp trai → a very handsome male _____",
-        "placeholder": "Nhập: từ Việt | từ Anh",
-        "maxLength": 80,
+        "question": "Viết đầy đủ cụm tiếng Việt và cụm tiếng Anh.",
+        "placeholder": "một ngôi nhà rất lớn | a very big house",
+        "maxLength": 220,
         "acceptedAnswers": [
-          "sinh viên | student",
-          "sinh viên|student"
+          "một ngôi nhà rất lớn | a very big house",
+          "một ngôi nhà rất lớn|a very big house"
         ],
-        "explanation": "Đáp án: sinh viên | student. Student là danh từ chính của cụm tiếng Anh."
+        "explanation": "Đáp án: một ngôi nhà rất lớn | a very big house. Very đứng trước big; rất đứng trước lớn."
       }
     },
     {
-      "id": "exercise-full-phrase",
+      "id": "noun-modifier",
+      "label": "Phần 05",
+      "title": "THÊM DANH TỪ BỔ NGHĨA: STUDENT → SINH VIÊN",
+      "contentHtml": "<div class=\"comparison-table-wrap reveal\"><table class=\"comparison-table\">\n<thead><tr><th>Tiếng Anh</th><th>Tiếng Việt</th></tr></thead>\n<tbody><tr><td><span class=\"word-chip determiner\">a</span> <span class=\"word-chip degree\">very</span> <span class=\"word-chip adjective\">handsome</span> <span class=\"word-chip noun-modifier\">student</span> <span class=\"word-chip noun\">boy</span></td><td><span class=\"word-chip determiner\">một</span> <span class=\"word-chip noun\">chàng trai</span> <span class=\"word-chip noun-modifier\">sinh viên</span> <span class=\"word-chip degree\">rất</span> <span class=\"word-chip adjective\">đẹp</span></td></tr></tbody>\n</table></div>\n<div class=\"analysis-list reveal\">\n  <div class=\"analysis-item english\"><b>Tiếng Anh</b><p><b>student</b> là danh từ nhưng đang phân loại cho <b>boy</b>; nó đứng trước danh từ chính và sau tính từ miêu tả.</p></div>\n  <div class=\"analysis-item vietnamese\"><b>Tiếng Việt</b><p><b>sinh viên</b> đứng sau danh từ chính <b>chàng trai</b> và trước cụm miêu tả <b>rất đẹp</b>.</p></div>\n</div>\n<div class=\"warning-box reveal\"><b>Lưu ý dùng từ tự nhiên:</b> Cụm <b>student boy</b> ở đây được dùng như mô hình để quan sát vị trí. Trong giao tiếp tự nhiên, người bản ngữ thường nói <b>a very handsome student</b> hoặc <b>a very handsome male student</b>.</div>"
+    },
+    {
+      "id": "noun-modifier-analysis",
+      "label": "Phân tích",
+      "title": "DANH TỪ BỔ NGHĨA ĐỨNG GẦN DANH TỪ CHÍNH",
+      "contentHtml": "<div class=\"position-chain reveal\">\n  <span class=\"position-token adjective-token\">very handsome</span><span class=\"chain-arrow\">→</span><span class=\"position-token modifier-token\">student</span><span class=\"chain-arrow\">→</span><span class=\"position-token noun-token\">boy</span>\n</div>\n<div class=\"position-chain reveal\">\n  <span class=\"position-token noun-token\">chàng trai</span><span class=\"chain-arrow\">→</span><span class=\"position-token modifier-token\">sinh viên</span><span class=\"chain-arrow\">→</span><span class=\"position-token adjective-token\">rất đẹp</span>\n</div>\n<div class=\"point-grid reveal\">\n  <div class=\"point-card same\"><b>✅ Điểm chung</b><p>Danh từ phân loại đều nằm gần danh từ chính.</p></div>\n  <div class=\"point-card different\"><b>❌ Điểm khác</b><p>Tiếng Anh đặt nó trước danh từ chính; tiếng Việt đặt nó sau danh từ chính.</p></div>\n</div>"
+    },
+    {
+      "id": "exercise-noun-modifier",
       "label": "Bài tập 05",
-      "title": "Điền trọn cả hai cụm",
-      "contentHtml": "<div class=\"blank-pair stacked reveal\"><div><span class=\"lang-tag\">VI</span><span class=\"blank-slot long\">________________________________</span></div><div class=\"phrase-arrow\">↓</div><div><span class=\"lang-tag\">EN</span><span class=\"blank-slot long\">________________________________</span></div></div><div class=\"note-box reveal\">Nhập theo mẫu: <b>cả cụm tiếng Việt | cả cụm tiếng Anh</b>.</div>",
+      "title": "DANH TỪ PHÂN LOẠI “ENGLISH”",
+      "contentHtml": "<div class=\"blank-pair stacked reveal\">\n  <div><span class=\"lang-tag\">VI</span>một giáo viên tiếng Anh rất giỏi</div>\n  <div><span class=\"lang-tag\">EN</span>a very good English teacher</div>\n</div>\n<div class=\"note-box reveal\"><b>English</b> phân loại loại giáo viên; <b>teacher</b> là danh từ chính.</div>",
       "exercise": {
-        "id": "noun-phrase-fill-05",
+        "id": "noun-modifier-01",
         "type": "text",
-        "question": "Hãy viết trọn hai cụm: “một chàng trai rất đẹp trai” và bản tiếng Anh tương ứng.",
-        "placeholder": "cụm tiếng Việt | cụm tiếng Anh",
-        "maxLength": 160,
+        "question": "Nhập lại hai cụm đúng theo thứ tự Việt | Anh.",
+        "placeholder": "một giáo viên tiếng Anh rất giỏi | a very good English teacher",
+        "maxLength": 220,
         "acceptedAnswers": [
-          "một chàng trai rất đẹp trai | a very handsome boy",
-          "một chàng trai rất đẹp trai|a very handsome boy"
+          "một giáo viên tiếng Anh rất giỏi | a very good English teacher",
+          "một giáo viên tiếng anh rất giỏi | a very good english teacher",
+          "một giáo viên tiếng Anh rất giỏi|a very good English teacher"
         ],
-        "explanation": "Đáp án: một chàng trai rất đẹp trai | a very handsome boy. Trong tiếng Anh, a đứng trước, very bổ nghĩa cho handsome, và boy là danh từ chính."
+        "explanation": "Đáp án: một giáo viên tiếng Anh rất giỏi | a very good English teacher. English đứng ngay trước teacher."
       }
     },
     {
-      "id": "exercise-natural-english",
-      "label": "Bài tập 06",
-      "title": "Sửa cụm tiếng Anh chưa tự nhiên",
-      "contentHtml": "<div class=\"two-column\"><div class=\"example-panel reveal\"><span>CHƯA TỰ NHIÊN</span><h3><s>a very handsome student boy</s></h3><p>Cụm này dùng hai danh từ chỉ cùng một người theo cách không tự nhiên.</p></div><div class=\"analysis-panel reveal\"><span>HÃY VIẾT LẠI</span><h3><span class=\"blank-slot long\">________________________</span></h3><p>Giữ ý: “một sinh viên nam rất đẹp trai”.</p></div></div>",
-      "exercise": {
-        "id": "noun-phrase-fill-06",
-        "type": "text",
-        "question": "Viết cụm tiếng Anh tự nhiên cho “một sinh viên nam rất đẹp trai”.",
-        "placeholder": "Nhập cụm tiếng Anh...",
-        "maxLength": 100,
-        "acceptedAnswers": [
-          "a very handsome male student",
-          "a very handsome student"
-        ],
-        "explanation": "Đáp án tự nhiên: a very handsome male student. Nếu ngữ cảnh đã rõ giới tính, a very handsome student cũng được."
-      }
+      "id": "general-order",
+      "label": "Bảng tổng hợp",
+      "title": "TRẬT TỰ TỔNG QUÁT",
+      "contentHtml": "<div class=\"comparison-table-wrap reveal\"><table class=\"comparison-table order-table\">\n<thead><tr><th>Vị trí</th><th>Tiếng Anh</th><th>Tiếng Việt</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>Mạo từ / số từ: <b>a</b></td><td>Số từ: <b>một</b></td></tr>\n<tr><td>2</td><td>Trạng từ: <b>very</b></td><td>Danh từ chính: <b>chàng trai</b></td></tr>\n<tr><td>3</td><td>Tính từ: <b>handsome</b></td><td>Danh từ phân loại: <b>sinh viên</b></td></tr>\n<tr><td>4</td><td>Danh từ phân loại: <b>student</b></td><td>Trạng từ: <b>rất</b></td></tr>\n<tr><td>5</td><td>Danh từ chính: <b>boy</b></td><td>Tính từ: <b>đẹp</b></td></tr>\n</tbody></table></div>\n<div class=\"note-box reveal\"><b>Ghi chú:</b> Tiếng Việt có thể linh hoạt theo ngữ cảnh, nhưng cụm như “chàng trai rất đẹp sinh viên” không tự nhiên. Trật tự phổ biến là danh từ chính → yếu tố phân loại → phần miêu tả.</div>"
+    },
+    {
+      "id": "order-map",
+      "label": "Sơ đồ",
+      "title": "NHÌN CẢ CỤM NHƯ MỘT ĐOÀN TÀU",
+      "contentHtml": "<div class=\"formula-card reveal\"><div class=\"formula-label\">TIẾNG ANH</div><div class=\"formula-line\"><span class=\"word-chip determiner\">a</span><span>+</span><span class=\"word-chip degree\">very</span><span>+</span><span class=\"word-chip adjective\">handsome</span><span>+</span><span class=\"word-chip noun-modifier\">student</span><span>+</span><span class=\"word-chip noun\">boy</span></div></div>\n<div class=\"formula-card reveal\"><div class=\"formula-label\">TIẾNG VIỆT</div><div class=\"formula-line\"><span class=\"word-chip determiner\">một</span><span>+</span><span class=\"word-chip noun\">chàng trai</span><span>+</span><span class=\"word-chip noun-modifier\">sinh viên</span><span>+</span><span class=\"word-chip degree\">rất</span><span>+</span><span class=\"word-chip adjective\">đẹp</span></div></div>\n<div class=\"rule-strip reveal\">Tiếng Anh gom các từ bổ nghĩa lên trước danh từ chính. Tiếng Việt để danh từ chính đi trước rồi mới thêm phần bổ nghĩa phía sau.</div>"
     },
     {
       "id": "summary",
       "label": "Tổng kết",
-      "title": "Từ tiếng Việt sang cụm danh từ tiếng Anh",
-      "contentHtml": "<div class=\"summary-box reveal\"><h3>Con đường vừa học</h3><ul><li><b>trai</b> → <b>boy</b></li><li><b>trai đẹp</b> → <b>handsome boy</b></li><li><b>một chàng trai đẹp</b> → <b>a handsome boy</b></li><li><b>một chàng trai rất đẹp trai</b> → <b>a very handsome boy</b></li><li><b>một sinh viên nam rất đẹp trai</b> → <b>a very handsome male student</b></li></ul></div><div class=\"rule-strip reveal\"><b>a / an</b> + <b>mức độ</b> + <b>tính từ</b> + <b>danh từ chính</b></div><div class=\"note-box reveal\">Mỗi bài tập học viên CHECK đều được gửi trực tiếp về panel <b>Theo dõi lớp</b> của giáo viên.</div>"
+      "title": "ĐIỂM CHUNG VÀ KHÁC",
+      "contentHtml": "<div class=\"comparison-table-wrap reveal\"><table class=\"comparison-table summary-table\">\n<thead><tr><th>Yếu tố</th><th>Vị trí</th><th>Giống / Khác</th></tr></thead>\n<tbody>\n<tr><td>Mạo từ / số từ</td><td>Đầu cụm</td><td>✅ Giống: <b>a / một</b> đều mở đầu cụm.</td></tr>\n<tr><td>Trạng từ mức độ</td><td>Đứng trước tính từ</td><td>✅ Giống: <b>very / rất</b> đều đứng trước tính từ.</td></tr>\n<tr><td>Tính từ miêu tả</td><td>Anh: trước danh từ<br>Việt: sau danh từ</td><td>❌ Khác: đảo ngược vị trí.</td></tr>\n<tr><td>Danh từ phân loại</td><td>Anh: trước danh từ chính<br>Việt: sau danh từ chính</td><td>❌ Khác: đảo ngược vị trí so với danh từ chính.</td></tr>\n<tr><td>Danh từ chính</td><td>Anh: cuối cụm<br>Việt: gần đầu cụm</td><td>❌ Khác: trung tâm cụm xuất hiện ở vị trí khác nhau.</td></tr>\n</tbody></table></div>"
+    },
+    {
+      "id": "memory-tip",
+      "label": "Mẹo nhớ",
+      "title": "MẸO NHỚ NHANH",
+      "contentHtml": "<div class=\"memory-grid reveal\">\n  <div class=\"memory-card english-memory\"><div class=\"memory-icon\">EN</div><h3>Tiếng Anh</h3><p>Các từ “tô màu” cho danh từ đều <b>chạy lên trước</b>. Danh từ chính thường đứng <b>cuối cụm</b>.</p><div class=\"memory-example\">a → very → handsome → boy</div></div>\n  <div class=\"memory-card vietnamese-memory\"><div class=\"memory-icon\">VI</div><h3>Tiếng Việt</h3><p>Danh từ chính <b>dẫn đầu đoàn</b> sau số từ; các từ bổ nghĩa thường <b>chạy theo sau</b>.</p><div class=\"memory-example\">một → chàng trai → rất → đẹp</div></div>\n</div>\n<div class=\"rule-strip reveal\">EN: “Tô màu trước – danh từ sau” · VI: “Danh từ trước – mô tả sau”</div>"
+    },
+    {
+      "id": "exercise-girl",
+      "label": "Áp dụng 01",
+      "title": "SẮP XẾP: GIRL / BEAUTIFUL / A",
+      "contentHtml": "<div class=\"blank-pair stacked reveal\">\n  <div><span class=\"lang-tag\">EN</span><span class=\"blank-slot long\">________________________</span></div>\n  <div><span class=\"lang-tag\">VI</span><span class=\"blank-slot long\">________________________</span></div>\n</div>\n<div class=\"note-box reveal\">Nhập theo mẫu thống nhất của lớp: <b>Việt | Anh</b>.</div>",
+      "exercise": {
+        "id": "application-girl",
+        "type": "text",
+        "question": "Sắp xếp girl / beautiful / a thành cụm đúng trong cả hai ngôn ngữ.",
+        "placeholder": "một cô gái đẹp | a beautiful girl",
+        "maxLength": 220,
+        "acceptedAnswers": [
+          "một cô gái đẹp | a beautiful girl",
+          "một cô gái đẹp|a beautiful girl"
+        ],
+        "explanation": "Đáp án: một cô gái đẹp | a beautiful girl."
+      }
+    },
+    {
+      "id": "exercise-house",
+      "label": "Áp dụng 02",
+      "title": "SẮP XẾP: A / HOUSE / BIG / VERY",
+      "contentHtml": "<div class=\"blank-pair stacked reveal\">\n  <div><span class=\"lang-tag\">EN</span><span class=\"blank-slot long\">________________________</span></div>\n  <div><span class=\"lang-tag\">VI</span><span class=\"blank-slot long\">________________________</span></div>\n</div>",
+      "exercise": {
+        "id": "application-house",
+        "type": "text",
+        "question": "Sắp xếp a / house / big / very thành cụm đúng trong cả hai ngôn ngữ.",
+        "placeholder": "một ngôi nhà rất lớn | a very big house",
+        "maxLength": 220,
+        "acceptedAnswers": [
+          "một ngôi nhà rất lớn | a very big house",
+          "một ngôi nhà rất lớn|a very big house"
+        ],
+        "explanation": "Đáp án: một ngôi nhà rất lớn | a very big house."
+      }
+    },
+    {
+      "id": "exercise-teacher",
+      "label": "Áp dụng 03",
+      "title": "SẮP XẾP: TEACHER / A / ENGLISH / GOOD / VERY",
+      "contentHtml": "<div class=\"blank-pair stacked reveal\">\n  <div><span class=\"lang-tag\">EN</span><span class=\"blank-slot long\">______________________________</span></div>\n  <div><span class=\"lang-tag\">VI</span><span class=\"blank-slot long\">______________________________</span></div>\n</div>\n<div class=\"note-box reveal\">Tìm danh từ chính trước: <b>teacher</b>. Sau đó đặt <b>English</b> ngay trước nó.</div>",
+      "exercise": {
+        "id": "application-teacher",
+        "type": "text",
+        "question": "Sắp xếp teacher / a / English / good / very thành cụm đúng trong cả hai ngôn ngữ.",
+        "placeholder": "một giáo viên tiếng Anh rất giỏi | a very good English teacher",
+        "maxLength": 220,
+        "acceptedAnswers": [
+          "một giáo viên tiếng Anh rất giỏi | a very good English teacher",
+          "một giáo viên tiếng anh rất giỏi | a very good english teacher",
+          "một giáo viên tiếng Anh rất giỏi|a very good English teacher"
+        ],
+        "explanation": "Đáp án: một giáo viên tiếng Anh rất giỏi | a very good English teacher."
+      }
+    },
+    {
+      "id": "exercise-choice-en",
+      "label": "Kiểm tra nhanh 01",
+      "title": "CHỌN TRẬT TỰ TIẾNG ANH ĐÚNG",
+      "contentHtml": "<div class=\"lesson-lead reveal\">Cụm cần tạo: <b>“một cô gái đẹp”</b>.</div>",
+      "exercise": {
+        "id": "quick-choice-en",
+        "type": "single-choice",
+        "question": "Cụm tiếng Anh nào đúng?",
+        "options": [
+          {
+            "key": "A",
+            "text": "a beautiful girl"
+          },
+          {
+            "key": "B",
+            "text": "a girl beautiful"
+          },
+          {
+            "key": "C",
+            "text": "beautiful a girl"
+          },
+          {
+            "key": "D",
+            "text": "girl a beautiful"
+          }
+        ],
+        "answer": "A",
+        "explanation": "Đáp án A: a beautiful girl. Mạo từ đứng đầu, tính từ đứng trước danh từ chính."
+      }
+    },
+    {
+      "id": "exercise-choice-vi",
+      "label": "Kiểm tra nhanh 02",
+      "title": "CHỌN TRẬT TỰ TIẾNG VIỆT ĐÚNG",
+      "contentHtml": "<div class=\"lesson-lead reveal\">Cụm tiếng Anh: <b>a very big house</b>.</div>",
+      "exercise": {
+        "id": "quick-choice-vi",
+        "type": "single-choice",
+        "question": "Cụm tiếng Việt nào tự nhiên và đúng trật tự?",
+        "options": [
+          {
+            "key": "A",
+            "text": "rất lớn một ngôi nhà"
+          },
+          {
+            "key": "B",
+            "text": "một rất lớn ngôi nhà"
+          },
+          {
+            "key": "C",
+            "text": "một ngôi nhà rất lớn"
+          },
+          {
+            "key": "D",
+            "text": "một lớn rất ngôi nhà"
+          }
+        ],
+        "answer": "C",
+        "explanation": "Đáp án C: một ngôi nhà rất lớn. Danh từ chính đi trước khối rất + tính từ."
+      }
+    },
+    {
+      "id": "exercise-head-noun",
+      "label": "Kiểm tra nhanh 03",
+      "title": "TÌM DANH TỪ CHÍNH",
+      "contentHtml": "<div class=\"formula-card reveal\"><div class=\"formula-line\"><span class=\"word-chip determiner\">a</span><span class=\"word-chip degree\">very</span><span class=\"word-chip adjective\">good</span><span class=\"word-chip noun-modifier\">English</span><span class=\"word-chip noun\">teacher</span></div></div>",
+      "exercise": {
+        "id": "identify-head-noun",
+        "type": "single-choice",
+        "question": "Từ nào là danh từ chính của cụm?",
+        "options": [
+          {
+            "key": "A",
+            "text": "very"
+          },
+          {
+            "key": "B",
+            "text": "good"
+          },
+          {
+            "key": "C",
+            "text": "English"
+          },
+          {
+            "key": "D",
+            "text": "teacher"
+          }
+        ],
+        "answer": "D",
+        "explanation": "Đáp án D: teacher. English chỉ phân loại teacher; good miêu tả teacher; very bổ nghĩa cho good."
+      }
+    },
+    {
+      "id": "exercise-fix-error",
+      "label": "Thử thách 01",
+      "title": "SỬA CỤM BỊ ĐẢO SAI",
+      "contentHtml": "<div class=\"warning-box reveal\">Cụm sai: <b>a house very big</b> ↔ <b>một rất lớn ngôi nhà</b>.</div>\n<div class=\"blank-pair stacked reveal\">\n  <div><span class=\"lang-tag\">VI</span><span class=\"blank-slot long\">viết lại đúng</span></div>\n  <div><span class=\"lang-tag\">EN</span><span class=\"blank-slot long\">write it correctly</span></div>\n</div>",
+      "exercise": {
+        "id": "fix-order-01",
+        "type": "text",
+        "question": "Sửa cả hai cụm sai và nhập theo thứ tự Việt | Anh.",
+        "placeholder": "một ngôi nhà rất lớn | a very big house",
+        "maxLength": 220,
+        "acceptedAnswers": [
+          "một ngôi nhà rất lớn | a very big house",
+          "một ngôi nhà rất lớn|a very big house"
+        ],
+        "explanation": "Đáp án: một ngôi nhà rất lớn | a very big house."
+      }
+    },
+    {
+      "id": "exercise-final",
+      "label": "Thử thách cuối",
+      "title": "TỰ XÂY MỘT CỤM DANH TỪ",
+      "contentHtml": "<div class=\"lesson-lead reveal\">Dùng các ý sau: <b>một + giáo viên + trẻ + rất + tài năng</b>.</div>\n<div class=\"blank-pair stacked reveal\">\n  <div><span class=\"lang-tag\">VI</span><span class=\"blank-slot long\">______________________________</span></div>\n  <div><span class=\"lang-tag\">EN</span><span class=\"blank-slot long\">______________________________</span></div>\n</div>\n<div class=\"note-box reveal\">Nhớ: tiếng Anh đưa <b>very talented + young</b> lên trước <b>teacher</b>; tiếng Việt đặt danh từ chính trước phần miêu tả.</div>",
+      "exercise": {
+        "id": "final-build-01",
+        "type": "text",
+        "question": "Viết cụm hoàn chỉnh theo thứ tự Việt | Anh.",
+        "placeholder": "một giáo viên trẻ rất tài năng | a very talented young teacher",
+        "maxLength": 220,
+        "acceptedAnswers": [
+          "một giáo viên trẻ rất tài năng | a very talented young teacher",
+          "một giáo viên trẻ rất tài năng|a very talented young teacher"
+        ],
+        "explanation": "Đáp án mẫu: một giáo viên trẻ rất tài năng | a very talented young teacher."
+      }
+    },
+    {
+      "id": "closing",
+      "label": "Hoàn thành",
+      "title": "BẠN ĐÃ NHÌN THẤY QUY LUẬT",
+      "contentHtml": "<div class=\"summary-box reveal\"><h3>Ba câu hỏi cần tự hỏi</h3><ul>\n<li><b>Danh từ chính là từ nào?</b></li>\n<li><b>Từ nào đang miêu tả hoặc phân loại danh từ?</b></li>\n<li><b>Đang viết tiếng Anh hay tiếng Việt để đặt chúng đúng phía?</b></li>\n</ul></div>\n<div class=\"memory-grid reveal\">\n  <div class=\"memory-card english-memory\"><div class=\"memory-icon\">EN</div><h3>Tiếng Anh</h3><p>Phần lớn từ bổ nghĩa đứng trước danh từ chính.</p></div>\n  <div class=\"memory-card vietnamese-memory\"><div class=\"memory-icon\">VI</div><h3>Tiếng Việt</h3><p>Danh từ chính thường đứng trước phần miêu tả.</p></div>\n</div>\n<div class=\"rule-strip reveal\">Tìm danh từ chính trước — rồi mới xếp những từ còn lại.</div>"
     }
   ]
 }
