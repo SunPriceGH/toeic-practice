@@ -77,7 +77,88 @@
     "excludedProperNameEntries": 41,
     "properNamePolicy": "Tên riêng người, tổ chức, địa điểm, sự kiện và sản phẩm được loại khỏi từ điển; khi bấm vào sẽ hiển thị “Không tìm thấy từ”.",
     "test5VocabularyPolicy": "Test 5 được bổ sung trên đúng file gốc vocabulary(5).json. Mỗi headword mới là một từ đơn; động từ dùng dạng nguyên mẫu; danh từ dùng số ít; dạng -ed, -ing, -s và -es được lưu trong sourceForms; chỉ giữ dạng số nhiều bất quy tắc khi cần.",
-    "test5NewEntriesAdded": 112
+    "test5NewEntriesAdded": 112,
+    "ets2022Test1Includes": "Toàn bộ từ trong phần hướng dẫn, câu hỏi, lựa chọn và bốn bài đọc Part 6 của ETS 2022 Test 1, câu 101-146.",
+    "ets2022Test1VocabularyPolicy": "Chỉ thêm headword chưa có; động từ và danh từ biến đổi -ed, -ing, -s, -es được quy về dạng từ điển khi phù hợp; chỉ lấy từ đơn hoặc từ nối bằng gạch nối; tên riêng bị loại; mỗi headword có các từ loại và nghĩa tiếng Việt tách riêng.",
+    "ets2022Test1SurfaceTokenCount": 682,
+    "ets2022Test1NewEntriesAdded": 330,
+    "ets2022Test1ExistingEntriesUpdated": 29,
+    "ets2022Test1ExcludedProperOrNonLexicalTokens": [
+      "aiyar",
+      "annabel",
+      "antonio",
+      "auckland",
+      "campos",
+      "copley",
+      "croyell",
+      "denville",
+      "garstein",
+      "greenfield",
+      "harris",
+      "healthonity",
+      "hillsborough",
+      "jasper",
+      "jim",
+      "kestren",
+      "kim",
+      "lakshmi",
+      "merrytree",
+      "mougey",
+      "natusi",
+      "perwon",
+      "peura",
+      "rodriguez",
+      "romero",
+      "satinesse",
+      "sendark",
+      "tanaka",
+      "thomasville",
+      "tilda",
+      "tsai",
+      "yoshida",
+      "info",
+      "com",
+      "z"
+    ],
+    "ets2022Test1ResolvedTokenCount": 602,
+    "ets2022Test1UnresolvedTokens": [],
+    "ets2022Test1RescanPolicy": "Quét lại theo từng token hiển thị; chỉ dùng headword dạng từ điển; dạng -ed, -ing, -s, -es được lưu trong sourceForms; chỉ lấy từ đơn hoặc từ có gạch nối; không tạo headword trùng.",
+    "ets2022Test1RescanNewEntriesAdded": 24,
+    "ets2022Test1RescanAddedHeadwords": [
+      "answer",
+      "below",
+      "book",
+      "cafe",
+      "choice",
+      "comprehension",
+      "different",
+      "direction",
+      "encourage",
+      "entire",
+      "minute",
+      "miss",
+      "part",
+      "phrase",
+      "read",
+      "select",
+      "sentence",
+      "separate",
+      "sheet",
+      "test",
+      "text",
+      "type",
+      "variety",
+      "word"
+    ],
+    "ets2022Test1RescanVerifiedHeadwords": [
+      "conference",
+      "surround",
+      "area",
+      "window",
+      "south",
+      "north"
+    ],
+    "ets2022Test1TotalEntriesAfterRescan": 1017
   },
   "entries": [
     {
@@ -185,6 +266,61 @@
       ]
     },
     {
+      "word": "accommodation",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "chỗ ở",
+            "sự sắp xếp hoặc điều chỉnh",
+            "tiện nghi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "accommodations"
+      ]
+    },
+    {
+      "word": "accordingly",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "theo đó",
+            "vì vậy",
+            "một cách tương ứng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "accordingly"
+      ]
+    },
+    {
+      "word": "account",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "tài khoản",
+            "bản tường thuật",
+            "khoản mục"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "giải thích",
+            "chiếm hoặc tạo thành"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "account"
+      ]
+    },
+    {
       "word": "accounting",
       "entries": [
         {
@@ -248,6 +384,21 @@
       ],
       "sourceForms": [
         "actively"
+      ]
+    },
+    {
+      "word": "activity",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "hoạt động",
+            "sự hoạt động"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "activities"
       ]
     },
     {
@@ -412,7 +563,8 @@
         }
       ],
       "sourceForms": [
-        "advance"
+        "advance",
+        "advanced"
       ]
     },
     {
@@ -508,6 +660,22 @@
       ]
     },
     {
+      "word": "agency",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "cơ quan",
+            "đại lý",
+            "quyền hoặc năng lực hành động"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "agency"
+      ]
+    },
+    {
       "word": "aggressively",
       "entries": [
         {
@@ -535,6 +703,28 @@
       ],
       "sourceForms": [
         "agreement"
+      ]
+    },
+    {
+      "word": "aim",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "mục tiêu",
+            "sự nhắm"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "nhắm",
+            "hướng tới"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "aim"
       ]
     },
     {
@@ -575,6 +765,58 @@
       ],
       "sourceForms": [
         "all"
+      ]
+    },
+    {
+      "word": "allow",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "cho phép",
+            "dành hoặc chừa ra",
+            "tính đến"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "allow"
+      ]
+    },
+    {
+      "word": "almost",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "gần như",
+            "suýt"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "almost"
+      ]
+    },
+    {
+      "word": "along",
+      "entries": [
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "dọc theo"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "tiến về phía trước",
+            "cùng đi hoặc cùng làm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "along"
       ]
     },
     {
@@ -728,6 +970,26 @@
       ]
     },
     {
+      "word": "animal",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "động vật"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc động vật"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "animals"
+      ]
+    },
+    {
       "word": "anniversary",
       "entries": [
         {
@@ -836,6 +1098,50 @@
       ]
     },
     {
+      "word": "another",
+      "entries": [
+        {
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "một người hoặc vật khác",
+            "thêm một"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "người hoặc vật khác"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "another"
+      ]
+    },
+    {
+      "word": "answer",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "câu trả lời",
+            "đáp án"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "trả lời",
+            "đáp lại"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "answer",
+        "answers"
+      ]
+    },
+    {
       "word": "any",
       "entries": [
         {
@@ -891,6 +1197,35 @@
       ]
     },
     {
+      "word": "apologize",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "xin lỗi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "apologize"
+      ]
+    },
+    {
+      "word": "appearance",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "vẻ ngoài",
+            "sự xuất hiện"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "appearance"
+      ]
+    },
+    {
       "word": "applicant",
       "entries": [
         {
@@ -930,6 +1265,7 @@
         }
       ],
       "sourceForms": [
+        "applied",
         "apply"
       ]
     },
@@ -994,6 +1330,45 @@
       ]
     },
     {
+      "word": "appropriate",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "phù hợp",
+            "thích hợp"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "phân bổ",
+            "chiếm dụng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "appropriate"
+      ]
+    },
+    {
+      "word": "area",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "khu vực",
+            "diện tích",
+            "lĩnh vực"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "area",
+        "areas"
+      ]
+    },
+    {
       "word": "argument",
       "entries": [
         {
@@ -1006,6 +1381,26 @@
       ],
       "sourceForms": [
         "arguments"
+      ]
+    },
+    {
+      "word": "arise",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "phát sinh",
+            "nảy sinh",
+            "đứng dậy"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "arose",
+        "pastParticiple": "arisen"
+      },
+      "sourceForms": [
+        "arise"
       ]
     },
     {
@@ -1108,6 +1503,21 @@
       ]
     },
     {
+      "word": "artistic",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc nghệ thuật",
+            "có năng khiếu nghệ thuật"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "artistic"
+      ]
+    },
+    {
       "word": "artwork",
       "entries": [
         {
@@ -1186,6 +1596,21 @@
       ]
     },
     {
+      "word": "assure",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đảm bảo",
+            "trấn an"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "assured"
+      ]
+    },
+    {
       "word": "at",
       "entries": [
         {
@@ -1216,6 +1641,21 @@
       ]
     },
     {
+      "word": "athletic",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc thể thao",
+            "khỏe mạnh và nhanh nhẹn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "athletic"
+      ]
+    },
+    {
       "word": "atrium",
       "entries": [
         {
@@ -1228,6 +1668,58 @@
       ],
       "sourceForms": [
         "atrium"
+      ]
+    },
+    {
+      "word": "attempt",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "nỗ lực",
+            "lần thử"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "cố gắng",
+            "thử làm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "attempt"
+      ]
+    },
+    {
+      "word": "attendee",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người tham dự"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "attendees"
+      ]
+    },
+    {
+      "word": "attention",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự chú ý",
+            "sự chăm sóc",
+            "sự quan tâm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "attention"
       ]
     },
     {
@@ -1324,6 +1816,34 @@
       ]
     },
     {
+      "word": "average",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "mức trung bình"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "trung bình",
+            "thông thường"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tính trung bình",
+            "đạt mức trung bình"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "average"
+      ]
+    },
+    {
       "word": "award",
       "entries": [
         {
@@ -1357,6 +1877,28 @@
       ],
       "sourceForms": [
         "away"
+      ]
+    },
+    {
+      "word": "bad",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "xấu",
+            "tệ",
+            "nghiêm trọng"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "điều xấu"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "bad"
       ]
     },
     {
@@ -1472,6 +2014,36 @@
       ]
     },
     {
+      "word": "beautiful",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "đẹp",
+            "hay"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "beautiful"
+      ]
+    },
+    {
+      "word": "beautifully",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách đẹp mắt",
+            "rất tốt"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "beautifully"
+      ]
+    },
+    {
       "word": "because",
       "entries": [
         {
@@ -1483,6 +2055,40 @@
       ],
       "sourceForms": [
         "because"
+      ]
+    },
+    {
+      "word": "become",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "trở nên",
+            "phù hợp hoặc làm tôn lên"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "became",
+        "pastParticiple": "become"
+      },
+      "sourceForms": [
+        "become"
+      ]
+    },
+    {
+      "word": "beekeeping",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "nghề nuôi ong",
+            "việc nuôi ong"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "beekeeping"
       ]
     },
     {
@@ -1530,6 +2136,56 @@
       ]
     },
     {
+      "word": "below",
+      "entries": [
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "ở dưới",
+            "thấp hơn"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "ở phía dưới",
+            "sau đây"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "nằm ở phía dưới"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "below"
+      ]
+    },
+    {
+      "word": "benefit",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "lợi ích",
+            "phúc lợi"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "mang lại lợi ích",
+            "được hưởng lợi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "benefit"
+      ]
+    },
+    {
       "word": "besides",
       "entries": [
         {
@@ -1547,6 +2203,66 @@
       ],
       "sourceForms": [
         "besides"
+      ]
+    },
+    {
+      "word": "between",
+      "entries": [
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "giữa",
+            "trong khoảng giữa"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "ở khoảng giữa"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "between"
+      ]
+    },
+    {
+      "word": "big",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "lớn",
+            "quan trọng",
+            "phổ biến"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "big"
+      ]
+    },
+    {
+      "word": "bill",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "hóa đơn",
+            "dự luật",
+            "tờ tiền"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "lập hóa đơn",
+            "quảng cáo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "bill"
       ]
     },
     {
@@ -1590,6 +2306,54 @@
       ],
       "sourceForms": [
         "board"
+      ]
+    },
+    {
+      "word": "book",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sách",
+            "quyển sách"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đặt chỗ",
+            "đăng ký trước"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "book"
+      ]
+    },
+    {
+      "word": "both",
+      "entries": [
+        {
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "cả hai"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "cả hai người hoặc vật"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
+            "cả ... và ..."
+          ]
+        }
+      ],
+      "sourceForms": [
+        "both"
       ]
     },
     {
@@ -1717,6 +2481,21 @@
       ]
     },
     {
+      "word": "brightly",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "sáng rực",
+            "một cách vui tươi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "brightly"
+      ]
+    },
+    {
       "word": "brochure",
       "entries": [
         {
@@ -1766,6 +2545,21 @@
       ]
     },
     {
+      "word": "builder",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thợ xây",
+            "nhà xây dựng hoặc phát triển"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "builders"
+      ]
+    },
+    {
       "word": "business",
       "entries": [
         {
@@ -1794,7 +2588,60 @@
         }
       ],
       "sourceForms": [
+        "busiest",
         "busy"
+      ]
+    },
+    {
+      "word": "but",
+      "entries": [
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
+            "nhưng"
+          ]
+        },
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "ngoại trừ"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "chỉ",
+            "chẳng qua là"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "but"
+      ]
+    },
+    {
+      "word": "buy",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "mua"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "món mua hời",
+            "việc mua"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "bought",
+        "pastParticiple": "bought"
+      },
+      "sourceForms": [
+        "bought"
       ]
     },
     {
@@ -1822,6 +2669,22 @@
       ]
     },
     {
+      "word": "cafe",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "quán cà phê",
+            "quán ăn nhỏ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "cafe",
+        "café"
+      ]
+    },
+    {
       "word": "cafeteria",
       "entries": [
         {
@@ -1836,6 +2699,44 @@
       ]
     },
     {
+      "word": "café",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "quán cà phê"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "café"
+      ]
+    },
+    {
+      "word": "call",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "gọi",
+            "gọi điện",
+            "gọi tên"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "cuộc gọi",
+            "lời kêu gọi",
+            "quyết định"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "call"
+      ]
+    },
+    {
       "word": "can",
       "entries": [
         {
@@ -1846,7 +2747,8 @@
         }
       ],
       "sourceForms": [
-        "can"
+        "can",
+        "could"
       ]
     },
     {
@@ -1862,6 +2764,59 @@
       ],
       "sourceForms": [
         "card"
+      ]
+    },
+    {
+      "word": "careful",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "cẩn thận",
+            "kỹ lưỡng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "careful"
+      ]
+    },
+    {
+      "word": "carefully",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách cẩn thận",
+            "kỹ lưỡng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "carefully"
+      ]
+    },
+    {
+      "word": "cause",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "nguyên nhân",
+            "lý do",
+            "sự nghiệp"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "gây ra",
+            "khiến"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "cause"
       ]
     },
     {
@@ -1917,6 +2872,20 @@
       ]
     },
     {
+      "word": "centimeter",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "xăng-ti-mét"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "centimeters"
+      ]
+    },
+    {
       "word": "ceo",
       "entries": [
         {
@@ -1934,6 +2903,28 @@
       ],
       "sourceForms": [
         "ceo"
+      ]
+    },
+    {
+      "word": "change",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự thay đổi",
+            "tiền lẻ"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "thay đổi",
+            "đổi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "change"
       ]
     },
     {
@@ -1955,7 +2946,42 @@
       ],
       "sourceForms": [
         "check",
+        "checked",
         "checks"
+      ]
+    },
+    {
+      "word": "cheese-making",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "việc làm phô mai"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc việc làm phô mai"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "cheese-making"
+      ]
+    },
+    {
+      "word": "chef",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "đầu bếp"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "chef"
       ]
     },
     {
@@ -1999,6 +3025,29 @@
       ]
     },
     {
+      "word": "choice",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự lựa chọn",
+            "phương án lựa chọn"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "hảo hạng",
+            "được tuyển chọn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "choice",
+        "choices"
+      ]
+    },
+    {
       "word": "choose",
       "entries": [
         {
@@ -2028,6 +3077,62 @@
       ],
       "sourceForms": [
         "city"
+      ]
+    },
+    {
+      "word": "class",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "lớp học",
+            "loại",
+            "hạng",
+            "giai cấp"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "phân loại"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "class"
+      ]
+    },
+    {
+      "word": "clear",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "rõ ràng",
+            "trong",
+            "không bị cản trở"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "làm rõ",
+            "dọn sạch",
+            "thông qua"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "hoàn toàn",
+            "ra khỏi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "clear",
+        "clearest",
+        "clearing"
       ]
     },
     {
@@ -2074,6 +3179,21 @@
       ]
     },
     {
+      "word": "collectively",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách tập thể",
+            "tính chung"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "collectively"
+      ]
+    },
+    {
       "word": "colombia-based",
       "entries": [
         {
@@ -2115,6 +3235,28 @@
       ],
       "sourceForms": [
         "combinations"
+      ]
+    },
+    {
+      "word": "comment",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "bình luận",
+            "nhận xét"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "bình luận",
+            "nhận xét"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "comments"
       ]
     },
     {
@@ -2210,6 +3352,50 @@
       ]
     },
     {
+      "word": "comprehension",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự hiểu",
+            "khả năng đọc hiểu"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "comprehension"
+      ]
+    },
+    {
+      "word": "comprehensive",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "toàn diện",
+            "bao quát"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "comprehensive"
+      ]
+    },
+    {
+      "word": "computer",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "máy tính"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "computers"
+      ]
+    },
+    {
       "word": "concern",
       "entries": [
         {
@@ -2274,6 +3460,36 @@
       ]
     },
     {
+      "word": "conference",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "hội nghị",
+            "cuộc họp"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "conference"
+      ]
+    },
+    {
+      "word": "confident",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "tự tin",
+            "chắc chắn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "confident"
+      ]
+    },
+    {
       "word": "confidential",
       "entries": [
         {
@@ -2286,6 +3502,21 @@
       ],
       "sourceForms": [
         "confidential"
+      ]
+    },
+    {
+      "word": "confirm",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "xác nhận",
+            "khẳng định"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "confirmed"
       ]
     },
     {
@@ -2321,6 +3552,54 @@
       ],
       "sourceForms": [
         "considering"
+      ]
+    },
+    {
+      "word": "consist",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "bao gồm",
+            "gồm có",
+            "tồn tại ở"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "consist",
+        "consisting"
+      ]
+    },
+    {
+      "word": "consistent",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "nhất quán",
+            "phù hợp",
+            "ổn định"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "consistent"
+      ]
+    },
+    {
+      "word": "consistently",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách nhất quán",
+            "đều đặn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "consistently"
       ]
     },
     {
@@ -2381,6 +3660,20 @@
       ],
       "sourceForms": [
         "consultants"
+      ]
+    },
+    {
+      "word": "consumer",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người tiêu dùng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "consumers"
       ]
     },
     {
@@ -2523,6 +3816,43 @@
       ]
     },
     {
+      "word": "control",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự kiểm soát",
+            "bộ điều khiển"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "kiểm soát",
+            "điều khiển"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "controlled"
+      ]
+    },
+    {
+      "word": "conveniently",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách thuận tiện",
+            "đúng lúc"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "conveniently"
+      ]
+    },
+    {
       "word": "conversational",
       "entries": [
         {
@@ -2560,6 +3890,144 @@
       ],
       "sourceForms": [
         "cooperation"
+      ]
+    },
+    {
+      "word": "coordinate",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "phối hợp",
+            "điều phối"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "tọa độ"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "ngang hàng",
+            "tương ứng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "coordinate",
+        "coordinated",
+        "coordinating"
+      ]
+    },
+    {
+      "word": "coordination",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự phối hợp",
+            "khả năng phối hợp",
+            "tọa độ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "coordination"
+      ]
+    },
+    {
+      "word": "coordinator",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "điều phối viên"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "coordinator"
+      ]
+    },
+    {
+      "word": "corporate",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc công ty",
+            "thuộc doanh nghiệp"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "corporate"
+      ]
+    },
+    {
+      "word": "corporation",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "tập đoàn",
+            "công ty"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "corporation"
+      ]
+    },
+    {
+      "word": "cosmetic",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc mỹ phẩm",
+            "chỉ mang tính bề ngoài"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "mỹ phẩm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "cosmetic"
+      ]
+    },
+    {
+      "word": "cost",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "chi phí",
+            "giá"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "có giá",
+            "gây tổn thất"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "cost",
+        "pastParticiple": "cost"
+      },
+      "sourceForms": [
+        "cost",
+        "costs"
       ]
     },
     {
@@ -2624,6 +4092,55 @@
       ]
     },
     {
+      "word": "cover",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "bìa",
+            "vỏ",
+            "sự che phủ",
+            "phạm vi bảo hiểm"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "che phủ",
+            "bao gồm",
+            "chi trả",
+            "thay thế"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "covers"
+      ]
+    },
+    {
+      "word": "craft",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "nghề thủ công",
+            "kỹ năng",
+            "tàu thuyền"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "chế tác",
+            "soạn thảo cẩn thận"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "crafted"
+      ]
+    },
+    {
       "word": "cream",
       "entries": [
         {
@@ -2649,6 +4166,71 @@
       "sourceForms": [
         "cream",
         "ice-cream"
+      ]
+    },
+    {
+      "word": "create",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tạo ra",
+            "sáng tạo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "create"
+      ]
+    },
+    {
+      "word": "creation",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự sáng tạo",
+            "vật hoặc tác phẩm được tạo ra"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "creation"
+      ]
+    },
+    {
+      "word": "creative",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "sáng tạo"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người làm công việc sáng tạo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "creative"
+      ]
+    },
+    {
+      "word": "creativity",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự sáng tạo",
+            "khả năng sáng tạo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "creativity"
       ]
     },
     {
@@ -2704,6 +4286,21 @@
       ]
     },
     {
+      "word": "curiously",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách tò mò",
+            "kỳ lạ thay"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "curiously"
+      ]
+    },
+    {
       "word": "currently",
       "entries": [
         {
@@ -2715,6 +4312,20 @@
       ],
       "sourceForms": [
         "currently"
+      ]
+    },
+    {
+      "word": "customer",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "khách hàng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "customer"
       ]
     },
     {
@@ -2828,7 +4439,22 @@
         }
       ],
       "sourceForms": [
+        "decided",
         "deciding"
+      ]
+    },
+    {
+      "word": "decorator",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người hoặc thợ trang trí"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "decorators"
       ]
     },
     {
@@ -2870,6 +4496,7 @@
         }
       ],
       "sourceForms": [
+        "delayed",
         "delays"
       ]
     },
@@ -2918,6 +4545,21 @@
       ],
       "sourceForms": [
         "demolished"
+      ]
+    },
+    {
+      "word": "dental",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc răng",
+            "thuộc nha khoa"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "dental"
       ]
     },
     {
@@ -3027,6 +4669,21 @@
       ]
     },
     {
+      "word": "different",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "khác",
+            "khác nhau"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "different"
+      ]
+    },
+    {
       "word": "difficulty",
       "entries": [
         {
@@ -3056,6 +4713,36 @@
       ]
     },
     {
+      "word": "diligently",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách chăm chỉ",
+            "cần mẫn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "diligently"
+      ]
+    },
+    {
+      "word": "diner",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thực khách",
+            "quán ăn nhỏ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "diner"
+      ]
+    },
+    {
       "word": "dining",
       "entries": [
         {
@@ -3076,6 +4763,69 @@
       ]
     },
     {
+      "word": "dinner",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "bữa tối",
+            "bữa ăn chính"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "dinner"
+      ]
+    },
+    {
+      "word": "direct",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "trực tiếp",
+            "thẳng",
+            "rõ ràng"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "chỉ dẫn",
+            "điều hành",
+            "hướng"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "trực tiếp",
+            "thẳng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "directed"
+      ]
+    },
+    {
+      "word": "direction",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phương hướng",
+            "chỉ dẫn",
+            "hướng dẫn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "direction",
+        "directions"
+      ]
+    },
+    {
       "word": "directly",
       "entries": [
         {
@@ -3088,6 +4838,22 @@
       ],
       "sourceForms": [
         "directly"
+      ]
+    },
+    {
+      "word": "director",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "giám đốc",
+            "đạo diễn",
+            "thành viên hội đồng quản trị"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "director"
       ]
     },
     {
@@ -3242,7 +5008,8 @@
         "pastParticiple": "done"
       },
       "sourceForms": [
-        "did"
+        "did",
+        "does"
       ]
     },
     {
@@ -3271,7 +5038,69 @@
         }
       ],
       "sourceForms": [
-        "donation"
+        "donation",
+        "donations"
+      ]
+    },
+    {
+      "word": "double",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "gấp đôi",
+            "đôi"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "số lượng gấp đôi",
+            "người đóng thế"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tăng gấp đôi",
+            "gập đôi"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "gấp đôi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "doubled"
+      ]
+    },
+    {
+      "word": "downtown",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "trung tâm thành phố"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc trung tâm thành phố"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "ở hoặc về trung tâm thành phố"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "downtown"
       ]
     },
     {
@@ -3326,6 +5155,45 @@
       ]
     },
     {
+      "word": "due",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "đến hạn",
+            "dự kiến",
+            "xứng đáng",
+            "do"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "khoản phải trả",
+            "quyền được hưởng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "due"
+      ]
+    },
+    {
+      "word": "durable",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "bền",
+            "lâu hỏng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "durable"
+      ]
+    },
+    {
       "word": "during",
       "entries": [
         {
@@ -3355,6 +5223,27 @@
       ]
     },
     {
+      "word": "e-mail",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thư điện tử",
+            "hệ thống thư điện tử"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "gửi thư điện tử"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "e-mail"
+      ]
+    },
+    {
       "word": "each",
       "entries": [
         {
@@ -3375,6 +5264,42 @@
       ]
     },
     {
+      "word": "eager",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "háo hức",
+            "nóng lòng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "eager"
+      ]
+    },
+    {
+      "word": "early",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "sớm",
+            "ban đầu"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "sớm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "early"
+      ]
+    },
+    {
       "word": "economics",
       "entries": [
         {
@@ -3386,6 +5311,28 @@
       ],
       "sourceForms": [
         "economics"
+      ]
+    },
+    {
+      "word": "economy",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "nền kinh tế",
+            "sự tiết kiệm"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "tiết kiệm",
+            "hạng phổ thông"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "economy"
       ]
     },
     {
@@ -3407,6 +5354,52 @@
       ],
       "sourceForms": [
         "unedited"
+      ]
+    },
+    {
+      "word": "edition",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phiên bản",
+            "lần xuất bản",
+            "số báo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "edition"
+      ]
+    },
+    {
+      "word": "educational",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc giáo dục",
+            "có tính giáo dục"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "educational"
+      ]
+    },
+    {
+      "word": "efficiency",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "hiệu quả",
+            "hiệu suất"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "efficiency"
       ]
     },
     {
@@ -3436,6 +5429,21 @@
       ]
     },
     {
+      "word": "electricity",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "điện",
+            "điện năng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "electricity"
+      ]
+    },
+    {
       "word": "emphasize",
       "entries": [
         {
@@ -3447,6 +5455,21 @@
       ],
       "sourceForms": [
         "emphasizing"
+      ]
+    },
+    {
+      "word": "employ",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "thuê",
+            "sử dụng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "employs"
       ]
     },
     {
@@ -3515,6 +5538,21 @@
       ]
     },
     {
+      "word": "encourage",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "khuyến khích",
+            "động viên"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "encouraged"
+      ]
+    },
+    {
       "word": "end",
       "entries": [
         {
@@ -3562,6 +5600,28 @@
       "sourceForms": [
         "engine",
         "engines"
+      ]
+    },
+    {
+      "word": "engineer",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "kỹ sư"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "thiết kế",
+            "chế tạo",
+            "dàn xếp"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "engineers"
       ]
     },
     {
@@ -3639,7 +5699,8 @@
         }
       ],
       "sourceForms": [
-        "ensure"
+        "ensure",
+        "ensures"
       ]
     },
     {
@@ -3671,6 +5732,21 @@
       ],
       "sourceForms": [
         "enterprise"
+      ]
+    },
+    {
+      "word": "entire",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "toàn bộ",
+            "toàn thể"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "entire"
       ]
     },
     {
@@ -3718,6 +5794,75 @@
       ]
     },
     {
+      "word": "establish",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "thành lập",
+            "xác lập",
+            "chứng minh"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "establish"
+      ]
+    },
+    {
+      "word": "estimate",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "bản hoặc con số ước tính"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "ước tính",
+            "đánh giá"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "estimate"
+      ]
+    },
+    {
+      "word": "evaluate",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đánh giá",
+            "ước lượng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "evaluate",
+        "evaluated",
+        "evaluating"
+      ]
+    },
+    {
+      "word": "evaluation",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự đánh giá",
+            "kết quả đánh giá"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "evaluation"
+      ]
+    },
+    {
       "word": "even",
       "entries": [
         {
@@ -3750,7 +5895,8 @@
         }
       ],
       "sourceForms": [
-        "event"
+        "event",
+        "events"
       ]
     },
     {
@@ -3815,6 +5961,47 @@
       ]
     },
     {
+      "word": "except",
+      "entries": [
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "ngoại trừ"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
+            "ngoại trừ rằng"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "loại trừ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "except"
+      ]
+    },
+    {
+      "word": "exception",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "ngoại lệ",
+            "sự phản đối"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "exceptions"
+      ]
+    },
+    {
       "word": "executive",
       "entries": [
         {
@@ -3832,6 +6019,22 @@
       ],
       "sourceForms": [
         "executives"
+      ]
+    },
+    {
+      "word": "exert",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "dùng sức",
+            "tác động",
+            "gây ảnh hưởng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "exert"
       ]
     },
     {
@@ -3893,6 +6096,21 @@
       ]
     },
     {
+      "word": "exist",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tồn tại",
+            "sống"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "existing"
+      ]
+    },
+    {
       "word": "expand",
       "entries": [
         {
@@ -3905,6 +6123,22 @@
       ],
       "sourceForms": [
         "expanding"
+      ]
+    },
+    {
+      "word": "expect",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "mong đợi",
+            "dự kiến",
+            "yêu cầu"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "expect"
       ]
     },
     {
@@ -3927,6 +6161,21 @@
       ],
       "sourceForms": [
         "expense"
+      ]
+    },
+    {
+      "word": "expensive",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "đắt",
+            "tốn kém"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "expensive"
       ]
     },
     {
@@ -3965,6 +6214,37 @@
       ]
     },
     {
+      "word": "explain",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "giải thích",
+            "trình bày nguyên nhân"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "explained"
+      ]
+    },
+    {
+      "word": "explicit",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "rõ ràng",
+            "cụ thể",
+            "minh bạch"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "explicit"
+      ]
+    },
+    {
       "word": "expo",
       "entries": [
         {
@@ -3994,6 +6274,83 @@
       ]
     },
     {
+      "word": "extremely",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "cực kỳ",
+            "vô cùng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "extremely"
+      ]
+    },
+    {
+      "word": "facilitate",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tạo điều kiện",
+            "làm cho dễ hơn",
+            "thúc đẩy"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "facilitate"
+      ]
+    },
+    {
+      "word": "facility",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "cơ sở",
+            "tiện nghi",
+            "khả năng hoặc sự dễ dàng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "facilities",
+        "facility"
+      ]
+    },
+    {
+      "word": "fact",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự thật",
+            "thực tế"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "fact"
+      ]
+    },
+    {
+      "word": "factory",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "nhà máy"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "factory"
+      ]
+    },
+    {
       "word": "fail",
       "entries": [
         {
@@ -4014,6 +6371,93 @@
       ],
       "sourceForms": [
         "failing"
+      ]
+    },
+    {
+      "word": "faithful",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "trung thành",
+            "chính xác",
+            "đáng tin"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "những người trung thành hoặc tín đồ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "faithful"
+      ]
+    },
+    {
+      "word": "family",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "gia đình",
+            "họ hoặc nhóm có liên hệ"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc gia đình"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "family"
+      ]
+    },
+    {
+      "word": "far",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "xa",
+            "rất",
+            "nhiều"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "xa",
+            "ở phía ngoài"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "far"
+      ]
+    },
+    {
+      "word": "farm",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "nông trại"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "canh tác",
+            "nuôi trồng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "farm"
       ]
     },
     {
@@ -4052,6 +6496,35 @@
       ]
     },
     {
+      "word": "february",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "tháng Hai"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "february"
+      ]
+    },
+    {
+      "word": "fee",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phí",
+            "thù lao"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "fee"
+      ]
+    },
+    {
       "word": "feedback",
       "entries": [
         {
@@ -4063,6 +6536,33 @@
       ],
       "sourceForms": [
         "feedback"
+      ]
+    },
+    {
+      "word": "feel",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "cảm thấy",
+            "sờ",
+            "cho rằng"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "cảm giác",
+            "ấn tượng"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "felt",
+        "pastParticiple": "felt"
+      },
+      "sourceForms": [
+        "feel"
       ]
     },
     {
@@ -4228,6 +6728,42 @@
       ]
     },
     {
+      "word": "fine",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "tốt",
+            "đẹp",
+            "mịn",
+            "khỏe"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "tiền phạt"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "phạt tiền"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "tốt",
+            "ổn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "fine"
+      ]
+    },
+    {
       "word": "first",
       "entries": [
         {
@@ -4254,6 +6790,87 @@
       ]
     },
     {
+      "word": "first-time",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "lần đầu",
+            "mới lần đầu"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "first-time"
+      ]
+    },
+    {
+      "word": "fit",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "vừa",
+            "phù hợp",
+            "lắp"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "khỏe mạnh",
+            "phù hợp"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự vừa vặn",
+            "cơn bộc phát"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": [
+          "fit",
+          "fitted"
+        ],
+        "pastParticiple": [
+          "fit",
+          "fitted"
+        ]
+      },
+      "sourceForms": [
+        "fits"
+      ]
+    },
+    {
+      "word": "five",
+      "entries": [
+        {
+          "partOfSpeech": "numeral",
+          "meaningsVi": [
+            "số năm"
+          ]
+        },
+        {
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "năm"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "số hoặc nhóm năm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "five"
+      ]
+    },
+    {
       "word": "five-minute",
       "entries": [
         {
@@ -4265,6 +6882,29 @@
       ],
       "sourceForms": [
         "five-minute"
+      ]
+    },
+    {
+      "word": "fix",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "sửa",
+            "ấn định",
+            "cố định"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "cách khắc phục",
+            "tình thế khó khăn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "fixed"
       ]
     },
     {
@@ -4361,6 +7001,23 @@
       ]
     },
     {
+      "word": "follow",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đi theo",
+            "theo dõi",
+            "làm theo",
+            "hiểu"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "following"
+      ]
+    },
+    {
       "word": "fondly",
       "entries": [
         {
@@ -4435,6 +7092,27 @@
       ]
     },
     {
+      "word": "formal",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "chính thức",
+            "trang trọng"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự kiện hoặc trang phục trang trọng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "formal"
+      ]
+    },
+    {
       "word": "former",
       "entries": [
         {
@@ -4452,6 +7130,41 @@
       ],
       "sourceForms": [
         "former"
+      ]
+    },
+    {
+      "word": "forward",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "về phía trước",
+            "từ nay trở đi"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "hướng về trước",
+            "táo bạo"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "chuyển tiếp",
+            "thúc đẩy"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "tiền đạo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "forward"
       ]
     },
     {
@@ -4543,6 +7256,20 @@
       ]
     },
     {
+      "word": "frequently",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "thường xuyên"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "frequently"
+      ]
+    },
+    {
       "word": "fresh",
       "entries": [
         {
@@ -4572,6 +7299,27 @@
       ]
     },
     {
+      "word": "friend",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "bạn",
+            "người ủng hộ"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "kết bạn trên mạng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "friend"
+      ]
+    },
+    {
       "word": "from",
       "entries": [
         {
@@ -4587,6 +7335,35 @@
       ]
     },
     {
+      "word": "front",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phía trước",
+            "mặt tiền",
+            "mặt trận"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "ở phía trước"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đối diện",
+            "đại diện hoặc che giấu cho"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "front"
+      ]
+    },
+    {
       "word": "frustration",
       "entries": [
         {
@@ -4599,6 +7376,52 @@
       ],
       "sourceForms": [
         "frustration"
+      ]
+    },
+    {
+      "word": "full",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "đầy",
+            "đầy đủ",
+            "no"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "full"
+      ]
+    },
+    {
+      "word": "functional",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "có chức năng",
+            "hoạt động được",
+            "thiết thực"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "functional"
+      ]
+    },
+    {
+      "word": "furniture",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "đồ nội thất"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "furniture"
       ]
     },
     {
@@ -4652,7 +7475,8 @@
         }
       ],
       "sourceForms": [
-        "gift"
+        "gift",
+        "gifts"
       ]
     },
     {
@@ -4685,6 +7509,21 @@
       ],
       "sourceForms": [
         "giving"
+      ]
+    },
+    {
+      "word": "gladly",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách vui vẻ",
+            "sẵn lòng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "gladly"
       ]
     },
     {
@@ -4729,6 +7568,41 @@
       ],
       "sourceForms": [
         "go"
+      ]
+    },
+    {
+      "word": "good",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "tốt",
+            "phù hợp",
+            "có ích"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "điều tốt",
+            "lợi ích",
+            "hàng hóa, thường dùng ở dạng số nhiều goods"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "tốt, cách dùng không trang trọng"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "comparative": "better",
+        "superlative": "best"
+      },
+      "sourceForms": [
+        "best",
+        "goods"
       ]
     },
     {
@@ -4828,7 +7702,8 @@
         }
       ],
       "sourceForms": [
-        "guest"
+        "guest",
+        "guests"
       ]
     },
     {
@@ -4861,6 +7736,21 @@
       ]
     },
     {
+      "word": "happily",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách vui vẻ",
+            "may mắn thay"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "happily"
+      ]
+    },
+    {
       "word": "have",
       "entries": [
         {
@@ -4879,7 +7769,8 @@
       "sourceForms": [
         "had",
         "has",
-        "have"
+        "have",
+        "having"
       ]
     },
     {
@@ -4895,6 +7786,37 @@
       ],
       "sourceForms": [
         "he"
+      ]
+    },
+    {
+      "word": "health",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sức khỏe",
+            "tình trạng thể chất hoặc tinh thần"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "health"
+      ]
+    },
+    {
+      "word": "healthy",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "khỏe mạnh",
+            "lành mạnh",
+            "có lợi cho sức khỏe"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "healthy"
       ]
     },
     {
@@ -4937,6 +7859,21 @@
       ],
       "sourceForms": [
         "helping"
+      ]
+    },
+    {
+      "word": "helpful",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "hữu ích",
+            "sẵn lòng giúp đỡ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "helpful"
       ]
     },
     {
@@ -5003,6 +7940,51 @@
       ]
     },
     {
+      "word": "high",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "cao",
+            "lớn",
+            "ở mức cao"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "mức cao",
+            "trạng thái phấn chấn"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "cao"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "highest"
+      ]
+    },
+    {
+      "word": "highly",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "rất",
+            "ở mức độ cao",
+            "được đánh giá cao"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "highly"
+      ]
+    },
+    {
       "word": "hiking",
       "entries": [
         {
@@ -5020,6 +8002,20 @@
       ],
       "sourceForms": [
         "hiking"
+      ]
+    },
+    {
+      "word": "him",
+      "entries": [
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "anh ấy hoặc ông ấy ở vị trí tân ngữ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "him"
       ]
     },
     {
@@ -5108,6 +8104,20 @@
       ]
     },
     {
+      "word": "hotel",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "khách sạn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "hotel"
+      ]
+    },
+    {
       "word": "hour",
       "entries": [
         {
@@ -5177,6 +8187,20 @@
       ],
       "sourceForms": [
         "humor"
+      ]
+    },
+    {
+      "word": "i",
+      "entries": [
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "tôi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "i"
       ]
     },
     {
@@ -5298,6 +8322,36 @@
       ]
     },
     {
+      "word": "important",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "quan trọng",
+            "có ảnh hưởng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "important"
+      ]
+    },
+    {
+      "word": "improve",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "cải thiện",
+            "tiến bộ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "improving"
+      ]
+    },
+    {
       "word": "in",
       "entries": [
         {
@@ -5359,7 +8413,43 @@
         }
       ],
       "sourceForms": [
-        "included"
+        "included",
+        "includes"
+      ]
+    },
+    {
+      "word": "income",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thu nhập"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "income"
+      ]
+    },
+    {
+      "word": "inconvenience",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự bất tiện",
+            "điều gây phiền"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "gây bất tiện hoặc làm phiền"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "inconvenience"
       ]
     },
     {
@@ -5414,6 +8504,36 @@
       ]
     },
     {
+      "word": "inexpensive",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "không đắt",
+            "giá rẻ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "inexpensive"
+      ]
+    },
+    {
+      "word": "inform",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "thông báo",
+            "cung cấp thông tin"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "inform"
+      ]
+    },
+    {
       "word": "informal",
       "entries": [
         {
@@ -5454,6 +8574,33 @@
       ],
       "sourceForms": [
         "informative"
+      ]
+    },
+    {
+      "word": "initial",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "ban đầu",
+            "đầu tiên"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "chữ cái đầu"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "ký tắt"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "initial"
       ]
     },
     {
@@ -5503,6 +8650,22 @@
       ]
     },
     {
+      "word": "installation",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "việc lắp đặt",
+            "thiết bị hoặc hệ thống đã lắp",
+            "cơ sở"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "installation"
+      ]
+    },
+    {
       "word": "instead",
       "entries": [
         {
@@ -5529,6 +8692,43 @@
       ],
       "sourceForms": [
         "instructed"
+      ]
+    },
+    {
+      "word": "insurance",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "bảo hiểm",
+            "hợp đồng bảo hiểm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "insurance"
+      ]
+    },
+    {
+      "word": "interest",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự quan tâm",
+            "lãi suất",
+            "quyền lợi"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "làm cho quan tâm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "interest"
       ]
     },
     {
@@ -5630,6 +8830,53 @@
       ]
     },
     {
+      "word": "introduce",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "giới thiệu",
+            "đưa vào",
+            "khởi xướng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "introduce"
+      ]
+    },
+    {
+      "word": "introduction",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự giới thiệu",
+            "phần mở đầu",
+            "việc đưa vào sử dụng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "introduction"
+      ]
+    },
+    {
+      "word": "invitation",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "lời mời",
+            "sự mời"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "invitation"
+      ]
+    },
+    {
       "word": "invite",
       "entries": [
         {
@@ -5643,6 +8890,30 @@
       ],
       "sourceForms": [
         "inviting"
+      ]
+    },
+    {
+      "word": "issue",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "vấn đề",
+            "số phát hành",
+            "việc cấp phát"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "ban hành",
+            "cấp",
+            "phát hành"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "issues"
       ]
     },
     {
@@ -5734,6 +9005,28 @@
       ]
     },
     {
+      "word": "join",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tham gia",
+            "nối",
+            "gia nhập"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "chỗ nối"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "join"
+      ]
+    },
+    {
       "word": "June",
       "entries": [
         {
@@ -5745,6 +9038,20 @@
       ],
       "sourceForms": [
         "june"
+      ]
+    },
+    {
+      "word": "just-opened",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "vừa mới khai trương hoặc mở cửa"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "just-opened"
       ]
     },
     {
@@ -5806,6 +9113,28 @@
       ],
       "sourceForms": [
         "kick"
+      ]
+    },
+    {
+      "word": "know",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "biết",
+            "hiểu",
+            "nhận ra",
+            "quen biết"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "knew",
+        "pastParticiple": "known"
+      },
+      "sourceForms": [
+        "know",
+        "known"
       ]
     },
     {
@@ -5875,7 +9204,9 @@
         }
       ],
       "sourceForms": [
-        "large"
+        "large",
+        "larger",
+        "largest"
       ]
     },
     {
@@ -5904,6 +9235,21 @@
       "sourceForms": [
         "last",
         "lasted"
+      ]
+    },
+    {
+      "word": "last-minute",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "vào phút chót",
+            "được quyết định rất muộn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "last-minute"
       ]
     },
     {
@@ -5977,6 +9323,30 @@
       ]
     },
     {
+      "word": "launch",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "khởi động",
+            "ra mắt",
+            "phóng"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự ra mắt",
+            "vụ phóng",
+            "thuyền máy"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "launch"
+      ]
+    },
+    {
       "word": "learn",
       "entries": [
         {
@@ -5989,6 +9359,34 @@
       ],
       "sourceForms": [
         "learn"
+      ]
+    },
+    {
+      "word": "least",
+      "entries": [
+        {
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "ít nhất",
+            "nhỏ nhất"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "phần ít nhất"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "ít nhất",
+            "kém nhất"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "least"
       ]
     },
     {
@@ -6027,6 +9425,41 @@
       ]
     },
     {
+      "word": "let",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "cho phép",
+            "để cho",
+            "cho thuê"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "let",
+        "pastParticiple": "let"
+      },
+      "sourceForms": [
+        "let"
+      ]
+    },
+    {
+      "word": "letter",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "chữ cái",
+            "bức thư"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "letter"
+      ]
+    },
+    {
       "word": "level",
       "entries": [
         {
@@ -6053,8 +9486,9 @@
         }
       ],
       "sourceForms": [
+        "basement-level",
         "level",
-        "basement-level"
+        "levels"
       ]
     },
     {
@@ -6135,7 +9569,8 @@
         }
       ],
       "sourceForms": [
-        "line"
+        "line",
+        "lines"
       ]
     },
     {
@@ -6156,6 +9591,21 @@
       ],
       "sourceForms": [
         "list"
+      ]
+    },
+    {
+      "word": "listen",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "lắng nghe",
+            "nghe theo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "listen"
       ]
     },
     {
@@ -6250,6 +9700,29 @@
       ]
     },
     {
+      "word": "look",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "nhìn",
+            "trông có vẻ",
+            "tìm kiếm"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "cái nhìn",
+            "vẻ ngoài"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "look"
+      ]
+    },
+    {
       "word": "lose",
       "entries": [
         {
@@ -6270,6 +9743,58 @@
       ]
     },
     {
+      "word": "lovely",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "đáng yêu",
+            "đẹp",
+            "tuyệt vời"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người hoặc vật đáng yêu, cách dùng thân mật"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "lovely"
+      ]
+    },
+    {
+      "word": "low",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thấp",
+            "ít",
+            "kém"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "mức thấp",
+            "điểm thấp"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "thấp",
+            "nhỏ tiếng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "lower"
+      ]
+    },
+    {
       "word": "lucky",
       "entries": [
         {
@@ -6281,6 +9806,21 @@
       ],
       "sourceForms": [
         "lucky"
+      ]
+    },
+    {
+      "word": "lucrative",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "sinh lợi",
+            "mang lại nhiều tiền"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "lucrative"
       ]
     },
     {
@@ -6301,6 +9841,27 @@
       ],
       "sourceForms": [
         "lumber"
+      ]
+    },
+    {
+      "word": "lunch",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "bữa trưa"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "ăn trưa",
+            "mời ăn trưa"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "lunch"
       ]
     },
     {
@@ -6366,6 +9927,22 @@
       ]
     },
     {
+      "word": "maintain",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "duy trì",
+            "bảo trì",
+            "khẳng định"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "maintain"
+      ]
+    },
+    {
       "word": "maintenance",
       "entries": [
         {
@@ -6408,6 +9985,21 @@
       ]
     },
     {
+      "word": "majority",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "đa số",
+            "phần lớn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "majority"
+      ]
+    },
+    {
       "word": "make",
       "entries": [
         {
@@ -6431,6 +10023,22 @@
       "sourceForms": [
         "made",
         "make"
+      ]
+    },
+    {
+      "word": "management",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự quản lý",
+            "ban quản lý",
+            "kỹ năng điều hành"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "management"
       ]
     },
     {
@@ -6460,6 +10068,28 @@
       ],
       "sourceForms": [
         "manner"
+      ]
+    },
+    {
+      "word": "manufacture",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "sản xuất",
+            "chế tạo"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "việc chế tạo",
+            "sản phẩm chế tạo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "manufacturing"
       ]
     },
     {
@@ -6570,6 +10200,20 @@
       ]
     },
     {
+      "word": "mathematics",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "toán học"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "mathematics"
+      ]
+    },
+    {
       "word": "maximize",
       "entries": [
         {
@@ -6616,6 +10260,22 @@
       ]
     },
     {
+      "word": "measurement",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự đo lường",
+            "số đo",
+            "kích thước"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "measurements"
+      ]
+    },
+    {
       "word": "medical",
       "entries": [
         {
@@ -6627,6 +10287,48 @@
       ],
       "sourceForms": [
         "medical"
+      ]
+    },
+    {
+      "word": "meet",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "gặp",
+            "đáp ứng",
+            "thanh toán"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "cuộc thi hoặc buổi gặp"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "met",
+        "pastParticiple": "met"
+      },
+      "sourceForms": [
+        "meeting",
+        "met"
+      ]
+    },
+    {
+      "word": "member",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thành viên",
+            "bộ phận"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "members"
       ]
     },
     {
@@ -6650,6 +10352,21 @@
       ]
     },
     {
+      "word": "menu",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thực đơn",
+            "danh mục lệnh"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "menu"
+      ]
+    },
+    {
       "word": "merger",
       "entries": [
         {
@@ -6668,6 +10385,28 @@
       ],
       "sourceForms": [
         "merger"
+      ]
+    },
+    {
+      "word": "might",
+      "entries": [
+        {
+          "partOfSpeech": "modal verb",
+          "meaningsVi": [
+            "có thể",
+            "có lẽ"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sức mạnh",
+            "quyền lực"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "might"
       ]
     },
     {
@@ -6705,6 +10444,29 @@
       ]
     },
     {
+      "word": "minute",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phút",
+            "biên bản cuộc họp"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "rất nhỏ",
+            "rất chi tiết"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "minute",
+        "minutes"
+      ]
+    },
+    {
       "word": "misplace",
       "entries": [
         {
@@ -6717,6 +10479,31 @@
       ],
       "sourceForms": [
         "misplaced"
+      ]
+    },
+    {
+      "word": "miss",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "bỏ lỡ",
+            "thiếu",
+            "không có",
+            "nhớ"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "lần bỏ lỡ",
+            "sự không trúng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "miss",
+        "missing"
       ]
     },
     {
@@ -6773,7 +10560,8 @@
         }
       ],
       "sourceForms": [
-        "month"
+        "month",
+        "months"
       ]
     },
     {
@@ -6838,6 +10626,34 @@
       ]
     },
     {
+      "word": "most",
+      "entries": [
+        {
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "hầu hết",
+            "nhiều nhất"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "phần lớn"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "nhất",
+            "rất"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "most"
+      ]
+    },
+    {
       "word": "move",
       "entries": [
         {
@@ -6889,6 +10705,33 @@
       ]
     },
     {
+      "word": "much",
+      "entries": [
+        {
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "nhiều"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "phần nhiều"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "nhiều",
+            "rất"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "much"
+      ]
+    },
+    {
       "word": "multiple",
       "entries": [
         {
@@ -6930,6 +10773,54 @@
       ],
       "sourceForms": [
         "must"
+      ]
+    },
+    {
+      "word": "my",
+      "entries": [
+        {
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "của tôi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "my"
+      ]
+    },
+    {
+      "word": "near",
+      "entries": [
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "gần",
+            "gần đến"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "gần",
+            "sắp xảy ra"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "gần"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đến gần"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "near"
       ]
     },
     {
@@ -6983,7 +10874,99 @@
         }
       ],
       "sourceForms": [
-        "need"
+        "need",
+        "needed"
+      ]
+    },
+    {
+      "word": "negotiate",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đàm phán",
+            "thương lượng",
+            "vượt qua"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "negotiating"
+      ]
+    },
+    {
+      "word": "neighbor",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "hàng xóm",
+            "người hoặc vật ở gần"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "giáp với",
+            "ở gần"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "lân cận"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "neighboring"
+      ]
+    },
+    {
+      "word": "neighborhood",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "khu phố",
+            "vùng lân cận"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "neighborhood"
+      ]
+    },
+    {
+      "word": "neither",
+      "entries": [
+        {
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "không bên nào trong hai bên"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "không người hoặc vật nào trong hai"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
+            "không ... cũng không ..."
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "cũng không"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "neither"
       ]
     },
     {
@@ -7082,6 +11065,32 @@
       ]
     },
     {
+      "word": "north",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phía bắc"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc phía bắc"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "về phía bắc"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "north"
+      ]
+    },
+    {
       "word": "northern",
       "entries": [
         {
@@ -7128,7 +11137,31 @@
       ],
       "sourceForms": [
         "note",
+        "noted",
         "notes"
+      ]
+    },
+    {
+      "word": "notice",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thông báo",
+            "sự chú ý",
+            "thời hạn báo trước"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "nhận thấy",
+            "thông báo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "notice"
       ]
     },
     {
@@ -7164,6 +11197,20 @@
       ],
       "sourceForms": [
         "notify"
+      ]
+    },
+    {
+      "word": "november",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "tháng Mười Một"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "november"
       ]
     },
     {
@@ -7235,6 +11282,21 @@
       ],
       "sourceForms": [
         "occasions"
+      ]
+    },
+    {
+      "word": "ocean",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "đại dương",
+            "biển lớn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "ocean"
       ]
     },
     {
@@ -7395,6 +11457,28 @@
       ]
     },
     {
+      "word": "old",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "già",
+            "cũ",
+            "lâu năm"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người già hoặc thời xưa"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "old"
+      ]
+    },
+    {
       "word": "on",
       "entries": [
         {
@@ -7432,7 +11516,8 @@
         }
       ],
       "sourceForms": [
-        "one"
+        "one",
+        "ones"
       ]
     },
     {
@@ -7448,6 +11533,27 @@
       ],
       "sourceForms": [
         "one-of-a-kind"
+      ]
+    },
+    {
+      "word": "online",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "trực tuyến",
+            "được kết nối mạng"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "trực tuyến"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "online"
       ]
     },
     {
@@ -7468,6 +11574,21 @@
       ],
       "sourceForms": [
         "only"
+      ]
+    },
+    {
+      "word": "onto",
+      "entries": [
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "lên trên",
+            "hướng đến hoặc chuyển sang"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "onto"
       ]
     },
     {
@@ -7609,6 +11730,23 @@
       ],
       "sourceForms": [
         "org"
+      ]
+    },
+    {
+      "word": "organize",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tổ chức",
+            "sắp xếp",
+            "thành lập"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "organize",
+        "organized"
       ]
     },
     {
@@ -7842,6 +11980,28 @@
       ]
     },
     {
+      "word": "paint",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sơn",
+            "màu vẽ"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "sơn",
+            "vẽ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "painted"
+      ]
+    },
+    {
       "word": "park",
       "entries": [
         {
@@ -7875,6 +12035,30 @@
       ],
       "sourceForms": [
         "parking"
+      ]
+    },
+    {
+      "word": "part",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phần",
+            "bộ phận",
+            "vai trò"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "chia tách",
+            "rời nhau"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "part",
+        "parts"
       ]
     },
     {
@@ -7913,6 +12097,29 @@
       ]
     },
     {
+      "word": "partner",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "đối tác",
+            "bạn đồng hành",
+            "bạn đời"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "hợp tác",
+            "ghép cặp"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "partners"
+      ]
+    },
+    {
       "word": "passenger",
       "entries": [
         {
@@ -7925,6 +12132,104 @@
       "sourceForms": [
         "passenger",
         "passengers"
+      ]
+    },
+    {
+      "word": "passion",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "niềm đam mê",
+            "cảm xúc mạnh"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "passion"
+      ]
+    },
+    {
+      "word": "past",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "đã qua",
+            "trước đây"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "quá khứ"
+          ]
+        },
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "qua",
+            "vượt quá"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "đi qua"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "past"
+      ]
+    },
+    {
+      "word": "patience",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự kiên nhẫn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "patience"
+      ]
+    },
+    {
+      "word": "patient",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "bệnh nhân"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "kiên nhẫn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "patients"
+      ]
+    },
+    {
+      "word": "patron",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "khách quen",
+            "người bảo trợ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "patrons"
       ]
     },
     {
@@ -7963,6 +12268,47 @@
       ]
     },
     {
+      "word": "percent",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phần trăm"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "tính theo phần trăm"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "theo tỷ lệ phần trăm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "percent"
+      ]
+    },
+    {
+      "word": "perfectly",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách hoàn hảo",
+            "hoàn toàn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "perfectly"
+      ]
+    },
+    {
       "word": "perform",
       "entries": [
         {
@@ -7994,6 +12340,26 @@
       ]
     },
     {
+      "word": "permit",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "cho phép"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "giấy phép"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "permitted"
+      ]
+    },
+    {
       "word": "person",
       "entries": [
         {
@@ -8008,6 +12374,62 @@
       },
       "sourceForms": [
         "people"
+      ]
+    },
+    {
+      "word": "persuasively",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách thuyết phục"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "persuasively"
+      ]
+    },
+    {
+      "word": "phone",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "điện thoại"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "gọi điện"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "phone"
+      ]
+    },
+    {
+      "word": "phrase",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "cụm từ",
+            "cách diễn đạt"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "diễn đạt",
+            "chia thành cụm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "phrase"
       ]
     },
     {
@@ -8033,6 +12455,28 @@
       ]
     },
     {
+      "word": "plan",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "kế hoạch",
+            "bản vẽ"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "lập kế hoạch",
+            "dự định"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "plans"
+      ]
+    },
+    {
       "word": "play",
       "entries": [
         {
@@ -8050,7 +12494,8 @@
         }
       ],
       "sourceForms": [
-        "play"
+        "play",
+        "plays"
       ]
     },
     {
@@ -8130,7 +12575,23 @@
         }
       ],
       "sourceForms": [
+        "policies",
         "policy"
+      ]
+    },
+    {
+      "word": "popular",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "phổ biến",
+            "được yêu thích"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "popular"
       ]
     },
     {
@@ -8248,6 +12709,30 @@
       ]
     },
     {
+      "word": "practice",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự luyện tập",
+            "thực hành",
+            "thông lệ",
+            "phòng hành nghề"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "luyện tập",
+            "hành nghề"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "practice"
+      ]
+    },
+    {
       "word": "praise",
       "entries": [
         {
@@ -8275,6 +12760,21 @@
       ]
     },
     {
+      "word": "precipitation",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "lượng mưa hoặc tuyết",
+            "sự kết tủa"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "precipitation"
+      ]
+    },
+    {
       "word": "prefer",
       "entries": [
         {
@@ -8287,6 +12787,21 @@
       ],
       "sourceForms": [
         "preferred"
+      ]
+    },
+    {
+      "word": "prepare",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "chuẩn bị",
+            "soạn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "prepared"
       ]
     },
     {
@@ -8405,6 +12920,27 @@
       ]
     },
     {
+      "word": "pride",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "niềm tự hào",
+            "lòng kiêu hãnh"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tự hào về"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "pride"
+      ]
+    },
+    {
       "word": "problem",
       "entries": [
         {
@@ -8417,6 +12953,22 @@
       "sourceForms": [
         "problem",
         "problems"
+      ]
+    },
+    {
+      "word": "procedure",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thủ tục",
+            "quy trình",
+            "phương pháp"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "procedures"
       ]
     },
     {
@@ -8438,6 +12990,8 @@
         }
       ],
       "sourceForms": [
+        "processed",
+        "processes",
         "processing"
       ]
     },
@@ -8460,6 +13014,38 @@
       ],
       "sourceForms": [
         "produce"
+      ]
+    },
+    {
+      "word": "product",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sản phẩm",
+            "kết quả",
+            "tích số"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "products"
+      ]
+    },
+    {
+      "word": "production",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự sản xuất",
+            "sản lượng",
+            "tác phẩm biểu diễn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "production"
       ]
     },
     {
@@ -8488,6 +13074,64 @@
       ],
       "sourceForms": [
         "profession"
+      ]
+    },
+    {
+      "word": "professional",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "chuyên nghiệp",
+            "thuộc nghề nghiệp"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "chuyên gia",
+            "người hành nghề chuyên môn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "professionals"
+      ]
+    },
+    {
+      "word": "proficiently",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách thành thạo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "proficiently"
+      ]
+    },
+    {
+      "word": "program",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "chương trình",
+            "kế hoạch"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "lập trình",
+            "lên chương trình"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "program"
       ]
     },
     {
@@ -8524,6 +13168,52 @@
       ],
       "sourceForms": [
         "proper"
+      ]
+    },
+    {
+      "word": "property",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "tài sản",
+            "bất động sản",
+            "thuộc tính"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "property"
+      ]
+    },
+    {
+      "word": "proud",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "tự hào",
+            "kiêu hãnh"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "proud",
+        "prouder"
+      ]
+    },
+    {
+      "word": "proudly",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách tự hào"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "proudly"
       ]
     },
     {
@@ -8564,7 +13254,30 @@
         }
       ],
       "sourceForms": [
-        "provide"
+        "provide",
+        "providing"
+      ]
+    },
+    {
+      "word": "purchase",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "việc mua",
+            "món hàng đã mua"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "mua"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "purchase",
+        "purchased"
       ]
     },
     {
@@ -8639,6 +13352,72 @@
       ]
     },
     {
+      "word": "quick",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "nhanh",
+            "mau"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "nhanh, cách dùng không trang trọng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "quickest"
+      ]
+    },
+    {
+      "word": "quicken",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "làm nhanh hơn",
+            "thúc đẩy",
+            "trở nên sống động"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "quicken"
+      ]
+    },
+    {
+      "word": "quickly",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "nhanh chóng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "quickly"
+      ]
+    },
+    {
+      "word": "quickness",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự nhanh chóng",
+            "sự nhanh nhẹn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "quickness"
+      ]
+    },
+    {
       "word": "quite",
       "entries": [
         {
@@ -8676,6 +13455,54 @@
       ]
     },
     {
+      "word": "range",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phạm vi",
+            "dãy",
+            "loạt"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "dao động",
+            "xếp thành hàng",
+            "phân bố"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "range"
+      ]
+    },
+    {
+      "word": "rate",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "tỷ lệ",
+            "mức",
+            "giá"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đánh giá",
+            "xếp hạng",
+            "tính giá"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "rate"
+      ]
+    },
+    {
       "word": "rather",
       "entries": [
         {
@@ -8695,6 +13522,101 @@
       ],
       "sourceForms": [
         "rather"
+      ]
+    },
+    {
+      "word": "read",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đọc",
+            "hiểu qua việc đọc"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "lần đọc",
+            "việc đọc"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "read",
+        "pastParticiple": "read"
+      },
+      "sourceForms": [
+        "read",
+        "reading"
+      ]
+    },
+    {
+      "word": "readily",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "dễ dàng",
+            "sẵn sàng",
+            "nhanh chóng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "readily"
+      ]
+    },
+    {
+      "word": "ready",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "sẵn sàng",
+            "đã chuẩn bị"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "chuẩn bị"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "ready"
+      ]
+    },
+    {
+      "word": "realize",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "nhận ra",
+            "thực hiện",
+            "thu được tiền"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "realize"
+      ]
+    },
+    {
+      "word": "really",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "thực sự",
+            "rất"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "really"
       ]
     },
     {
@@ -8748,6 +13670,68 @@
       ]
     },
     {
+      "word": "recently",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "gần đây"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "recently"
+      ]
+    },
+    {
+      "word": "recognize",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "nhận ra",
+            "công nhận",
+            "ghi nhận"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "recognize",
+        "recognized"
+      ]
+    },
+    {
+      "word": "recommend",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đề xuất",
+            "khuyên",
+            "giới thiệu"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "recommend"
+      ]
+    },
+    {
+      "word": "reduce",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "giảm",
+            "làm nhỏ bớt"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "reduces"
+      ]
+    },
+    {
       "word": "refer",
       "entries": [
         {
@@ -8768,6 +13752,41 @@
       ]
     },
     {
+      "word": "refund",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "khoản hoàn tiền"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "hoàn tiền"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "refund"
+      ]
+    },
+    {
+      "word": "regarding",
+      "entries": [
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "về",
+            "liên quan đến"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "regarding"
+      ]
+    },
+    {
       "word": "regardless",
       "entries": [
         {
@@ -8779,6 +13798,52 @@
       ],
       "sourceForms": [
         "regardless"
+      ]
+    },
+    {
+      "word": "region",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "khu vực",
+            "vùng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "region",
+        "regions"
+      ]
+    },
+    {
+      "word": "regional",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc khu vực",
+            "theo vùng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "regional"
+      ]
+    },
+    {
+      "word": "regionally",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "theo vùng",
+            "trong phạm vi khu vực"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "regionally"
       ]
     },
     {
@@ -8940,6 +14005,21 @@
       ]
     },
     {
+      "word": "relocate",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "di dời",
+            "chuyển địa điểm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "relocated"
+      ]
+    },
+    {
       "word": "remainder",
       "entries": [
         {
@@ -8975,6 +14055,38 @@
       ]
     },
     {
+      "word": "renew",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "gia hạn",
+            "làm mới",
+            "khôi phục"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "renew",
+        "renewed"
+      ]
+    },
+    {
+      "word": "renewal",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự gia hạn",
+            "sự đổi mới"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "renewals"
+      ]
+    },
+    {
       "word": "renovate",
       "entries": [
         {
@@ -9001,6 +14113,28 @@
       ],
       "sourceForms": [
         "renovations"
+      ]
+    },
+    {
+      "word": "rental",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "việc thuê",
+            "tiền thuê",
+            "đồ cho thuê"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "dùng để cho thuê"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "rental"
       ]
     },
     {
@@ -9142,6 +14276,35 @@
       ]
     },
     {
+      "word": "reserve",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "khu bảo tồn",
+            "phần dự trữ",
+            "lực lượng dự bị"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đặt trước",
+            "dành lại"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "dự bị"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "reserve"
+      ]
+    },
+    {
       "word": "resident",
       "entries": [
         {
@@ -9224,6 +14387,40 @@
       ],
       "sourceForms": [
         "responsibility"
+      ]
+    },
+    {
+      "word": "restorative",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "có tác dụng phục hồi"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thuốc hoặc phương pháp phục hồi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "restorative"
+      ]
+    },
+    {
+      "word": "restroom",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "nhà vệ sinh"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "restrooms"
       ]
     },
     {
@@ -9345,6 +14542,22 @@
       ]
     },
     {
+      "word": "revision",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự sửa đổi",
+            "bản sửa",
+            "việc ôn tập"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "revision"
+      ]
+    },
+    {
       "word": "right",
       "entries": [
         {
@@ -9370,6 +14583,56 @@
       ],
       "sourceForms": [
         "right"
+      ]
+    },
+    {
+      "word": "rise",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tăng",
+            "mọc",
+            "đứng dậy"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự tăng",
+            "độ cao"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "rose",
+        "pastParticiple": "risen"
+      },
+      "sourceForms": [
+        "rise",
+        "rising"
+      ]
+    },
+    {
+      "word": "room",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phòng",
+            "không gian",
+            "chỗ trống"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "ở chung phòng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "room"
       ]
     },
     {
@@ -9432,6 +14695,27 @@
       },
       "sourceForms": [
         "ran"
+      ]
+    },
+    {
+      "word": "rustic",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "mộc mạc",
+            "thuộc nông thôn"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người sống ở nông thôn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "rustic"
       ]
     },
     {
@@ -9501,6 +14785,36 @@
       ]
     },
     {
+      "word": "satisfy",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "làm hài lòng",
+            "đáp ứng",
+            "thỏa mãn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "satisfied"
+      ]
+    },
+    {
+      "word": "saturday",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thứ Bảy"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "saturdays"
+      ]
+    },
+    {
       "word": "save",
       "entries": [
         {
@@ -9540,7 +14854,30 @@
         }
       ],
       "sourceForms": [
-        "scheduled"
+        "scheduled",
+        "scheduling"
+      ]
+    },
+    {
+      "word": "school",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "trường học",
+            "trường phái"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "giáo dục",
+            "đào tạo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "school"
       ]
     },
     {
@@ -9608,6 +14945,29 @@
       ]
     },
     {
+      "word": "seat",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "ghế",
+            "chỗ ngồi",
+            "trụ sở"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "sắp chỗ ngồi",
+            "đặt vào vị trí"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "seat"
+      ]
+    },
+    {
       "word": "section",
       "entries": [
         {
@@ -9620,6 +14980,72 @@
       ],
       "sourceForms": [
         "section"
+      ]
+    },
+    {
+      "word": "secure",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "an toàn",
+            "chắc chắn"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "bảo đảm",
+            "giành được",
+            "cố định"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "secure"
+      ]
+    },
+    {
+      "word": "see",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "nhìn thấy",
+            "hiểu",
+            "gặp",
+            "xem xét"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "saw",
+        "pastParticiple": "seen"
+      },
+      "sourceForms": [
+        "see"
+      ]
+    },
+    {
+      "word": "select",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "chọn",
+            "tuyển chọn"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "được chọn lọc",
+            "cao cấp"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "select"
       ]
     },
     {
@@ -9638,6 +15064,31 @@
       ]
     },
     {
+      "word": "sell",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "bán",
+            "thuyết phục"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "việc thuyết phục bán hàng"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "sold",
+        "pastParticiple": "sold"
+      },
+      "sourceForms": [
+        "sell"
+      ]
+    },
+    {
       "word": "send",
       "entries": [
         {
@@ -9653,6 +15104,89 @@
       },
       "sourceForms": [
         "sent"
+      ]
+    },
+    {
+      "word": "sentence",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "câu",
+            "bản án"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "kết án"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "sentence",
+        "sentences"
+      ]
+    },
+    {
+      "word": "separate",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "riêng biệt",
+            "tách rời"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tách",
+            "phân chia"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "separate"
+      ]
+    },
+    {
+      "word": "serve",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "phục vụ",
+            "đáp ứng",
+            "giao bóng"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "cú giao bóng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "serve",
+        "served"
+      ]
+    },
+    {
+      "word": "server",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "máy chủ",
+            "người phục vụ",
+            "dụng cụ đựng thức ăn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "server"
       ]
     },
     {
@@ -9738,6 +15272,29 @@
       ]
     },
     {
+      "word": "share",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phần",
+            "cổ phần",
+            "phần chia"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "chia sẻ",
+            "dùng chung"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "share"
+      ]
+    },
+    {
       "word": "sharply",
       "entries": [
         {
@@ -9769,6 +15326,29 @@
       ]
     },
     {
+      "word": "sheet",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "tờ giấy",
+            "bảng dữ liệu",
+            "tấm mỏng"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "phủ kín thành lớp",
+            "đổ thành dòng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "sheet"
+      ]
+    },
+    {
       "word": "shipment",
       "entries": [
         {
@@ -9781,6 +15361,41 @@
       ],
       "sourceForms": [
         "shipment"
+      ]
+    },
+    {
+      "word": "shirt",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "áo sơ mi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "shirts"
+      ]
+    },
+    {
+      "word": "shop",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "cửa hàng",
+            "xưởng"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "mua sắm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "shop"
       ]
     },
     {
@@ -9830,6 +15445,34 @@
       ]
     },
     {
+      "word": "show",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "cho thấy",
+            "trưng bày",
+            "hướng dẫn"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "chương trình",
+            "buổi diễn",
+            "sự trưng bày"
+          ]
+        }
+      ],
+      "irregularForms": {
+        "past": "showed",
+        "pastParticiple": "shown"
+      },
+      "sourceForms": [
+        "shows"
+      ]
+    },
+    {
       "word": "sign",
       "entries": [
         {
@@ -9873,6 +15516,62 @@
       ]
     },
     {
+      "word": "significantly",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách đáng kể",
+            "một cách có ý nghĩa"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "significantly"
+      ]
+    },
+    {
+      "word": "similarly",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách tương tự"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "similarly"
+      ]
+    },
+    {
+      "word": "since",
+      "entries": [
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "kể từ"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
+            "kể từ khi",
+            "bởi vì"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "kể từ đó"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "since"
+      ]
+    },
+    {
       "word": "sincerely",
       "entries": [
         {
@@ -9885,6 +15584,84 @@
       ],
       "sourceForms": [
         "sincerely"
+      ]
+    },
+    {
+      "word": "single",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "đơn",
+            "duy nhất",
+            "độc thân"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người độc thân",
+            "đĩa đơn",
+            "một lượt"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "chọn riêng ra"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "single"
+      ]
+    },
+    {
+      "word": "site",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "địa điểm",
+            "công trường",
+            "trang web"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đặt tại"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "site"
+      ]
+    },
+    {
+      "word": "six",
+      "entries": [
+        {
+          "partOfSpeech": "numeral",
+          "meaningsVi": [
+            "số sáu"
+          ]
+        },
+        {
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "sáu"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "số hoặc nhóm sáu"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "six"
       ]
     },
     {
@@ -9911,6 +15688,21 @@
       ],
       "sourceForms": [
         "skills"
+      ]
+    },
+    {
+      "word": "slightly",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "hơi",
+            "một chút"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "slightly"
       ]
     },
     {
@@ -10006,6 +15798,26 @@
       ]
     },
     {
+      "word": "smile",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "nụ cười"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "mỉm cười"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "smiles"
+      ]
+    },
+    {
       "word": "smoothly",
       "entries": [
         {
@@ -10064,6 +15876,20 @@
       ]
     },
     {
+      "word": "software",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phần mềm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "software"
+      ]
+    },
+    {
       "word": "solution",
       "entries": [
         {
@@ -10112,6 +15938,60 @@
       ],
       "sourceForms": [
         "soon"
+      ]
+    },
+    {
+      "word": "south",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "phía nam"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thuộc phía nam"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "về phía nam"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "south"
+      ]
+    },
+    {
+      "word": "south-facing",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "hướng về phía nam"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "south-facing"
+      ]
+    },
+    {
+      "word": "souvenir",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "quà lưu niệm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "souvenir"
       ]
     },
     {
@@ -10179,6 +16059,36 @@
       ],
       "sourceForms": [
         "special"
+      ]
+    },
+    {
+      "word": "specialist",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "chuyên gia",
+            "bác sĩ chuyên khoa"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "specialists"
+      ]
+    },
+    {
+      "word": "specialize",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "chuyên về",
+            "chuyên môn hóa"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "specializes"
       ]
     },
     {
@@ -10353,6 +16263,29 @@
       ]
     },
     {
+      "word": "station",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "nhà ga",
+            "trạm",
+            "vị trí"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "bố trí",
+            "đóng quân"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "station"
+      ]
+    },
+    {
       "word": "statistical",
       "entries": [
         {
@@ -10470,6 +16403,22 @@
       ]
     },
     {
+      "word": "submit",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "nộp",
+            "trình",
+            "chịu hoặc tuân theo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "submit"
+      ]
+    },
+    {
       "word": "subscriber",
       "entries": [
         {
@@ -10499,6 +16448,125 @@
       ]
     },
     {
+      "word": "substitute",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người hoặc vật thay thế"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "thay thế"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thay thế"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "substitute",
+        "substituted",
+        "substituting"
+      ]
+    },
+    {
+      "word": "substitution",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự thay thế",
+            "người hoặc vật được thay vào"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "substitutions"
+      ]
+    },
+    {
+      "word": "succeed",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "thành công",
+            "kế nhiệm",
+            "tiếp theo"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "succeed"
+      ]
+    },
+    {
+      "word": "such",
+      "entries": [
+        {
+          "partOfSpeech": "determiner",
+          "meaningsVi": [
+            "như vậy",
+            "đến mức như thế"
+          ]
+        },
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "người hoặc vật như vậy"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "such"
+      ]
+    },
+    {
+      "word": "suggest",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đề nghị",
+            "gợi ý",
+            "cho thấy"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "suggested"
+      ]
+    },
+    {
+      "word": "suit",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "bộ com-lê",
+            "vụ kiện",
+            "bộ bài cùng chất"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "phù hợp",
+            "làm vừa ý"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "suit"
+      ]
+    },
+    {
       "word": "summary",
       "entries": [
         {
@@ -10510,6 +16578,21 @@
       ],
       "sourceForms": [
         "summaries"
+      ]
+    },
+    {
+      "word": "superb",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "tuyệt vời",
+            "xuất sắc"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "superb"
       ]
     },
     {
@@ -10542,6 +16625,64 @@
       ],
       "sourceForms": [
         "supplies"
+      ]
+    },
+    {
+      "word": "sure",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "chắc chắn",
+            "đáng tin"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "chắc chắn, cách dùng không trang trọng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "sure"
+      ]
+    },
+    {
+      "word": "surprisingly",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "một cách đáng ngạc nhiên"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "surprisingly"
+      ]
+    },
+    {
+      "word": "surround",
+      "entries": [
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "bao quanh",
+            "vây quanh"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "xung quanh",
+            "lân cận"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "surround",
+        "surrounding"
       ]
     },
     {
@@ -10603,6 +16744,29 @@
       ],
       "sourceForms": [
         "tacos"
+      ]
+    },
+    {
+      "word": "tailor",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thợ may"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "may đo",
+            "điều chỉnh cho phù hợp"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "tailor",
+        "tailored",
+        "tailoring"
       ]
     },
     {
@@ -10757,6 +16921,20 @@
       ]
     },
     {
+      "word": "tenant",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người thuê nhà hoặc mặt bằng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "tenants"
+      ]
+    },
+    {
       "word": "terminal",
       "entries": [
         {
@@ -10769,6 +16947,53 @@
       ],
       "sourceForms": [
         "terminals"
+      ]
+    },
+    {
+      "word": "test",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "bài kiểm tra",
+            "kỳ thi",
+            "phép thử"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "kiểm tra",
+            "thử nghiệm"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "test"
+      ]
+    },
+    {
+      "word": "text",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "văn bản",
+            "đoạn văn",
+            "nội dung chữ"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "nhắn tin",
+            "gửi tin nhắn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "text",
+        "texts"
       ]
     },
     {
@@ -10909,6 +17134,34 @@
       ],
       "sourceForms": [
         "themselves"
+      ]
+    },
+    {
+      "word": "then",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "khi đó",
+            "sau đó",
+            "vậy thì"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "lúc đó"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thời điểm đó"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "then"
       ]
     },
     {
@@ -11066,6 +17319,26 @@
       ]
     },
     {
+      "word": "though",
+      "entries": [
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
+            "mặc dù"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "tuy vậy"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "though"
+      ]
+    },
+    {
       "word": "three",
       "entries": [
         {
@@ -11114,6 +17387,21 @@
       ],
       "sourceForms": [
         "thursday"
+      ]
+    },
+    {
+      "word": "thus",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "vì vậy",
+            "như thế"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "thus"
       ]
     },
     {
@@ -11229,6 +17517,21 @@
       ]
     },
     {
+      "word": "too",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "quá",
+            "cũng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "too"
+      ]
+    },
+    {
       "word": "total",
       "entries": [
         {
@@ -11275,6 +17578,28 @@
       ],
       "sourceForms": [
         "tote"
+      ]
+    },
+    {
+      "word": "tour",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "chuyến tham quan",
+            "chuyến lưu diễn"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đi tham quan",
+            "lưu diễn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "tour"
       ]
     },
     {
@@ -11348,6 +17673,21 @@
       ]
     },
     {
+      "word": "transportation",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "giao thông vận tải",
+            "sự vận chuyển"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "transportation"
+      ]
+    },
+    {
       "word": "travel",
       "entries": [
         {
@@ -11390,6 +17730,45 @@
       ],
       "sourceForms": [
         "treat"
+      ]
+    },
+    {
+      "word": "treatment",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự điều trị",
+            "cách đối xử",
+            "cách xử lý"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "treatment",
+        "treatments"
+      ]
+    },
+    {
+      "word": "trip",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "chuyến đi",
+            "sự vấp"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "vấp",
+            "làm ngắt hoặc kích hoạt"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "trips"
       ]
     },
     {
@@ -11442,6 +17821,29 @@
       ]
     },
     {
+      "word": "type",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "loại",
+            "kiểu"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "đánh máy",
+            "phân loại"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "type",
+        "types"
+      ]
+    },
+    {
       "word": "unable",
       "entries": [
         {
@@ -11453,6 +17855,33 @@
       ],
       "sourceForms": [
         "unable"
+      ]
+    },
+    {
+      "word": "under",
+      "entries": [
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "dưới",
+            "trong tình trạng hoặc sự quản lý của"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "ở dưới"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "thấp hơn hoặc chưa đủ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "under"
       ]
     },
     {
@@ -11488,6 +17917,20 @@
       ],
       "sourceForms": [
         "university"
+      ]
+    },
+    {
+      "word": "unless",
+      "entries": [
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
+            "trừ khi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "unless"
       ]
     },
     {
@@ -11535,6 +17978,26 @@
       ]
     },
     {
+      "word": "until",
+      "entries": [
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "cho đến"
+          ]
+        },
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
+            "cho đến khi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "until"
+      ]
+    },
+    {
       "word": "up",
       "entries": [
         {
@@ -11578,6 +18041,20 @@
       ]
     },
     {
+      "word": "us",
+      "entries": [
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "chúng tôi hoặc chúng ta ở vị trí tân ngữ"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "us"
+      ]
+    },
+    {
       "word": "use",
       "entries": [
         {
@@ -11613,6 +18090,22 @@
       ]
     },
     {
+      "word": "variety",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "sự đa dạng",
+            "nhiều loại khác nhau",
+            "chủng loại"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "variety"
+      ]
+    },
+    {
       "word": "vehicle",
       "entries": [
         {
@@ -11643,6 +18136,27 @@
       ]
     },
     {
+      "word": "very",
+      "entries": [
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "rất"
+          ]
+        },
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "chính xác",
+            "đích thực"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "very"
+      ]
+    },
+    {
       "word": "vice",
       "entries": [
         {
@@ -11668,6 +18182,29 @@
       ],
       "sourceForms": [
         "vice"
+      ]
+    },
+    {
+      "word": "view",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "quan điểm",
+            "cảnh",
+            "tầm nhìn"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "xem",
+            "coi là"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "view"
       ]
     },
     {
@@ -11702,7 +18239,41 @@
         }
       ],
       "sourceForms": [
-        "visit"
+        "visit",
+        "visiting"
+      ]
+    },
+    {
+      "word": "visitor",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "khách",
+            "người tham quan"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "visitors"
+      ]
+    },
+    {
+      "word": "volume",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thể tích",
+            "khối lượng",
+            "âm lượng",
+            "tập sách",
+            "sản lượng"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "volume"
       ]
     },
     {
@@ -11746,6 +18317,27 @@
       ],
       "sourceForms": [
         "watch"
+      ]
+    },
+    {
+      "word": "water",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "nước"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "tưới nước",
+            "chảy nước mắt hoặc dãi"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "water"
       ]
     },
     {
@@ -11811,6 +18403,22 @@
       ],
       "sourceForms": [
         "weathering"
+      ]
+    },
+    {
+      "word": "web",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "mạng lưới",
+            "mạng Internet",
+            "mạng nhện"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "web"
       ]
     },
     {
@@ -11991,6 +18599,21 @@
       ]
     },
     {
+      "word": "whether",
+      "entries": [
+        {
+          "partOfSpeech": "conjunction",
+          "meaningsVi": [
+            "liệu",
+            "có ... hay không"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "whether"
+      ]
+    },
+    {
       "word": "which",
       "entries": [
         {
@@ -12029,6 +18652,21 @@
       ],
       "sourceForms": [
         "while"
+      ]
+    },
+    {
+      "word": "who",
+      "entries": [
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "ai",
+            "người mà"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "who"
       ]
     },
     {
@@ -12093,6 +18731,21 @@
       ]
     },
     {
+      "word": "wildlife",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "động vật hoang dã",
+            "sinh vật hoang dã"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "wildlife"
+      ]
+    },
+    {
       "word": "will",
       "entries": [
         {
@@ -12135,6 +18788,43 @@
       ]
     },
     {
+      "word": "window",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "cửa sổ",
+            "khung hiển thị",
+            "khoảng thời gian"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "window",
+        "windows"
+      ]
+    },
+    {
+      "word": "winter",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "mùa đông"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "trải qua mùa đông"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "winter"
+      ]
+    },
+    {
       "word": "with",
       "entries": [
         {
@@ -12172,6 +18862,49 @@
       ]
     },
     {
+      "word": "without",
+      "entries": [
+        {
+          "partOfSpeech": "preposition",
+          "meaningsVi": [
+            "không có"
+          ]
+        },
+        {
+          "partOfSpeech": "adverb",
+          "meaningsVi": [
+            "ở bên ngoài",
+            "không có"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "without"
+      ]
+    },
+    {
+      "word": "word",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "từ",
+            "lời nói",
+            "tin tức"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "diễn đạt bằng lời"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "word"
+      ]
+    },
+    {
       "word": "work",
       "entries": [
         {
@@ -12189,7 +18922,54 @@
         }
       ],
       "sourceForms": [
+        "worked",
         "working"
+      ]
+    },
+    {
+      "word": "worker",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "công nhân",
+            "người lao động",
+            "người làm việc"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "workers"
+      ]
+    },
+    {
+      "word": "workstation",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "máy hoặc trạm làm việc"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "workstations"
+      ]
+    },
+    {
+      "word": "world",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "thế giới",
+            "lĩnh vực",
+            "cuộc sống xã hội"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "world"
       ]
     },
     {
@@ -12206,6 +18986,28 @@
       ],
       "sourceForms": [
         "would"
+      ]
+    },
+    {
+      "word": "wrinkle",
+      "entries": [
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "nếp nhăn",
+            "vấn đề nhỏ"
+          ]
+        },
+        {
+          "partOfSpeech": "verb",
+          "meaningsVi": [
+            "làm nhăn",
+            "nhăn lại"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "wrinkles"
       ]
     },
     {
@@ -12312,6 +19114,28 @@
       ]
     },
     {
+      "word": "young",
+      "entries": [
+        {
+          "partOfSpeech": "adjective",
+          "meaningsVi": [
+            "trẻ",
+            "non"
+          ]
+        },
+        {
+          "partOfSpeech": "noun",
+          "meaningsVi": [
+            "người hoặc con non"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "young",
+        "younger"
+      ]
+    },
+    {
       "word": "your",
       "entries": [
         {
@@ -12323,6 +19147,36 @@
       ],
       "sourceForms": [
         "your"
+      ]
+    },
+    {
+      "word": "yours",
+      "entries": [
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "của bạn",
+            "của các bạn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "yours"
+      ]
+    },
+    {
+      "word": "yourself",
+      "entries": [
+        {
+          "partOfSpeech": "pronoun",
+          "meaningsVi": [
+            "chính bạn",
+            "bản thân bạn"
+          ]
+        }
+      ],
+      "sourceForms": [
+        "yourself"
       ]
     }
   ]
