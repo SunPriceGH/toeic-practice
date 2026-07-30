@@ -493,6 +493,12 @@ body.show-practice .lesson-section-card{display:none!important}
         <div class="pill-row"><span class="pill">100 câu</span><span class="pill">Word class</span><span class="pill">Part 5</span></div>
         <button class="btn" type="button" onclick="openLogin('toeic-part5-word-form-practice-100.html')">Vào bài luyện</button>
       </article>
+      <article class="card lesson-card practice-section-card" data-lesson-id="relative-clause-reduction-toeic-30">
+        <h2>Mệnh đề quan hệ &amp; rút gọn</h2>
+        <p>Luyện 30 câu Part 5 theo phong cách TOEIC: 10 câu mệnh đề quan hệ và 20 câu mệnh đề quan hệ rút gọn.</p>
+        <div class="pill-row"><span class="pill">30 câu</span><span class="pill">Relative clauses</span><span class="pill">Part 5</span></div>
+        <button class="btn" type="button" onclick="openLogin('menh-de-quan-he-rut-gon-toeic-30.html')">Vào bài luyện</button>
+      </article>
       <article class="card lesson-card practice-section-card" data-lesson-id="be-adj-v3-v-ed-prep-1">
         <h2>Be + Adj/V3/-ed + Prep 1</h2>
         <p>Luyện 52 câu cấu trúc be + adjective/V3/-ed + preposition, nhóm 1.</p>
@@ -646,6 +652,7 @@ function lessonIdsForResult(result){
   const title=String(quiz.title||'');
   if(id==='toeic-part5-word-form-100') return ['word-form-100'];
   if(id.includes('toeic-2024-test') || id.includes('listening') || title.toLowerCase().includes('listening')) return ['toeic-listening'];
+  if(id.includes('relative-clause-reduction-toeic-30') || title.includes('Mệnh đề quan hệ & rút gọn')) return ['relative-clause-reduction-toeic-30'];
   if(id.includes('be-adj-v3-v-ed-prep-1') || title.includes('Prep 1')) return ['be-adj-v3-v-ed-prep-1'];
   if(id.includes('be-adj-v3-v-ed-prep-2') || title.includes('Prep 2')) return ['be-adj-v3-v-ed-prep-2'];
   if(id.includes('noun-prep-collocation-1') || title.includes('Collocation 1')) return ['noun-prep-collocation-1'];

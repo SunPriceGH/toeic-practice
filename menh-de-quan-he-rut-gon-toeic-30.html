@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mệnh đề quan hệ & rút gọn TOEIC - 30 câu</title>
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}
+body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:relative;background:#eef4ff}
+.slide{width:100%;min-height:100vh;padding:56px 72px 120px;display:none;background:radial-gradient(circle at top left,rgba(59,130,246,.12),transparent 35%),radial-gradient(circle at bottom right,rgba(14,165,233,.12),transparent 35%),#fff}.slide.active{display:flex;flex-direction:column;animation:slideIn .35s ease}@keyframes slideIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.slide-label{display:inline-block;width:fit-content;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:800;font-size:15px;margin-bottom:18px}h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size:42px;line-height:1.15;color:#0f172a;margin-bottom:24px}h3{font-size:28px;color:#1e3a8a;margin-bottom:14px}p{font-size:23px;line-height:1.55;margin-bottom:14px}.content-area{max-width:1120px;margin-top:10px;padding-bottom:40px}.reveal{opacity:0;transform:translateY(18px);filter:blur(3px);transition:all .45s ease;pointer-events:none}.reveal.show{opacity:1;transform:translateY(0);filter:blur(0);pointer-events:auto}.intro-box{background:#f8fafc;border:2px solid #e2e8f0;border-radius:22px;padding:28px 32px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}.warning-box{background:#fff7ed;border:2px solid #fed7aa;color:#9a3412;border-radius:18px;padding:20px 24px;font-size:23px;line-height:1.45;margin-top:18px;font-weight:800}
+.intro-box{background:#f8fafc;border:2px solid #e2e8f0;border-radius:22px;padding:28px 32px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}
+.method-box{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:24px 28px;margin-top:20px}.method-box h3{color:#166534}
+.steps{list-style:none;margin-top:12px}.steps li{font-size:22px;line-height:1.5;padding:9px 0 9px 38px;position:relative}.steps li::before{content:"✓";position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:#22c55e;color:white;font-size:17px;display:grid;place-items:center;font-weight:800}
+
+.sample-box{background:#eff6ff;border-left:8px solid #2563eb;border-radius:18px;padding:26px 30px;margin-top:16px;box-shadow:0 12px 28px rgba(37,99,235,.12)}.sample-title{font-size:22px;font-weight:800;color:#1d4ed8;margin-bottom:10px}.question{font-size:31px;font-weight:900;color:#0f172a;margin-bottom:16px;line-height:1.32}.answer,.option{font-size:22px;padding:15px 16px;margin:8px 0;color:#334155;border:2px solid #dbeafe;border-radius:14px;background:#fff;transition:.25s ease;position:relative}.option{display:flex;align-items:center;gap:14px;cursor:pointer}.option:hover{border-color:#93c5fd;transform:translateY(-1px)}
+.quiz-slide.answer-locked .option{cursor:not-allowed;opacity:.78}
+.quiz-slide.answer-locked .option:hover{transform:none;border-color:#dbeafe}
+.quiz-slide.answer-locked .option input{cursor:not-allowed}.option input{width:20px;height:20px;accent-color:#2563eb}.option-letter{font-weight:1000;color:#1d4ed8;min-width:28px}.method-box{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:24px 28px;margin-top:20px}.method-box h3{color:#166534}.result-box{display:none}.result-box.show{display:block;animation:fadeUp .25s ease}.result-box.wrong-box{background:#fff1f2;border-color:#fecdd3}.result-box.wrong-box h3{color:#be123c}.danger-box{background:#fff1f2;border:2px solid #fecdd3;border-radius:20px;padding:24px 28px;margin-top:20px}.danger-box h3{color:#be123c}.steps{list-style:none;margin-top:12px}.steps li{font-size:22px;line-height:1.5;padding:9px 0 9px 38px;position:relative}.steps li::before{content:"✓";position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:#22c55e;color:white;font-size:17px;display:grid;place-items:center;font-weight:800}.danger-box .steps li::before{content:"!";background:#e11d48}.control-bar{position:fixed;left:0;right:0;bottom:16px;z-index:100;display:flex;justify-content:center;align-items:center;gap:14px;pointer-events:none;flex-wrap:wrap;padding:0 12px}.go-btn,.check-btn,.nav-btn{pointer-events:auto;border:none;cursor:pointer;font-weight:900;transition:all .2s ease;box-shadow:0 8px 18px rgba(15,23,42,.18)}.go-btn{width:54px;height:54px;border-radius:50%;background:#2563eb;color:white;font-size:15px;letter-spacing:.5px}.go-btn:hover,.check-btn:hover{transform:scale(1.06);background:#1d4ed8}.check-btn{border-radius:999px;background:#2563eb;color:#fff;font-size:15px;letter-spacing:.5px;padding:13px 22px}.nav-btn{border-radius:999px;padding:10px 16px;background:#e2e8f0;color:#0f172a;font-size:14px}.nav-btn:hover{background:#cbd5e1}.progress{position:fixed;top:24px!important;right:36px!important;bottom:auto!important;left:auto!important;font-size:16px;font-weight:800;color:#64748b;z-index:120;background:rgba(255,255,255,.85);padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 14px rgba(15,23,42,.08)}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:0%;transition:width .35s ease;z-index:130}.keyword{color:#2563eb;font-weight:900}.big-word{font-size:72px;font-weight:1000;color:#1d4ed8;letter-spacing:-2px;margin-bottom:12px}.formula{font-size:clamp(30px,2.7vw,50px);font-weight:1000;line-height:1.25;padding:18px 22px;margin:18px 0;background:#eff6ff;border:4px solid #93c5fd;border-radius:22px;color:#0f172a;text-align:center}.adv{color:#7c3aed}.np{color:#dc2626}.nc{color:#0b78b6}.score-box{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}.score-pill{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;padding:12px 18px;border-radius:999px;font-size:20px;font-weight:800}table{width:100%;border-collapse:collapse;margin-top:12px;font-size:21px;font-weight:800;table-layout:fixed}th{background:#0f5f8f;color:white;text-align:left;padding:12px 14px}td{padding:10px 12px;border:2px solid #cbd5e1;vertical-align:top;line-height:1.25}.category-note{font-size:20px;color:#64748b;margin-top:-8px}.answer-key{font-weight:900;color:#15803d}.correct-text{color:#15803d}.wrong-text{color:#be123c}.home-btn{background:linear-gradient(135deg,#0f172a,#334155)!important;color:#fff!important}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.slide{padding:36px 24px 130px}h1{font-size:34px}h2{font-size:31px}p,.answer,.steps li{font-size:19px}.question{font-size:24px}.big-word{font-size:44px}.go-btn{width:48px;height:48px;font-size:13px}.check-btn{padding:11px 16px;font-size:13px}.nav-btn{padding:9px 13px;font-size:13px}.progress{top:14px!important;right:14px!important;font-size:13px}table{font-size:17px}th,td{padding:9px 8px}.option{font-size:18px;padding:14px}}
+  
+
+/* ===== Refinement: table + warning-box thanh thoát hơn ===== */
+.intro-box:has(table){
+  padding:24px 26px;
+  overflow:hidden;
+}
+table{
+  border-collapse:separate!important;
+  border-spacing:0!important;
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid #d8e2f0;
+  background:#fff;
+  box-shadow:0 10px 24px rgba(15,23,42,.055);
+  font-size:20px!important;
+  font-weight:500!important;
+  letter-spacing:.01em;
+}
+th{
+  background:linear-gradient(135deg,#1d4ed8,#0ea5e9)!important;
+  color:#fff;
+  padding:14px 16px!important;
+  font-size:17px;
+  line-height:1.35;
+  font-weight:850!important;
+  letter-spacing:.02em;
+  border:none!important;
+}
+td{
+  padding:13px 16px!important;
+  border:none!important;
+  border-top:1px solid #e5edf7!important;
+  color:#334155;
+  line-height:1.48!important;
+  font-weight:500!important;
+}
+td:first-child{
+  color:#1e3a8a;
+  font-weight:750!important;
+}
+tr:nth-child(even) td{background:#f8fbff}
+tr:hover td{background:#eff6ff}
+.warning-box{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  background:linear-gradient(135deg,#fff7ed,#fffaf3)!important;
+  border:1px solid #fed7aa!important;
+  border-left:7px solid #f97316!important;
+  color:#7c2d12!important;
+  border-radius:20px!important;
+  padding:18px 22px!important;
+  font-size:21px!important;
+  line-height:1.58!important;
+  font-weight:550!important;
+  box-shadow:0 10px 24px rgba(249,115,22,.08);
+}
+.warning-box::before{
+  content:"!";
+  flex:0 0 auto;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#ffedd5;
+  color:#c2410c;
+  font-size:18px;
+  font-weight:950;
+  margin-top:2px;
+}
+.warning-box b{
+  color:#9a3412;
+  font-weight:850;
+}
+.reveal.show{
+  transition:opacity .38s ease, transform .38s ease, filter .38s ease;
+}
+@media(max-width:768px){
+  .intro-box:has(table){padding:18px 16px;overflow-x:auto}
+  table{font-size:16px!important;min-width:620px}
+  th{font-size:15px;padding:11px 12px!important}
+  td{padding:10px 12px!important;line-height:1.42!important}
+  .warning-box{font-size:18px!important;padding:15px 16px!important;gap:10px}
+  .warning-box::before{width:26px;height:26px;font-size:16px}
+}
+
+/* ===== Compact note: dùng cho lưu ý ngắn, tránh warning-box quá nặng ===== */
+.note-box{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  width:fit-content;
+  max-width:920px;
+  margin-top:18px;
+  padding:14px 18px;
+  border:1px solid #fed7aa;
+  border-left:5px solid #f97316;
+  border-radius:16px;
+  background:linear-gradient(135deg,#fffaf3,#fff7ed);
+  color:#7c2d12;
+  font-size:20px;
+  line-height:1.55;
+  font-weight:500;
+  box-shadow:0 8px 20px rgba(249,115,22,.07);
+}
+.note-box .note-label{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:5px 10px;
+  border-radius:999px;
+  background:#ffedd5;
+  color:#c2410c;
+  font-size:14px;
+  line-height:1;
+  font-weight:850;
+  letter-spacing:.02em;
+  margin-top:3px;
+}
+.note-box b{
+  color:#9a3412;
+  font-weight:850;
+}
+
+.note-box.note-lines{align-items:flex-start}
+.note-box .note-content{display:flex;flex-direction:column;gap:5px;line-height:1.45}
+.note-box .note-content span{display:block}
+@media(max-width:768px){
+  .note-box{width:100%;font-size:18px;padding:13px 14px;gap:10px}
+  .note-box .note-label{font-size:13px;padding:5px 9px}
+}
+
+
+/* Khi chưa chọn đáp án: chỉ hiện cảnh báo, không hiện lời giải */
+.result-box.no-answer .explain{display:none!important}
+.result-box.no-answer{background:#fff7ed!important;border-color:#fed7aa!important}
+.result-box.no-answer .result-title{margin-bottom:0!important}
+
+.translation-box{
+  display:none;
+  background:linear-gradient(135deg,#f8fafc,#eef6ff);
+  border:2px solid #dbeafe;
+  border-left:8px solid #60a5fa;
+  border-radius:20px;
+  padding:22px 26px;
+  margin-top:16px;
+  box-shadow:0 10px 24px rgba(37,99,235,.08);
+  animation:fadeUp .25s ease;
+}
+.translation-box.show{display:block}
+.translation-box h3{
+  color:#1d4ed8;
+  font-size:24px;
+  margin-bottom:12px;
+}
+.translation-list{
+  display:grid;
+  gap:10px;
+  margin-top:8px;
+}
+.translation-item{
+  background:#fff;
+  border:1.5px solid #dbeafe;
+  border-radius:14px;
+  padding:12px 14px;
+  font-size:20px;
+  line-height:1.45;
+  color:#334155;
+}
+.translation-item b{color:#0f172a}
+.translation-item .letter{color:#1d4ed8;font-weight:1000;margin-right:6px}
+@media(max-width:768px){.translation-box{padding:18px}.translation-item{font-size:18px}.translation-box h3{font-size:22px}}
+
+
+/* ===== En/Vn question translation pill ===== */
+.sample-title.question-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lang-pill{
+  border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+  min-width:72px;height:34px;padding:0 13px;border-radius:999px;
+  background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;
+  font-size:13px;font-weight:1000;letter-spacing:.3px;
+  box-shadow:0 8px 16px rgba(37,99,235,.20);transition:.2s ease;
+}
+.lang-pill:hover{transform:translateY(-1px) scale(1.03);filter:brightness(1.04)}
+.lang-pill.active{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+.question-vn{
+  display:none;margin-top:12px;padding:14px 16px;border-radius:16px;
+  background:#f8fafc;border:2px solid #dbeafe;color:#334155;
+  font-size:21px;line-height:1.45;font-weight:700;
+}
+.question-vn.show{display:block;animation:fadeUp .22s ease}
+.question-vn .vn-label{font-weight:1000;color:#1d4ed8;margin-right:8px}
+
+/* ===== Progress as page picker button ===== */
+.progress-btn{border:none;cursor:pointer;pointer-events:auto}
+.progress-btn:hover{background:#eff6ff;color:#1d4ed8;transform:translateY(-1px)}
+.page-picker-overlay{
+  position:fixed;inset:0;background:rgba(15,23,42,.42);z-index:300;
+  display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px);
+}
+.page-picker-overlay.show{display:flex}
+.page-picker-panel{
+  width:min(880px,96vw);max-height:84vh;overflow:auto;background:#fff;border-radius:26px;
+  border:2px solid #dbeafe;box-shadow:0 24px 60px rgba(15,23,42,.24);padding:22px;
+}
+.page-picker-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
+.page-picker-head h3{margin:0;color:#0f172a;font-size:28px}
+.page-picker-head p{margin:6px 0 0;color:#64748b;font-size:17px;line-height:1.4}
+.page-picker-close{
+  border:none;cursor:pointer;width:40px;height:40px;border-radius:999px;background:#e2e8f0;
+  color:#0f172a;font-size:28px;line-height:1;font-weight:800;
+}
+.page-picker-close:hover{background:#cbd5e1}
+.page-picker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px}
+.page-jump-btn{
+  border:2px solid #dbeafe;border-radius:16px;background:#f8fafc;color:#0f172a;
+  padding:10px 8px;min-height:58px;cursor:pointer;text-align:left;transition:.18s ease;
+  font-size:14px;font-weight:900;line-height:1.25;
+}
+.page-jump-btn:hover{border-color:#93c5fd;background:#eff6ff;transform:translateY(-1px)}
+.page-jump-btn.active{border-color:#2563eb;background:#dbeafe;color:#1d4ed8}
+
+.page-jump-btn.correct-answer{
+  border-color:#22c55e!important;
+  background:#f0fdf4!important;
+  color:#166534!important;
+}
+.page-jump-btn.correct-answer .page-no{color:#15803d!important}
+.page-jump-btn.correct-answer .page-title{color:#166534!important}
+.page-jump-btn.wrong-answer{
+  border-color:#ef4444!important;
+  background:#fff1f2!important;
+  color:#be123c!important;
+}
+.page-jump-btn.wrong-answer .page-no{color:#be123c!important}
+.page-jump-btn.wrong-answer .page-title{color:#be123c!important}
+.page-jump-btn.correct-answer.active{
+  box-shadow:0 0 0 3px rgba(34,197,94,.22);
+}
+.page-jump-btn.wrong-answer.active{
+  box-shadow:0 0 0 3px rgba(239,68,68,.20);
+}
+.page-jump-btn .page-no{display:block;font-size:18px;font-weight:1000}
+.page-jump-btn .page-title{display:block;color:#64748b;font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:768px){.question-vn{font-size:18px}.lang-pill{height:32px;min-width:66px;font-size:12px}.page-picker-panel{padding:18px;border-radius:20px}.page-picker-grid{grid-template-columns:repeat(auto-fill,minmax(74px,1fr))}.page-jump-btn{min-height:54px;font-size:12px}.page-picker-head h3{font-size:24px}}
+
+
+
+/* ===== Word-form option POS badge: only inside translation box ===== */
+.translation-item .option-pos{
+  font-size:14px;
+  font-weight:900;
+  color:#64748b;
+  background:#f1f5f9;
+  border:1px solid #e2e8f0;
+  padding:4px 8px;
+  border-radius:999px;
+  margin-left:8px;
+  white-space:nowrap;
+  display:inline-flex;
+  align-items:center;
+  vertical-align:middle;
+}
+@media(max-width:768px){
+  .translation-item .option-pos{font-size:12px;margin-left:6px}
+}
+
+
+.submit-status{margin-top:14px;font-size:20px;line-height:1.5;color:#334155;font-weight:700}
+.submit-status.ok{color:#15803d}.submit-status.err{color:#be123c}
+.logout-link{position:fixed;top:24px;left:36px;z-index:121;border:none;border-radius:999px;background:#f8fafc;color:#334155;border:2px solid #dbeafe;padding:8px 13px;font-size:14px;font-weight:900;cursor:pointer;box-shadow:0 6px 14px rgba(15,23,42,.08)}
+.logout-link:hover{background:#eff6ff;color:#1d4ed8}
+@media(max-width:768px){.logout-link{top:14px;left:14px;font-size:12px;padding:7px 10px}.submit-status{font-size:18px}}
+
+
+
+/* ===== Anti right-click / anti casual download lock ===== */
+html.anti-download-lock, html.anti-download-lock body{
+  -webkit-user-select:none!important;
+  -moz-user-select:none!important;
+  -ms-user-select:none!important;
+  user-select:none!important;
+  -webkit-touch-callout:none!important;
+}
+html.anti-download-lock img,
+html.anti-download-lock video,
+html.anti-download-lock audio,
+html.anti-download-lock canvas,
+html.anti-download-lock svg{
+  -webkit-user-drag:none!important;
+  user-drag:none!important;
+}
+
+</style>
+<style>
+.home-confirm-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);display:none;align-items:center;justify-content:center;padding:22px;z-index:300;backdrop-filter:blur(5px)}
+.home-confirm-overlay.show{display:flex}
+.home-confirm-panel{width:min(520px,94vw);background:#fff;border:2px solid #fecdd3;border-radius:24px;padding:26px;box-shadow:0 24px 70px rgba(15,23,42,.28)}
+.home-confirm-panel h3{font-size:28px;color:#be123c;margin-bottom:10px}
+.home-confirm-panel p{font-size:20px;line-height:1.45;color:#334155;margin-bottom:12px}
+.home-confirm-actions{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap;margin-top:18px}
+.home-confirm-danger{background:#be123c!important;color:#fff!important}
+.home-confirm-danger:hover{background:#9f1239!important}
+@media(max-width:768px){.home-confirm-panel{padding:22px}.home-confirm-panel h3{font-size:24px}.home-confirm-panel p{font-size:18px}.home-confirm-actions{justify-content:stretch}.home-confirm-actions .nav-btn{flex:1}}
+</style>
+</head>
+<body>
+<div class="lesson-wrapper">
+<div class="top-line" id="topLine"></div>
+<button class="progress progress-btn" id="progressText" onclick="openPagePicker()" type="button" title="Chọn trang">1 / 31</button>
+<div id="quizMount"></div>
+
+<div class="page-picker-overlay" id="pagePicker" onclick="closePagePicker(event)">
+  <div class="page-picker-panel" role="dialog" aria-modal="true" aria-labelledby="pagePickerTitle">
+    <div class="page-picker-head">
+      <div>
+        <h3 id="pagePickerTitle">Chọn câu Practice</h3>
+        <p>Click vào số câu để nhảy nhanh đến câu cần làm.</p>
+      </div>
+      <button class="page-picker-close" onclick="closePagePicker()" type="button">×</button>
+    </div>
+    <div class="page-picker-grid" id="pagePickerGrid"></div>
+  </div>
+</div>
+
+<div class="home-confirm-overlay" id="homeConfirm" onclick="closeHomeConfirm(event)">
+  <div class="home-confirm-panel" role="dialog" aria-modal="true" aria-labelledby="homeConfirmTitle" onclick="event.stopPropagation()">
+    <h3 id="homeConfirmTitle">Bạn chưa nộp kết quả</h3>
+    <p>Nếu về trang chủ bây giờ, bài làm hiện tại có thể chưa được lưu.</p>
+    <p>Hãy bấm <b>Ở lại nộp bài</b> nếu bạn muốn lưu điểm trước.</p>
+    <div class="home-confirm-actions">
+      <button class="nav-btn" type="button" onclick="closeHomeConfirm()">Ở lại nộp bài</button>
+      <button class="nav-btn home-confirm-danger" type="button" onclick="confirmGoHome()">Vẫn về trang chủ</button>
+    </div>
+  </div>
+</div>
+
+<div class="control-bar">
+<button class="nav-btn" onclick="prevSlide()" type="button">← PREV</button>
+<button class="go-btn" onclick="goReveal()" type="button">GO</button>
+<button class="check-btn" id="checkBtn" onclick="checkAnswer()" type="button">CHECK</button>
+<button class="nav-btn" onclick="nextSlide()" type="button">NEXT →</button>
+</div>
+</div>
+
+<script>
+
+function escapeHtml(str){
+  return String(str ?? '').replace(/[&<>"']/g,function(s){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s];
+  });
+}
+function formatExplanation(str){
+  return escapeHtml(str).replace(/(Cấu trúc đúng là )([^=]+)( =)/, '$1<strong>$2</strong>$3');
+}
+
+const quizData = [
+  {
+    "id": "q1",
+    "label": "Practice · Question 1",
+    "title": "Câu 1",
+    "category": "Mệnh đề quan hệ đầy đủ · Chọn đại từ quan hệ phù hợp.",
+    "questionEn": "Employees ___ handle confidential records must follow the updated security procedures.",
+    "questionVn": "Những nhân viên ___ xử lý hồ sơ mật phải tuân theo các quy trình bảo mật đã cập nhật.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "who",
+        "pos": "relative pronoun",
+        "vn": "người mà / những người"
+      },
+      {
+        "key": "B",
+        "text": "which",
+        "pos": "relative pronoun",
+        "vn": "cái mà / vật mà"
+      },
+      {
+        "key": "C",
+        "text": "where",
+        "pos": "relative adverb",
+        "vn": "nơi mà"
+      },
+      {
+        "key": "D",
+        "text": "whose",
+        "pos": "relative determiner",
+        "vn": "có ... của người/vật đó"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là employees who handle confidential records = những nhân viên xử lý hồ sơ mật. 'Who' thay cho danh từ chỉ người và làm chủ ngữ của động từ 'handle'."
+  },
+  {
+    "id": "q2",
+    "label": "Practice · Question 2",
+    "title": "Câu 2",
+    "category": "Mệnh đề quan hệ đầy đủ · Chọn đại từ quan hệ phù hợp.",
+    "questionEn": "The new reservation system, ___ was introduced last month, has reduced booking errors.",
+    "questionVn": "Hệ thống đặt chỗ mới, ___ được đưa vào sử dụng tháng trước, đã làm giảm lỗi đặt chỗ.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "that",
+        "pos": "relative pronoun",
+        "vn": "mà / cái mà"
+      },
+      {
+        "key": "B",
+        "text": "where",
+        "pos": "relative adverb",
+        "vn": "nơi mà"
+      },
+      {
+        "key": "C",
+        "text": "which",
+        "pos": "relative pronoun",
+        "vn": "cái mà / hệ thống mà"
+      },
+      {
+        "key": "D",
+        "text": "what",
+        "pos": "pronoun",
+        "vn": "điều gì / cái gì"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the system, which was introduced last month, = hệ thống, vốn được đưa vào sử dụng tháng trước. Mệnh đề không xác định sau dấu phẩy dùng 'which', không dùng 'that'."
+  },
+  {
+    "id": "q3",
+    "label": "Practice · Question 3",
+    "title": "Câu 3",
+    "category": "Mệnh đề quan hệ đầy đủ · Chọn đại từ quan hệ sau giới từ.",
+    "questionEn": "The consultant with ___ the directors met has extensive experience in overseas markets.",
+    "questionVn": "Chuyên gia tư vấn ___ các giám đốc đã gặp có nhiều kinh nghiệm tại thị trường nước ngoài.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "which",
+        "pos": "relative pronoun",
+        "vn": "cái mà / vật mà"
+      },
+      {
+        "key": "B",
+        "text": "whose",
+        "pos": "relative determiner",
+        "vn": "của người mà"
+      },
+      {
+        "key": "C",
+        "text": "who",
+        "pos": "relative pronoun",
+        "vn": "người mà"
+      },
+      {
+        "key": "D",
+        "text": "whom",
+        "pos": "relative pronoun",
+        "vn": "người mà, dạng tân ngữ"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the consultant with whom the directors met = chuyên gia tư vấn mà các giám đốc đã gặp. Sau giới từ 'with', đại từ chỉ người ở dạng tân ngữ là 'whom'."
+  },
+  {
+    "id": "q4",
+    "label": "Practice · Question 4",
+    "title": "Câu 4",
+    "category": "Mệnh đề quan hệ đầy đủ · Chọn từ chỉ sở hữu.",
+    "questionEn": "The manufacturer ___ products passed the inspection will receive a long-term contract.",
+    "questionVn": "Nhà sản xuất ___ sản phẩm đã vượt qua đợt kiểm định sẽ nhận được hợp đồng dài hạn.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "who",
+        "pos": "relative pronoun",
+        "vn": "người mà"
+      },
+      {
+        "key": "B",
+        "text": "whose",
+        "pos": "relative determiner",
+        "vn": "có sản phẩm của họ"
+      },
+      {
+        "key": "C",
+        "text": "which",
+        "pos": "relative pronoun",
+        "vn": "cái mà"
+      },
+      {
+        "key": "D",
+        "text": "whom",
+        "pos": "relative pronoun",
+        "vn": "người mà, dạng tân ngữ"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the manufacturer whose products passed the inspection = nhà sản xuất có sản phẩm vượt qua kiểm định. 'Whose' đứng trước danh từ 'products' để diễn tả sở hữu."
+  },
+  {
+    "id": "q5",
+    "label": "Practice · Question 5",
+    "title": "Câu 5",
+    "category": "Mệnh đề quan hệ đầy đủ · Chọn trạng từ quan hệ chỉ nơi chốn.",
+    "questionEn": "The warehouse ___ the replacement parts are stored is located near the airport.",
+    "questionVn": "Nhà kho ___ các linh kiện thay thế được lưu trữ nằm gần sân bay.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "when",
+        "pos": "relative adverb",
+        "vn": "khi mà"
+      },
+      {
+        "key": "B",
+        "text": "which",
+        "pos": "relative pronoun",
+        "vn": "cái mà"
+      },
+      {
+        "key": "C",
+        "text": "where",
+        "pos": "relative adverb",
+        "vn": "nơi mà"
+      },
+      {
+        "key": "D",
+        "text": "whose",
+        "pos": "relative determiner",
+        "vn": "có ... của nó"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the warehouse where the parts are stored = nhà kho nơi các linh kiện được lưu trữ. 'Where' thay cho cụm 'in the warehouse' và chỉ nơi chốn."
+  },
+  {
+    "id": "q6",
+    "label": "Practice · Question 6",
+    "title": "Câu 6",
+    "category": "Mệnh đề quan hệ đầy đủ · Chọn trạng từ quan hệ chỉ thời gian.",
+    "questionEn": "Friday is the day ___ all expense reports must be submitted to the accounting office.",
+    "questionVn": "Thứ Sáu là ngày ___ tất cả báo cáo chi phí phải được nộp cho phòng kế toán.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "when",
+        "pos": "relative adverb",
+        "vn": "khi mà / vào ngày mà"
+      },
+      {
+        "key": "B",
+        "text": "where",
+        "pos": "relative adverb",
+        "vn": "nơi mà"
+      },
+      {
+        "key": "C",
+        "text": "who",
+        "pos": "relative pronoun",
+        "vn": "người mà"
+      },
+      {
+        "key": "D",
+        "text": "which",
+        "pos": "relative pronoun",
+        "vn": "cái mà"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the day when all expense reports must be submitted = ngày mà tất cả báo cáo phải được nộp. 'When' thay cho cụm 'on that day'."
+  },
+  {
+    "id": "q7",
+    "label": "Practice · Question 7",
+    "title": "Câu 7",
+    "category": "Mệnh đề quan hệ đầy đủ · Chọn đại từ quan hệ trong mệnh đề xác định.",
+    "questionEn": "Everything ___ was discussed during the orientation is included in the employee handbook.",
+    "questionVn": "Mọi điều ___ được thảo luận trong buổi định hướng đều có trong sổ tay nhân viên.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "what",
+        "pos": "pronoun",
+        "vn": "điều gì / cái gì"
+      },
+      {
+        "key": "B",
+        "text": "where",
+        "pos": "relative adverb",
+        "vn": "nơi mà"
+      },
+      {
+        "key": "C",
+        "text": "whose",
+        "pos": "relative determiner",
+        "vn": "của người/vật mà"
+      },
+      {
+        "key": "D",
+        "text": "that",
+        "pos": "relative pronoun",
+        "vn": "mà / điều mà"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là everything that was discussed = mọi điều đã được thảo luận. Sau đại từ bất định 'everything', 'that' là lựa chọn phù hợp để mở mệnh đề quan hệ xác định."
+  },
+  {
+    "id": "q8",
+    "label": "Practice · Question 8",
+    "title": "Câu 8",
+    "category": "Mệnh đề quan hệ đầy đủ · Chọn đại từ quan hệ làm chủ ngữ.",
+    "questionEn": "Applicants ___ have not attached a résumé will be asked to update their submissions.",
+    "questionVn": "Các ứng viên ___ chưa đính kèm sơ yếu lý lịch sẽ được yêu cầu cập nhật hồ sơ.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "whom",
+        "pos": "relative pronoun",
+        "vn": "người mà, dạng tân ngữ"
+      },
+      {
+        "key": "B",
+        "text": "who",
+        "pos": "relative pronoun",
+        "vn": "người mà, làm chủ ngữ"
+      },
+      {
+        "key": "C",
+        "text": "which",
+        "pos": "relative pronoun",
+        "vn": "cái mà"
+      },
+      {
+        "key": "D",
+        "text": "when",
+        "pos": "relative adverb",
+        "vn": "khi mà"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là applicants who have not attached a résumé = các ứng viên chưa đính kèm sơ yếu lý lịch. 'Who' chỉ người và làm chủ ngữ của 'have not attached'."
+  },
+  {
+    "id": "q9",
+    "label": "Practice · Question 9",
+    "title": "Câu 9",
+    "category": "Mệnh đề quan hệ đầy đủ · Chọn đại từ quan hệ sau giới từ.",
+    "questionEn": "The online portal through ___ customers can track their orders will be upgraded tonight.",
+    "questionVn": "Cổng trực tuyến thông qua ___ khách hàng có thể theo dõi đơn hàng sẽ được nâng cấp tối nay.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "where",
+        "pos": "relative adverb",
+        "vn": "nơi mà"
+      },
+      {
+        "key": "B",
+        "text": "that",
+        "pos": "relative pronoun",
+        "vn": "mà / cái mà"
+      },
+      {
+        "key": "C",
+        "text": "which",
+        "pos": "relative pronoun",
+        "vn": "cái mà, sau giới từ"
+      },
+      {
+        "key": "D",
+        "text": "what",
+        "pos": "pronoun",
+        "vn": "điều gì / cái gì"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the portal through which customers can track orders = cổng thông tin mà thông qua đó khách hàng có thể theo dõi đơn hàng. Sau giới từ 'through' dùng 'which' cho vật."
+  },
+  {
+    "id": "q10",
+    "label": "Practice · Question 10",
+    "title": "Câu 10",
+    "category": "Mệnh đề quan hệ đầy đủ · Chọn từ chỉ sở hữu.",
+    "questionEn": "Ms. Ortega thanked the volunteers ___ efforts made the charity event successful.",
+    "questionVn": "Bà Ortega cảm ơn các tình nguyện viên ___ nỗ lực đã giúp sự kiện từ thiện thành công.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "whose",
+        "pos": "relative determiner",
+        "vn": "có những nỗ lực của họ"
+      },
+      {
+        "key": "B",
+        "text": "whom",
+        "pos": "relative pronoun",
+        "vn": "người mà, dạng tân ngữ"
+      },
+      {
+        "key": "C",
+        "text": "which",
+        "pos": "relative pronoun",
+        "vn": "cái mà"
+      },
+      {
+        "key": "D",
+        "text": "where",
+        "pos": "relative adverb",
+        "vn": "nơi mà"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the volunteers whose efforts made the event successful = các tình nguyện viên có nỗ lực giúp sự kiện thành công. 'Whose' diễn tả quan hệ sở hữu với danh từ 'efforts'."
+  },
+  {
+    "id": "q11",
+    "label": "Practice · Question 11",
+    "title": "Câu 11",
+    "category": "Mệnh đề quan hệ rút gọn · V-ing mang nghĩa chủ động.",
+    "questionEn": "Customers ___ to receive electronic invoices should update their account preferences.",
+    "questionVn": "Khách hàng ___ nhận hóa đơn điện tử nên cập nhật tùy chọn tài khoản.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "wish",
+        "pos": "base verb",
+        "vn": "mong muốn"
+      },
+      {
+        "key": "B",
+        "text": "wished",
+        "pos": "past verb / participle",
+        "vn": "đã mong muốn / được mong muốn"
+      },
+      {
+        "key": "C",
+        "text": "wishing",
+        "pos": "present participle",
+        "vn": "đang / có mong muốn"
+      },
+      {
+        "key": "D",
+        "text": "wishes",
+        "pos": "present verb",
+        "vn": "mong muốn, ngôi số ít"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là customers wishing to receive electronic invoices = customers who wish to receive electronic invoices. Mệnh đề quan hệ chủ động được rút gọn bằng V-ing."
+  },
+  {
+    "id": "q12",
+    "label": "Practice · Question 12",
+    "title": "Câu 12",
+    "category": "Mệnh đề quan hệ rút gọn · V-ing mang nghĩa chủ động.",
+    "questionEn": "Employees ___ in the downtown office may use the new shuttle service.",
+    "questionVn": "Nhân viên ___ tại văn phòng trung tâm thành phố có thể sử dụng dịch vụ xe đưa đón mới.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "worked",
+        "pos": "past verb / participle",
+        "vn": "đã làm việc / được làm"
+      },
+      {
+        "key": "B",
+        "text": "working",
+        "pos": "present participle",
+        "vn": "đang làm việc"
+      },
+      {
+        "key": "C",
+        "text": "work",
+        "pos": "base verb",
+        "vn": "làm việc"
+      },
+      {
+        "key": "D",
+        "text": "works",
+        "pos": "present verb",
+        "vn": "làm việc, ngôi số ít"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là employees working in the downtown office = employees who work in the downtown office. Chủ thể 'employees' thực hiện hành động nên dùng V-ing."
+  },
+  {
+    "id": "q13",
+    "label": "Practice · Question 13",
+    "title": "Câu 13",
+    "category": "Mệnh đề quan hệ rút gọn · V-ing mang nghĩa chủ động.",
+    "questionEn": "The company is seeking a contractor ___ in energy-efficient building design.",
+    "questionVn": "Công ty đang tìm một nhà thầu ___ về thiết kế tòa nhà tiết kiệm năng lượng.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "specialized",
+        "pos": "past participle",
+        "vn": "được chuyên môn hóa / chuyên về"
+      },
+      {
+        "key": "B",
+        "text": "specializes",
+        "pos": "present verb",
+        "vn": "chuyên về, ngôi số ít"
+      },
+      {
+        "key": "C",
+        "text": "specialization",
+        "pos": "noun",
+        "vn": "sự chuyên môn hóa"
+      },
+      {
+        "key": "D",
+        "text": "specializing",
+        "pos": "present participle",
+        "vn": "chuyên về"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là a contractor specializing in energy-efficient design = a contractor who specializes in energy-efficient design. Nhà thầu chủ động có chuyên môn nên dùng V-ing."
+  },
+  {
+    "id": "q14",
+    "label": "Practice · Question 14",
+    "title": "Câu 14",
+    "category": "Mệnh đề quan hệ rút gọn · V-ing mang nghĩa chủ động.",
+    "questionEn": "Visitors ___ the trade show must wear their identification badges at all times.",
+    "questionVn": "Khách tham quan ___ triển lãm thương mại phải luôn đeo thẻ nhận dạng.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "attending",
+        "pos": "present participle",
+        "vn": "tham dự"
+      },
+      {
+        "key": "B",
+        "text": "attended",
+        "pos": "past verb / participle",
+        "vn": "đã tham dự / được tham dự"
+      },
+      {
+        "key": "C",
+        "text": "attendance",
+        "pos": "noun",
+        "vn": "sự tham dự"
+      },
+      {
+        "key": "D",
+        "text": "attends",
+        "pos": "present verb",
+        "vn": "tham dự, ngôi số ít"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là visitors attending the trade show = visitors who are attending the trade show. 'Visitors' chủ động tham dự nên dùng V-ing."
+  },
+  {
+    "id": "q15",
+    "label": "Practice · Question 15",
+    "title": "Câu 15",
+    "category": "Mệnh đề quan hệ rút gọn · V-ing mang nghĩa chủ động.",
+    "questionEn": "Candidates ___ all of the minimum requirements will be invited to a second interview.",
+    "questionVn": "Các ứng viên ___ tất cả yêu cầu tối thiểu sẽ được mời phỏng vấn lần hai.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "met",
+        "pos": "past verb / participle",
+        "vn": "đã đáp ứng"
+      },
+      {
+        "key": "B",
+        "text": "meeting",
+        "pos": "present participle",
+        "vn": "đáp ứng"
+      },
+      {
+        "key": "C",
+        "text": "meets",
+        "pos": "present verb",
+        "vn": "đáp ứng, ngôi số ít"
+      },
+      {
+        "key": "D",
+        "text": "meet",
+        "pos": "base verb",
+        "vn": "đáp ứng"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là candidates meeting all requirements = candidates who meet all requirements. Mệnh đề quan hệ mang nghĩa chủ động được rút gọn bằng V-ing."
+  },
+  {
+    "id": "q16",
+    "label": "Practice · Question 16",
+    "title": "Câu 16",
+    "category": "Mệnh đề quan hệ rút gọn · V-ing mang nghĩa chủ động.",
+    "questionEn": "A delivery truck ___ office furniture is parked behind the main building.",
+    "questionVn": "Một xe tải giao hàng ___ đồ nội thất văn phòng đang đỗ phía sau tòa nhà chính.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "carried",
+        "pos": "past verb / participle",
+        "vn": "đã chở / được chở"
+      },
+      {
+        "key": "B",
+        "text": "carries",
+        "pos": "present verb",
+        "vn": "chở, ngôi số ít"
+      },
+      {
+        "key": "C",
+        "text": "carry",
+        "pos": "base verb",
+        "vn": "chở"
+      },
+      {
+        "key": "D",
+        "text": "carrying",
+        "pos": "present participle",
+        "vn": "đang chở"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là a truck carrying office furniture = a truck that is carrying office furniture. Xe tải chủ động chở hàng nên dùng V-ing."
+  },
+  {
+    "id": "q17",
+    "label": "Practice · Question 17",
+    "title": "Câu 17",
+    "category": "Mệnh đề quan hệ rút gọn · V-ing mang nghĩa chủ động.",
+    "questionEn": "The software includes a feature ___ users to compare monthly sales figures.",
+    "questionVn": "Phần mềm có một tính năng ___ người dùng so sánh số liệu bán hàng hằng tháng.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "allowing",
+        "pos": "present participle",
+        "vn": "cho phép"
+      },
+      {
+        "key": "B",
+        "text": "allowed",
+        "pos": "past verb / participle",
+        "vn": "đã cho phép / được cho phép"
+      },
+      {
+        "key": "C",
+        "text": "allows",
+        "pos": "present verb",
+        "vn": "cho phép, ngôi số ít"
+      },
+      {
+        "key": "D",
+        "text": "allowance",
+        "pos": "noun",
+        "vn": "khoản trợ cấp / mức cho phép"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là a feature allowing users to compare figures = a feature that allows users to compare figures. 'Feature' thực hiện chức năng cho phép nên dùng V-ing."
+  },
+  {
+    "id": "q18",
+    "label": "Practice · Question 18",
+    "title": "Câu 18",
+    "category": "Mệnh đề quan hệ rút gọn · V3/-ed mang nghĩa bị động.",
+    "questionEn": "Documents ___ after the deadline will not be considered.",
+    "questionVn": "Các tài liệu ___ sau hạn chót sẽ không được xem xét.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "submitting",
+        "pos": "present participle",
+        "vn": "đang nộp"
+      },
+      {
+        "key": "B",
+        "text": "submit",
+        "pos": "base verb",
+        "vn": "nộp"
+      },
+      {
+        "key": "C",
+        "text": "submitted",
+        "pos": "past participle",
+        "vn": "được nộp"
+      },
+      {
+        "key": "D",
+        "text": "submission",
+        "pos": "noun",
+        "vn": "việc nộp"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là documents submitted after the deadline = documents that are submitted after the deadline. 'Documents' nhận hành động nộp nên dùng V3/-ed."
+  },
+  {
+    "id": "q19",
+    "label": "Practice · Question 19",
+    "title": "Câu 19",
+    "category": "Mệnh đề quan hệ rút gọn · V3/-ed mang nghĩa bị động.",
+    "questionEn": "Products ___ at the Riverside facility undergo two quality inspections.",
+    "questionVn": "Các sản phẩm ___ tại cơ sở Riverside trải qua hai đợt kiểm tra chất lượng.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "manufacturing",
+        "pos": "present participle",
+        "vn": "đang sản xuất"
+      },
+      {
+        "key": "B",
+        "text": "manufactured",
+        "pos": "past participle",
+        "vn": "được sản xuất"
+      },
+      {
+        "key": "C",
+        "text": "manufacture",
+        "pos": "base verb",
+        "vn": "sản xuất"
+      },
+      {
+        "key": "D",
+        "text": "manufacturer",
+        "pos": "noun",
+        "vn": "nhà sản xuất"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là products manufactured at the facility = products that are manufactured at the facility. Sản phẩm được sản xuất nên dùng V3/-ed."
+  },
+  {
+    "id": "q20",
+    "label": "Practice · Question 20",
+    "title": "Câu 20",
+    "category": "Mệnh đề quan hệ rút gọn · V3/-ed mang nghĩa bị động.",
+    "questionEn": "The conference room ___ during last week's storm has now reopened.",
+    "questionVn": "Phòng hội nghị ___ trong cơn bão tuần trước hiện đã mở cửa trở lại.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "damaging",
+        "pos": "present participle",
+        "vn": "đang gây hư hại"
+      },
+      {
+        "key": "B",
+        "text": "damage",
+        "pos": "base verb / noun",
+        "vn": "gây hư hại / thiệt hại"
+      },
+      {
+        "key": "C",
+        "text": "damages",
+        "pos": "present verb",
+        "vn": "gây hư hại, ngôi số ít"
+      },
+      {
+        "key": "D",
+        "text": "damaged",
+        "pos": "past participle",
+        "vn": "bị hư hại"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the conference room damaged during the storm = the room that was damaged during the storm. Phòng nhận tác động nên dùng V3/-ed."
+  },
+  {
+    "id": "q21",
+    "label": "Practice · Question 21",
+    "title": "Câu 21",
+    "category": "Mệnh đề quan hệ rút gọn · V3/-ed mang nghĩa bị động.",
+    "questionEn": "Invoices ___ by noon will be processed on the same business day.",
+    "questionVn": "Các hóa đơn ___ trước buổi trưa sẽ được xử lý trong cùng ngày làm việc.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "received",
+        "pos": "past participle",
+        "vn": "được nhận"
+      },
+      {
+        "key": "B",
+        "text": "receiving",
+        "pos": "present participle",
+        "vn": "đang nhận"
+      },
+      {
+        "key": "C",
+        "text": "receipt",
+        "pos": "noun",
+        "vn": "biên lai / sự nhận"
+      },
+      {
+        "key": "D",
+        "text": "receives",
+        "pos": "present verb",
+        "vn": "nhận, ngôi số ít"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là invoices received by noon = invoices that are received by noon. Hóa đơn được nhận nên dùng phân từ quá khứ."
+  },
+  {
+    "id": "q22",
+    "label": "Practice · Question 22",
+    "title": "Câu 22",
+    "category": "Mệnh đề quan hệ rút gọn · V3/-ed mang nghĩa bị động.",
+    "questionEn": "Candidates ___ for the management program will be notified by e-mail.",
+    "questionVn": "Các ứng viên ___ cho chương trình quản lý sẽ được thông báo qua email.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "selecting",
+        "pos": "present participle",
+        "vn": "đang lựa chọn"
+      },
+      {
+        "key": "B",
+        "text": "selection",
+        "pos": "noun",
+        "vn": "sự lựa chọn"
+      },
+      {
+        "key": "C",
+        "text": "selected",
+        "pos": "past participle",
+        "vn": "được lựa chọn"
+      },
+      {
+        "key": "D",
+        "text": "selects",
+        "pos": "present verb",
+        "vn": "lựa chọn, ngôi số ít"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là candidates selected for the program = candidates who are selected for the program. Ứng viên được lựa chọn nên dùng V3/-ed."
+  },
+  {
+    "id": "q23",
+    "label": "Practice · Question 23",
+    "title": "Câu 23",
+    "category": "Mệnh đề quan hệ rút gọn · V3/-ed mang nghĩa bị động.",
+    "questionEn": "Data ___ from the customer survey will be presented at Monday's meeting.",
+    "questionVn": "Dữ liệu ___ từ khảo sát khách hàng sẽ được trình bày trong cuộc họp thứ Hai.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "collecting",
+        "pos": "present participle",
+        "vn": "đang thu thập"
+      },
+      {
+        "key": "B",
+        "text": "collected",
+        "pos": "past participle",
+        "vn": "được thu thập"
+      },
+      {
+        "key": "C",
+        "text": "collect",
+        "pos": "base verb",
+        "vn": "thu thập"
+      },
+      {
+        "key": "D",
+        "text": "collection",
+        "pos": "noun",
+        "vn": "sự thu thập / bộ sưu tập"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là data collected from the survey = data that was collected from the survey. Dữ liệu nhận hành động thu thập nên dùng V3/-ed."
+  },
+  {
+    "id": "q24",
+    "label": "Practice · Question 24",
+    "title": "Câu 24",
+    "category": "Mệnh đề quan hệ rút gọn · V3/-ed mang nghĩa bị động.",
+    "questionEn": "Equipment ___ in the laboratory must be inspected every six months.",
+    "questionVn": "Thiết bị ___ trong phòng thí nghiệm phải được kiểm tra sáu tháng một lần.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "installing",
+        "pos": "present participle",
+        "vn": "đang lắp đặt"
+      },
+      {
+        "key": "B",
+        "text": "installs",
+        "pos": "present verb",
+        "vn": "lắp đặt, ngôi số ít"
+      },
+      {
+        "key": "C",
+        "text": "installation",
+        "pos": "noun",
+        "vn": "việc lắp đặt"
+      },
+      {
+        "key": "D",
+        "text": "installed",
+        "pos": "past participle",
+        "vn": "được lắp đặt"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là equipment installed in the laboratory = equipment that is installed in the laboratory. Thiết bị được lắp đặt nên dùng V3/-ed."
+  },
+  {
+    "id": "q25",
+    "label": "Practice · Question 25",
+    "title": "Câu 25",
+    "category": "Mệnh đề quan hệ rút gọn · V3/-ed mang nghĩa bị động.",
+    "questionEn": "The proposal ___ by the finance committee includes several cost-saving measures.",
+    "questionVn": "Đề xuất ___ bởi ủy ban tài chính bao gồm một số biện pháp tiết kiệm chi phí.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "approved",
+        "pos": "past participle",
+        "vn": "được phê duyệt"
+      },
+      {
+        "key": "B",
+        "text": "approving",
+        "pos": "present participle",
+        "vn": "đang phê duyệt"
+      },
+      {
+        "key": "C",
+        "text": "approval",
+        "pos": "noun",
+        "vn": "sự phê duyệt"
+      },
+      {
+        "key": "D",
+        "text": "approves",
+        "pos": "present verb",
+        "vn": "phê duyệt, ngôi số ít"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the proposal approved by the committee = the proposal that was approved by the committee. Đề xuất được phê duyệt nên dùng V3/-ed."
+  },
+  {
+    "id": "q26",
+    "label": "Practice · Question 26",
+    "title": "Câu 26",
+    "category": "Mệnh đề quan hệ rút gọn · To-infinitive sau số thứ tự.",
+    "questionEn": "Ms. Chen was the first applicant ___ the online assessment.",
+    "questionVn": "Bà Chen là ứng viên đầu tiên ___ bài đánh giá trực tuyến.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "completed",
+        "pos": "past verb / participle",
+        "vn": "đã hoàn thành / được hoàn thành"
+      },
+      {
+        "key": "B",
+        "text": "completing",
+        "pos": "present participle",
+        "vn": "đang hoàn thành"
+      },
+      {
+        "key": "C",
+        "text": "to complete",
+        "pos": "to-infinitive",
+        "vn": "hoàn thành"
+      },
+      {
+        "key": "D",
+        "text": "completion",
+        "pos": "noun",
+        "vn": "sự hoàn thành"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the first applicant to complete the assessment = the first applicant who completed the assessment. Sau 'the first' có thể rút gọn mệnh đề quan hệ bằng to-infinitive."
+  },
+  {
+    "id": "q27",
+    "label": "Practice · Question 27",
+    "title": "Câu 27",
+    "category": "Mệnh đề quan hệ rút gọn · To-infinitive sau the only.",
+    "questionEn": "Northstar Office Supply was the only vendor ___ all of the delivery requirements.",
+    "questionVn": "Northstar Office Supply là nhà cung cấp duy nhất ___ tất cả yêu cầu giao hàng.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "meeting",
+        "pos": "present participle",
+        "vn": "đáp ứng"
+      },
+      {
+        "key": "B",
+        "text": "to meet",
+        "pos": "to-infinitive",
+        "vn": "đáp ứng"
+      },
+      {
+        "key": "C",
+        "text": "met",
+        "pos": "past verb / participle",
+        "vn": "đã đáp ứng"
+      },
+      {
+        "key": "D",
+        "text": "meets",
+        "pos": "present verb",
+        "vn": "đáp ứng, ngôi số ít"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the only vendor to meet all requirements = the only vendor that met all requirements. Sau 'the only' thường dùng to-infinitive để rút gọn mệnh đề quan hệ."
+  },
+  {
+    "id": "q28",
+    "label": "Practice · Question 28",
+    "title": "Câu 28",
+    "category": "Mệnh đề quan hệ rút gọn · To-infinitive với ý nghĩa tiếp theo.",
+    "questionEn": "The next train ___ for Greenfield will leave from platform six.",
+    "questionVn": "Chuyến tàu tiếp theo ___ đi Greenfield sẽ rời sân ga số sáu.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "departed",
+        "pos": "past verb / participle",
+        "vn": "đã khởi hành"
+      },
+      {
+        "key": "B",
+        "text": "departure",
+        "pos": "noun",
+        "vn": "sự khởi hành"
+      },
+      {
+        "key": "C",
+        "text": "departing",
+        "pos": "present participle",
+        "vn": "đang khởi hành"
+      },
+      {
+        "key": "D",
+        "text": "to depart",
+        "pos": "to-infinitive",
+        "vn": "sẽ khởi hành / khởi hành tiếp theo"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the next train to depart = the next train that will depart. Sau 'the next' dùng to-infinitive để diễn tả đối tượng tiếp theo thực hiện hành động."
+  },
+  {
+    "id": "q29",
+    "label": "Practice · Question 29",
+    "title": "Câu 29",
+    "category": "Mệnh đề quan hệ rút gọn · To-infinitive sau so sánh nhất.",
+    "questionEn": "Mr. Patel is the most qualified candidate ___ the regional sales team.",
+    "questionVn": "Ông Patel là ứng viên đủ năng lực nhất ___ đội ngũ bán hàng khu vực.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "to lead",
+        "pos": "to-infinitive",
+        "vn": "lãnh đạo"
+      },
+      {
+        "key": "B",
+        "text": "leading",
+        "pos": "present participle",
+        "vn": "đang lãnh đạo / hàng đầu"
+      },
+      {
+        "key": "C",
+        "text": "led",
+        "pos": "past verb / participle",
+        "vn": "đã lãnh đạo / được dẫn dắt"
+      },
+      {
+        "key": "D",
+        "text": "leadership",
+        "pos": "noun",
+        "vn": "khả năng lãnh đạo"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the most qualified candidate to lead the team = the most qualified candidate who can lead the team. Sau cụm so sánh nhất có thể dùng to-infinitive để rút gọn mệnh đề quan hệ."
+  },
+  {
+    "id": "q30",
+    "label": "Practice · Question 30",
+    "title": "Câu 30",
+    "category": "Mệnh đề quan hệ rút gọn · To-infinitive sau the last.",
+    "questionEn": "The last employee ___ the office must activate the security system.",
+    "questionVn": "Nhân viên cuối cùng ___ văn phòng phải kích hoạt hệ thống an ninh.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "leaving",
+        "pos": "present participle",
+        "vn": "đang rời đi"
+      },
+      {
+        "key": "B",
+        "text": "to leave",
+        "pos": "to-infinitive",
+        "vn": "rời đi cuối cùng"
+      },
+      {
+        "key": "C",
+        "text": "left",
+        "pos": "past verb / participle",
+        "vn": "đã rời đi / bị bỏ lại"
+      },
+      {
+        "key": "D",
+        "text": "leaves",
+        "pos": "present verb",
+        "vn": "rời đi, ngôi số ít"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là the last employee to leave the office = the last employee who leaves the office. Sau 'the last' dùng to-infinitive để rút gọn mệnh đề quan hệ."
+  }
+];
+const quizDataMap=Object.fromEntries(quizData.map(item=>[item.id,item]));
+
+function finalResultSlide(){
+  return '<section class="slide result-slide">'
+    + '<div class="slide-label">Hoàn thành</div>'
+    + '<h2>Kết quả 30 câu mệnh đề quan hệ và mệnh đề quan hệ rút gọn</h2>'
+    + '<div class="content-area">'
+    + '<div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><p class="submit-status" id="submitStatus">Bấm <b>Nộp kết quả</b> để lưu bài làm.</p><button class="nav-btn" id="submitResultBtn" type="button" onclick="submitFinalResult()" style="display:inline-block;margin-top:12px">Nộp kết quả</button><button class="nav-btn home-btn" type="button" onclick="requestGoHome()" style="display:inline-block;margin-top:12px;margin-left:10px;text-decoration:none">Về trang chủ</button></div>'
+    + '<div class="method-box"><h3>Ghi chú</h3><ul class="steps"><li>Câu chưa chọn đáp án = sai.</li></ul></div>'
+    + '</div></section>';
+}
+
+function renderQuizSlides(){
+  const mount=document.getElementById('quizMount');
+  if(!mount||mount.dataset.rendered==='1') return;
+  mount.outerHTML=quizData.map(function(item,index){
+    const optionsHtml=item.options.map(function(opt){
+      return '<label class="option"><input name="'+escapeHtml(item.id)+'" type="radio" value="'+escapeHtml(opt.key)+'"><span class="option-letter">'+escapeHtml(opt.key)+'.</span><span>'+escapeHtml(opt.text)+'</span></label>';
+    }).join('');
+    const translationsHtml=item.options.map(function(opt){
+      return '<div class="translation-item"><span class="letter">'+escapeHtml(opt.key)+'.</span><b>'+escapeHtml(opt.text)+'</b> = '+escapeHtml(opt.vn)+' <span class="option-pos">'+escapeHtml(opt.pos)+'</span></div>';
+    }).join('');
+    const correctOption=item.options.find(opt=>opt.key===item.answer) || {text:''};
+    return '<section class="slide quiz-slide'+(index===0?' active':'')+'" data-question="'+escapeHtml(item.id)+'">'
+      + '<div class="slide-label">'+escapeHtml(item.label)+'</div>'
+      + '<h2>'+escapeHtml(item.title)+'</h2>'
+      + '<p class="category-note">'+escapeHtml(item.category)+'</p>'
+      + '<div class="content-area">'
+      + '<div class="sample-box"><div class="sample-title">Question</div><div class="question">'+escapeHtml(item.questionEn)+'</div><div class="options">'+optionsHtml+'</div></div>'
+      + '<div class="method-box result-box" id="result-'+escapeHtml(item.id.replace(/^q/,''))+'"><h3 class="result-title"></h3><p class="explain"><span class="answer-key">Đáp án đúng: '+escapeHtml(item.answer)+'. '+escapeHtml(correctOption.text)+'</span> — '+formatExplanation(item.explanation)+'</p></div>'
+      + '<div class="translation-box"><h3>Dịch nghĩa 4 đáp án</h3><div class="translation-list">'+translationsHtml+'</div></div>'
+      + '</div></section>';
+  }).join('\n') + '\n' + finalResultSlide();
+}
+renderQuizSlides();
+const slides=[...document.querySelectorAll('.slide')];
+const progressText=document.getElementById('progressText');
+const topLine=document.getElementById('topLine');
+const checkBtn=document.getElementById('checkBtn');
+let currentSlide=0;
+let revealIndex=0;
+const checkedAnswers={};
+const totalQuestions=quizData.length;
+function updateProgress(){
+  progressText.textContent=(currentSlide+1)+' / '+slides.length;
+  topLine.style.width=((currentSlide+1)/slides.length*100)+'%';
+  updateCheckState();
+  syncPagePickerActive();
+}
+function resetSlideReveal(slide){
+  slide.querySelectorAll('.reveal').forEach(el=>el.classList.remove('show'));
+}
+function showSlide(index){
+  if(index<0||index>=slides.length) return;
+  slides[currentSlide].classList.remove('active');
+  resetSlideReveal(slides[currentSlide]);
+  currentSlide=index;
+  revealIndex=0;
+  slides[currentSlide].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  updateProgress();
+  if(slides[currentSlide].classList.contains('result-slide')) showFinalResultPreview();
+}
+function goReveal(){
+  const activeSlide=slides[currentSlide];
+  const revealItems=activeSlide.querySelectorAll('.reveal');
+  if(revealIndex<revealItems.length){
+    const item=revealItems[revealIndex];
+    item.classList.add('show');
+    revealIndex++;
+    setTimeout(()=>item.scrollIntoView({behavior:'smooth',block:'center'}),80);
+    return;
+  }
+}
+function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
+function prevSlide(){if(currentSlide>0)showSlide(currentSlide-1);}
+function updateCheckState(){
+  const slide=slides[currentSlide];
+  const isQuiz=slide.classList.contains('quiz-slide');
+  checkBtn.style.display=isQuiz?'inline-block':'none';
+}
+function lockCurrentQuestion(slide){
+  slide.classList.add('answer-locked');
+  slide.querySelectorAll('input[type="radio"]').forEach(input=>{
+    input.disabled=true;
+  });
+}
+function checkAnswer(){
+  const slide=slides[currentSlide];
+  if(!slide.classList.contains('quiz-slide')) return;
+  const qName=slide.dataset.question;
+  const item=quizDataMap[qName];
+  if(!item) return;
+  const answer=item.answer;
+  const selected=slide.querySelector('input[name="'+qName+'"]:checked');
+  const resultBox=slide.querySelector('.result-box');
+  const title=slide.querySelector('.result-title');
+  const translationBox=slide.querySelector('.translation-box');
+
+  if(slide.classList.contains('answer-locked')){
+    if(resultBox) resultBox.classList.add('show');
+    if(translationBox) translationBox.classList.add('show');
+    return;
+  }
+
+  if(!selected){
+    resultBox.classList.remove('wrong-box');
+    resultBox.classList.add('show','no-answer');
+    if(translationBox) translationBox.classList.remove('show');
+    title.innerHTML='<span class="wrong-text">Hãy chọn một đáp án trước.</span>';
+    setTimeout(()=>resultBox.scrollIntoView({behavior:'smooth',block:'center'}),80);
+    return;
+  }
+  resultBox.classList.remove('no-answer');
+  const isCorrect=selected.value===answer;
+  checkedAnswers[qName]=isCorrect;
+  syncPagePickerActive();
+  lockCurrentQuestion(slide);
+  resultBox.classList.toggle('wrong-box',!isCorrect);
+  resultBox.classList.add('show');
+  if(translationBox) translationBox.classList.add('show');
+  title.innerHTML=isCorrect?'<span class="correct-text">✓ Chính xác!</span>':'<span class="wrong-text">✗ Chưa đúng.</span>';
+  setTimeout(()=>resultBox.scrollIntoView({behavior:'smooth',block:'center'}),80);
+}
+
+function setupQuestionTranslationButtons(){
+  slides.forEach(slide=>{
+    if(!slide.classList.contains('quiz-slide')) return;
+    const qName=slide.dataset.question;
+    const sampleTitle=slide.querySelector('.sample-title');
+    const question=slide.querySelector('.question');
+    const item=quizDataMap[qName];
+    if(!sampleTitle||!question||!item||!item.questionVn) return;
+    sampleTitle.classList.add('question-row');
+    if(sampleTitle.querySelector('.lang-pill')) return;
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.className='lang-pill';
+    btn.textContent='En | Vn';
+    btn.onclick=function(){toggleQuestionTranslation(btn)};
+    sampleTitle.appendChild(btn);
+    const vn=document.createElement('div');
+    vn.className='question-vn';
+    vn.innerHTML='<span class="vn-label">VN:</span>'+escapeHtml(item.questionVn);
+    question.insertAdjacentElement('afterend',vn);
+  });
+}
+function toggleQuestionTranslation(btn){
+  const sampleBox=btn.closest('.sample-box');
+  const vn=sampleBox?sampleBox.querySelector('.question-vn'):null;
+  if(!vn) return;
+  vn.classList.toggle('show');
+  btn.classList.toggle('active',vn.classList.contains('show'));
+}
+function buildPagePicker(){
+  const grid=document.getElementById('pagePickerGrid');
+  if(!grid||grid.dataset.ready==='1') return;
+  slides.forEach((slide,index)=>{
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.className='page-jump-btn';
+    btn.dataset.slideIndex=String(index);
+    if(slide.classList.contains('quiz-slide') && slide.dataset.question){
+      btn.dataset.questionId=slide.dataset.question;
+    }
+    const title=(slide.querySelector('h1,h2')?.textContent||'Slide').trim();
+    const label=(slide.querySelector('.slide-label')?.textContent||'').trim();
+    btn.innerHTML='<span class="page-no">'+(index+1)+'</span><span class="page-title">'+(label||title)+'</span>';
+    btn.onclick=function(){showSlide(index);closePagePicker();};
+    grid.appendChild(btn);
+  });
+  grid.dataset.ready='1';
+}
+function syncPagePickerActive(){
+  const buttons=document.querySelectorAll('.page-jump-btn');
+  buttons.forEach((btn,i)=>{
+    btn.classList.toggle('active',i===currentSlide);
+    btn.classList.remove('correct-answer','wrong-answer');
+    const qid=btn.dataset.questionId;
+    if(qid && Object.prototype.hasOwnProperty.call(checkedAnswers,qid)){
+      btn.classList.add(checkedAnswers[qid] ? 'correct-answer' : 'wrong-answer');
+    }
+  });
+}
+function openPagePicker(){
+  buildPagePicker();
+  syncPagePickerActive();
+  document.getElementById('pagePicker')?.classList.add('show');
+}
+function closePagePicker(event){
+  if(event&&event.target&&event.target.id!=='pagePicker') return;
+  document.getElementById('pagePicker')?.classList.remove('show');
+}
+
+
+
+const STUDENT_KEY='toeic_student_session';
+function getStudentSession(){
+  try{
+    const raw=localStorage.getItem(STUDENT_KEY);
+    return raw?JSON.parse(raw):null;
+  }catch(e){
+    return null;
+  }
+}
+function requireStudentSession(){
+  const student=getStudentSession();
+  if(!student||!student.email){
+    alert('Bạn cần đăng nhập bằng email đã được cấp quyền trước khi làm bài.');
+    location.href='index.html';
+    return null;
+  }
+  return student;
+}
+
+let resultSubmitted=false;
+function requestGoHome(){
+  if(resultSubmitted){
+    location.href='index.html';
+    return;
+  }
+  document.getElementById('homeConfirm')?.classList.add('show');
+}
+function closeHomeConfirm(event){
+  if(event&&event.target&&event.target.id!=='homeConfirm') return;
+  document.getElementById('homeConfirm')?.classList.remove('show');
+}
+function confirmGoHome(){
+  location.href='index.html';
+}
+function logoutStudent(){
+  localStorage.removeItem(STUDENT_KEY);
+  location.href='index.html';
+}
+function collectResultPayload(){
+  const student=getStudentSession()||{};
+  const submittedAt=new Date().toISOString();
+  let score=0;
+  const answers=quizData.map(function(item,index){
+    const selectedEl=document.querySelector('input[name="'+CSS.escape(item.id)+'"]:checked');
+    const selected=selectedEl?selectedEl.value:null;
+    const selectedOption=item.options.find(opt=>opt.key===selected)||null;
+    const correctOption=item.options.find(opt=>opt.key===item.answer)||null;
+    const correct=selected===item.answer;
+    if(correct) score++;
+    return {
+      no:index+1,
+      id:item.id,
+      questionEn:item.questionEn,
+      questionVn:item.questionVn,
+      selected:selected,
+      selectedText:selectedOption?selectedOption.text:null,
+      correctAnswer:item.answer,
+      correctText:correctOption?correctOption.text:null,
+      isCorrect:correct,
+      checkedBeforeSubmit:Object.prototype.hasOwnProperty.call(checkedAnswers,item.id)
+    };
+  });
+  return {
+    student:{email:student.email||'', loginAt:student.loginAt||''},
+    quiz:{id:'relative-clause-reduction-toeic-30', title:'Mệnh đề quan hệ & rút gọn TOEIC - 30 câu', total:quizData.length},
+    submittedAt,
+    score,
+    total:quizData.length,
+    percent:Math.round(score/quizData.length*100),
+    answers
+  };
+}
+function showFinalResultPreview(){
+  const student=requireStudentSession();
+  if(!student) return;
+  const payload=collectResultPayload();
+  const scoreEl=document.getElementById('finalScoreText');
+  const metaEl=document.getElementById('finalMetaText');
+  const statusEl=document.getElementById('submitStatus');
+  const submitBtn=document.getElementById('submitResultBtn');
+  if(scoreEl) scoreEl.innerHTML='<b>Điểm của bạn:</b> '+payload.score+' / '+payload.total+' ('+payload.percent+'%)';
+  if(metaEl) metaEl.textContent='Email: '+payload.student.email+' · Các câu chưa chọn đáp án được tính là sai.';
+  if(statusEl && !resultSubmitted){
+    statusEl.className='submit-status';
+    statusEl.innerHTML='Bấm <b>Nộp kết quả</b> để lưu bài làm.';
+  }
+  if(submitBtn && !resultSubmitted){
+    submitBtn.style.display='inline-block';
+    submitBtn.disabled=false;
+    submitBtn.textContent='Nộp kết quả';
+  }
+}
+async function submitFinalResult(){
+  if(resultSubmitted) return;
+  const student=requireStudentSession();
+  if(!student) return;
+  const payload=collectResultPayload();
+  const scoreEl=document.getElementById('finalScoreText');
+  const metaEl=document.getElementById('finalMetaText');
+  const statusEl=document.getElementById('submitStatus');
+  const submitBtn=document.getElementById('submitResultBtn');
+  if(scoreEl) scoreEl.innerHTML='<b>Điểm của bạn:</b> '+payload.score+' / '+payload.total+' ('+payload.percent+'%)';
+  if(metaEl) metaEl.textContent='Email: '+payload.student.email+' · Nộp lúc: '+new Date(payload.submittedAt).toLocaleString('vi-VN');
+  if(submitBtn){
+    submitBtn.disabled=true;
+    submitBtn.textContent='Đang nộp...';
+  }
+  if(statusEl){statusEl.className='submit-status';statusEl.textContent='Đang lưu kết quả...';}
+  try{
+    const res=await fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không lưu được kết quả');
+    resultSubmitted=true;
+    if(statusEl){statusEl.className='submit-status ok';statusEl.textContent='Đã lưu kết quả thành công. Mã bài nộp: '+data.id;}
+    if(submitBtn){submitBtn.style.display='none';}
+  }catch(err){
+    if(statusEl){statusEl.className='submit-status err';statusEl.textContent='Không thể lưu lên. Kiểm tra KV binding / mạng rồi bấm Nộp kết quả lại.';}
+    if(submitBtn){
+      submitBtn.disabled=false;
+      submitBtn.textContent='Nộp kết quả';
+      submitBtn.style.display='inline-block';
+    }
+    const oldLink=document.getElementById('downloadResultJson');
+    if(oldLink) oldLink.remove();
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;
+    a.download='student_result_'+(payload.student.email||'student').replace(/[^a-z0-9._-]/gi,'_')+'_'+Date.now()+'.json';
+    a.textContent='Tải JSON kết quả dự phòng';
+    a.className='nav-btn';
+    a.id='downloadResultJson';
+    a.style.display='inline-block';
+    a.style.marginTop='14px';
+    statusEl?.insertAdjacentElement('afterend',a);
+  }
+}
+
+document.addEventListener('keydown',function(e){
+  if(e.code==='Space'||e.code==='Enter'){e.preventDefault();goReveal();}
+  if(e.code==='ArrowRight')nextSlide();
+  if(e.code==='ArrowLeft')prevSlide();
+  if(e.code==='Escape')closePagePicker();
+});
+setupQuestionTranslationButtons();
+updateProgress();
+
+</script>
+
+<script>
+(function(){
+  'use strict';
+  document.documentElement.classList.add('anti-download-lock');
+
+  const block = function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  };
+
+  // Khóa chuột phải, kéo-thả, chọn/copy/cut/paste/in/trình đơn lưu phổ biến
+  ['contextmenu','dragstart','drop','copy','cut','paste','selectstart'].forEach(function(evt){
+    document.addEventListener(evt, block, true);
+  });
+
+  document.addEventListener('keydown', function(e){
+    const key = String(e.key || '').toLowerCase();
+    const ctrlOrCmd = e.ctrlKey || e.metaKey;
+
+    // F12
+    if(e.key === 'F12') return block(e);
+
+    // Ctrl/Cmd + S/U/P/O/A/C/X/V
+    if(ctrlOrCmd && ['s','u','p','o','a','c','x','v'].includes(key)) return block(e);
+
+    // Ctrl/Cmd + Shift + I/J/C/S
+    if(ctrlOrCmd && e.shiftKey && ['i','j','c','s'].includes(key)) return block(e);
+  }, true);
+
+  // Hạn chế kéo media/link ra ngoài để tải
+  document.addEventListener('mousedown', function(e){
+    if(e.button === 2) return block(e);
+  }, true);
+})();
+</script>
+
+</body>
+</html>
