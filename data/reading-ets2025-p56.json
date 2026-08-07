@@ -1310,10 +1310,10 @@
             "C": "over",
             "D": "behind"
           },
-          "answer": "D",
+          "answer": "B",
           "skill": "Preposition of place",
-          "explanationVi": "<b>Behind the old warehouse</b> chỉ vị trí ở phía sau nhà kho.",
-          "explanation": "<b>Behind the old warehouse</b> correctly describes the location."
+          "explanationVi": "<b>Across the old warehouse</b> được xếp rải rác/trải rộng khắp kho. Tuy nhiên, <b>behind the old warehouse</b> có thể đúng vì cũng chỉ trị trí.",
+          "explanation": "<b>Across the old warehouse</b> correctly describes the location."
         },
         {
           "id": "t7q119",
