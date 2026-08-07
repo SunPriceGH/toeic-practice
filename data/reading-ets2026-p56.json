@@ -1,13 +1,13 @@
 {
-  "id": "ets-summer-2025-part5-6",
-  "title": "ETS Summer 2025 · Part 5 + 6",
-  "sourceLabel": "ETS Summer 2025 · Reading",
-  "version": 3,
+  "id": "ets-2025-part5-6",
+  "title": "ETS 2025 · Part 5 + 6",
+  "sourceLabel": "ETS 2025 · Reading",
+  "version": 7,
   "tests": [
     {
-      "id": "ets-summer-2025-test6-part5-6",
-      "title": "ETS Summer 2025 Test 6 · Part 5 + 6",
-      "sourceLabel": "ETS Summer 2025 · Reading Test 6",
+      "id": "ets-2025-test6-part5-6",
+      "title": "ETS 2025 Test 6 · Part 5 + 6",
+      "sourceLabel": "ETS 2025 · Reading Test 6",
       "timerMinutes": 25,
       "questions": [
         {
@@ -1020,6 +1020,4074 @@
       "practice": true,
       "testNo": 6,
       "selectorLabel": "Test 6"
+    },
+    {
+      "id": "ets-2025-test7-part5-6",
+      "title": "ETS 2025 Test 7 · Part 5 + 6",
+      "sourceLabel": "ETS 2025 · Reading Test 7",
+      "timerMinutes": 25,
+      "questions": [
+        {
+          "id": "t7q101",
+          "no": 101,
+          "part": 5,
+          "stem": "After Ms. Takido finishes ------- presentation, the audience will be permitted to ask questions.",
+          "options": {
+            "A": "her",
+            "B": "she",
+            "C": "hers",
+            "D": "herself"
+          },
+          "answer": "A",
+          "skill": "Possessive adjective",
+          "explanationVi": "Trước danh từ <b>presentation</b> cần tính từ sở hữu <b>her</b>.",
+          "explanation": "The noun <b>presentation</b> requires the possessive adjective <b>her</b>."
+        },
+        {
+          "id": "t7q102",
+          "no": 102,
+          "part": 5,
+          "stem": "Mike’s Café offers a free ------- with every meal on Tuesdays from 11 A.M. to 7 P.M.",
+          "options": {
+            "A": "table",
+            "B": "drink",
+            "C": "price",
+            "D": "menu"
+          },
+          "answer": "B",
+          "skill": "Vocabulary / Collocation",
+          "explanationVi": "Cụm tự nhiên là <b>a free drink with every meal</b>, nghĩa là một đồ uống miễn phí kèm mỗi phần ăn.",
+          "explanation": "The natural expression is <b>a free drink with every meal</b>."
+        },
+        {
+          "id": "t7q103",
+          "no": 103,
+          "part": 5,
+          "stem": "Mr. Ozawa generally prefers ------- to work by train instead of by car.",
+          "options": {
+            "A": "commute",
+            "B": "to commute",
+            "C": "having commuted",
+            "D": "is commuting"
+          },
+          "answer": "B",
+          "skill": "Infinitive",
+          "explanationVi": "Cấu trúc <b>prefer to do something</b> cần động từ nguyên mẫu có <b>to</b>.",
+          "explanation": "The structure <b>prefer to do something</b> requires a to-infinitive."
+        },
+        {
+          "id": "t7q104",
+          "no": 104,
+          "part": 5,
+          "stem": "------- the new branch office was understaffed, more workers were hired.",
+          "options": {
+            "A": "Because",
+            "B": "Having",
+            "C": "Usually",
+            "D": "Following"
+          },
+          "answer": "A",
+          "skill": "Cause conjunction",
+          "explanationVi": "<b>Because</b> giới thiệu nguyên nhân: vì văn phòng mới thiếu nhân sự nên nhiều nhân viên hơn được tuyển.",
+          "explanation": "<b>Because</b> introduces the reason more workers were hired."
+        },
+        {
+          "id": "t7q105",
+          "no": 105,
+          "part": 5,
+          "stem": "Dumbbells, also known as free weights, are ------- for keeping fit at home.",
+          "options": {
+            "A": "use",
+            "B": "using",
+            "C": "to use",
+            "D": "useful"
+          },
+          "answer": "D",
+          "skill": "Word form",
+          "explanationVi": "Sau động từ nối <b>are</b> cần tính từ. Cấu trúc đúng là <b>useful for + V-ing</b>.",
+          "explanation": "After the linking verb <b>are</b>, an adjective is required: <b>useful for + V-ing</b>."
+        },
+        {
+          "id": "t7q106",
+          "no": 106,
+          "part": 5,
+          "stem": "The scheduled completion date was September 4, but the job was ------- finished two weeks ahead of schedule.",
+          "options": {
+            "A": "additionally",
+            "B": "rarely",
+            "C": "extremely",
+            "D": "actually"
+          },
+          "answer": "D",
+          "skill": "Adverb choice",
+          "explanationVi": "<b>Actually</b> nhấn mạnh kết quả thực tế: công việc đã hoàn thành sớm hơn lịch hai tuần.",
+          "explanation": "<b>Actually</b> emphasizes the real outcome in contrast with the scheduled date."
+        },
+        {
+          "id": "t7q107",
+          "no": 107,
+          "part": 5,
+          "stem": "Please click on the ------- below to subscribe to our monthly newsletter.",
+          "options": {
+            "A": "link",
+            "B": "linker",
+            "C": "linking",
+            "D": "linkage"
+          },
+          "answer": "A",
+          "skill": "Noun choice",
+          "explanationVi": "Thứ có thể nhấp để đăng ký bản tin là một <b>link</b>.",
+          "explanation": "A clickable item used to subscribe is a <b>link</b>."
+        },
+        {
+          "id": "t7q108",
+          "no": 108,
+          "part": 5,
+          "stem": "Candidates for the entry-level marketing position need to have a ------- understanding of consumer behavior.",
+          "options": {
+            "A": "proud",
+            "B": "basic",
+            "C": "short",
+            "D": "considerate"
+          },
+          "answer": "B",
+          "skill": "Adjective collocation",
+          "explanationVi": "<b>A basic understanding of</b> là cụm tự nhiên, nghĩa là sự hiểu biết cơ bản về.",
+          "explanation": "<b>A basic understanding of</b> is the natural collocation."
+        },
+        {
+          "id": "t7q109",
+          "no": 109,
+          "part": 5,
+          "stem": "Ms. Persson was able to respond ------- to government leaders about their concerns regarding the funding plan.",
+          "options": {
+            "A": "directly",
+            "B": "direct",
+            "C": "directions",
+            "D": "directed"
+          },
+          "answer": "A",
+          "skill": "Adverb",
+          "explanationVi": "Động từ <b>respond</b> cần trạng từ bổ nghĩa; <b>directly</b> là dạng phù hợp.",
+          "explanation": "The verb <b>respond</b> is modified by the adverb <b>directly</b>."
+        },
+        {
+          "id": "t7q110",
+          "no": 110,
+          "part": 5,
+          "stem": "Leigh Ainsley, the featured soloist in tonight’s performance, began taking violin lessons ------- the age of five.",
+          "options": {
+            "A": "on",
+            "B": "at",
+            "C": "with",
+            "D": "along"
+          },
+          "answer": "B",
+          "skill": "Preposition",
+          "explanationVi": "<b>At the age of five</b> là cụm cố định.",
+          "explanation": "<b>At the age of five</b> is the correct fixed expression."
+        },
+        {
+          "id": "t7q111",
+          "no": 111,
+          "part": 5,
+          "stem": "From among the seven candidates for the management position, the hiring committee must choose only -------.",
+          "options": {
+            "A": "one",
+            "B": "either",
+            "C": "such",
+            "D": "other"
+          },
+          "answer": "A",
+          "skill": "Pronoun",
+          "explanationVi": "<b>One</b> thay cho <b>one candidate</b>, phù hợp với ý chỉ chọn một người trong bảy ứng viên.",
+          "explanation": "<b>One</b> replaces <b>one candidate</b>."
+        },
+        {
+          "id": "t7q112",
+          "no": 112,
+          "part": 5,
+          "stem": "GT International Foods sells unique products that are difficult to find -------.",
+          "options": {
+            "A": "aside",
+            "B": "instead",
+            "C": "likewise",
+            "D": "elsewhere"
+          },
+          "answer": "D",
+          "skill": "Adverb",
+          "explanationVi": "<b>Elsewhere</b> nghĩa là “ở nơi khác”, phù hợp với ý các sản phẩm này khó tìm tại nơi khác.",
+          "explanation": "<b>Elsewhere</b> means “in another place.”"
+        },
+        {
+          "id": "t7q113",
+          "no": 113,
+          "part": 5,
+          "stem": "Contact the hotel’s main office ------- you wish to receive daily linen service.",
+          "options": {
+            "A": "moreover",
+            "B": "besides",
+            "C": "if",
+            "D": "also"
+          },
+          "answer": "C",
+          "skill": "Conditional conjunction",
+          "explanationVi": "<b>If</b> giới thiệu điều kiện: liên hệ văn phòng nếu muốn nhận dịch vụ khăn trải giường hằng ngày.",
+          "explanation": "<b>If</b> correctly introduces the condition."
+        },
+        {
+          "id": "t7q114",
+          "no": 114,
+          "part": 5,
+          "stem": "Please ------- yourself with the company’s tuition-reimbursement policy before enrolling in any classes.",
+          "options": {
+            "A": "organize",
+            "B": "identify",
+            "C": "consider",
+            "D": "familiarize"
+          },
+          "answer": "D",
+          "skill": "Verb collocation",
+          "explanationVi": "<b>Familiarize yourself with</b> là cụm cố định, nghĩa là làm quen/tìm hiểu kỹ về.",
+          "explanation": "<b>Familiarize yourself with</b> is the correct fixed expression."
+        },
+        {
+          "id": "t7q115",
+          "no": 115,
+          "part": 5,
+          "stem": "The proposed purchase agreement is ------- being evaluated by officials at Corlan Tech.",
+          "options": {
+            "A": "active",
+            "B": "actively",
+            "C": "activity",
+            "D": "activate"
+          },
+          "answer": "B",
+          "skill": "Adverb",
+          "explanationVi": "Trạng từ <b>actively</b> bổ nghĩa cho cụm động từ <b>is being evaluated</b>.",
+          "explanation": "The adverb <b>actively</b> modifies <b>is being evaluated</b>."
+        },
+        {
+          "id": "t7q116",
+          "no": 116,
+          "part": 5,
+          "stem": "Another ------- option for getting to the airport will be available once the subway station at the international terminal is completed.",
+          "options": {
+            "A": "convenient",
+            "B": "receptive",
+            "C": "fortunate",
+            "D": "traditional"
+          },
+          "answer": "A",
+          "skill": "Adjective choice",
+          "explanationVi": "<b>Convenient option</b> là cụm phù hợp để chỉ một lựa chọn đi lại thuận tiện.",
+          "explanation": "<b>Convenient option</b> is the natural phrase."
+        },
+        {
+          "id": "t7q117",
+          "no": 117,
+          "part": 5,
+          "stem": "Given the forecast for rain on Saturday, the ceremony ------- indoors at the Raheen Gallery.",
+          "options": {
+            "A": "is held",
+            "B": "was held",
+            "C": "will be held",
+            "D": "had been held"
+          },
+          "answer": "C",
+          "skill": "Future passive",
+          "explanationVi": "Sự kiện sẽ diễn ra vào thứ Bảy và “ceremony” nhận hành động, nên dùng tương lai bị động <b>will be held</b>.",
+          "explanation": "The ceremony is a future event and receives the action, so <b>will be held</b> is correct."
+        },
+        {
+          "id": "t7q118",
+          "no": 118,
+          "part": 5,
+          "stem": "As Mr. Rzayev requested, the extra wood pallets have been stacked ------- the old warehouse.",
+          "options": {
+            "A": "between",
+            "B": "across",
+            "C": "over",
+            "D": "behind"
+          },
+          "answer": "D",
+          "skill": "Preposition of place",
+          "explanationVi": "<b>Behind the old warehouse</b> chỉ vị trí ở phía sau nhà kho.",
+          "explanation": "<b>Behind the old warehouse</b> correctly describes the location."
+        },
+        {
+          "id": "t7q119",
+          "no": 119,
+          "part": 5,
+          "stem": "Professor McNamara has published books on a ------- range of topics.",
+          "options": {
+            "A": "diversion",
+            "B": "diversely",
+            "C": "diverse",
+            "D": "diversify"
+          },
+          "answer": "C",
+          "skill": "Word form",
+          "explanationVi": "Trước danh từ <b>range</b> cần tính từ <b>diverse</b>.",
+          "explanation": "The noun <b>range</b> requires the adjective <b>diverse</b>."
+        },
+        {
+          "id": "t7q120",
+          "no": 120,
+          "part": 5,
+          "stem": "A ------- of clearly defined milestones was likely why the software development project failed.",
+          "options": {
+            "A": "consent",
+            "B": "break",
+            "C": "lack",
+            "D": "complex"
+          },
+          "answer": "C",
+          "skill": "Noun collocation",
+          "explanationVi": "<b>A lack of</b> nghĩa là sự thiếu hụt; thiếu các cột mốc rõ ràng có thể khiến dự án thất bại.",
+          "explanation": "<b>A lack of</b> correctly expresses the absence of clearly defined milestones."
+        },
+        {
+          "id": "t7q121",
+          "no": 121,
+          "part": 5,
+          "stem": "Rosemont Department Store employees are said to be very well-informed, -------, and responsive.",
+          "options": {
+            "A": "person",
+            "B": "personably",
+            "C": "personify",
+            "D": "personable"
+          },
+          "answer": "D",
+          "skill": "Parallel adjectives",
+          "explanationVi": "Cần tính từ song song với <b>well-informed</b> và <b>responsive</b>; <b>personable</b> là phù hợp.",
+          "explanation": "An adjective parallel to <b>well-informed</b> and <b>responsive</b> is required; <b>personable</b> fits."
+        },
+        {
+          "id": "t7q122",
+          "no": 122,
+          "part": 5,
+          "stem": "The security officer at the front gate will ------- delivery drivers as to where to drop off packages.",
+          "options": {
+            "A": "invite",
+            "B": "instruct",
+            "C": "provide",
+            "D": "present"
+          },
+          "answer": "B",
+          "skill": "Verb choice",
+          "explanationVi": "<b>Instruct someone as to where...</b> nghĩa là hướng dẫn ai về nơi cần thực hiện việc gì.",
+          "explanation": "<b>Instruct delivery drivers as to where...</b> is the correct construction."
+        },
+        {
+          "id": "t7q123",
+          "no": 123,
+          "part": 5,
+          "stem": "------- some tickets to the concert are still available, all the best seats have already been taken.",
+          "options": {
+            "A": "Although",
+            "B": "Except",
+            "C": "Notice",
+            "D": "After"
+          },
+          "answer": "A",
+          "skill": "Concession conjunction",
+          "explanationVi": "<b>Although</b> thể hiện sự tương phản: dù vẫn còn vé nhưng những chỗ tốt nhất đã hết.",
+          "explanation": "<b>Although</b> introduces the contrast."
+        },
+        {
+          "id": "t7q124",
+          "no": 124,
+          "part": 5,
+          "stem": "Visitors must park in the designated parking area ------- risk having their vehicle towed.",
+          "options": {
+            "A": "or",
+            "B": "but",
+            "C": "yet",
+            "D": "and"
+          },
+          "answer": "A",
+          "skill": "Conjunction",
+          "explanationVi": "Cấu trúc <b>do something or risk doing something</b> nêu hậu quả nếu không tuân theo yêu cầu.",
+          "explanation": "The pattern <b>do something or risk doing something</b> is correct."
+        },
+        {
+          "id": "t7q125",
+          "no": 125,
+          "part": 5,
+          "stem": "When Ms. Liu was hired, the ------- was to train her to work in the chemistry lab.",
+          "options": {
+            "A": "intend",
+            "B": "intention",
+            "C": "intended",
+            "D": "intentional"
+          },
+          "answer": "B",
+          "skill": "Word form",
+          "explanationVi": "Sau <b>the</b> cần danh từ; <b>the intention was to</b> là cấu trúc đúng.",
+          "explanation": "A noun is required after <b>the</b>; <b>the intention was to</b> is correct."
+        },
+        {
+          "id": "t7q126",
+          "no": 126,
+          "part": 5,
+          "stem": "A ------- effect of increased tourism in our city has been rapid growth in the number of hospitality-related jobs.",
+          "options": {
+            "A": "tentative",
+            "B": "negotiable",
+            "C": "favorable",
+            "D": "perceptive"
+          },
+          "answer": "C",
+          "skill": "Adjective choice",
+          "explanationVi": "Sự tăng nhanh số việc làm là một tác động tích cực, nên dùng <b>favorable</b>.",
+          "explanation": "Rapid job growth is a positive effect, so <b>favorable</b> is correct."
+        },
+        {
+          "id": "t7q127",
+          "no": 127,
+          "part": 5,
+          "stem": "The new payroll system will send an e-mail to employees ------- a manager edits their time sheet.",
+          "options": {
+            "A": "now that",
+            "B": "or else",
+            "C": "despite",
+            "D": "whenever"
+          },
+          "answer": "D",
+          "skill": "Time conjunction",
+          "explanationVi": "<b>Whenever</b> nghĩa là mỗi khi/bất cứ khi nào, phù hợp với hành động gửi thư mỗi lần bảng chấm công được sửa.",
+          "explanation": "<b>Whenever</b> means every time that and correctly describes the repeated trigger."
+        },
+        {
+          "id": "t7q128",
+          "no": 128,
+          "part": 5,
+          "stem": "The order of the speakers has been changed ------- Mr. Chen arrives late.",
+          "options": {
+            "A": "so",
+            "B": "as of",
+            "C": "during",
+            "D": "in case"
+          },
+          "answer": "D",
+          "skill": "Precaution phrase",
+          "explanationVi": "<b>In case</b> diễn tả việc thay đổi thứ tự để phòng trường hợp ông Chen đến muộn.",
+          "explanation": "<b>In case</b> introduces a possible situation for which a precaution has been taken."
+        },
+        {
+          "id": "t7q129",
+          "no": 129,
+          "part": 5,
+          "stem": "Even though the fuel container can hold up to a ------- of ten liters, the manufacturer recommends putting in only nine.",
+          "options": {
+            "A": "maximum",
+            "B": "potential",
+            "C": "greatness",
+            "D": "collection"
+          },
+          "answer": "A",
+          "skill": "Noun collocation",
+          "explanationVi": "<b>A maximum of ten liters</b> nghĩa là mức tối đa mười lít.",
+          "explanation": "<b>A maximum of ten liters</b> is the correct expression."
+        },
+        {
+          "id": "t7q130",
+          "no": 130,
+          "part": 5,
+          "stem": "Ever since the Unicycle Café opened for business last May, it ------- weekly live music events.",
+          "options": {
+            "A": "to have hosted",
+            "B": "has been hosting",
+            "C": "was hosted",
+            "D": "will be hosting"
+          },
+          "answer": "B",
+          "skill": "Present perfect continuous",
+          "explanationVi": "<b>Ever since</b> chỉ hành động bắt đầu trong quá khứ và tiếp tục đến hiện tại; dùng <b>has been hosting</b>.",
+          "explanation": "<b>Ever since</b> calls for an action continuing from the past to the present, so <b>has been hosting</b> is correct."
+        },
+        {
+          "id": "t7q131",
+          "no": 131,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following advertisement.",
+          "options": {
+            "A": "cash",
+            "B": "exercise",
+            "C": "laughter",
+            "D": "lessons"
+          },
+          "answer": "C",
+          "skill": "Vocabulary / Collocation",
+          "explanationVi": "<b>Fun and laughter</b> là cụm tự nhiên, phù hợp với một đêm chơi trò chơi vui vẻ.",
+          "explanation": "<b>Fun and laughter</b> is the natural collocation.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t7q132",
+          "no": 132,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following advertisement.",
+          "options": {
+            "A": "Or bring your own if you prefer.",
+            "B": "Vote for your favorite comedian.",
+            "C": "The most popular drink is our caramel latte.",
+            "D": "We also have several openings for servers."
+          },
+          "answer": "A",
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu trước nói về bộ sưu tập trò chơi; câu A tiếp tục đúng mạch bằng lựa chọn mang trò chơi riêng.",
+          "explanation": "The previous sentence discusses available games, and choice A adds the logical option of bringing your own.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t7q133",
+          "no": 133,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following advertisement.",
+          "options": {
+            "A": "in contrast to",
+            "B": "furthermore",
+            "C": "so that",
+            "D": "as well as"
+          },
+          "answer": "D",
+          "skill": "Additive phrase",
+          "explanationVi": "<b>As well as</b> nối đồ uống với bánh ngọt được phục vụ.",
+          "explanation": "<b>As well as</b> correctly joins the drinks and pastries.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t7q134",
+          "no": 134,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following advertisement.",
+          "options": {
+            "A": "is relaxing",
+            "B": "to relax",
+            "C": "relaxes",
+            "D": "relaxation"
+          },
+          "answer": "B",
+          "skill": "Infinitive",
+          "explanationVi": "Sau <b>opportunity</b> dùng <b>to V</b>: <b>the opportunity to relax and socialise</b>.",
+          "explanation": "After <b>opportunity</b>, a to-infinitive is required: <b>to relax and socialise</b>.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t7q135",
+          "no": 135,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following e-mail.",
+          "options": {
+            "A": "license",
+            "B": "contract",
+            "C": "subscription",
+            "D": "membership"
+          },
+          "answer": "B",
+          "skill": "Vocabulary",
+          "explanationVi": "Hợp đồng thuê nhà là một loại <b>contract</b>; <b>renew your contract</b> phù hợp với ngữ cảnh.",
+          "explanation": "A lease is a type of <b>contract</b>, so <b>renew your contract</b> fits the context.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t7q136",
+          "no": 136,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following e-mail.",
+          "options": {
+            "A": "I",
+            "B": "they",
+            "C": "some",
+            "D": "everyone"
+          },
+          "answer": "A",
+          "skill": "Pronoun reference",
+          "explanationVi": "Người viết Joanna đang trực tiếp nói với ông Henry, nên chủ ngữ phù hợp là <b>I</b>.",
+          "explanation": "The writer is speaking directly to Mr. Henry, so <b>I</b> is correct.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t7q137",
+          "no": 137,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following e-mail.",
+          "options": {
+            "A": "In any event",
+            "B": "As expected",
+            "C": "In that case",
+            "D": "For instance"
+          },
+          "answer": "C",
+          "skill": "Transition phrase",
+          "explanationVi": "<b>In that case</b> chỉ trường hợp ông Henry không trả lời và không gia hạn hợp đồng.",
+          "explanation": "<b>In that case</b> refers to the situation in which Mr. Henry does not renew the lease.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t7q138",
+          "no": 138,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following e-mail.",
+          "options": {
+            "A": "This business was started 22 years ago.",
+            "B": "Kanarak Realty is happy to help you however we can.",
+            "C": "You have occupied the current property for nearly two years.",
+            "D": "Your apartment has three bedrooms and two bathrooms."
+          },
+          "answer": "B",
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu trước đề nghị hỗ trợ tìm căn hộ khác; câu B tiếp tục tự nhiên bằng lời khẳng định công ty sẵn sàng hỗ trợ.",
+          "explanation": "The previous sentence offers help with another apartment, so choice B is the logical conclusion.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t7q139",
+          "no": 139,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following brochure.",
+          "options": {
+            "A": "dining",
+            "B": "investment",
+            "C": "entertainment",
+            "D": "accommodation"
+          },
+          "answer": "D",
+          "skill": "Vocabulary / Collocation",
+          "explanationVi": "Đoạn văn nói về nơi lưu trú, nên cụm đúng là <b>accommodation options</b>.",
+          "explanation": "The passage is about places to stay, so <b>accommodation options</b> is correct.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t7q140",
+          "no": 140,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following brochure.",
+          "options": {
+            "A": "were",
+            "B": "can be",
+            "C": "would be",
+            "D": "have been"
+          },
+          "answer": "B",
+          "skill": "Modal passive",
+          "explanationVi": "<b>Can be found</b> là cấu trúc tự nhiên để mô tả nơi có thể tìm thấy các khách sạn.",
+          "explanation": "<b>Can be found</b> is the natural passive structure.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t7q141",
+          "no": 141,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following brochure.",
+          "options": {
+            "A": "After all",
+            "B": "In addition",
+            "C": "Fortunately",
+            "D": "Nevertheless"
+          },
+          "answer": "B",
+          "skill": "Additive transition",
+          "explanationVi": "Câu này bổ sung thêm các lựa chọn lưu trú, nên dùng <b>In addition</b>.",
+          "explanation": "The sentence adds more accommodation choices, so <b>In addition</b> is correct.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t7q142",
+          "no": 142,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following brochure.",
+          "options": {
+            "A": "Tourists flock to the peninsula during the months.",
+            "B": "Plan your vacation while space remains available.",
+            "C": "Travelers on a budget also have options.",
+            "D": "The Devegas Peninsula is more than ten kilometers long."
+          },
+          "answer": "C",
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu sau liệt kê khu cắm trại và nhà nghỉ thanh niên giá rẻ, nên câu C về khách du lịch có ngân sách hạn chế phù hợp nhất.",
+          "explanation": "The next sentence lists inexpensive campsites and hostels, so choice C provides the best transition.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t7q143",
+          "no": 143,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following notice.",
+          "options": {
+            "A": "notify",
+            "B": "be notified",
+            "C": "notifying",
+            "D": "have notified"
+          },
+          "answer": "B",
+          "skill": "Future passive",
+          "explanationVi": "Người dùng là người nhận thông báo, nên sau <b>will</b> dùng bị động <b>be notified</b>.",
+          "explanation": "The user receives the notification, so the future passive <b>will be notified</b> is required.",
+          "passageIndex": 3
+        },
+        {
+          "id": "t7q144",
+          "no": 144,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following notice.",
+          "options": {
+            "A": "complete",
+            "B": "completed",
+            "C": "completely",
+            "D": "completion"
+          },
+          "answer": "D",
+          "skill": "Noun after preposition",
+          "explanationVi": "Sau giới từ <b>upon</b> cần danh từ; <b>upon completion</b> nghĩa là sau khi hoàn tất.",
+          "explanation": "The preposition <b>upon</b> is followed by the noun <b>completion</b>.",
+          "passageIndex": 3
+        },
+        {
+          "id": "t7q145",
+          "no": 145,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following notice.",
+          "options": {
+            "A": "For those who need to create an account, simply visit our Web site.",
+            "B": "The contract’s effective date appears at the top of the document.",
+            "C": "The privacy terms are attached to the contract.",
+            "D": "Our company is located in Utah."
+          },
+          "answer": "A",
+          "skill": "Sentence insertion",
+          "explanationVi": "Ngay trước chỗ trống nói về tài khoản Nelsign và hồ sơ người dùng, nên câu hướng dẫn người chưa có tài khoản truy cập trang Web để tạo tài khoản nối mạch hợp lý nhất.",
+          "explanation": "The previous sentence discusses Nelsign accounts and user profiles, so the instruction for people who need to create an account is the most coherent continuation.",
+          "passageIndex": 3
+        },
+        {
+          "id": "t7q146",
+          "no": 146,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following notice.",
+          "options": {
+            "A": "around",
+            "B": "through",
+            "C": "regarding",
+            "D": "assuming"
+          },
+          "answer": "C",
+          "skill": "Preposition",
+          "explanationVi": "<b>Regarding</b> nghĩa là “liên quan đến/về”, tạo cụm <b>questions regarding the signing process</b>.",
+          "explanation": "<b>Regarding</b> correctly means “concerning” in the phrase <b>questions regarding the signing process</b>.",
+          "passageIndex": 3
+        }
+      ],
+      "passages": [
+        {
+          "title": "Questions 131-134 refer to the following advertisement.",
+          "label": "Advertisement",
+          "html": "<p>Do you fancy playing games with your mates? Do you enjoy tasty tea and snacks? If so, you won’t want to miss Game Night at Chez Tournoi. Each Friday from 6 to 10 P.M., Chez Tournoi welcomes you to its 44 Broad Avenue, Kingston, location for some fun and <span class=\"blank\">131</span>. Choose from our collection of board games, card games, trivia games, and more. <span class=\"blank sentence\">132</span> While you play, you can savour our freshly brewed tea, coffee, and hot chocolate <span class=\"blank\">133</span> our mouthwatering pastries. Game Night at Chez Tournoi is the perfect opportunity <span class=\"blank\">134</span> and socialise. Reserve your spot by ringing 01555-672212 or visiting www.cheztournoi.co.uk/gamenight.</p>",
+          "questions": [
+            {
+              "id": "t7q131",
+              "no": 131,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following advertisement.",
+              "options": {
+                "A": "cash",
+                "B": "exercise",
+                "C": "laughter",
+                "D": "lessons"
+              },
+              "answer": "C",
+              "passageIndex": 0
+            },
+            {
+              "id": "t7q132",
+              "no": 132,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following advertisement.",
+              "options": {
+                "A": "Or bring your own if you prefer.",
+                "B": "Vote for your favorite comedian.",
+                "C": "The most popular drink is our caramel latte.",
+                "D": "We also have several openings for servers."
+              },
+              "answer": "A",
+              "passageIndex": 0
+            },
+            {
+              "id": "t7q133",
+              "no": 133,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following advertisement.",
+              "options": {
+                "A": "in contrast to",
+                "B": "furthermore",
+                "C": "so that",
+                "D": "as well as"
+              },
+              "answer": "D",
+              "passageIndex": 0
+            },
+            {
+              "id": "t7q134",
+              "no": 134,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following advertisement.",
+              "options": {
+                "A": "is relaxing",
+                "B": "to relax",
+                "C": "relaxes",
+                "D": "relaxation"
+              },
+              "answer": "B",
+              "passageIndex": 0
+            }
+          ]
+        },
+        {
+          "title": "Questions 135-138 refer to the following e-mail.",
+          "label": "E-mail",
+          "html": "<p>To: Patton Henry &lt;p.henry@xmail.com&gt;<br>From: Joanna Kanarak &lt;jkanarak@kanarakrealty.com&gt;<br>Date: December 29<br>Subject: Lease renewal</p><p>Dear Mr. Henry,</p><p>My records indicate that your lease is due to expire on March 31. If you wish to renew your <span class=\"blank\">135</span>, please let me know before January 31. If you do not reply to this e-mail, <span class=\"blank\">136</span> will assume that you do not wish to continue living in the 22 Fister Road property. <span class=\"blank\">137</span>, it will be listed as a rental available to a new tenant on April 1. If you want to move to an apartment larger or smaller than your current one, just let me know. <span class=\"blank sentence\">138</span></p><p>Sincerely,</p><p>Joanna Kanarak<br>Kanarak Realty</p>",
+          "questions": [
+            {
+              "id": "t7q135",
+              "no": 135,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following e-mail.",
+              "options": {
+                "A": "license",
+                "B": "contract",
+                "C": "subscription",
+                "D": "membership"
+              },
+              "answer": "B",
+              "passageIndex": 1
+            },
+            {
+              "id": "t7q136",
+              "no": 136,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following e-mail.",
+              "options": {
+                "A": "I",
+                "B": "they",
+                "C": "some",
+                "D": "everyone"
+              },
+              "answer": "A",
+              "passageIndex": 1
+            },
+            {
+              "id": "t7q137",
+              "no": 137,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following e-mail.",
+              "options": {
+                "A": "In any event",
+                "B": "As expected",
+                "C": "In that case",
+                "D": "For instance"
+              },
+              "answer": "C",
+              "passageIndex": 1
+            },
+            {
+              "id": "t7q138",
+              "no": 138,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following e-mail.",
+              "options": {
+                "A": "This business was started 22 years ago.",
+                "B": "Kanarak Realty is happy to help you however we can.",
+                "C": "You have occupied the current property for nearly two years.",
+                "D": "Your apartment has three bedrooms and two bathrooms."
+              },
+              "answer": "B",
+              "passageIndex": 1
+            }
+          ]
+        },
+        {
+          "title": "Questions 139-142 refer to the following brochure.",
+          "label": "Brochure",
+          "html": "<p><strong>Where to Stay in Devegas</strong></p><p>The Devegas Peninsula features a wide range of <span class=\"blank\">139</span> options. More than twenty luxury hotels <span class=\"blank\">140</span> found along Devegas Beach, along with several moderately priced hotels in the Devegas Park neighborhood. <span class=\"blank\">141</span>, a range of small inns and short-term apartment rentals are scattered throughout the area. <span class=\"blank sentence\">142</span> Several inexpensive campsites and youth hostels are available throughout the year. For a detailed listing of vacation properties and hotels on the peninsula, see the back cover of this brochure.</p>",
+          "questions": [
+            {
+              "id": "t7q139",
+              "no": 139,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following brochure.",
+              "options": {
+                "A": "dining",
+                "B": "investment",
+                "C": "entertainment",
+                "D": "accommodation"
+              },
+              "answer": "D",
+              "passageIndex": 2
+            },
+            {
+              "id": "t7q140",
+              "no": 140,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following brochure.",
+              "options": {
+                "A": "were",
+                "B": "can be",
+                "C": "would be",
+                "D": "have been"
+              },
+              "answer": "B",
+              "passageIndex": 2
+            },
+            {
+              "id": "t7q141",
+              "no": 141,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following brochure.",
+              "options": {
+                "A": "After all",
+                "B": "In addition",
+                "C": "Fortunately",
+                "D": "Nevertheless"
+              },
+              "answer": "B",
+              "passageIndex": 2
+            },
+            {
+              "id": "t7q142",
+              "no": 142,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following brochure.",
+              "options": {
+                "A": "Tourists flock to the peninsula during the months.",
+                "B": "Plan your vacation while space remains available.",
+                "C": "Travelers on a budget also have options.",
+                "D": "The Devegas Peninsula is more than ten kilometers long."
+              },
+              "answer": "C",
+              "passageIndex": 2
+            }
+          ]
+        },
+        {
+          "title": "Questions 143-146 refer to the following notice.",
+          "label": "Notice",
+          "html": "<p><strong>Nelsign</strong></p><p><em>Your signature has been captured.</em></p><p><strong>The document is waiting for four more signatures.</strong></p><p>Once all parties have signed the Nelsign document, you will <span class=\"blank\">143</span> by e-mail. At that time, the sender will also receive an alert that all necessary signatures on the contract have been acquired. Upon <span class=\"blank\">144</span>, all signers may access and save the document. If you have a Nelsign account, this contract and any other documents you have previously signed electronically with Nelsign will be saved in your profile. <span class=\"blank sentence\">145</span> For any questions <span class=\"blank\">146</span> the signing process, contact our customer support center at inquiries@nelsign.com.</p>",
+          "questions": [
+            {
+              "id": "t7q143",
+              "no": 143,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following notice.",
+              "options": {
+                "A": "notify",
+                "B": "be notified",
+                "C": "notifying",
+                "D": "have notified"
+              },
+              "answer": "B",
+              "passageIndex": 3
+            },
+            {
+              "id": "t7q144",
+              "no": 144,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following notice.",
+              "options": {
+                "A": "complete",
+                "B": "completed",
+                "C": "completely",
+                "D": "completion"
+              },
+              "answer": "D",
+              "passageIndex": 3
+            },
+            {
+              "id": "t7q145",
+              "no": 145,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following notice.",
+              "options": {
+                "A": "For those who need to create an account, simply visit our Web site.",
+                "B": "The contract’s effective date appears at the top of the document.",
+                "C": "The privacy terms are attached to the contract.",
+                "D": "Our company is located in Utah."
+              },
+              "answer": "A",
+              "passageIndex": 3
+            },
+            {
+              "id": "t7q146",
+              "no": 146,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following notice.",
+              "options": {
+                "A": "around",
+                "B": "through",
+                "C": "regarding",
+                "D": "assuming"
+              },
+              "answer": "C",
+              "passageIndex": 3
+            }
+          ]
+        }
+      ],
+      "practice": true,
+      "testNo": 7,
+      "selectorLabel": "Test 7"
+    },
+    {
+      "id": "ets-2025-test8-part5-6",
+      "title": "ETS 2025 Test 8 · Part 5 + 6",
+      "sourceLabel": "ETS 2025 · Reading Test 8",
+      "timerMinutes": 25,
+      "questions": [
+        {
+          "id": "t8q101",
+          "no": 101,
+          "part": 5,
+          "stem": "Sydney Fashion Week drew thousands of ------- visitors to the city last week.",
+          "options": {
+            "A": "excite",
+            "B": "excited",
+            "C": "excites",
+            "D": "excitement"
+          },
+          "answer": "B",
+          "skill": "Past participle adjective",
+          "explanationVi": "Trước danh từ <b>visitors</b> cần tính từ mô tả cảm xúc của người tham dự. <b>Excited visitors</b> nghĩa là “những du khách hào hứng”.",
+          "explanation": "The noun <b>visitors</b> needs an adjective describing how the people felt. <b>Excited visitors</b> is correct."
+        },
+        {
+          "id": "t8q102",
+          "no": 102,
+          "part": 5,
+          "stem": "Ms. Choi was pleased to learn that ------- is a finalist in the technology competition.",
+          "options": {
+            "A": "she",
+            "B": "her",
+            "C": "hers",
+            "D": "herself"
+          },
+          "answer": "A",
+          "skill": "Subject pronoun",
+          "explanationVi": "Chỗ trống làm chủ ngữ của mệnh đề <b>------- is a finalist</b>, nên dùng đại từ chủ ngữ <b>she</b>.",
+          "explanation": "The blank is the subject of <b>is a finalist</b>, so the subject pronoun <b>she</b> is required."
+        },
+        {
+          "id": "t8q103",
+          "no": 103,
+          "part": 5,
+          "stem": "All visitors to the factory should use the ------- on the north side of the building.",
+          "options": {
+            "A": "enter",
+            "B": "entrance",
+            "C": "entering",
+            "D": "entered"
+          },
+          "answer": "B",
+          "skill": "Word form: Noun",
+          "explanationVi": "Sau mạo từ <b>the</b> cần danh từ. <b>Entrance</b> nghĩa là “lối vào”, phù hợp với vị trí ở phía bắc tòa nhà.",
+          "explanation": "A noun is required after <b>the</b>. <b>Entrance</b> correctly refers to the way into the building."
+        },
+        {
+          "id": "t8q104",
+          "no": 104,
+          "part": 5,
+          "stem": "Unfortunately, we cannot provide an ------- time for the delivery of the new laptops.",
+          "options": {
+            "A": "exact",
+            "B": "obvious",
+            "C": "absent",
+            "D": "inspirational"
+          },
+          "answer": "A",
+          "skill": "Adjective choice",
+          "explanationVi": "Cụm tự nhiên là <b>an exact time</b>, nghĩa là “một thời gian chính xác”.",
+          "explanation": "<b>An exact time</b> is the natural phrase for a precise delivery time."
+        },
+        {
+          "id": "t8q105",
+          "no": 105,
+          "part": 5,
+          "stem": "Tourists visiting Star Island are asked ------- the privacy of residents.",
+          "options": {
+            "A": "respects",
+            "B": "have respected",
+            "C": "to respect",
+            "D": "will respect"
+          },
+          "answer": "C",
+          "skill": "Infinitive after ask",
+          "explanationVi": "Cấu trúc bị động <b>be asked to do something</b> yêu cầu động từ nguyên mẫu có <b>to</b>: <b>are asked to respect</b>.",
+          "explanation": "The passive pattern is <b>be asked to do something</b>, so <b>to respect</b> is correct."
+        },
+        {
+          "id": "t8q106",
+          "no": 106,
+          "part": 5,
+          "stem": "Rivlyn, Inc., has recycled ------- 11 million kilograms of paper waste over the past decade.",
+          "options": {
+            "A": "firmly",
+            "B": "nearly",
+            "C": "closely",
+            "D": "freely"
+          },
+          "answer": "B",
+          "skill": "Adverb of approximation",
+          "explanationVi": "<b>Nearly</b> đứng trước số lượng để diễn tả “gần 11 triệu ki-lô-gam”.",
+          "explanation": "<b>Nearly</b> appropriately modifies the number and means “almost.”"
+        },
+        {
+          "id": "t8q107",
+          "no": 107,
+          "part": 5,
+          "stem": "The new Dorvale 500 exercise machine is significantly heavier and sturdier than the previous -------.",
+          "options": {
+            "A": "time",
+            "B": "model",
+            "C": "weight",
+            "D": "class"
+          },
+          "answer": "B",
+          "skill": "Noun reference",
+          "explanationVi": "Máy tập mới được so sánh với phiên bản trước, nên <b>previous model</b> là cụm phù hợp.",
+          "explanation": "The new exercise machine is being compared with the previous <b>model</b>."
+        },
+        {
+          "id": "t8q108",
+          "no": 108,
+          "part": 5,
+          "stem": "Beachside Inn is the perfect place to ------- an event for your corporate clients.",
+          "options": {
+            "A": "entertain",
+            "B": "gather",
+            "C": "host",
+            "D": "stay"
+          },
+          "answer": "C",
+          "skill": "Verb collocation",
+          "explanationVi": "<b>Host an event</b> là cụm cố định, nghĩa là “tổ chức một sự kiện”.",
+          "explanation": "<b>Host an event</b> is the standard collocation."
+        },
+        {
+          "id": "t8q109",
+          "no": 109,
+          "part": 5,
+          "stem": "------- in cloud computing have transformed the gaming industry in many ways.",
+          "options": {
+            "A": "Advance",
+            "B": "Advancing",
+            "C": "Advancement",
+            "D": "Advancements"
+          },
+          "answer": "D",
+          "skill": "Plural noun / Subject-verb agreement",
+          "explanationVi": "Động từ <b>have transformed</b> yêu cầu chủ ngữ số nhiều. <b>Advancements</b> nghĩa là “những tiến bộ”.",
+          "explanation": "The plural verb <b>have transformed</b> requires the plural noun <b>Advancements</b>."
+        },
+        {
+          "id": "t8q110",
+          "no": 110,
+          "part": 5,
+          "stem": "To provide feedback ------- your recent dental appointment, please respond to this brief survey.",
+          "options": {
+            "A": "about",
+            "B": "below",
+            "C": "near",
+            "D": "onto"
+          },
+          "answer": "A",
+          "skill": "Preposition",
+          "explanationVi": "<b>Feedback about</b> là cụm tự nhiên, nghĩa là phản hồi về một vấn đề hoặc trải nghiệm.",
+          "explanation": "<b>Feedback about</b> is the correct prepositional phrase."
+        },
+        {
+          "id": "t8q111",
+          "no": 111,
+          "part": 5,
+          "stem": "If your company computer is not ------- functional, please call the IT Department at extension 12.",
+          "options": {
+            "A": "complete",
+            "B": "completed",
+            "C": "completely",
+            "D": "completing"
+          },
+          "answer": "C",
+          "skill": "Adverb",
+          "explanationVi": "Tính từ <b>functional</b> cần trạng từ bổ nghĩa. <b>Completely functional</b> nghĩa là “hoạt động hoàn toàn bình thường”.",
+          "explanation": "The adjective <b>functional</b> is modified by the adverb <b>completely</b>."
+        },
+        {
+          "id": "t8q112",
+          "no": 112,
+          "part": 5,
+          "stem": "The ------- of electric buses to our current fleet has made commuting much more pleasant.",
+          "options": {
+            "A": "replacement",
+            "B": "addition",
+            "C": "substitution",
+            "D": "building"
+          },
+          "answer": "B",
+          "skill": "Noun collocation",
+          "explanationVi": "Cấu trúc đúng là <b>the addition of ... to ...</b>, nghĩa là việc bổ sung xe buýt điện vào đội xe hiện tại.",
+          "explanation": "The correct construction is <b>the addition of ... to ...</b>."
+        },
+        {
+          "id": "t8q113",
+          "no": 113,
+          "part": 5,
+          "stem": "The Zwick Air Wave generates a powerful blast to cool your workspace -------.",
+          "options": {
+            "A": "quickness",
+            "B": "quicken",
+            "C": "quickens",
+            "D": "quickly"
+          },
+          "answer": "D",
+          "skill": "Adverb",
+          "explanationVi": "Động từ <b>cool</b> cần trạng từ chỉ cách thức. <b>Quickly</b> là lựa chọn đúng.",
+          "explanation": "The verb <b>cool</b> is modified by the adverb <b>quickly</b>."
+        },
+        {
+          "id": "t8q114",
+          "no": 114,
+          "part": 5,
+          "stem": "The Oak Hill Art Museum offers several ------- exhibits and a series of limited-time exhibits.",
+          "options": {
+            "A": "previous",
+            "B": "permanent",
+            "C": "inevitable",
+            "D": "entire"
+          },
+          "answer": "B",
+          "skill": "Vocabulary / Contrast",
+          "explanationVi": "Cụm <b>permanent exhibits</b> đối lập tự nhiên với <b>limited-time exhibits</b> trong cùng câu.",
+          "explanation": "<b>Permanent exhibits</b> naturally contrasts with <b>limited-time exhibits</b>."
+        },
+        {
+          "id": "t8q115",
+          "no": 115,
+          "part": 5,
+          "stem": "Any remote employees wanting an additional computer monitor should ------- Ms. Suzuki.",
+          "options": {
+            "A": "participate",
+            "B": "activate",
+            "C": "convene",
+            "D": "notify"
+          },
+          "answer": "D",
+          "skill": "Verb choice",
+          "explanationVi": "Nhân viên muốn thêm màn hình cần <b>notify</b> Ms. Suzuki, tức thông báo cho bà ấy.",
+          "explanation": "Employees requesting another monitor should <b>notify</b> Ms. Suzuki."
+        },
+        {
+          "id": "t8q116",
+          "no": 116,
+          "part": 5,
+          "stem": "Customer loyalty programs are ------- for many retail businesses.",
+          "options": {
+            "A": "profited",
+            "B": "profitable",
+            "C": "profitably",
+            "D": "profitability"
+          },
+          "answer": "B",
+          "skill": "Word form: Adjective",
+          "explanationVi": "Sau động từ nối <b>are</b> cần tính từ. <b>Profitable</b> nghĩa là “mang lại lợi nhuận”.",
+          "explanation": "The linking verb <b>are</b> requires the adjective <b>profitable</b>."
+        },
+        {
+          "id": "t8q117",
+          "no": 117,
+          "part": 5,
+          "stem": "Prompt submission of travel vouchers ------- the accounts department will expedite refunds.",
+          "options": {
+            "A": "to",
+            "B": "as",
+            "C": "on",
+            "D": "up"
+          },
+          "answer": "A",
+          "skill": "Preposition",
+          "explanationVi": "<b>Submission ... to the accounts department</b> là cấu trúc đúng: nộp chứng từ cho phòng kế toán.",
+          "explanation": "The correct construction is <b>submission ... to the accounts department</b>."
+        },
+        {
+          "id": "t8q118",
+          "no": 118,
+          "part": 5,
+          "stem": "After extensively ------- our hiring policies, the consultant recommended a simpler process.",
+          "options": {
+            "A": "be reviewing",
+            "B": "reviewed",
+            "C": "reviewing",
+            "D": "reviews"
+          },
+          "answer": "C",
+          "skill": "Gerund after preposition",
+          "explanationVi": "Sau giới từ <b>after</b> dùng V-ing khi không có chủ ngữ riêng: <b>after extensively reviewing</b>.",
+          "explanation": "After the preposition <b>after</b>, the gerund <b>reviewing</b> is required here."
+        },
+        {
+          "id": "t8q119",
+          "no": 119,
+          "part": 5,
+          "stem": "Under the ------- of Ms. Kenu, the historical society’s fund-raiser went very well this year.",
+          "options": {
+            "A": "cover",
+            "B": "field",
+            "C": "direction",
+            "D": "summary"
+          },
+          "answer": "C",
+          "skill": "Noun collocation",
+          "explanationVi": "<b>Under the direction of</b> là cụm cố định, nghĩa là “dưới sự chỉ đạo của”.",
+          "explanation": "<b>Under the direction of</b> is the standard expression."
+        },
+        {
+          "id": "t8q120",
+          "no": 120,
+          "part": 5,
+          "stem": "The company decided to proceed ------- with plans to expand into new sales territories.",
+          "options": {
+            "A": "caution",
+            "B": "cautionary",
+            "C": "cautious",
+            "D": "cautiously"
+          },
+          "answer": "D",
+          "skill": "Adverb",
+          "explanationVi": "Động từ <b>proceed</b> cần trạng từ bổ nghĩa. <b>Proceed cautiously</b> nghĩa là tiến hành một cách thận trọng.",
+          "explanation": "The verb <b>proceed</b> is correctly modified by the adverb <b>cautiously</b>."
+        },
+        {
+          "id": "t8q121",
+          "no": 121,
+          "part": 5,
+          "stem": "------- access the building, enter the code listed on the tenant directory.",
+          "options": {
+            "A": "In order to",
+            "B": "For instance",
+            "C": "Due to",
+            "D": "As a result of"
+          },
+          "answer": "A",
+          "skill": "Purpose infinitive",
+          "explanationVi": "<b>In order to + V</b> diễn tả mục đích: để vào được tòa nhà, hãy nhập mã trong danh bạ người thuê.",
+          "explanation": "<b>In order to + verb</b> correctly expresses purpose."
+        },
+        {
+          "id": "t8q122",
+          "no": 122,
+          "part": 5,
+          "stem": "Mr. Davis ------- the marketing department will attend Monday’s meeting with the client.",
+          "options": {
+            "A": "when",
+            "B": "into",
+            "C": "so",
+            "D": "from"
+          },
+          "answer": "D",
+          "skill": "Preposition",
+          "explanationVi": "<b>Mr. Davis from the marketing department</b> nghĩa là ông Davis thuộc phòng marketing.",
+          "explanation": "<b>From the marketing department</b> correctly identifies Mr. Davis’s department."
+        },
+        {
+          "id": "t8q123",
+          "no": 123,
+          "part": 5,
+          "stem": "Several ------- reviews helped make the debut novel a best seller.",
+          "options": {
+            "A": "pending",
+            "B": "resolved",
+            "C": "outstanding",
+            "D": "equivalent"
+          },
+          "answer": "C",
+          "skill": "Adjective choice",
+          "explanationVi": "Những đánh giá <b>outstanding</b> (xuất sắc/rất tích cực) có thể giúp cuốn tiểu thuyết trở thành sách bán chạy.",
+          "explanation": "<b>Outstanding reviews</b> logically explains why the novel became a best seller."
+        },
+        {
+          "id": "t8q124",
+          "no": 124,
+          "part": 5,
+          "stem": "Please ------- us in welcoming Dr. Sito, who brings ten years of experience in the aerospace industry to his new position.",
+          "options": {
+            "A": "join",
+            "B": "joins",
+            "C": "joining",
+            "D": "joined"
+          },
+          "answer": "A",
+          "skill": "Imperative / Verb form",
+          "explanationVi": "Sau <b>Please</b> trong câu mệnh lệnh dùng động từ nguyên mẫu: <b>Please join us</b>.",
+          "explanation": "An imperative after <b>Please</b> takes the base verb <b>join</b>."
+        },
+        {
+          "id": "t8q125",
+          "no": 125,
+          "part": 5,
+          "stem": "A survey of new car buyers asked them to ------- features in order from most to least important.",
+          "options": {
+            "A": "opt",
+            "B": "turn",
+            "C": "rank",
+            "D": "guide"
+          },
+          "answer": "C",
+          "skill": "Verb choice",
+          "explanationVi": "<b>Rank features in order</b> nghĩa là xếp hạng các đặc điểm theo thứ tự.",
+          "explanation": "<b>Rank features in order</b> is the correct expression."
+        },
+        {
+          "id": "t8q126",
+          "no": 126,
+          "part": 5,
+          "stem": "As head of the Poels Museum, Mr. Ahuja oversaw the ------- of several significant works of art.",
+          "options": {
+            "A": "acquires",
+            "B": "acquired",
+            "C": "acquisition",
+            "D": "acquisitional"
+          },
+          "answer": "C",
+          "skill": "Word form: Noun",
+          "explanationVi": "Sau mạo từ <b>the</b> và trước <b>of</b> cần danh từ. <b>Acquisition</b> nghĩa là việc mua/tiếp nhận các tác phẩm nghệ thuật.",
+          "explanation": "A noun is required in <b>the acquisition of</b>, so <b>acquisition</b> is correct."
+        },
+        {
+          "id": "t8q127",
+          "no": 127,
+          "part": 5,
+          "stem": "Later today, we will hold a meeting to discuss changes to protocols ------- they go into effect next month.",
+          "options": {
+            "A": "rather than",
+            "B": "as well as",
+            "C": "despite",
+            "D": "before"
+          },
+          "answer": "D",
+          "skill": "Time conjunction",
+          "explanationVi": "Cuộc họp diễn ra trước khi các thay đổi có hiệu lực vào tháng tới, nên dùng <b>before</b>.",
+          "explanation": "The meeting will occur earlier than the changes taking effect, so <b>before</b> is correct."
+        },
+        {
+          "id": "t8q128",
+          "no": 128,
+          "part": 5,
+          "stem": "Customer service representatives can be reached ------- calling 800-555-0121 between 8:00 A.M. and 4:00 P.M.",
+          "options": {
+            "A": "by",
+            "B": "because",
+            "C": "ever",
+            "D": "at"
+          },
+          "answer": "A",
+          "skill": "By + gerund",
+          "explanationVi": "<b>By + V-ing</b> diễn tả phương thức: có thể liên hệ đại diện dịch vụ khách hàng bằng cách gọi số điện thoại.",
+          "explanation": "<b>By + gerund</b> expresses the method used to contact the representatives."
+        },
+        {
+          "id": "t8q129",
+          "no": 129,
+          "part": 5,
+          "stem": "Collaboration between multiple agencies is ------- challenging, but our project-based consulting can simplify the process for you.",
+          "options": {
+            "A": "well",
+            "B": "often",
+            "C": "deliberately",
+            "D": "finally"
+          },
+          "answer": "B",
+          "skill": "Adverb of frequency",
+          "explanationVi": "<b>Often challenging</b> nghĩa là “thường khó khăn”, phù hợp với nhận xét chung về việc phối hợp nhiều cơ quan.",
+          "explanation": "<b>Often</b> appropriately expresses how frequently such collaboration is challenging."
+        },
+        {
+          "id": "t8q130",
+          "no": 130,
+          "part": 5,
+          "stem": "The desserts we had at Giovanni’s Bistro were not as delicious as ------- we enjoyed at Monteverdi’s Taverna.",
+          "options": {
+            "A": "whose",
+            "B": "those",
+            "C": "which",
+            "D": "them"
+          },
+          "answer": "B",
+          "skill": "Demonstrative pronoun",
+          "explanationVi": "<b>Those</b> thay thế cho danh từ số nhiều <b>desserts</b> để tránh lặp lại: <b>as delicious as those we enjoyed...</b>",
+          "explanation": "<b>Those</b> replaces the plural noun <b>desserts</b> and avoids repetition."
+        },
+        {
+          "id": "t8q131",
+          "no": 131,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following directions.",
+          "options": {
+            "A": "secure",
+            "B": "security",
+            "C": "securely",
+            "D": "securing"
+          },
+          "answer": "B",
+          "skill": "Noun modifier",
+          "explanationVi": "<b>Security guard</b> là cụm danh từ cố định, nghĩa là “nhân viên bảo vệ”.",
+          "explanation": "<b>Security guard</b> is the standard noun phrase.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t8q132",
+          "no": 132,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following directions.",
+          "options": {
+            "A": "Alternatively",
+            "B": "Consequently",
+            "C": "Furthermore",
+            "D": "Nevertheless"
+          },
+          "answer": "A",
+          "skill": "Transition: Alternative",
+          "explanationVi": "Câu trước hướng dẫn đi thang máy; câu sau đưa ra phương án khác là dùng cầu thang, nên dùng <b>Alternatively</b>.",
+          "explanation": "The sentence offers the stairs as an alternative to the elevator, so <b>Alternatively</b> is correct.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t8q133",
+          "no": 133,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following directions.",
+          "options": {
+            "A": "temporarily",
+            "B": "responsibly",
+            "C": "patiently",
+            "D": "immediately"
+          },
+          "answer": "D",
+          "skill": "Adverb",
+          "explanationVi": "Hướng dẫn yêu cầu rẽ trái ngay khi lên tầng hai, nên <b>immediately</b> là phù hợp.",
+          "explanation": "<b>Immediately</b> correctly indicates that the turn should be made right away.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t8q134",
+          "no": 134,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following directions.",
+          "options": {
+            "A": "The laboratory is the next door on the right.",
+            "B": "The visitors’ parking area is usually full on weekdays.",
+            "C": "The laboratory’s speaker series is open to the public.",
+            "D": "This year marks the laboratory’s thirty-fifth anniversary."
+          },
+          "answer": "A",
+          "skill": "Sentence insertion",
+          "explanationVi": "Toàn đoạn là chỉ đường đến phòng thí nghiệm; sau khi đi qua phòng chờ khách, câu A hoàn tất hướng dẫn bằng vị trí của phòng thí nghiệm.",
+          "explanation": "The passage gives step-by-step directions, so the sentence identifying the laboratory as the next door on the right completes the route.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t8q135",
+          "no": 135,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following notice.",
+          "options": {
+            "A": "cold",
+            "B": "long",
+            "C": "busy",
+            "D": "sure"
+          },
+          "answer": "C",
+          "skill": "Adjective choice",
+          "explanationVi": "Tháng Mười Hai được mô tả là thời điểm bận rộn đối với sinh viên, lý giải việc trường gia hạn thời gian nộp đơn. <b>Busy</b> phù hợp nhất.",
+          "explanation": "The university extends the deadline because December is a <b>busy</b> time for undergraduates.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t8q136",
+          "no": 136,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following notice.",
+          "options": {
+            "A": "Being considered",
+            "B": "To be considered",
+            "C": "Having been considered",
+            "D": "Considering"
+          },
+          "answer": "B",
+          "skill": "Infinitive of purpose / Passive",
+          "explanationVi": "<b>To be considered for admission</b> nghĩa là “để được xem xét nhập học”, phù hợp với hướng dẫn nộp bảng điểm.",
+          "explanation": "<b>To be considered for admission</b> correctly expresses the purpose and uses the required passive form.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t8q137",
+          "no": 137,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following notice.",
+          "options": {
+            "A": "between",
+            "B": "after",
+            "C": "except",
+            "D": "regarding"
+          },
+          "answer": "D",
+          "skill": "Preposition",
+          "explanationVi": "<b>Questions regarding the MBA program requirements</b> nghĩa là các câu hỏi liên quan đến yêu cầu chương trình.",
+          "explanation": "<b>Regarding</b> correctly means “concerning.”",
+          "passageIndex": 1
+        },
+        {
+          "id": "t8q138",
+          "no": 138,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following notice.",
+          "options": {
+            "A": "We look forward to reading your application.",
+            "B": "Undergraduate programs frequently require personal statements.",
+            "C": "We have added a course in public health.",
+            "D": "A record number of prospective students have applied."
+          },
+          "answer": "A",
+          "skill": "Sentence insertion",
+          "explanationVi": "Đây là thông báo tuyển sinh và câu trước mời ứng viên liên hệ nếu có thắc mắc. Câu A là lời kết tự nhiên hướng đến đơn đăng ký của ứng viên.",
+          "explanation": "The notice concerns MBA applications, and choice A is the natural closing statement.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t8q139",
+          "no": 139,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "After all",
+            "B": "In any case",
+            "C": "On the contrary",
+            "D": "Most significantly"
+          },
+          "answer": "D",
+          "skill": "Transition / Emphasis",
+          "explanationVi": "Đoạn thư đang liệt kê các thay đổi của ứng dụng; việc sửa các lỗi của phiên bản trước được nhấn mạnh là thay đổi quan trọng nhất, nên dùng <b>Most significantly</b>.",
+          "explanation": "The writer is listing app changes and emphasizes the correction of previous issues, so <b>Most significantly</b> fits best.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t8q140",
+          "no": 140,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "I hope to have an update soon concerning the new location.",
+            "B": "Among these problems was a tendency for the screen to freeze.",
+            "C": "Many restaurant apps now include online ordering.",
+            "D": "The new items will be added to the menu next month."
+          },
+          "answer": "B",
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu trước nói đã sửa nhiều vấn đề của phiên bản cũ. Câu B nêu cụ thể một trong những vấn đề đó là màn hình thường bị treo, nên nối mạch trực tiếp nhất.",
+          "explanation": "The previous sentence mentions issues in the old version; choice B gives a specific example of one of those problems.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t8q141",
+          "no": 141,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "we",
+            "B": "you",
+            "C": "they",
+            "D": "none"
+          },
+          "answer": "C",
+          "skill": "Pronoun reference",
+          "explanationVi": "<b>They</b> thay thế cho chủ ngữ số nhiều <b>our focus group members</b> vừa được nhắc đến.",
+          "explanation": "<b>They</b> refers back to the plural noun phrase <b>our focus group members</b>.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t8q142",
+          "no": 142,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "has been announced",
+            "B": "will be announced",
+            "C": "announcing",
+            "D": "announces"
+          },
+          "answer": "B",
+          "skill": "Future passive",
+          "explanationVi": "Thư được viết ngày 15 September và nói đến một hành động sẽ xảy ra ngày 25 September. Chủ ngữ <b>the official launch</b> nhận hành động “announce”, nên dùng tương lai bị động <b>will be announced</b>.",
+          "explanation": "The announcement is scheduled for a future date, and the subject receives the action, so <b>will be announced</b> is correct.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t8q143",
+          "no": 143,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following product review.",
+          "options": {
+            "A": "In fact",
+            "B": "However",
+            "C": "Therefore",
+            "D": "To the contrary"
+          },
+          "answer": "B",
+          "skill": "Contrast transition",
+          "explanationVi": "Người viết thừa nhận nhận máy ảnh miễn phí nhưng vẫn khẳng định sẽ đưa ra ý kiến thẳng thắn. Hai ý tương phản nên dùng <b>However</b>.",
+          "explanation": "Receiving the camera for free contrasts with the writer’s claim of candid honesty, so <b>However</b> is correct.",
+          "passageIndex": 3
+        },
+        {
+          "id": "t8q144",
+          "no": 144,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following product review.",
+          "options": {
+            "A": "I am always honest when I review a product.",
+            "B": "I am curious about other similarly sized cameras.",
+            "C": "Many people take photographs with their phones.",
+            "D": "Publishers also regularly offer free books to reviewers."
+          },
+          "answer": "A",
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu trước nhấn mạnh người viết luôn chia sẻ ý kiến trung thực dù nhận sản phẩm miễn phí. Câu A củng cố trực tiếp điểm này trước khi bắt đầu đánh giá sản phẩm.",
+          "explanation": "Choice A directly reinforces the writer’s statement about giving a candid opinion before the actual product evaluation begins.",
+          "passageIndex": 3
+        },
+        {
+          "id": "t8q145",
+          "no": 145,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following product review.",
+          "options": {
+            "A": "event",
+            "B": "policy",
+            "C": "credential",
+            "D": "distinction"
+          },
+          "answer": "D",
+          "skill": "Noun choice",
+          "explanationVi": "Câu trước phân biệt đối tượng phù hợp với máy ảnh: người làm video trực tuyến và nhà làm phim chuyên nghiệp. Đây là một <b>important distinction</b>.",
+          "explanation": "The writer is emphasizing an important difference between user groups, so <b>distinction</b> is correct.",
+          "passageIndex": 3
+        },
+        {
+          "id": "t8q146",
+          "no": 146,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following product review.",
+          "options": {
+            "A": "easy",
+            "B": "ease",
+            "C": "easing",
+            "D": "to ease"
+          },
+          "answer": "A",
+          "skill": "Make + object + adjective",
+          "explanationVi": "Cấu trúc <b>make it + adjective + to V</b> yêu cầu tính từ: <b>makes it easy to post</b>.",
+          "explanation": "The pattern is <b>make it + adjective + to-infinitive</b>, so <b>easy</b> is correct.",
+          "passageIndex": 3
+        }
+      ],
+      "passages": [
+        {
+          "title": "Questions 131-134 refer to the following directions.",
+          "label": "Directions",
+          "html": "<p><strong>Directions to the Carrill Laboratory</strong></p><p>Enter through the main door at 3017 Bowman Street and sign in with the <span class=\"blank\">131</span> guard. Take the elevator to the second floor. <span class=\"blank\">132</span>, you may use the stairs to the left of the elevator. Once you reach the second floor, turn left <span class=\"blank\">133</span>, then continue straight until you reach the double doors. Proceed through the doors and pass the visitors’ lounge. <span class=\"blank sentence\">134</span></p>",
+          "questions": [
+            {
+              "id": "t8q131",
+              "no": 131,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following directions.",
+              "options": {
+                "A": "secure",
+                "B": "security",
+                "C": "securely",
+                "D": "securing"
+              },
+              "answer": "B",
+              "passageIndex": 0
+            },
+            {
+              "id": "t8q132",
+              "no": 132,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following directions.",
+              "options": {
+                "A": "Alternatively",
+                "B": "Consequently",
+                "C": "Furthermore",
+                "D": "Nevertheless"
+              },
+              "answer": "A",
+              "passageIndex": 0
+            },
+            {
+              "id": "t8q133",
+              "no": 133,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following directions.",
+              "options": {
+                "A": "temporarily",
+                "B": "responsibly",
+                "C": "patiently",
+                "D": "immediately"
+              },
+              "answer": "D",
+              "passageIndex": 0
+            },
+            {
+              "id": "t8q134",
+              "no": 134,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following directions.",
+              "options": {
+                "A": "The laboratory is the next door on the right.",
+                "B": "The visitors’ parking area is usually full on weekdays.",
+                "C": "The laboratory’s speaker series is open to the public.",
+                "D": "This year marks the laboratory’s thirty-fifth anniversary."
+              },
+              "answer": "A",
+              "passageIndex": 0
+            }
+          ]
+        },
+        {
+          "title": "Questions 135-138 refer to the following notice.",
+          "label": "Notice",
+          "html": "<p><strong>Mapleglen University</strong></p><p><em>Master of Business Administration</em></p><p>At Mapleglen University, we understand that December is a <span class=\"blank\">135</span> time of year for undergraduates. That is why we are giving you extra time to submit your application for our Master of Business Administration (MBA) program. We have extended our initial deadline to December 31. <span class=\"blank\">136</span> for admission to the March semester, please ensure that we receive your official undergraduate transcripts by the same date. Please contact our admissions department at apply@mapleglen.edu if you have any questions <span class=\"blank\">137</span> the MBA program requirements. <span class=\"blank sentence\">138</span></p>",
+          "questions": [
+            {
+              "id": "t8q135",
+              "no": 135,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following notice.",
+              "options": {
+                "A": "cold",
+                "B": "long",
+                "C": "busy",
+                "D": "sure"
+              },
+              "answer": "C",
+              "passageIndex": 1
+            },
+            {
+              "id": "t8q136",
+              "no": 136,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following notice.",
+              "options": {
+                "A": "Being considered",
+                "B": "To be considered",
+                "C": "Having been considered",
+                "D": "Considering"
+              },
+              "answer": "B",
+              "passageIndex": 1
+            },
+            {
+              "id": "t8q137",
+              "no": 137,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following notice.",
+              "options": {
+                "A": "between",
+                "B": "after",
+                "C": "except",
+                "D": "regarding"
+              },
+              "answer": "D",
+              "passageIndex": 1
+            },
+            {
+              "id": "t8q138",
+              "no": 138,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following notice.",
+              "options": {
+                "A": "We look forward to reading your application.",
+                "B": "Undergraduate programs frequently require personal statements.",
+                "C": "We have added a course in public health.",
+                "D": "A record number of prospective students have applied."
+              },
+              "answer": "A",
+              "passageIndex": 1
+            }
+          ]
+        },
+        {
+          "title": "Questions 139-142 refer to the following e-mail.",
+          "label": "E-mail",
+          "html": "<p>To: Senior executive staff<br>From: Seok Kang<br>Date: 15 September<br>Subject: App update<br>Attachment: App_specs; Press_release</p><p>As you all know, to coincide with the upcoming launch of the restaurant’s new menu, we have made several changes to our mobile app. <span class=\"blank\">139</span>, we have corrected several issues with the previous version. <span class=\"blank sentence\">140</span> I am delighted to report that our focus group members gave the redesigned app great reviews. In particular, <span class=\"blank\">141</span> commented on how simple it is to use the different features. I have attached the app’s specifications and a draft of the press release to this e-mail. If you have any questions or suggestions, please let me know by 17 September. The official launch for the app and menu <span class=\"blank\">142</span> on Thursday, 25 September.</p>",
+          "questions": [
+            {
+              "id": "t8q139",
+              "no": 139,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "After all",
+                "B": "In any case",
+                "C": "On the contrary",
+                "D": "Most significantly"
+              },
+              "answer": "D",
+              "passageIndex": 2
+            },
+            {
+              "id": "t8q140",
+              "no": 140,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "I hope to have an update soon concerning the new location.",
+                "B": "Among these problems was a tendency for the screen to freeze.",
+                "C": "Many restaurant apps now include online ordering.",
+                "D": "The new items will be added to the menu next month."
+              },
+              "answer": "B",
+              "passageIndex": 2
+            },
+            {
+              "id": "t8q141",
+              "no": 141,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "we",
+                "B": "you",
+                "C": "they",
+                "D": "none"
+              },
+              "answer": "C",
+              "passageIndex": 2
+            },
+            {
+              "id": "t8q142",
+              "no": 142,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "has been announced",
+                "B": "will be announced",
+                "C": "announcing",
+                "D": "announces"
+              },
+              "answer": "B",
+              "passageIndex": 2
+            }
+          ]
+        },
+        {
+          "title": "Questions 143-146 refer to the following product review.",
+          "label": "Product review",
+          "html": "<p>Let me disclose up front that I received a free Tipti PX200 digital camera in exchange for this post. <span class=\"blank\">143</span>, I never hesitate to share my candid opinion, even when I receive free cameras and equipment. <span class=\"blank sentence\">144</span> The Tipti PX200 is intended for video bloggers and online content creators, but it is unsuitable for filmmakers needing a greater range of features. This is an important <span class=\"blank\">145</span>. If you are looking for a compact camera that makes it <span class=\"blank\">146</span> to post short videos online, this is an excellent option for the price.</p><p>—Sonja Stanberry</p>",
+          "questions": [
+            {
+              "id": "t8q143",
+              "no": 143,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following product review.",
+              "options": {
+                "A": "In fact",
+                "B": "However",
+                "C": "Therefore",
+                "D": "To the contrary"
+              },
+              "answer": "B",
+              "passageIndex": 3
+            },
+            {
+              "id": "t8q144",
+              "no": 144,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following product review.",
+              "options": {
+                "A": "I am always honest when I review a product.",
+                "B": "I am curious about other similarly sized cameras.",
+                "C": "Many people take photographs with their phones.",
+                "D": "Publishers also regularly offer free books to reviewers."
+              },
+              "answer": "A",
+              "passageIndex": 3
+            },
+            {
+              "id": "t8q145",
+              "no": 145,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following product review.",
+              "options": {
+                "A": "event",
+                "B": "policy",
+                "C": "credential",
+                "D": "distinction"
+              },
+              "answer": "D",
+              "passageIndex": 3
+            },
+            {
+              "id": "t8q146",
+              "no": 146,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following product review.",
+              "options": {
+                "A": "easy",
+                "B": "ease",
+                "C": "easing",
+                "D": "to ease"
+              },
+              "answer": "A",
+              "passageIndex": 3
+            }
+          ]
+        }
+      ],
+      "practice": true,
+      "testNo": 8,
+      "selectorLabel": "Test 8"
+    },
+    {
+      "id": "ets-2025-test9-part5-6",
+      "title": "ETS 2025 Test 9 · Part 5 + 6",
+      "sourceLabel": "ETS 2025 · Reading Test 9",
+      "timerMinutes": 25,
+      "questions": [
+        {
+          "id": "t9q101",
+          "no": 101,
+          "part": 5,
+          "stem": "Our ------- indicate that your company car is due for regular service next month.",
+          "options": {
+            "A": "records",
+            "B": "recording",
+            "C": "recorded",
+            "D": "recordable"
+          },
+          "answer": "A",
+          "skill": "Plural noun",
+          "explanationVi": "Động từ <b>indicate</b> ở dạng số nhiều cần chủ ngữ số nhiều. <b>Records</b> vừa đúng ngữ pháp vừa đúng nghĩa “hồ sơ cho thấy”.",
+          "explanation": "The plural verb <b>indicate</b> requires a plural subject. <b>Records</b> is both grammatically and semantically correct."
+        },
+        {
+          "id": "t9q102",
+          "no": 102,
+          "part": 5,
+          "stem": "The ------- entrance to our office building will be closed on Tuesday because of construction.",
+          "options": {
+            "A": "next",
+            "B": "main",
+            "C": "sure",
+            "D": "early"
+          },
+          "answer": "B",
+          "skill": "Adjective collocation",
+          "explanationVi": "<b>Main entrance</b> là cụm tự nhiên, nghĩa là “lối vào chính” của tòa nhà.",
+          "explanation": "<b>Main entrance</b> is the natural collocation for the primary entrance to a building."
+        },
+        {
+          "id": "t9q103",
+          "no": 103,
+          "part": 5,
+          "stem": "Any document marked “Confidential” must be handled and stored -------.",
+          "options": {
+            "A": "careful",
+            "B": "carefully",
+            "C": "carefulness",
+            "D": "more careful"
+          },
+          "answer": "B",
+          "skill": "Adverb",
+          "explanationVi": "Chỗ trống bổ nghĩa cho <b>handled</b> và <b>stored</b>, nên cần trạng từ <b>carefully</b>.",
+          "explanation": "The blank modifies <b>handled</b> and <b>stored</b>, so the adverb <b>carefully</b> is required."
+        },
+        {
+          "id": "t9q104",
+          "no": 104,
+          "part": 5,
+          "stem": "The new technology ------- trains to switch quickly between electric and diesel modes.",
+          "options": {
+            "A": "rides",
+            "B": "forms",
+            "C": "allows",
+            "D": "conducts"
+          },
+          "answer": "C",
+          "skill": "Verb pattern",
+          "explanationVi": "Cấu trúc đúng là <b>allow + object + to-infinitive</b>: công nghệ cho phép tàu chuyển nhanh giữa hai chế độ.",
+          "explanation": "The correct pattern is <b>allow + object + to-infinitive</b>: the technology allows trains to switch modes."
+        },
+        {
+          "id": "t9q105",
+          "no": 105,
+          "part": 5,
+          "stem": "The Chocobonne Corporation says it plans to open 28 new ------- in the next three years.",
+          "options": {
+            "A": "stores",
+            "B": "storing",
+            "C": "store",
+            "D": "storage"
+          },
+          "answer": "A",
+          "skill": "Plural count noun",
+          "explanationVi": "Sau số đếm <b>28</b> cần danh từ đếm được số nhiều. <b>Stores</b> là đáp án đúng.",
+          "explanation": "The number <b>28</b> must be followed by a plural countable noun, so <b>stores</b> is correct."
+        },
+        {
+          "id": "t9q106",
+          "no": 106,
+          "part": 5,
+          "stem": "The Lofstrom Shopping Center is ------- new tenants to rent vacant retail space.",
+          "options": {
+            "A": "seeking",
+            "B": "growing",
+            "C": "facing",
+            "D": "relating"
+          },
+          "answer": "A",
+          "skill": "Vocabulary",
+          "explanationVi": "<b>Seeking new tenants</b> nghĩa là đang tìm người thuê mới cho các mặt bằng bán lẻ còn trống.",
+          "explanation": "<b>Seeking new tenants</b> correctly means looking for people or businesses to rent the vacant space."
+        },
+        {
+          "id": "t9q107",
+          "no": 107,
+          "part": 5,
+          "stem": "The painter Marion Settimi developed ------- distinctive style during the years she lived in Indonesia.",
+          "options": {
+            "A": "herself",
+            "B": "hers",
+            "C": "her",
+            "D": "she"
+          },
+          "answer": "C",
+          "skill": "Possessive adjective",
+          "explanationVi": "Trước cụm danh từ <b>distinctive style</b> cần tính từ sở hữu <b>her</b>.",
+          "explanation": "The noun phrase <b>distinctive style</b> requires the possessive adjective <b>her</b>."
+        },
+        {
+          "id": "t9q108",
+          "no": 108,
+          "part": 5,
+          "stem": "The company picnic at Floral Park will begin at noon on Saturday and end ------- 4:00 P.M.",
+          "options": {
+            "A": "around",
+            "B": "until",
+            "C": "outside",
+            "D": "within"
+          },
+          "answer": "A",
+          "skill": "Preposition of time",
+          "explanationVi": "<b>Around 4:00 P.M.</b> nghĩa là “khoảng 4 giờ chiều”, phù hợp để chỉ thời gian kết thúc ước chừng.",
+          "explanation": "<b>Around 4:00 P.M.</b> correctly indicates an approximate ending time."
+        },
+        {
+          "id": "t9q109",
+          "no": 109,
+          "part": 5,
+          "stem": "Last Monday, the department ------- Mr. Okada’s recent promotion to manager.",
+          "options": {
+            "A": "will be celebrating",
+            "B": "celebrated",
+            "C": "is celebrating",
+            "D": "celebrates"
+          },
+          "answer": "B",
+          "skill": "Simple past",
+          "explanationVi": "Cụm thời gian <b>Last Monday</b> yêu cầu thì quá khứ đơn. <b>Celebrated</b> là đáp án đúng.",
+          "explanation": "The time expression <b>Last Monday</b> calls for the simple past, so <b>celebrated</b> is correct."
+        },
+        {
+          "id": "t9q110",
+          "no": 110,
+          "part": 5,
+          "stem": "Ms. Xuan’s ------- for reducing the company’s energy consumption is worth considering.",
+          "options": {
+            "A": "revision",
+            "B": "attention",
+            "C": "meaning",
+            "D": "proposal"
+          },
+          "answer": "D",
+          "skill": "Noun choice",
+          "explanationVi": "<b>Proposal for reducing</b> nghĩa là “đề xuất nhằm giảm”, phù hợp với nội dung đáng được xem xét.",
+          "explanation": "<b>Proposal for reducing</b> is the natural phrase for an idea that is worth considering."
+        },
+        {
+          "id": "t9q111",
+          "no": 111,
+          "part": 5,
+          "stem": "Dr. Grayston ------- accepted the position of school superintendent.",
+          "options": {
+            "A": "enthusiast",
+            "B": "enthusiastic",
+            "C": "enthusiastically",
+            "D": "enthusiasm"
+          },
+          "answer": "C",
+          "skill": "Adverb",
+          "explanationVi": "Động từ <b>accepted</b> cần trạng từ bổ nghĩa. <b>Enthusiastically</b> nghĩa là “một cách nhiệt tình”.",
+          "explanation": "The verb <b>accepted</b> is modified by the adverb <b>enthusiastically</b>."
+        },
+        {
+          "id": "t9q112",
+          "no": 112,
+          "part": 5,
+          "stem": "Austina Gallery is located at the northern end of Arch Street, ------- the Verdigris Bistro.",
+          "options": {
+            "A": "opposite",
+            "B": "except",
+            "C": "across",
+            "D": "plus"
+          },
+          "answer": "A",
+          "skill": "Preposition of place",
+          "explanationVi": "<b>Opposite the Verdigris Bistro</b> nghĩa là “đối diện quán Verdigris Bistro”.",
+          "explanation": "<b>Opposite the Verdigris Bistro</b> correctly describes the gallery’s location."
+        },
+        {
+          "id": "t9q113",
+          "no": 113,
+          "part": 5,
+          "stem": "Mr. Garcia promised ------- a mentor to Ms. Winston after he retired.",
+          "options": {
+            "A": "became",
+            "B": "becoming",
+            "C": "to become",
+            "D": "had become"
+          },
+          "answer": "C",
+          "skill": "Infinitive",
+          "explanationVi": "Cấu trúc <b>promise to do something</b> cần động từ nguyên mẫu có <b>to</b>: <b>promised to become</b>.",
+          "explanation": "The verb <b>promise</b> is followed by a to-infinitive: <b>promised to become</b>."
+        },
+        {
+          "id": "t9q114",
+          "no": 114,
+          "part": 5,
+          "stem": "Once considered a specialty product, shoes made from recycled materials are now ------- available.",
+          "options": {
+            "A": "upward",
+            "B": "widely",
+            "C": "enough",
+            "D": "closely"
+          },
+          "answer": "B",
+          "skill": "Adverb collocation",
+          "explanationVi": "<b>Widely available</b> là cụm cố định, nghĩa là “được cung cấp rộng rãi”.",
+          "explanation": "<b>Widely available</b> is the standard collocation meaning available in many places."
+        },
+        {
+          "id": "t9q115",
+          "no": 115,
+          "part": 5,
+          "stem": "Yuping University has formed ------- with local businesses to create internship opportunities for its students.",
+          "options": {
+            "A": "partner",
+            "B": "partners",
+            "C": "partnering",
+            "D": "partnerships"
+          },
+          "answer": "D",
+          "skill": "Noun collocation",
+          "explanationVi": "Cụm đúng là <b>form partnerships with</b>, nghĩa là thiết lập quan hệ hợp tác với các doanh nghiệp.",
+          "explanation": "The correct collocation is <b>form partnerships with</b>."
+        },
+        {
+          "id": "t9q116",
+          "no": 116,
+          "part": 5,
+          "stem": "Our market research shows that buyers with limited ------- of a product often look for information from expert sources.",
+          "options": {
+            "A": "knowledge",
+            "B": "approval",
+            "C": "perception",
+            "D": "consideration"
+          },
+          "answer": "A",
+          "skill": "Noun choice",
+          "explanationVi": "<b>Limited knowledge of a product</b> nghĩa là có hiểu biết hạn chế về sản phẩm, nên người mua tìm thông tin từ chuyên gia.",
+          "explanation": "<b>Limited knowledge of a product</b> logically explains why buyers seek expert information."
+        },
+        {
+          "id": "t9q117",
+          "no": 117,
+          "part": 5,
+          "stem": "------- is preventing the graphic artists from accessing the image files in the main database.",
+          "options": {
+            "A": "Many",
+            "B": "Other",
+            "C": "Something",
+            "D": "Whoever"
+          },
+          "answer": "C",
+          "skill": "Indefinite pronoun",
+          "explanationVi": "Câu cần một chủ ngữ số ít cho <b>is preventing</b>. <b>Something</b> phù hợp cả ngữ pháp lẫn nghĩa.",
+          "explanation": "A singular subject is needed for <b>is preventing</b>. <b>Something</b> fits both grammatically and logically."
+        },
+        {
+          "id": "t9q118",
+          "no": 118,
+          "part": 5,
+          "stem": "------- a delay, Thaintech completed the renovation of its warehouse before the target date of April 7.",
+          "options": {
+            "A": "Although",
+            "B": "Despite",
+            "C": "According to",
+            "D": "However"
+          },
+          "answer": "B",
+          "skill": "Preposition of concession",
+          "explanationVi": "Sau chỗ trống là cụm danh từ <b>a delay</b>, nên dùng giới từ <b>Despite</b>.",
+          "explanation": "The blank is followed by the noun phrase <b>a delay</b>, so the preposition <b>Despite</b> is correct."
+        },
+        {
+          "id": "t9q119",
+          "no": 119,
+          "part": 5,
+          "stem": "While its credit card system is offline, the Lexler Department Store is ------- closed for business.",
+          "options": {
+            "A": "effect",
+            "B": "effecting",
+            "C": "effective",
+            "D": "effectively"
+          },
+          "answer": "D",
+          "skill": "Adverb",
+          "explanationVi": "<b>Effectively closed</b> nghĩa là trên thực tế không thể hoạt động bình thường. <b>Effectively</b> bổ nghĩa cho <b>closed</b>.",
+          "explanation": "<b>Effectively closed</b> means functionally closed, and the adverb modifies <b>closed</b>."
+        },
+        {
+          "id": "t9q120",
+          "no": 120,
+          "part": 5,
+          "stem": "Nearly half of the toy manufacturers surveyed reported increased sales ------- the last two years.",
+          "options": {
+            "A": "onto",
+            "B": "under",
+            "C": "against",
+            "D": "over"
+          },
+          "answer": "D",
+          "skill": "Time preposition",
+          "explanationVi": "<b>Over the last two years</b> là cụm chỉ khoảng thời gian kéo dài trong hai năm gần đây.",
+          "explanation": "<b>Over the last two years</b> correctly describes the time period."
+        },
+        {
+          "id": "t9q121",
+          "no": 121,
+          "part": 5,
+          "stem": "Nonprofit groups ------- up to three applications for funding consideration during any given calendar year.",
+          "options": {
+            "A": "be submitted",
+            "B": "submitting",
+            "C": "submits",
+            "D": "may submit"
+          },
+          "answer": "D",
+          "skill": "Modal verb",
+          "explanationVi": "<b>May submit</b> tạo thành cụm động từ hoàn chỉnh và diễn tả quyền được nộp tối đa ba đơn.",
+          "explanation": "<b>May submit</b> forms a complete verb phrase and expresses permission."
+        },
+        {
+          "id": "t9q122",
+          "no": 122,
+          "part": 5,
+          "stem": "Critics reacted ------- to the new musical, praising the exciting design and impressive choreography.",
+          "options": {
+            "A": "intentionally",
+            "B": "favorably",
+            "C": "uncertainly",
+            "D": "continuously"
+          },
+          "answer": "B",
+          "skill": "Adverb choice",
+          "explanationVi": "Việc các nhà phê bình khen thiết kế và vũ đạo cho thấy họ phản ứng <b>favorably</b>, tức tích cực.",
+          "explanation": "The praise shows that critics reacted <b>favorably</b>, or positively."
+        },
+        {
+          "id": "t9q123",
+          "no": 123,
+          "part": 5,
+          "stem": "Clausen’s Notes is well-known ------- writers and publishers for its in-depth reviews of books.",
+          "options": {
+            "A": "owed to",
+            "B": "because",
+            "C": "among",
+            "D": "in between"
+          },
+          "answer": "C",
+          "skill": "Preposition",
+          "explanationVi": "<b>Well-known among writers and publishers</b> nghĩa là nổi tiếng trong cộng đồng nhà văn và nhà xuất bản.",
+          "explanation": "<b>Well-known among writers and publishers</b> is the correct expression."
+        },
+        {
+          "id": "t9q124",
+          "no": 124,
+          "part": 5,
+          "stem": "The ongoing shortage of hardwood has caused the price of certain furniture items to -------.",
+          "options": {
+            "A": "drain",
+            "B": "loop",
+            "C": "soar",
+            "D": "fling"
+          },
+          "answer": "C",
+          "skill": "Vocabulary",
+          "explanationVi": "<b>Soar</b> nghĩa là tăng vọt, phù hợp với giá cả tăng mạnh do thiếu gỗ cứng.",
+          "explanation": "<b>Soar</b> means rise rapidly, which fits a price increase caused by a shortage."
+        },
+        {
+          "id": "t9q125",
+          "no": 125,
+          "part": 5,
+          "stem": "Attach the ------- tray to any flat steel surface for easy storage of and access to household or automotive tools.",
+          "options": {
+            "A": "magnetic",
+            "B": "magnetize",
+            "C": "magnets",
+            "D": "magnetically"
+          },
+          "answer": "A",
+          "skill": "Adjective",
+          "explanationVi": "Trước danh từ <b>tray</b> cần tính từ. <b>Magnetic</b> mô tả chiếc khay có thể gắn vào bề mặt thép.",
+          "explanation": "The noun <b>tray</b> requires the adjective <b>magnetic</b>."
+        },
+        {
+          "id": "t9q126",
+          "no": 126,
+          "part": 5,
+          "stem": "The customer ------- to buy an extended warranty on the dishwasher, so it is not eligible for a free repair.",
+          "options": {
+            "A": "rejected",
+            "B": "neglected",
+            "C": "omitted",
+            "D": "dismissed"
+          },
+          "answer": "B",
+          "skill": "Verb pattern",
+          "explanationVi": "<b>Neglect to do something</b> nghĩa là không làm hoặc bỏ quên việc cần làm. Khách hàng đã không mua bảo hành mở rộng.",
+          "explanation": "<b>Neglect to do something</b> means fail to do it, which fits the customer’s failure to buy the warranty."
+        },
+        {
+          "id": "t9q127",
+          "no": 127,
+          "part": 5,
+          "stem": "Although much of the material was technical in nature, the audience appeared to remain ------- throughout Ms. Sharma’s presentation.",
+          "options": {
+            "A": "engage",
+            "B": "engaged",
+            "C": "engagingly",
+            "D": "engagement"
+          },
+          "answer": "B",
+          "skill": "Past participle adjective",
+          "explanationVi": "Sau động từ nối <b>remain</b> cần tính từ. <b>Engaged</b> mô tả khán giả vẫn tập trung và quan tâm.",
+          "explanation": "The linking verb <b>remain</b> requires an adjective. <b>Engaged</b> describes an attentive audience."
+        },
+        {
+          "id": "t9q128",
+          "no": 128,
+          "part": 5,
+          "stem": "------- fresh fruit and vegetables, vendors at the Wattville Farm Market also sell various handmade goods.",
+          "options": {
+            "A": "Compared with",
+            "B": "In addition to",
+            "C": "Rather than",
+            "D": "As a result of"
+          },
+          "answer": "B",
+          "skill": "Additive phrase",
+          "explanationVi": "<b>In addition to</b> nghĩa là “ngoài ... ra”, phù hợp với việc người bán còn bán thêm hàng thủ công.",
+          "explanation": "<b>In addition to</b> correctly adds handmade goods to the fruit and vegetables already sold."
+        },
+        {
+          "id": "t9q129",
+          "no": 129,
+          "part": 5,
+          "stem": "------- route they choose, it should take the management team approximately four hours to drive to the hotel in Antibes.",
+          "options": {
+            "A": "What",
+            "B": "Some",
+            "C": "Somewhere",
+            "D": "Whichever"
+          },
+          "answer": "D",
+          "skill": "Determiner",
+          "explanationVi": "<b>Whichever route they choose</b> nghĩa là dù họ chọn tuyến đường nào, thời gian di chuyển vẫn khoảng bốn giờ.",
+          "explanation": "<b>Whichever route they choose</b> correctly means no matter which route is selected."
+        },
+        {
+          "id": "t9q130",
+          "no": 130,
+          "part": 5,
+          "stem": "All Baraanatec Ltd. hand tools undergo ------- inspections to ensure they are free of defects.",
+          "options": {
+            "A": "rigorous",
+            "B": "negotiated",
+            "C": "returnable",
+            "D": "portable"
+          },
+          "answer": "A",
+          "skill": "Adjective collocation",
+          "explanationVi": "<b>Rigorous inspections</b> nghĩa là các cuộc kiểm tra nghiêm ngặt nhằm bảo đảm sản phẩm không có lỗi.",
+          "explanation": "<b>Rigorous inspections</b> is the natural collocation for strict quality checks."
+        },
+        {
+          "id": "t9q131",
+          "no": 131,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following advertisement.",
+          "options": {
+            "A": "textiles",
+            "B": "wood",
+            "C": "environment",
+            "D": "light"
+          },
+          "answer": "B",
+          "skill": "Noun choice",
+          "explanationVi": "Đoạn quảng cáo nói về đồ nội thất, gỗ sồi, mắt gỗ và biến thể màu tự nhiên. Vì vậy <b>natural wood</b> là lựa chọn đúng.",
+          "explanation": "The passage discusses oak furniture, knots, nicks, and natural color variation, so <b>natural wood</b> is correct.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t9q132",
+          "no": 132,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following advertisement.",
+          "options": {
+            "A": "They can easily be covered by paint.",
+            "B": "They are the result of poor maintenance.",
+            "C": "They can reduce the value of an item.",
+            "D": "They are what makes each piece unique."
+          },
+          "answer": "D",
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu trước khẳng định các mắt gỗ, vết nhỏ và biến thể màu không phải khuyết điểm. Câu D giải thích rằng chính chúng tạo nên nét độc đáo của từng sản phẩm.",
+          "explanation": "The previous sentence says the natural marks are not imperfections; choice D explains that they make each piece unique.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t9q133",
+          "no": 133,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following advertisement.",
+          "options": {
+            "A": "Moreover",
+            "B": "Nevertheless",
+            "C": "On the contrary",
+            "D": "Regardless"
+          },
+          "answer": "A",
+          "skill": "Additive transition",
+          "explanationVi": "Câu này bổ sung thêm một lợi ích của thiết kế treo tường, nên dùng <b>Moreover</b>.",
+          "explanation": "The sentence adds another advantage of the wall-mounted system, so <b>Moreover</b> is correct.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t9q134",
+          "no": 134,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following advertisement.",
+          "options": {
+            "A": "retail",
+            "B": "retailing",
+            "C": "retailers",
+            "D": "retailed"
+          },
+          "answer": "C",
+          "skill": "Plural noun",
+          "explanationVi": "Sau <b>furniture</b> cần danh từ chỉ những đơn vị bán hàng. <b>Furniture retailers</b> nghĩa là các nhà bán lẻ đồ nội thất.",
+          "explanation": "<b>Furniture retailers</b> correctly refers to businesses that sell furniture.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t9q135",
+          "no": 135,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following instructions.",
+          "options": {
+            "A": "vehicles",
+            "B": "appliances",
+            "C": "ingredients",
+            "D": "components"
+          },
+          "answer": "D",
+          "skill": "Noun choice",
+          "explanationVi": "Hướng dẫn yêu cầu mọi bộ phận của nồi cơm điện phải nguội hoàn toàn trước khi vệ sinh. <b>Components</b> nghĩa là các bộ phận.",
+          "explanation": "The instruction refers to all parts of the rice cooker, so <b>components</b> is correct.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t9q136",
+          "no": 136,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following instructions.",
+          "options": {
+            "A": "was",
+            "B": "can be",
+            "C": "is being",
+            "D": "has been"
+          },
+          "answer": "B",
+          "skill": "Modal passive",
+          "explanationVi": "Bề mặt chống dính có khả năng bị chất tẩy rửa mài mòn làm hỏng, nên dùng <b>can be damaged</b>.",
+          "explanation": "The sentence describes a possibility, so the modal passive <b>can be damaged</b> is correct.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t9q137",
+          "no": 137,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following instructions.",
+          "options": {
+            "A": "Then, use a soft brush or sponge to finish cleaning.",
+            "B": "Cleaning utensils must be purchased separately.",
+            "C": "Finally, place the cooker back in its box.",
+            "D": "A light will go on when the rice is cooked."
+          },
+          "answer": "A",
+          "skill": "Sentence insertion",
+          "explanationVi": "Sau khi ngâm để làm mềm cặn bám, bước hợp lý tiếp theo là dùng bàn chải mềm hoặc miếng bọt biển để hoàn tất việc vệ sinh.",
+          "explanation": "After soaking the residue, the logical next step is to use a soft brush or sponge to finish cleaning.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t9q138",
+          "no": 138,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following instructions.",
+          "options": {
+            "A": "If not",
+            "B": "Instead",
+            "C": "Meanwhile",
+            "D": "In that case"
+          },
+          "answer": "B",
+          "skill": "Contrast transition",
+          "explanationVi": "Không được nhúng phần vỏ vào nước; <b>Instead</b> giới thiệu cách thay thế là lau nhẹ bằng khăn ẩm.",
+          "explanation": "The exterior must not be submerged; <b>Instead</b> introduces the alternative of wiping it with a damp cloth.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t9q139",
+          "no": 139,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "extents",
+            "B": "extending",
+            "C": "extensive",
+            "D": "extensively"
+          },
+          "answer": "C",
+          "skill": "Adjective",
+          "explanationVi": "Trước danh từ <b>notes</b> cần tính từ. <b>Extensive notes</b> nghĩa là ghi chú đầy đủ và chi tiết.",
+          "explanation": "The noun <b>notes</b> requires the adjective <b>extensive</b>.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t9q140",
+          "no": 140,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "Someone",
+            "B": "Mine",
+            "C": "Theirs",
+            "D": "Each"
+          },
+          "answer": "D",
+          "skill": "Distributive determiner",
+          "explanationVi": "Có năm bản phác thảo và mỗi bản thể hiện doanh nghiệp theo một cách khác nhau. <b>Each</b> là lựa chọn đúng.",
+          "explanation": "There are five sketches, and <b>Each</b> one represents the business differently.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t9q141",
+          "no": 141,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "Nonetheless, they all give an impression of trustworthiness and precision.",
+            "B": "Those companies have logos that are very memorable.",
+            "C": "Even so, designing a logo can be a costly process.",
+            "D": "I recommend using fewer colors than were initially requested."
+          },
+          "answer": "A",
+          "skill": "Sentence insertion",
+          "explanationVi": "Các bản phác thảo có phong cách khác nhau, nhưng tất cả đều truyền tải sự đáng tin cậy và chính xác. Câu A tạo liên kết đối lập phù hợp.",
+          "explanation": "The sketches differ in style, but all convey the same values, making choice A the coherent continuation.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t9q142",
+          "no": 142,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "researching",
+            "B": "publicizing",
+            "C": "demonstrating",
+            "D": "finalizing"
+          },
+          "answer": "D",
+          "skill": "Gerund after preposition",
+          "explanationVi": "Sau <b>look forward to</b> cần danh động từ. <b>Finalizing the design</b> phù hợp với việc tiếp tục chỉnh sửa để hoàn tất logo.",
+          "explanation": "<b>Look forward to</b> is followed by a gerund, and <b>finalizing the design</b> fits the context.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t9q143",
+          "no": 143,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following article.",
+          "options": {
+            "A": "external",
+            "B": "arbitrary",
+            "C": "indivisible",
+            "D": "undisclosed"
+          },
+          "answer": "D",
+          "skill": "Adjective collocation",
+          "explanationVi": "<b>An undisclosed amount</b> là cụm thường dùng khi giá trị giao dịch không được công bố.",
+          "explanation": "<b>An undisclosed amount</b> is the standard phrase when the value of a deal is not made public.",
+          "passageIndex": 3
+        },
+        {
+          "id": "t9q144",
+          "no": 144,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following article.",
+          "options": {
+            "A": "trade",
+            "B": "closure",
+            "C": "purchase",
+            "D": "appointment"
+          },
+          "answer": "C",
+          "skill": "Noun reference",
+          "explanationVi": "Câu trước nói Locke and Jeeves mua lại Shipley Designs. Vì vậy <b>the purchase</b> dùng để chỉ thương vụ đó.",
+          "explanation": "The previous sentence announces an acquisition, so <b>the purchase</b> correctly refers to that transaction.",
+          "passageIndex": 3
+        },
+        {
+          "id": "t9q145",
+          "no": 145,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following article.",
+          "options": {
+            "A": "The fate of the shop in Leeds is still unknown.",
+            "B": "Shipley Designs was founded almost 90 years ago.",
+            "C": "Customers can now take advantage of a great deal.",
+            "D": "All London locations are open seven days a week."
+          },
+          "answer": "A",
+          "skill": "Sentence insertion",
+          "explanationVi": "Đoạn văn cho biết năm trong sáu cửa hàng được đưa vào thương vụ. Câu A giải thích hợp lý về cửa hàng còn lại.",
+          "explanation": "The passage says five of six stores are included, so the sentence about the uncertain fate of the Leeds shop logically accounts for the remaining store.",
+          "passageIndex": 3
+        },
+        {
+          "id": "t9q146",
+          "no": 146,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following article.",
+          "options": {
+            "A": "will be adding",
+            "B": "had been adding",
+            "C": "must have added",
+            "D": "would have added"
+          },
+          "answer": "A",
+          "skill": "Future continuous",
+          "explanationVi": "CEO nói về giá trị mà Shipley sẽ mang lại sau thương vụ. <b>Will be adding</b> diễn tả đóng góp trong tương lai.",
+          "explanation": "The CEO is describing the future contribution Shipley will make after the acquisition, so <b>will be adding</b> is correct.",
+          "passageIndex": 3
+        }
+      ],
+      "passages": [
+        {
+          "title": "Questions 131-134 refer to the following advertisement.",
+          "label": "Advertisement",
+          "html": "<p>Retro Crafters focuses on furniture designs from the 1950s through the 1970s. Our products are crafted to highlight the beauty of natural <span class=\"blank\">131</span>. To us, small knots, tiny nicks, and color variations are not imperfections. <span class=\"blank sentence\">132</span> Our latest collection features a wall-mounted oak shelving system with narrow rails. The rails can support shelves, cabinets, drawers, and even a desktop to create a customizable system. <span class=\"blank\">133</span>, the wall-mounted design frees up floor space. Our products are carried by furniture <span class=\"blank\">134</span> in many urban centers around the country. Furniture stores interested in offering our products should contact Nya Fernaut, sales director.</p>",
+          "questions": [
+            {
+              "id": "t9q131",
+              "no": 131,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following advertisement.",
+              "options": {
+                "A": "textiles",
+                "B": "wood",
+                "C": "environment",
+                "D": "light"
+              },
+              "answer": "B",
+              "passageIndex": 0
+            },
+            {
+              "id": "t9q132",
+              "no": 132,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following advertisement.",
+              "options": {
+                "A": "They can easily be covered by paint.",
+                "B": "They are the result of poor maintenance.",
+                "C": "They can reduce the value of an item.",
+                "D": "They are what makes each piece unique."
+              },
+              "answer": "D",
+              "passageIndex": 0
+            },
+            {
+              "id": "t9q133",
+              "no": 133,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following advertisement.",
+              "options": {
+                "A": "Moreover",
+                "B": "Nevertheless",
+                "C": "On the contrary",
+                "D": "Regardless"
+              },
+              "answer": "A",
+              "passageIndex": 0
+            },
+            {
+              "id": "t9q134",
+              "no": 134,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following advertisement.",
+              "options": {
+                "A": "retail",
+                "B": "retailing",
+                "C": "retailers",
+                "D": "retailed"
+              },
+              "answer": "C",
+              "passageIndex": 0
+            }
+          ]
+        },
+        {
+          "title": "Questions 135-138 refer to the following instructions.",
+          "label": "Instructions",
+          "html": "<p><strong>Caring for Your Rice Cooker</strong></p><p>Before cleaning your rice cooker, detach the power cord from the electrical outlet. Make sure all <span class=\"blank\">135</span> are completely cooled down. Next, remove the detachable pot and hand-wash it in warm, soapy water, along with the lid and rice paddle. Note that the pot is not dishwasher safe. Note also that its nonstick surface <span class=\"blank\">136</span> damaged by abrasive cleaners. Rather than scrape off any tough residue, soak the pot in warm, soapy water for ten minutes. <span class=\"blank sentence\">137</span> The exterior of the rice cooker should never be submerged in water. <span class=\"blank\">138</span>, gently wipe it down with a damp cloth.</p>",
+          "questions": [
+            {
+              "id": "t9q135",
+              "no": 135,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following instructions.",
+              "options": {
+                "A": "vehicles",
+                "B": "appliances",
+                "C": "ingredients",
+                "D": "components"
+              },
+              "answer": "D",
+              "passageIndex": 1
+            },
+            {
+              "id": "t9q136",
+              "no": 136,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following instructions.",
+              "options": {
+                "A": "was",
+                "B": "can be",
+                "C": "is being",
+                "D": "has been"
+              },
+              "answer": "B",
+              "passageIndex": 1
+            },
+            {
+              "id": "t9q137",
+              "no": 137,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following instructions.",
+              "options": {
+                "A": "Then, use a soft brush or sponge to finish cleaning.",
+                "B": "Cleaning utensils must be purchased separately.",
+                "C": "Finally, place the cooker back in its box.",
+                "D": "A light will go on when the rice is cooked."
+              },
+              "answer": "A",
+              "passageIndex": 1
+            },
+            {
+              "id": "t9q138",
+              "no": 138,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following instructions.",
+              "options": {
+                "A": "If not",
+                "B": "Instead",
+                "C": "Meanwhile",
+                "D": "In that case"
+              },
+              "answer": "B",
+              "passageIndex": 1
+            }
+          ]
+        },
+        {
+          "title": "Questions 139-142 refer to the following e-mail.",
+          "label": "E-mail",
+          "html": "<p>To: Britta Gehring &lt;bgehring@gehringaccounting.com&gt;<br>From: Mikel Zubiondo &lt;mikel@zubiondodesign.com&gt;<br>Date: December 12<br>Subject: Logo sketches<br>Attachment: Gehring_sketches</p><p>Dear Ms. Gehring,</p><p>Thank you for entrusting me with the design of the logo for your business. I took <span class=\"blank\">139</span> notes during our meeting last week, and I feel that I understand the business values you want the logo to convey. I have attached five sketches for you. <span class=\"blank\">140</span> represents your business in a slightly different way. Two have a classic, timeless look, while the others are minimalist and modern. <span class=\"blank sentence\">141</span></p><p>Once you review the sketches, let me know which you like and what changes I should make, if any. I look forward to <span class=\"blank\">142</span> the design with you.</p><p>Best regards,</p><p>Mikel Zubiondo<br>Zubiondo Design</p>",
+          "questions": [
+            {
+              "id": "t9q139",
+              "no": 139,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "extents",
+                "B": "extending",
+                "C": "extensive",
+                "D": "extensively"
+              },
+              "answer": "C",
+              "passageIndex": 2
+            },
+            {
+              "id": "t9q140",
+              "no": 140,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "Someone",
+                "B": "Mine",
+                "C": "Theirs",
+                "D": "Each"
+              },
+              "answer": "D",
+              "passageIndex": 2
+            },
+            {
+              "id": "t9q141",
+              "no": 141,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "Nonetheless, they all give an impression of trustworthiness and precision.",
+                "B": "Those companies have logos that are very memorable.",
+                "C": "Even so, designing a logo can be a costly process.",
+                "D": "I recommend using fewer colors than were initially requested."
+              },
+              "answer": "A",
+              "passageIndex": 2
+            },
+            {
+              "id": "t9q142",
+              "no": 142,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "researching",
+                "B": "publicizing",
+                "C": "demonstrating",
+                "D": "finalizing"
+              },
+              "answer": "D",
+              "passageIndex": 2
+            }
+          ]
+        },
+        {
+          "title": "Questions 143-146 refer to the following article.",
+          "label": "Article",
+          "html": "<p>LONDON (2 June)—Locke and Jeeves, the owner of Fernsby Shoes and Athletic Footwear, announced today the acquisition of Shipley Designs for an <span class=\"blank\">143</span> amount. The <span class=\"blank\">144</span> comes as no surprise to shoe industry insiders, who have speculated for some time about Shipley’s financial challenges. Five of the six Shipley stores will be part of the Locke and Jeeves deal, including the flagship store here in London. <span class=\"blank sentence\">145</span></p><p>Locke and Jeeves CEO Zachary Thayne has expressed enthusiasm about the deal. “Shipley is an iconic design house that <span class=\"blank\">146</span> much to the Locke and Jeeves portfolio in the area of reliably traditional footwear,” said Mr. Thayne.</p>",
+          "questions": [
+            {
+              "id": "t9q143",
+              "no": 143,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following article.",
+              "options": {
+                "A": "external",
+                "B": "arbitrary",
+                "C": "indivisible",
+                "D": "undisclosed"
+              },
+              "answer": "D",
+              "passageIndex": 3
+            },
+            {
+              "id": "t9q144",
+              "no": 144,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following article.",
+              "options": {
+                "A": "trade",
+                "B": "closure",
+                "C": "purchase",
+                "D": "appointment"
+              },
+              "answer": "C",
+              "passageIndex": 3
+            },
+            {
+              "id": "t9q145",
+              "no": 145,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following article.",
+              "options": {
+                "A": "The fate of the shop in Leeds is still unknown.",
+                "B": "Shipley Designs was founded almost 90 years ago.",
+                "C": "Customers can now take advantage of a great deal.",
+                "D": "All London locations are open seven days a week."
+              },
+              "answer": "A",
+              "passageIndex": 3
+            },
+            {
+              "id": "t9q146",
+              "no": 146,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following article.",
+              "options": {
+                "A": "will be adding",
+                "B": "had been adding",
+                "C": "must have added",
+                "D": "would have added"
+              },
+              "answer": "A",
+              "passageIndex": 3
+            }
+          ]
+        }
+      ],
+      "practice": true,
+      "testNo": 9,
+      "selectorLabel": "Test 9"
+    },
+    {
+      "id": "ets-2025-test10-part5-6",
+      "title": "ETS 2025 Test 10 · Part 5 + 6",
+      "sourceLabel": "ETS 2025 · Reading Test 10",
+      "timerMinutes": 25,
+      "questions": [
+        {
+          "id": "t10q101",
+          "no": 101,
+          "part": 5,
+          "stem": "Sophia Hollinger was commended for ------- work on the Kala account.",
+          "options": {
+            "A": "her",
+            "B": "she",
+            "C": "hers",
+            "D": "herself"
+          },
+          "answer": "A",
+          "skill": "Possessive adjective",
+          "explanationVi": "Trước danh từ <b>work</b> cần tính từ sở hữu <b>her</b>: <b>her work</b>.",
+          "explanation": "The noun <b>work</b> requires the possessive adjective <b>her</b>."
+        },
+        {
+          "id": "t10q102",
+          "no": 102,
+          "part": 5,
+          "stem": "Last summer, jazz musician Jay Deswani ------- on the main concert stage at Waterfront Park.",
+          "options": {
+            "A": "located",
+            "B": "requested",
+            "C": "supplied",
+            "D": "performed"
+          },
+          "answer": "D",
+          "skill": "Vocabulary / Simple past",
+          "explanationVi": "Ngữ cảnh nói một nhạc sĩ biểu diễn trên sân khấu vào mùa hè năm ngoái. <b>Performed</b> vừa đúng nghĩa vừa đúng thì quá khứ đơn.",
+          "explanation": "A musician <b>performed</b> on the concert stage, and <b>last summer</b> calls for the simple past."
+        },
+        {
+          "id": "t10q103",
+          "no": 103,
+          "part": 5,
+          "stem": "The purchasing department ordered six ------- cases of ink toner.",
+          "options": {
+            "A": "add",
+            "B": "additional",
+            "C": "additionally",
+            "D": "adding"
+          },
+          "answer": "B",
+          "skill": "Adjective",
+          "explanationVi": "Trước danh từ <b>cases</b> cần tính từ. <b>Additional</b> nghĩa là “thêm, bổ sung”.",
+          "explanation": "The noun <b>cases</b> requires the adjective <b>additional</b>."
+        },
+        {
+          "id": "t10q104",
+          "no": 104,
+          "part": 5,
+          "stem": "Please complete the questionnaire to help our team ------- understand the financial services you are interested in.",
+          "options": {
+            "A": "better",
+            "B": "more",
+            "C": "very",
+            "D": "surely"
+          },
+          "answer": "A",
+          "skill": "Comparative adverb",
+          "explanationVi": "<b>Better understand</b> là cụm tự nhiên, nghĩa là “hiểu rõ hơn”.",
+          "explanation": "<b>Better understand</b> means to understand more clearly."
+        },
+        {
+          "id": "t10q105",
+          "no": 105,
+          "part": 5,
+          "stem": "------- of the garments will begin two weeks after the contract is signed.",
+          "options": {
+            "A": "Product",
+            "B": "Produce",
+            "C": "Produced",
+            "D": "Production"
+          },
+          "answer": "D",
+          "skill": "Noun",
+          "explanationVi": "Chỗ trống làm chủ ngữ và chỉ quá trình sản xuất quần áo, nên dùng danh từ <b>Production</b>.",
+          "explanation": "The blank is the subject and refers to the manufacturing process, so <b>Production</b> is correct."
+        },
+        {
+          "id": "t10q106",
+          "no": 106,
+          "part": 5,
+          "stem": "The minutes of last week’s board meeting had only three ------- errors.",
+          "options": {
+            "A": "junior",
+            "B": "minor",
+            "C": "soft",
+            "D": "light"
+          },
+          "answer": "B",
+          "skill": "Adjective collocation",
+          "explanationVi": "<b>Minor errors</b> là cụm tự nhiên, nghĩa là “những lỗi nhỏ”.",
+          "explanation": "<b>Minor errors</b> is the natural collocation meaning small mistakes."
+        },
+        {
+          "id": "t10q107",
+          "no": 107,
+          "part": 5,
+          "stem": "Patrons are asked to silence their phones ------- the show begins.",
+          "options": {
+            "A": "when",
+            "B": "which",
+            "C": "what",
+            "D": "why"
+          },
+          "answer": "A",
+          "skill": "Time conjunction",
+          "explanationVi": "<b>When</b> giới thiệu mệnh đề thời gian: tắt chuông điện thoại khi buổi diễn bắt đầu.",
+          "explanation": "<b>When</b> correctly introduces the time clause."
+        },
+        {
+          "id": "t10q108",
+          "no": 108,
+          "part": 5,
+          "stem": "The majority of the company’s employees commute to work ------- train.",
+          "options": {
+            "A": "on",
+            "B": "by",
+            "C": "in",
+            "D": "from"
+          },
+          "answer": "B",
+          "skill": "Preposition",
+          "explanationVi": "<b>By train</b> là cụm cố định chỉ phương tiện đi lại.",
+          "explanation": "<b>By train</b> is the standard expression for transportation."
+        },
+        {
+          "id": "t10q109",
+          "no": 109,
+          "part": 5,
+          "stem": "Line 73 is the oldest ------- operating bus line in Raymo City’s history.",
+          "options": {
+            "A": "continues",
+            "B": "continued",
+            "C": "continuous",
+            "D": "continuously"
+          },
+          "answer": "D",
+          "skill": "Adverb",
+          "explanationVi": "<b>Continuously</b> bổ nghĩa cho <b>operating</b>: <b>the oldest continuously operating bus line</b>.",
+          "explanation": "The adverb <b>continuously</b> modifies <b>operating</b>."
+        },
+        {
+          "id": "t10q110",
+          "no": 110,
+          "part": 5,
+          "stem": "This message is a ------- to pick up your package at your local post office as soon as possible.",
+          "options": {
+            "A": "promotion",
+            "B": "reminder",
+            "C": "process",
+            "D": "report"
+          },
+          "answer": "B",
+          "skill": "Noun choice",
+          "explanationVi": "Một thông báo yêu cầu người nhận đến lấy bưu kiện là một <b>reminder</b>, tức lời nhắc.",
+          "explanation": "A message telling someone to pick up a package is a <b>reminder</b>."
+        },
+        {
+          "id": "t10q111",
+          "no": 111,
+          "part": 5,
+          "stem": "Pet Orbit customers ------- want receipts delivered by e-mail can opt for this service.",
+          "options": {
+            "A": "whose",
+            "B": "who",
+            "C": "those",
+            "D": "whoever"
+          },
+          "answer": "B",
+          "skill": "Relative pronoun",
+          "explanationVi": "<b>Who</b> thay cho danh từ chỉ người <b>customers</b> và làm chủ ngữ của mệnh đề quan hệ.",
+          "explanation": "<b>Who</b> refers to <b>customers</b> and serves as the subject of the relative clause."
+        },
+        {
+          "id": "t10q112",
+          "no": 112,
+          "part": 5,
+          "stem": "Mr. Takajian may be an entry-level employee, ------- he does not hesitate to take initiative.",
+          "options": {
+            "A": "but",
+            "B": "or",
+            "C": "equally",
+            "D": "accordingly"
+          },
+          "answer": "A",
+          "skill": "Coordinating conjunction",
+          "explanationVi": "Hai vế mang ý tương phản, nên dùng liên từ <b>but</b>.",
+          "explanation": "The two clauses contrast, so the coordinating conjunction <b>but</b> is correct."
+        },
+        {
+          "id": "t10q113",
+          "no": 113,
+          "part": 5,
+          "stem": "Carter Department Store allows customers ------- items on hold for up to 24 hours.",
+          "options": {
+            "A": "place",
+            "B": "to place",
+            "C": "placing",
+            "D": "to be placed"
+          },
+          "answer": "B",
+          "skill": "Verb pattern",
+          "explanationVi": "Cấu trúc <b>allow someone to do something</b> yêu cầu <b>to place</b>.",
+          "explanation": "The structure is <b>allow someone to do something</b>, so <b>to place</b> is required."
+        },
+        {
+          "id": "t10q114",
+          "no": 114,
+          "part": 5,
+          "stem": "Using unique colors and styles, the decor experts at Mamie’s Interiors bring a ------- look to homes.",
+          "options": {
+            "A": "brief",
+            "B": "dependent",
+            "C": "motivational",
+            "D": "fashionable"
+          },
+          "answer": "D",
+          "skill": "Adjective choice",
+          "explanationVi": "Màu sắc và phong cách độc đáo tạo nên một vẻ ngoài <b>fashionable</b>, tức thời trang.",
+          "explanation": "<b>Fashionable look</b> is the appropriate phrase for a stylish appearance."
+        },
+        {
+          "id": "t10q115",
+          "no": 115,
+          "part": 5,
+          "stem": "------- efficient project management, Sparksware’s latest software program was released on time.",
+          "options": {
+            "A": "Along with",
+            "B": "Regarding",
+            "C": "Because of",
+            "D": "Subsequent"
+          },
+          "answer": "C",
+          "skill": "Cause preposition",
+          "explanationVi": "<b>Because of</b> đứng trước cụm danh từ và chỉ nguyên nhân phần mềm được phát hành đúng hạn.",
+          "explanation": "<b>Because of</b> introduces the noun phrase that explains why the software was released on time."
+        },
+        {
+          "id": "t10q116",
+          "no": 116,
+          "part": 5,
+          "stem": "The line of outdoor furniture will be available ------- select stores as early as February.",
+          "options": {
+            "A": "until",
+            "B": "at",
+            "C": "over",
+            "D": "before"
+          },
+          "answer": "B",
+          "skill": "Preposition of place",
+          "explanationVi": "<b>Available at select stores</b> nghĩa là có bán tại một số cửa hàng được chọn.",
+          "explanation": "<b>Available at select stores</b> is the correct expression."
+        },
+        {
+          "id": "t10q117",
+          "no": 117,
+          "part": 5,
+          "stem": "There has been a ------- decrease in requests for customer support this quarter.",
+          "options": {
+            "A": "notice",
+            "B": "noticing",
+            "C": "noticeable",
+            "D": "noticeably"
+          },
+          "answer": "C",
+          "skill": "Adjective",
+          "explanationVi": "Trước danh từ <b>decrease</b> cần tính từ. <b>Noticeable</b> nghĩa là “đáng chú ý, dễ nhận thấy”.",
+          "explanation": "The noun <b>decrease</b> requires the adjective <b>noticeable</b>."
+        },
+        {
+          "id": "t10q118",
+          "no": 118,
+          "part": 5,
+          "stem": "Bina Dal always wanted to become a diplomat, ------- she studied international relations at university.",
+          "options": {
+            "A": "so",
+            "B": "once",
+            "C": "overall",
+            "D": "whereas"
+          },
+          "answer": "A",
+          "skill": "Result conjunction",
+          "explanationVi": "Mong muốn trở thành nhà ngoại giao dẫn đến việc học quan hệ quốc tế, nên dùng <b>so</b>.",
+          "explanation": "The second clause is the result of the first, so <b>so</b> is correct."
+        },
+        {
+          "id": "t10q119",
+          "no": 119,
+          "part": 5,
+          "stem": "Thank you for responding ------- with information about the T-Max 400 printer and scanner.",
+          "options": {
+            "A": "prompt",
+            "B": "promptly",
+            "C": "prompted",
+            "D": "prompts"
+          },
+          "answer": "B",
+          "skill": "Adverb",
+          "explanationVi": "Động từ <b>responding</b> cần trạng từ bổ nghĩa. <b>Promptly</b> nghĩa là “nhanh chóng, kịp thời”.",
+          "explanation": "The verb <b>responding</b> is modified by the adverb <b>promptly</b>."
+        },
+        {
+          "id": "t10q120",
+          "no": 120,
+          "part": 5,
+          "stem": "Owing to the weather, we need to ------- your appointment for tree removal service.",
+          "options": {
+            "A": "reschedule",
+            "B": "borrow",
+            "C": "contain",
+            "D": "reconstruct"
+          },
+          "answer": "A",
+          "skill": "Vocabulary",
+          "explanationVi": "Do thời tiết, lịch hẹn cần chuyển sang thời điểm khác. <b>Reschedule</b> nghĩa là “sắp xếp lại lịch”.",
+          "explanation": "Because of the weather, the appointment needs to be moved to another time, so <b>reschedule</b> is correct."
+        },
+        {
+          "id": "t10q121",
+          "no": 121,
+          "part": 5,
+          "stem": "It will require a ------- effort between the two countries to complete the railway line.",
+          "options": {
+            "A": "coordinate",
+            "B": "coordinates",
+            "C": "coordinated",
+            "D": "coordination"
+          },
+          "answer": "C",
+          "skill": "Past participle adjective",
+          "explanationVi": "Trước danh từ <b>effort</b> cần tính từ. <b>Coordinated effort</b> nghĩa là nỗ lực được phối hợp.",
+          "explanation": "The noun <b>effort</b> requires the adjective <b>coordinated</b>."
+        },
+        {
+          "id": "t10q122",
+          "no": 122,
+          "part": 5,
+          "stem": "According to the restaurant’s -------, guests must wait to be seated by the front-of-house staff.",
+          "options": {
+            "A": "offerings",
+            "B": "funds",
+            "C": "bill",
+            "D": "policy"
+          },
+          "answer": "D",
+          "skill": "Noun choice",
+          "explanationVi": "Quy định khách phải chờ nhân viên xếp chỗ là một <b>policy</b> của nhà hàng.",
+          "explanation": "A rule requiring guests to wait to be seated is a restaurant <b>policy</b>."
+        },
+        {
+          "id": "t10q123",
+          "no": 123,
+          "part": 5,
+          "stem": "Tickets for Saturday’s football game sold out on Thursday, much sooner than organizers -------.",
+          "options": {
+            "A": "will anticipate",
+            "B": "had anticipated",
+            "C": "anticipating",
+            "D": "to anticipate"
+          },
+          "answer": "B",
+          "skill": "Past perfect",
+          "explanationVi": "Việc dự đoán xảy ra trước thời điểm vé bán hết trong quá khứ, nên dùng <b>had anticipated</b>.",
+          "explanation": "The organizers’ expectation occurred before the past event of the tickets selling out, so <b>had anticipated</b> is correct."
+        },
+        {
+          "id": "t10q124",
+          "no": 124,
+          "part": 5,
+          "stem": "Renewing your auto registration online ------- at the motor vehicle office will save you time.",
+          "options": {
+            "A": "just",
+            "B": "neither",
+            "C": "at any rate",
+            "D": "rather than"
+          },
+          "answer": "D",
+          "skill": "Contrast phrase",
+          "explanationVi": "<b>Rather than</b> tạo sự lựa chọn đối lập: gia hạn trực tuyến thay vì tại văn phòng đăng ký xe.",
+          "explanation": "<b>Rather than</b> contrasts renewing online with doing so at the office."
+        },
+        {
+          "id": "t10q125",
+          "no": 125,
+          "part": 5,
+          "stem": "------- Latoya Model Management’s sound reputation, aspiring models can expect a flourishing career.",
+          "options": {
+            "A": "Given",
+            "B": "Ahead of",
+            "C": "Preferably",
+            "D": "Provided that"
+          },
+          "answer": "A",
+          "skill": "Preposition",
+          "explanationVi": "<b>Given</b> đứng trước cụm danh từ và mang nghĩa “xét đến/dựa trên” danh tiếng tốt của công ty.",
+          "explanation": "<b>Given</b> means “considering” and correctly precedes the noun phrase."
+        },
+        {
+          "id": "t10q126",
+          "no": 126,
+          "part": 5,
+          "stem": "Employees are asked to update their contact information ------- the staff directory can be finalized.",
+          "options": {
+            "A": "so that",
+            "B": "as though",
+            "C": "namely",
+            "D": "likewise"
+          },
+          "answer": "A",
+          "skill": "Purpose conjunction",
+          "explanationVi": "<b>So that</b> giới thiệu mục đích: cập nhật thông tin để danh bạ nhân viên có thể được hoàn tất.",
+          "explanation": "<b>So that</b> introduces the purpose of updating the contact information."
+        },
+        {
+          "id": "t10q127",
+          "no": 127,
+          "part": 5,
+          "stem": "Glistonford Manufacturing cautions consumers not to buy inferior ------- of its adjustable desks.",
+          "options": {
+            "A": "imitates",
+            "B": "imitative",
+            "C": "imitated",
+            "D": "imitations"
+          },
+          "answer": "D",
+          "skill": "Plural noun",
+          "explanationVi": "Sau tính từ <b>inferior</b> cần danh từ. <b>Imitations</b> nghĩa là các sản phẩm bắt chước kém chất lượng.",
+          "explanation": "The adjective <b>inferior</b> modifies the plural noun <b>imitations</b>."
+        },
+        {
+          "id": "t10q128",
+          "no": 128,
+          "part": 5,
+          "stem": "------- the fact that the use of social media is widespread, many people still rely on newspapers for fact-checked information.",
+          "options": {
+            "A": "Opposite",
+            "B": "Without",
+            "C": "Unlike",
+            "D": "Despite"
+          },
+          "answer": "D",
+          "skill": "Concession phrase",
+          "explanationVi": "<b>Despite the fact that</b> là cấu trúc cố định diễn tả sự tương phản.",
+          "explanation": "<b>Despite the fact that</b> is the correct concessive structure."
+        },
+        {
+          "id": "t10q129",
+          "no": 129,
+          "part": 5,
+          "stem": "Citing energy efficiency and cost reductions, the presenter made several ------- arguments for installing solar panels.",
+          "options": {
+            "A": "absent",
+            "B": "affordable",
+            "C": "convincing",
+            "D": "intrigued"
+          },
+          "answer": "C",
+          "skill": "Adjective collocation",
+          "explanationVi": "Các lợi ích về tiết kiệm năng lượng và chi phí tạo thành những lập luận <b>convincing</b>, tức thuyết phục.",
+          "explanation": "<b>Convincing arguments</b> is the natural phrase for persuasive reasons."
+        },
+        {
+          "id": "t10q130",
+          "no": 130,
+          "part": 5,
+          "stem": "After leaving his official government role, Dr. Beasly was ------- Director of the Nanboro Youth Farming Program.",
+          "options": {
+            "A": "hired",
+            "B": "named",
+            "C": "admitted",
+            "D": "established"
+          },
+          "answer": "B",
+          "skill": "Appointment expression",
+          "explanationVi": "<b>Be named Director</b> nghĩa là được bổ nhiệm/chỉ định làm giám đốc.",
+          "explanation": "<b>Was named Director</b> correctly means that Dr. Beasly was appointed to the position."
+        },
+        {
+          "id": "t10q131",
+          "no": 131,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following memo.",
+          "options": {
+            "A": "desks",
+            "B": "programs",
+            "C": "agencies",
+            "D": "containers"
+          },
+          "answer": "D",
+          "skill": "Noun reference",
+          "explanationVi": "Flexmerge crates là các thùng chứa dùng để vận chuyển nông sản, nên <b>containers</b> là đáp án đúng.",
+          "explanation": "The Flexmerge crates are used to carry produce, so <b>containers</b> is correct.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t10q132",
+          "no": 132,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following memo.",
+          "options": {
+            "A": "We will need more of them in the months ahead.",
+            "B": "More of them were bought by farmers and wholesalers.",
+            "C": "Accordingly, more of them can be loaded onto trucks when empty.",
+            "D": "Soon more of them will be available on our Web site."
+          },
+          "answer": "C",
+          "skill": "Sentence insertion",
+          "explanationVi": "Vì các thùng có thể gập lại, dễ xếp chồng và tiết kiệm không gian, khi rỗng có thể chất nhiều thùng hơn lên xe tải. Câu C nối ý hợp lý nhất.",
+          "explanation": "Because the crates collapse, stack easily, and save space, more empty crates can be loaded onto trucks. Choice C follows logically.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t10q133",
+          "no": 133,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following memo.",
+          "options": {
+            "A": "to",
+            "B": "for",
+            "C": "among",
+            "D": "besides"
+          },
+          "answer": "B",
+          "skill": "Preposition",
+          "explanationVi": "Cụm cố định là <b>the need for something</b>, nên dùng <b>for frequent replacement</b>.",
+          "explanation": "The fixed expression is <b>the need for something</b>.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t10q134",
+          "no": 134,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following memo.",
+          "options": {
+            "A": "reducing",
+            "B": "reduces",
+            "C": "reduced",
+            "D": "reducer"
+          },
+          "answer": "A",
+          "skill": "Participle after thereby",
+          "explanationVi": "Sau <b>thereby</b> dùng V-ing để diễn tả kết quả: <b>thereby reducing the risk</b>.",
+          "explanation": "<b>Thereby</b> is followed by a gerund to express the result: <b>thereby reducing</b>.",
+          "passageIndex": 0
+        },
+        {
+          "id": "t10q135",
+          "no": 135,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following article.",
+          "options": {
+            "A": "basing",
+            "B": "will be based",
+            "C": "was based",
+            "D": "is based"
+          },
+          "answer": "D",
+          "skill": "Present passive",
+          "explanationVi": "Cấu trúc <b>be based on</b> nghĩa là “được dựa trên”. Đây là mô tả hiện tại của loạt phim nên dùng <b>is based</b>.",
+          "explanation": "<b>Be based on</b> is the correct expression, and the present tense <b>is based</b> fits the description.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t10q136",
+          "no": 136,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following article.",
+          "options": {
+            "A": "From here on",
+            "B": "In contrast",
+            "C": "To be specific",
+            "D": "To sum up"
+          },
+          "answer": "B",
+          "skill": "Contrast transition",
+          "explanationVi": "Nhóm nhà phê bình thứ hai đưa ra quan điểm trái ngược với nhóm đầu tiên, nên dùng <b>In contrast</b>.",
+          "explanation": "The second group of reviewers holds the opposite opinion, so <b>In contrast</b> is correct.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t10q137",
+          "no": 137,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following article.",
+          "options": {
+            "A": "advertisement",
+            "B": "treatment",
+            "C": "criticism",
+            "D": "need"
+          },
+          "answer": "C",
+          "skill": "Noun choice",
+          "explanationVi": "Nhận xét rằng phim có thể trở nên phức tạp và khó hiểu là một lời <b>criticism</b>.",
+          "explanation": "The negative comment about the complicated plotline is a <b>criticism</b>.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t10q138",
+          "no": 138,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following article.",
+          "options": {
+            "A": "But they succeeded despite many difficulties.",
+            "B": "But they bring greater depth to the narrative.",
+            "C": "But it will be a useful learning experience.",
+            "D": "But it brought them closer together."
+          },
+          "answer": "B",
+          "skill": "Sentence insertion",
+          "explanationVi": "Đạo diễn thừa nhận nhiều nhân vật mới khiến câu chuyện khó theo dõi nhưng cho rằng họ làm câu chuyện sâu sắc hơn. Câu B phù hợp nhất.",
+          "explanation": "The director acknowledges the difficulty but gives a positive counterpoint: the characters bring greater depth to the narrative.",
+          "passageIndex": 1
+        },
+        {
+          "id": "t10q139",
+          "no": 139,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "share",
+            "B": "shared",
+            "C": "sharing",
+            "D": "shares"
+          },
+          "answer": "C",
+          "skill": "Gerund after preposition",
+          "explanationVi": "Sau giới từ <b>for</b> dùng V-ing: <b>thank you for sharing</b>.",
+          "explanation": "The preposition <b>for</b> is followed by a gerund: <b>thank you for sharing</b>.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t10q140",
+          "no": 140,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "It",
+            "B": "One",
+            "C": "Each",
+            "D": "Theirs"
+          },
+          "answer": "A",
+          "skill": "Pronoun reference",
+          "explanationVi": "<b>It</b> thay cho công thức nấu ăn vừa được nhắc đến và làm chủ ngữ của <b>has been entered</b>.",
+          "explanation": "<b>It</b> refers back to the recipe and serves as the subject of <b>has been entered</b>.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t10q141",
+          "no": 141,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "Fluffy Time is a favorite of children everywhere.",
+            "B": "Contest winners will be notified in June.",
+            "C": "We are sorry that you were disappointed.",
+            "D": "You may want to try our chocolate cream recipe."
+          },
+          "answer": "B",
+          "skill": "Sentence insertion",
+          "explanationVi": "Đoạn thư đang nói về cuộc thi; thông tin người thắng sẽ được thông báo vào tháng Sáu phù hợp nhất trước <b>In the meantime</b>.",
+          "explanation": "The e-mail discusses the contest process, and the notification date for winners logically precedes <b>In the meantime</b>.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t10q142",
+          "no": 142,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "briefly",
+            "B": "concisely",
+            "C": "temporarily",
+            "D": "shortly"
+          },
+          "answer": "D",
+          "skill": "Adverb of time",
+          "explanationVi": "<b>Shortly</b> nghĩa là “sớm/trong thời gian ngắn”, phù hợp với việc người nhận sắp nhận được e-mail riêng.",
+          "explanation": "<b>Shortly</b> means soon and correctly describes when the separate e-mail should arrive.",
+          "passageIndex": 2
+        },
+        {
+          "id": "t10q143",
+          "no": 143,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following brochure.",
+          "options": {
+            "A": "Similarly",
+            "B": "However",
+            "C": "As a result",
+            "D": "In the meantime"
+          },
+          "answer": "C",
+          "skill": "Result transition",
+          "explanationVi": "Khách hàng được tự quyết định mức độ tham gia vào thiết kế; <b>As a result</b>, một số người gửi bản phác thảo chi tiết, còn những người khác để đội thiết kế tự thực hiện.",
+          "explanation": "Clients choose their level of involvement; <b>As a result</b>, some submit detailed sketches while others leave the work to the artists.",
+          "passageIndex": 3
+        },
+        {
+          "id": "t10q144",
+          "no": 144,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following brochure.",
+          "options": {
+            "A": "perfect",
+            "B": "perfected",
+            "C": "perfection",
+            "D": "perfectly"
+          },
+          "answer": "D",
+          "skill": "Adverb",
+          "explanationVi": "<b>Perfectly</b> là trạng từ bổ nghĩa cho tính từ <b>content</b>. <b>Perfectly content</b> nghĩa là hoàn toàn hài lòng.",
+          "explanation": "The adverb <b>perfectly</b> modifies the adjective <b>content</b>.",
+          "passageIndex": 3
+        },
+        {
+          "id": "t10q145",
+          "no": 145,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following brochure.",
+          "options": {
+            "A": "This step facilitates communication among employees.",
+            "B": "This step ensures that the product satisfies expectations.",
+            "C": "Customers appreciate the company’s suggested alternative.",
+            "D": "Customers have greeted this measure with great concern."
+          },
+          "answer": "B",
+          "skill": "Sentence insertion",
+          "explanationVi": "Việc gửi thiết kế hoàn tất cho khách hàng phê duyệt giúp bảo đảm sản phẩm đáp ứng mong đợi của họ. Câu B phù hợp nhất.",
+          "explanation": "Sharing the finished design for client approval ensures that the product meets the client’s expectations.",
+          "passageIndex": 3
+        },
+        {
+          "id": "t10q146",
+          "no": 146,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following brochure.",
+          "options": {
+            "A": "along",
+            "B": "down",
+            "C": "off",
+            "D": "on"
+          },
+          "answer": "D",
+          "skill": "Phrasal verb",
+          "explanationVi": "<b>Count on</b> là cụm động từ cố định, nghĩa là “tin cậy vào”.",
+          "explanation": "<b>Count on</b> is the fixed phrasal verb meaning rely on.",
+          "passageIndex": 3
+        }
+      ],
+      "passages": [
+        {
+          "title": "Questions 131-134 refer to the following memo.",
+          "label": "Memo",
+          "html": "<p>To: All Warehouse Employees<br>From: Paul Wandayi, Warehouse Manager<br>Date: 15 March<br>Re: New crates coming</p><p>Beginning 1 April, Windquest Farms will use Flexmerge crates to transport our fruits and vegetables. These <span class=\"blank\">131</span> will simplify work and shrink operational costs.</p><p>Flexmerge crates are collapsible, which means they are easy to stack and they save space. <span class=\"blank sentence\">132</span> They are also highly durable. This feature minimizes the need <span class=\"blank\">133</span> frequent replacement of crates. Finally, they are designed with ergonomic features, thereby <span class=\"blank\">134</span> the risk of injuries. Safety is our top priority here at Windquest Farms.</p>",
+          "questions": [
+            {
+              "id": "t10q131",
+              "no": 131,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following memo.",
+              "options": {
+                "A": "desks",
+                "B": "programs",
+                "C": "agencies",
+                "D": "containers"
+              },
+              "answer": "D",
+              "passageIndex": 0
+            },
+            {
+              "id": "t10q132",
+              "no": 132,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following memo.",
+              "options": {
+                "A": "We will need more of them in the months ahead.",
+                "B": "More of them were bought by farmers and wholesalers.",
+                "C": "Accordingly, more of them can be loaded onto trucks when empty.",
+                "D": "Soon more of them will be available on our Web site."
+              },
+              "answer": "C",
+              "passageIndex": 0
+            },
+            {
+              "id": "t10q133",
+              "no": 133,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following memo.",
+              "options": {
+                "A": "to",
+                "B": "for",
+                "C": "among",
+                "D": "besides"
+              },
+              "answer": "B",
+              "passageIndex": 0
+            },
+            {
+              "id": "t10q134",
+              "no": 134,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following memo.",
+              "options": {
+                "A": "reducing",
+                "B": "reduces",
+                "C": "reduced",
+                "D": "reducer"
+              },
+              "answer": "A",
+              "passageIndex": 0
+            }
+          ]
+        },
+        {
+          "title": "Questions 135-138 refer to the following article.",
+          "label": "Article",
+          "html": "<p><strong>Popular TV Show Returns for Third Season</strong></p><p>Sunday marks the start of the third season of the award-winning TV series <em>King of the Meer</em>. This political thriller <span class=\"blank\">135</span> on the book <em>Whispered Illusions</em> by Noriaki Airishima.</p><p>Some reviewers of the television series believe that the third season might be even better than the previous ones. <span class=\"blank\">136</span>, other reviewers argue that the series might lose its appeal with the introduction of so many new characters, resulting in a complicated and confusing plotline.</p><p>Director Amber Randolph has responded to that <span class=\"blank\">137</span>. “The abundance of new characters can make the story challenging to follow,” she said. “<span class=\"blank sentence\">138</span> We’ll see what the fans of the show think.”</p>",
+          "questions": [
+            {
+              "id": "t10q135",
+              "no": 135,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following article.",
+              "options": {
+                "A": "basing",
+                "B": "will be based",
+                "C": "was based",
+                "D": "is based"
+              },
+              "answer": "D",
+              "passageIndex": 1
+            },
+            {
+              "id": "t10q136",
+              "no": 136,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following article.",
+              "options": {
+                "A": "From here on",
+                "B": "In contrast",
+                "C": "To be specific",
+                "D": "To sum up"
+              },
+              "answer": "B",
+              "passageIndex": 1
+            },
+            {
+              "id": "t10q137",
+              "no": 137,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following article.",
+              "options": {
+                "A": "advertisement",
+                "B": "treatment",
+                "C": "criticism",
+                "D": "need"
+              },
+              "answer": "C",
+              "passageIndex": 1
+            },
+            {
+              "id": "t10q138",
+              "no": 138,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following article.",
+              "options": {
+                "A": "But they succeeded despite many difficulties.",
+                "B": "But they bring greater depth to the narrative.",
+                "C": "But it will be a useful learning experience.",
+                "D": "But it brought them closer together."
+              },
+              "answer": "B",
+              "passageIndex": 1
+            }
+          ]
+        },
+        {
+          "title": "Questions 139-142 refer to the following e-mail.",
+          "label": "E-mail",
+          "html": "<p>To: Jee-Wah Cho &lt;cho8876@sunmail.com&gt;<br>From: Ken Belfant &lt;kenbelfant@fluffytimeindustries.com&gt;<br>Date: 6 April<br>Subject: Recipe contest</p><p>Dear Ms. Cho,</p><p>Thank you for <span class=\"blank\">139</span> your interesting recipe that uses our low-fat, sugar-free Fluffy Time Whipped Topping. <span class=\"blank\">140</span> has been entered into our upcoming contest. The winning recipes will appear on our product’s packaging. <span class=\"blank sentence\">141</span> In the meantime, I will be sending you a coupon for 25 percent off your next purchase of any Fluffy Time product via a separate e-mail that you should receive <span class=\"blank\">142</span>.</p><p>We are so glad you enjoy our products. Best of luck in the contest!</p><p>With gratitude,</p><p>Ken Belfant, Promotions Coordinator<br>Fluffy Time Industries</p>",
+          "questions": [
+            {
+              "id": "t10q139",
+              "no": 139,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "share",
+                "B": "shared",
+                "C": "sharing",
+                "D": "shares"
+              },
+              "answer": "C",
+              "passageIndex": 2
+            },
+            {
+              "id": "t10q140",
+              "no": 140,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "It",
+                "B": "One",
+                "C": "Each",
+                "D": "Theirs"
+              },
+              "answer": "A",
+              "passageIndex": 2
+            },
+            {
+              "id": "t10q141",
+              "no": 141,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "Fluffy Time is a favorite of children everywhere.",
+                "B": "Contest winners will be notified in June.",
+                "C": "We are sorry that you were disappointed.",
+                "D": "You may want to try our chocolate cream recipe."
+              },
+              "answer": "B",
+              "passageIndex": 2
+            },
+            {
+              "id": "t10q142",
+              "no": 142,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "briefly",
+                "B": "concisely",
+                "C": "temporarily",
+                "D": "shortly"
+              },
+              "answer": "D",
+              "passageIndex": 2
+            }
+          ]
+        },
+        {
+          "title": "Questions 143-146 refer to the following brochure.",
+          "label": "Brochure",
+          "html": "<p>Bingo Imprint creates designs for promotional products such as notebooks, refrigerator magnets, and apparel. We allow our clients to determine their level of involvement in the design process.</p><p><span class=\"blank\">143</span>, some submit a detailed sketch of the design. Others are <span class=\"blank\">144</span> content to leave the development and creation of the design up to our graphic artists. Once the invention has been finalized, it will be shared with the client for approval. <span class=\"blank sentence\">145</span> We guarantee that all work will be completed within five business days from when the order is placed.</p><p>You can count <span class=\"blank\">146</span> Bingo Imprint for unique designs, competitive pricing, and timely delivery.</p>",
+          "questions": [
+            {
+              "id": "t10q143",
+              "no": 143,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following brochure.",
+              "options": {
+                "A": "Similarly",
+                "B": "However",
+                "C": "As a result",
+                "D": "In the meantime"
+              },
+              "answer": "C",
+              "passageIndex": 3
+            },
+            {
+              "id": "t10q144",
+              "no": 144,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following brochure.",
+              "options": {
+                "A": "perfect",
+                "B": "perfected",
+                "C": "perfection",
+                "D": "perfectly"
+              },
+              "answer": "D",
+              "passageIndex": 3
+            },
+            {
+              "id": "t10q145",
+              "no": 145,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following brochure.",
+              "options": {
+                "A": "This step facilitates communication among employees.",
+                "B": "This step ensures that the product satisfies expectations.",
+                "C": "Customers appreciate the company’s suggested alternative.",
+                "D": "Customers have greeted this measure with great concern."
+              },
+              "answer": "B",
+              "passageIndex": 3
+            },
+            {
+              "id": "t10q146",
+              "no": 146,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following brochure.",
+              "options": {
+                "A": "along",
+                "B": "down",
+                "C": "off",
+                "D": "on"
+              },
+              "answer": "D",
+              "passageIndex": 3
+            }
+          ]
+        }
+      ],
+      "practice": true,
+      "testNo": 10,
+      "selectorLabel": "Test 10"
     }
   ]
 }
