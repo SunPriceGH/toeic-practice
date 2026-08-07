@@ -1,0 +1,1025 @@
+{
+  "id": "ets-summer-2025-part5-6",
+  "title": "ETS Summer 2025 · Part 5 + 6",
+  "sourceLabel": "ETS Summer 2025 · Reading",
+  "version": 3,
+  "tests": [
+    {
+      "id": "ets-summer-2025-test6-part5-6",
+      "title": "ETS Summer 2025 Test 6 · Part 5 + 6",
+      "sourceLabel": "ETS Summer 2025 · Reading Test 6",
+      "timerMinutes": 25,
+      "questions": [
+        {
+          "id": "q101",
+          "no": 101,
+          "part": 5,
+          "stem": "On Saturday, the Edbridge Orchestra will ------- a new work by local composer Nina Borstein.",
+          "options": {
+            "A": "make",
+            "B": "operate",
+            "C": "perform",
+            "D": "fulfill"
+          },
+          "answer": "C",
+          "skill": "Verb choice / Collocation",
+          "explanationVi": "Sau động từ khuyết thiếu <b>will</b> cần động từ nguyên mẫu. Cụm tự nhiên là <b>perform a new work</b>, nghĩa là “trình diễn một tác phẩm mới”.",
+          "explanation": "A modal verb such as <b>will</b> is followed by a base-form verb. The natural collocation is <b>perform a new work</b>."
+        },
+        {
+          "id": "q102",
+          "no": 102,
+          "part": 5,
+          "stem": "It is important to be especially ------- when in the company of new clients.",
+          "options": {
+            "A": "polite",
+            "B": "politely",
+            "C": "politest",
+            "D": "politeness"
+          },
+          "answer": "A",
+          "skill": "Word form: Adjective",
+          "explanationVi": "Sau động từ nối <b>be</b> cần tính từ làm bổ ngữ. <b>polite</b> là tính từ phù hợp; <b>especially</b> bổ nghĩa cho tính từ này.",
+          "explanation": "The linking verb <b>be</b> requires an adjective complement. <b>polite</b> is the correct adjective, modified by <b>especially</b>."
+        },
+        {
+          "id": "q103",
+          "no": 103,
+          "part": 5,
+          "stem": "Although Ms. Endou was not chosen for an award, ------- achievements were praised.",
+          "options": {
+            "A": "she",
+            "B": "her",
+            "C": "hers",
+            "D": "herself"
+          },
+          "answer": "B",
+          "skill": "Possessive adjective",
+          "explanationVi": "Trước danh từ số nhiều <b>achievements</b> cần tính từ sở hữu. <b>her achievements</b> nghĩa là “những thành tựu của cô ấy”.",
+          "explanation": "A possessive adjective is needed before the noun <b>achievements</b>. Therefore, <b>her</b> is correct."
+        },
+        {
+          "id": "q104",
+          "no": 104,
+          "part": 5,
+          "stem": "At the end of the year, organizations face pressure to achieve their financial -------.",
+          "options": {
+            "A": "procedure",
+            "B": "goals",
+            "C": "season",
+            "D": "bills"
+          },
+          "answer": "B",
+          "skill": "Vocabulary / Collocation",
+          "explanationVi": "Cụm <b>achieve financial goals</b> là cách kết hợp tự nhiên, nghĩa là “đạt được các mục tiêu tài chính”.",
+          "explanation": "The natural collocation is <b>achieve financial goals</b>. The other nouns do not fit the meaning of the sentence."
+        },
+        {
+          "id": "q105",
+          "no": 105,
+          "part": 5,
+          "stem": "Online ordering is ------- on Naito Café’s Web site.",
+          "options": {
+            "A": "called",
+            "B": "printed",
+            "C": "capable",
+            "D": "available"
+          },
+          "answer": "D",
+          "skill": "Vocabulary",
+          "explanationVi": "Sau <b>is</b> cần tính từ mô tả dịch vụ đặt hàng trực tuyến. <b>available on a Web site</b> nghĩa là “có sẵn trên trang Web”.",
+          "explanation": "The adjective <b>available</b> correctly indicates that online ordering can be used on the Web site."
+        },
+        {
+          "id": "q106",
+          "no": 106,
+          "part": 5,
+          "stem": "Mayor Park plans to meet with his campaign staff ------- the televised debate.",
+          "options": {
+            "A": "following",
+            "B": "beside",
+            "C": "from",
+            "D": "under"
+          },
+          "answer": "A",
+          "skill": "Preposition",
+          "explanationVi": "<b>Following</b> có thể dùng như giới từ mang nghĩa “sau”. Câu cho biết thị trưởng sẽ gặp nhóm vận động sau cuộc tranh luận được truyền hình.",
+          "explanation": "As a preposition, <b>following</b> means “after,” which correctly expresses the time relationship."
+        },
+        {
+          "id": "q107",
+          "no": 107,
+          "part": 5,
+          "stem": "Mr. Suh has requested that a more ------- copy machine be purchased for the finance department.",
+          "options": {
+            "A": "reliably",
+            "B": "relying",
+            "C": "relied",
+            "D": "reliable"
+          },
+          "answer": "D",
+          "skill": "Word form: Adjective",
+          "explanationVi": "Sau <b>more</b> và trước danh từ <b>copy machine</b> cần tính từ. <b>reliable</b> nghĩa là “đáng tin cậy”, phù hợp cả ngữ pháp lẫn ngữ nghĩa.",
+          "explanation": "An adjective is required after <b>more</b> to modify <b>copy machine</b>. <b>reliable</b> is the correct form."
+        },
+        {
+          "id": "q108",
+          "no": 108,
+          "part": 5,
+          "stem": "Mr. Aponte’s photograph of the autumn foliage will be featured on the front ------- of Outward Expansion Magazine.",
+          "options": {
+            "A": "cover",
+            "B": "coverage",
+            "C": "covered",
+            "D": "coverable"
+          },
+          "answer": "A",
+          "skill": "Noun collocation",
+          "explanationVi": "Cụm cố định <b>the front cover of a magazine</b> nghĩa là “bìa trước của một tạp chí”. Vì vậy cần danh từ <b>cover</b>.",
+          "explanation": "The fixed phrase is <b>the front cover of a magazine</b>, so the noun <b>cover</b> is correct."
+        },
+        {
+          "id": "q109",
+          "no": 109,
+          "part": 5,
+          "stem": "Handi Office Supplies’ new desk organizers serve ------- practical and stylish additions to any office workstation.",
+          "options": {
+            "A": "of",
+            "B": "as",
+            "C": "out",
+            "D": "until"
+          },
+          "answer": "B",
+          "skill": "Verb + preposition",
+          "explanationVi": "Cấu trúc <b>serve as + noun</b> nghĩa là “đóng vai trò/làm như”. Các hộp sắp xếp bàn làm việc đóng vai trò là những vật bổ sung thiết thực và đẹp mắt.",
+          "explanation": "The structure <b>serve as + noun</b> means “function as.” Therefore, <b>as</b> is correct."
+        },
+        {
+          "id": "q110",
+          "no": 110,
+          "part": 5,
+          "stem": "The efficient redesign of the airline terminal led to ------- flight delays.",
+          "options": {
+            "A": "friendlier",
+            "B": "accurate",
+            "C": "previous",
+            "D": "fewer"
+          },
+          "answer": "D",
+          "skill": "Comparative adjective",
+          "explanationVi": "<b>Flight delays</b> là danh từ đếm được số nhiều, nên dạng so sánh chỉ số lượng giảm là <b>fewer</b>. Thiết kế hiệu quả dẫn đến ít chuyến bay bị trễ hơn.",
+          "explanation": "Because <b>flight delays</b> is a plural count noun, <b>fewer</b> is the correct comparative quantifier."
+        },
+        {
+          "id": "q111",
+          "no": 111,
+          "part": 5,
+          "stem": "Mr. Ogbu’s editor appreciated his ability to approach the subject matter -------.",
+          "options": {
+            "A": "objects",
+            "B": "objectivity",
+            "C": "objectively",
+            "D": "objected"
+          },
+          "answer": "C",
+          "skill": "Word form: Adverb",
+          "explanationVi": "Động từ <b>approach</b> cần trạng từ bổ nghĩa cách thực hiện hành động. <b>objectively</b> nghĩa là “một cách khách quan”.",
+          "explanation": "The verb <b>approach</b> is modified by the adverb <b>objectively</b>."
+        },
+        {
+          "id": "q112",
+          "no": 112,
+          "part": 5,
+          "stem": "Mr. Nakayama was named Employee of the Year, ------- being new to the company.",
+          "options": {
+            "A": "despite",
+            "B": "unless",
+            "C": "prior to",
+            "D": "whether"
+          },
+          "answer": "A",
+          "skill": "Preposition of concession",
+          "explanationVi": "<b>Despite + V-ing</b> diễn tả sự tương phản: dù mới vào công ty, ông Nakayama vẫn được chọn là Nhân viên của năm.",
+          "explanation": "<b>Despite</b> is followed by a gerund phrase and expresses concession: he received the award even though he was new."
+        },
+        {
+          "id": "q113",
+          "no": 113,
+          "part": 5,
+          "stem": "For the ------- selection of premium paints and art-making supplies anywhere, visit your nearest Painters’ Best store.",
+          "options": {
+            "A": "widen",
+            "B": "widening",
+            "C": "widest",
+            "D": "widely"
+          },
+          "answer": "C",
+          "skill": "Superlative adjective",
+          "explanationVi": "Sau mạo từ <b>the</b> và trước danh từ <b>selection</b> cần tính từ bậc nhất. <b>the widest selection</b> nghĩa là “sự lựa chọn đa dạng/rộng nhất”.",
+          "explanation": "The article <b>the</b> and the word <b>anywhere</b> call for the superlative adjective <b>widest</b>."
+        },
+        {
+          "id": "q114",
+          "no": 114,
+          "part": 5,
+          "stem": "The Stallmain Corporation’s latest survey was intended to ------- employee satisfaction in several key categories.",
+          "options": {
+            "A": "overcome",
+            "B": "prolong",
+            "C": "deserve",
+            "D": "determine"
+          },
+          "answer": "D",
+          "skill": "Infinitive / Vocabulary",
+          "explanationVi": "Sau <b>was intended to</b> cần động từ nguyên mẫu. Một cuộc khảo sát được dùng để <b>determine</b> (xác định) mức độ hài lòng của nhân viên.",
+          "explanation": "After <b>was intended to</b>, a base-form verb is required. <b>Determine</b> best describes the purpose of a survey."
+        },
+        {
+          "id": "q115",
+          "no": 115,
+          "part": 5,
+          "stem": "Garza’s Restaurant is ------- decorated with paintings and photographs of southern Mexico.",
+          "options": {
+            "A": "elaborately",
+            "B": "elaborating",
+            "C": "elaborates",
+            "D": "elaboration"
+          },
+          "answer": "A",
+          "skill": "Word form: Adverb",
+          "explanationVi": "Dạng bị động <b>is decorated</b> cần trạng từ bổ nghĩa. <b>elaborately</b> nghĩa là “một cách công phu”.",
+          "explanation": "The past participle <b>decorated</b> is modified by the adverb <b>elaborately</b>."
+        },
+        {
+          "id": "q116",
+          "no": 116,
+          "part": 5,
+          "stem": "Mr. Brighton’s first ------- at Glynn Engineering was in the materials testing group.",
+          "options": {
+            "A": "assign",
+            "B": "assigned",
+            "C": "assigning",
+            "D": "assignment"
+          },
+          "answer": "D",
+          "skill": "Word form: Noun",
+          "explanationVi": "Sau tính từ sở hữu <b>Mr. Brighton’s</b> và tính từ <b>first</b> cần danh từ. <b>assignment</b> nghĩa là “nhiệm vụ/vị trí công tác”.",
+          "explanation": "A noun is required after the possessive phrase and <b>first</b>. <b>Assignment</b> is the correct noun form."
+        },
+        {
+          "id": "q117",
+          "no": 117,
+          "part": 5,
+          "stem": "The installation of new benches throughout Haverford Park will cost ------- €5,000.",
+          "options": {
+            "A": "briefly",
+            "B": "roughly",
+            "C": "correctly",
+            "D": "generously"
+          },
+          "answer": "B",
+          "skill": "Adverb of approximation",
+          "explanationVi": "<b>Roughly</b> đứng trước số tiền để diễn tả giá trị xấp xỉ, nghĩa là “khoảng”.",
+          "explanation": "<b>Roughly</b> appropriately modifies the amount and means “approximately.”"
+        },
+        {
+          "id": "q118",
+          "no": 118,
+          "part": 5,
+          "stem": "------- who is unable to attend the quarterly stakeholder meeting is welcome to appoint a representative.",
+          "options": {
+            "A": "Such",
+            "B": "Whichever",
+            "C": "Anyone",
+            "D": "Those"
+          },
+          "answer": "C",
+          "skill": "Indefinite pronoun",
+          "explanationVi": "<b>Anyone who ... is</b> là cấu trúc đúng: <b>Anyone</b> chỉ bất kỳ người nào và đi với động từ số ít <b>is</b>.",
+          "explanation": "<b>Anyone</b> correctly refers to any person and agrees with the singular verb <b>is</b>."
+        },
+        {
+          "id": "q119",
+          "no": 119,
+          "part": 5,
+          "stem": "Singer Maria Stanley ------- today that she is scheduling a world tour.",
+          "options": {
+            "A": "reveal",
+            "B": "revealed",
+            "C": "to reveal",
+            "D": "revealing"
+          },
+          "answer": "B",
+          "skill": "Simple past",
+          "explanationVi": "Câu cần một động từ chính đã chia. <b>revealed</b> ở quá khứ đơn diễn tả thông báo đã được đưa ra trong ngày hôm nay.",
+          "explanation": "The sentence needs a finite main verb. The simple past <b>revealed</b> correctly describes the announcement."
+        },
+        {
+          "id": "q120",
+          "no": 120,
+          "part": 5,
+          "stem": "Biographer Amber Bowen has been recognized for her distinctive writing -------.",
+          "options": {
+            "A": "styleless",
+            "B": "styled",
+            "C": "stylish",
+            "D": "style"
+          },
+          "answer": "D",
+          "skill": "Noun collocation",
+          "explanationVi": "Sau tính từ <b>distinctive</b> cần danh từ. Cụm <b>distinctive writing style</b> nghĩa là “phong cách viết đặc trưng”.",
+          "explanation": "The noun <b>style</b> completes the natural phrase <b>distinctive writing style</b>."
+        },
+        {
+          "id": "q121",
+          "no": 121,
+          "part": 5,
+          "stem": "The award-winning stationery created by the artists at Paperi Designs is of ------- quality.",
+          "options": {
+            "A": "comfortable",
+            "B": "exceptional",
+            "C": "hospitable",
+            "D": "ambitious"
+          },
+          "answer": "B",
+          "skill": "Vocabulary / Collocation",
+          "explanationVi": "Cụm <b>of exceptional quality</b> nghĩa là “có chất lượng xuất sắc”, phù hợp với sản phẩm từng đoạt giải.",
+          "explanation": "<b>Exceptional quality</b> is the natural phrase and matches the description <b>award-winning</b>."
+        },
+        {
+          "id": "q122",
+          "no": 122,
+          "part": 5,
+          "stem": "During the past quarter, ------- all of Renafy Technology’s sales came from one region.",
+          "options": {
+            "A": "between",
+            "B": "nearly",
+            "C": "somewhat",
+            "D": "next to"
+          },
+          "answer": "B",
+          "skill": "Quantifier / Adverb",
+          "explanationVi": "<b>Nearly all</b> nghĩa là “gần như tất cả”. Đây là cụm đúng để bổ nghĩa cho tổng lượng doanh số.",
+          "explanation": "The fixed quantifying phrase <b>nearly all</b> means “almost all.”"
+        },
+        {
+          "id": "q123",
+          "no": 123,
+          "part": 5,
+          "stem": "Commercial property insurance covers the ------- associated with repairing or rebuilding a business property after certain events.",
+          "options": {
+            "A": "expenses",
+            "B": "symptoms",
+            "C": "challenges",
+            "D": "opportunities"
+          },
+          "answer": "A",
+          "skill": "Vocabulary",
+          "explanationVi": "Bảo hiểm tài sản thương mại chi trả các <b>expenses</b> (chi phí) liên quan đến việc sửa chữa hoặc xây dựng lại tài sản.",
+          "explanation": "Insurance covers <b>expenses</b>, meaning the costs associated with repairs or rebuilding."
+        },
+        {
+          "id": "q124",
+          "no": 124,
+          "part": 5,
+          "stem": "The first-aid class usually fills up quickly, so prompt ------- is recommended.",
+          "options": {
+            "A": "registration",
+            "B": "detection",
+            "C": "information",
+            "D": "certification"
+          },
+          "answer": "A",
+          "skill": "Noun choice",
+          "explanationVi": "Vì lớp thường hết chỗ nhanh nên nên <b>registration</b> sớm. Cụm <b>prompt registration</b> nghĩa là “đăng ký nhanh chóng/sớm”.",
+          "explanation": "Because the class fills quickly, <b>prompt registration</b> is logically recommended."
+        },
+        {
+          "id": "q125",
+          "no": 125,
+          "part": 5,
+          "stem": "Manufacturing all its products in-house allows Long Bridge Steel Corp. to ------- every aspect of the production process.",
+          "options": {
+            "A": "expect",
+            "B": "impress",
+            "C": "remain",
+            "D": "control"
+          },
+          "answer": "D",
+          "skill": "Vocabulary",
+          "explanationVi": "Sản xuất nội bộ giúp công ty <b>control</b> (kiểm soát) mọi khía cạnh của quy trình sản xuất.",
+          "explanation": "In-house manufacturing allows a company to <b>control</b> every aspect of production."
+        },
+        {
+          "id": "q126",
+          "no": 126,
+          "part": 5,
+          "stem": "------- its use on home-cooking shows, consumer demand for Silvershine Cookware has doubled.",
+          "options": {
+            "A": "Moreover",
+            "B": "For example",
+            "C": "Even though",
+            "D": "Because of"
+          },
+          "answer": "D",
+          "skill": "Prepositional phrase: Cause",
+          "explanationVi": "Sau chỗ trống là cụm danh từ <b>its use on home-cooking shows</b>. <b>Because of + noun phrase</b> diễn tả nguyên nhân khiến nhu cầu tăng gấp đôi.",
+          "explanation": "<b>Because of</b> is followed by a noun phrase and correctly introduces the cause of the increased demand."
+        },
+        {
+          "id": "q127",
+          "no": 127,
+          "part": 5,
+          "stem": "Artists at Cavin Graphics work ------- with clients through all stages of the design process to ensure satisfaction.",
+          "options": {
+            "A": "collaborative",
+            "B": "collaboratively",
+            "C": "collaborates",
+            "D": "collaborators"
+          },
+          "answer": "B",
+          "skill": "Word form: Adverb",
+          "explanationVi": "Động từ <b>work</b> cần trạng từ bổ nghĩa. <b>collaboratively</b> nghĩa là “mang tính hợp tác/cùng nhau”.",
+          "explanation": "The adverb <b>collaboratively</b> correctly modifies the verb <b>work</b>."
+        },
+        {
+          "id": "q128",
+          "no": 128,
+          "part": 5,
+          "stem": "Brile Construction’s contract for the mall development project has finally been ------- by the city supervisor.",
+          "options": {
+            "A": "verifying",
+            "B": "verifiably",
+            "C": "verified",
+            "D": "verification"
+          },
+          "answer": "C",
+          "skill": "Present perfect passive",
+          "explanationVi": "Cấu trúc <b>has been + V3</b> là hiện tại hoàn thành bị động. Vì vậy cần quá khứ phân từ <b>verified</b>.",
+          "explanation": "The present perfect passive pattern is <b>has been + past participle</b>, so <b>verified</b> is correct."
+        },
+        {
+          "id": "q129",
+          "no": 129,
+          "part": 5,
+          "stem": "------- 4,000 Urivac trash removal systems are in use in the eastern region.",
+          "options": {
+            "A": "Always",
+            "B": "Quite",
+            "C": "Almost",
+            "D": "Closely"
+          },
+          "answer": "C",
+          "skill": "Approximation",
+          "explanationVi": "<b>Almost 4,000</b> nghĩa là “gần 4.000”, là cách diễn đạt tự nhiên trước một con số.",
+          "explanation": "<b>Almost</b> appropriately expresses an approximate number just under 4,000."
+        },
+        {
+          "id": "q130",
+          "no": 130,
+          "part": 5,
+          "stem": "The conference schedule will be posted online ------- mailed to attendees.",
+          "options": {
+            "A": "in order that",
+            "B": "as soon as",
+            "C": "in case",
+            "D": "rather than"
+          },
+          "answer": "D",
+          "skill": "Contrast / Preference",
+          "explanationVi": "<b>Rather than</b> nối hai hình thức song song <b>posted online</b> và <b>mailed</b>, cho biết lịch sẽ được đăng trực tuyến thay vì gửi qua bưu điện.",
+          "explanation": "<b>Rather than</b> correctly contrasts the two parallel passive actions: posted online instead of mailed."
+        },
+        {
+          "id": "q131",
+          "no": 131,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following notice.",
+          "options": {
+            "A": "furniture",
+            "B": "exhibition",
+            "C": "equipment",
+            "D": "application"
+          },
+          "answer": "C",
+          "skill": "Noun reference",
+          "explanationVi": "<b>This equipment</b> chỉ các giá chở xe đạp gắn bên ngoài xe buýt vừa được nhắc đến. <b>Equipment</b> là danh từ không đếm được phù hợp.",
+          "explanation": "<b>This equipment</b> correctly refers to the exterior bicycle racks just mentioned.",
+          "passageIndex": 0
+        },
+        {
+          "id": "q132",
+          "no": 132,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following notice.",
+          "options": {
+            "A": "No additional fee will be charged for bringing a bicycle.",
+            "B": "Always make sure to exit at the correct bus stop.",
+            "C": "Special lanes for bicycles are now found on most highways.",
+            "D": "Some passengers qualify for reduced bus fare."
+          },
+          "answer": "A",
+          "skill": "Sentence insertion",
+          "explanationVi": "Đoạn văn giới thiệu chương trình chở xe đạp trên xe buýt và sau đó gọi đây là chương trình <b>complimentary</b>. Câu “<b>No additional fee will be charged for bringing a bicycle.</b>” bổ sung đúng thông tin chương trình miễn phí.",
+          "explanation": "The sentence about no additional fee directly supports the later description of the program as <b>complimentary</b>.",
+          "passageIndex": 0
+        },
+        {
+          "id": "q133",
+          "no": 133,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following notice.",
+          "options": {
+            "A": "efficient",
+            "B": "common",
+            "C": "flexible",
+            "D": "permitted"
+          },
+          "answer": "D",
+          "skill": "Passive adjective",
+          "explanationVi": "Sau <b>are not</b> cần tính từ/quá khứ phân từ. <b>are not permitted</b> nghĩa là “không được phép”, phù hợp với quy định về xe đạp điện.",
+          "explanation": "The passive phrase <b>are not permitted</b> correctly states that electric bicycles are not allowed.",
+          "passageIndex": 0
+        },
+        {
+          "id": "q134",
+          "no": 134,
+          "part": 6,
+          "stem": "Questions 131-134 refer to the following notice.",
+          "options": {
+            "A": "were",
+            "B": "can be",
+            "C": "had to be",
+            "D": "will have been"
+          },
+          "answer": "B",
+          "skill": "Modal passive",
+          "explanationVi": "Mệnh đề quan hệ cần diễn tả các đường mòn <b>có thể được tiếp cận</b> từ tuyến xe buýt. Cấu trúc đúng là <b>can be + V3</b>: <b>can be accessed</b>.",
+          "explanation": "The modal passive <b>can be accessed</b> expresses present possibility and fits the relative clause.",
+          "passageIndex": 0
+        },
+        {
+          "id": "q135",
+          "no": 135,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following article.",
+          "options": {
+            "A": "exported",
+            "B": "changed",
+            "C": "considered",
+            "D": "implemented"
+          },
+          "answer": "D",
+          "skill": "Vocabulary / Past tense",
+          "explanationVi": "Công ty gần đây đã <b>implemented</b> (triển khai) một chương trình đào tạo mới. Đây là động từ phù hợp nhất với <b>an innovative training program</b>.",
+          "explanation": "A company <b>implements</b> a program, meaning it puts the program into operation.",
+          "passageIndex": 1
+        },
+        {
+          "id": "q136",
+          "no": 136,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following article.",
+          "options": {
+            "A": "each",
+            "B": "either",
+            "C": "theirs",
+            "D": "another"
+          },
+          "answer": "A",
+          "skill": "Pronoun + of",
+          "explanationVi": "Cấu trúc <b>each of which</b> dùng khi nói từng phòng trong tổng số bốn phòng; động từ số ít <b>is designed</b> cũng phù hợp với <b>each</b>.",
+          "explanation": "<b>Each of which</b> correctly refers to every one of the four rooms and agrees with <b>is designed</b>.",
+          "passageIndex": 1
+        },
+        {
+          "id": "q137",
+          "no": 137,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following article.",
+          "options": {
+            "A": "Constructing an escape room is surprisingly expensive.",
+            "B": "Poor training can be a problem in manufacturing operations.",
+            "C": "The course must be completed within a half hour.",
+            "D": "The company produces electronics and major home appliances."
+          },
+          "answer": "C",
+          "skill": "Sentence insertion",
+          "explanationVi": "Các câu trước mô tả nhân viên phải giải bài toán và thoát qua các phòng. Câu “<b>The course must be completed within a half hour.</b>” bổ sung quy định thời gian trực tiếp cho hoạt động đào tạo này.",
+          "explanation": "The sentence about completing the course within half an hour adds a relevant operational detail to the escape-room training activity.",
+          "passageIndex": 1
+        },
+        {
+          "id": "q138",
+          "no": 138,
+          "part": 6,
+          "stem": "Questions 135-138 refer to the following article.",
+          "options": {
+            "A": "as well",
+            "B": "again",
+            "C": "after all",
+            "D": "at that time"
+          },
+          "answer": "A",
+          "skill": "Additive adverb phrase",
+          "explanationVi": "Cơ sở đầu tiên nằm ở châu Âu; công ty còn dự định lắp phòng thoát hiểm tại các cơ sở ngoài châu Âu <b>as well</b> (cũng vậy).",
+          "explanation": "<b>As well</b> means “also” and shows that facilities outside Europe will receive escape rooms too.",
+          "passageIndex": 1
+        },
+        {
+          "id": "q139",
+          "no": 139,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "carry out",
+            "B": "communicate",
+            "C": "bring up",
+            "D": "label"
+          },
+          "answer": "A",
+          "skill": "Phrasal verb",
+          "explanationVi": "Cụm <b>carry out repairs</b> nghĩa là “tiến hành sửa chữa”. Sau <b>in order to</b> dùng động từ nguyên mẫu <b>carry out</b>.",
+          "explanation": "The phrasal verb <b>carry out</b> naturally collocates with <b>repairs</b> and means “perform.”",
+          "passageIndex": 2
+        },
+        {
+          "id": "q140",
+          "no": 140,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "Clients will comment on the uneven pavement in the parking area.",
+            "B": "We are located along the bus 11 and bus 27 routes.",
+            "C": "It will be closed from Tuesday morning through Friday.",
+            "D": "The group recently welcomed several new dentists and hygienists."
+          },
+          "answer": "C",
+          "skill": "Sentence insertion",
+          "explanationVi": "Câu trước thông báo bãi đỗ xe sẽ đóng vào tuần tới, còn câu sau bắt đầu bằng <b>During this time</b>. Vì vậy câu nêu thời gian đóng từ sáng thứ Ba đến thứ Sáu là mạch lạc nhất.",
+          "explanation": "The sentence gives the exact closure period, providing the time reference for <b>During this time</b> in the next sentence.",
+          "passageIndex": 2
+        },
+        {
+          "id": "q141",
+          "no": 141,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "to lead",
+            "B": "leads",
+            "C": "leader",
+            "D": "was leading"
+          },
+          "answer": "B",
+          "skill": "Relative clause / Subject-verb agreement",
+          "explanationVi": "Trong mệnh đề quan hệ <b>that ------- around...</b>, chủ ngữ <b>that</b> thay cho danh từ số ít <b>a walkway</b>, nên dùng hiện tại đơn <b>leads</b>.",
+          "explanation": "The relative pronoun <b>that</b> refers to the singular noun <b>a walkway</b>, so the simple present form <b>leads</b> is required.",
+          "passageIndex": 2
+        },
+        {
+          "id": "q142",
+          "no": 142,
+          "part": 6,
+          "stem": "Questions 139-142 refer to the following e-mail.",
+          "options": {
+            "A": "inconvenience",
+            "B": "addition",
+            "C": "error",
+            "D": "damage"
+          },
+          "answer": "A",
+          "skill": "Noun collocation",
+          "explanationVi": "Cụm lịch sự cố định <b>apologize for the inconvenience</b> nghĩa là “xin lỗi vì sự bất tiện”.",
+          "explanation": "The standard expression is <b>apologize for the inconvenience</b>.",
+          "passageIndex": 2
+        },
+        {
+          "id": "q143",
+          "no": 143,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following notice.",
+          "options": {
+            "A": "As a result",
+            "B": "Instead",
+            "C": "Nevertheless",
+            "D": "If so"
+          },
+          "answer": "A",
+          "skill": "Transition: Result",
+          "explanationVi": "Việc giảm nhân sự phòng thư dẫn đến thay đổi quy trình giao thư. <b>As a result</b> diễn tả đúng quan hệ nguyên nhân–kết quả.",
+          "explanation": "<b>As a result</b> correctly links the staffing reduction to the new mail-delivery procedure.",
+          "passageIndex": 3
+        },
+        {
+          "id": "q144",
+          "no": 144,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following notice.",
+          "options": {
+            "A": "designated",
+            "B": "would have designated",
+            "C": "should designate",
+            "D": "was to designate"
+          },
+          "answer": "C",
+          "skill": "Modal verb / Recommendation",
+          "explanationVi": "Thông báo nêu trách nhiệm mới cho mỗi phòng ban. <b>should designate</b> nghĩa là “nên/chịu trách nhiệm chỉ định” một nhân viên và phù hợp với hướng dẫn tiếp theo.",
+          "explanation": "<b>Should designate</b> appropriately expresses the action each department is expected to take.",
+          "passageIndex": 3
+        },
+        {
+          "id": "q145",
+          "no": 145,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following notice.",
+          "options": {
+            "A": "since",
+            "B": "that",
+            "C": "such as",
+            "D": "whoever"
+          },
+          "answer": "B",
+          "skill": "That-clause after recommendation",
+          "explanationVi": "Sau cấu trúc <b>It is strongly recommended</b> dùng mệnh đề <b>that + subject + base verb</b>. Vì vậy <b>that employees contact</b> là đúng.",
+          "explanation": "The recommendation pattern is <b>It is recommended that + subject + base verb</b>, so <b>that</b> is correct.",
+          "passageIndex": 3
+        },
+        {
+          "id": "q146",
+          "no": 146,
+          "part": 6,
+          "stem": "Questions 143-146 refer to the following notice.",
+          "options": {
+            "A": "Doing so will help streamline mail distribution.",
+            "B": "Mail is sometimes damaged while in transit.",
+            "C": "The mail room can hold no more than four employees at one time.",
+            "D": "Direct mail marketing can be an effective way to sell products."
+          },
+          "answer": "A",
+          "skill": "Sentence insertion",
+          "explanationVi": "<b>Doing so</b> chỉ hành động liên hệ người gửi để xóa tên khỏi danh sách thư không mong muốn. Hành động này giúp giảm lượng thư, làm việc phân phối thư hiệu quả hơn và cũng giảm rác thải như câu sau nêu.",
+          "explanation": "<b>Doing so</b> refers to contacting senders and leaving unwanted mailing lists; this would streamline distribution and reduce waste.",
+          "passageIndex": 3
+        }
+      ],
+      "passages": [
+        {
+          "title": "Questions 131-134 refer to the following notice.",
+          "label": "Notice",
+          "html": "<p><strong>Bicycles on Buses Program</strong></p><p>All Travelbee buses are now outfitted with exterior bicycle racks. This <span class=\"blank\">131</span> has been installed to encourage our passengers to incorporate bicycle riding into their lives for transportation, exercise, and pleasure. <span class=\"blank sentence\">132</span> Please note, however, that electric bicycles are not <span class=\"blank\">133</span>. For more information on our complimentary Bicycles on Buses program, please visit www.travelbee.com/bicyclesonbuses. There you can also learn about great bicycle trails that <span class=\"blank\">134</span> accessed from our bus routes.</p>",
+          "questions": [
+            {
+              "id": "q131",
+              "no": 131,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following notice.",
+              "options": {
+                "A": "furniture",
+                "B": "exhibition",
+                "C": "equipment",
+                "D": "application"
+              },
+              "answer": "C",
+              "passageIndex": 0
+            },
+            {
+              "id": "q132",
+              "no": 132,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following notice.",
+              "options": {
+                "A": "No additional fee will be charged for bringing a bicycle.",
+                "B": "Always make sure to exit at the correct bus stop.",
+                "C": "Special lanes for bicycles are now found on most highways.",
+                "D": "Some passengers qualify for reduced bus fare."
+              },
+              "answer": "A",
+              "passageIndex": 0
+            },
+            {
+              "id": "q133",
+              "no": 133,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following notice.",
+              "options": {
+                "A": "efficient",
+                "B": "common",
+                "C": "flexible",
+                "D": "permitted"
+              },
+              "answer": "D",
+              "passageIndex": 0
+            },
+            {
+              "id": "q134",
+              "no": 134,
+              "part": 6,
+              "stem": "Questions 131-134 refer to the following notice.",
+              "options": {
+                "A": "were",
+                "B": "can be",
+                "C": "had to be",
+                "D": "will have been"
+              },
+              "answer": "B",
+              "passageIndex": 0
+            }
+          ]
+        },
+        {
+          "title": "Questions 135-138 refer to the following article.",
+          "label": "Article",
+          "html": "<p><strong>Corporate Training News</strong></p><p>Multinational appliance manufacturer Crystal Technologies recently <span class=\"blank\">135</span> an innovative training program for workers. The program uses what are called “escape rooms” to build teamwork and creative problem-solving skills. A special facility has been built for this purpose within the company’s headquarters in Inverness, Scotland. The facility consists of four rooms, <span class=\"blank\">136</span> of which is designed to represent a different geographic area that is part of Crystal’s global operations. Working in teams of five, employees must solve a business problem particular to that area to be able to unlock the door and enter the next room. <span class=\"blank sentence\">137</span> Crystal plans to install escape rooms in its main production facilities outside of Europe <span class=\"blank\">138</span>.</p>",
+          "questions": [
+            {
+              "id": "q135",
+              "no": 135,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following article.",
+              "options": {
+                "A": "exported",
+                "B": "changed",
+                "C": "considered",
+                "D": "implemented"
+              },
+              "answer": "D",
+              "passageIndex": 1
+            },
+            {
+              "id": "q136",
+              "no": 136,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following article.",
+              "options": {
+                "A": "each",
+                "B": "either",
+                "C": "theirs",
+                "D": "another"
+              },
+              "answer": "A",
+              "passageIndex": 1
+            },
+            {
+              "id": "q137",
+              "no": 137,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following article.",
+              "options": {
+                "A": "Constructing an escape room is surprisingly expensive.",
+                "B": "Poor training can be a problem in manufacturing operations.",
+                "C": "The course must be completed within a half hour.",
+                "D": "The company produces electronics and major home appliances."
+              },
+              "answer": "C",
+              "passageIndex": 1
+            },
+            {
+              "id": "q138",
+              "no": 138,
+              "part": 6,
+              "stem": "Questions 135-138 refer to the following article.",
+              "options": {
+                "A": "as well",
+                "B": "again",
+                "C": "after all",
+                "D": "at that time"
+              },
+              "answer": "A",
+              "passageIndex": 1
+            }
+          ]
+        },
+        {
+          "title": "Questions 139-142 refer to the following e-mail.",
+          "label": "E-mail",
+          "html": "<p>To: allclients@yardleyriverdentalgroup.com<br>From: tliu@yardleyriverdentalgroup.com<br>Date: 7 January<br>Subject: Parking area</p><p>Dear Clients,</p><p>Yardley River Dental Group will be closing our client parking area next week in order to <span class=\"blank\">139</span> some needed repairs. <span class=\"blank sentence\">140</span> During this time, we request that you park your vehicles in the staff parking area, which is to the left of your usual area. (Staff members will park at a specially arranged off-site location while the repairs are being conducted.) From the staff parking area, you will find a walkway that <span class=\"blank\">141</span> around the side of the building to our front entrance. We apologize for the <span class=\"blank\">142</span> and thank you for your patience.</p><p>Tina Liu, Office Manager</p>",
+          "questions": [
+            {
+              "id": "q139",
+              "no": 139,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "carry out",
+                "B": "communicate",
+                "C": "bring up",
+                "D": "label"
+              },
+              "answer": "A",
+              "passageIndex": 2
+            },
+            {
+              "id": "q140",
+              "no": 140,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "Clients will comment on the uneven pavement in the parking area.",
+                "B": "We are located along the bus 11 and bus 27 routes.",
+                "C": "It will be closed from Tuesday morning through Friday.",
+                "D": "The group recently welcomed several new dentists and hygienists."
+              },
+              "answer": "C",
+              "passageIndex": 2
+            },
+            {
+              "id": "q141",
+              "no": 141,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "to lead",
+                "B": "leads",
+                "C": "leader",
+                "D": "was leading"
+              },
+              "answer": "B",
+              "passageIndex": 2
+            },
+            {
+              "id": "q142",
+              "no": 142,
+              "part": 6,
+              "stem": "Questions 139-142 refer to the following e-mail.",
+              "options": {
+                "A": "inconvenience",
+                "B": "addition",
+                "C": "error",
+                "D": "damage"
+              },
+              "answer": "A",
+              "passageIndex": 2
+            }
+          ]
+        },
+        {
+          "title": "Questions 143-146 refer to the following notice.",
+          "label": "Notice",
+          "html": "<p><strong>Attention: All Randall-Humboldt Employees</strong></p><p>Randall-Humboldt recently experienced a reduction in mail-room staffing. <span class=\"blank\">143</span>, starting on October 7, mail will no longer be delivered to employees’ desks. Departments will be responsible for picking up and distributing their own mail. Each department <span class=\"blank\">144</span> one employee to handle mail duties. It is up to the department head to determine how best to assign this responsibility. Mail will be available for pickup by 10:00 A.M. each morning.</p><p>It is strongly recommended <span class=\"blank\">145</span> employees contact senders of unwanted or junk mail and ask to be removed from those mailing lists. <span class=\"blank sentence\">146</span> It will also benefit the environment by reducing waste.</p>",
+          "questions": [
+            {
+              "id": "q143",
+              "no": 143,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following notice.",
+              "options": {
+                "A": "As a result",
+                "B": "Instead",
+                "C": "Nevertheless",
+                "D": "If so"
+              },
+              "answer": "A",
+              "passageIndex": 3
+            },
+            {
+              "id": "q144",
+              "no": 144,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following notice.",
+              "options": {
+                "A": "designated",
+                "B": "would have designated",
+                "C": "should designate",
+                "D": "was to designate"
+              },
+              "answer": "C",
+              "passageIndex": 3
+            },
+            {
+              "id": "q145",
+              "no": 145,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following notice.",
+              "options": {
+                "A": "since",
+                "B": "that",
+                "C": "such as",
+                "D": "whoever"
+              },
+              "answer": "B",
+              "passageIndex": 3
+            },
+            {
+              "id": "q146",
+              "no": 146,
+              "part": 6,
+              "stem": "Questions 143-146 refer to the following notice.",
+              "options": {
+                "A": "Doing so will help streamline mail distribution.",
+                "B": "Mail is sometimes damaged while in transit.",
+                "C": "The mail room can hold no more than four employees at one time.",
+                "D": "Direct mail marketing can be an effective way to sell products."
+              },
+              "answer": "A",
+              "passageIndex": 3
+            }
+          ]
+        }
+      ],
+      "practice": true,
+      "testNo": 6,
+      "selectorLabel": "Test 6"
+    }
+  ]
+}
