@@ -26,6 +26,29 @@ h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size
 .loading-screen{min-height:100vh;display:grid;place-items:center;background:#eef4ff;color:#1d4ed8;font-size:24px;font-weight:700}.auth-pending .loading-screen{display:grid}body:not(.auth-pending) .loading-screen{display:none}@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:980px){.slide{padding:44px 28px 130px}.passage-layout{grid-template-columns:1fr}.page-picker-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.test-picker-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.student-chip{position:static;margin:14px 16px 0;width:fit-content;max-width:calc(100vw - 32px)}.top-actions{top:14px;right:14px}}
 @media(max-width:768px){.slide{padding:36px 24px 130px}h1{font-size:34px}h2{font-size:31px}p,.option,.explain,.passage-box{font-size:19px}.question{font-size:24px}.check-btn{padding:11px 16px;font-size:13px}.nav-btn{padding:9px 13px;font-size:13px}.progress,.test-select-btn{font-size:13px}.page-picker-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.test-picker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.passage-box{padding:20px}.score-pill{font-size:17px}}
+
+
+/* ===== TIMER + PER-TEST LOCK + RESULT STATS ===== */
+.elapsed-timer{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:8px 14px;border:2px solid #bbf7d0;border-radius:999px;background:rgba(255,255,255,.94);color:#166534;font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;box-shadow:0 6px 14px rgba(15,23,42,.08);white-space:nowrap}
+.elapsed-timer .timer-icon{font-size:16px;line-height:1}
+.test-jump-btn:disabled{cursor:not-allowed;opacity:.48;filter:grayscale(.65);transform:none!important}
+.test-jump-btn .test-state{display:block;margin-top:7px;font-size:11px;font-weight:700;letter-spacing:.03em}
+.test-jump-btn .test-state.locked{color:#be123c}.test-jump-btn .test-state.open{color:#15803d}.test-jump-btn.active .test-state{color:inherit}
+.exam-lock-header-wrap{position:relative;flex:0 0 auto}
+.exam-lock-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;border:2px solid #c7d2fe;border-radius:999px;background:rgba(255,255,255,.94);color:#3730a3;padding:8px 13px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 14px rgba(15,23,42,.08);white-space:nowrap}
+.exam-lock-toggle:hover{background:#e0e7ff;border-color:#818cf8}.exam-lock-toggle[aria-expanded="true"]{background:#4338ca;border-color:#4338ca;color:#fff}
+.exam-lock-admin{position:absolute;top:calc(100% + 12px);right:0;width:min(360px,calc(100vw - 28px));padding:14px;border:2px solid #c7d2fe;border-radius:20px;background:#fff;box-shadow:0 24px 70px rgba(15,23,42,.28);z-index:340}
+.exam-lock-admin[hidden]{display:none!important}.exam-lock-admin-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.exam-lock-admin-head b{font-size:15px;color:#1e1b4b}
+.exam-lock-badge{display:inline-flex;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:700}.exam-lock-badge.locked{background:#fee2e2;color:#991b1b}.exam-lock-badge.unlocked{background:#dcfce7;color:#166534}
+.exam-lock-target{width:100%;margin-bottom:9px;border:2px solid #c7d2fe;border-radius:13px;background:#fff;color:#1e1b4b;padding:10px 11px;font:inherit;font-size:13px;font-weight:700;outline:none}.exam-lock-target:focus{border-color:#4f46e5;box-shadow:0 0 0 3px rgba(79,70,229,.13)}
+.exam-lock-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.exam-lock-btn{border:0;border-radius:13px;padding:10px 8px;font-size:13px;font-weight:700;cursor:pointer}.exam-lock-btn:disabled{cursor:not-allowed;opacity:.45}.exam-lock-btn.lock{background:#e11d48;color:#fff}.exam-lock-btn.unlock{background:#16a34a;color:#fff}.exam-lock-status{min-height:18px;margin-top:8px;color:#475569;font-size:12px;line-height:1.45;font-weight:700}.exam-lock-status.ok{color:#166534}.exam-lock-status.err{color:#be123c}
+.result-dashboard{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.result-stat{border:2px solid #dbeafe;border-radius:18px;background:#fff;padding:15px;text-align:center}.result-stat b{display:block;font-size:27px;color:#1d4ed8}.result-stat span{display:block;margin-top:4px;font-size:13px;color:#64748b;font-weight:700}.result-stat.good{border-color:#bbf7d0;background:#f0fdf4}.result-stat.good b{color:#15803d}.result-stat.bad{border-color:#fecdd3;background:#fff1f2}.result-stat.bad b{color:#be123c}
+.part-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.part-stat{border:2px solid #bfdbfe;border-radius:18px;background:#eff6ff;padding:16px}.part-stat h3{font-size:19px;margin-bottom:5px;color:#1d4ed8}.part-stat p{font-size:18px;margin:0;color:#334155}
+.toeic-estimate{margin-top:18px;border:2px solid #c7d2fe;border-radius:20px;background:linear-gradient(135deg,#eef2ff,#f8fafc);padding:20px}.toeic-estimate h3{margin-bottom:12px;color:#3730a3}.toeic-score-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.toeic-score{border:2px solid #c7d2fe;border-radius:17px;background:#fff;padding:15px;text-align:center}.toeic-score b{display:block;font-size:30px;color:#4338ca}.toeic-score span{display:block;margin-top:4px;font-size:13px;color:#64748b;font-weight:700}.toeic-score.total{background:#4338ca;border-color:#4338ca}.toeic-score.total b,.toeic-score.total span{color:#fff}.estimate-note{margin:13px 0 0;font-size:14px;color:#64748b;line-height:1.45;font-weight:700}
+.result-meta-line{font-size:17px;color:#475569;margin:10px 0 0}.result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+@media(max-width:980px){.top-actions{flex-wrap:wrap;justify-content:flex-end;max-width:calc(100vw - 28px)}.result-dashboard{grid-template-columns:repeat(2,minmax(0,1fr))}.exam-lock-admin{right:0}}
+@media(max-width:768px){.elapsed-timer,.exam-lock-toggle{font-size:12px;padding:7px 10px}.exam-lock-toggle .lock-text{display:none}.exam-lock-admin{position:fixed;top:62px;left:12px;right:12px;width:auto}.result-dashboard,.part-stats,.toeic-score-grid{grid-template-columns:1fr}.result-stat b,.toeic-score b{font-size:25px}}
+
 </style>
 </head>
 <body class="auth-pending">
@@ -34,6 +57,21 @@ h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size
   <div class="top-line" id="topLine"></div>
   <div class="student-chip" id="studentChip">Đang kiểm tra đăng nhập...</div>
   <div class="top-actions">
+    <div class="exam-lock-header-wrap" id="examLockHeaderWrap" hidden>
+      <button class="exam-lock-toggle" id="examLockToggle" type="button" aria-expanded="false" aria-controls="examLockAdmin">
+        <span>🔐</span><span class="lock-text">Khóa đề</span>
+      </button>
+      <div class="exam-lock-admin" id="examLockAdmin" hidden>
+        <div class="exam-lock-admin-head"><b>Khóa / mở đề</b><span class="exam-lock-badge locked" id="examLockBadge">ĐANG KHÓA</span></div>
+        <select class="exam-lock-target" id="examLockTargetSelect" aria-label="Chọn đề"></select>
+        <div class="exam-lock-actions">
+          <button class="exam-lock-btn lock" id="lockCurrentExamBtn" type="button">Khóa đề</button>
+          <button class="exam-lock-btn unlock" id="unlockCurrentExamBtn" type="button">Mở đề</button>
+        </div>
+        <div class="exam-lock-status" id="examLockStatus"></div>
+      </div>
+    </div>
+    <div class="elapsed-timer" id="elapsedTimer"><span class="timer-icon">⏱</span><span id="elapsedTimerValue">00:00:00</span></div>
     <button class="test-select-btn" id="testSelectBtn" onclick="openTestPicker()" type="button" title="Chọn đề">Đề 6</button>
     <button class="progress progress-btn" id="progressText" onclick="openPagePicker()" type="button" title="Chọn câu">1 / 1</button>
   </div>
@@ -79,6 +117,8 @@ const DATA_URL='data/reading-ets2024-p56.json';
 const LESSON_ID='ets2024-p56-practice';
 const LOCK_BYPASS_EMAIL='sunprice@sp.ik';
 const TEST_INDEX_KEY='ets2024_p56_active_test_index';
+const LISTENING_SCORE_TABLE=[5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10,15,20,25,30,35,40,45,50,55,60,70,80,85,90,95,100,105,115,125,135,140,150,160,170,175,180,190,200,205,215,220,225,230,235,245,255,260,265,275,285,290,295,300,310,320,325,330,335,340,345,350,355,360,365,370,375,385,395,400,405,415,420,425,430,435,440,445,450,455,460,465,475,480,485,490,495,495,495,495,495,495,495,495];
+const READING_SCORE_TABLE=[5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10,15,20,25,30,35,40,45,55,60,65,70,75,80,85,90,95,105,115,120,125,130,135,140,145,155,160,170,175,185,195,205,210,215,220,230,240,245,250,255,260,270,275,280,285,290,295,295,300,310,315,320,325,330,335,340,345,355,360,370,375,385,390,395,400,405,415,420,425,435,440,450,455,460,470,475,485,485,490,495];
 let EXAM_SET=null;
 let EXAM_DATA=null;
 let activeTestIndex=0;
@@ -88,19 +128,43 @@ let passageByQuestionNo={};
 let slides=[];
 let currentSlide=0;
 let checkedAnswers={};
+let studentSession=null;
+let lockedLessonIds=[];
+let examLockUpdating=false;
+let examLockTargetKey='';
+let elapsedSeconds=0;
+let timerStartedAt=0;
+let timerId=null;
+let timerStopped=false;
 
 function escapeHtml(str){return String(str ?? '').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));}
 function renderJsonHtml(value){return String(value ?? '');}
 function getStudentSession(){try{const raw=localStorage.getItem(STUDENT_KEY);return raw?JSON.parse(raw):null;}catch(e){return null;}}
+function getExamKey(test){return String(test?.id||(test?.testNo?`test${test.testNo}`:''));}
+function getExamLabel(test){return test?.selectorLabel||test?.title||`Test ${test?.testNo||''}`;}
+function getAllTests(){return Array.isArray(EXAM_SET?.tests)?EXAM_SET.tests:[];}
+
+function isExamLockAdmin(){return String(studentSession?.email||'').trim().toLowerCase()===LOCK_BYPASS_EMAIL;}
+function getExamOpenMarkerId(test){return `${LESSON_ID}::${getExamKey(test)}::open`;}
+function isExamLocked(test){return !test||!lockedLessonIds.includes(getExamOpenMarkerId(test));}
+function firstUnlockedExam(){return getAllTests().find(test=>!isExamLocked(test))||null;}
+function getExamLockHeaders(){return {'Content-Type':'application/json','x-student-email':String(studentSession?.email||'').trim().toLowerCase(),'x-student-token':String(studentSession?.token||'')};}
+function formatDuration(total){const seconds=Math.max(0,Math.floor(Number(total)||0));const h=Math.floor(seconds/3600);const m=Math.floor((seconds%3600)/60);const s=seconds%60;return [h,m,s].map(v=>String(v).padStart(2,'0')).join(':');}
+function updateTimerDisplay(){const el=document.getElementById('elapsedTimerValue');if(el)el.textContent=formatDuration(elapsedSeconds);if(slides[currentSlide]?.classList.contains('result-slide'))showFinalResultPreview();}
+function startTimer(reset=false){if(timerId)clearInterval(timerId);if(reset)elapsedSeconds=0;timerStopped=false;timerStartedAt=Date.now()-elapsedSeconds*1000;updateTimerDisplay();timerId=setInterval(()=>{elapsedSeconds=Math.floor((Date.now()-timerStartedAt)/1000);updateTimerDisplay();},1000);}
+function stopTimer(){if(timerStopped)return;timerStopped=true;if(timerId)clearInterval(timerId);timerId=null;elapsedSeconds=Math.floor((Date.now()-timerStartedAt)/1000);updateTimerDisplay();}
+async function loadExamLockState(){const res=await fetch('/api/lesson-locks',{cache:'no-store',credentials:'same-origin'});const data=await res.json().catch(()=>({}));if(!res.ok||!data.ok)throw new Error(data.error||'Không tải được trạng thái đề.');lockedLessonIds=Array.isArray(data.lockedLessonIds)?data.lockedLessonIds:[];}
+
 function requireStudentSession(){const student=getStudentSession();if(!student||!student.email){alert('Bạn cần đăng nhập bằng email đã được cấp quyền trước khi làm bài.');location.href='index.html';return null;}return student;}
 async function requireLessonUnlocked(student){
-  const email=String(student?.email||'').trim().toLowerCase();
+  const email=String((student||studentSession)?.email||'').trim().toLowerCase();
   if(email===LOCK_BYPASS_EMAIL)return true;
   try{
-    const res=await fetch('/api/lesson-locks',{cache:'no-store'});
+    const res=await fetch('/api/lesson-locks',{cache:'no-store',credentials:'same-origin'});
     const data=await res.json().catch(()=>({}));
     if(!res.ok||!data.ok)throw new Error(data.error||'Không kiểm tra được trạng thái khóa bài.');
-    if(Array.isArray(data.lockedLessonIds)&&data.lockedLessonIds.includes(LESSON_ID)){
+    lockedLessonIds=Array.isArray(data.lockedLessonIds)?data.lockedLessonIds:[];
+    if(lockedLessonIds.includes(LESSON_ID)){
       if(window.Swal)await Swal.fire({icon:'warning',title:'Bài đang khóa',text:'Bài này hiện chưa mở cho học viên.',confirmButtonColor:'#2563eb'});else alert('Bài này hiện chưa mở cho học viên.');
       location.href='index.html';return false;
     }
@@ -117,10 +181,15 @@ async function loadData(){
   if(!EXAM_SET)throw new Error('Data đề không đúng định dạng.');
   const tests=Array.isArray(EXAM_SET.tests)&&EXAM_SET.tests.length?EXAM_SET.tests:[EXAM_SET];
   EXAM_SET.tests=tests;
+  if(!tests.length||!tests.every(test=>Array.isArray(test.questions)))throw new Error('Data đề không đúng định dạng.');
+  await loadExamLockState();
   const saved=Number(localStorage.getItem(TEST_INDEX_KEY));
-  activeTestIndex=Number.isInteger(saved)&&saved>=0&&saved<tests.length?saved:0;
-  EXAM_DATA=tests[activeTestIndex];
-  if(!EXAM_DATA||!Array.isArray(EXAM_DATA.questions))throw new Error('Data đề không đúng định dạng.');
+  const savedTest=Number.isInteger(saved)&&saved>=0&&saved<tests.length?tests[saved]:null;
+  const chosen=isExamLockAdmin()?(savedTest||tests[0]):(savedTest&&!isExamLocked(savedTest)?savedTest:firstUnlockedExam());
+  if(!chosen){const err=new Error('Chưa có đề nào được mở.');err.code='NO_OPEN_EXAM';throw err;}
+  activeTestIndex=tests.indexOf(chosen);
+  EXAM_DATA=chosen;
+  examLockTargetKey=getExamKey(chosen);
 }
 function buildPassageMap(){passageByQuestionNo={};(EXAM_DATA.passages||[]).forEach((p,idx)=>{(p.questionNos||[]).forEach(no=>{passageByQuestionNo[Number(no)]=p;});(p.questions||[]).forEach(q=>{passageByQuestionNo[Number(q.no)]=p;});});}
 function optionHtml(item,optKey,optText){return '<label class="option"><input name="'+escapeHtml(item.id)+'" type="radio" value="'+escapeHtml(optKey)+'"><span class="option-letter">'+escapeHtml(optKey)+'.</span><span>'+renderJsonHtml(optText)+'</span></label>';}
@@ -140,7 +209,7 @@ function quizSlideHtml(item,index){
   }
   return '<section class="slide quiz-slide'+(index===0?' active':'')+'" data-question="'+escapeHtml(item.id)+'" data-no="'+escapeHtml(item.no)+'"><div class="slide-label">Practice · '+partLabel+' · '+escapeHtml(EXAM_DATA.title||'ETS 2024')+'</div><h2>'+escapeHtml(title)+'</h2><div class="content-area">'+questionPanelHtml(item)+'</div></section>';
 }
-function finalResultSlide(){return '<section class="slide result-slide"><div class="slide-label">Hoàn thành</div><h2>Kết quả '+escapeHtml(EXAM_DATA.title||'ETS 2024')+'</h2><div class="content-area"><div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><div class="score-box"><div class="score-pill" id="answeredPill">Đã chọn: 0</div><div class="score-pill" id="checkedPill">Đã sửa: 0</div></div><button class="nav-btn home-btn" type="button" onclick="goHome()" style="display:inline-block;margin-top:16px">Về trang chủ</button></div></div></section>';}
+function finalResultSlide(){return '<section class="slide result-slide"><div class="slide-label">Kết quả</div><h2>'+escapeHtml(EXAM_DATA.title||'ETS 2024')+'</h2><div class="content-area"><div class="intro-box"><div class="result-dashboard"><div class="result-stat good"><b id="resultCorrect">0</b><span>Đúng</span></div><div class="result-stat bad"><b id="resultWrong">0</b><span>Sai</span></div><div class="result-stat"><b id="resultTime">00:00:00</b><span>Thời gian</span></div></div><div class="part-stats"><div class="part-stat"><h3>Part 5</h3><p id="part5Result">0 / 0</p></div><div class="part-stat"><h3>Part 6</h3><p id="part6Result">0 / 0</p></div></div><div class="toeic-estimate"><h3>Ước tính TOEIC</h3><div class="toeic-score-grid"><div class="toeic-score"><b id="estimatedListening">5</b><span>Listening</span></div><div class="toeic-score"><b id="estimatedReading">5</b><span>Reading</span></div><div class="toeic-score total"><b id="estimatedTotal">10</b><span>Tổng</span></div></div><p class="estimate-note" id="estimateNote"></p></div><p class="result-meta-line" id="finalMetaText"></p><div class="result-actions"><button class="nav-btn home-btn" type="button" onclick="goHome()">HOME</button><button class="nav-btn" type="button" onclick="showSlide(0)">LÀM LẠI TỪ ĐẦU</button></div></div></div></section>';}
 function renderSlides(){
   buildPassageMap();
   quizData=[...EXAM_DATA.questions].sort((a,b)=>Number(a.no)-Number(b.no));
@@ -158,7 +227,7 @@ function renderSlides(){
   updateTestButton();
   updateProgress();
 }
-function showSlide(index){if(index<0||index>=slides.length)return;slides[currentSlide]?.classList.remove('active');currentSlide=index;slides[currentSlide].classList.add('active');window.scrollTo({top:0,behavior:'smooth'});updateProgress();if(slides[currentSlide].classList.contains('result-slide'))showFinalResultPreview();}
+function showSlide(index){if(index<0||index>=slides.length)return;slides[currentSlide]?.classList.remove('active');currentSlide=index;slides[currentSlide].classList.add('active');window.scrollTo({top:0,behavior:'smooth'});updateProgress();if(slides[currentSlide].classList.contains('result-slide')){stopTimer();showFinalResultPreview();}}
 function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
 function prevSlide(){if(currentSlide>0)showSlide(currentSlide-1);}
 function updateProgress(){
@@ -198,44 +267,62 @@ function updateTestButton(){const btn=document.getElementById('testSelectBtn');i
 function buildTestPicker(){
   const grid=document.getElementById('testPickerGrid');if(!grid||!EXAM_SET?.tests)return;
   grid.innerHTML='';
-  EXAM_SET.tests.forEach((test,index)=>{const btn=document.createElement('button');btn.type='button';btn.className='test-jump-btn'+(index===activeTestIndex?' active':'');btn.innerHTML='<span class="test-no">Đề '+escapeHtml(test.testNo||index+1)+'</span><span class="test-title">'+escapeHtml(test.title||('Test '+(index+1)))+'</span>';btn.onclick=()=>selectTest(index);grid.appendChild(btn);});
+  EXAM_SET.tests.forEach((test,index)=>{const locked=isExamLocked(test);const btn=document.createElement('button');btn.type='button';btn.className='test-jump-btn'+(index===activeTestIndex?' active':'');btn.disabled=locked&&!isExamLockAdmin();btn.innerHTML='<span class="test-no">Đề '+escapeHtml(test.testNo||index+1)+'</span><span class="test-title">'+escapeHtml(test.title||('Test '+(index+1)))+'</span><span class="test-state '+(locked?'locked':'open')+'">'+(locked?'🔒 ĐANG KHÓA':'● ĐÃ MỞ')+'</span>';btn.onclick=()=>selectTest(index);grid.appendChild(btn);});
 }
-function openTestPicker(){buildTestPicker();document.getElementById('testPicker')?.classList.add('show');}
+async function openTestPicker(){try{await loadExamLockState();}catch(e){}buildTestPicker();document.getElementById('testPicker')?.classList.add('show');}
 function closeTestPicker(event){if(event&&event.target&&event.target.id!=='testPicker')return;document.getElementById('testPicker')?.classList.remove('show');}
 async function selectTest(index){
-  if(index===activeTestIndex){closeTestPicker();return;}
+  const test=EXAM_SET?.tests?.[index];if(!test||index===activeTestIndex){closeTestPicker();return;}
+  try{await loadExamLockState();}catch(e){}
+  if(isExamLocked(test)&&!isExamLockAdmin()){if(window.Swal)await Swal.fire({icon:'warning',title:'Đề đang khóa',confirmButtonColor:'#2563eb'});buildTestPicker();return;}
   if(hasProgress()){
     let ok=true;
     if(window.Swal){const res=await Swal.fire({icon:'question',title:'Đổi đề?',text:'Tiến trình hiện tại của đề này sẽ được xóa trên màn hình.',showCancelButton:true,confirmButtonText:'Đổi đề',cancelButtonText:'Ở lại',confirmButtonColor:'#2563eb',cancelButtonColor:'#64748b',reverseButtons:true});ok=!!res.isConfirmed;}else ok=confirm('Đổi đề? Tiến trình hiện tại sẽ bị xóa.');
     if(!ok)return;
   }
-  activeTestIndex=index;localStorage.setItem(TEST_INDEX_KEY,String(index));EXAM_DATA=EXAM_SET.tests[index];checkedAnswers={};renderSlides();closeTestPicker();
+  activeTestIndex=index;localStorage.setItem(TEST_INDEX_KEY,String(index));EXAM_DATA=test;examLockTargetKey=getExamKey(test);checkedAnswers={};renderSlides();startTimer(true);refreshExamLockAdminUi(true);closeTestPicker();
 }
+
+function mountExamLockAdmin(){const wrap=document.getElementById('examLockHeaderWrap');if(!wrap)return;if(!isExamLockAdmin()){wrap.hidden=true;return;}wrap.hidden=false;document.getElementById('examLockToggle').addEventListener('click',event=>{event.stopPropagation();setExamLockPanelOpen(document.getElementById('examLockAdmin').hidden);});document.getElementById('examLockAdmin').addEventListener('click',event=>event.stopPropagation());document.getElementById('examLockTargetSelect').addEventListener('change',event=>{examLockTargetKey=event.target.value;refreshExamLockAdminUi(true);});document.getElementById('lockCurrentExamBtn').addEventListener('click',()=>updateCurrentExamLock('lock'));document.getElementById('unlockCurrentExamBtn').addEventListener('click',()=>updateCurrentExamLock('unlock'));}
+function findExamByLockKey(key){return getAllTests().find(test=>getExamKey(test)===String(key||''))||null;}
+function getExamLockTarget(){return findExamByLockKey(examLockTargetKey)||EXAM_DATA||getAllTests()[0]||null;}
+function populateExamLockTargetSelect(){const select=document.getElementById('examLockTargetSelect');const tests=getAllTests();if(!select||!tests.length)return;if(!findExamByLockKey(examLockTargetKey))examLockTargetKey=getExamKey(EXAM_DATA||tests[0]);select.innerHTML=tests.map(test=>'<option value="'+escapeHtml(getExamKey(test))+'">'+escapeHtml(getExamLabel(test))+(isExamLocked(test)?' · ĐANG KHÓA':' · ĐÃ MỞ')+'</option>').join('');select.value=examLockTargetKey;}
+function setExamLockPanelOpen(open){const panel=document.getElementById('examLockAdmin');const toggle=document.getElementById('examLockToggle');if(!panel||!toggle||!isExamLockAdmin())return;panel.hidden=!open;toggle.setAttribute('aria-expanded',open?'true':'false');if(open)refreshExamLockAdminUi(true);}
+function setExamLockStatus(message='',type=''){const el=document.getElementById('examLockStatus');if(!el)return;el.textContent=message;el.className='exam-lock-status'+(type?' '+type:'');}
+function refreshExamLockAdminUi(resetStatus=false){if(!isExamLockAdmin())return;populateExamLockTargetSelect();const target=getExamLockTarget();if(!target)return;const locked=isExamLocked(target);const badge=document.getElementById('examLockBadge');if(badge){badge.textContent=locked?'ĐANG KHÓA':'ĐÃ MỞ';badge.className='exam-lock-badge '+(locked?'locked':'unlocked');}const lockBtn=document.getElementById('lockCurrentExamBtn');const unlockBtn=document.getElementById('unlockCurrentExamBtn');if(lockBtn)lockBtn.disabled=locked||examLockUpdating;if(unlockBtn)unlockBtn.disabled=!locked||examLockUpdating;if(resetStatus&&!examLockUpdating)setExamLockStatus(locked?'Đề chưa mở cho học viên.':'Đề đang mở cho học viên.');}
+async function updateCurrentExamLock(action){const target=getExamLockTarget();if(!isExamLockAdmin()||!target||examLockUpdating)return;examLockUpdating=true;setExamLockStatus('Đang cập nhật...','ok');refreshExamLockAdminUi();try{const opening=action==='unlock';const res=await fetch('/api/lesson-locks',{method:'POST',headers:getExamLockHeaders(),credentials:'same-origin',body:JSON.stringify({lessonId:getExamOpenMarkerId(target),action:opening?'lock':'unlock'})});const data=await res.json().catch(()=>({}));if(!res.ok||!data.ok)throw new Error(data.error||'Không cập nhật được trạng thái đề.');lockedLessonIds=Array.isArray(data.lockedLessonIds)?data.lockedLessonIds:lockedLessonIds;buildTestPicker();populateExamLockTargetSelect();setExamLockStatus(opening?'Đã mở đề.':'Đã khóa đề.','ok');}catch(err){setExamLockStatus(err.message||'Cập nhật thất bại.','err');if(window.Swal)Swal.fire({icon:'error',title:'Cập nhật thất bại',text:err.message||'',confirmButtonColor:'#2563eb'});}finally{examLockUpdating=false;refreshExamLockAdminUi();}}
+
 function collectPayload(){
-  const student=getStudentSession()||{};let score=0,blankCount=0,checkedCount=0,answeredCount=0;
-  const answers=quizData.map(q=>{const selected=selectedFor(q);if(selected)answeredCount++;else blankCount++;if(checkedAnswers[q.id])checkedCount++;if(selected===q.answer)score++;return {no:q.no,id:q.id,part:q.part,prompt:q.stem||'',selected,selectedText:selected?q.options[selected]:null,correctAnswer:q.answer,correctText:q.options[q.answer],isCorrect:selected===q.answer,isBlank:!selected,checkedStatus:checkedAnswers[q.id]||''};});
-  const testNo=EXAM_DATA?.testNo||activeTestIndex+1;
-  return {student:{email:student.email||'',loginAt:student.loginAt||''},quiz:{id:LESSON_ID+'-test-'+testNo,title:'Luyện đề ETS 2024 - Part 5 + 6 - Test '+testNo,total:quizData.length,source:EXAM_DATA?.sourceLabel||('ETS 2024 Test '+testNo)},submittedAt:new Date().toISOString(),score,total:quizData.length,wrong:quizData.length-score,blankCount,answeredCount,checkedCount,percent:Math.round(score/quizData.length*100),answers};
+  const student=getStudentSession()||{};let score=0,wrongSelected=0,blankCount=0,checkedCount=0,answeredCount=0;let part5Correct=0,part5Total=0,part6Correct=0,part6Total=0;
+  const answers=quizData.map(q=>{const selected=selectedFor(q);const isCorrect=selected===q.answer;if(q.part===5){part5Total++;if(isCorrect)part5Correct++;}else if(q.part===6){part6Total++;if(isCorrect)part6Correct++;}if(selected){answeredCount++;if(!isCorrect)wrongSelected++;}else blankCount++;if(checkedAnswers[q.id])checkedCount++;if(isCorrect)score++;return {no:q.no,id:q.id,part:q.part,prompt:q.stem||'',selected,selectedText:selected?q.options[selected]:null,correctAnswer:q.answer,correctText:q.options[q.answer],isCorrect,isBlank:!selected,checkedStatus:checkedAnswers[q.id]||''};});
+  const testNo=EXAM_DATA?.testNo||activeTestIndex+1;const total=quizData.length;const percent=total?Math.round(score/total*100):0;const projectedRaw=Math.max(0,Math.min(100,Math.round(total?score/total*100:0)));const listeningScore=LISTENING_SCORE_TABLE[projectedRaw]??5;const readingScore=READING_SCORE_TABLE[projectedRaw]??5;
+  return {student:{email:student.email||'',loginAt:student.loginAt||''},quiz:{id:LESSON_ID+'-test-'+testNo,title:'Luyện đề ETS 2024 - Part 5 + 6 - Test '+testNo,total,source:EXAM_DATA?.sourceLabel||('ETS 2024 Test '+testNo)},submittedAt:new Date().toISOString(),score,total,wrong:total-score,wrongSelected,blankCount,answeredCount,checkedCount,percent,part5Correct,part5Total,part6Correct,part6Total,projectedRaw,listeningScore,readingScore,estimatedTotal:listeningScore+readingScore,timeSpentSeconds:elapsedSeconds,answers};
 }
-function showFinalResultPreview(){
-  const payload=collectPayload();
-  const scoreEl=document.getElementById('finalScoreText');const metaEl=document.getElementById('finalMetaText');const answeredPill=document.getElementById('answeredPill');const checkedPill=document.getElementById('checkedPill');
-  if(scoreEl)scoreEl.innerHTML='<b>Điểm của bạn:</b> '+payload.score+' / '+payload.total+' ('+payload.percent+'%)';
-  if(metaEl)metaEl.textContent='Email: '+payload.student.email+' · '+payload.quiz.source+' · Câu trống tính sai.';
-  if(answeredPill)answeredPill.textContent='Đã chọn: '+payload.answeredCount;
-  if(checkedPill)checkedPill.textContent='Đã sửa: '+payload.checkedCount;
-}
+function showFinalResultPreview(){const p=collectPayload();const set=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value;};set('resultCorrect',p.score);set('resultWrong',p.wrong);set('resultTime',formatDuration(p.timeSpentSeconds));set('part5Result',p.part5Correct+' / '+p.part5Total+' ('+Math.round((p.part5Correct/Math.max(1,p.part5Total))*100)+'%)');set('part6Result',p.part6Correct+' / '+p.part6Total+' ('+Math.round((p.part6Correct/Math.max(1,p.part6Total))*100)+'%)');set('estimatedListening',p.listeningScore);set('estimatedReading',p.readingScore);set('estimatedTotal',p.estimatedTotal);set('estimateNote','Giả định toàn bộ Listening và Part 7 đạt cùng tỷ lệ '+p.percent+'% · khoảng '+p.projectedRaw+'/100 câu đúng mỗi phần.');set('finalMetaText','Đúng '+p.score+'/'+p.total+' · Đã chọn '+p.answeredCount+' · Đã CHECK '+p.checkedCount+'.');}
 function goHome(){location.href='index.html#practices';}
 function setupAntiCopy(){document.documentElement.classList.add('anti-download-lock');const block=e=>{e.preventDefault();e.stopPropagation();return false;};['contextmenu','dragstart','drop','copy','cut','paste','selectstart'].forEach(evt=>document.addEventListener(evt,block,true));document.addEventListener('keydown',e=>{const key=String(e.key||'').toLowerCase();const ctrl=e.ctrlKey||e.metaKey;if(e.key==='F12'||(ctrl&&['s','u','p','o','a','c','x','v'].includes(key))||(ctrl&&e.shiftKey&&['i','j','c','s'].includes(key)))return block(e);},true);}
-document.addEventListener('keydown',function(e){if(e.code==='ArrowRight')nextSlide();if(e.code==='ArrowLeft')prevSlide();if(e.code==='Escape'){closePagePicker();closeTestPicker();}});
-(async function init(){
+document.addEventListener('click',()=>setExamLockPanelOpen(false));
+document.addEventListener('keydown',function(e){if(e.code==='ArrowRight')nextSlide();if(e.code==='ArrowLeft')prevSlide();if(e.code==='Escape'){closePagePicker();closeTestPicker();setExamLockPanelOpen(false);}});
+async function init(){
   setupAntiCopy();
-  const student=requireStudentSession();if(!student)return;
-  const unlocked=await requireLessonUnlocked(student);if(!unlocked)return;
-  document.getElementById('studentChip').textContent=student.email;
-  try{await loadData();renderSlides();document.body.classList.remove('auth-pending');}
-  catch(err){document.body.classList.remove('auth-pending');if(window.Swal)Swal.fire({icon:'error',title:'Không tải được bài',text:err.message||'Kiểm tra file JSON.',confirmButtonColor:'#2563eb'});else alert(err.message||'Không tải được bài.');}
-})();
+  studentSession=requireStudentSession();if(!studentSession)return;
+  const unlocked=await requireLessonUnlocked(studentSession);if(!unlocked)return;
+  document.getElementById('studentChip').textContent=studentSession.email;
+  mountExamLockAdmin();
+  try{
+    await loadData();
+    renderSlides();
+    refreshExamLockAdminUi(true);
+    startTimer(true);
+    document.body.classList.remove('auth-pending');
+  }
+  catch(err){
+    document.body.classList.remove('auth-pending');
+    if(window.Swal)await Swal.fire({icon:err.code==='NO_OPEN_EXAM'?'warning':'error',title:err.code==='NO_OPEN_EXAM'?'Chưa có đề được mở':'Không tải được bài',text:err.message||'Kiểm tra file JSON.',confirmButtonColor:'#2563eb'});else alert(err.message||'Không tải được bài.');
+    if(err.code==='NO_OPEN_EXAM')location.href='index.html#practices';
+  }
+}
+init();
 </script>
 </body>
 </html>
