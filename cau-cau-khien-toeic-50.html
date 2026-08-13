@@ -1,0 +1,2572 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Câu cầu khiến TOEIC - 50 câu</title>
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#1f2937}
+body{overflow-x:hidden}.lesson-wrapper{width:100%;min-height:100vh;position:relative;background:#eef4ff}
+.slide{width:100%;min-height:100vh;padding:56px 72px 120px;display:none;background:radial-gradient(circle at top left,rgba(59,130,246,.12),transparent 35%),radial-gradient(circle at bottom right,rgba(14,165,233,.12),transparent 35%),#fff}.slide.active{display:flex;flex-direction:column;animation:slideIn .35s ease}@keyframes slideIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.slide-label{display:inline-block;width:fit-content;padding:8px 16px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-weight:800;font-size:15px;margin-bottom:18px}h1{font-size:48px;line-height:1.15;color:#0f172a;margin-bottom:22px}h2{font-size:42px;line-height:1.15;color:#0f172a;margin-bottom:24px}h3{font-size:28px;color:#1e3a8a;margin-bottom:14px}p{font-size:23px;line-height:1.55;margin-bottom:14px}.content-area{max-width:1120px;margin-top:10px;padding-bottom:40px}.reveal{opacity:0;transform:translateY(18px);filter:blur(3px);transition:all .45s ease;pointer-events:none}.reveal.show{opacity:1;transform:translateY(0);filter:blur(0);pointer-events:auto}.intro-box{background:#f8fafc;border:2px solid #e2e8f0;border-radius:22px;padding:28px 32px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}.warning-box{background:#fff7ed;border:2px solid #fed7aa;color:#9a3412;border-radius:18px;padding:20px 24px;font-size:23px;line-height:1.45;margin-top:18px;font-weight:800}
+.intro-box{background:#f8fafc;border:2px solid #e2e8f0;border-radius:22px;padding:28px 32px;margin-top:18px;box-shadow:0 14px 30px rgba(15,23,42,.08)}
+.method-box{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:24px 28px;margin-top:20px}.method-box h3{color:#166534}
+.steps{list-style:none;margin-top:12px}.steps li{font-size:22px;line-height:1.5;padding:9px 0 9px 38px;position:relative}.steps li::before{content:"✓";position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:#22c55e;color:white;font-size:17px;display:grid;place-items:center;font-weight:800}
+
+.sample-box{background:#eff6ff;border-left:8px solid #2563eb;border-radius:18px;padding:26px 30px;margin-top:16px;box-shadow:0 12px 28px rgba(37,99,235,.12)}.sample-title{font-size:22px;font-weight:800;color:#1d4ed8;margin-bottom:10px}.question{font-size:31px;font-weight:900;color:#0f172a;margin-bottom:16px;line-height:1.32}.answer,.option{font-size:22px;padding:15px 16px;margin:8px 0;color:#334155;border:2px solid #dbeafe;border-radius:14px;background:#fff;transition:.25s ease;position:relative}.option{display:flex;align-items:center;gap:14px;cursor:pointer}.option:hover{border-color:#93c5fd;transform:translateY(-1px)}
+.quiz-slide.answer-locked .option{cursor:not-allowed;opacity:.78}
+.quiz-slide.answer-locked .option:hover{transform:none;border-color:#dbeafe}
+.quiz-slide.answer-locked .option input{cursor:not-allowed}.option input{width:20px;height:20px;accent-color:#2563eb}.option-letter{font-weight:1000;color:#1d4ed8;min-width:28px}.method-box{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:20px;padding:24px 28px;margin-top:20px}.method-box h3{color:#166534}.result-box{display:none}.result-box.show{display:block;animation:fadeUp .25s ease}.result-box.wrong-box{background:#fff1f2;border-color:#fecdd3}.result-box.wrong-box h3{color:#be123c}.danger-box{background:#fff1f2;border:2px solid #fecdd3;border-radius:20px;padding:24px 28px;margin-top:20px}.danger-box h3{color:#be123c}.steps{list-style:none;margin-top:12px}.steps li{font-size:22px;line-height:1.5;padding:9px 0 9px 38px;position:relative}.steps li::before{content:"✓";position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:#22c55e;color:white;font-size:17px;display:grid;place-items:center;font-weight:800}.danger-box .steps li::before{content:"!";background:#e11d48}.control-bar{position:fixed;left:0;right:0;bottom:16px;z-index:100;display:flex;justify-content:center;align-items:center;gap:14px;pointer-events:none;flex-wrap:wrap;padding:0 12px}.go-btn,.check-btn,.nav-btn{pointer-events:auto;border:none;cursor:pointer;font-weight:900;transition:all .2s ease;box-shadow:0 8px 18px rgba(15,23,42,.18)}.go-btn{width:54px;height:54px;border-radius:50%;background:#2563eb;color:white;font-size:15px;letter-spacing:.5px}.go-btn:hover,.check-btn:hover{transform:scale(1.06);background:#1d4ed8}.check-btn{border-radius:999px;background:#2563eb;color:#fff;font-size:15px;letter-spacing:.5px;padding:13px 22px}.nav-btn{border-radius:999px;padding:10px 16px;background:#e2e8f0;color:#0f172a;font-size:14px}.nav-btn:hover{background:#cbd5e1}.progress{position:fixed;top:24px!important;right:36px!important;bottom:auto!important;left:auto!important;font-size:16px;font-weight:800;color:#64748b;z-index:120;background:rgba(255,255,255,.85);padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 14px rgba(15,23,42,.08)}.top-line{position:fixed;top:0;left:0;height:7px;background:#2563eb;width:0%;transition:width .35s ease;z-index:130}.keyword{color:#2563eb;font-weight:900}.big-word{font-size:72px;font-weight:1000;color:#1d4ed8;letter-spacing:-2px;margin-bottom:12px}.formula{font-size:clamp(30px,2.7vw,50px);font-weight:1000;line-height:1.25;padding:18px 22px;margin:18px 0;background:#eff6ff;border:4px solid #93c5fd;border-radius:22px;color:#0f172a;text-align:center}.adv{color:#7c3aed}.np{color:#dc2626}.nc{color:#0b78b6}.score-box{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}.score-pill{background:#eff6ff;color:#1d4ed8;border:2px solid #bfdbfe;padding:12px 18px;border-radius:999px;font-size:20px;font-weight:800}table{width:100%;border-collapse:collapse;margin-top:12px;font-size:21px;font-weight:800;table-layout:fixed}th{background:#0f5f8f;color:white;text-align:left;padding:12px 14px}td{padding:10px 12px;border:2px solid #cbd5e1;vertical-align:top;line-height:1.25}.category-note{font-size:20px;color:#64748b;margin-top:-8px}.answer-key{font-weight:900;color:#15803d}.explain strong{font-weight:700;color:#0f172a}.correct-text{color:#15803d}.wrong-text{color:#be123c}.home-btn{background:linear-gradient(135deg,#0f172a,#334155)!important;color:#fff!important}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.slide{padding:36px 24px 130px}h1{font-size:34px}h2{font-size:31px}p,.answer,.steps li{font-size:19px}.question{font-size:24px}.big-word{font-size:44px}.go-btn{width:48px;height:48px;font-size:13px}.check-btn{padding:11px 16px;font-size:13px}.nav-btn{padding:9px 13px;font-size:13px}.progress{top:14px!important;right:14px!important;font-size:13px}table{font-size:17px}th,td{padding:9px 8px}.option{font-size:18px;padding:14px}}
+  
+
+/* ===== Refinement: table + warning-box thanh thoát hơn ===== */
+.intro-box:has(table){
+  padding:24px 26px;
+  overflow:hidden;
+}
+table{
+  border-collapse:separate!important;
+  border-spacing:0!important;
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid #d8e2f0;
+  background:#fff;
+  box-shadow:0 10px 24px rgba(15,23,42,.055);
+  font-size:20px!important;
+  font-weight:500!important;
+  letter-spacing:.01em;
+}
+th{
+  background:linear-gradient(135deg,#1d4ed8,#0ea5e9)!important;
+  color:#fff;
+  padding:14px 16px!important;
+  font-size:17px;
+  line-height:1.35;
+  font-weight:850!important;
+  letter-spacing:.02em;
+  border:none!important;
+}
+td{
+  padding:13px 16px!important;
+  border:none!important;
+  border-top:1px solid #e5edf7!important;
+  color:#334155;
+  line-height:1.48!important;
+  font-weight:500!important;
+}
+td:first-child{
+  color:#1e3a8a;
+  font-weight:750!important;
+}
+tr:nth-child(even) td{background:#f8fbff}
+tr:hover td{background:#eff6ff}
+.warning-box{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  background:linear-gradient(135deg,#fff7ed,#fffaf3)!important;
+  border:1px solid #fed7aa!important;
+  border-left:7px solid #f97316!important;
+  color:#7c2d12!important;
+  border-radius:20px!important;
+  padding:18px 22px!important;
+  font-size:21px!important;
+  line-height:1.58!important;
+  font-weight:550!important;
+  box-shadow:0 10px 24px rgba(249,115,22,.08);
+}
+.warning-box::before{
+  content:"!";
+  flex:0 0 auto;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#ffedd5;
+  color:#c2410c;
+  font-size:18px;
+  font-weight:950;
+  margin-top:2px;
+}
+.warning-box b{
+  color:#9a3412;
+  font-weight:850;
+}
+.reveal.show{
+  transition:opacity .38s ease, transform .38s ease, filter .38s ease;
+}
+@media(max-width:768px){
+  .intro-box:has(table){padding:18px 16px;overflow-x:auto}
+  table{font-size:16px!important;min-width:620px}
+  th{font-size:15px;padding:11px 12px!important}
+  td{padding:10px 12px!important;line-height:1.42!important}
+  .warning-box{font-size:18px!important;padding:15px 16px!important;gap:10px}
+  .warning-box::before{width:26px;height:26px;font-size:16px}
+}
+
+/* ===== Compact note: dùng cho lưu ý ngắn, tránh warning-box quá nặng ===== */
+.note-box{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  width:fit-content;
+  max-width:920px;
+  margin-top:18px;
+  padding:14px 18px;
+  border:1px solid #fed7aa;
+  border-left:5px solid #f97316;
+  border-radius:16px;
+  background:linear-gradient(135deg,#fffaf3,#fff7ed);
+  color:#7c2d12;
+  font-size:20px;
+  line-height:1.55;
+  font-weight:500;
+  box-shadow:0 8px 20px rgba(249,115,22,.07);
+}
+.note-box .note-label{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:5px 10px;
+  border-radius:999px;
+  background:#ffedd5;
+  color:#c2410c;
+  font-size:14px;
+  line-height:1;
+  font-weight:850;
+  letter-spacing:.02em;
+  margin-top:3px;
+}
+.note-box b{
+  color:#9a3412;
+  font-weight:850;
+}
+
+.note-box.note-lines{align-items:flex-start}
+.note-box .note-content{display:flex;flex-direction:column;gap:5px;line-height:1.45}
+.note-box .note-content span{display:block}
+@media(max-width:768px){
+  .note-box{width:100%;font-size:18px;padding:13px 14px;gap:10px}
+  .note-box .note-label{font-size:13px;padding:5px 9px}
+}
+
+
+/* Khi chưa chọn đáp án: chỉ hiện cảnh báo, không hiện lời giải */
+.result-box.no-answer .explain{display:none!important}
+.result-box.no-answer{background:#fff7ed!important;border-color:#fed7aa!important}
+.result-box.no-answer .result-title{margin-bottom:0!important}
+
+.translation-box{
+  display:none;
+  background:linear-gradient(135deg,#f8fafc,#eef6ff);
+  border:2px solid #dbeafe;
+  border-left:8px solid #60a5fa;
+  border-radius:20px;
+  padding:22px 26px;
+  margin-top:16px;
+  box-shadow:0 10px 24px rgba(37,99,235,.08);
+  animation:fadeUp .25s ease;
+}
+.translation-box.show{display:block}
+.translation-box h3{
+  color:#1d4ed8;
+  font-size:24px;
+  margin-bottom:12px;
+}
+.translation-list{
+  display:grid;
+  gap:10px;
+  margin-top:8px;
+}
+.translation-item{
+  background:#fff;
+  border:1.5px solid #dbeafe;
+  border-radius:14px;
+  padding:12px 14px;
+  font-size:20px;
+  line-height:1.45;
+  color:#334155;
+}
+.translation-item b{color:#0f172a}
+.translation-item .letter{color:#1d4ed8;font-weight:1000;margin-right:6px}
+@media(max-width:768px){.translation-box{padding:18px}.translation-item{font-size:18px}.translation-box h3{font-size:22px}}
+
+
+/* ===== En/Vn question translation pill ===== */
+.sample-title.question-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lang-pill{
+  border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+  min-width:72px;height:34px;padding:0 13px;border-radius:999px;
+  background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;
+  font-size:13px;font-weight:1000;letter-spacing:.3px;
+  box-shadow:0 8px 16px rgba(37,99,235,.20);transition:.2s ease;
+}
+.lang-pill:hover{transform:translateY(-1px) scale(1.03);filter:brightness(1.04)}
+.lang-pill.active{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+.question-vn{
+  display:none;margin-top:12px;padding:14px 16px;border-radius:16px;
+  background:#f8fafc;border:2px solid #dbeafe;color:#334155;
+  font-size:21px;line-height:1.45;font-weight:700;
+}
+.question-vn.show{display:block;animation:fadeUp .22s ease}
+.question-vn .vn-label{font-weight:1000;color:#1d4ed8;margin-right:8px}
+
+/* ===== Progress as page picker button ===== */
+.progress-btn{border:none;cursor:pointer;pointer-events:auto}
+.progress-btn:hover{background:#eff6ff;color:#1d4ed8;transform:translateY(-1px)}
+.page-picker-overlay{
+  position:fixed;inset:0;background:rgba(15,23,42,.42);z-index:300;
+  display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px);
+}
+.page-picker-overlay.show{display:flex}
+.page-picker-panel{
+  width:min(880px,96vw);max-height:84vh;overflow:auto;background:#fff;border-radius:26px;
+  border:2px solid #dbeafe;box-shadow:0 24px 60px rgba(15,23,42,.24);padding:22px;
+}
+.page-picker-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
+.page-picker-head h3{margin:0;color:#0f172a;font-size:28px}
+.page-picker-head p{margin:6px 0 0;color:#64748b;font-size:17px;line-height:1.4}
+.page-picker-close{
+  border:none;cursor:pointer;width:40px;height:40px;border-radius:999px;background:#e2e8f0;
+  color:#0f172a;font-size:28px;line-height:1;font-weight:800;
+}
+.page-picker-close:hover{background:#cbd5e1}
+.page-picker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px}
+.page-jump-btn{
+  border:2px solid #dbeafe;border-radius:16px;background:#f8fafc;color:#0f172a;
+  padding:10px 8px;min-height:58px;cursor:pointer;text-align:left;transition:.18s ease;
+  font-size:14px;font-weight:900;line-height:1.25;
+}
+.page-jump-btn:hover{border-color:#93c5fd;background:#eff6ff;transform:translateY(-1px)}
+.page-jump-btn.active{border-color:#2563eb;background:#dbeafe;color:#1d4ed8}
+
+.page-jump-btn.correct-answer{
+  border-color:#22c55e!important;
+  background:#f0fdf4!important;
+  color:#166534!important;
+}
+.page-jump-btn.correct-answer .page-no{color:#15803d!important}
+.page-jump-btn.correct-answer .page-title{color:#166534!important}
+.page-jump-btn.wrong-answer{
+  border-color:#ef4444!important;
+  background:#fff1f2!important;
+  color:#be123c!important;
+}
+.page-jump-btn.wrong-answer .page-no{color:#be123c!important}
+.page-jump-btn.wrong-answer .page-title{color:#be123c!important}
+.page-jump-btn.correct-answer.active{
+  box-shadow:0 0 0 3px rgba(34,197,94,.22);
+}
+.page-jump-btn.wrong-answer.active{
+  box-shadow:0 0 0 3px rgba(239,68,68,.20);
+}
+.page-jump-btn .page-no{display:block;font-size:18px;font-weight:1000}
+.page-jump-btn .page-title{display:block;color:#64748b;font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:768px){.question-vn{font-size:18px}.lang-pill{height:32px;min-width:66px;font-size:12px}.page-picker-panel{padding:18px;border-radius:20px}.page-picker-grid{grid-template-columns:repeat(auto-fill,minmax(74px,1fr))}.page-jump-btn{min-height:54px;font-size:12px}.page-picker-head h3{font-size:24px}}
+
+
+
+/* ===== Word-form option POS badge: only inside translation box ===== */
+.translation-item .option-pos{
+  font-size:14px;
+  font-weight:900;
+  color:#64748b;
+  background:#f1f5f9;
+  border:1px solid #e2e8f0;
+  padding:4px 8px;
+  border-radius:999px;
+  margin-left:8px;
+  white-space:nowrap;
+  display:inline-flex;
+  align-items:center;
+  vertical-align:middle;
+}
+@media(max-width:768px){
+  .translation-item .option-pos{font-size:12px;margin-left:6px}
+}
+
+
+.submit-status{margin-top:14px;font-size:20px;line-height:1.5;color:#334155;font-weight:700}
+.submit-status.ok{color:#15803d}.submit-status.err{color:#be123c}
+.logout-link{position:fixed;top:24px;left:36px;z-index:121;border:none;border-radius:999px;background:#f8fafc;color:#334155;border:2px solid #dbeafe;padding:8px 13px;font-size:14px;font-weight:900;cursor:pointer;box-shadow:0 6px 14px rgba(15,23,42,.08)}
+.logout-link:hover{background:#eff6ff;color:#1d4ed8}
+@media(max-width:768px){.logout-link{top:14px;left:14px;font-size:12px;padding:7px 10px}.submit-status{font-size:18px}}
+
+
+
+/* ===== Anti right-click / anti casual download lock ===== */
+html.anti-download-lock, html.anti-download-lock body{
+  -webkit-user-select:none!important;
+  -moz-user-select:none!important;
+  -ms-user-select:none!important;
+  user-select:none!important;
+  -webkit-touch-callout:none!important;
+}
+html.anti-download-lock img,
+html.anti-download-lock video,
+html.anti-download-lock audio,
+html.anti-download-lock canvas,
+html.anti-download-lock svg{
+  -webkit-user-drag:none!important;
+  user-drag:none!important;
+}
+
+</style>
+<style>
+.home-confirm-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);display:none;align-items:center;justify-content:center;padding:22px;z-index:300;backdrop-filter:blur(5px)}
+.home-confirm-overlay.show{display:flex}
+.home-confirm-panel{width:min(520px,94vw);background:#fff;border:2px solid #fecdd3;border-radius:24px;padding:26px;box-shadow:0 24px 70px rgba(15,23,42,.28)}
+.home-confirm-panel h3{font-size:28px;color:#be123c;margin-bottom:10px}
+.home-confirm-panel p{font-size:20px;line-height:1.45;color:#334155;margin-bottom:12px}
+.home-confirm-actions{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap;margin-top:18px}
+.home-confirm-danger{background:#be123c!important;color:#fff!important}
+.home-confirm-danger:hover{background:#9f1239!important}
+@media(max-width:768px){.home-confirm-panel{padding:22px}.home-confirm-panel h3{font-size:24px}.home-confirm-panel p{font-size:18px}.home-confirm-actions{justify-content:stretch}.home-confirm-actions .nav-btn{flex:1}}
+</style>
+</head>
+<body>
+<div class="lesson-wrapper">
+<div class="top-line" id="topLine"></div>
+<button class="progress progress-btn" id="progressText" onclick="openPagePicker()" type="button" title="Chọn trang">1 / 51</button>
+<div id="quizMount"></div>
+
+<div class="page-picker-overlay" id="pagePicker" onclick="closePagePicker(event)">
+  <div class="page-picker-panel" role="dialog" aria-modal="true" aria-labelledby="pagePickerTitle">
+    <div class="page-picker-head">
+      <div>
+        <h3 id="pagePickerTitle">Chọn câu Practice</h3>
+        <p>Click vào số câu để nhảy nhanh đến câu cần làm.</p>
+      </div>
+      <button class="page-picker-close" onclick="closePagePicker()" type="button">×</button>
+    </div>
+    <div class="page-picker-grid" id="pagePickerGrid"></div>
+  </div>
+</div>
+
+<div class="home-confirm-overlay" id="homeConfirm" onclick="closeHomeConfirm(event)">
+  <div class="home-confirm-panel" role="dialog" aria-modal="true" aria-labelledby="homeConfirmTitle" onclick="event.stopPropagation()">
+    <h3 id="homeConfirmTitle">Bạn chưa nộp kết quả</h3>
+    <p>Nếu về trang chủ bây giờ, bài làm hiện tại có thể chưa được lưu.</p>
+    <p>Hãy bấm <b>Ở lại nộp bài</b> nếu bạn muốn lưu điểm trước.</p>
+    <div class="home-confirm-actions">
+      <button class="nav-btn" type="button" onclick="closeHomeConfirm()">Ở lại nộp bài</button>
+      <button class="nav-btn home-confirm-danger" type="button" onclick="confirmGoHome()">Vẫn về trang chủ</button>
+    </div>
+  </div>
+</div>
+
+<div class="control-bar">
+<button class="nav-btn" onclick="prevSlide()" type="button">← PREV</button>
+<button class="go-btn" onclick="goReveal()" type="button">GO</button>
+<button class="check-btn" id="checkBtn" onclick="checkAnswer()" type="button">CHECK</button>
+<button class="nav-btn" onclick="nextSlide()" type="button">NEXT →</button>
+</div>
+</div>
+
+<script>
+
+function escapeHtml(str){
+  return String(str ?? '').replace(/[&<>"']/g,function(s){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s];
+  });
+}
+function formatExplanation(str){
+  let s=escapeHtml(str);
+  s=s.replace(/(Cấu trúc đúng là\s+)([^:=.]+)(\s*[:=])/i,'$1<strong>$2</strong>$3');
+  s=s.replace(/(Cấu trúc đúng là\s+)([^.]+)(\.)/i,'$1<strong>$2</strong>$3');
+  return s;
+}
+
+const quizData = [
+  {
+    "id": "q1",
+    "label": "Practice · Question 1",
+    "title": "Câu 1",
+    "category": "Động từ + O + to V · ask.",
+    "questionEn": "The receptionist asked visitors ___ their names in the electronic log before proceeding upstairs.",
+    "questionVn": "Lễ tân yêu cầu khách ___ tên vào sổ điện tử trước khi lên tầng trên.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "enter",
+        "pos": "bare infinitive",
+        "vn": "nhập"
+      },
+      {
+        "key": "B",
+        "text": "to enter",
+        "pos": "to-infinitive",
+        "vn": "nhập"
+      },
+      {
+        "key": "C",
+        "text": "entered",
+        "pos": "past participle",
+        "vn": "được nhập"
+      },
+      {
+        "key": "D",
+        "text": "entering",
+        "pos": "present participle",
+        "vn": "đang nhập"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là ask + O + to V: asked visitors to enter their names."
+  },
+  {
+    "id": "q2",
+    "label": "Practice · Question 2",
+    "title": "Câu 2",
+    "category": "Động từ + O + to V · instruct.",
+    "questionEn": "The installation manual instructs users ___ the device from the power source before cleaning it.",
+    "questionVn": "Sổ tay lắp đặt hướng dẫn người dùng ___ thiết bị khỏi nguồn điện trước khi vệ sinh.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "disconnect",
+        "pos": "bare infinitive",
+        "vn": "ngắt kết nối"
+      },
+      {
+        "key": "B",
+        "text": "disconnected",
+        "pos": "past participle",
+        "vn": "được ngắt"
+      },
+      {
+        "key": "C",
+        "text": "disconnecting",
+        "pos": "present participle",
+        "vn": "đang ngắt"
+      },
+      {
+        "key": "D",
+        "text": "to disconnect",
+        "pos": "to-infinitive",
+        "vn": "ngắt kết nối"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là instruct + O + to V: instructs users to disconnect the device."
+  },
+  {
+    "id": "q3",
+    "label": "Practice · Question 3",
+    "title": "Câu 3",
+    "category": "Câu cầu khiến bị động · have + O + V3.",
+    "questionEn": "The publisher is having the product catalog ___ into three languages for the international market.",
+    "questionVn": "Nhà xuất bản đang cho ___ danh mục sản phẩm sang ba ngôn ngữ cho thị trường quốc tế.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "translate",
+        "pos": "bare infinitive",
+        "vn": "dịch"
+      },
+      {
+        "key": "B",
+        "text": "translating",
+        "pos": "present participle",
+        "vn": "đang dịch"
+      },
+      {
+        "key": "C",
+        "text": "translated",
+        "pos": "past participle",
+        "vn": "được dịch"
+      },
+      {
+        "key": "D",
+        "text": "to translate",
+        "pos": "to-infinitive",
+        "vn": "để dịch"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là have + O + V3: is having the catalog translated. Danh mục là đối tượng được dịch."
+  },
+  {
+    "id": "q4",
+    "label": "Practice · Question 4",
+    "title": "Câu 4",
+    "category": "Động từ + O + to V · allow.",
+    "questionEn": "The upgraded account settings allow customers ___ multiple shipping addresses.",
+    "questionVn": "Cài đặt tài khoản được nâng cấp cho phép khách hàng ___ nhiều địa chỉ giao hàng.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "to save",
+        "pos": "to-infinitive",
+        "vn": "lưu"
+      },
+      {
+        "key": "B",
+        "text": "save",
+        "pos": "bare infinitive",
+        "vn": "lưu"
+      },
+      {
+        "key": "C",
+        "text": "saved",
+        "pos": "past participle",
+        "vn": "được lưu"
+      },
+      {
+        "key": "D",
+        "text": "saving",
+        "pos": "present participle",
+        "vn": "đang lưu"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là allow + O + to V: allow customers to save multiple addresses."
+  },
+  {
+    "id": "q5",
+    "label": "Practice · Question 5",
+    "title": "Câu 5",
+    "category": "Câu cầu khiến chủ động · help + O + V0.",
+    "questionEn": "A revised FAQ page could help support agents ___ routine customer inquiries more efficiently.",
+    "questionVn": "Trang câu hỏi thường gặp được sửa đổi có thể giúp nhân viên hỗ trợ ___ các thắc mắc thông thường của khách hàng hiệu quả hơn.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "handled",
+        "pos": "past participle",
+        "vn": "được xử lý"
+      },
+      {
+        "key": "B",
+        "text": "handle",
+        "pos": "bare infinitive",
+        "vn": "xử lý"
+      },
+      {
+        "key": "C",
+        "text": "handling",
+        "pos": "present participle",
+        "vn": "đang xử lý"
+      },
+      {
+        "key": "D",
+        "text": "handles",
+        "pos": "present verb",
+        "vn": "xử lý, ngôi số ít"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là help + O + V0: help support agents handle inquiries."
+  },
+  {
+    "id": "q6",
+    "label": "Practice · Question 6",
+    "title": "Câu 6",
+    "category": "Động từ + O + to V · expect.",
+    "questionEn": "The project manager expects every team member ___ the weekly progress meeting.",
+    "questionVn": "Quản lý dự án mong đợi mọi thành viên nhóm ___ cuộc họp tiến độ hằng tuần.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "attend",
+        "pos": "bare infinitive",
+        "vn": "tham dự"
+      },
+      {
+        "key": "B",
+        "text": "to attend",
+        "pos": "to-infinitive",
+        "vn": "tham dự"
+      },
+      {
+        "key": "C",
+        "text": "attended",
+        "pos": "past participle",
+        "vn": "được tham dự"
+      },
+      {
+        "key": "D",
+        "text": "attending",
+        "pos": "present participle",
+        "vn": "đang tham dự"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là expect + O + to V: expects every team member to attend."
+  },
+  {
+    "id": "q7",
+    "label": "Practice · Question 7",
+    "title": "Câu 7",
+    "category": "Câu cầu khiến bị động · be encouraged + to V.",
+    "questionEn": "Employees are encouraged ___ suggestions for improving workplace efficiency.",
+    "questionVn": "Nhân viên được khuyến khích ___ đề xuất nhằm cải thiện hiệu quả nơi làm việc.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "to submit",
+        "pos": "to-infinitive",
+        "vn": "gửi / nộp"
+      },
+      {
+        "key": "B",
+        "text": "submit",
+        "pos": "bare infinitive",
+        "vn": "gửi / nộp"
+      },
+      {
+        "key": "C",
+        "text": "submitted",
+        "pos": "past participle",
+        "vn": "được gửi"
+      },
+      {
+        "key": "D",
+        "text": "submitting",
+        "pos": "present participle",
+        "vn": "đang gửi"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là be encouraged + to V: are encouraged to submit suggestions."
+  },
+  {
+    "id": "q8",
+    "label": "Practice · Question 8",
+    "title": "Câu 8",
+    "category": "Câu cầu khiến bị động · be made + to V.",
+    "questionEn": "Because of the system outage, several employees were made ___ their expense reports again.",
+    "questionVn": "Do sự cố hệ thống, một số nhân viên bị yêu cầu ___ báo cáo chi phí của họ lần nữa.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "to submit",
+        "pos": "to-infinitive",
+        "vn": "nộp"
+      },
+      {
+        "key": "B",
+        "text": "submit",
+        "pos": "bare infinitive",
+        "vn": "nộp"
+      },
+      {
+        "key": "C",
+        "text": "submitted",
+        "pos": "past participle",
+        "vn": "được nộp"
+      },
+      {
+        "key": "D",
+        "text": "submitting",
+        "pos": "present participle",
+        "vn": "đang nộp"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là were made to submit. 'Make + O + V0' ở chủ động trở thành 'O + be made + to V' ở bị động."
+  },
+  {
+    "id": "q9",
+    "label": "Practice · Question 9",
+    "title": "Câu 9",
+    "category": "Động từ + O + to V · order.",
+    "questionEn": "The safety officer ordered the crew ___ work until the damaged railing had been repaired.",
+    "questionVn": "Cán bộ an toàn ra lệnh cho đội công nhân ___ làm việc cho đến khi lan can hỏng được sửa.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "stopped",
+        "pos": "past verb / participle",
+        "vn": "đã dừng / bị dừng"
+      },
+      {
+        "key": "B",
+        "text": "stopping",
+        "pos": "present participle",
+        "vn": "đang dừng"
+      },
+      {
+        "key": "C",
+        "text": "stop",
+        "pos": "bare infinitive",
+        "vn": "dừng"
+      },
+      {
+        "key": "D",
+        "text": "to stop",
+        "pos": "to-infinitive",
+        "vn": "dừng"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là order + O + to V: ordered the crew to stop work."
+  },
+  {
+    "id": "q10",
+    "label": "Practice · Question 10",
+    "title": "Câu 10",
+    "category": "Động từ + O + to V · force.",
+    "questionEn": "Severe weather forced the airline ___ several evening flights.",
+    "questionVn": "Thời tiết khắc nghiệt buộc hãng hàng không ___ một số chuyến bay buổi tối.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "to cancel",
+        "pos": "to-infinitive",
+        "vn": "hủy"
+      },
+      {
+        "key": "B",
+        "text": "cancel",
+        "pos": "bare infinitive",
+        "vn": "hủy"
+      },
+      {
+        "key": "C",
+        "text": "canceled",
+        "pos": "past verb / participle",
+        "vn": "đã hủy / bị hủy"
+      },
+      {
+        "key": "D",
+        "text": "canceling",
+        "pos": "present participle",
+        "vn": "đang hủy"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là force + O + to V: forced the airline to cancel flights."
+  },
+  {
+    "id": "q11",
+    "label": "Practice · Question 11",
+    "title": "Câu 11",
+    "category": "Câu cầu khiến bị động · be ordered + to V.",
+    "questionEn": "The construction company was ordered ___ work near the river until further notice.",
+    "questionVn": "Công ty xây dựng bị ra lệnh ___ công việc gần con sông cho đến khi có thông báo mới.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "suspend",
+        "pos": "bare infinitive",
+        "vn": "tạm ngừng"
+      },
+      {
+        "key": "B",
+        "text": "suspended",
+        "pos": "past participle",
+        "vn": "bị tạm ngừng"
+      },
+      {
+        "key": "C",
+        "text": "suspending",
+        "pos": "present participle",
+        "vn": "đang tạm ngừng"
+      },
+      {
+        "key": "D",
+        "text": "to suspend",
+        "pos": "to-infinitive",
+        "vn": "tạm ngừng"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là be ordered + to V: was ordered to suspend work."
+  },
+  {
+    "id": "q12",
+    "label": "Practice · Question 12",
+    "title": "Câu 12",
+    "category": "Câu cầu khiến chủ động · let + O + V0.",
+    "questionEn": "The software settings let users ___ notification preferences for each project.",
+    "questionVn": "Các cài đặt phần mềm cho phép người dùng ___ tùy chọn thông báo cho từng dự án.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "customized",
+        "pos": "past participle",
+        "vn": "được tùy chỉnh"
+      },
+      {
+        "key": "B",
+        "text": "to customize",
+        "pos": "to-infinitive",
+        "vn": "để tùy chỉnh"
+      },
+      {
+        "key": "C",
+        "text": "customize",
+        "pos": "bare infinitive",
+        "vn": "tùy chỉnh"
+      },
+      {
+        "key": "D",
+        "text": "customization",
+        "pos": "noun",
+        "vn": "sự tùy chỉnh"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là let + O + V0: let users customize preferences."
+  },
+  {
+    "id": "q13",
+    "label": "Practice · Question 13",
+    "title": "Câu 13",
+    "category": "Câu cầu khiến bị động · be made + to V.",
+    "questionEn": "All temporary staff members are made ___ an identification badge while on company property.",
+    "questionVn": "Tất cả nhân viên thời vụ bị yêu cầu ___ thẻ nhận dạng khi ở trong khuôn viên công ty.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "wear",
+        "pos": "bare infinitive",
+        "vn": "đeo"
+      },
+      {
+        "key": "B",
+        "text": "wearing",
+        "pos": "present participle",
+        "vn": "đang đeo"
+      },
+      {
+        "key": "C",
+        "text": "worn",
+        "pos": "past participle",
+        "vn": "được đeo"
+      },
+      {
+        "key": "D",
+        "text": "to wear",
+        "pos": "to-infinitive",
+        "vn": "đeo"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là be made + to V: are made to wear an identification badge. Khi 'make' chuyển sang bị động, 'to' phải được dùng."
+  },
+  {
+    "id": "q14",
+    "label": "Practice · Question 14",
+    "title": "Câu 14",
+    "category": "Câu cầu khiến chủ động · have + O + V0.",
+    "questionEn": "Before the client presentation, Mr. Kim had the design team ___ the charts one more time.",
+    "questionVn": "Trước buổi thuyết trình với khách hàng, ông Kim yêu cầu nhóm thiết kế ___ các biểu đồ thêm một lần nữa.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "check",
+        "pos": "bare infinitive",
+        "vn": "kiểm tra"
+      },
+      {
+        "key": "B",
+        "text": "checked",
+        "pos": "past participle",
+        "vn": "được kiểm tra"
+      },
+      {
+        "key": "C",
+        "text": "to check",
+        "pos": "to-infinitive",
+        "vn": "để kiểm tra"
+      },
+      {
+        "key": "D",
+        "text": "checking",
+        "pos": "present participle",
+        "vn": "đang kiểm tra"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là have + O + V0: had the design team check the charts. 'Have' chỉ việc yêu cầu/nhờ một người trực tiếp thực hiện hành động."
+  },
+  {
+    "id": "q15",
+    "label": "Practice · Question 15",
+    "title": "Câu 15",
+    "category": "Câu cầu khiến chủ động · help + O + V0.",
+    "questionEn": "The new inventory software helps warehouse staff ___ incoming shipments more accurately.",
+    "questionVn": "Phần mềm kiểm kê mới giúp nhân viên kho ___ các lô hàng đến chính xác hơn.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "recorded",
+        "pos": "past participle",
+        "vn": "được ghi lại"
+      },
+      {
+        "key": "B",
+        "text": "recording",
+        "pos": "present participle",
+        "vn": "đang ghi lại"
+      },
+      {
+        "key": "C",
+        "text": "record",
+        "pos": "bare infinitive",
+        "vn": "ghi lại"
+      },
+      {
+        "key": "D",
+        "text": "records",
+        "pos": "present verb",
+        "vn": "ghi lại, ngôi số ít"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là help + O + V0: helps warehouse staff record shipments. Sau 'help + O', bare infinitive được dùng tự nhiên; 'to record' cũng có thể đúng về ngữ pháp, nhưng không xuất hiện trong lựa chọn."
+  },
+  {
+    "id": "q16",
+    "label": "Practice · Question 16",
+    "title": "Câu 16",
+    "category": "Câu cầu khiến bị động · have + O + V3.",
+    "questionEn": "The hotel will have all guest-room carpets ___ before the holiday season begins.",
+    "questionVn": "Khách sạn sẽ cho ___ toàn bộ thảm phòng khách trước khi mùa lễ bắt đầu.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "clean",
+        "pos": "bare infinitive",
+        "vn": "làm sạch"
+      },
+      {
+        "key": "B",
+        "text": "cleaned",
+        "pos": "past participle",
+        "vn": "được làm sạch"
+      },
+      {
+        "key": "C",
+        "text": "to clean",
+        "pos": "to-infinitive",
+        "vn": "để làm sạch"
+      },
+      {
+        "key": "D",
+        "text": "cleaning",
+        "pos": "present participle",
+        "vn": "đang làm sạch"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là have + O + V3: have the carpets cleaned. Tân ngữ 'carpets' nhận hành động nên dùng quá khứ phân từ."
+  },
+  {
+    "id": "q17",
+    "label": "Practice · Question 17",
+    "title": "Câu 17",
+    "category": "Câu cầu khiến bị động · have + O + V3.",
+    "questionEn": "Before reopening the lobby, the bank had its security cameras ___ by a certified technician.",
+    "questionVn": "Trước khi mở lại sảnh, ngân hàng đã cho kỹ thuật viên có chứng nhận ___ các camera an ninh.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "inspected",
+        "pos": "past participle",
+        "vn": "được kiểm tra"
+      },
+      {
+        "key": "B",
+        "text": "inspect",
+        "pos": "bare infinitive",
+        "vn": "kiểm tra"
+      },
+      {
+        "key": "C",
+        "text": "inspecting",
+        "pos": "present participle",
+        "vn": "đang kiểm tra"
+      },
+      {
+        "key": "D",
+        "text": "to inspect",
+        "pos": "to-infinitive",
+        "vn": "để kiểm tra"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là had its security cameras inspected. Camera nhận hành động kiểm tra nên dùng V3."
+  },
+  {
+    "id": "q18",
+    "label": "Practice · Question 18",
+    "title": "Câu 18",
+    "category": "Động từ + O + to V · advise.",
+    "questionEn": "The consultant advised the retailer ___ its online return policy before the holiday season.",
+    "questionVn": "Chuyên gia tư vấn khuyên nhà bán lẻ ___ chính sách đổi trả trực tuyến trước mùa lễ.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "to revise",
+        "pos": "to-infinitive",
+        "vn": "sửa đổi"
+      },
+      {
+        "key": "B",
+        "text": "revise",
+        "pos": "bare infinitive",
+        "vn": "sửa đổi"
+      },
+      {
+        "key": "C",
+        "text": "revised",
+        "pos": "past participle",
+        "vn": "được sửa đổi"
+      },
+      {
+        "key": "D",
+        "text": "revising",
+        "pos": "present participle",
+        "vn": "đang sửa đổi"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là advise + O + to V: advised the retailer to revise its policy."
+  },
+  {
+    "id": "q19",
+    "label": "Practice · Question 19",
+    "title": "Câu 19",
+    "category": "Câu cầu khiến bị động · be advised + to V.",
+    "questionEn": "Customers experiencing repeated connection problems are advised ___ their routers before contacting technical support.",
+    "questionVn": "Khách hàng gặp lỗi kết nối lặp lại được khuyên ___ bộ định tuyến trước khi liên hệ hỗ trợ kỹ thuật.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "restart",
+        "pos": "bare infinitive",
+        "vn": "khởi động lại"
+      },
+      {
+        "key": "B",
+        "text": "restarted",
+        "pos": "past participle",
+        "vn": "được khởi động lại"
+      },
+      {
+        "key": "C",
+        "text": "restarting",
+        "pos": "present participle",
+        "vn": "đang khởi động lại"
+      },
+      {
+        "key": "D",
+        "text": "to restart",
+        "pos": "to-infinitive",
+        "vn": "khởi động lại"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là be advised + to V: are advised to restart their routers."
+  },
+  {
+    "id": "q20",
+    "label": "Practice · Question 20",
+    "title": "Câu 20",
+    "category": "Câu cầu khiến bị động · be made + to V.",
+    "questionEn": "New drivers are made ___ a road-safety course before they can operate company vehicles.",
+    "questionVn": "Tài xế mới bị yêu cầu ___ khóa học an toàn đường bộ trước khi được vận hành xe của công ty.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "complete",
+        "pos": "bare infinitive",
+        "vn": "hoàn thành"
+      },
+      {
+        "key": "B",
+        "text": "completed",
+        "pos": "past participle",
+        "vn": "được hoàn thành"
+      },
+      {
+        "key": "C",
+        "text": "to complete",
+        "pos": "to-infinitive",
+        "vn": "hoàn thành"
+      },
+      {
+        "key": "D",
+        "text": "completing",
+        "pos": "present participle",
+        "vn": "đang hoàn thành"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là are made to complete. Ở dạng bị động của 'make', động từ theo sau dùng 'to V'."
+  },
+  {
+    "id": "q21",
+    "label": "Practice · Question 21",
+    "title": "Câu 21",
+    "category": "Câu cầu khiến bị động · have + O + V3.",
+    "questionEn": "The director wants to have the final budget proposal ___ by Friday afternoon.",
+    "questionVn": "Giám đốc muốn cho ___ đề xuất ngân sách cuối cùng trước chiều thứ Sáu.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "approve",
+        "pos": "bare infinitive",
+        "vn": "phê duyệt"
+      },
+      {
+        "key": "B",
+        "text": "approving",
+        "pos": "present participle",
+        "vn": "đang phê duyệt"
+      },
+      {
+        "key": "C",
+        "text": "to approve",
+        "pos": "to-infinitive",
+        "vn": "để phê duyệt"
+      },
+      {
+        "key": "D",
+        "text": "approved",
+        "pos": "past participle",
+        "vn": "được phê duyệt"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là have + O + V3: have the proposal approved. Đề xuất là đối tượng được phê duyệt."
+  },
+  {
+    "id": "q22",
+    "label": "Practice · Question 22",
+    "title": "Câu 22",
+    "category": "Câu cầu khiến chủ động · help + O + V0.",
+    "questionEn": "The updated online guide will help customers ___ the warranty registration process.",
+    "questionVn": "Hướng dẫn trực tuyến được cập nhật sẽ giúp khách hàng ___ quy trình đăng ký bảo hành.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "completed",
+        "pos": "past participle",
+        "vn": "được hoàn tất"
+      },
+      {
+        "key": "B",
+        "text": "completion",
+        "pos": "noun",
+        "vn": "sự hoàn tất"
+      },
+      {
+        "key": "C",
+        "text": "completing",
+        "pos": "present participle",
+        "vn": "đang hoàn tất"
+      },
+      {
+        "key": "D",
+        "text": "complete",
+        "pos": "bare infinitive",
+        "vn": "hoàn tất"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là help + O + V0: help customers complete the process. 'Help' có thể đi với bare infinitive sau tân ngữ."
+  },
+  {
+    "id": "q23",
+    "label": "Practice · Question 23",
+    "title": "Câu 23",
+    "category": "Câu cầu khiến chủ động · make + O + V0.",
+    "questionEn": "A shortage of raw materials may make the manufacturer ___ delivery dates for several orders.",
+    "questionVn": "Việc thiếu nguyên liệu có thể khiến nhà sản xuất ___ ngày giao hàng của một số đơn.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "change",
+        "pos": "bare infinitive",
+        "vn": "thay đổi"
+      },
+      {
+        "key": "B",
+        "text": "changed",
+        "pos": "past verb / participle",
+        "vn": "đã thay đổi / được thay đổi"
+      },
+      {
+        "key": "C",
+        "text": "to change",
+        "pos": "to-infinitive",
+        "vn": "để thay đổi"
+      },
+      {
+        "key": "D",
+        "text": "changing",
+        "pos": "present participle",
+        "vn": "đang thay đổi"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là make + O + V0: make the manufacturer change delivery dates."
+  },
+  {
+    "id": "q24",
+    "label": "Practice · Question 24",
+    "title": "Câu 24",
+    "category": "Câu cầu khiến bị động · be required + to V.",
+    "questionEn": "All applicants are required ___ two professional references with their résumés.",
+    "questionVn": "Tất cả ứng viên được yêu cầu ___ hai người tham chiếu nghề nghiệp cùng sơ yếu lý lịch.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "provide",
+        "pos": "bare infinitive",
+        "vn": "cung cấp"
+      },
+      {
+        "key": "B",
+        "text": "to provide",
+        "pos": "to-infinitive",
+        "vn": "cung cấp"
+      },
+      {
+        "key": "C",
+        "text": "provided",
+        "pos": "past participle",
+        "vn": "được cung cấp"
+      },
+      {
+        "key": "D",
+        "text": "providing",
+        "pos": "present participle",
+        "vn": "đang cung cấp"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là be required + to V: are required to provide references."
+  },
+  {
+    "id": "q25",
+    "label": "Practice · Question 25",
+    "title": "Câu 25",
+    "category": "Câu cầu khiến bị động · be forced + to V.",
+    "questionEn": "Several stores were forced ___ early because of the power failure.",
+    "questionVn": "Một số cửa hàng buộc phải ___ sớm do mất điện.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "close",
+        "pos": "bare infinitive",
+        "vn": "đóng cửa"
+      },
+      {
+        "key": "B",
+        "text": "closed",
+        "pos": "past verb / participle",
+        "vn": "đã đóng / bị đóng"
+      },
+      {
+        "key": "C",
+        "text": "to close",
+        "pos": "to-infinitive",
+        "vn": "đóng cửa"
+      },
+      {
+        "key": "D",
+        "text": "closing",
+        "pos": "present participle",
+        "vn": "đang đóng cửa"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là be forced + to V: were forced to close early."
+  },
+  {
+    "id": "q26",
+    "label": "Practice · Question 26",
+    "title": "Câu 26",
+    "category": "Câu cầu khiến chủ động · let + O + V0.",
+    "questionEn": "The supervisor will let the technicians ___ the equipment after the inspection is complete.",
+    "questionVn": "Giám sát viên sẽ cho phép các kỹ thuật viên ___ thiết bị sau khi việc kiểm tra hoàn tất.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "test",
+        "pos": "bare infinitive",
+        "vn": "kiểm tra / thử"
+      },
+      {
+        "key": "B",
+        "text": "to test",
+        "pos": "to-infinitive",
+        "vn": "để kiểm tra"
+      },
+      {
+        "key": "C",
+        "text": "tested",
+        "pos": "past participle",
+        "vn": "được kiểm tra"
+      },
+      {
+        "key": "D",
+        "text": "testing",
+        "pos": "present participle",
+        "vn": "đang kiểm tra"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là let + O + V0: let the technicians test the equipment. Sau 'let' ở thể chủ động dùng động từ nguyên mẫu không 'to'."
+  },
+  {
+    "id": "q27",
+    "label": "Practice · Question 27",
+    "title": "Câu 27",
+    "category": "Động từ + O + to V · require.",
+    "questionEn": "The revised policy requires all contractors ___ proof of insurance before entering the site.",
+    "questionVn": "Chính sách sửa đổi yêu cầu tất cả nhà thầu ___ bằng chứng bảo hiểm trước khi vào công trường.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "to provide",
+        "pos": "to-infinitive",
+        "vn": "cung cấp"
+      },
+      {
+        "key": "B",
+        "text": "provide",
+        "pos": "bare infinitive",
+        "vn": "cung cấp"
+      },
+      {
+        "key": "C",
+        "text": "provided",
+        "pos": "past participle",
+        "vn": "được cung cấp"
+      },
+      {
+        "key": "D",
+        "text": "providing",
+        "pos": "present participle",
+        "vn": "đang cung cấp"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là require + O + to V: requires all contractors to provide proof of insurance."
+  },
+  {
+    "id": "q28",
+    "label": "Practice · Question 28",
+    "title": "Câu 28",
+    "category": "Câu cầu khiến bị động · be allowed + to V.",
+    "questionEn": "Registered attendees will be allowed ___ the exhibition hall 30 minutes before the public opening.",
+    "questionVn": "Người tham dự đã đăng ký sẽ được phép ___ khu triển lãm trước giờ mở cửa cho công chúng 30 phút.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "enter",
+        "pos": "bare infinitive",
+        "vn": "đi vào"
+      },
+      {
+        "key": "B",
+        "text": "entered",
+        "pos": "past participle",
+        "vn": "được đưa vào"
+      },
+      {
+        "key": "C",
+        "text": "to enter",
+        "pos": "to-infinitive",
+        "vn": "đi vào"
+      },
+      {
+        "key": "D",
+        "text": "entering",
+        "pos": "present participle",
+        "vn": "đang đi vào"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là be allowed + to V: will be allowed to enter the hall."
+  },
+  {
+    "id": "q29",
+    "label": "Practice · Question 29",
+    "title": "Câu 29",
+    "category": "Động từ + O + to V · permit.",
+    "questionEn": "Building regulations do not permit tenants ___ large signs in the common hallway.",
+    "questionVn": "Quy định tòa nhà không cho phép người thuê ___ biển lớn ở hành lang chung.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "install",
+        "pos": "bare infinitive",
+        "vn": "lắp đặt"
+      },
+      {
+        "key": "B",
+        "text": "installed",
+        "pos": "past participle",
+        "vn": "được lắp đặt"
+      },
+      {
+        "key": "C",
+        "text": "installing",
+        "pos": "present participle",
+        "vn": "đang lắp đặt"
+      },
+      {
+        "key": "D",
+        "text": "to install",
+        "pos": "to-infinitive",
+        "vn": "lắp đặt"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là permit + O + to V: permit tenants to install large signs."
+  },
+  {
+    "id": "q30",
+    "label": "Practice · Question 30",
+    "title": "Câu 30",
+    "category": "Câu cầu khiến chủ động · make + O + V0.",
+    "questionEn": "The accounting error made the finance department ___ the quarterly report before publication.",
+    "questionVn": "Lỗi kế toán khiến phòng tài chính ___ báo cáo quý trước khi công bố.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "revising",
+        "pos": "present participle",
+        "vn": "đang sửa"
+      },
+      {
+        "key": "B",
+        "text": "revised",
+        "pos": "past participle",
+        "vn": "được sửa"
+      },
+      {
+        "key": "C",
+        "text": "to revise",
+        "pos": "to-infinitive",
+        "vn": "để sửa"
+      },
+      {
+        "key": "D",
+        "text": "revise",
+        "pos": "bare infinitive",
+        "vn": "sửa lại"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là make + O + V0: made the finance department revise the report."
+  },
+  {
+    "id": "q31",
+    "label": "Practice · Question 31",
+    "title": "Câu 31",
+    "category": "Động từ + O + to V · urge.",
+    "questionEn": "The transportation department urged commuters ___ extra travel time during the bridge repairs.",
+    "questionVn": "Sở giao thông khuyến cáo người đi làm ___ thêm thời gian di chuyển trong thời gian sửa cầu.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "allow",
+        "pos": "bare infinitive",
+        "vn": "dành / cho phép"
+      },
+      {
+        "key": "B",
+        "text": "allowed",
+        "pos": "past verb / participle",
+        "vn": "đã cho phép / được cho phép"
+      },
+      {
+        "key": "C",
+        "text": "allowing",
+        "pos": "present participle",
+        "vn": "đang dành"
+      },
+      {
+        "key": "D",
+        "text": "to allow",
+        "pos": "to-infinitive",
+        "vn": "dành"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là urge + O + to V: urged commuters to allow extra travel time."
+  },
+  {
+    "id": "q32",
+    "label": "Practice · Question 32",
+    "title": "Câu 32",
+    "category": "Động từ + O + to V · invite.",
+    "questionEn": "The chamber of commerce invited local business owners ___ a seminar on digital marketing.",
+    "questionVn": "Phòng thương mại mời các chủ doanh nghiệp địa phương ___ hội thảo về tiếp thị số.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "attending",
+        "pos": "present participle",
+        "vn": "đang tham dự"
+      },
+      {
+        "key": "B",
+        "text": "attend",
+        "pos": "bare infinitive",
+        "vn": "tham dự"
+      },
+      {
+        "key": "C",
+        "text": "to attend",
+        "pos": "to-infinitive",
+        "vn": "tham dự"
+      },
+      {
+        "key": "D",
+        "text": "attended",
+        "pos": "past participle",
+        "vn": "được tham dự"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là invite + O + to V: invited business owners to attend a seminar."
+  },
+  {
+    "id": "q33",
+    "label": "Practice · Question 33",
+    "title": "Câu 33",
+    "category": "Câu cầu khiến bị động · be asked + to V.",
+    "questionEn": "Guests are asked ___ mobile phones during the presentation.",
+    "questionVn": "Khách được yêu cầu ___ điện thoại di động trong buổi thuyết trình.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "to silence",
+        "pos": "to-infinitive",
+        "vn": "để chế độ im lặng"
+      },
+      {
+        "key": "B",
+        "text": "silence",
+        "pos": "bare infinitive",
+        "vn": "làm im lặng"
+      },
+      {
+        "key": "C",
+        "text": "silenced",
+        "pos": "past participle",
+        "vn": "được làm im lặng"
+      },
+      {
+        "key": "D",
+        "text": "silencing",
+        "pos": "present participle",
+        "vn": "đang làm im lặng"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là be asked + to V: are asked to silence mobile phones."
+  },
+  {
+    "id": "q34",
+    "label": "Practice · Question 34",
+    "title": "Câu 34",
+    "category": "Động từ + O + to V · need.",
+    "questionEn": "We need each department head ___ the staffing forecast by the end of the week.",
+    "questionVn": "Chúng tôi cần mỗi trưởng bộ phận ___ dự báo nhân sự trước cuối tuần.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "submit",
+        "pos": "bare infinitive",
+        "vn": "nộp"
+      },
+      {
+        "key": "B",
+        "text": "submitting",
+        "pos": "present participle",
+        "vn": "đang nộp"
+      },
+      {
+        "key": "C",
+        "text": "to submit",
+        "pos": "to-infinitive",
+        "vn": "nộp"
+      },
+      {
+        "key": "D",
+        "text": "submitted",
+        "pos": "past participle",
+        "vn": "được nộp"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là need + O + to V: need each department head to submit the forecast."
+  },
+  {
+    "id": "q35",
+    "label": "Practice · Question 35",
+    "title": "Câu 35",
+    "category": "Câu cầu khiến chủ động · have + O + V0.",
+    "questionEn": "The property manager will have a maintenance worker ___ the air-conditioning unit this afternoon.",
+    "questionVn": "Quản lý tòa nhà sẽ nhờ một nhân viên bảo trì ___ máy điều hòa chiều nay.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "inspected",
+        "pos": "past participle",
+        "vn": "được kiểm tra"
+      },
+      {
+        "key": "B",
+        "text": "to inspect",
+        "pos": "to-infinitive",
+        "vn": "để kiểm tra"
+      },
+      {
+        "key": "C",
+        "text": "inspect",
+        "pos": "bare infinitive",
+        "vn": "kiểm tra"
+      },
+      {
+        "key": "D",
+        "text": "inspection",
+        "pos": "noun",
+        "vn": "việc kiểm tra"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là have + O + V0: have a maintenance worker inspect the unit."
+  },
+  {
+    "id": "q36",
+    "label": "Practice · Question 36",
+    "title": "Câu 36",
+    "category": "Câu cầu khiến chủ động · make + O + V0.",
+    "questionEn": "Unexpected demand made the production team ___ its weekend schedule.",
+    "questionVn": "Nhu cầu bất ngờ khiến đội sản xuất ___ lịch làm việc cuối tuần.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "extending",
+        "pos": "present participle",
+        "vn": "đang kéo dài"
+      },
+      {
+        "key": "B",
+        "text": "to extend",
+        "pos": "to-infinitive",
+        "vn": "để kéo dài"
+      },
+      {
+        "key": "C",
+        "text": "extend",
+        "pos": "bare infinitive",
+        "vn": "kéo dài"
+      },
+      {
+        "key": "D",
+        "text": "extended",
+        "pos": "past verb / participle",
+        "vn": "đã kéo dài / được kéo dài"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là make + O + V0: made the production team extend its schedule. 'Make' mang nghĩa khiến/bắt ai làm gì và dùng bare infinitive ở thể chủ động."
+  },
+  {
+    "id": "q37",
+    "label": "Practice · Question 37",
+    "title": "Câu 37",
+    "category": "Động từ + O + to V · tell.",
+    "questionEn": "The technician told the receptionist ___ the printer until replacement parts arrived.",
+    "questionVn": "Kỹ thuật viên bảo lễ tân ___ máy in cho đến khi linh kiện thay thế đến.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "not use",
+        "pos": "bare infinitive phrase",
+        "vn": "không sử dụng"
+      },
+      {
+        "key": "B",
+        "text": "not using",
+        "pos": "gerund / participle phrase",
+        "vn": "không sử dụng"
+      },
+      {
+        "key": "C",
+        "text": "not to use",
+        "pos": "negative to-infinitive",
+        "vn": "không sử dụng"
+      },
+      {
+        "key": "D",
+        "text": "not used",
+        "pos": "past participle phrase",
+        "vn": "không được dùng"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là tell + O + not to V: told the receptionist not to use the printer."
+  },
+  {
+    "id": "q38",
+    "label": "Practice · Question 38",
+    "title": "Câu 38",
+    "category": "Động từ + O + to V · remind.",
+    "questionEn": "The automated message reminds customers ___ their appointments at least 24 hours in advance.",
+    "questionVn": "Tin nhắn tự động nhắc khách hàng ___ cuộc hẹn trước ít nhất 24 giờ.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "confirm",
+        "pos": "bare infinitive",
+        "vn": "xác nhận"
+      },
+      {
+        "key": "B",
+        "text": "to confirm",
+        "pos": "to-infinitive",
+        "vn": "xác nhận"
+      },
+      {
+        "key": "C",
+        "text": "confirmed",
+        "pos": "past participle",
+        "vn": "được xác nhận"
+      },
+      {
+        "key": "D",
+        "text": "confirming",
+        "pos": "present participle",
+        "vn": "đang xác nhận"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là remind + O + to V: reminds customers to confirm their appointments."
+  },
+  {
+    "id": "q39",
+    "label": "Practice · Question 39",
+    "title": "Câu 39",
+    "category": "Câu cầu khiến chủ động · help + O + V0.",
+    "questionEn": "Clearer aisle signs should help shoppers ___ the products they need more quickly.",
+    "questionVn": "Biển chỉ dẫn lối đi rõ hơn sẽ giúp người mua ___ sản phẩm họ cần nhanh hơn.",
+    "answer": "A",
+    "options": [
+      {
+        "key": "A",
+        "text": "find",
+        "pos": "bare infinitive",
+        "vn": "tìm thấy"
+      },
+      {
+        "key": "B",
+        "text": "found",
+        "pos": "past verb / participle",
+        "vn": "đã tìm thấy / được thành lập"
+      },
+      {
+        "key": "C",
+        "text": "finding",
+        "pos": "present participle",
+        "vn": "đang tìm"
+      },
+      {
+        "key": "D",
+        "text": "finds",
+        "pos": "present verb",
+        "vn": "tìm thấy, ngôi số ít"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là help + O + V0: help shoppers find the products."
+  },
+  {
+    "id": "q40",
+    "label": "Practice · Question 40",
+    "title": "Câu 40",
+    "category": "Câu cầu khiến chủ động · let + O + V0.",
+    "questionEn": "Employees are asked not to let unauthorized visitors ___ the storage area.",
+    "questionVn": "Nhân viên được yêu cầu không để khách không có thẩm quyền ___ khu vực lưu trữ.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "entered",
+        "pos": "past verb / participle",
+        "vn": "đã vào / được đưa vào"
+      },
+      {
+        "key": "B",
+        "text": "enter",
+        "pos": "bare infinitive",
+        "vn": "đi vào"
+      },
+      {
+        "key": "C",
+        "text": "to enter",
+        "pos": "to-infinitive",
+        "vn": "để đi vào"
+      },
+      {
+        "key": "D",
+        "text": "entering",
+        "pos": "present participle",
+        "vn": "đang đi vào"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là let + O + V0: let unauthorized visitors enter. Sau 'let', động từ chỉ hành động của tân ngữ dùng V0."
+  },
+  {
+    "id": "q41",
+    "label": "Practice · Question 41",
+    "title": "Câu 41",
+    "category": "Câu cầu khiến bị động · have + O + V3.",
+    "questionEn": "Ms. Huang had the conference room ___ for a video call with the overseas office.",
+    "questionVn": "Bà Huang đã cho ___ phòng hội nghị để thực hiện cuộc gọi video với văn phòng nước ngoài.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "rearrange",
+        "pos": "bare infinitive",
+        "vn": "sắp xếp lại"
+      },
+      {
+        "key": "B",
+        "text": "rearranging",
+        "pos": "present participle",
+        "vn": "đang sắp xếp lại"
+      },
+      {
+        "key": "C",
+        "text": "rearranged",
+        "pos": "past participle",
+        "vn": "được sắp xếp lại"
+      },
+      {
+        "key": "D",
+        "text": "to rearrange",
+        "pos": "to-infinitive",
+        "vn": "để sắp xếp lại"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là have + O + V3: had the conference room rearranged. Phòng là đối tượng được sắp xếp lại."
+  },
+  {
+    "id": "q42",
+    "label": "Practice · Question 42",
+    "title": "Câu 42",
+    "category": "Câu cầu khiến bị động · be reminded + to V.",
+    "questionEn": "Passengers are reminded ___ personal belongings before leaving the train.",
+    "questionVn": "Hành khách được nhắc ___ đồ đạc cá nhân trước khi rời tàu.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "checking",
+        "pos": "present participle",
+        "vn": "đang kiểm tra"
+      },
+      {
+        "key": "B",
+        "text": "checked",
+        "pos": "past participle",
+        "vn": "được kiểm tra"
+      },
+      {
+        "key": "C",
+        "text": "check",
+        "pos": "bare infinitive",
+        "vn": "kiểm tra"
+      },
+      {
+        "key": "D",
+        "text": "to check",
+        "pos": "to-infinitive",
+        "vn": "kiểm tra"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là be reminded + to V: are reminded to check personal belongings."
+  },
+  {
+    "id": "q43",
+    "label": "Practice · Question 43",
+    "title": "Câu 43",
+    "category": "Câu cầu khiến chủ động · make + O + V0.",
+    "questionEn": "The branch manager made all new employees ___ the revised safety checklist before beginning work.",
+    "questionVn": "Quản lý chi nhánh yêu cầu tất cả nhân viên mới ___ danh sách kiểm tra an toàn đã sửa đổi trước khi bắt đầu làm việc.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "reviewed",
+        "pos": "past participle",
+        "vn": "được xem xét"
+      },
+      {
+        "key": "B",
+        "text": "review",
+        "pos": "bare infinitive",
+        "vn": "xem xét"
+      },
+      {
+        "key": "C",
+        "text": "to review",
+        "pos": "to-infinitive",
+        "vn": "để xem xét"
+      },
+      {
+        "key": "D",
+        "text": "reviewing",
+        "pos": "present participle",
+        "vn": "đang xem xét"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là make + O + V0: made all new employees review the checklist. Sau 'make' ở thể chủ động, động từ theo sau tân ngữ dùng nguyên mẫu không 'to'."
+  },
+  {
+    "id": "q44",
+    "label": "Practice · Question 44",
+    "title": "Câu 44",
+    "category": "Động từ + O + to V · encourage.",
+    "questionEn": "The company encourages employees ___ public transportation whenever possible.",
+    "questionVn": "Công ty khuyến khích nhân viên ___ phương tiện công cộng khi có thể.",
+    "answer": "C",
+    "options": [
+      {
+        "key": "A",
+        "text": "use",
+        "pos": "bare infinitive",
+        "vn": "sử dụng"
+      },
+      {
+        "key": "B",
+        "text": "used",
+        "pos": "past verb / participle",
+        "vn": "đã dùng / được dùng"
+      },
+      {
+        "key": "C",
+        "text": "to use",
+        "pos": "to-infinitive",
+        "vn": "sử dụng"
+      },
+      {
+        "key": "D",
+        "text": "using",
+        "pos": "present participle",
+        "vn": "đang sử dụng"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là encourage + O + to V: encourages employees to use public transportation."
+  },
+  {
+    "id": "q45",
+    "label": "Practice · Question 45",
+    "title": "Câu 45",
+    "category": "Câu cầu khiến bị động · be expected + to V.",
+    "questionEn": "Department supervisors are expected ___ monthly performance summaries to senior management.",
+    "questionVn": "Các giám sát bộ phận được kỳ vọng ___ bản tóm tắt hiệu suất hằng tháng cho ban quản lý cấp cao.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "send",
+        "pos": "bare infinitive",
+        "vn": "gửi"
+      },
+      {
+        "key": "B",
+        "text": "to send",
+        "pos": "to-infinitive",
+        "vn": "gửi"
+      },
+      {
+        "key": "C",
+        "text": "sent",
+        "pos": "past verb / participle",
+        "vn": "đã gửi / được gửi"
+      },
+      {
+        "key": "D",
+        "text": "sending",
+        "pos": "present participle",
+        "vn": "đang gửi"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là be expected + to V: are expected to send monthly summaries."
+  },
+  {
+    "id": "q46",
+    "label": "Practice · Question 46",
+    "title": "Câu 46",
+    "category": "Câu cầu khiến bị động · be made + to V.",
+    "questionEn": "Vendors who fail the initial inspection may be made ___ additional documentation.",
+    "questionVn": "Các nhà cung cấp không đạt lần kiểm tra đầu có thể bị yêu cầu ___ tài liệu bổ sung.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "providing",
+        "pos": "present participle",
+        "vn": "đang cung cấp"
+      },
+      {
+        "key": "B",
+        "text": "to provide",
+        "pos": "to-infinitive",
+        "vn": "cung cấp"
+      },
+      {
+        "key": "C",
+        "text": "provide",
+        "pos": "bare infinitive",
+        "vn": "cung cấp"
+      },
+      {
+        "key": "D",
+        "text": "provided",
+        "pos": "past participle",
+        "vn": "được cung cấp"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là may be made to provide. Sau 'be made' dùng to-infinitive."
+  },
+  {
+    "id": "q47",
+    "label": "Practice · Question 47",
+    "title": "Câu 47",
+    "category": "Câu cầu khiến bị động · be instructed + to V.",
+    "questionEn": "Participants will be instructed ___ their access codes at the beginning of the training session.",
+    "questionVn": "Người tham gia sẽ được hướng dẫn ___ mã truy cập ở đầu buổi đào tạo.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "enter",
+        "pos": "bare infinitive",
+        "vn": "nhập"
+      },
+      {
+        "key": "B",
+        "text": "to enter",
+        "pos": "to-infinitive",
+        "vn": "nhập"
+      },
+      {
+        "key": "C",
+        "text": "entered",
+        "pos": "past participle",
+        "vn": "được nhập"
+      },
+      {
+        "key": "D",
+        "text": "entering",
+        "pos": "present participle",
+        "vn": "đang nhập"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là be instructed + to V: will be instructed to enter their access codes."
+  },
+  {
+    "id": "q48",
+    "label": "Practice · Question 48",
+    "title": "Câu 48",
+    "category": "Câu cầu khiến bị động · help trong cấu trúc bị động.",
+    "questionEn": "Customers who have difficulty with the kiosk can be helped ___ their orders by a staff member.",
+    "questionVn": "Khách hàng gặp khó khăn với ki-ốt có thể được nhân viên giúp ___ đơn hàng.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "place",
+        "pos": "bare infinitive",
+        "vn": "đặt"
+      },
+      {
+        "key": "B",
+        "text": "to place",
+        "pos": "to-infinitive",
+        "vn": "đặt"
+      },
+      {
+        "key": "C",
+        "text": "placed",
+        "pos": "past participle",
+        "vn": "được đặt"
+      },
+      {
+        "key": "D",
+        "text": "placing",
+        "pos": "present participle",
+        "vn": "đang đặt"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là be helped + to V: can be helped to place their orders. Trong cấu trúc bị động với 'help', 'to-infinitive' là lựa chọn tự nhiên."
+  },
+  {
+    "id": "q49",
+    "label": "Practice · Question 49",
+    "title": "Câu 49",
+    "category": "Câu cầu khiến chủ động · have + O + V0.",
+    "questionEn": "The event coordinator had a local caterer ___ lunch for the visiting sales representatives.",
+    "questionVn": "Điều phối viên sự kiện thuê một đơn vị phục vụ địa phương ___ bữa trưa cho các đại diện bán hàng đến thăm.",
+    "answer": "B",
+    "options": [
+      {
+        "key": "A",
+        "text": "provided",
+        "pos": "past participle",
+        "vn": "được cung cấp"
+      },
+      {
+        "key": "B",
+        "text": "provide",
+        "pos": "bare infinitive",
+        "vn": "cung cấp"
+      },
+      {
+        "key": "C",
+        "text": "providing",
+        "pos": "present participle",
+        "vn": "đang cung cấp"
+      },
+      {
+        "key": "D",
+        "text": "to provide",
+        "pos": "to-infinitive",
+        "vn": "để cung cấp"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là have + O + V0: had a local caterer provide lunch. Đây là dạng cầu khiến chủ động, trong đó tân ngữ trực tiếp thực hiện hành động."
+  },
+  {
+    "id": "q50",
+    "label": "Practice · Question 50",
+    "title": "Câu 50",
+    "category": "Câu cầu khiến chủ động · have + O + V0.",
+    "questionEn": "Ms. Rivera had her assistant ___ copies of the contract for everyone attending the meeting.",
+    "questionVn": "Bà Rivera nhờ trợ lý ___ các bản sao hợp đồng cho tất cả những người tham dự cuộc họp.",
+    "answer": "D",
+    "options": [
+      {
+        "key": "A",
+        "text": "prepared",
+        "pos": "past verb / participle",
+        "vn": "đã chuẩn bị / được chuẩn bị"
+      },
+      {
+        "key": "B",
+        "text": "preparing",
+        "pos": "present participle",
+        "vn": "đang chuẩn bị"
+      },
+      {
+        "key": "C",
+        "text": "to prepare",
+        "pos": "to-infinitive",
+        "vn": "để chuẩn bị"
+      },
+      {
+        "key": "D",
+        "text": "prepare",
+        "pos": "bare infinitive",
+        "vn": "chuẩn bị"
+      }
+    ],
+    "explanation": "Cấu trúc đúng là have + O + V0: had her assistant prepare copies. Khi 'have' mang nghĩa nhờ/yêu cầu ai làm việc gì, động từ sau tân ngữ dùng V0."
+  }
+];
+const quizDataMap=Object.fromEntries(quizData.map(item=>[item.id,item]));
+
+function finalResultSlide(){
+  return '<section class="slide result-slide">'
+    + '<div class="slide-label">Hoàn thành</div>'
+    + '<h2>Kết quả 50 câu cầu khiến và cấu trúc động từ + tân ngữ</h2>'
+    + '<div class="content-area">'
+    + '<div class="intro-box"><p id="finalScoreText"><b>Điểm của bạn:</b> đang tính...</p><p id="finalMetaText">Các câu chưa chọn đáp án sẽ tự tính là sai.</p><p class="submit-status" id="submitStatus">Bấm <b>Nộp kết quả</b> để lưu bài làm.</p><button class="nav-btn" id="submitResultBtn" type="button" onclick="submitFinalResult()" style="display:inline-block;margin-top:12px">Nộp kết quả</button><button class="nav-btn home-btn" type="button" onclick="requestGoHome()" style="display:inline-block;margin-top:12px;margin-left:10px;text-decoration:none">Về trang chủ</button></div>'
+    + '<div class="method-box"><h3>Ghi chú</h3><ul class="steps"><li>Câu chưa chọn đáp án = sai.</li></ul></div>'
+    + '</div></section>';
+}
+
+function renderQuizSlides(){
+  const mount=document.getElementById('quizMount');
+  if(!mount||mount.dataset.rendered==='1') return;
+  mount.outerHTML=quizData.map(function(item,index){
+    const optionsHtml=item.options.map(function(opt){
+      return '<label class="option"><input name="'+escapeHtml(item.id)+'" type="radio" value="'+escapeHtml(opt.key)+'"><span class="option-letter">'+escapeHtml(opt.key)+'.</span><span>'+escapeHtml(opt.text)+'</span></label>';
+    }).join('');
+    const translationsHtml=item.options.map(function(opt){
+      return '<div class="translation-item"><span class="letter">'+escapeHtml(opt.key)+'.</span><b>'+escapeHtml(opt.text)+'</b> = '+escapeHtml(opt.vn)+' <span class="option-pos">'+escapeHtml(opt.pos)+'</span></div>';
+    }).join('');
+    const correctOption=item.options.find(opt=>opt.key===item.answer) || {text:''};
+    return '<section class="slide quiz-slide'+(index===0?' active':'')+'" data-question="'+escapeHtml(item.id)+'">'
+      + '<div class="slide-label">'+escapeHtml(item.label)+'</div>'
+      + '<h2>'+escapeHtml(item.title)+'</h2>'
+      + '<div class="content-area">'
+      + '<div class="sample-box"><div class="sample-title">Question</div><div class="question">'+escapeHtml(item.questionEn)+'</div><div class="options">'+optionsHtml+'</div></div>'
+      + '<div class="method-box result-box" id="result-'+escapeHtml(item.id.replace(/^q/,''))+'"><h3 class="result-title"></h3><p class="explain"><span class="answer-key">Đáp án đúng: '+escapeHtml(item.answer)+'. '+escapeHtml(correctOption.text)+'</span> — '+formatExplanation(item.explanation)+'</p></div>'
+      + '<div class="translation-box"><h3>Dịch nghĩa 4 đáp án</h3><div class="translation-list">'+translationsHtml+'</div></div>'
+      + '</div></section>';
+  }).join('\n') + '\n' + finalResultSlide();
+}
+renderQuizSlides();
+const slides=[...document.querySelectorAll('.slide')];
+const progressText=document.getElementById('progressText');
+const topLine=document.getElementById('topLine');
+const checkBtn=document.getElementById('checkBtn');
+let currentSlide=0;
+let revealIndex=0;
+const checkedAnswers={};
+const totalQuestions=quizData.length;
+function updateProgress(){
+  progressText.textContent=(currentSlide+1)+' / '+slides.length;
+  topLine.style.width=((currentSlide+1)/slides.length*100)+'%';
+  updateCheckState();
+  syncPagePickerActive();
+}
+function resetSlideReveal(slide){
+  slide.querySelectorAll('.reveal').forEach(el=>el.classList.remove('show'));
+}
+function showSlide(index){
+  if(index<0||index>=slides.length) return;
+  slides[currentSlide].classList.remove('active');
+  resetSlideReveal(slides[currentSlide]);
+  currentSlide=index;
+  revealIndex=0;
+  slides[currentSlide].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  updateProgress();
+  if(slides[currentSlide].classList.contains('result-slide')) showFinalResultPreview();
+}
+function goReveal(){
+  const activeSlide=slides[currentSlide];
+  const revealItems=activeSlide.querySelectorAll('.reveal');
+  if(revealIndex<revealItems.length){
+    const item=revealItems[revealIndex];
+    item.classList.add('show');
+    revealIndex++;
+    setTimeout(()=>item.scrollIntoView({behavior:'smooth',block:'center'}),80);
+    return;
+  }
+}
+function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1);}
+function prevSlide(){if(currentSlide>0)showSlide(currentSlide-1);}
+function updateCheckState(){
+  const slide=slides[currentSlide];
+  const isQuiz=slide.classList.contains('quiz-slide');
+  checkBtn.style.display=isQuiz?'inline-block':'none';
+}
+function lockCurrentQuestion(slide){
+  slide.classList.add('answer-locked');
+  slide.querySelectorAll('input[type="radio"]').forEach(input=>{
+    input.disabled=true;
+  });
+}
+function checkAnswer(){
+  const slide=slides[currentSlide];
+  if(!slide.classList.contains('quiz-slide')) return;
+  const qName=slide.dataset.question;
+  const item=quizDataMap[qName];
+  if(!item) return;
+  const answer=item.answer;
+  const selected=slide.querySelector('input[name="'+qName+'"]:checked');
+  const resultBox=slide.querySelector('.result-box');
+  const title=slide.querySelector('.result-title');
+  const translationBox=slide.querySelector('.translation-box');
+
+  if(slide.classList.contains('answer-locked')){
+    if(resultBox) resultBox.classList.add('show');
+    if(translationBox) translationBox.classList.add('show');
+    return;
+  }
+
+  if(!selected){
+    resultBox.classList.remove('wrong-box');
+    resultBox.classList.add('show','no-answer');
+    if(translationBox) translationBox.classList.remove('show');
+    title.innerHTML='<span class="wrong-text">Hãy chọn một đáp án trước.</span>';
+    setTimeout(()=>resultBox.scrollIntoView({behavior:'smooth',block:'center'}),80);
+    return;
+  }
+  resultBox.classList.remove('no-answer');
+  const isCorrect=selected.value===answer;
+  checkedAnswers[qName]=isCorrect;
+  syncPagePickerActive();
+  lockCurrentQuestion(slide);
+  resultBox.classList.toggle('wrong-box',!isCorrect);
+  resultBox.classList.add('show');
+  if(translationBox) translationBox.classList.add('show');
+  title.innerHTML=isCorrect?'<span class="correct-text">✓ Chính xác!</span>':'<span class="wrong-text">✗ Chưa đúng.</span>';
+  setTimeout(()=>resultBox.scrollIntoView({behavior:'smooth',block:'center'}),80);
+}
+
+function setupQuestionTranslationButtons(){
+  slides.forEach(slide=>{
+    if(!slide.classList.contains('quiz-slide')) return;
+    const qName=slide.dataset.question;
+    const sampleTitle=slide.querySelector('.sample-title');
+    const question=slide.querySelector('.question');
+    const item=quizDataMap[qName];
+    if(!sampleTitle||!question||!item||!item.questionVn) return;
+    sampleTitle.classList.add('question-row');
+    if(sampleTitle.querySelector('.lang-pill')) return;
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.className='lang-pill';
+    btn.textContent='En | Vn';
+    btn.onclick=function(){toggleQuestionTranslation(btn)};
+    sampleTitle.appendChild(btn);
+    const vn=document.createElement('div');
+    vn.className='question-vn';
+    vn.innerHTML='<span class="vn-label">VN:</span>'+escapeHtml(item.questionVn);
+    question.insertAdjacentElement('afterend',vn);
+  });
+}
+function toggleQuestionTranslation(btn){
+  const sampleBox=btn.closest('.sample-box');
+  const vn=sampleBox?sampleBox.querySelector('.question-vn'):null;
+  if(!vn) return;
+  vn.classList.toggle('show');
+  btn.classList.toggle('active',vn.classList.contains('show'));
+}
+function buildPagePicker(){
+  const grid=document.getElementById('pagePickerGrid');
+  if(!grid||grid.dataset.ready==='1') return;
+  slides.forEach((slide,index)=>{
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.className='page-jump-btn';
+    btn.dataset.slideIndex=String(index);
+    if(slide.classList.contains('quiz-slide') && slide.dataset.question){
+      btn.dataset.questionId=slide.dataset.question;
+    }
+    const title=(slide.querySelector('h1,h2')?.textContent||'Slide').trim();
+    const label=(slide.querySelector('.slide-label')?.textContent||'').trim();
+    btn.innerHTML='<span class="page-no">'+(index+1)+'</span><span class="page-title">'+(label||title)+'</span>';
+    btn.onclick=function(){showSlide(index);closePagePicker();};
+    grid.appendChild(btn);
+  });
+  grid.dataset.ready='1';
+}
+function syncPagePickerActive(){
+  const buttons=document.querySelectorAll('.page-jump-btn');
+  buttons.forEach((btn,i)=>{
+    btn.classList.toggle('active',i===currentSlide);
+    btn.classList.remove('correct-answer','wrong-answer');
+    const qid=btn.dataset.questionId;
+    if(qid && Object.prototype.hasOwnProperty.call(checkedAnswers,qid)){
+      btn.classList.add(checkedAnswers[qid] ? 'correct-answer' : 'wrong-answer');
+    }
+  });
+}
+function openPagePicker(){
+  buildPagePicker();
+  syncPagePickerActive();
+  document.getElementById('pagePicker')?.classList.add('show');
+}
+function closePagePicker(event){
+  if(event&&event.target&&event.target.id!=='pagePicker') return;
+  document.getElementById('pagePicker')?.classList.remove('show');
+}
+
+
+
+const STUDENT_KEY='toeic_student_session';
+function getStudentSession(){
+  try{
+    const raw=localStorage.getItem(STUDENT_KEY);
+    return raw?JSON.parse(raw):null;
+  }catch(e){
+    return null;
+  }
+}
+function requireStudentSession(){
+  const student=getStudentSession();
+  if(!student||!student.email){
+    alert('Bạn cần đăng nhập bằng email đã được cấp quyền trước khi làm bài.');
+    location.href='index.html';
+    return null;
+  }
+  return student;
+}
+
+let resultSubmitted=false;
+function requestGoHome(){
+  if(resultSubmitted){
+    location.href='index.html';
+    return;
+  }
+  document.getElementById('homeConfirm')?.classList.add('show');
+}
+function closeHomeConfirm(event){
+  if(event&&event.target&&event.target.id!=='homeConfirm') return;
+  document.getElementById('homeConfirm')?.classList.remove('show');
+}
+function confirmGoHome(){
+  location.href='index.html';
+}
+function logoutStudent(){
+  localStorage.removeItem(STUDENT_KEY);
+  location.href='index.html';
+}
+function collectResultPayload(){
+  const student=getStudentSession()||{};
+  const submittedAt=new Date().toISOString();
+  let score=0;
+  const answers=quizData.map(function(item,index){
+    const selectedEl=document.querySelector('input[name="'+CSS.escape(item.id)+'"]:checked');
+    const selected=selectedEl?selectedEl.value:null;
+    const selectedOption=item.options.find(opt=>opt.key===selected)||null;
+    const correctOption=item.options.find(opt=>opt.key===item.answer)||null;
+    const correct=selected===item.answer;
+    if(correct) score++;
+    return {
+      no:index+1,
+      id:item.id,
+      questionEn:item.questionEn,
+      questionVn:item.questionVn,
+      selected:selected,
+      selectedText:selectedOption?selectedOption.text:null,
+      correctAnswer:item.answer,
+      correctText:correctOption?correctOption.text:null,
+      isCorrect:correct,
+      checkedBeforeSubmit:Object.prototype.hasOwnProperty.call(checkedAnswers,item.id)
+    };
+  });
+  return {
+    student:{email:student.email||'', loginAt:student.loginAt||''},
+    quiz:{id:'causative-verbs-toeic-50', title:'Câu cầu khiến TOEIC - 50 câu', total:quizData.length},
+    submittedAt,
+    score,
+    total:quizData.length,
+    percent:Math.round(score/quizData.length*100),
+    answers
+  };
+}
+function showFinalResultPreview(){
+  const student=requireStudentSession();
+  if(!student) return;
+  const payload=collectResultPayload();
+  const scoreEl=document.getElementById('finalScoreText');
+  const metaEl=document.getElementById('finalMetaText');
+  const statusEl=document.getElementById('submitStatus');
+  const submitBtn=document.getElementById('submitResultBtn');
+  if(scoreEl) scoreEl.innerHTML='<b>Điểm của bạn:</b> '+payload.score+' / '+payload.total+' ('+payload.percent+'%)';
+  if(metaEl) metaEl.textContent='Email: '+payload.student.email+' · Các câu chưa chọn đáp án được tính là sai.';
+  if(statusEl && !resultSubmitted){
+    statusEl.className='submit-status';
+    statusEl.innerHTML='Bấm <b>Nộp kết quả</b> để lưu bài làm.';
+  }
+  if(submitBtn && !resultSubmitted){
+    submitBtn.style.display='inline-block';
+    submitBtn.disabled=false;
+    submitBtn.textContent='Nộp kết quả';
+  }
+}
+async function submitFinalResult(){
+  if(resultSubmitted) return;
+  const student=requireStudentSession();
+  if(!student) return;
+  const payload=collectResultPayload();
+  const scoreEl=document.getElementById('finalScoreText');
+  const metaEl=document.getElementById('finalMetaText');
+  const statusEl=document.getElementById('submitStatus');
+  const submitBtn=document.getElementById('submitResultBtn');
+  if(scoreEl) scoreEl.innerHTML='<b>Điểm của bạn:</b> '+payload.score+' / '+payload.total+' ('+payload.percent+'%)';
+  if(metaEl) metaEl.textContent='Email: '+payload.student.email+' · Nộp lúc: '+new Date(payload.submittedAt).toLocaleString('vi-VN');
+  if(submitBtn){
+    submitBtn.disabled=true;
+    submitBtn.textContent='Đang nộp...';
+  }
+  if(statusEl){statusEl.className='submit-status';statusEl.textContent='Đang lưu kết quả...';}
+  try{
+    const res=await fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.ok) throw new Error(data.error||'Không lưu được kết quả');
+    resultSubmitted=true;
+    if(statusEl){statusEl.className='submit-status ok';statusEl.textContent='Đã lưu kết quả thành công. Mã bài nộp: '+data.id;}
+    if(submitBtn){submitBtn.style.display='none';}
+  }catch(err){
+    if(statusEl){statusEl.className='submit-status err';statusEl.textContent='Không thể lưu lên. Kiểm tra KV binding / mạng rồi bấm Nộp kết quả lại.';}
+    if(submitBtn){
+      submitBtn.disabled=false;
+      submitBtn.textContent='Nộp kết quả';
+      submitBtn.style.display='inline-block';
+    }
+    const oldLink=document.getElementById('downloadResultJson');
+    if(oldLink) oldLink.remove();
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;
+    a.download='student_result_'+(payload.student.email||'student').replace(/[^a-z0-9._-]/gi,'_')+'_'+Date.now()+'.json';
+    a.textContent='Tải JSON kết quả dự phòng';
+    a.className='nav-btn';
+    a.id='downloadResultJson';
+    a.style.display='inline-block';
+    a.style.marginTop='14px';
+    statusEl?.insertAdjacentElement('afterend',a);
+  }
+}
+
+document.addEventListener('keydown',function(e){
+  if(e.code==='Space'||e.code==='Enter'){e.preventDefault();goReveal();}
+  if(e.code==='ArrowRight')nextSlide();
+  if(e.code==='ArrowLeft')prevSlide();
+  if(e.code==='Escape')closePagePicker();
+});
+setupQuestionTranslationButtons();
+updateProgress();
+
+</script>
+
+<script>
+(function(){
+  'use strict';
+  document.documentElement.classList.add('anti-download-lock');
+
+  const block = function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  };
+
+  // Khóa chuột phải, kéo-thả, chọn/copy/cut/paste/in/trình đơn lưu phổ biến
+  ['contextmenu','dragstart','drop','copy','cut','paste','selectstart'].forEach(function(evt){
+    document.addEventListener(evt, block, true);
+  });
+
+  document.addEventListener('keydown', function(e){
+    const key = String(e.key || '').toLowerCase();
+    const ctrlOrCmd = e.ctrlKey || e.metaKey;
+
+    // F12
+    if(e.key === 'F12') return block(e);
+
+    // Ctrl/Cmd + S/U/P/O/A/C/X/V
+    if(ctrlOrCmd && ['s','u','p','o','a','c','x','v'].includes(key)) return block(e);
+
+    // Ctrl/Cmd + Shift + I/J/C/S
+    if(ctrlOrCmd && e.shiftKey && ['i','j','c','s'].includes(key)) return block(e);
+  }, true);
+
+  // Hạn chế kéo media/link ra ngoài để tải
+  document.addEventListener('mousedown', function(e){
+    if(e.button === 2) return block(e);
+  }, true);
+})();
+</script>
+
+</body>
+</html>

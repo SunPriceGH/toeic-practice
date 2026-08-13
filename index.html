@@ -499,6 +499,12 @@ body.show-practice .lesson-section-card{display:none!important}
         <div class="pill-row"><span class="pill">30 câu</span><span class="pill">Relative clauses</span><span class="pill">Part 5</span></div>
         <button class="btn" type="button" onclick="openLogin('menh-de-quan-he-rut-gon-toeic-30.html')">Vào bài luyện</button>
       </article>
+      <article class="card lesson-card practice-section-card" data-lesson-id="causative-verbs-toeic-50">
+        <h2>Câu cầu khiến TOEIC</h2>
+        <p>Luyện 50 câu Part 5 về make, have, let, help và các cấu trúc động từ + tân ngữ + to V, gồm cả chủ động và bị động.</p>
+        <div class="pill-row"><span class="pill">50 câu</span><span class="pill">Causative verbs</span><span class="pill">Part 5</span></div>
+        <button class="btn" type="button" onclick="openLogin('cau-cau-khien-toeic-50.html')">Vào bài luyện</button>
+      </article>
       <article class="card lesson-card practice-section-card" data-lesson-id="be-adj-v3-v-ed-prep-1">
         <h2>Be + Adj/V3/-ed + Prep 1</h2>
         <p>Luyện 52 câu cấu trúc be + adjective/V3/-ed + preposition, nhóm 1.</p>
@@ -660,6 +666,7 @@ function lessonIdsForResult(result){
   if(id==='toeic-part5-word-form-100') return ['word-form-100'];
   if(id.includes('toeic-2024-test') || id.includes('listening') || title.toLowerCase().includes('listening')) return ['toeic-listening'];
   if(id.includes('relative-clause-reduction-toeic-30') || title.includes('Mệnh đề quan hệ & rút gọn')) return ['relative-clause-reduction-toeic-30'];
+  if(id.includes('causative-verbs-toeic-50') || title.includes('Câu cầu khiến TOEIC')) return ['causative-verbs-toeic-50'];
   if(id.includes('be-adj-v3-v-ed-prep-1') || title.includes('Prep 1')) return ['be-adj-v3-v-ed-prep-1'];
   if(id.includes('be-adj-v3-v-ed-prep-2') || title.includes('Prep 2')) return ['be-adj-v3-v-ed-prep-2'];
   if(id.includes('noun-prep-collocation-1') || title.includes('Collocation 1')) return ['noun-prep-collocation-1'];
