@@ -139,7 +139,9 @@ function renderTable(){
     const latestScore=Number(latest.score??latest.payload?.score??0);
     const latestTotal=Number(latest.total??latest.payload?.total??0);
     const latestTime=new Date(latest.submittedAt||latest.payload?.submittedAt||0).toLocaleString('vi-VN');
-    return '<tr><td><b>'+escapeHtml(g.title)+'</b></td><td>'+g.items.length+'</td><td>'+escapeHtml(latestTime)+'</td><td><span class="score">'+latestPercent+'%</span><br>'+latestScore+' / '+latestTotal+'</td><td><span class="badge '+tone(best)+'">'+best+'%</span></td><td><button class="btn" type="button" onclick="showDetail('+i+')">Xem chi tiết</button></td></tr>';
+    const estimate=latest.toeicEstimate||latest.payload?.toeicEstimate;
+    const toeicLine=estimate&&Number.isFinite(Number(estimate.total))?'<br><b>TOEIC ước tính: '+Number(estimate.total)+' / 990</b>':'';
+    return '<tr><td><b>'+escapeHtml(g.title)+'</b></td><td>'+g.items.length+'</td><td>'+escapeHtml(latestTime)+'</td><td><span class="score">'+latestPercent+'%</span><br>'+latestScore+' / '+latestTotal+toeicLine+'</td><td><span class="badge '+tone(best)+'">'+best+'%</span></td><td><button class="btn" type="button" onclick="showDetail('+i+')">Xem chi tiết</button></td></tr>';
   }).join('');
 }
 function wrongAnswers(payload){
@@ -168,7 +170,9 @@ function showDetail(i){
   const wrongs=wrongAnswers(payload);
   document.getElementById('detailTitle').textContent=g.title+' - lần gần nhất';
   if(payload.quiz?.hideAnswerReview){
-    document.getElementById('recommendBox').innerHTML='<h3>Thi thử cuối khóa</h3><ul><li>Bài thi này chỉ lưu điểm tổng và điểm từng Part; học viên không được xem đáp án hoặc phần chữa câu.</li></ul>';
+    const estimate=payload.toeicEstimate;
+    const estimateLine=estimate?'<li><b>Điểm TOEIC ước tính: '+escapeHtml(estimate.total)+' / 990</b> · Listening '+escapeHtml(estimate.listening)+' / 495 · Reading '+escapeHtml(estimate.reading)+' / 495.</li>':'';
+    document.getElementById('recommendBox').innerHTML='<h3>Thi thử cuối khóa</h3><ul>'+estimateLine+'<li>Điểm TOEIC là quy đổi giả định theo tỷ lệ đúng và làm tròn theo bội số 5; không phải bảng quy đổi chính thức của ETS.</li><li>Bài thi này chỉ lưu điểm tổng và điểm từng Part; học viên không được xem đáp án hoặc phần chữa câu.</li></ul>';
     document.getElementById('wrongList').innerHTML='<div class="wrong-item"><h4>Không mở đáp án sau bài thi</h4><p>Kết quả đã được lưu. Trang thống kê không hiển thị câu đúng, câu sai hay đáp án đúng của bài thi này.</p></div>';
     document.getElementById('detailModal').classList.add('show');
     return;
