@@ -51,6 +51,18 @@ export async function onRequestPost(context) {
 
     const total = QUESTION_NUMBERS.length;
     const percent = Math.round((score / total) * 100);
+
+    const listeningCorrect = sectionScores.part1.score + sectionScores.part2.score;
+    const readingCorrect = sectionScores.part5.score + sectionScores.part6.score;
+    const toeicEstimate = {
+      listening: estimateToeicSection(listeningCorrect, 31),
+      reading: estimateToeicSection(readingCorrect, 46),
+      total: 0,
+      max: 990,
+      method: 'percent-correct-linear-rounded-to-5'
+    };
+    toeicEstimate.total = toeicEstimate.listening + toeicEstimate.reading;
+
     const submittedAt = new Date().toISOString();
     const safeEmail = email.replace(/[^a-z0-9._-]/gi, '_');
     const id = `${Date.now()}_${safeEmail}`;
@@ -72,6 +84,7 @@ export async function onRequestPost(context) {
       total,
       percent,
       sectionScores,
+      toeicEstimate,
       answers
     };
 
@@ -105,11 +118,18 @@ export async function onRequestPost(context) {
       score,
       total,
       percent,
-      sectionScores
+      sectionScores,
+      toeicEstimate
     });
   } catch (err) {
     return json({ ok:false, error:err?.message || 'Không chấm/lưu được bài thi.' }, 500);
   }
+}
+
+function estimateToeicSection(correct, total) {
+  const ratio = total > 0 ? correct / total : 0;
+  const rounded = Math.round((ratio * 495) / 5) * 5;
+  return Math.max(5, Math.min(495, rounded));
 }
 
 function normalizeEmail(value) {
