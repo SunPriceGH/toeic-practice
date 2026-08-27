@@ -4,7 +4,7 @@ const QUIZ_TITLE = 'Thi thử TOEIC cuối khóa';
 const ANSWER_KEY = Object.freeze({
   1:'B',2:'D',3:'B',4:'A',5:'C',6:'A',
   7:'A',8:'B',9:'C',10:'A',11:'C',12:'C',13:'A',14:'A',15:'B',16:'C',17:'A',18:'B',19:'C',20:'C',21:'B',22:'C',23:'A',24:'A',25:'B',26:'B',27:'B',28:'A',29:'B',30:'C',31:'C',
-  101:'A',102:'C',103:'A',104:'D',105:'A',106:'D',107:'A',108:'B',109:'B',110:'A',111:'C',112:'B',113:'D',114:'C',115:'B',116:'D',117:'A',118:'B',119:'C',120:'D',121:'A',122:'A',123:'B',124:'A',125:'C',126:'B',127:'B',128:'A',129:'D',130:'C',
+  101:'A',102:'C',103:'A',104:'D',105:'A',106:'D',107:'A',108:'B',109:'B',110:'A',111:'C',112:'B',113:'D',114:'C',115:'B',116:'D',117:'A',118:'B',119:'C',120:'D',121:'A',122:'C',123:'B',124:'A',125:'C',126:'B',127:'B',128:'A',129:'D',130:'C',
   131:'C',132:'D',133:'A',134:'B',135:'D',136:'D',137:'B',138:'A',139:'B',140:'A',141:'B',142:'D',143:'C',144:'C',145:'A',146:'B'
 });
 
@@ -46,7 +46,7 @@ export async function onRequestPost(context) {
         score += 1;
         sectionScores[`part${part}`].score += 1;
       }
-      answers.push({ no, part, selected });
+      answers.push({ no, part, selected, isCorrect });
     }
 
     const total = QUESTION_NUMBERS.length;
@@ -68,8 +68,8 @@ export async function onRequestPost(context) {
     const id = `${Date.now()}_${safeEmail}`;
     const filename = `student_result/${id}.json`;
 
-    // Intentionally do NOT save or return per-question correctness, correct answers,
-    // correct text, or explanations. Only selected choices + aggregate scores are stored.
+    // Save per-question correct/wrong status so students can review which questions
+    // they got right or wrong. Never save/return the correct answer itself.
     const payload = {
       quiz:{
         id:QUIZ_ID,
@@ -119,7 +119,8 @@ export async function onRequestPost(context) {
       total,
       percent,
       sectionScores,
-      toeicEstimate
+      toeicEstimate,
+      questionResults: answers
     });
   } catch (err) {
     return json({ ok:false, error:err?.message || 'Không chấm/lưu được bài thi.' }, 500);
