@@ -1,0 +1,482 @@
+{
+  "id": "end-of-course-mock-exam-reading",
+  "title": "End-of-course Mock Exam - Reading",
+  "parts": {
+    "5": [
+      {
+        "no": 101,
+        "stem": "Ms. Budrow was promoted after ------- group recorded the highest revenue growth for the year.",
+        "options": {
+          "A": "her",
+          "B": "hers",
+          "C": "herself",
+          "D": "she"
+        }
+      },
+      {
+        "no": 102,
+        "stem": "The community program features classes in photography, drawing, ------- other arts.",
+        "options": {
+          "A": "yet",
+          "B": "but",
+          "C": "and",
+          "D": "thus"
+        }
+      },
+      {
+        "no": 103,
+        "stem": "Glass containers must be ------- secured during transport.",
+        "options": {
+          "A": "safely",
+          "B": "safe",
+          "C": "safety",
+          "D": "safer"
+        }
+      },
+      {
+        "no": 104,
+        "stem": "This month's ------- figures have increased five percent over the last month.",
+        "options": {
+          "A": "selling",
+          "B": "sold",
+          "C": "to sell",
+          "D": "sales"
+        }
+      },
+      {
+        "no": 105,
+        "stem": "Summer interns may ------- either free company housing or a stipend of $2,000.",
+        "options": {
+          "A": "choose",
+          "B": "wonder",
+          "C": "apply",
+          "D": "rent"
+        }
+      },
+      {
+        "no": 106,
+        "stem": "If a client leaves a voice message, we will return the ------- promptly within one business day.",
+        "options": {
+          "A": "extra",
+          "B": "effort",
+          "C": "signal",
+          "D": "call"
+        }
+      },
+      {
+        "no": 107,
+        "stem": "The department's most ------- production unit will receive a bonus at the end of the quarter.",
+        "options": {
+          "A": "effective",
+          "B": "effect",
+          "C": "effectively",
+          "D": "effecting"
+        }
+      },
+      {
+        "no": 108,
+        "stem": "Al's Café will now be open on Sundays ------- the hours of 9 A.M. and 5 P.M.",
+        "options": {
+          "A": "for",
+          "B": "between",
+          "C": "inside",
+          "D": "from"
+        }
+      },
+      {
+        "no": 109,
+        "stem": "Mr. Liu will not be in the office this morning ------- he has a dentist appointment.",
+        "options": {
+          "A": "following",
+          "B": "because",
+          "C": "including",
+          "D": "likewise"
+        }
+      },
+      {
+        "no": 110,
+        "stem": "Ms. Trinacria's team is developing a kitchen faucet that can ------- respond to voice commands.",
+        "options": {
+          "A": "reliably",
+          "B": "rely",
+          "C": "reliability",
+          "D": "reliable"
+        }
+      },
+      {
+        "no": 111,
+        "stem": "So far this year, the Richmond City Orchestra has sold out ------- one of its concerts.",
+        "options": {
+          "A": "complete",
+          "B": "total",
+          "C": "every",
+          "D": "entire"
+        }
+      },
+      {
+        "no": 112,
+        "stem": "You must close the application before ------- the installation of the software update.",
+        "options": {
+          "A": "to begin",
+          "B": "beginning",
+          "C": "must begin",
+          "D": "begins"
+        }
+      },
+      {
+        "no": 113,
+        "stem": "The town's traffic committee urges motorists to drive ------- on Main Street.",
+        "options": {
+          "A": "abundantly",
+          "B": "obviously",
+          "C": "rightfully",
+          "D": "cautiously"
+        }
+      },
+      {
+        "no": 114,
+        "stem": "Eastington University just announced the ------- of all foods containing artificial preservatives from its cafeteria menu.",
+        "options": {
+          "A": "eliminate",
+          "B": "eliminated",
+          "C": "elimination",
+          "D": "eliminates"
+        }
+      },
+      {
+        "no": 115,
+        "stem": "Some commuters were late because of the weather, but the road closures affected an even ------- number.",
+        "options": {
+          "A": "great",
+          "B": "greater",
+          "C": "greatest",
+          "D": "greatly"
+        }
+      },
+      {
+        "no": 116,
+        "stem": "At each performance, dancer Clay Hastings displays a remarkable ------- to connect with his audience.",
+        "options": {
+          "A": "degree",
+          "B": "function",
+          "C": "totality",
+          "D": "ability"
+        }
+      },
+      {
+        "no": 117,
+        "stem": "Amand Corp.'s flexible work policy is ------- beneficial to the company as employee turnover is minimal.",
+        "options": {
+          "A": "financially",
+          "B": "finances",
+          "C": "financial",
+          "D": "to finance"
+        }
+      },
+      {
+        "no": 118,
+        "stem": "Ragini Kumari has published a book about the history of agricultural ------- in the region.",
+        "options": {
+          "A": "practical",
+          "B": "practices",
+          "C": "practiced",
+          "D": "is practicing"
+        }
+      },
+      {
+        "no": 119,
+        "stem": "Ms. Sanchez has ------- been promoted to office manager at Delbay Tech.",
+        "options": {
+          "A": "anywhere",
+          "B": "soon",
+          "C": "recently",
+          "D": "when"
+        }
+      },
+      {
+        "no": 120,
+        "stem": "Please reserve room 200 for Monday afternoon, since the workshop is expected to ------- several hours.",
+        "options": {
+          "A": "occur",
+          "B": "start",
+          "C": "hold",
+          "D": "last"
+        }
+      },
+      {
+        "no": 121,
+        "stem": "Zachary Cho, president of the Canadian Florist Association, introduced the ------- speaker at the convention.",
+        "options": {
+          "A": "opening",
+          "B": "expanded",
+          "C": "careful",
+          "D": "powered"
+        }
+      },
+      {
+        "no": 122,
+        "stem": "The team ------- completes the online training first will receive a catered lunch.",
+        "options": {
+          "A": "whichever",
+          "B": "it",
+          "C": "that",
+          "D": "either"
+        }
+      },
+      {
+        "no": 123,
+        "stem": "Industry news and upcoming social events are ------- the items featured in the company newsletter.",
+        "options": {
+          "A": "during",
+          "B": "among",
+          "C": "toward",
+          "D": "except"
+        }
+      },
+      {
+        "no": 124,
+        "stem": "Many customers have remained faithful to Kristiansen Electronics ------- the years because of our excellent customer service.",
+        "options": {
+          "A": "through",
+          "B": "even if",
+          "C": "prior to",
+          "D": "while"
+        }
+      },
+      {
+        "no": 125,
+        "stem": "The release of the earnings report will ------- until the latest company figures are ready.",
+        "options": {
+          "A": "delay",
+          "B": "have delayed",
+          "C": "be delayed",
+          "D": "be delaying"
+        }
+      },
+      {
+        "no": 126,
+        "stem": "Assistant Director Melissa Arun works ------- the interns to monitor the quality of their work.",
+        "options": {
+          "A": "across",
+          "B": "alongside",
+          "C": "against",
+          "D": "about"
+        }
+      },
+      {
+        "no": 127,
+        "stem": "Ms. Fujita has postponed the team meeting until next week because everyone already has ------- to do this week.",
+        "options": {
+          "A": "most",
+          "B": "enough",
+          "C": "neither",
+          "D": "which"
+        }
+      },
+      {
+        "no": 128,
+        "stem": "Call Gislason Insurance today to speak to a ------- agent for a free quote.",
+        "options": {
+          "A": "licensed",
+          "B": "maximum",
+          "C": "required",
+          "D": "former"
+        }
+      },
+      {
+        "no": 129,
+        "stem": "Motorbike Unlimited's marketing campaign will begin ------- the terms of the contract are finalized.",
+        "options": {
+          "A": "as well as",
+          "B": "other than",
+          "C": "rather than",
+          "D": "as soon as"
+        }
+      },
+      {
+        "no": 130,
+        "stem": "------- of planet Jupiter may provide scientists with long-awaited answers.",
+        "options": {
+          "A": "Acceleration",
+          "B": "Intention",
+          "C": "Observation",
+          "D": "Provision"
+        }
+      }
+    ],
+    "6": [
+      {
+        "range": "131-134",
+        "label": "Questions 131-134 refer to the following memo.",
+        "passageHtml": "<div class=\"doc-lines\"><p>To: All staff<br>From: Leonard Villalobos, Vice President of Product Development<br>Date: August 27<br>Subject: Atzeret game (Product #DS8192)</p><p>Due to the results from our trial customer testing, we have decided to postpone the launch of the Atzeret video game. Customer surveys indicated that the game was less <span class=\"blank\">131</span> than we anticipated. Over the next few months, the game development team will introduce several <span class=\"blank\">132</span> to make the product more attractive. <span class=\"blank\">133</span> If the changes are successful, we hope to launch the game by next January <span class=\"blank\">134</span> February.</p></div>",
+        "questions": [
+          {
+            "no": 131,
+            "options": {
+              "A": "expensive",
+              "B": "repetitive",
+              "C": "appealing",
+              "D": "surprising"
+            }
+          },
+          {
+            "no": 132,
+            "options": {
+              "A": "modification",
+              "B": "modifies",
+              "C": "modifying",
+              "D": "modifications"
+            }
+          },
+          {
+            "no": 133,
+            "options": {
+              "A": "At that point, more tests will be conducted.",
+              "B": "The launch will be our biggest of the year.",
+              "C": "However, the surveys are not reliable.",
+              "D": "Team members must each sign the form."
+            }
+          },
+          {
+            "no": 134,
+            "options": {
+              "A": "since",
+              "B": "or",
+              "C": "if",
+              "D": "later"
+            }
+          }
+        ]
+      },
+      {
+        "range": "135-138",
+        "label": "Questions 135-138 refer to the following e-mail.",
+        "passageHtml": "<div class=\"doc-lines\"><p>To: Eva Linn, Lundtalk Industries<br>From: Technical Services<br>Date: January 15<br>Subject: Technical query</p><p>Dear Ms. Linn,</p><p>Thank you for contacting our technical department <span class=\"blank\">135</span> your query. <span class=\"blank\">136</span>, our call got disconnected when we were trying to reboot your system from our remote location. <span class=\"blank\">137</span> Therefore, please call us at your earliest convenience and refer to conversation ID #TECH12-2020A to complete the system repair. We have prioritized your inquiry and look forward to helping you <span class=\"blank\">138</span> your computer to its full capabilities.</p><p>Sincerely,</p><p>Arthur Feldt<br>Technical Service Facilitator</p></div>",
+        "questions": [
+          {
+            "no": 135,
+            "options": {
+              "A": "until",
+              "B": "besides",
+              "C": "into",
+              "D": "with"
+            }
+          },
+          {
+            "no": 136,
+            "options": {
+              "A": "In other words",
+              "B": "For this reason",
+              "C": "For example",
+              "D": "As you know"
+            }
+          },
+          {
+            "no": 137,
+            "options": {
+              "A": "We invite you to visit one of our computer repair centers in your area.",
+              "B": "Unfortunately, we do not have a phone number at which we can reach you.",
+              "C": "Thank you again for being one of our priority customers.",
+              "D": "Please submit your check for the service fee promptly."
+            }
+          },
+          {
+            "no": 138,
+            "options": {
+              "A": "restore",
+              "B": "restoring",
+              "C": "restored",
+              "D": "restoration"
+            }
+          }
+        ]
+      },
+      {
+        "range": "139-142",
+        "label": "Questions 139-142 refer to the following Web page.",
+        "passageHtml": "<div class=\"doc-lines\"><p>For a limited time, the Uppercut Clothing Hanger Company is selling its highest quality hangers at huge discounts on wholesale orders. This special <span class=\"blank\">139</span> is perfect for hotels, retailers, or anywhere hangers are used extensively. <span class=\"blank\">140</span> of lacquered walnut wood, these hangers are not only durable, but also safe for the environment. <span class=\"blank\">141</span> are strong enough to hold up to ten pounds. To order, visit www.uppercuthangerco.ca. Note that all orders require a 20 percent deposit. <span class=\"blank\">142</span> Uppercut will cover all shipping and insurance costs.</p></div>",
+        "questions": [
+          {
+            "no": 139,
+            "options": {
+              "A": "clothing",
+              "B": "offer",
+              "C": "decoration",
+              "D": "performance"
+            }
+          },
+          {
+            "no": 140,
+            "options": {
+              "A": "Made",
+              "B": "Making",
+              "C": "To make",
+              "D": "They made"
+            }
+          },
+          {
+            "no": 141,
+            "options": {
+              "A": "Both",
+              "B": "They",
+              "C": "Fewer",
+              "D": "Theirs"
+            }
+          },
+          {
+            "no": 142,
+            "options": {
+              "A": "Our products make great gifts.",
+              "B": "While sturdy, wooden hangers are also heavy.",
+              "C": "Quality hangers are a great investment.",
+              "D": "The balance is due when the shipment is received."
+            }
+          }
+        ]
+      },
+      {
+        "range": "143-146",
+        "label": "Questions 143-146 refer to the following e-mail.",
+        "passageHtml": "<div class=\"doc-lines\"><p>From: mcrane@doodlemail.com<br>To: jkumar@baxterartsupplies.com<br>Date: October 14<br>Subject: Application<br>Attachment: Résumé</p><p>Dear Ms. Kumar,</p><p>I am writing in response to the advertisement posted in the window of Baxter Art Supplies. As a frequent visitor to your <span class=\"blank\">143</span>, I have found it an invaluable source of inspiration over the years. I would be <span class=\"blank\">144</span> to display my artwork. I would also enjoy running workshops to help inspire your customers.</p><p>I believe I would be well suited for this role because I am both enthusiastic and friendly. <span class=\"blank\">145</span>, I have led successful workshops at various locations in the area. I have attached a copy of my résumé, which includes more details about these workshops. <span class=\"blank\">146</span> I look forward to hearing from you after you have reviewed my application and work.</p><p>Kind regards,</p><p>Melania Crane</p></div>",
+        "questions": [
+          {
+            "no": 143,
+            "options": {
+              "A": "school",
+              "B": "house",
+              "C": "store",
+              "D": "museum"
+            }
+          },
+          {
+            "no": 144,
+            "options": {
+              "A": "thrilling",
+              "B": "thrill",
+              "C": "thrilled",
+              "D": "thrills"
+            }
+          },
+          {
+            "no": 145,
+            "options": {
+              "A": "In addition",
+              "B": "However",
+              "C": "In general",
+              "D": "Similarly"
+            }
+          },
+          {
+            "no": 146,
+            "options": {
+              "A": "I enjoyed the painting workshop last week.",
+              "B": "Samples of my art can be found at www.mcrane.com.",
+              "C": "I just started working with watercolors.",
+              "D": "For a price list, please contact me at 347-555-0101."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
