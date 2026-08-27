@@ -139,7 +139,7 @@ function wireInputs(scope=document){scope.querySelectorAll('input[type="radio"]'
 let teacherAudioNo=0;
 let teacherSequenceRunning=false;
 
-function teacherAudioSrc(no){return 'audio/end-of-course-mock-exam-listening-'+String(no).padStart(2,'0')+'.mp3'}
+function teacherAudioSrc(no){return 'audio/end-of-course-mock-exam/end-of-course-mock-exam-listening-'+String(no).padStart(2,'0')+'.mp3'}
 function updateTeacherAudioUi(){
   if(!isTeacher)return;
   const btn=document.getElementById('teacherSequenceBtn');
