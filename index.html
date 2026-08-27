@@ -195,6 +195,28 @@ body.admin-unlock-mode .lesson-card{cursor:url("data:image/svg+xml,%3Csvg xmlns=
 .practice-test-card:hover{transform:translateY(-3px);border-color:#22c55e}
 
 
+.end-course-exam-card{
+  overflow:hidden;
+  border-color:#7c3aed;
+  background:
+    radial-gradient(circle at top right,rgba(124,58,237,.24),transparent 36%),
+    linear-gradient(145deg,#faf5ff 0%,#eff6ff 54%,#ffffff 100%);
+  box-shadow:0 24px 52px rgba(124,58,237,.15),0 12px 30px rgba(37,99,235,.10);
+}
+.end-course-exam-card:before{
+  content:"FINAL MOCK";
+  position:absolute;top:18px;right:18px;z-index:1;
+  padding:8px 13px;border-radius:999px;background:#5b21b6;color:#fff;
+  font-size:13px;font-weight:700;letter-spacing:.06em;
+  box-shadow:0 10px 22px rgba(91,33,182,.18);
+}
+.end-course-exam-card h2{padding-right:112px;color:#4c1d95}
+.end-course-exam-card .pill{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe}
+.end-course-exam-card .btn{background:linear-gradient(135deg,#7c3aed,#2563eb);box-shadow:0 12px 24px rgba(91,33,182,.20)}
+.end-course-exam-card .btn:hover{background:linear-gradient(135deg,#6d28d9,#1d4ed8)}
+.end-course-exam-card:hover{transform:translateY(-3px);border-color:#8b5cf6}
+
+
 /* ===== Lesson / Practice section tabs ===== */
 .section-switch{
   display:flex;
@@ -586,6 +608,13 @@ body.show-practice .lesson-section-card{display:none!important}
         <h2>Kết quả học viên</h2>
         <p>Dành cho giáo viên xem danh sách bài nộp và tải JSON kết quả.</p>
         <a class="btn secondary" href="results.html">Mở trang kết quả</a>
+      </article>
+
+      <article class="card lesson-card practice-section-card end-course-exam-card" data-lesson-id="end-of-course-mock-exam">
+        <h2>Thi thử TOEIC cuối khóa</h2>
+        <p>Thi Listening Part 1 + 2 trước, sau đó làm Reading Part 5 + 6. Chỉ chấm và lưu kết quả khi nộp bài.</p>
+        <div class="pill-row"><span class="pill">Listening P1 + P2</span><span class="pill">Reading P5 + P6</span><span class="pill">Không tính giờ</span></div>
+        <button class="btn" type="button" onclick="openLogin('end-of-course-mock-exam.html')">Vào phòng thi</button>
       </article>
     </div>
   </section>

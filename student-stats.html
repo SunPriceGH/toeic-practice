@@ -167,6 +167,12 @@ function showDetail(i){
   const payload=latest.payload||latest;
   const wrongs=wrongAnswers(payload);
   document.getElementById('detailTitle').textContent=g.title+' - lần gần nhất';
+  if(payload.quiz?.hideAnswerReview){
+    document.getElementById('recommendBox').innerHTML='<h3>Thi thử cuối khóa</h3><ul><li>Bài thi này chỉ lưu điểm tổng và điểm từng Part; học viên không được xem đáp án hoặc phần chữa câu.</li></ul>';
+    document.getElementById('wrongList').innerHTML='<div class="wrong-item"><h4>Không mở đáp án sau bài thi</h4><p>Kết quả đã được lưu. Trang thống kê không hiển thị câu đúng, câu sai hay đáp án đúng của bài thi này.</p></div>';
+    document.getElementById('detailModal').classList.add('show');
+    return;
+  }
   document.getElementById('recommendBox').innerHTML='<h3>Khuyến nghị luyện tập</h3><ul>'+recommend(payload,wrongs).map(t=>'<li>'+escapeHtml(t)+'</li>').join('')+'</ul>';
   document.getElementById('wrongList').innerHTML=wrongs.length?wrongs.map(a=>{
     const selected=a.selected||'Chưa chọn';
